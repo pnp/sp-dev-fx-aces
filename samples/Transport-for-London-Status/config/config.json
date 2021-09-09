@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "tf-l-status-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/tfLStatus/TfLStatusAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/tfLStatus/TfLStatusAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TfLStatusAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/tfLStatus/loc/{locale}.js"
+  }
+}
