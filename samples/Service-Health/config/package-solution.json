@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-ace-service-health-client-side-solution",
+    "id": "67eea95d-bdf8-4d4d-86a8-8f9b6713e62f",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.13.0-beta.20"
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "ServiceHealth.Read.All"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-ace-service-health.sppkg"
+  }
+}
