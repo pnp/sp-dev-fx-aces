@@ -19,7 +19,7 @@
     "group": { "default": "Dashboard" },
     "title": { "default": "At a glance" },
     "description": { "default": "Shows main points of a news article" },
-    "officeFabricIconFontName": "SharePointLogo",
+    "officeFabricIconFontName": "View",
     "properties": {
       "title": "At a glance",
       "description": "Shows main points of a news article",
