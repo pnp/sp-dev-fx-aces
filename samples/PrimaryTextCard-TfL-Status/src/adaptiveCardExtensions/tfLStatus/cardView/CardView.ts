@@ -20,6 +20,16 @@ export class CardView extends BasePrimaryTextCardView<ITfLStatusAdaptiveCardExte
             view: LINES_VIEW_REGISTRY_ID
           }
         }
+      },
+      {
+        title: 'Open TfL site',
+        style: 'positive',
+        action: {
+          type: 'ExternalLink',
+          parameters: {
+            target: 'https://tfl.gov.uk/tube-dlr-overground/status'
+          }
+        }
       }
     ];
   }

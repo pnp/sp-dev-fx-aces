@@ -20,6 +20,10 @@ export class LinesView extends BaseAdaptiveCardView<
     };
   }
 
+  public get title(): string {
+    return "Staus of all lines";
+  }
+
   public get template(): ISPFxAdaptiveCard {
     return require('./template/LinesViewTemplate.json');
   }

@@ -26,4 +26,5 @@ export type Line = {
     colour: string;
     isFavourite?: boolean;
     favouriteIconSvg?: string;
+    style?: string;
 };

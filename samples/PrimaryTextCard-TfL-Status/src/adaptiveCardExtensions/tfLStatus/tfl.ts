@@ -47,13 +47,15 @@ export async function getAllLinesDetails(httpClient: HttpClient): Promise<TfLLin
 
 export function mapLine(tflLine: TfLLine, favouriteLineId: string): Line {
     const isFavourite: boolean = tflLine.id === favouriteLineId;
+    const statusSeverity: number  = tflLine.lineStatuses[0].statusSeverity;
     return {
         id: tflLine.id,
         name: tflLine.name,
         status: tflLine.lineStatuses[0].statusSeverityDescription,
         colour: getLineColour(tflLine.id),
         isFavourite,
-        favouriteIconSvg: isFavourite ? starFilled : star
+        favouriteIconSvg: isFavourite ? starFilled : star,
+        style: statusSeverity === 10 ? "default" : "attention"
     };
 }
 

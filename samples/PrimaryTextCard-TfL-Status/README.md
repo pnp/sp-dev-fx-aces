@@ -1,4 +1,4 @@
-# SPFx-ACE-tfl-status
+# Transport for London Status
 
 ## Summary
 
@@ -18,7 +18,10 @@ The sample also allows user to mark a train line as their favourite and that dat
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13.0-green.svg)
+![SPFx 1.13.0](https://img.shields.io/badge/SPFx-1.13.0-green.svg)
+![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
+![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
+![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
 
 ## Applies to
 
@@ -35,7 +38,7 @@ The sample also allows user to mark a train line as their favourite and that dat
 
 Solution|Author(s)
 --------|---------
-tfl-status | [Anoop Tatti](https://linktr.ee/anoopt)
+tfl-status | [Anoop Tatti](https://github.com/anoopt) ([https://linktr.ee/anoopt](https://linktr.ee/anoopt))
 
 ## Version history
 
@@ -67,3 +70,4 @@ Version|Date|Comments
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+- [Tutorial to create ACE](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)

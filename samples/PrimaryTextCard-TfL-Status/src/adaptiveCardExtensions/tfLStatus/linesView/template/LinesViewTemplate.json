@@ -10,7 +10,10 @@
       "columns": [
         {
           "type": "Column",
-          "width": "auto",
+          "width": "35px",
+          "horizontalAlignment": "center",
+          "verticalContentAlignment": "center",
+          "separator": true,
           "items": [
             {
               "type": "Image",
@@ -22,31 +25,41 @@
         {
           "type": "Column",
           "width": "stretch",
+          "verticalContentAlignment": "center",
+          "separator": true,
           "items": [
             {
               "type": "TextBlock",
               "text": "${name}",
-              "horizontalAlignment": "Right",
-              "isSubtle": true,
+              "horizontalAlignment": "center",
+              "size": "medium",
               "wrap": true
             },
+            
             {
-              "type": "TextBlock",
-              "text": "${status}",
-              "horizontalAlignment": "Right",
-              "spacing": "None",
-              "size": "Medium",
-              "color": "accent",
-              "wrap": true
+              "type": "RichTextBlock",
+              "horizontalAlignment": "center",
+              "spacing" : "none",
+              "inlines": [
+                {
+                  "type": "TextRun",
+                  "text": "${status}",
+                  "color": "${style}",
+                  "size": "medium"
+                }
+              ]
             }
           ]
         },
         {
           "type": "Column",
-          "width": "auto",
+          "width": "50px",
+          "verticalContentAlignment": "center",
+          "separator": true,
           "items": [
             {
               "type": "ActionSet",
+              "horizontalAlignment": "center",
               "actions": [
                 {
                   "type": "Action.Submit",

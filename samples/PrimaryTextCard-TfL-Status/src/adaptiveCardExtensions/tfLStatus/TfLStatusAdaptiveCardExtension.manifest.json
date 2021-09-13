@@ -19,7 +19,7 @@
     "group": { "default": "Dashboard" },
     "title": { "default": "TfLStatus" },
     "description": { "default": "Shows status of TfL lines" },
-    "officeFabricIconFontName": "SharePointLogo",
+    "officeFabricIconFontName": "TrainSolid",
     "properties": {
       "title": "TfLStatus",
       "description": "Shows status of TfL lines",
