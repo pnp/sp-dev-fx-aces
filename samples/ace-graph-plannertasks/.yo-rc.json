@@ -1,0 +1,14 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": true,
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.13.0-beta.20",
+    "libraryName": "ace-graph-planner-tasks",
+    "libraryId": "0c2a40b0-1daa-461d-8a8a-d4c159e25d34",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "templateType": "PrimaryText"
+  }
+}
