@@ -31,7 +31,6 @@ Short summary on functionality and used technologies.
 ![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams") 
 ![Workbench Local | Hosted](https://img.shields.io/badge/Workbench-Local%20%7C%20Hosted-green.svg)
 
-
 ## Applies to
 
 * [SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
@@ -47,7 +46,6 @@ Short summary on functionality and used technologies.
 > Please describe the steps to configure the pre-requisites. Feel free to add screen shots, but make sure that there is a text description of the steps to perform.
 > 
 > DELETE THE TEXT ABOVE BEFORE SUBMITTING
-
 
 ## Solution
 
@@ -97,4 +95,4 @@ This Adaptive Card Extension illustrates the following concepts on top of the Sh
 > Note that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions in advance! You rock ❤.
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/readme-template" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/TODO" />

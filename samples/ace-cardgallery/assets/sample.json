@@ -1,0 +1,112 @@
+[
+  {
+    "name": "pnp-sp-fx-aces-ace-cardgallery",
+    "source": "pnp",
+    "title": "Adaptive Cards Sample Gallery",
+    "shortDescription": "11 Adaptive Card Extension Samples",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/master/samples/ace-cardgallery",
+    "longDescription": [
+      "This solution provides a set of eleven (11) Adaptive Card Extensions to demonstrate the various features that can be implemented roughly based on the samples provided by the Adaptive Card documentation."
+    ],
+    "created": "2021-09-28",
+    "modified": "2021-09-28",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.13.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/agenda.png",
+        "alt": "Agenda Card"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/companynews.png",
+        "alt": "Company News Card"
+      },
+      {
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/expensereport.png",
+        "alt": "Expense Report Card"
+      },
+      {
+        "type": "image",
+        "order": 103,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/flightitinerary.png",
+        "alt": "Flight Itinerary Card"
+      },
+      {
+        "type": "image",
+        "order": 104,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/formsample.png",
+        "alt": "Form Sample Card"
+      },
+      {
+        "type": "image",
+        "order": 105,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/imagerotator.png",
+        "alt": "Image Rotator Card"
+      },
+      {
+        "type": "image",
+        "order": 106,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/stockticker.png",
+        "alt": "Stock Ticker Card"
+      },
+      {
+        "type": "image",
+        "order": 107,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/tasklist.png",
+        "alt": "Task List Card"
+      },
+      {
+        "type": "image",
+        "order": 108,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/twittercard.png",
+        "alt": "Twitter Card"
+      },
+      {
+        "type": "image",
+        "order": 109,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/videocard.png",
+        "alt": "Video Card"
+      },
+      {
+        "type": "image",
+        "order": 110,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/weather.png",
+        "alt": "Weather Card"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "dcashpeterson",
+        "company": "Sympraxis Consulting",
+        "pictureUrl": "https://github.com/dcashpeterson.png",
+        "name": "Derek Cash-Peterson",
+        "twitter": "spdcp"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  }
+]
