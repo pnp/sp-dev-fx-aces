@@ -32,7 +32,7 @@ The sample also allows user to mark a train line as their favourite and that dat
 
 ## Prerequisites
 
-> None
+> `User.ReadWrite` permission to be approved after uploading the package.
 
 ## Solution
 
@@ -52,16 +52,36 @@ Version|Date|Comments
 
 ---
 
+## Details related to favourite tube line
+
+The sample makes use of `open extensions` to store user's favourite tube line. The code related to open extensions is present in the file `tfl.ts`.
+
+### Creating open extension
+
+Once the property of the ACE (`favLineExtensionName`) is set, the code first checks if an open extension with that name exists for the user. If not, the code creates an open extension using Microsoft Graph. The permission needed for this is `User.ReadWrite` and the Graph endpoint is `/me/extensions`.
+
+### Updating open extension
+
+When a user marks a tube line as their favourite, the code updates the open extension with the ID of the line marked as favourite. The permission needed for this is `User.ReadWrite` and the Graph endpoint is `/me/extensions`.
+
 ## Minimal Path to Awesome
 
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
-- Edit the properties of ACE to include the name of an open extension (e.g. `.com.tenantname.favline`)
-
-
+- After that create the sppkg file using
+  - **gulp bundle --ship**
+  - **gulp package-solution --ship**
+- Deploy the package to the app catalogue site in your tenant
+- The solution needs `User.ReadWrite` permission of Microsoft Graph API. So, approve the API access request in the SharePoint admin center
+- in the command-line run:
+  - **gulp serve -l --nobrowser**
+- or if using spfx-fast-serve, in the command-line run:
+  - **npm run serve**
+- Open the workbench page (https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx)
+- Add the ACE to the page
+- Edit the properties of ACE to include the name of an open extension (e.g. `com.tenantname.favline`)
 
 ## References
 
