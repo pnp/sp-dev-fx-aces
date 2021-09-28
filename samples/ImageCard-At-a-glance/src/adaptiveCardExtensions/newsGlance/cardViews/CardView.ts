@@ -75,12 +75,12 @@ export class CardView extends BaseImageCardView<INewsGlanceAdaptiveCardExtension
     }
   }
 
-  public get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | undefined {
+  /* public get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | undefined {
     return {
       type: 'ExternalLink',
       parameters: {
         target: this.state.articleLink
       }
     };
-  }
+  } */
 }

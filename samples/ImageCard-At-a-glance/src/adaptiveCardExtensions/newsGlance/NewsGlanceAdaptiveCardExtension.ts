@@ -175,8 +175,12 @@ export default class NewsGlanceAdaptiveCardExtension extends BaseAdaptiveCardExt
 
       } else {
 
+        //remove html tags
         let articleContent = article.content.replace(/(<([^>]+)>)/gi, "");
+
+        //remove any GUIDs
         articleContent = articleContent.replace(/(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}/g, "");
+        
         const articleContentSentences = articleContent.match(/([^ \r\n][^!?\.\r\n]+[\w!?\.]+)/g);
 
         numberOfGlanceCards = articleContentSentences.length > numberOfSentences ? numberOfSentences : articleContentSentences.length;
