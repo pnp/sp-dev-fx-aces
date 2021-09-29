@@ -4,6 +4,7 @@
 
 This solution provides a set of eleven (11) Adaptive Card Extensions to demonstrate the various features that can be implemented roughly based on the samples provided by the [Adaptive Card documentation](https://adaptivecards.io/samples/).
 >They use mock data to demonstrate and are not fully functional.
+>See [Features](#Features) section for individual listing of samples.
 
 ![ACE Gallery Samples](./assets/acegallery.gif)
 
@@ -53,16 +54,48 @@ To test the solution yourself, you can follow these steps:
 Roughly based on the samples provided by the [Adaptive Card documentation](https://adaptivecards.io/samples/), these samples help demonstrate the functionality of the Adaptive Card extensions. The solution contains the following examples:
 
 - Agenda
+
+![Agenda](./assets/agenda.png)
+
 - Company News
+
+![Company News](./assets/companynews.png)
+
 - Expense Report
+
+![Expense Report](./assets/expensereport.png)
+
 - Flight Itinerary
+
+![Flight Itinerary](./assets/flightitinerary.png)
+
 - Form Sample
+
+![Form Sample](./assets/formsample.png)
+
 - Image Rotator
+
+![Image Rotator](./assets/imagerotator.png)
+
 - Stock Ticker
+
+![Stock Ticker](./assets/stockticker.png)
+
 - Task List
+
+![Task List](./assets/tasklist.png)
+
 - Twitter Card
+
+![Twitter Card](./assets/twittercard.png)
+
 - Video Card
+
+![Video Card](./assets/videocard.png)
+
 - Weather
+
+![Weather](./assets/weather.png)
 
 To design your own adaptive cards to use with an Adaptive Card Extension check out the [Adaptive Card designer](https://adaptivecards.io/designer/)
 
