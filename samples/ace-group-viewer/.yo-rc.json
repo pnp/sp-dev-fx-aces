@@ -1,0 +1,14 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.13.0-beta.17",
+    "libraryName": "ace-group-viewer",
+    "libraryId": "b8129b39-b587-431f-9cd8-51719a5cb6b1",
+    "environment": "spo",
+    "packageManager": "npm",
+    "isCreatingSolution": true,
+    "plusBeta": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "templateType": "Basic"
+  }
+}

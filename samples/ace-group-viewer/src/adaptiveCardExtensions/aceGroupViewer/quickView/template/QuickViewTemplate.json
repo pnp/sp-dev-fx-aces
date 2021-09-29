@@ -1,0 +1,75 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "body": [
+      {
+          "type": "TextBlock",
+          "text": "Members",
+          "wrap": true,
+          "size": "Medium",
+          "separator": true
+      },
+      {
+          "type": "ColumnSet",
+          "columns": [
+              {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                      {
+                          "type": "TextBlock",
+                          "text": "Name",
+                          "wrap": true
+                      }
+                  ]
+              },
+              {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                      {
+                          "type": "TextBlock",
+                          "wrap": true,
+                          "text": "Email"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "type": "ColumnSet",
+          "style": "emphasis",
+          "columns": [
+              {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                      {
+                          "type": "TextBlock",
+                          "wrap": true,
+                          "text": "${displayName}"
+                      }
+                  ]
+              },
+              {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "ActionSet",
+                      "actions": [
+                          {
+                              "type": "Action.OpenUrl",
+                              "title": "Email",
+                              "url": "mailto:${mail}"
+                          }
+                      ]
+                  }
+                  ]
+              }
+          ],
+          "$data": "${$root.members}"
+      }
+  ]
+}
