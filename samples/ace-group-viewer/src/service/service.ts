@@ -8,14 +8,13 @@ export class PnPService {
         let members: IMember[] = [];
         await this._loadGroup().then(response => {
             members = response;
-        })
+        });
         return members;
     }
 
     public async _getGroupName(): Promise<string> {
         let groupName: string = null;
         const properties = await sp.web.allProperties();
-        console.log(properties);
         groupName = properties.GroupAlias;
         return groupName;
     }
@@ -25,11 +24,9 @@ export class PnPService {
         let members: IMember[] = [];
         await this._getCurrentGroupID().then(id => {
             groupId = id;
-            console.log(groupId);
-        })
+        });
         await this._getGroupMembers(groupId).then(memberArray => {
             members = memberArray;
-            console.log(memberArray);
         });
         return members;
     }
@@ -49,8 +46,8 @@ export class PnPService {
                     displayName: member.displayName,
                     mail: member.mail
                 }
-            )
-        })
+            );
+        });
         return memberArray;
     }
 

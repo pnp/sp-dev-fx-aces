@@ -44,7 +44,6 @@ export default class AceGroupViewerAdaptiveCardExtension extends BaseAdaptiveCar
       this.groupName = response;
     });
     await this.PnPService._init().then(response => {
-      console.log(response);
       this.members = response;
     });
     this.state = {
@@ -53,8 +52,6 @@ export default class AceGroupViewerAdaptiveCardExtension extends BaseAdaptiveCar
       memberCount: this.members.length,
       groupName: this.groupName
     };
-
-    console.log(this.state.members)
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
