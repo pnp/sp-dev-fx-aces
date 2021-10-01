@@ -60,7 +60,7 @@ Version|Date|Comments
     * in the command line run:
         * `npm install`
         * `gulp serve --nobrowser`
-    * browse to your hosted workbench of a group site https://YOURTENANT.sharepoint.com/sites/SITENAME/_layouts/15/workbench.aspx and add the adaptive card extension.
+    * browse to your hosted workbench https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx and add the adaptive card extension.
 
 
 ## Features
