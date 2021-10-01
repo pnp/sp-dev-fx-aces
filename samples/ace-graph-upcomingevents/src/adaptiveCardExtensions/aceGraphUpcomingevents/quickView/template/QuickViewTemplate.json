@@ -1,0 +1,49 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "body": [
+      {
+          "type": "Container",
+          "$data": "${$root.events}",
+          "items": [
+              {
+                  "type": "TextBlock",
+                  "text": "${subject}",
+                  "wrap": true,
+                  "size": "Large",
+                  "weight": "Bolder"
+              },
+              {
+                  "type": "TextBlock",
+                  "text": "Start: ${startTime}  - End: ${endTime}",
+                  "wrap": true,
+                  "isSubtle": true
+              },
+              {
+                  "type": "ColumnSet",
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "ActionSet",
+                                  "actions": [
+                                      {
+                                          "type": "Action.OpenUrl",
+                                          "title": "Open Event",
+                                          "url": "${url}",
+                                          "style": "positive"
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "separator": true
+      }
+  ]
+}
