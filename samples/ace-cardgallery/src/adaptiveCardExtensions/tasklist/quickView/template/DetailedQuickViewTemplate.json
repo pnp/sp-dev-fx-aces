@@ -1,0 +1,19 @@
+{
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [{
+    "type": "ColumnSet",
+    "columns": [{
+      "type": "Column",
+      "items": []
+    }]
+  }],
+  "actions": [{
+    "type": "Action.Submit",
+    "title": "Save",
+    "data": {
+      "id": "save",
+      "newIndex": "{$index}"
+    }
+  }]
+}

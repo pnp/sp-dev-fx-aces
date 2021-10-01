@@ -1,4 +1,4 @@
-# SharePoint FrameWork client-side web part samples
+# SharePoint FrameWork Adaptive Card Extension samples
 
 Samples around the SharePoint Framework Adaptive Card Extensions to demonstrate different capabilities and possibilities on the framework. Each sample has it's own dedicated readme file to explain setup instructions and demonstrated capability.
 
