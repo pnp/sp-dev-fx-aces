@@ -1,38 +1,43 @@
-# ace-graph-upcomingevents
+# ace-group-viewer
 
 ## Summary
 
-Short summary on functionality and used technologies.
+This adaptive card extension sample will load upcoming events for the current user. The user can use the quick view card to view more details of the event and use the button to open the event details page. 
 
-[picture of the solution in action, if possible]
+![picture of the ace in action](assets/preview.gif)
+
+Event Page that loads in Outlook online
+
+![picture of event page](assets/eventPage.png)
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.11-green.svg)
+![version](https://img.shields.io/badge/version-1.13-green.svg)
 
 ## Applies to
 
 - [SharePoint Framework](https://aka.ms/spfx)
 - [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview)
+- [PnPJS](https://pnp.github.io/pnpjs/)
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
 ## Prerequisites
 
-> Any special pre-requisites?
+> No prerequisites required.
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-folder name | Author details (name, company, twitter alias with link)
+ace-graph-upcomingevents | [Zach Roberts](https://github.com/zachroberts8668) ([@ZachSPODev](https://twitter.com/ZachSPODev))
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.1|March 10, 2021|Update comment
-1.0|January 29, 2021|Initial release
+1.0|October 1, 2021|Initial release
 
 ## Disclaimer
 
@@ -44,23 +49,27 @@ Version|Date|Comments
 
 - Clone this repository
 - Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
+* If your SharePoint tenant does not already allow API access to the following Microsoft Graph permissions: Directory.Read.All, Calendars.Read then please follow the below instructions.
+    * in the command line run:
+      * `npm install`
+      * `gulp build --ship`
+      * `gulp bundle --ship`
+      * `gulp package-solution --ship`
+    * browse to your SharePoint app catalog and load the SPFX package. Once loaded you will need to browse to your SharePoint Admin Center and under advanced you will need to open Api Access and allow the requests for Microsoft Graph. 
+* If you have the APIs permissions already allowed you can follow the below steps.
+    * in the command line run:
+        * `npm install`
+        * `gulp serve --nobrowser`
+    * browse to your hosted workbench of a group site https://YOURTENANT.sharepoint.com/sites/SITENAME/_layouts/15/workbench.aspx and add the adaptive card extension.
 
-> Include any additional steps as needed.
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
-
 This extension illustrates the following concepts:
 
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
+- Using PnPJS to call Microsoft Graph to get the upcoming events for the current user.
+- Iterate array content in an adaptive card.
+- Slider property to adjust the number of days in advance the events it loads.
 
 > Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
