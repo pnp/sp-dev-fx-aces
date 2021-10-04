@@ -1,0 +1,88 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.3",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": 2,
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "New Team Request",
+              "weight": "Bolder",
+              "size": "Medium",
+              "wrap": true
+            },
+            {
+              "type": "Input.Text",
+              "id": "displayName",
+              "placeholder": "Enter Display Name",
+              "isRequired": true,
+              "label":"Display Name",
+              "errorMessage": "Required input"
+            },
+            {
+              "type": "Input.Text",
+              "id": "description",
+              "placeholder": "enter comment",
+              "maxLength": 500,
+              "isMultiline": true,
+              "isRequired": true,
+              "label":"Description",
+              "errorMessage": "Required input"
+            },
+            {
+              "type": "Input.ChoiceSet",
+              "id": "templateType",
+              "style": "expanded",
+              "isMultiSelect": false,
+              "isRequired": true,
+              "label":"What Template type do you want?",
+              "errorMessage": "Required input",
+              "value": "standard",
+              "choices": [
+                {
+                  "title": "Standard",
+                  "value": "standard"
+                },
+                {
+                  "title": "Education - Class Team",
+                  "value": "educationClass"
+                },
+                {
+                  "title": "Education - Staff Team",
+                  "value": "educationStaff"
+                },
+                {
+                  "title": "Education - PLC team",
+                  "value": "educationPLC"
+                },
+                {
+                  "title": "Retail - Store",
+                  "value": "retailStore"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Send Request",
+      "id": "Submit",
+      "data":{
+        "description": "{{description.value}}",
+        "type": "{{type.value}}",
+        "displayName": "{{displayName.value}}",
+        "templateType": "{{templateType.value}}"
+      }
+    }
+  ]
+}
