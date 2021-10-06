@@ -60,7 +60,7 @@ Roughly based on the samples provided by the [Adaptive Card documentation](https
 
 - Agenda
 
-![Create Team](./assets/CreateTEam.gif)
+![Create Team](./assets/demo.gif)
 
 To design your own adaptive cards to use with an Adaptive Card Extension check out the [Adaptive Card designer](https://adaptivecards.io/designer/)
 
