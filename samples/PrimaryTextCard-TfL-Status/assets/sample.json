@@ -1,0 +1,52 @@
+[
+  {
+    "name": "pnp-sp-fx-aces-ace-cardgallery",
+    "source": "pnp",
+    "title": "Status of London Transport Services",
+    "shortDescription": "Adaptive Card displays of London Train services and status",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/master/samples/PrimaryTextCard-TfL-Status",
+    "longDescription": [
+      "ACE with multiple card and quick views to display the status of London Train services and allows the user to mark a train line as their favourite with that data using Microsoft Graph."
+    ],
+    "created": "2021-10-06",
+    "modified": "2021-10-06",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.13.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/PrimaryTextCard-TfL-Status/assets/demo.gif",
+        "alt": "London Transport"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "anoopt",
+        "company": "Content+Cloud",
+        "pictureUrl": "https://github.com/anoopt.png",
+        "name": "Anoop Tatti",
+        "twitter": "anooptells"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  }
+]
