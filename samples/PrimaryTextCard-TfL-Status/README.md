@@ -57,8 +57,8 @@ Version|Date|Comments
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
-  - **npm install**
-  - **gulp serve**
+  - `npm install`
+  - `gulp serve`
 - Edit the properties of ACE to include the name of an open extension (e.g. `.com.tenantname.favline`)
 
 
