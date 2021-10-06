@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "planner-tasks-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/plannerTasks/PlannerTasksAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/plannerTasks/PlannerTasksAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PlannerTasksAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/plannerTasks/loc/{locale}.js"
+  }
+}

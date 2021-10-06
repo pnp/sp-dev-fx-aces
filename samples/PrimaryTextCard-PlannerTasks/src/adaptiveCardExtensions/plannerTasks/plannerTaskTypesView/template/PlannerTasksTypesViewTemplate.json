@@ -1,0 +1,67 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.3",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "$data": "${taskTypes}",
+      "separator": true,
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Image",
+              "url": "${icon}",
+              "height": "22px"
+            }
+          ],
+          "width": "auto"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "RichTextBlock",
+              "inlines": [
+                {
+                  "type": "TextRun",
+                  "text": "${title} (${count})",
+                  "color": "${if(id == 'overdue' , 'attention', 'accent')}",
+                  "wrap": true,                                    
+                  "size": "medium"
+                }
+              ]
+            }
+          ],
+          "width": "stretch"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "id": "${id}",
+                  "type": "Action.Submit",
+                  "title": "View",
+                  "style": "default",
+                  "data": {
+                    "id": "${id}",
+                    "action": "view"
+                  }
+                }
+              ]
+            }
+          ],
+          "width": "90px",
+          "height": "stretch",
+          "spacing": "None",
+          "horizontalAlignment": "Center"
+        }
+      ]
+    }
+  ]
+}
