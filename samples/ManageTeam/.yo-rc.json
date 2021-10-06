@@ -1,0 +1,14 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": true,
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.13.0-beta.17",
+    "libraryName": "manage-team",
+    "libraryId": "cfe72a90-6319-4ad2-b810-0aabc6532da2",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "templateType": "Basic"
+  }
+}
