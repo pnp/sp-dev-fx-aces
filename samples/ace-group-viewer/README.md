@@ -1,4 +1,4 @@
-# ace-group-viewer
+# Group Viewer
 
 ## Summary
 
@@ -8,7 +8,7 @@ This adaptive card extension sample will load the group and group members of the
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![SPFx 1.13](https://img.shields.io/badge/version-1.13-green.svg)
 
 ## Applies to
 
@@ -67,8 +67,6 @@ This extension illustrates the following concepts:
 
 - Using PnPJS to call Microsoft Graph to gather group information and members for the current group site the Adaptive Card Extension is placed on.
 - Iterate array content in an adaptive card.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
 ## References
 
