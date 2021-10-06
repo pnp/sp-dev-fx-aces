@@ -1,6 +1,6 @@
 [
   {
-    "name": "pnp-sp-fx-aces-ace-arctilecontent",
+    "name": "pnp-sp-fx-aces-ace-articlecontent",
     "source": "pnp",
     "title": "Article Content at a glance",
     "shortDescription": "Adaptive Card displays of Article Content",
