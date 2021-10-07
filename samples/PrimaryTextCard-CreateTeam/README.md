@@ -5,7 +5,7 @@
 This solution provides a team provision feature based on default templates using Graph API and ACEs 
 >See [Features](#Features) section for individual listing of samples.
 
-![Create Team](./assets/CreateTEam.gif)
+![Create Team](./assets/demo.gif)
 
 ## Used SharePoint Framework Version
 
