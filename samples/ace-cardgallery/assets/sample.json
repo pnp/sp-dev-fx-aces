@@ -29,7 +29,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/ace-cardgallery/assets/acegallery.gif",
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/ace-cardgallery/assets/acegallery.gif",
         "alt": "Gallery of 11 samples"
       }
     ],

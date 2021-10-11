@@ -29,7 +29,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/master/samples/PrimaryTextCard-CreateTeam/assets/demo.gif",
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-CreateTeam/assets/demo.gif",
         "alt": "Create a Team"
       }
     ],
