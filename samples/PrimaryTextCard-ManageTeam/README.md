@@ -1,7 +1,7 @@
-# Block Sign-In for Team Member
+# Display and Manage Team
 
 ## Summary
-> Display all team members who directly reports me using Graph API in ACEs card View with two button.
+> Display all team members who directly reports to me using Graph API in ACEs card View with two button.
 
 ![Card view with team members information](assets/ACEs2.gif)
 
