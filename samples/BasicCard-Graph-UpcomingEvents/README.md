@@ -4,7 +4,7 @@
 
 This adaptive card extension sample will load upcoming events for the current user. The user can use the quick view card to view more details of the event and use the button to open the event details page. 
 
-![picture of the ace in action](assets/preview.gif)
+![picture of the ace in action](assets/demo.gif)
 
 Event Page that loads in Outlook online
 
