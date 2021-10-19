@@ -14,6 +14,11 @@ Event Page that loads in Outlook online
 
 ![version](https://img.shields.io/badge/version-1.13-green.svg)
 
+## Permissions
+Microsoft Graph
+- Directory.Read.All
+- Calendars.Read
+
 ## Applies to
 
 - [SharePoint Framework](https://aka.ms/spfx)

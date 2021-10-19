@@ -5,6 +5,7 @@
     "id": "abee4ad0-2dc6-4923-b2bf-0e515b8ea8ef",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "developer": {
       "name": "",
@@ -13,8 +14,7 @@
       "termsOfUseUrl": "",
       "mpnId": ""
     },
-    "webApiPermissionRequests": [
-      {
+    "webApiPermissionRequests": [{
         "resource": "Microsoft Graph",
         "scope": "Directory.Read.All"
       },
