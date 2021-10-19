@@ -10,6 +10,12 @@ This adaptive card extension sample will load the group and group members of the
 
 ![SPFx 1.13](https://img.shields.io/badge/version-1.13-green.svg)
 
+## Permissions
+Microsoft Graph
+- Directory.Read.All
+- Group.Read.All
+- GroupMember.Read.All
+
 ## Applies to
 
 - [SharePoint Framework](https://aka.ms/spfx)
