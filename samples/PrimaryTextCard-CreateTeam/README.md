@@ -1,4 +1,4 @@
-# ace-cardgallery
+# Provision Microsoft Teams team from ACE
 
 ## Summary
 
