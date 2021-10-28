@@ -36,7 +36,7 @@ export class CardView extends BaseImageCardView<ITodaysLunchAdaptiveCardExtensio
 
     return {
       title: lunch.title,
-      primaryText: lunch.dishes,
+      primaryText: lunch.formattedDishes,
       imageUrl: lunch.picture, 
       iconProperty: icon
     };
@@ -44,9 +44,9 @@ export class CardView extends BaseImageCardView<ITodaysLunchAdaptiveCardExtensio
 
   public get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | undefined {
     return {
-      type: 'ExternalLink',
+      type: 'QuickView',
       parameters: {
-        target: 'https://www.bing.com'
+        view: QUICK_VIEW_REGISTRY_ID
       }
     };
   }

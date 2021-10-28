@@ -16,6 +16,7 @@ export interface ILunch {
     hasVeganDishes: boolean;
     picture: string;
     calories: number;
+    formattedDishes: string;
   }
   
   export class Lunch implements ILunch {
@@ -28,4 +29,10 @@ export interface ILunch {
       public picture: string = "",
       public calories: 0
     ) { }
+
+    public get formattedDishes(): string {
+      const dishesAsList: string[] = this.dishes.split(',');   
+      const dishesLi: string[] = dishesAsList.map(item => `- ${item.trim()}`);
+      return dishesLi.join('\r');
+    }
   }

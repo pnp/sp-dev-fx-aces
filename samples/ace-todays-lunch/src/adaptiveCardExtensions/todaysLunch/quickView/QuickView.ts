@@ -19,7 +19,7 @@ export class QuickView extends BaseAdaptiveCardView<
     return {
       subTitle: `Calories: ${lunch.calories}`,
       title: lunch.title,
-      description: lunch.dishes
+      description: lunch.formattedDishes
     };
   }
 
