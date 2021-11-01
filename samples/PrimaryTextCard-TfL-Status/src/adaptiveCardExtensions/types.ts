@@ -23,8 +23,11 @@ export type Line = {
     id: string;
     name: string;
     status: string;
+    severity: number;
     colour: string;
+    iconSvg: string;
     isFavourite?: boolean;
     favouriteIconSvg?: string;
-    style?: string;
+    statusStyle?: string;
+    columnStyle?: string;
 };

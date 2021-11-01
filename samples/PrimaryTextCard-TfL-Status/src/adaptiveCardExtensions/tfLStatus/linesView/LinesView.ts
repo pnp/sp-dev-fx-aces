@@ -3,6 +3,8 @@ import * as strings from 'TfLStatusAdaptiveCardExtensionStrings';
 import { Line } from '../../types';
 import { setFavouriteLine, star, starFilled } from '../tfl';
 import { CARD_VIEW_REGISTRY_ID, ITfLStatusAdaptiveCardExtensionProps, ITfLStatusAdaptiveCardExtensionState } from '../TfLStatusAdaptiveCardExtension';
+import { sortBy } from '@microsoft/sp-lodash-subset';
+
 
 export interface ILinesViewData {
   lines: Line[];
@@ -41,9 +43,14 @@ export class LinesView extends BaseAdaptiveCardView<
 
       currentFavouriteLine.isFavourite = !currentFavouriteLine.isFavourite;
       currentFavouriteLine.favouriteIconSvg = star;
+      currentFavouriteLine.columnStyle = "default";
 
       newFavouriteLine.isFavourite = !newFavouriteLine.isFavourite;
       newFavouriteLine.favouriteIconSvg = starFilled;
+      newFavouriteLine.columnStyle = "warning";
+
+      lines = sortBy(lines, l => l.severity);
+      lines = sortBy(lines, l => !l.isFavourite);
       
       this.setState({
         line: newFavouriteLine,
