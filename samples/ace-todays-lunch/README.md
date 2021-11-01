@@ -4,7 +4,9 @@
 
 This adaptive card extension sample renders information about Today´s lunch. Data is managed in a SharePoint list with a list item per day of the week. 
 
-![picture of the ace in action](assets/demo.gif)
+![picture of the ace in action](assets/demo.png)
+
+![SP List](assets/demo2.png)
 
 ## Used SharePoint Framework Version
 
