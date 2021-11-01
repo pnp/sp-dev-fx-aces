@@ -16,7 +16,6 @@
           "items": [
             {
               "type": "TextBlock",
-              "weight": "Bolder",
               "text": "${subTitle}",
               "wrap": true
             }
@@ -26,7 +25,18 @@
     },
     {
       "type": "TextBlock",
+      "text": "List of Dishes:",
+      "weight": "Bolder",
+      "wrap": true
+    },
+    {
+      "type": "TextBlock",
       "text": "${description}",
+      "wrap": true
+    },
+    {
+      "type": "TextBlock",
+      "text": "${calories}",
       "wrap": true
     }
   ]

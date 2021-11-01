@@ -36,7 +36,7 @@ export class CardView extends BaseImageCardView<ITodaysLunchAdaptiveCardExtensio
 
     return {
       title: lunch.title,
-      primaryText: lunch.formattedDishes,
+      primaryText: lunch.shortDescription,
       imageUrl: lunch.picture, 
       iconProperty: icon
     };

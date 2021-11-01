@@ -32,7 +32,7 @@ export default class TodaysLunchAdaptiveCardExtension extends BaseAdaptiveCardEx
     Logger.activeLogLevel = LogLevel.Info;
 
     this.state = {
-      todaysLunch: new Lunch(0, 'Loading', 'Loading dishes...', Weekday.Sunday, true, '', 0)
+      todaysLunch: new Lunch(0, 'Loading', 'Loading dishes...', '', '', Weekday.Sunday, true, '', 0)
     };
 
     todaysLunchService.init(this.context);

@@ -11,6 +11,8 @@ export enum Weekday {
 export interface ILunch {
     id: number;
     title: string;
+    shortDescription: string;
+    seeMore: string;
     dishes: string;
     weekday: Weekday;
     hasVeganDishes: boolean;
@@ -23,6 +25,8 @@ export interface ILunch {
     constructor(
       public id: number,
       public title: string = "",
+      public shortDescription: string = "",
+      public seeMore: string = "https://www.bing.com",
       public dishes: string = "",
       public weekday: Weekday = Weekday.Monday,
       public hasVeganDishes: boolean = true,

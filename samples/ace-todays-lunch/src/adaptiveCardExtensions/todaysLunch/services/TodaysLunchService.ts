@@ -41,7 +41,7 @@ export class TodaysLunchService implements ITodaysLunchService {
 
         const picture = `${row.LunchPicture.serverUrl}${row.LunchPicture.serverRelativeUrl}`; 
         const hasVegan: boolean = row['HasVeganDishes.value'] == '1';
-        const lunch = new Lunch(row.ID, row.Title, row.Dishes, row.Weekday, hasVegan, picture, row.Calories);
+        const lunch = new Lunch(row.ID, row.Title, row.ShortDescription, row.SeeMore, row.Dishes, row.Weekday, hasVegan, picture, row.Calories);
 
         return lunch;
     } catch (err) {

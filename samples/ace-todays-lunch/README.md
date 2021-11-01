@@ -28,6 +28,8 @@ This adaptive card extension sample renders information about Today´s lunch. Da
   - WeekDay: choice with the days of the week options
   - LunchPicture: image
   - Calories: number
+  - ShortDescription: text
+  - SeeMore: hyperlink
 
 ## Solution
 
@@ -63,6 +65,8 @@ This extension illustrates the following concepts:
 
 - Using PnPJS to get data from a SP List.
 - Using PnPJS RenderListDataAsStream with filters
+- Custom _QuickViewTemplate_ adaptive card
+- List format in an adaptive card _TextBlock_
 
 > Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
