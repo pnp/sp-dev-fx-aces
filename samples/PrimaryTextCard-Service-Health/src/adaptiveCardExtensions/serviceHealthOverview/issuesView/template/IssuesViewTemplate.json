@@ -10,8 +10,7 @@
       "columns": [
         {
           "type": "Column",
-          "width": "auto",
-          "minHeight": "30px",
+          "width": "50px",
           "verticalContentAlignment": "center",
           "items": [
             {
@@ -29,7 +28,7 @@
               "type": "TextBlock",
               "text": "${name}",
               "horizontalAlignment": "Left",
-              "size": "Large",
+              "size": "medium",
               "spacing": "medium",
               "wrap": true
             },
@@ -40,16 +39,14 @@
               "spacing": "None",
               "size": "medium",
               "isSubtle": true,
-              "color": "warning",
+              "color": "attention",
               "wrap": true
             }
           ]
         },
         {
           "type": "Column",
-          "width": "50px",
-          "minHeight": "30px",
-          "separator": true,
+          "width": "auto",
           "verticalContentAlignment": "center",
           "items": [
             {
