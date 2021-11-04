@@ -33,11 +33,13 @@ This adaptive card extension sample renders information about Today´s lunch. Da
   - ShortDescription: text
   - SeeMore: hyperlink
 
+Put sample data in the list.
+
 ## Solution
 
 Solution|Author(s)
 --------|---------
-ace-todays-lunch | Luis Mañez (MVP, [ClearPeople](http://www.clearpeople.com), @luismanez)
+ace-todays-lunch | Luis Mañez (MVP, [ClearPeople](http://www.clearpeople.com), [@luismanez](https://twitter.com/luismanez))
 
 ## Version history
 
