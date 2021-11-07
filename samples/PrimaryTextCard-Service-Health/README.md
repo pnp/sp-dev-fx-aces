@@ -32,6 +32,10 @@ This sample shows how to build an ACE with a card view and multiple quick views 
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
 
 
+## Permissions
+Microsoft Graph
+- ServiceHealth.Read.All
+
 ## Applies to
 
 - [SharePoint Framework](https://aka.ms/spfx)
