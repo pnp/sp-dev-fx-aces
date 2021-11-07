@@ -10,7 +10,6 @@ import { ErrorCardView } from './cardView/ErrorCardView';
 import { IssuesDetailsView } from './issuesDetailsView/IssuesDetailsView';
 import _ from 'lodash';
 import { InformationCardView } from './cardView/InformationCardView';
-import { getThemeColor } from '../themehelper';
 
 export interface IServiceHealthOverviewAdaptiveCardExtensionProps {
   title: string;
@@ -79,9 +78,6 @@ export default class ServiceHealthOverviewAdaptiveCardExtension extends BaseAdap
         return;
       }
 
-      // const fillColour = getThemeColor("themeLighterAlt").replace('#', '%23');
-      let actionIcon: string = require('./assets/arrow.svg');
-
       const services: Service[] =
         _(serviceHealthIssues.value)
           .groupBy('service')
@@ -92,11 +88,11 @@ export default class ServiceHealthOverviewAdaptiveCardExtension extends BaseAdap
               url: `https://admin.microsoft.com/#/servicehealth/:/alerts/${i.id}`
             })),
             numberOfIssues: `${items.length.toString()} issue${items.length > 1 ? 's' : ''}`,
-            serviceIcon: getIconForService(service),
-            actionIcon
-            // actionIcon: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M4 24C4 35.0457 12.9543 44 24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24ZM23.8661 32.6339C23.378 32.1457 23.378 31.3543 23.8661 30.8661L29.4822 25.25H15.25C14.5596 25.25 14 24.6904 14 24C14 23.3096 14.5596 22.75 15.25 22.75H29.4822L23.8661 17.1339C23.378 16.6457 23.378 15.8543 23.8661 15.3661C24.3543 14.878 25.1457 14.878 25.6339 15.3661L33.3839 23.1161C33.872 23.6043 33.872 24.3957 33.3839 24.8839L25.6339 32.6339C25.1457 33.122 24.3543 33.122 23.8661 32.6339Z' fill='${fillColour}'%3E%3C/path%3E%3C/svg%3E`
+            serviceIcon: getIconForService(service)
           }))
           .value();
+
+          console.debug("Service health issues grouped by service %o", services);
 
       this.setState({
         serviceHealthIssues,

@@ -18,6 +18,5 @@ export type Service = {
     name: string;
     issues: Issue[],
     numberOfIssues: string;
-    actionIcon?: string;
     serviceIcon?: string;
 };

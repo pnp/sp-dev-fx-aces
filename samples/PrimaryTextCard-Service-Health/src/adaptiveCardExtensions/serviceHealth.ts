@@ -46,8 +46,6 @@ export async function getHealthOverview(): Promise<ServiceHealthIssues> {
 }
 
 //TODO: Add icons for each service
-//or create svg in 'assets' folder 
-//and use them using require('./assets/icon_name.svg')
 
 export function getIconForService(servicename: string) {
     switch (servicename) {
