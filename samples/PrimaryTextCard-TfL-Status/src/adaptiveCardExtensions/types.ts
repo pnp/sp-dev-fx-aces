@@ -25,7 +25,7 @@ export type Line = {
     status: string;
     severity: number;
     colour: string;
-    iconSvg: string;
+    icon: string;
     isFavourite?: boolean;
     favouriteIconSvg?: string;
     statusStyle?: string;

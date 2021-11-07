@@ -49,7 +49,7 @@ export class LinesView extends BaseAdaptiveCardView<
       newFavouriteLine.favouriteIconSvg = starFilled;
       newFavouriteLine.columnStyle = "warning";
 
-      lines = sortBy(lines, l => l.severity);
+      lines = sortBy(lines, l => l.severity === 10);
       lines = sortBy(lines, l => !l.isFavourite);
       
       this.setState({

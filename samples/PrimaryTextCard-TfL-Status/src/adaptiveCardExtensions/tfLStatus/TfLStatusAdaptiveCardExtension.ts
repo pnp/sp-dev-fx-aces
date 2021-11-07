@@ -90,7 +90,7 @@ export default class TfLStatusAdaptiveCardExtension extends BaseAdaptiveCardExte
         return;
       }
 
-      lines = sortBy(lines, l => l.severity);
+      lines = sortBy(lines, l => l.severity === 10); //* Sort such that anything apart from Good Service (10) is at the top
       lines = sortBy(lines, l => !l.isFavourite);
 
       this.setState({

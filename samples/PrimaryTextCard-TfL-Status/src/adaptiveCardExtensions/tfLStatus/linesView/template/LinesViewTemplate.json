@@ -18,7 +18,7 @@
             {
               "type": "Image",
               "size": "Small",
-              "url": "${iconSvg}"
+              "url": "${icon}"
             }
           ]
         },
@@ -56,6 +56,7 @@
                 {
                   "type": "Action.Submit",
                   "iconUrl": "${favouriteIconSvg}",
+                  "style": "positive",
                   "data": {
                     "lineId": "${id}",
                     "action": "click"
