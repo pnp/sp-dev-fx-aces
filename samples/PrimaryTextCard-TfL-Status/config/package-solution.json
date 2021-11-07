@@ -12,7 +12,13 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": ""
-    }
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "User.ReadWrite"
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/spfx-ace-tfl-status.sppkg"
