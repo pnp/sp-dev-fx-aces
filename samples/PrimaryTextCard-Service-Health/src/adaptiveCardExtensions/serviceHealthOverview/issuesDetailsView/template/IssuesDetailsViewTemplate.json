@@ -16,7 +16,7 @@
                 "type": "TextBlock",
                 "text": "${title}",
                 "horizontalAlignment": "Left",
-                "size": "Medium",
+                "size": "samll",
                 "spacing": "None",
                 "wrap": true
               }
@@ -25,7 +25,6 @@
           {
             "type": "Column",
             "width": "auto",
-            "minHeight": "30px",
             "verticalContentAlignment": "center",
             "items": [
               {

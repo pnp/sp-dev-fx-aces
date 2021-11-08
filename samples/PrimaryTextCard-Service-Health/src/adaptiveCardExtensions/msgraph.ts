@@ -21,7 +21,7 @@ export class MSGraph {
                 query = query.expand(expandProperties);
             }
             if(count) {
-                query = query.count(true)
+                query = query.count(true);
             }
             
             let callback = (error: GraphError, response: any, rawResponse?: any) => {

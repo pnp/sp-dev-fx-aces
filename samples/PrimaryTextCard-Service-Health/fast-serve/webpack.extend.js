@@ -3,11 +3,12 @@
 * Changes from this file will be merged into the base webpack configuration file.
 * This file will not be overwritten by the subsequent spfx-fast-serve calls.
 */
+const { NgrokServePlugin } = require("spfx-fast-serve-helpers");
 
 // you can add your project related webpack configuration here, it will be merged using webpack-merge module
 // i.e. plugins: [new webpack.Plugin()]
 const webpackConfig = {
-
+  plugins: [new NgrokServePlugin({ host: "hostname.ngrok.io" })]
 }
 
 // for even more fine-grained control, you can apply custom webpack settings using below function
