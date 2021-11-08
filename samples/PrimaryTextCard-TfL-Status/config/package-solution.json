@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-ace-tfl-status-client-side-solution",
     "id": "93db7268-7178-4e16-a5c4-e4657a509222",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "developer": {
@@ -12,7 +12,13 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": ""
-    }
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "User.ReadWrite"
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/spfx-ace-tfl-status.sppkg"
