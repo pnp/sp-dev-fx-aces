@@ -10,8 +10,7 @@
       "columns": [
         {
           "type": "Column",
-          "width": "auto",
-          "minHeight": "30px",
+          "width": "50px",
           "verticalContentAlignment": "center",
           "items": [
             {
@@ -29,7 +28,7 @@
               "type": "TextBlock",
               "text": "${name}",
               "horizontalAlignment": "Left",
-              "size": "Large",
+              "size": "medium",
               "spacing": "medium",
               "wrap": true
             },
@@ -40,16 +39,14 @@
               "spacing": "None",
               "size": "medium",
               "isSubtle": true,
-              "color": "warning",
+              "color": "attention",
               "wrap": true
             }
           ]
         },
         {
           "type": "Column",
-          "width": "50px",
-          "minHeight": "30px",
-          "separator": true,
+          "width": "auto",
           "verticalContentAlignment": "center",
           "items": [
             {
@@ -58,7 +55,7 @@
               "actions": [
                 {
                   "type": "Action.Submit",
-                  "iconUrl": "${actionIcon}",
+                  "iconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA7klEQVRYhe2XMQoCMRBFZZEtRTyViIiIeB8rT2BhKRYWIh5DRCw8jYjgszBFXFY3k53ZFfHXgffCZJJMoxEQIAHmwChkvWocfMkzN2BcJbwJrHlNNRIOviE/thJACmzfwO0lgFkB3FYCaAMHgYR+dwglrn8JT2JoIdESSgx+VkJajr6VxPEbJE6BEhegZyHRAc5lJZKSHnejtZ8TUYKuNjz0EOrWnzrbMAKudxEhvwX13oOIneu9iMKd635MHHwvgOt9zSLgEzW4E5jWBncCKbCrBe5JFA0mdvCMRN5oZg/PSKw8eHXDqSeRAAsL+AOo8BdGLKdH2gAAAABJRU5ErkJggg==",
                   "style":"positive",
                   "data": {
                     "service": "${name}",
