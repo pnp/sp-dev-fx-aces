@@ -7,8 +7,8 @@
   "longDescription": [
     "This adaptive card extension sample will load the calendar events from the logged in users Outlook Calendar. It leverages the Microsoft Graph to pull that data into the ACE. Requires Microsoft Graph Directory.Read.All and Calendars.Read permissions."
   ],
-  "created": "2021-09-29",
-  "modified": "2021-09-29",
+  "creationDateTime": "2021-09-29",
+  "updateDateTime": "2021-09-29",
   "products": [
     "SharePoint",
     "Office"

@@ -8,8 +8,8 @@
     "longDescription": [
       "Display all team members who directly reports to me using Graph API in ACEs card View with two button."
     ],
-    "created": "2021-10-06",
-    "modified": "2021-10-06",
+    "creationDateTime": "2021-10-06",
+    "updateDateTime": "2021-10-06",
     "products": [
       "SharePoint",
       "Office",

@@ -7,8 +7,8 @@
   "longDescription": [
     "Adaptive Card Extension that shows the lunch menu for the current day using a SharePoint List and PnPJs"
   ],
-  "created": "2021-10-28",
-  "modified": "2021-10-28",
+  "creationDateTime": "2021-10-28",
+  "updateDateTime": "2021-10-28",
   "products": [
     "SharePoint",
     "Office",

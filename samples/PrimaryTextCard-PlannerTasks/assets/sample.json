@@ -8,8 +8,8 @@
     "longDescription": [
       "ACE with a PrimaryText card view and multiple quick views to display the logged-in user Planner Tasks from all associated plans."
     ],
-    "created": "2021-10-06",
-    "modified": "2021-10-06",
+    "creationDateTime": "2021-10-06",
+    "updateDateTime": "2021-10-06",
     "products": [
       "SharePoint",
       "Office",
