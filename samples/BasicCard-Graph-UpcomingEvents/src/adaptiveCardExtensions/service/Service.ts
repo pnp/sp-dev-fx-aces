@@ -1,4 +1,6 @@
-import { graph } from "@pnp/graph/presets/all";
+import { graph } from "@pnp/graph";
+import '@pnp/graph/calendars';
+import '@pnp/graph/users';
 import { add, format } from 'date-fns';
 import { IEvent } from "../models/IEvent";
 
@@ -11,7 +13,8 @@ export class PnPService {
             days: days
         });
         console.log(futureDate);
-        const events = await graph.me.calendar.events.filter(`Start/DateTime ge '${today.toISOString()}' and End/DateTime le '${futureDate.toISOString()}'`).orderBy('Start/DateTime', true).get();
+        
+        const events = await graph.me.calendarView(today.toISOString(), futureDate.toISOString()).orderBy('Start/DateTime', true).get()
         events.map(event => {
             eventsArray.push(
                 {
