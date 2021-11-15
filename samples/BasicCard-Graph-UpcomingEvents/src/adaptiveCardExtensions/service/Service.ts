@@ -14,7 +14,7 @@ export class PnPService {
         });
         console.log(futureDate);
         
-        const events = await graph.me.calendarView(today.toISOString(), futureDate.toISOString()).orderBy('Start/DateTime', true).get()
+        const events = await graph.me.calendarView(today.toISOString(), futureDate.toISOString()).orderBy('Start/DateTime', true).get();
         events.map(event => {
             eventsArray.push(
                 {
