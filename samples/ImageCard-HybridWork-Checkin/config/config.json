@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "hybrid-work-checkin-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/hybridWorkCheckin/HybridWorkCheckinAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/hybridWorkCheckin/HybridWorkCheckinAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HybridWorkCheckinAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/hybridWorkCheckin/loc/{locale}.js"
+  }
+}
