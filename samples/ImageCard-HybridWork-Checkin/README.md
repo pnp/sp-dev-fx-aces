@@ -25,10 +25,14 @@ This solution provides a employee check-in feature in hybrid work scenario using
 
 ## Prerequisites
 
-> Create a SharePoint list with generic template and the following configurations. Keep the default title field as is.
-> List Name: Hybrid Work Employee Check in
-> Columns: Work Location(Choice-Remote, Office), Checkin Till (Date and Time), Is Vaccinated (Yes/No)
-> No Covid Symptoms	(Yes/No) 
+> Create a SharePoint list with generic template and the following configurations:
+- List Name: Hybrid Work Employee Check in
+
+> Columns: 
+- Work Location: Choice (Remote, Office)
+- Checkin Till (Date and Time)
+- Is Vaccinated (Yes/No)
+- No Covid Symptoms	(Yes/No) 
 
 ![List Configurations ](assets/SPListColumns.jpg)
 
@@ -59,7 +63,6 @@ Version|Date|Comments
 * in the command line run:
   * `npm install`
   * `gulp serve`
-
 
 ## Features
 
