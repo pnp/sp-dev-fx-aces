@@ -1,11 +1,10 @@
-# SharePoint Framework Viva Adaptive Card Extensions (ACEs) sample repository
+# Viva Connection Adaptive Card Extensions (ACEs) sample repository
 
-Repository for the SharePoint Framework Viva Adaptive Card (ACE) sample solutions from Microsoft and community.
-This repository contains community samples that demonstrate different usage patterns for the SharePoint Framework client-side web parts.
+Repository for the Viva Connections Viva Adaptive Card (ACE) sample solutions from Microsoft and community. ACEs are build using [SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/overview-viva-connections). This repository contains community samples that demonstrate different usage patterns for the SharePoint Framework client-side web parts.
 
 > We do welcome community contributions to the samples folder in this repository for demonstrating different use cases with SharePoint Framework. Notice that if you use 3rd party libraries, please make sure that library license allows distributions of it as part of your sample.
 
-SharePoint Viva Adaptive Card Extensions are cards that can be added to a special SharePoint page type called a `Dashboard` and that appear inside a SharePoint but run locally in the browser. They're the building blocks of pages that appear on a SharePoint site.
+Viva Connections Adaptive Card Extensions are cards that can be exposed through the Viva Connections Desktop or Mobile experiences. They're the building blocks of pages that appear on a SharePoint site.
 
 ## Have issues or questions?
 
@@ -16,6 +15,8 @@ Please use following logic on submitting your questions or issues to right locat
 
 ## Additional resources
 
+* [Getting started on building extensibility for Viva Connections](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/overview-viva-connections)
+* [Microsoft Learn: Extend Microsoft Viva Connections](https://docs.microsoft.com/en-us/learn/paths/m365-extend-viva-connections/)
 * [Overview of the SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
 * [SharePoint Framework development tools and libraries](https://docs.microsoft.com/sharepoint/dev/spfx/tools-and-libraries)
 * [Getting Started](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)

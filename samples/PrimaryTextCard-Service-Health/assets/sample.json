@@ -7,8 +7,8 @@
   "longDescription": [
     "ACE with a card view and multiple quick views to display the status of the affected services in a Microsft 365 tenant."
   ],
-  "created": "2021-10-06",
-  "modified": "2021-10-28",
+  "creationDateTime": "2021-10-06",
+  "updateDateTime": "2021-10-28",
   "products": [
     "SharePoint",
     "Office",

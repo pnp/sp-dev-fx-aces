@@ -8,8 +8,8 @@
     "longDescription": [
       "ACE that provisions a Microsoft Teams team baed on templates using the Microsoft Graph API."
     ],
-    "created": "2021-10-06",
-    "modified": "2021-10-06",
+    "creationDateTime": "2021-10-06",
+    "updateDateTime": "2021-10-06",
     "products": [
       "SharePoint",
       "Office",

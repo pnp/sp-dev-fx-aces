@@ -9,6 +9,7 @@ import { ErrorCardView } from './cardView/ErrorCardView';
 import { SetupCardView } from './cardView/SetupCardView';
 import { isEmpty } from '@microsoft/sp-lodash-subset';
 import { MSGraph } from './msgraph';
+import { sortBy } from '@microsoft/sp-lodash-subset';
 
 
 export interface ITfLStatusAdaptiveCardExtensionProps {
@@ -77,7 +78,7 @@ export default class TfLStatusAdaptiveCardExtension extends BaseAdaptiveCardExte
         return;
       }
 
-      const lines: Line[] = tflLines.map(tl => mapLine(tl, favouriteLineId));
+      let lines: Line[] = tflLines.map(tl => mapLine(tl, favouriteLineId));
       const line: Line = favouriteLineId ? lines.find(tl => tl.id === favouriteLineId) : lines.find(tl => tl.id === "northern");
 
       if (line === null || line === undefined) {
@@ -88,6 +89,9 @@ export default class TfLStatusAdaptiveCardExtension extends BaseAdaptiveCardExte
         this.cardNavigator.replace(this.state.cardViewToRender);
         return;
       }
+
+      lines = sortBy(lines, l => l.severity === 10); //* Sort such that anything apart from Good Service (10) is at the top
+      lines = sortBy(lines, l => !l.isFavourite);
 
       this.setState({
         line,

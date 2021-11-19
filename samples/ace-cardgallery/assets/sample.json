@@ -7,8 +7,8 @@
   "longDescription": [
     "This solution provides a set of eleven (11) Adaptive Card Extensions to demonstrate the various features that can be implemented roughly based on the samples provided by the Adaptive Card documentation."
   ],
-  "created": "2021-09-28",
-  "modified": "2021-09-28",
+  "creationDateTime": "2021-09-28",
+  "updateDateTime": "2021-09-28",
   "products": [
     "SharePoint",
     "Office",
