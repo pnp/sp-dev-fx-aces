@@ -31,7 +31,25 @@
         "order": 100,
         "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ManageTeam/assets/demo.gif",
         "alt": "Manage my Team"
-      }
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ManageTeam/assets/ACEs2.gif",
+        "alt": "Manage my Team"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ManageTeam/assets/ACEs3.gif",
+        "alt": "Manage my Team"
+      },
+      {
+        "type": "image",
+        "order": 400,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ManageTeam/assets/ACEs4.gif",
+        "alt": "Manage my Team"
+      }        
     ],
     "authors": [
       {

@@ -29,7 +29,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/main/samples/ImageCard-At-a-glance/assets/demo.gif",
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-At-a-glance/assets/demo.gif",
         "alt": "London Transport"
       }
     ],

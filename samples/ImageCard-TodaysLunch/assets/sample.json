@@ -24,9 +24,8 @@
     }
   ],
   "thumbnails": [{
-    "type": "image",
     "order": 100,
-    "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/ImaceCard-TodaysLunch/assets/demo.png",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-TodaysLunch/assets/demo.png",
     "alt": "Today's Lunch ACE"
   }],
   "authors": [{
