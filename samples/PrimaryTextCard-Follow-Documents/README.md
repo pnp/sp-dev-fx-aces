@@ -11,15 +11,15 @@ This is a **Phase 3** project to make the full cycle of solutions using differen
 - **Phase 1** [Follow-Document-Command-Extension](https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-follow-document) SPFX extension where users are allow to select and manage Followed Document in Libraries to be used in this project. 
 
 Available features:
-- Click on ACE to redirect link.
+- ACE redirect link.
 - Display Follow Documents as "Slider" or "List" view.
 - Usage of Mockup data for testing.
 - Click on Site name redirect to Site.
-- Click on site name redirect to File.
+- Click on File name redirect to File.
 - Team icon, link to send message with file link to Teams. 
-- Folder Icon redirects to Library where document is located.
-- Info icon open the Properties of Document with capability to edit.
-- Document with search icon allow to preview Document in below Panel. 
+- Folder icon, redirect to Library where document is located.
+- Info icon, open the properties page of Document.
+- Document with search icon allow to preview Document. 
 
 Usage of following Technologies:
 - Usage of Graph queries using  [Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
