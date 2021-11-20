@@ -1,0 +1,128 @@
+# PrimaryTextCard-Follow-Documents
+
+## Summary
+
+This example shows how to build an ACE with multiple card and quick views to get current user "Follow Documents" marked by **SharePoint social feature** and align with existing features from brother WebPart Solution described below.
+
+The sample uses **Microsoft Graph queries** to retrieve user social information of followed files and generate Thumbnails with links to support access to files.
+
+This is a **Phase 3** project to make the full cycle of solutions using different capabilities from SPFX Framework:
+- **Phase 2** [Follow-Document-WebPart](https://github.com/pnp/sp-dev-fx-webparts/tree/main/samples/react-follow-document) SPFX webPart helps to easily identify/follow user key documents from all Tenant and easily access them in Modern Pages and Microsoft Teams.
+- **Phase 1** [Follow-Document-Command-Extension](https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-follow-document) SPFX extension where users are allow to select and manage Followed Document in Libraries to be used in this project. 
+
+Available features:
+- Click on ACE to redirect link.
+- Display Follow Documents as "Slider" or "List" view.
+- Usage of Mockup data for testing.
+- Click on Site name redirect to Site.
+- Click on site name redirect to File.
+- Team icon, link to send message with file link to Teams. 
+- Folder Icon redirects to Library where document is located.
+- Info icon open the Properties of Document with capability to edit.
+- Document with search icon allow to preview Document in below Panel. 
+
+Usage of following Technologies:
+- Usage of Graph queries using  [Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
+- Usage of  [adaptive cards](https://adaptivecards.io/)
+
+### Demo
+#### SharePoint Workbench preview
+
+![demo](./assets/FollowDocumentACE.gif)
+
+## Used SharePoint Framework Version
+
+![version](https://img.shields.io/badge/version-1.13-green.svg)
+
+## Applies to
+
+- [SharePoint Framework](https://aka.ms/spfx)
+- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+
+> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
+
+## Prerequisites
+
+### Grant the service principal permission to the Microsoft Graph API
+
+Once installed, the solution will request the required permissions via the **Office 365 admin portal > SharePoint > Advanced > API access**.
+If you prefer to approve the permissions in advance, for example when testing the solution in the Workbench page without installing it, you can do so using the [CLI for Microsoft 365](https://pnp.github.io/cli-microsoft365/):
+
+```bash
+o365 spo login https://contoso-admin.sharepoint.com
+o365 spo serviceprincipal grant add --resource 'Microsoft Graph' --scope 'Files.Read.All'
+o365 spo serviceprincipal grant add --resource 'Microsoft Graph' --scope 'Sites.Read.All'
+```
+
+## Solution
+
+Solution|Author(s)
+--------|---------
+PrimaryTextCard-Follow-Documents | André Lage ([@aaclage](https://twitter.com/aaclage)) Datalynx AG
+
+## Version history
+
+Version|Date|Comments
+-------|----|--------
+1.0| November 20, 2021|Initial release
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+---
+
+## Minimal Path to Awesome
+
+- Clone this repository
+- Ensure that you are at the solution folder
+- in the command-line run:
+  - **npm install**
+- After that create the sppkg file using
+  - **gulp bundle --ship**
+  - **gulp package-solution --ship**
+- Deploy the package to the app catalogue site in your tenant
+- The solution needs Microsoft Graph API permissions. Please follow **Prerequisites** chapter
+- in the command-line run:
+  - **gulp serve -l --nobrowser**
+- Open the workbench page (https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx)
+- Add the ACE to the page
+- Edit the properties of ACE to include the name of an open extension (e.g. `com.tenantname.favline`)
+
+## Features
+
+Description of the extension that expands upon high-level summary above.
+
+This extension illustrates the following concepts:
+
+**ACE Properties:**
+- Include custom Link to redirect from ACE WebPart
+- Select View "Slider or List" with asssociated adaptative Card
+- Mockup Data (dummy data for test if no follow document is selected)
+
+**ACE WebPart "Follow" button:**
+- **Slider View:**
+- Display files as gallery
+  - Site name where file is located and link to site
+  - File name and link to File to open in the web
+  - Slider to rotate Files with associated counting
+- 5 additional support options 
+  - Teams icon - Share to Teams link with file url reference
+  - Folder icon - Link to folder where file is located
+  - Info icon - Link to file properties page
+  - Download icon - Link to download file
+  - Preview icon - Expand/collapse of thumbnail of file (generated by Microsoft Graph)
+ - **List View:**
+ - List files 
+   - Display icon of File
+   - File Title and link to open in the web
+   - Folder icon - Link to folder where file is located
+  
+## References
+
+- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
+- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
+- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
+- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+- [Tutorial to create ACE](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)
