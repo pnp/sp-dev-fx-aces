@@ -1,4 +1,4 @@
-# PrimaryTextCard-Follow-Documents
+# Follow Documents
 
 ## Summary
 
