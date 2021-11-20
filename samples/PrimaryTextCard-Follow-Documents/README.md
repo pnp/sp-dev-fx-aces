@@ -87,7 +87,7 @@ Version|Date|Comments
   - **gulp serve -l --nobrowser**
 - Open the workbench page (https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx)
 - Add the ACE to the page
-- Edit the properties of ACE to include the name of an open extension (e.g. `com.tenantname.favline`)
+- Edit the properties of ACE based on the user needs.
 
 ## Features
 
