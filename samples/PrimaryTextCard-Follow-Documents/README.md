@@ -1,4 +1,4 @@
-# Follow Documents
+# Follow Document
 
 ## Summary
 
