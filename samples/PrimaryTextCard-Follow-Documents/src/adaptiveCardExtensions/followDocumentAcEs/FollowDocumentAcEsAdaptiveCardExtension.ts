@@ -253,16 +253,51 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
   }
 
   private getFollowDocumentsLinkWeb = async (graphData): Promise<any> => {
-    const GraphService: Graph = new Graph();
-    graphData.forEach(async (element, index) => {
-      const Item = await GraphService.getGraphContent(`https://graph.microsoft.com/v1.0/sites/${element.SiteId}/Drive/items/${element.ItemId}?$select=id,webUrl,content.downloadUrl&$expand=thumbnails`, this.context);
-      if (element.ItemId === Item.id) {
-        element.WebFileUrl = Item.webUrl;
-        element.DownloadFile = Item["@microsoft.graph.downloadUrl"];
-        element.fields.Thumbnail = Item.thumbnails[0].large.url;
-      }
-    });
-
+    let HeaderDriveItemsId = {
+      "requests": []
+    };
+    let count = 1;
+    let Items = [];
+    let data = [];
+    const graphService: Graph = new Graph();
+    const initialized = await graphService.initialize(this.context.serviceScope);
+    if (initialized) {
+      graphData.forEach(async (element, index) => {
+        if (count < 16) {
+          HeaderDriveItemsId.requests.push({
+            "url": `/sites/${element.SiteId}/Drive/items/${element.ItemId}?$select=id,webUrl,content.downloadUrl&$expand=thumbnails`,
+            "method": "GET",
+            "id": count
+          });
+          count++;
+        } else if (count === 16) {
+          Items.push(HeaderDriveItemsId);
+          HeaderDriveItemsId = {
+            "requests": []
+          };
+          count = 1;
+        }
+        if (index === graphData.length - 1) {
+          Items.push(HeaderDriveItemsId);
+          HeaderDriveItemsId = {
+            "requests": []
+          };
+          count = 1;
+        }
+      });
+      Items.forEach(async (element) => {
+        const tmpDriveItems:any = await graphService.postGraphContent("https://graph.microsoft.com/v1.0/$batch", element);
+        tmpDriveItems.responses.forEach(async (DriveItem:any) => {
+          graphData.forEach(async (data:any) => {
+            if (DriveItem.body.id === data.ItemId) {
+              data.WebFileUrl = DriveItem.body.webUrl;
+              data.DownloadFile = DriveItem.body["@microsoft.graph.downloadUrl"];
+              data.fields.Thumbnail = DriveItem.body.thumbnails.length > 0 ? DriveItem.body.thumbnails[0].large.url : "";
+            }
+          });
+        });
+      });
+    }
     return graphData;
   }
 
