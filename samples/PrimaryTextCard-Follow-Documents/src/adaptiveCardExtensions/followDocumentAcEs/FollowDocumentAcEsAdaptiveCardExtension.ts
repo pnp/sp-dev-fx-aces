@@ -263,25 +263,31 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
     const initialized = await graphService.initialize(this.context.serviceScope);
     if (initialized) {
       graphData.forEach(async (element, index) => {
-        if (count < 16) {
+        if (count < 21) {
           HeaderDriveItemsId.requests.push({
             "url": `/sites/${element.SiteId}/Drive/items/${element.ItemId}?$select=id,webUrl,content.downloadUrl&$expand=thumbnails`,
             "method": "GET",
             "id": count
           });
           count++;
-        } else if (count === 16) {
+        } else if (count === 21) {
           Items.push(HeaderDriveItemsId);
           HeaderDriveItemsId = {
             "requests": []
-          };
+            };
           count = 1;
+          HeaderDriveItemsId.requests.push({
+            "url": `/sites/${element.SiteId}/Drive/items/${element.ItemId}?$select=id,webUrl,content.downloadUrl&$expand=thumbnails`,
+            "method": "GET",
+            "id": count
+          });
+          count++;
         }
         if (index === graphData.length - 1) {
           Items.push(HeaderDriveItemsId);
           HeaderDriveItemsId = {
             "requests": []
-          };
+            };
           count = 1;
         }
       });
