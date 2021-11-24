@@ -2,6 +2,7 @@ import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@micr
 import * as strings from 'FollowDocumentAcEsAdaptiveCardExtensionStrings';
 import { IFollowDocumentAcEsAdaptiveCardExtensionProps, IFollowDocumentAcEsAdaptiveCardExtensionState } from '../FollowDocumentAcEsAdaptiveCardExtension';
 import { FollowDocument } from '../models/followDocument';
+import Rest from '../Service/Rest';
 
 export interface IQuickViewData {
   followDocuments: FollowDocument | FollowDocument[];
@@ -23,7 +24,7 @@ export class QuickView extends BaseAdaptiveCardView<
         followDocuments: FollowDocuments,
         Total: this.state.followDocuments.length == undefined ? 1 : this.state.followDocuments.length,
       };
-    }else{
+    } else {
       return {
         followDocuments: this.state.followDocuments,
       };
@@ -38,7 +39,7 @@ export class QuickView extends BaseAdaptiveCardView<
   public async onAction(action: IActionArguments): Promise<void> {
     try {
       if (action.type === 'Submit') {
-        const { id, newIndex } = action.data;
+        const { id, newIndex, Url, Web } = action.data;
         if (id === 'previous') {
           let idx = this.state.ID;
 
@@ -55,6 +56,26 @@ export class QuickView extends BaseAdaptiveCardView<
             idx = (this.state.followDocuments.length == undefined ? 1 : this.state.followDocuments.length);
           }
           this.setState({ ID: idx });
+        }
+        if (id === 'unfollow') {
+          const restService: Rest = new Rest();
+          const Status = await restService.stopfollowing(
+            this.context.spHttpClient,
+            Url,
+            Web,
+          );
+          if (Status === true) {
+            let data = [];
+            this.state.followDocuments.forEach(element => {
+              if (element.fields["Url"] !== Url) {
+                data.push(element);
+              }
+            });
+            this.setState({
+              followDocuments: data,
+              ID: 1,
+            });
+          }
         }
       }
     } catch (err) {

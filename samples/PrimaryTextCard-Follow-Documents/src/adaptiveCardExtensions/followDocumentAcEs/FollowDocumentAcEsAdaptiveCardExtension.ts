@@ -258,7 +258,6 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
     };
     let count = 1;
     let Items = [];
-    let data = [];
     const graphService: Graph = new Graph();
     const initialized = await graphService.initialize(this.context.serviceScope);
     if (initialized) {
@@ -274,7 +273,7 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
           Items.push(HeaderDriveItemsId);
           HeaderDriveItemsId = {
             "requests": []
-            };
+          };
           count = 1;
           HeaderDriveItemsId.requests.push({
             "url": `/sites/${element.SiteId}/Drive/items/${element.ItemId}?$select=id,webUrl,content.downloadUrl&$expand=thumbnails`,
@@ -287,7 +286,7 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
           Items.push(HeaderDriveItemsId);
           HeaderDriveItemsId = {
             "requests": []
-            };
+          };
           count = 1;
         }
       });
