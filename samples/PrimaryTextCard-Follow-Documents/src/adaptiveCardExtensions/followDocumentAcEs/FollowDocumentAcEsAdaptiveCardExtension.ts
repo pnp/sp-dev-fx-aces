@@ -61,7 +61,7 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
   private getFollowDocuments = async (followDocuments: FollowDocument[]): Promise<any> => {
     const graphService: Graph = new Graph();
     let graphData: any = [];
-    graphData = await graphService.getGraphContent(`https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference`, this.context);
+    graphData = await graphService.getGraphContent(`https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference&Top=1000`, this.context);
     graphData.value.forEach(data => {
       
       let followDocument: FollowDocument = {
