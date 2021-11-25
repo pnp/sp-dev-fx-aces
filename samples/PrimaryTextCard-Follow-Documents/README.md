@@ -2,13 +2,9 @@
 
 ## Summary
 
-This example shows how to build an ACE with multiple card and quick views to get current user "Follow Documents" marked by **SharePoint social feature** and align with existing features from brother WebPart Solution described below.
+This example shows how to build an ACE with multiple card and quick views to get current user "Follow Documents" marked by in Office 365 Homepage.
 
-The sample uses **Microsoft Graph queries** to retrieve user social information of followed files and generate Thumbnails with links to support access to files.
-
-This is a **Phase 3** project to make the full cycle of solutions using different capabilities from SPFX Framework:
-- **Phase 2** [Follow-Document-WebPart](https://github.com/pnp/sp-dev-fx-webparts/tree/main/samples/react-follow-document) SPFX webPart helps to easily identify/follow user key documents from all Tenant and easily access them in Modern Pages and Microsoft Teams.
-- **Phase 1** [Follow-Document-Command-Extension](https://github.com/pnp/sp-dev-fx-extensions/tree/main/samples/react-command-follow-document) SPFX extension where users are allow to select and manage Followed Document in Libraries to be used in this project. 
+The sample uses **Microsoft Graph queries** to retrieve user **"Follow"** information of followed files and generate Thumbnails with links to support access to files.
 
 Available features:
 - ACE redirect link.
@@ -27,6 +23,11 @@ Usage of following Technologies:
 - Usage of  [adaptive cards](https://adaptivecards.io/)
 
 ### Demo
+
+### Add Files as Favorites in Office Home Page
+
+![demo](./assets/FollowDocumentACE1.gif)
+
 #### SharePoint Workbench preview
 
 ![demo](./assets/FollowDocumentACE.gif)
@@ -53,6 +54,8 @@ If you prefer to approve the permissions in advance, for example when testing th
 o365 spo login https://contoso-admin.sharepoint.com
 o365 spo serviceprincipal grant add --resource 'Microsoft Graph' --scope 'Files.Read.All'
 o365 spo serviceprincipal grant add --resource 'Microsoft Graph' --scope 'Sites.Read.All'
+o365 spo serviceprincipal grant add --resource 'Microsoft Graph' --scope 'Files.ReadWrite'
+o365 spo serviceprincipal grant add --resource 'Microsoft Graph' --scope 'Sites.ReadWrite.All'
 ```
 
 ## Solution

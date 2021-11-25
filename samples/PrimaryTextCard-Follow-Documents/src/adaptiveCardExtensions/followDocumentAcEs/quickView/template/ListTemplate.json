@@ -10,14 +10,14 @@
             "columns": [
                 {
                     "type": "Column",
-                    "width": "35px",
+                    "width": "25px",
                     "horizontalAlignment": "Center",
                     "verticalContentAlignment": "Center",
                     "items": [
                         {
                             "type": "Image",
-                            "size": "Small",
-                            "url": "${fields.IconUrl}"
+                            "url": "${IconUrl}",
+                            "width": "25px"
                         }
                     ]
                 },
@@ -28,7 +28,7 @@
                     "items": [
                         {
                             "type": "TextBlock",
-                            "text": "${fields.Title}",
+                            "text": "${Title}",
                             "horizontalAlignment": "Left",
                             "size": "Medium",
                             "wrap": true
@@ -69,8 +69,8 @@
                                 "title": "unfollow",
                                 "data": {
                                     "id": "unfollow",
-                                    "Web": "${WebUrl}",
-                                    "Url": "${fields.Url}"
+                                    "DriveID": "${DriveId}",
+                                    "ItemID": "${ItemId}"
                                 }
                             }
                         }

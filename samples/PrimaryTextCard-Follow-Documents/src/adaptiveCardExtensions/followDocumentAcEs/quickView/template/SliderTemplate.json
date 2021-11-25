@@ -84,7 +84,7 @@
                                 {
                                     "type": "Image",
                                     "horizontalAlignment": "Center",
-                                    "url": "${followDocuments.fields.IconUrl}",
+                                    "url": "${followDocuments.IconUrl}",
                                     "selectAction": {
                                         "type": "Action.OpenUrl",
                                         "url": "${followDocuments.WebFileUrl}"
@@ -92,7 +92,7 @@
                                 },
                                 {
                                     "type": "TextBlock",
-                                    "text": "${followDocuments.fields.Title}",
+                                    "text": "${followDocuments.Title}",
                                     "horizontalAlignment": "Center",
                                     "size": "Medium",
                                     "height": "stretch",
@@ -157,7 +157,7 @@
                                     "type": "Image",
                                     "selectAction": {
                                         "type": "Action.OpenUrl",
-                                        "url": "https://teams.microsoft.com/share?href=${followDocuments.fields.Url}&referrer=${followDocuments.Domain}",
+                                        "url": "https://teams.microsoft.com/share?href=${followDocuments.Url}&referrer=${followDocuments.Domain}",
                                         "title": "Share with Teams",
                                         "tooltip": "Share with Teams"
                                     },
@@ -199,8 +199,8 @@
                                         "title": "unfollow",
                                         "data": {
                                             "id": "unfollow",
-                                            "Web": "${followDocuments.WebUrl}",
-                                            "Url": "${followDocuments.fields.Url}"
+                                            "DriveID": "${followDocuments.DriveId}",
+                                            "ItemID": "${followDocuments.ItemId}"
                                         }
                                     }
                                 }
@@ -303,12 +303,12 @@
             "items": [
                 {
                     "type": "TextBlock",
-                    "text": "${followDocuments.fields.Title}",
+                    "text": "${followDocuments.Title}",
                     "wrap": true
                 },
                 {
                     "type": "Image",
-                    "url": "${followDocuments.fields.Thumbnail}",
+                    "url": "${followDocuments.Thumbnail}",
                     "separator": true,
                     "selectAction": {
                         "type": "Action.OpenUrl",

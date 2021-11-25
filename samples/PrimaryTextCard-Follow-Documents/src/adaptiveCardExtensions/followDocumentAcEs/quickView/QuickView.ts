@@ -2,7 +2,7 @@ import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@micr
 import * as strings from 'FollowDocumentAcEsAdaptiveCardExtensionStrings';
 import { IFollowDocumentAcEsAdaptiveCardExtensionProps, IFollowDocumentAcEsAdaptiveCardExtensionState } from '../FollowDocumentAcEsAdaptiveCardExtension';
 import { FollowDocument } from '../models/followDocument';
-import Rest from '../Service/Rest';
+import Graph from "../Service/GraphService";
 
 export interface IQuickViewData {
   followDocuments: FollowDocument | FollowDocument[];
@@ -39,7 +39,7 @@ export class QuickView extends BaseAdaptiveCardView<
   public async onAction(action: IActionArguments): Promise<void> {
     try {
       if (action.type === 'Submit') {
-        const { id, newIndex, Url, Web } = action.data;
+        const { id, newIndex, DriveID, ItemID } = action.data;
         if (id === 'previous') {
           let idx = this.state.ID;
 
@@ -58,23 +58,22 @@ export class QuickView extends BaseAdaptiveCardView<
           this.setState({ ID: idx });
         }
         if (id === 'unfollow') {
-          const restService: Rest = new Rest();
-          const Status = await restService.stopfollowing(
-            this.context.spHttpClient,
-            Url,
-            Web,
-          );
-          if (Status === true) {
-            let data = [];
-            this.state.followDocuments.forEach(element => {
-              if (element.fields["Url"] !== Url) {
-                data.push(element);
-              }
-            });
-            this.setState({
-              followDocuments: data,
-              ID: 1,
-            });
+          const graphService: Graph = new Graph();
+          const initialized = await graphService.initialize(this.context.serviceScope);
+          if (initialized) {
+            const graphData: any = await graphService.postGraphContent(`https://graph.microsoft.com/v1.0/drives/${DriveID}/items/${ItemID}/unfollow`, "");
+            if (graphData === undefined) {
+              let data = [];
+              this.state.followDocuments.forEach(element => {
+                if (element.ItemId !== ItemID) {
+                  data.push(element);
+                }
+              });
+              this.setState({
+                followDocuments: data,
+                ID: 1,
+              });
+            }
           }
         }
       }
