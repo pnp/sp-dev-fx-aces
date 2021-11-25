@@ -34,7 +34,10 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
 
   public onInit(): Promise<void> {
     let followDocuments: FollowDocument[] = [];
-    return this.getFollowDocuments(followDocuments).then((Items) => {
+    return this.getFollowDocuments(followDocuments).then((Items: FollowDocument[]) => {
+      Items = Items.sort((a, b) => {
+        return b.followedDateTime.getTime() - a.followedDateTime.getTime();
+      });
       if (this.properties.MockupData == true) {
         followDocuments = require("../mocks/QuickViewTemplate.json");
       } else {
@@ -61,7 +64,7 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
   private getFollowDocuments = async (followDocuments: FollowDocument[]): Promise<any> => {
     const graphService: Graph = new Graph();
     let graphData: any = [];
-    graphData = await graphService.getGraphContent(`https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference&Top=1000`, this.context);
+      graphData = await graphService.getGraphContent(`https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference,followed&Top=1000`, this.context);
     graphData.value.forEach(data => {
       
       let followDocument: FollowDocument = {
@@ -69,6 +72,7 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
         Title: data.name,
         WebFileUrl: data.webUrl,
         DriveId: data.parentReference.driveId,
+        followedDateTime: new Date(data.followed.followedDateTime),
       } as FollowDocument;
       this.GetIcon(data.name).then(icon => {
         followDocument.IconUrl = this.context.pageContext.web.absoluteUrl+ "/_layouts/images/" +icon;

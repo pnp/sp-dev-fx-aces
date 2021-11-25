@@ -30,8 +30,7 @@
                             "type": "TextBlock",
                             "text": "${Title}",
                             "horizontalAlignment": "Left",
-                            "size": "Medium",
-                            "wrap": true
+                            "size": "Medium"
                         }
                     ],
                     "selectAction": {
@@ -74,7 +73,8 @@
                                 }
                             }
                         }
-                    ]
+                    ],
+                    "verticalContentAlignment": "Center"
                 }
             ]
         }

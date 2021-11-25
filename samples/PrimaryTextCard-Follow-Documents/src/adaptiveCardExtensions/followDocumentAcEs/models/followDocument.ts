@@ -16,4 +16,5 @@ export interface FollowDocument {
     DownloadFile?: string;
     Thumbnail?: string;
     IconUrl?: string;
+    followedDateTime?: Date;
   }
