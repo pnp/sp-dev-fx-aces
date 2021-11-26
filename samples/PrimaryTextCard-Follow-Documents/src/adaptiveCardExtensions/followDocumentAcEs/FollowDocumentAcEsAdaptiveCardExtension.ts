@@ -153,7 +153,7 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
       let uniq = {};
       let uniqueArray = [];
       uniqueArray = followDocuments.filter(obj => !uniq[obj.SiteId] && (uniq[obj.SiteId] = true));
-      const requests = this.getBatchRequest(uniqueArray, "/sites/{SiteId}?$select=id,siteCollection,webUrl,name");
+      const requests = this.getBatchRequest(uniqueArray, "/sites/{SiteId}?$select=id,siteCollection,webUrl,name,displayName");
       for (let index = 0; index < requests.length; index++) {
         const graphData = await graphService.postGraphContent("https://graph.microsoft.com/v1.0/$batch", requests[index]);
         graphData.responses.forEach((data: any) => {
@@ -161,7 +161,7 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
             if (followDocument.SiteId === data.body.id && (followDocument.Domain === undefined || followDocument.Domain === "")) {
               followDocument.Domain = data.body.siteCollection.hostname;
               followDocument.WebUrl = data.body.webUrl;
-              followDocument.WebName = data.body.name;
+              followDocument.WebName = (data.body.name !== ""? data.body.name : data.body.displayName);
               items.push(followDocument);
             }
           });
