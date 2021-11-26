@@ -3,6 +3,7 @@ import * as strings from 'FollowDocumentAcEsAdaptiveCardExtensionStrings';
 import { IFollowDocumentAcEsAdaptiveCardExtensionProps, IFollowDocumentAcEsAdaptiveCardExtensionState } from '../FollowDocumentAcEsAdaptiveCardExtension';
 import { FollowDocument } from '../models/followDocument';
 import Graph from "../Service/GraphService";
+import FollowDocumentsService from "../Service/FollowDocumentsService";
 
 export interface IQuickViewData {
   followDocuments: FollowDocument | FollowDocument[];
@@ -75,6 +76,20 @@ export class QuickView extends BaseAdaptiveCardView<
               });
             }
           }
+        }
+        if (id === 'refresh') {
+          let followDocuments: FollowDocument[] = [];
+          const followDocumentsService: FollowDocumentsService = new FollowDocumentsService();
+          followDocumentsService.getFollowDocuments(followDocuments, this.context).then((Items: FollowDocument[]) => {
+            Items = Items.sort((a, b) => {
+              return b.followedDateTime.getTime() - a.followedDateTime.getTime();
+            });
+            followDocuments = Items;
+            this.setState({
+              followDocuments: followDocuments,
+              ID: 1,
+            });
+          });
         }
       }
     } catch (err) {
