@@ -64,22 +64,24 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
   private getFollowDocuments = async (followDocuments: FollowDocument[]): Promise<any> => {
     const graphService: Graph = new Graph();
     let graphData: any = [];
-      graphData = await graphService.getGraphContent(`https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference,followed&Top=1000`, this.context);
-    graphData.value.forEach(data => {
-      
-      let followDocument: FollowDocument = {
-        ItemId: data.id,
-        Title: data.name,
-        WebFileUrl: data.webUrl,
-        DriveId: data.parentReference.driveId,
-        followedDateTime: new Date(data.followed.followedDateTime),
-      } as FollowDocument;
-      this.GetIcon(data.name).then(icon => {
-        followDocument.IconUrl = this.context.pageContext.web.absoluteUrl+ "/_layouts/images/" +icon;
+    graphData = await graphService.getGraphContent(`https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference,followed&Top=1000`, this.context);
+    if (graphData.value !== undefined) {
+      graphData.value.forEach(data => {
+
+        let followDocument: FollowDocument = {
+          ItemId: data.id,
+          Title: data.name,
+          WebFileUrl: data.webUrl,
+          DriveId: data.parentReference.driveId,
+          followedDateTime: new Date(data.followed.followedDateTime),
+        } as FollowDocument;
+        this.GetIcon(data.name).then(icon => {
+          followDocument.IconUrl = this.context.pageContext.web.absoluteUrl + "/_layouts/images/" + icon;
+        });
+        followDocuments.push(followDocument);
       });
-      followDocuments.push(followDocument);
-    });
-    followDocuments = await this.getList(followDocuments);
+      followDocuments = await this.getList(followDocuments);
+    }
     return followDocuments;
   }
 
@@ -88,7 +90,10 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
     const graphService: Graph = new Graph();
     const initialized = await graphService.initialize(this.context.serviceScope);
     if (initialized) {
-      const requests = this.getBatchRequest(followDocuments, "/me/drives/{driveId}/list?select=id,webUrl,parentReference");
+      let uniq = {};
+      let uniqueArray = [];
+      uniqueArray = followDocuments.filter(obj => !uniq[obj.DriveId] && (uniq[obj.DriveId] = true));
+      const requests = this.getBatchRequest(uniqueArray, "/me/drives/{driveId}/list?select=id,webUrl,parentReference");
       for (let index = 0; index < requests.length; index++) {
         const graphData: any = await graphService.postGraphContent("https://graph.microsoft.com/v1.0/$batch", requests[index]);
         graphData.responses.forEach((data: any) => {
@@ -97,7 +102,7 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
               data.body["@odata.context"].indexOf("drives('") + 8,
               data.body["@odata.context"].lastIndexOf("'")
             ));
-            if (followDocument.DriveId === driveId && followDocument.Folder === undefined) {
+            if (followDocument.DriveId === driveId && (followDocument.Folder === undefined || followDocument.Folder === "")) {
               followDocument.ListId = data.body.id;
               followDocument.Folder = data.body.webUrl;
               followDocument.ItemProperties = data.body.webUrl + "/Forms/dispForm.aspx?ID=";
@@ -145,12 +150,15 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
     let items: FollowDocument[] = [];
     const initialized = await graphService.initialize(this.context.serviceScope);
     if (initialized) {
-      const requests = this.getBatchRequest(followDocuments, "/sites/{SiteId}?$select=id,siteCollection,webUrl,name");
+      let uniq = {};
+      let uniqueArray = [];
+      uniqueArray = followDocuments.filter(obj => !uniq[obj.SiteId] && (uniq[obj.SiteId] = true));
+      const requests = this.getBatchRequest(uniqueArray, "/sites/{SiteId}?$select=id,siteCollection,webUrl,name");
       for (let index = 0; index < requests.length; index++) {
         const graphData = await graphService.postGraphContent("https://graph.microsoft.com/v1.0/$batch", requests[index]);
         graphData.responses.forEach((data: any) => {
           followDocuments.forEach((followDocument: FollowDocument) => {
-            if (followDocument.SiteId === data.body.id && followDocument.Domain === undefined) {
+            if (followDocument.SiteId === data.body.id && (followDocument.Domain === undefined || followDocument.Domain === "")) {
               followDocument.Domain = data.body.siteCollection.hostname;
               followDocument.WebUrl = data.body.webUrl;
               followDocument.WebName = data.body.name;
