@@ -6,7 +6,8 @@ import Graph from "../Service/GraphService";
 import FollowDocumentsService from "../Service/FollowDocumentsService";
 
 export interface IQuickViewData {
-  followDocuments: FollowDocument | FollowDocument[];
+  SearchfollowDocuments?: FollowDocument | FollowDocument[];
+  searchText?: string;
   ID?: number;
   Total?: number;
 }
@@ -19,15 +20,33 @@ export class QuickView extends BaseAdaptiveCardView<
   private LOG_SOURCE: string = "🔶 Follow Documents";
   public get data(): IQuickViewData {
     if (this.properties.view === "Slider" || this.properties.view === undefined) {
-      const FollowDocuments = (this.state.followDocuments.length == undefined ? this.state.followDocuments : this.state.followDocuments[this.state.ID - 1]);
+      let filter: FollowDocument[] = [];
+      if (this.state.SearchText !== "") {
+        filter = this.state.followDocuments.filter(item => {
+          return item.Title.toLowerCase().indexOf(this.state.SearchText.toLowerCase()) > -1;
+        });
+      } else {
+        filter = this.state.followDocuments;
+      }
+
       return {
         ID: this.state.ID,
-        followDocuments: FollowDocuments,
-        Total: this.state.followDocuments.length == undefined ? 1 : this.state.followDocuments.length,
+        Total: filter.length === 0 ? 1 : filter.length,
+        searchText: this.state.SearchText,
+        SearchfollowDocuments: filter.length === 0 ? this.state.followDocuments[this.state.ID - 1] : filter[this.state.ID - 1],
       };
     } else {
+      let filter: FollowDocument[] = [];
+      if (this.state.SearchText !== "") {
+        filter = this.state.followDocuments.filter(item => {
+          return item.Title.toLowerCase().indexOf(this.state.SearchText.toLowerCase()) > -1;
+        });
+      } else {
+        filter = this.state.followDocuments;
+      }
       return {
-        followDocuments: this.state.followDocuments,
+        searchText: this.state.SearchText,
+        SearchfollowDocuments: filter,
       };
     }
 
@@ -40,7 +59,7 @@ export class QuickView extends BaseAdaptiveCardView<
   public async onAction(action: IActionArguments): Promise<void> {
     try {
       if (action.type === 'Submit') {
-        const { id, newIndex, DriveID, ItemID } = action.data;
+        const { id, SearchText, DriveID, ItemID } = action.data;
         if (id === 'previous') {
           let idx = this.state.ID;
 
@@ -56,7 +75,10 @@ export class QuickView extends BaseAdaptiveCardView<
           if (idx > (this.state.followDocuments.length == undefined ? 1 : this.state.followDocuments.length)) {
             idx = (this.state.followDocuments.length == undefined ? 1 : this.state.followDocuments.length);
           }
-          this.setState({ ID: idx });
+          this.setState({
+            ID: idx,
+            SearchText: action.data.SearchText === undefined || action.data.SearchText === "{{SearchText.value}}" ? "" : action.data.SearchText,
+          });
         }
         if (id === 'unfollow') {
           const graphService: Graph = new Graph();
@@ -73,6 +95,7 @@ export class QuickView extends BaseAdaptiveCardView<
               this.setState({
                 followDocuments: data,
                 ID: 1,
+                SearchText: action.data.SearchText === undefined || action.data.SearchText === "{{SearchText.value}}" ? "" : action.data.SearchText,
               });
             }
           }
@@ -89,6 +112,13 @@ export class QuickView extends BaseAdaptiveCardView<
               followDocuments: followDocuments,
               ID: 1,
             });
+          });
+        }
+        if (id === 'Search') {
+          let SearchText = action.data.SearchText === undefined ? "" : action.data.SearchText;
+          this.setState({
+            SearchText: SearchText,
+            ID: 1,
           });
         }
       }

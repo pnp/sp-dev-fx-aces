@@ -19,6 +19,7 @@ export interface IFollowDocumentAcEsAdaptiveCardExtensionProps {
 
 export interface IFollowDocumentAcEsAdaptiveCardExtensionState {
   followDocuments: FollowDocument[];
+  SearchText?: string;
   ID: number;
 }
 
@@ -50,6 +51,7 @@ export default class FollowDocumentAcEsAdaptiveCardExtension extends BaseAdaptiv
 
       this.state = {
         ID: 1,
+        SearchText: "",
         followDocuments: followDocuments,
       };
 

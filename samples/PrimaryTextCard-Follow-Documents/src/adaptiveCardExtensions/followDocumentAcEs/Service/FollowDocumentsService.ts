@@ -5,7 +5,7 @@ import { AdaptiveCardExtensionContext } from '@microsoft/sp-adaptive-card-extens
 
 export default class FollowDocumentsService {
   private _context: AdaptiveCardExtensionContext;
-  public getFollowDocuments = async (followDocuments: FollowDocument[],context: AdaptiveCardExtensionContext): Promise<any> => {
+  public getFollowDocuments = async (followDocuments: FollowDocument[], context: AdaptiveCardExtensionContext): Promise<any> => {
     this._context = context;
     const graphService: Graph = new Graph();
     let graphData: any = [];
@@ -47,9 +47,8 @@ export default class FollowDocumentsService {
               data.body["@odata.context"].indexOf("drives('") + 8,
               data.body["@odata.context"].lastIndexOf("'")
             ));
-            if (followDocument.DriveId === driveId && (followDocument.Folder === undefined || followDocument.Folder === "")) {
+            if (followDocument.DriveId === driveId && (followDocument.ListId === undefined || followDocument.ListId === "")) {
               followDocument.ListId = data.body.id;
-              followDocument.Folder = data.body.webUrl;
               followDocument.ItemProperties = data.body.webUrl + "/Forms/dispForm.aspx?ID=";
               followDocument.SiteId = data.body.parentReference.siteId;
               items.push(followDocument);
@@ -77,6 +76,7 @@ export default class FollowDocumentsService {
             if (followDocument.ItemId === data.body.id && followDocument.Url === undefined) {
               followDocument.id = data.body.listItem.id;
               followDocument.Url = data.body.listItem.webUrl;
+              followDocument.Folder = data.body.listItem.webUrl.substring(0, data.body.listItem.webUrl.lastIndexOf("/") + 1);
               followDocument.ItemProperties = followDocument.ItemProperties + data.body.listItem.id;
               followDocument.DownloadFile = data.body["@microsoft.graph.downloadUrl"];
               followDocument.Thumbnail = data.body.thumbnails.length > 0 ? data.body.thumbnails[0].large.url : "";

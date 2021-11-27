@@ -4,6 +4,49 @@
     "version": "1.3",
     "body": [
         {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Text",
+                            "placeholder": "Search file name",
+                            "id": "SearchText",
+                            "inlineAction": {
+                                "type": "Action.Submit",
+                                "iconUrl": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1344 0q97 0 187 25t168 71 142 110 111 143 71 168 25 187q0 97-25 187t-71 168-110 142-143 111-168 71-187 25q-125 0-239-42t-211-121l-785 784q-19 19-45 19t-45-19-19-45q0-26 19-45l784-785q-79-96-121-210t-42-240q0-97 25-187t71-168 110-142T989 96t168-71 187-25zm0 1280q119 0 224-45t183-124 123-183 46-224q0-119-45-224t-124-183-183-123-224-46q-119 0-224 45T937 297 814 480t-46 224q0 119 45 224t124 183 183 123 224 46z\" ></path></svg>",
+                                "data": {
+                                    "id": "Search"
+                                }
+                            },
+                            "value": "{searchText}"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1297 38q166 45 304 140t237 226 155 289 55 331q0 141-36 272t-103 245-160 207-208 160-245 103-272 37q-141 0-272-36t-245-103-207-160-160-208-103-244-37-273q0-140 37-272t105-248 167-212 221-164H256V0h512v512H640V215q-117 56-211 140T267 545 164 773t-36 251q0 123 32 237t90 214 141 182 181 140 214 91 238 32q123 0 237-32t214-90 182-141 140-181 91-214 32-238q0-150-48-289t-136-253-207-197-266-124l34-123z\" ></path></svg>",
+                            "width": "25px",
+                            "selectAction": {
+                                "type": "Action.Submit",
+                                "data": {
+                                    "id": "refresh"
+                                }
+                            },
+                            "altText": "Refresh"
+                        }
+                    ],
+                    "verticalContentAlignment": "Center"
+                }
+            ]
+        },
+        {
             "type": "Container",
             "items": [
                 {
@@ -14,7 +57,7 @@
                             "width": "auto",
                             "selectAction": {
                                 "type": "Action.OpenUrl",
-                                "url": "${followDocuments.WebUrl}"
+                                "url": "${SearchfollowDocuments.WebUrl}"
                             },
                             "items": [
                                 {
@@ -30,7 +73,7 @@
                             "items": [
                                 {
                                     "type": "TextBlock",
-                                    "text": "${followDocuments.WebName}",
+                                    "text": "${SearchfollowDocuments.WebName}",
                                     "wrap": true,
                                     "horizontalAlignment": "Left",
                                     "size": "Medium",
@@ -40,26 +83,8 @@
                             ],
                             "selectAction": {
                                 "type": "Action.OpenUrl",
-                                "url": "${followDocuments.WebUrl}"
+                                "url": "${SearchfollowDocuments.WebUrl}"
                             }
-                        },
-                        {
-                            "type": "Column",
-                            "width": "auto",
-                            "items": [
-                                {
-                                    "type": "Image",
-                                    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1297 38q166 45 304 140t237 226 155 289 55 331q0 141-36 272t-103 245-160 207-208 160-245 103-272 37q-141 0-272-36t-245-103-207-160-160-208-103-244-37-273q0-140 37-272t105-248 167-212 221-164H256V0h512v512H640V215q-117 56-211 140T267 545 164 773t-36 251q0 123 32 237t90 214 141 182 181 140 214 91 238 32q123 0 237-32t214-90 182-141 140-181 91-214 32-238q0-150-48-289t-136-253-207-197-266-124l34-123z\" ></path></svg>",
-                                    "width": "25px",
-                                    "selectAction": {
-                                        "type": "Action.Submit",
-                                        "data": {
-                                            "id": "refresh"
-                                        }
-                                    },
-                                    "altText": "Refresh"
-                                }
-                            ]
                         }
                     ],
                     "style": "default"
@@ -85,7 +110,8 @@
                                         "type": "Action.Submit",
                                         "title": "Previous",
                                         "data": {
-                                            "id": "previous"
+                                            "id": "previous",
+                                            "SearchText": "{{SearchText.value}}"
                                         }
                                     },
                                     "horizontalAlignment": "Left"
@@ -102,15 +128,15 @@
                                 {
                                     "type": "Image",
                                     "horizontalAlignment": "Center",
-                                    "url": "${followDocuments.IconUrl}",
+                                    "url": "${SearchfollowDocuments.IconUrl}",
                                     "selectAction": {
                                         "type": "Action.OpenUrl",
-                                        "url": "${followDocuments.WebFileUrl}"
+                                        "url": "${SearchfollowDocuments.WebFileUrl}"
                                     }
                                 },
                                 {
                                     "type": "TextBlock",
-                                    "text": "${followDocuments.Title}",
+                                    "text": "${SearchfollowDocuments.Title}",
                                     "horizontalAlignment": "Center",
                                     "size": "Medium",
                                     "height": "stretch",
@@ -120,7 +146,7 @@
                             ],
                             "selectAction": {
                                 "type": "Action.OpenUrl",
-                                "url": "${followDocuments.WebFileUrl}"
+                                "url": "${SearchfollowDocuments.WebFileUrl}"
                             }
                         },
                         {
@@ -136,7 +162,8 @@
                                         "type": "Action.Submit",
                                         "title": "Next",
                                         "data": {
-                                            "id": "next"
+                                            "id": "next",
+                                            "SearchText": "{{SearchText.value}}"
                                         }
                                     }
                                 }
@@ -175,7 +202,7 @@
                                     "type": "Image",
                                     "selectAction": {
                                         "type": "Action.OpenUrl",
-                                        "url": "https://teams.microsoft.com/share?href=${followDocuments.Url}&referrer=${followDocuments.Domain}",
+                                        "url": "https://teams.microsoft.com/share?href=${SearchfollowDocuments.Url}&referrer=${SearchfollowDocuments.Domain}",
                                         "title": "Share with Teams",
                                         "tooltip": "Share with Teams"
                                     },
@@ -196,7 +223,7 @@
                                     "width": "25px",
                                     "selectAction": {
                                         "type": "Action.OpenUrl",
-                                        "url": "${followDocuments.Folder}",
+                                        "url": "${SearchfollowDocuments.Folder}",
                                         "title": "Folder",
                                         "tooltip": "Folder"
                                     }
@@ -217,8 +244,9 @@
                                         "title": "unfollow",
                                         "data": {
                                             "id": "unfollow",
-                                            "DriveID": "${followDocuments.DriveId}",
-                                            "ItemID": "${followDocuments.ItemId}"
+                                            "DriveID": "${SearchfollowDocuments.DriveId}",
+                                            "ItemID": "${SearchfollowDocuments.ItemId}",
+                                            "SearchText": "{{SearchText.value}}"
                                         }
                                     }
                                 }
@@ -235,7 +263,7 @@
                                     "width": "25px",
                                     "selectAction": {
                                         "type": "Action.OpenUrl",
-                                        "url": "${followDocuments.ItemProperties}",
+                                        "url": "${SearchfollowDocuments.ItemProperties}",
                                         "title": "File Properties",
                                         "tooltip": "File Properties"
                                     }
@@ -253,7 +281,7 @@
                                     "horizontalAlignment": "Center",
                                     "selectAction": {
                                         "type": "Action.OpenUrl",
-                                        "url": "${followDocuments.DownloadFile}",
+                                        "url": "${SearchfollowDocuments.DownloadFile}",
                                         "title": "Download file"
                                     }
                                 }
@@ -321,16 +349,16 @@
             "items": [
                 {
                     "type": "TextBlock",
-                    "text": "${followDocuments.Title}",
+                    "text": "${SearchfollowDocuments.Title}",
                     "wrap": true
                 },
                 {
                     "type": "Image",
-                    "url": "${followDocuments.Thumbnail}",
+                    "url": "${SearchfollowDocuments.Thumbnail}",
                     "separator": true,
                     "selectAction": {
                         "type": "Action.OpenUrl",
-                        "url": "${followDocuments.WebFileUrl}"
+                        "url": "${SearchfollowDocuments.WebFileUrl}"
                     }
                 }
             ],
