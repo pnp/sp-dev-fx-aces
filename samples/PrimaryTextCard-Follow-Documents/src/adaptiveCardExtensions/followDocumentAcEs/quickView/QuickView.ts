@@ -71,9 +71,17 @@ export class QuickView extends BaseAdaptiveCardView<
           this.setState({ ID: idx });
         } else if (id === 'next') {
           let idx = this.state.ID;
+          let totalfollowDocument: number = 0;
+          if (this.state.SearchText !== "") {
+            totalfollowDocument = this.state.followDocuments.filter(item => {
+              return item.Title.toLowerCase().indexOf(this.state.SearchText.toLowerCase()) > -1;
+            }).length;
+          } else {
+            totalfollowDocument = this.state.followDocuments.length;
+          }
           idx++;
-          if (idx > (this.state.followDocuments.length == undefined ? 1 : this.state.followDocuments.length)) {
-            idx = (this.state.followDocuments.length == undefined ? 1 : this.state.followDocuments.length);
+          if (idx > (totalfollowDocument == undefined ? 1 : totalfollowDocument)) {
+            idx = (totalfollowDocument == undefined ? 1 : totalfollowDocument);
           }
           this.setState({
             ID: idx,
@@ -115,9 +123,9 @@ export class QuickView extends BaseAdaptiveCardView<
           });
         }
         if (id === 'Search') {
-          let SearchText = action.data.SearchText === undefined ? "" : action.data.SearchText;
+          let searchText = action.data.SearchText === undefined ? "" : action.data.SearchText;
           this.setState({
-            SearchText: SearchText,
+            SearchText: searchText,
             ID: 1,
           });
         }
