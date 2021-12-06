@@ -23,7 +23,7 @@ Uses the MS graph to get unread emails in your inbox and displays that as a ACE
 
 Solution|Author(s)
 --------|---------
-BasicCard-Graph-UnreadEmails | Nick Brown @techienickb
+PrimaryTextCard-Graph-UnreadEmails | Nick Brown @techienickb
 
 ## Version history
 

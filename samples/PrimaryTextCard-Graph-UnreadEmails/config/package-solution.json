@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "basic-card-unread-emails-client-side-solution",
+    "name": "ace-unread-emails-spfx",
     "id": "3b7583e0-46e7-472e-a128-deed4be07243",
     "version": "1.0.0.0",
     "title": "Basic Unread Email ACE",
@@ -22,6 +22,6 @@
   ]
   },
   "paths": {
-    "zippedPackage": "solution/basic-card-unread-emails.sppkg"
+    "zippedPackage": "solution/ace-unread-emails.sppkg"
   }
 }
