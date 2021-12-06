@@ -3,6 +3,7 @@ import { CardView } from './cardView/CardView';
 import { UnreadEmailsPropertyPane } from './UnreadEmailsPropertyPane';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
 import { MSGraphClient } from '@microsoft/sp-http';
+import * as strings from 'UnreadEmailsAdaptiveCardExtensionStrings';
 
 export interface IUnreadEmailsAdaptiveCardExtensionProps {
   iconProperty: string;
@@ -33,7 +34,7 @@ export default class UnreadEmailsAdaptiveCardExtension extends BaseAdaptiveCardE
   }
 
   public get title(): string {
-    return this.state.unreadItemCount === -1 ? "Loading email count" : this.state.unreadItemCount > 0 ? "Unread Email" : "My Emails";
+    return strings.Loading.title;
   }
 
   protected get iconProperty(): string {

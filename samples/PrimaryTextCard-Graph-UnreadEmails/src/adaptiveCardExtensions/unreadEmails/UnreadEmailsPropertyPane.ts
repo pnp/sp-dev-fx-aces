@@ -13,7 +13,7 @@ export class UnreadEmailsPropertyPane {
                   groupFields: [
                     PropertyPaneTextField('iconProperty', {
                       label: strings.IconPropertyFieldLabel
-                    }),
+                    })
                   ]
                 }
               ]
