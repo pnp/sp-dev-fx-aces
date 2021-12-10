@@ -2,13 +2,19 @@
 
 ## Summary
 
-Uses the MS graph to get unread emails in your inbox and displays that as a ACE
+This Adaptive Card Extension uses the Microsoft Graph to get unread emails in your inbox and displays that as a ACE
 
-![screenshot](assets/screenshot.png)
+![screenshot](assets/demo.png)
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![version](https://img.shields.io/badge/version-1.13.1-green.svg)
+
+## Permissions
+
+Microsoft Graph
+
+- Mail.BasicRead
 
 ## Applies to
 
@@ -23,7 +29,7 @@ Uses the MS graph to get unread emails in your inbox and displays that as a ACE
 
 Solution|Author(s)
 --------|---------
-PrimaryTextCard-Graph-UnreadEmails | Nick Brown @techienickb
+PrimaryTextCard-Graph-UnreadEmails | [Nick Brown](https://github.com/techienickb) ([@techienickb](https://twitter.com/techienickb))
 
 ## Version history
 
@@ -41,15 +47,18 @@ Version|Date|Comments
 
 - Clone this repository
 - Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
-
-> You will need to import the ACE into the App Catalog to get the API approval for the graph Mail.BasicRead
->  - gulp bundle
->  - gulp package-solution
->  - add to app catalog
->  - Approve Mail.BasicRead API permissions
+    * in the command line run:
+      * `npm install`
+      * `gulp build --ship`
+      * `gulp bundle --ship`
+      * `gulp package-solution --ship`
+    * Browse to your SharePoint app catalog and load the SPFX package. 
+    * Browse to your SharePoint Admin Center and under advanced you will need to open Api Access and allow the requests for Microsoft Graph. 
+* If you have the APIs permissions already allowed you can follow the below steps.
+    * in the command line run:
+        * `npm install`
+        * `gulp serve --nobrowser`
+    * browse to your hosted workbench https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx and add the adaptive card extension.
 
 ## Features
 
@@ -58,6 +67,8 @@ This ACE displays an unread email count for the signed in user's inbox.  If no u
 This extension illustrates the following concepts:
 
 - Using the graph to display unread email count
+
+> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
 ## References
 
