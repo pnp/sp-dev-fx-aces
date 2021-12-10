@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-my-notifications-client-side-solution",
+    "id": "33b03676-9653-4cae-a548-abf355f9cfa2",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.13.0"
+    },
+    "webApiPermissionRequests": [
+      {
+      "resource": "Microsoft Graph",
+      "scope": "Sites.Read.All"
+    },
+    {
+      "resource": "Microsoft Graph",
+      "scope": "User.Read.All"
+    }
+  ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-my-notifications.sppkg"
+  }
+}

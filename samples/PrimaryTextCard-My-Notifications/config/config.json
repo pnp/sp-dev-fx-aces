@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "ace-my-notifications-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/aceMyNotifications/AceMyNotificationsAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/aceMyNotifications/AceMyNotificationsAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AceMyNotificationsAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/aceMyNotifications/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}
