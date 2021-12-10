@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "6296dc03-0b62-4fb0-848d-472ed0ece70c",
+  "alias": "UnreadEmailsAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": ["Dashboard"],
+  "supportsThemeVariants": true,
+  "preconfiguredEntries": [{
+    "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c",
+    "group": { "default": "Dashboard" },
+    "title": { "default": "Unread Emails" },
+    "description": { "default": "Displays a count of unread emails for the current user" },
+    "officeFabricIconFontName": "Mail",
+    "properties": {
+      "title": "Unread Emails",
+      "description": "Displays a count of unread emails for the current user",
+      "iconProperty": "Mail"
+    }
+  }]
+}
