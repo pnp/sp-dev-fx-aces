@@ -1,0 +1,17 @@
+declare interface ICovidIndicatorAdaptiveCardExtensionStrings {
+  PropertyPaneDescription: string;
+  BasicGroupName: string;
+  CountryFieldLabel: string;
+  TitleFieldLabel: string;
+  IconPropertyFieldLabel: string;
+  Title: string;
+  SubTitle: string;
+  Description: string;
+  PrimaryText: string;
+  QuickViewButton: string;
+}
+
+declare module 'CovidIndicatorAdaptiveCardExtensionStrings' {
+  const strings: ICovidIndicatorAdaptiveCardExtensionStrings;
+  export = strings;
+}
