@@ -3,12 +3,12 @@ import { sp } from "@pnp/sp";
 import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import { ISPFXContext } from "@pnp/common";
-import { ILunch, Lunch, Weekday } from "../models/ILunch";
+import { ILunch, ILunches, Lunch, Weekday } from "../models/ILunch";
 import { IRenderListDataParameters } from "@pnp/sp/lists";
 
 export interface ITodaysLunchService {
   init(context: ISPFXContext): void;
-  getTodaysLunch(): Promise<ILunch>;
+  getTodaysLunch(): Promise<ILunches>;
 }
 
 export class TodaysLunchService implements ITodaysLunchService {
@@ -25,10 +25,11 @@ export class TodaysLunchService implements ITodaysLunchService {
     }
   }
 
-  public async getTodaysLunch(): Promise<ILunch> {
+  public async getTodaysLunch(): Promise<ILunches> {
     try {
         const renderListDataParams: IRenderListDataParameters = {
-            ViewXml: "<View><RowLimit>1</RowLimit></View>", 
+            //ViewXml: "<View><RowLimit>1</RowLimit></View>",
+            ViewXml: "<View></View>", 
         };
 
         const query = new Map<string, string>();
@@ -37,13 +38,19 @@ export class TodaysLunchService implements ITodaysLunchService {
         query.set("FilterValue1", this._getTodayWeekday().toString());
         
         const data = await sp.web.lists.getByTitle('todayslunch').renderListDataAsStream(renderListDataParams, null, query);
-        const row = data.Row[0];
-
-        const picture = `${row.LunchPicture.serverUrl}${row.LunchPicture.serverRelativeUrl}`; 
-        const hasVegan: boolean = row['HasVeganDishes.value'] == '1';
-        const lunch = new Lunch(row.ID, row.Title, row.ShortDescription, row.SeeMore, row.Dishes, row.Weekday, hasVegan, picture, row.Calories);
-
-        return lunch;
+        const rows = data.Row;
+        let iLunchs: ILunches = { 
+          lunches: []
+        };
+        for (let index = 0; index < rows.length; index++) {
+          const row = rows[index];
+          const picture = `${row.LunchPicture.serverUrl}${row.LunchPicture.serverRelativeUrl}`; 
+          const hasVegan: boolean = row['HasVeganDishes.value'] == '1';
+          const lunch = new Lunch(row.ID, row.Title, row.ShortDescription, row.SeeMore, row.Dishes, row.Weekday, hasVegan, picture, row.Calories);
+          iLunchs.lunches.push(lunch);
+        }
+        Logger.write(`${this.LOG_SOURCE} (onAction) - ${iLunchs} - ${iLunchs.lunches}`, LogLevel.Info);
+        return iLunchs;
     } catch (err) {
       Logger.write(
         `${this.LOG_SOURCE} (init) - ${err.message}`,

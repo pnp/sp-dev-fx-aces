@@ -2,9 +2,10 @@
 
 ## Summary
 
-This adaptive card extension sample renders information about Today´s lunch. Data is managed in a SharePoint list with a list item per day of the week. 
+This adaptive card extension sample renders information about Today´s lunch. Data is managed in a SharePoint list with a list item per day of the week.
+It's possible to define more dishes in one day, they will appear in the adaptive card slider.
 
-![picture of the ace in action](assets/demo.png)
+![picture of the ace in action](assets/preview.gif)
 
 ![SP List](assets/demo2.png)
 
@@ -40,12 +41,14 @@ Put sample data in the list.
 Solution|Author(s)
 --------|---------
 ace-todays-lunch | Luis Mañez (MVP, [ClearPeople](http://www.clearpeople.com), [@luismanez](https://twitter.com/luismanez))
+ace-todays-lunch | Giuliano De Luca (MVP, [YouTube](http://www.youtube.com/giulianodeluca), [@delucagiulian](https://twitter.com/delucagiulian))
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0|October 28, 2021|Initial release
+1.0.1|December 13, 2021|New feature that allows to display in the adptive card slider more dishes in the same day
 
 ## Disclaimer
 
