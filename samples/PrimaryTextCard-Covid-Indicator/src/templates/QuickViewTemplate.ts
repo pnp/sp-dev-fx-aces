@@ -863,7 +863,22 @@ export const quickView = {
               }
           ],
           "isVisible": false
-      }
+      },
+      {
+        "type": "Container",
+
+        "spacing": "Large",
+        "items": [
+          {
+            "type": "TextBlock",
+            "text": "###### ${date}",
+            "wrap": true,
+            "height": "stretch",
+
+            "color": "Warning"
+        }
+        ]
+    }
   ]
 };
 

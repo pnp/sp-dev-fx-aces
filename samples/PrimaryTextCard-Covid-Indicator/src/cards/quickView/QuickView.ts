@@ -1,4 +1,6 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView } from "@microsoft/sp-adaptive-card-extension-base";
+import format from "date-fns/format";
+import parseISO from "date-fns/parseISO";
 import {
   ICovidIndicatorAdaptiveCardExtensionProps,
   ICovidIndicatorAdaptiveCardExtensionState,
@@ -32,6 +34,7 @@ export interface IQuickViewData {
   deaths: IDeaths;
   tests: ITests;
   flag: string;
+  date: string;
 }
 
 export class QuickView extends BaseAdaptiveCardView<
@@ -68,6 +71,7 @@ export class QuickView extends BaseAdaptiveCardView<
         total: countryData.tests.total.toLocaleString(),
       },
       flag: this.getFlag(countryData, "medium"),
+      date: format(parseISO(countryData.time), "PPp")
     };
     return {
       ...mapData,
