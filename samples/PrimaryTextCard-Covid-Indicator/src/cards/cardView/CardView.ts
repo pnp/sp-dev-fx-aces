@@ -16,13 +16,13 @@ import {
 import parseISO from "date-fns/parseISO";
 import format from "date-fns/format";
 const CARDDATA_TEMPLATE = `
-|               |             |
-| ------------- | ----------- |
+|                |       |
+| :------------- | ------|
 | ![Minion]({0}) |**{4}**|
 
-| Active:      |    **{1}**    |
-| ------------:| ------------: |
-|**New:**      |    **{2}**    |
+|Active:         |**{1}**|
+| :------------- | ------|
+|**New:**        |**{2}**|
  ###### {3}
 `;
 
