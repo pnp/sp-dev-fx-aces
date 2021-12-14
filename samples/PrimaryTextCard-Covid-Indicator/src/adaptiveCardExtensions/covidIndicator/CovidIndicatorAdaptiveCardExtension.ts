@@ -61,7 +61,7 @@ export default class CovidIndicatorAdaptiveCardExtension extends BaseAdaptiveCar
     this.timerId  = setInterval( async ()=>{
         console.log('run', new Date());
           await this.getData(newCountry);
-      },3600000);
+      },900000);
   }
 
   public get title(): string {
