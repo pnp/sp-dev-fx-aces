@@ -11,13 +11,16 @@ export const utils = () => {
        if (country === 'UK' && ct["alpha-2"] === "GB" ){
           return ct ;
        }
+       if (country === 'Russia' && ct["alpha-2"] === "RU" ){
+        return ct ;
+     }
        if (country === 'USA' && ct["alpha-3"] === "USA" ){
         return ct  ;
       }
       if( ct.name === country){
         return ct;
       }else{
-        return undefined;
+        return [];
       }
     });
     if (countryAllInfo.length){
