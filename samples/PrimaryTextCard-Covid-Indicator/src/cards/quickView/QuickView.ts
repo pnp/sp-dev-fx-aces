@@ -41,7 +41,7 @@ export class QuickView extends BaseAdaptiveCardView<
 > {
   private getFlag = utils().getFlag;
   public get data(): IQuickViewData {
-    const countryData = this.properties.countryInfo[0];
+    const countryData = this.state.countryInfo[0];
 
     const mapData: IQuickViewData = {
       country: countryData.country.toUpperCase(),

@@ -63,8 +63,8 @@ export class CardView extends BasePrimaryTextCardView<
     }
 
     return {
-      primaryText: (!this.properties.country || !this.properties.countryInfo) ?  "Select Contry" : "",
-      description: ( !this.properties.country || !this.properties.countryInfo) ? "Country not defined" :  cardData,
+      primaryText: (!this.properties.country  ) ?  "Select Contry" : "",
+      description: ( !this.properties.country ) ? "Country not defined" :  cardData,
     };
   }
 
