@@ -9,6 +9,8 @@ define([], function() {
     "SubTitle": "Quick View",
     "Description": "Create your SPFx Adaptive Card Extension solution!",
     "PrimaryText": "SPFx Adaptive Card Extension",
-    "QuickViewButton": "Quick View"
+    "QuickViewButton": "Quick View",
+    "SelecteCountryMessage": "Select Country",
+    "CountryNotDefined": "Country not defined"
   }
 });

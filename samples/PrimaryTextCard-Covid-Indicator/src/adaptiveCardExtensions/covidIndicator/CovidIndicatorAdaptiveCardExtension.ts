@@ -54,7 +54,7 @@ export default class CovidIndicatorAdaptiveCardExtension extends BaseAdaptiveCar
       console.log("run", new Date());
       await this.getData(newCountry);
     }, 900000);
-  };
+  }
 
   public get title(): string {
     return this.properties.title;
@@ -95,7 +95,7 @@ export default class CovidIndicatorAdaptiveCardExtension extends BaseAdaptiveCar
       this.flag = this.getFlag(countryData, "small");
       this.setState({ countryInfo: data.response, flag: this.flag });
     }
-  };
+  }
 
   protected onPropertyPaneFieldChanged = async (propertyPath: string, oldValue: any, newValue: any) => {
     super.onPropertyPaneFieldChanged(propertyPath, oldValue, newValue);
@@ -107,7 +107,7 @@ export default class CovidIndicatorAdaptiveCardExtension extends BaseAdaptiveCar
     }
     this.context.propertyPane.refresh();
     this.renderCard();
-  };
+  }
 
   protected loadPropertyPaneResources(): Promise<void> {
     return import(

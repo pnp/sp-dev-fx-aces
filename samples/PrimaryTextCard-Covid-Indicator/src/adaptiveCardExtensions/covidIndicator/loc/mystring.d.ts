@@ -9,6 +9,8 @@ declare interface ICovidIndicatorAdaptiveCardExtensionStrings {
   Description: string;
   PrimaryText: string;
   QuickViewButton: string;
+  SelecteCountryMessage:string;
+  CountryNotDefined:string;
 }
 
 declare module 'CovidIndicatorAdaptiveCardExtensionStrings' {
