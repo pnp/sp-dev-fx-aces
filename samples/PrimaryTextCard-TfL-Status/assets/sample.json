@@ -8,8 +8,8 @@
     "longDescription": [
       "ACE with multiple card and quick views to display the status of London Train services and allows the user to mark a train line as their favourite with that data using Microsoft Graph."
     ],
-    "created": "2021-10-06",
-    "modified": "2021-10-06",
+    "creationDateTime": "2021-10-06",
+    "updateDateTime": "2021-10-06",
     "products": [
       "SharePoint",
       "Office",

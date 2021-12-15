@@ -8,8 +8,8 @@
     "longDescription": [
       "ACE with multiple card views to show the first few sentences of an article in a SharePoint site"
     ],
-    "created": "2021-10-06",
-    "modified": "2021-10-06",
+    "creationDateTime": "2021-10-06",
+    "updateDateTime": "2021-10-06",
     "products": [
       "SharePoint",
       "Office",
@@ -29,7 +29,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/main/samples/ImageCard-At-a-glance/assets/demo.gif",
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-At-a-glance/assets/demo.gif",
         "alt": "London Transport"
       }
     ],

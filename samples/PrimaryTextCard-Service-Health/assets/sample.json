@@ -1,53 +1,44 @@
-[
-  {
-    "name": "pnp-sp-fx-aces-ace-servicehealth",
-    "source": "pnp",
-    "title": "Status of Tenant Service Helath",
-    "shortDescription": "Adaptive Card displays of Microsoft 365 Service Health",
-    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/master/samples/PrimaryTextCard-Service-Health",
-    "longDescription": [
-      "ACE with a card view and multiple quick views to display the status of the affected services in a Microsft 365 tenant."
-    ],
-    "created": "2021-10-06",
-    "modified": "2021-10-06",
-    "products": [
-      "SharePoint",
-      "Office",
-      "Viva"
-    ],
-    "metadata": [
-      {
-        "key": "CLIENT-SIDE-DEV",
-        "value": "React"
-      },
-      {
-        "key": "SPFX-VERSION",
-        "value": "1.13.0"
-      }
-    ],
-    "thumbnails": [
-      {
-        "type": "image",
-        "order": 100,
-        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-Service-Health/assets/demo.gif",
-        "alt": "London Transport"
-      }
-    ],
-    "authors": [
-      {
-        "gitHubAccount": "anoopt",
-        "company": "Content+Cloud",
-        "pictureUrl": "https://github.com/anoopt.png",
-        "name": "Anoop Tatti",
-        "twitter": "anooptells"
-      }
-    ],
-    "references": [
-      {
-        "name": "Viva Connections Extensibility guidance",
-        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
-        "url": "https://aka.ms/viva/connections/extensibility"
-      }
-    ]
-  }
-]
+[{
+  "name": "pnp-sp-fx-aces-ace-servicehealth",
+  "source": "pnp",
+  "title": "Status of Tenant Service Helath",
+  "shortDescription": "Adaptive Card displays of Microsoft 365 Service Health",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-Service-Health",
+  "longDescription": [
+    "ACE with a card view and multiple quick views to display the status of the affected services in a Microsft 365 tenant."
+  ],
+  "creationDateTime": "2021-10-06",
+  "updateDateTime": "2021-10-28",
+  "products": [
+    "SharePoint",
+    "Office",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.13.0"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-Service-Health/assets/demo.gif",
+    "alt": "London Transport"
+  }],
+  "authors": [{
+    "gitHubAccount": "anoopt",
+    "company": "Content+Cloud",
+    "pictureUrl": "https://github.com/anoopt.png",
+    "name": "Anoop Tatti",
+    "twitter": "anooptells"
+  }],
+  "references": [{
+    "name": "Viva Connections Extensibility guidance",
+    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+    "url": "https://aka.ms/viva/connections/extensibility"
+  }]
+}]

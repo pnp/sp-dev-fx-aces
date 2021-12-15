@@ -12,6 +12,12 @@ This sample shows how to build an ACE with a card view and multiple quick views 
 
 ### Demo
 
+#### Viva connections app (preview)
+
+![demo](./assets/demo_mobile_app.gif)
+
+#### Dashboard in the home site 
+
 ![demo](./assets/demo.gif)
 
 ### Screenshots of other cards
@@ -25,6 +31,10 @@ This sample shows how to build an ACE with a card view and multiple quick views 
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
 
+
+## Permissions
+Microsoft Graph
+- ServiceHealth.Read.All
 
 ## Applies to
 
@@ -48,6 +58,7 @@ Service-health | [Anoop Tatti](https://github.com/anoopt) ([https://linktr.ee/an
 Version|Date|Comments
 -------|----|--------
 1.0|September 12, 2021|Initial release
+1.1|November 1, 2021|Updated to SPFx 1.13.0, Minor UI updates
 
 ## Disclaimer
 

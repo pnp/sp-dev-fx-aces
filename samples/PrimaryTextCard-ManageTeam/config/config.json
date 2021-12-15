@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "my-team-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/myTeam/MyTeamAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/myTeam/MyTeamAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MyTeamAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/myTeam/loc/{locale}.js"
+  }
+}
