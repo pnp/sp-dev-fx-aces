@@ -117,4 +117,4 @@ Custom Async Dropdown control to show available plans
 - [Tutorial to create ACE](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)
 
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/ace-graph-plannertasks" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-PlannerTasks" />
