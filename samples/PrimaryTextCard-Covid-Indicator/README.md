@@ -2,7 +2,7 @@
 
 ## Summary
 
-This Adaptive Card Extension allow user select  an Country to get information about CONVID-19 . the data is retrived by REST API provided by https://rapidapi.com/api-sports/api/covid-193/ .
+This Adaptive Card Extension allow user select a country to get information about COVID-19 cases. The data is retrieved by REST API provided by https://rapidapi.com/api-sports/api/covid-193/ .
 
  The Data is updated every hour.
 
@@ -13,24 +13,19 @@ This Adaptive Card Extension allow user select  an Country to get information ab
 ![ace-covid](assets/covid02.png)
 
 ![ace-covid](assets/covid03.png)
+
 ## Compatibility
 
-![SPFx 1.13](https://img.shields.io/badge/SPFx-1.13.1-green.svg)
+![SPFx 1.13.1](https://img.shields.io/badge/SPFx-1.13.1-green.svg)
 ![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams")
 ![Workbench Local | Hosted](https://img.shields.io/badge/Workbench-Local%20%7C%20Hosted-green.svg)
 
-## Permissions
-
 ## Applies to
 
 - [SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
 - [Microsoft 365 tenant](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-development-environment)
-
-## Prerequisites
-
- 
 
 ## Solution
 
@@ -42,7 +37,7 @@ ACE-COVID-INDICATOR | [João Mendes](https://github.com/joaojmendes) ([@joaojmen
 
 Version|Date|Comments
 -------|----|--------
-1.0|Dezember 12, 2021|Initial release
+1.0|December 12, 2021|Initial release
 
 ## Disclaimer
 
