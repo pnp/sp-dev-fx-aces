@@ -25,14 +25,15 @@ It's possible to define more dishes in one day, they will appear in the adaptive
 ## Prerequisites
 
 > Create a SharePoint list named 'TodaysLunch' with the following fields:
-  - Title: text
-  - Dishes: text
-  - HasVeganDishes: yes/no
-  - WeekDay: choice with the days of the week options
-  - LunchPicture: image
-  - Calories: number
-  - ShortDescription: text
-  - SeeMore: hyperlink
+
+- Title: text
+- Dishes: text
+- HasVeganDishes: yes/no
+- WeekDay: choice with the days of the week options
+- LunchPicture: image
+- Calories: number
+- ShortDescription: text
+- SeeMore: hyperlink
 
 Put sample data in the list.
 
@@ -48,7 +49,7 @@ ace-todays-lunch | Giuliano De Luca (MVP, [YouTube](http://www.youtube.com/giuli
 Version|Date|Comments
 -------|----|--------
 1.0|October 28, 2021|Initial release
-1.0.1|December 13, 2021|New feature that allows to display in the adptive card slider more dishes in the same day
+1.0.1|December 13, 2021|New feature that allows to display in the adaptive card slider more dishes in the same day
 
 ## Disclaimer
 
