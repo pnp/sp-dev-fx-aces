@@ -1,0 +1,1 @@
+{"version":3,"file":"IListLastActivity.d.ts","sourceRoot":"","sources":["../../src/models/IListLastActivity.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,SAAS,EAAE,MAAM,eAAe,CAAC;AAC1C,OAAO,EAAE,sBAAsB,EAAE,MAAM,0BAA0B,CAAC;AAElE,MAAM,WAAW,iBAAiB;IAChC,QAAQ,EAAE,sBAAsB,CAAC;IACjC,UAAU,EAAE,SAAS,CAAC;CACvB"}
