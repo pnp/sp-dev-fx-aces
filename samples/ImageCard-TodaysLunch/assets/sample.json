@@ -8,7 +8,7 @@
     "Adaptive Card Extension that shows the lunch menu for the current day using a SharePoint List and PnPJs"
   ],
   "creationDateTime": "2021-10-28",
-  "updateDateTime": "2021-10-28",
+  "updateDateTime": "2021-12-13",
   "products": [
     "SharePoint",
     "Office",
@@ -24,8 +24,9 @@
     }
   ],
   "thumbnails": [{
+    "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-TodaysLunch/assets/demo.png",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImaceCard-TodaysLunch/assets/preview.gif",
     "alt": "Today's Lunch ACE"
   }],
   "authors": [{

@@ -19,7 +19,7 @@
     "group": { "default": "Dashboard" },
     "title": { "default": "TodaysLunch" },
     "description": { "default": "This is Today´s lunch in the company restaurant. Enjoy!" },
-    "officeFabricIconFontName": "SharePointLogo",
+    "officeFabricIconFontName": "Brunch",
     "cardSize": "Large",
     "properties": {
       "title": "TodaysLunch",

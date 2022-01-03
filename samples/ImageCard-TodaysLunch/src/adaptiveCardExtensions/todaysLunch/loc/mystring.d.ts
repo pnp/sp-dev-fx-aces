@@ -9,6 +9,8 @@ declare interface ITodaysLunchAdaptiveCardExtensionStrings {
   Description: string;
   PrimaryText: string;
   QuickViewButton: string;
+  CardViewTitle: string
+  CardViewPrimaryText: string
 }
 
 declare module 'TodaysLunchAdaptiveCardExtensionStrings' {

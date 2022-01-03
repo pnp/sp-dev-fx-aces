@@ -5,7 +5,7 @@ import { QuickView } from './quickView/QuickView';
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
 
 import { TodaysLunchPropertyPane } from './TodaysLunchPropertyPane';
-import { ILunch, Lunch, Weekday } from './models/ILunch';
+import { ILunches, Lunch, Weekday } from './models/ILunch';
 import { todaysLunchService } from './services/TodaysLunchService';
 
 export interface ITodaysLunchAdaptiveCardExtensionProps {
@@ -15,7 +15,8 @@ export interface ITodaysLunchAdaptiveCardExtensionProps {
 }
 
 export interface ITodaysLunchAdaptiveCardExtensionState {
-  todaysLunch: ILunch | undefined;
+  todaysLunch: ILunches | undefined;
+  idx: number;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'TodaysLunch_CARD_VIEW';
@@ -32,13 +33,15 @@ export default class TodaysLunchAdaptiveCardExtension extends BaseAdaptiveCardEx
     Logger.activeLogLevel = LogLevel.Info;
 
     this.state = {
-      todaysLunch: new Lunch(0, 'Loading', 'Loading dishes...', '', '', Weekday.Sunday, true, '', 0)
+      todaysLunch: new Lunch(0, 'Loading', 'Loading dishes...', '', '', Weekday.Sunday, true, '', 0)[0],
+      idx: 0,
     };
 
     todaysLunchService.init(this.context);
-    todaysLunchService.getTodaysLunch().then(lunch => {
+    todaysLunchService.getTodaysLunch().then(iLunchs => {
+      Logger.write(`(TodaysLunch => getTodaysLunch) - ${iLunchs}`, LogLevel.Info);
       this.setState({
-        todaysLunch: lunch
+        todaysLunch: iLunchs
       });
     });
 
