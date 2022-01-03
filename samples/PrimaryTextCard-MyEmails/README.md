@@ -4,8 +4,7 @@
 
 This sample shows how to build an ACE with a PrimaryText card view and a quick view to display current logged in user's emails in card view and detail in quick view
 
-
-[Webpart in Action]
+##  ACE in Action
 
 ![webpart in action](./assets/ace-inaction.gif)
 
@@ -16,9 +15,9 @@ This sample shows how to build an ACE with a PrimaryText card view and a quick v
 - QuickView showing email details on click on email
 - View button on Quick View to take user to targeted email in outlook web
 
-Some other screenshots
+Screenshots for quick reference
 
-![webpart in action](./assets/screenshot1.png)
+![webpart in action](./assets/Screenshot1.png)
 
 ![webpart in action](./assets/screenshot2.png)
 
@@ -43,7 +42,6 @@ Some other screenshots
 | Mail.Read           |
 | Mail.ReadBasic      |
  
-
 
 ## Solution
 
@@ -100,9 +98,10 @@ This extension illustrates the following tecnical concepts:
 ## References
 
 - [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
+- [Build your first SharePoint Adaptive Card Extension](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)
+- [My blog on First Adaptive card](https://siddharthvaghasia.com/2021/12/29/create-your-first-adaptive-card-extension-with-spfx/)
+- [My blog on how to consume Graph API in ACE](https://siddharthvaghasia.com/2022/01/02/how-to-call-and-show-graph-api-data-in-spfx-ace/)
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
 <img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/ace-graph-myemails" />
