@@ -70,4 +70,4 @@ This Adaptive Card Extension illustrates the following concepts on top of the Sh
 * Graph API integration
 * Handle Queries on Quick View
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/readme-template" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-ManageTeam" />
