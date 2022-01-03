@@ -15,7 +15,7 @@
 
 Short summary on functionality and used technologies.
 
-> Please provide a high-quality screenshot of your Adaptive Card Extensions below. It should be stored in a folder called `assets`. 
+> Please provide a high-quality screenshot of your Adaptive Card Extensions below. It should be stored in a folder called `assets`.
 > If possible, use a resolution of 1920x1080.
 > If your Adaptive Card Extension uses a placeholder screen and requires the user to configure it, please use a screenshot of the Adaptive Card Extension as it appears **after** it has been configured.
 > You can add as many screen shots as you'd like to help users understand your Adaptive Card Extension without having to download it and install it.
