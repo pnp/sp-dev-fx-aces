@@ -1,0 +1,157 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [{
+    "type": "Container",
+    "separator": true,
+    "items": [{
+        "type": "TextBlock",
+        "text": "Customer Name",
+        "color": "dark",
+        "weight": "Bolder",
+        "size": "Default",
+        "wrap": true,
+        "maxLines": 1,
+        "spacing": "None"
+      },
+      {
+        "type": "Input.Text",
+        "id": "customerName",
+        "placeholder": "Customer Name",
+        "isMultiline": false,
+        "value": ""
+      }, {
+        "type": "TextBlock",
+        "text": " ",
+        "color": "dark",
+        "weight": "Bolder",
+        "size": "Default",
+        "wrap": true,
+        "maxLines": 1,
+        "spacing": "None"
+      },
+
+      {
+        "type": "TextBlock",
+        "text": "Claim Type",
+        "color": "dark",
+        "size": "Default",
+        "weight": "Bolder",
+        "wrap": true,
+        "maxLines": 1,
+        "spacing": "None"
+      },
+      {
+        "type": "Input.ChoiceSet",
+        "id": "claimType",
+        "value": "",
+        "choices": [{
+          "$data": "${claimTypeValues}",
+          "title": "${choice}",
+          "value": "${value}"
+        }]
+      },
+      {
+        "type": "TextBlock",
+        "text": " ",
+        "color": "dark",
+        "weight": "Bolder",
+        "size": "Default",
+        "wrap": true,
+        "maxLines": 1,
+        "spacing": "None"
+      },
+      {
+        "type": "TextBlock",
+        "text": "Claim Date",
+        "color": "dark",
+        "size": "Default",
+        "weight": "Bolder",
+        "wrap": true,
+        "maxLines": 1,
+        "spacing": "None"
+      },
+      {
+        "type": "Input.Date",
+        "id": "claimDate",
+        "value": "${formatDateTime(claim.claimDate, 'yyyy-MM-dd')}"
+      },
+      {
+        "type": "TextBlock",
+        "text": " ",
+        "color": "dark",
+        "weight": "Bolder",
+        "size": "Default",
+        "wrap": true,
+        "maxLines": 1,
+        "spacing": "None"
+      },
+      {
+        "type": "TextBlock",
+        "text": "Claim Status",
+        "color": "dark",
+        "size": "Default",
+        "weight": "Bolder",
+        "wrap": true,
+        "maxLines": 1,
+        "spacing": "None"
+      }, {
+        "type": "Input.ChoiceSet",
+        "id": "claimStatus",
+        "value": "Submitted",
+        "choices": [{
+          "$data": "${claimStatusValues}",
+          "title": "${choice}",
+          "value": "${value}"
+        }]
+      },
+      {
+        "type": "TextBlock",
+        "text": " ",
+        "color": "dark",
+        "weight": "Bolder",
+        "size": "Default",
+        "wrap": true,
+        "maxLines": 1,
+        "spacing": "None"
+      },
+      {
+        "type": "TextBlock",
+        "text": "Claim Description",
+        "color": "dark",
+        "weight": "Bolder",
+        "size": "Default",
+        "wrap": true,
+        "maxLines": 1,
+        "spacing": "None"
+      }, {
+        "type": "Input.Text",
+        "id": "claimDescription",
+        "isMultiline": true,
+        "value": ""
+      },
+      {
+        "type": "TextBlock",
+        "text": " ",
+        "color": "dark",
+        "weight": "Bolder",
+        "size": "Default",
+        "wrap": true,
+        "maxLines": 1,
+        "spacing": "None"
+      },
+      {
+        "type": "ActionSet",
+        "actions": [{
+          "type": "Action.Submit",
+          "title": "Save Claim",
+          "data": {
+            "id": "save",
+            "itemId": "${id}"
+          }
+        }]
+      }
+    ]
+  }]
+}
