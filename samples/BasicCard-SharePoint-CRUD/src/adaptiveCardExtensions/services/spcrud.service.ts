@@ -12,6 +12,7 @@ export interface ISPCRUDService {
   GetItemsByUser: (userId: string) => Promise<DemoItem[]>;
   ChoiceFieldDDLValues: Choice[];
   ChoiceFieldRadioValues: Choice[];
+  ChoiceFieldCheckboxValues: Choice[];
   SaveItem: (item: DemoItem) => Promise<void>;
   UpdateItem: (item: DemoItem) => Promise<void>;
   DeleteItem: (item: DemoItem) => Promise<void>;
@@ -23,6 +24,7 @@ export class SPCRUDService implements ISPCRUDService {
   private _currentSiteUrl: string = "";
   private _choiceFieldDDLValues: Choice[] = [];
   private _choiceFieldRadioValues: Choice[] = [];
+  private _choiceFieldCheckboxValues: Choice[] = [];
 
   constructor() {
   }
@@ -35,13 +37,17 @@ export class SPCRUDService implements ISPCRUDService {
   public get ChoiceFieldRadioValues(): Choice[] {
     return this._choiceFieldRadioValues;
   }
+  public get ChoiceFieldCheckboxValues(): Choice[] {
+    return this._choiceFieldCheckboxValues;
+  }
 
   public async Init(currentSiteUrl: string) {
     try {
       this._ready = true;
       this._currentSiteUrl = currentSiteUrl;
       this._choiceFieldDDLValues = await this._getChoiceFieldValues("ChoiceFieldDDL");
-      this._choiceFieldRadioValues = await this._getChoiceFieldValues("ClaimType");
+      this._choiceFieldRadioValues = await this._getChoiceFieldValues("ChoiceFieldRadio");
+      this._choiceFieldCheckboxValues = await this._getChoiceFieldValues("ChoiceFieldCheckbox");
     } catch (err) {
       Logger.write(`${this.LOG_SOURCE} (init) - ${err.message}`, LogLevel.Error);
     }
@@ -51,7 +57,23 @@ export class SPCRUDService implements ISPCRUDService {
     let retVal: DemoItem[] = [];
     try {
       const web = Web(this._currentSiteUrl);
-      retVal = await web.lists.getByTitle(Lists.DEMOITEMSLIST).items.orderBy('Created', false).select('Title', 'MultiLineText', 'Created', 'Modified', 'Editor/FirstName', 'Editor/LastName', 'Editor/ID').expand('Editor').filter(`Author/EMail eq \'${userId}\'`).get<DemoItem[]>();
+      let items = await web.lists.getByTitle(Lists.DEMOITEMSLIST).items.orderBy('Created', false).select('Id', 'Title', 'MultiLineText', 'Created', 'Modified', 'Editor/FirstName', 'Editor/LastName', 'Editor/ID', 'ChoiceFieldDDL', 'ChoiceFieldRadio', 'ChoiceFieldCheckbox', 'NumberField', 'CurrencyField', 'DateTimeField', 'YesNoField').expand('Editor').filter(`Author/EMail eq \'${userId}\'`).get();
+      items.map((item) => {
+        let checkBoxValues: string[] = item.ChoiceFieldCheckbox;
+        let checkBoxValuesSelected: string = "";
+        checkBoxValues.map((value, index) => {
+          if (index > 0) {
+            checkBoxValuesSelected = checkBoxValuesSelected + "," + value;
+          } else {
+            checkBoxValuesSelected = value;
+          }
+          return (checkBoxValuesSelected);
+        });
+        return (
+          retVal.push(new DemoItem(item.id, item.Title, item.MultiLineText, item.ChoiceFieldDDL, item.ChoiceFieldRadio, checkBoxValuesSelected, item.NumberField, item.CurrencyField, item.DateTimeField, item.YesNoField.toString(), item.Editor.FirstName + " " + item.Editor.LastName))
+        );
+
+      });
     } catch (err) {
       Logger.write(`${this.LOG_SOURCE} (GetItemsByUser) - ${err.message}`, LogLevel.Error);
     }
