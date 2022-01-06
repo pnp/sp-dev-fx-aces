@@ -13,8 +13,8 @@ export interface IMyEmailsAdaptiveCardExtensionProps {
 
 export interface IMyEmailsAdaptiveCardExtensionState {
   emails: any;
-  currentIndex:any;
-  currentEmail:any;
+  currentIndex: any;
+  currentEmail: any;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'MyEmails_CARD_VIEW';
@@ -29,24 +29,24 @@ export default class MyEmailsAdaptiveCardExtension extends BaseAdaptiveCardExten
   public onInit(): Promise<void> {
     this.state = {
       emails: [],
-      currentIndex:0,
-      currentEmail:{}
+      currentIndex: 0,
+      currentEmail: {}
     };
 
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
-    this.getOutlookData()
+    this.getOutlookData();
 
     return Promise.resolve();
   }
 
-  private getOutlookData(){
-    
+  private getOutlookData() {
+
     this.context.msGraphClientFactory.getClient().then((client: MSGraphClient): void => {
       client.api("/me/mailfolders/Inbox/messages").get((error, messages: any) => {
         console.log(messages);
-        this.setState({currentEmail:messages.value[this.state.currentIndex],emails:messages.value});
+        this.setState({ currentEmail: messages.value[this.state.currentIndex], emails: messages.value });
       });
     });
   }

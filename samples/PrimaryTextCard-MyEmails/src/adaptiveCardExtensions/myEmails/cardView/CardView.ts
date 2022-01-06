@@ -39,33 +39,33 @@ export class CardView extends BasePrimaryTextCardView<IMyEmailsAdaptiveCardExten
   }
 
   public get data(): IPrimaryTextCardParameters {
-    if(this.state.emails.length >0 ) {
+    if (this.state.emails.length > 0) {
       return {
         primaryText: "Sub: " + this.state.emails[this.state.currentIndex].subject,
         description: "From: " + this.state.emails[this.state.currentIndex].from.emailAddress.address
-      }
-      }
-      else{
-        return {
-          primaryText: "Loading",
-          description: "Loading"
-        }
-      }
+      };
+    }
+    else {
+      return {
+        primaryText: "Loading",
+        description: "Loading"
+      };
+    }
   }
   public onAction(action: IActionArguments): void {
     if (action.type === 'Submit') {
       const { id, op } = action.data;
       switch (id) {
         case 'previous': {
-          this.setState({ currentIndex: this.state.currentIndex - 1 , currentEmail:this.state.emails[this.state.currentIndex - 1]});
+          this.setState({ currentIndex: this.state.currentIndex - 1, currentEmail: this.state.emails[this.state.currentIndex - 1] });
           break;
         }
         case 'next': {
-          this.setState({ currentIndex: this.state.currentIndex + 1 , currentEmail:this.state.emails[this.state.currentIndex + 1]});
+          this.setState({ currentIndex: this.state.currentIndex + 1, currentEmail: this.state.emails[this.state.currentIndex + 1] });
           break;
         }
-        case 'default' : {}
-            
+        case 'default': { }
+
       }
     }
   }
@@ -73,10 +73,10 @@ export class CardView extends BasePrimaryTextCardView<IMyEmailsAdaptiveCardExten
   public get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | undefined {
     return {
       type: 'QuickView',
-          parameters: {
-            view: QUICK_VIEW_REGISTRY_ID
-            
-          }
+      parameters: {
+        view: QUICK_VIEW_REGISTRY_ID
+
+      }
     };
   }
 }

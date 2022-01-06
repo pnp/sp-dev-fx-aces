@@ -41,7 +41,6 @@ Screenshots for quick reference
 |---------------------|
 | Mail.Read           |
 | Mail.ReadBasic      |
- 
 
 ## Solution
 
@@ -84,16 +83,16 @@ Version|Date|Comments
 - or if using spfx-fast-serve, in the command-line run:
   - **npm run serve**
 - Open the workbench page (https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx)
-- Add the ACE [***MyEmails***] to the page 
+- Add the ACE [***MyEmails***] to the page
 
 ## Concept Explored
 
-This extension illustrates the following tecnical concepts:
+This extension illustrates the following technical concepts:
 
 - Using Microsoft Graph to get the Logged in user's emails
-- Using State and actions buttons to navigate through diffrent emails by adding previous and next buttons
+- Using State and actions buttons to navigate through different emails by adding previous and next buttons
 - Submit action handling of Card view to show Quick view
-- Customizing Quick View Adpative Card JSOM template to create customized UI
+- Customizing Quick View Adaptive Card JSON template to create customized UI
 
 ## References
 
@@ -104,4 +103,4 @@ This extension illustrates the following tecnical concepts:
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/ace-graph-myemails" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-MyEmails" />

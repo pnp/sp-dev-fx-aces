@@ -3,7 +3,7 @@ import * as strings from 'MyEmailsAdaptiveCardExtensionStrings';
 import { IMyEmailsAdaptiveCardExtensionProps, IMyEmailsAdaptiveCardExtensionState } from '../MyEmailsAdaptiveCardExtension';
 
 export interface IQuickViewData {
-  message:any
+  message: any;
 
 }
 
