@@ -7,8 +7,9 @@ import { ISharePointCrudExampleAdaptiveCardExtensionProps, ISharePointCrudExampl
 
 export interface IEditViewData {
   item: DemoItem;
-  claimTypeValues: Choice[];
-  claimStatusValues: Choice[];
+  choiceFieldDDLValues: Choice[];
+  choiceFieldRadioValues: Choice[];
+  choiceFieldCheckboxValues: Choice[];
 }
 
 export class EditView extends BaseAdaptiveCardView<
@@ -19,12 +20,14 @@ export class EditView extends BaseAdaptiveCardView<
   private LOG_SOURCE: string = "🔶 CRUDDemoEditView";
   public get data(): IEditViewData {
     let item: DemoItem = find(this.state.items, { id: this.state.currentItemID });
-    let claimStatusValues: Choice[] = SPCRUD.ChoiceFieldDDLValues;
-    let claimTypeValues: Choice[] = SPCRUD.ChoiceFieldRadioValues;
+    let choiceFieldDDLValues: Choice[] = SPCRUD.ChoiceFieldDDLValues;
+    let choiceFieldRadioValues: Choice[] = SPCRUD.ChoiceFieldRadioValues;
+    let choiceFieldCheckboxValues: Choice[] = SPCRUD.ChoiceFieldCheckboxValues;
     return {
       item,
-      claimTypeValues,
-      claimStatusValues
+      choiceFieldDDLValues,
+      choiceFieldRadioValues,
+      choiceFieldCheckboxValues
     };
   }
 

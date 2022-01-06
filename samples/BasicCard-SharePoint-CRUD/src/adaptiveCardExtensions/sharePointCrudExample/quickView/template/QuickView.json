@@ -34,7 +34,7 @@
                 "title": "Edit",
                 "data": {
                   "id": "edit",
-                  "itemId": "${Id}"
+                  "itemId": "${id}"
                 }
               }
             }]
@@ -51,7 +51,7 @@
                 "title": "Delete",
                 "data": {
                   "id": "delete",
-                  "itemId": "${Id}"
+                  "itemId": "${id}"
                 }
               }
             }]
@@ -69,7 +69,7 @@
       },
       {
         "type": "TextBlock",
-        "text": "Modified By: ${Editor.FirstName} ${Editor.LastName}",
+        "text": "Modified By: ${modifiedby}",
         "color": "dark",
         "size": "Default",
         "wrap": true,

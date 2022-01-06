@@ -12,7 +12,8 @@ export interface IDemoItem {
   numberfield: number;
   currencyfield: string;
   datetimefield: string;
-  yesnofield: boolean;
+  yesnofield: string;
+  modifiedby: string;
 
 }
 
@@ -27,7 +28,8 @@ export class DemoItem implements IDemoItem {
     public numberfield: number = 0,
     public currencyfield: string = "",
     public datetimefield: string = "",
-    public yesnofield: boolean = true
+    public yesnofield: string = "",
+    public modifiedby: string = ""
   ) { }
 }
 

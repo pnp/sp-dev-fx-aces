@@ -7,141 +7,117 @@
     "separator": true,
     "items": [{
         "type": "TextBlock",
-        "text": "Customer Name",
-        "color": "dark",
+        "text": "Title",
         "weight": "Bolder",
-        "size": "Default",
         "wrap": true,
-        "maxLines": 1,
-        "spacing": "None"
+        "style": "heading"
       },
       {
         "type": "Input.Text",
-        "id": "customerName",
-        "placeholder": "Customer Name",
+        "id": "title",
+        "placeholder": "Title",
         "isMultiline": false,
-        "value": "${claim.title}"
-      }, {
-        "type": "TextBlock",
-        "text": " ",
-        "color": "dark",
-        "weight": "Bolder",
-        "size": "Default",
-        "wrap": true,
-        "maxLines": 1,
-        "spacing": "None"
-      },
-
-      {
-        "type": "TextBlock",
-        "text": "Claim Type",
-        "color": "dark",
-        "size": "Default",
-        "weight": "Bolder",
-        "wrap": true,
-        "maxLines": 1,
-        "spacing": "None"
-      },
-      {
-        "type": "Input.ChoiceSet",
-        "id": "claimType",
-        "value": "{claim.claimType}",
-        "choices": [{
-          "$data": "${claimTypeValues}",
-          "title": "${choice}",
-          "value": "${value}"
-        }]
+        "value": "${item.title}"
       },
       {
         "type": "TextBlock",
-        "text": " ",
-        "color": "dark",
-        "weight": "Bolder",
-        "size": "Default",
-        "wrap": true,
-        "maxLines": 1,
-        "spacing": "None"
-      },
-      {
-        "type": "TextBlock",
-        "text": "Claim Date",
-        "color": "dark",
-        "size": "Default",
+        "text": "Multi-Line Text",
         "weight": "Bolder",
         "wrap": true,
-        "maxLines": 1,
-        "spacing": "None"
-      },
-      {
-        "type": "Input.Date",
-        "id": "claimDate",
-        "value": "${formatDateTime(claim.claimDate, 'yyyy-MM-dd')}"
-      },
-      {
-        "type": "TextBlock",
-        "text": " ",
-        "color": "dark",
-        "weight": "Bolder",
-        "size": "Default",
-        "wrap": true,
-        "maxLines": 1,
-        "spacing": "None"
-      },
-      {
-        "type": "TextBlock",
-        "text": "Claim Status",
-        "color": "dark",
-        "size": "Default",
-        "weight": "Bolder",
-        "wrap": true,
-        "maxLines": 1,
-        "spacing": "None"
-      }, {
-        "type": "Input.ChoiceSet",
-        "id": "claimStatus",
-        "value": "{claim.claimStatus}",
-        "choices": [{
-          "$data": "${claimStatusValues}",
-          "title": "${choice}",
-          "value": "${value}"
-        }]
-      },
-      {
-        "type": "TextBlock",
-        "text": " ",
-        "color": "dark",
-        "weight": "Bolder",
-        "size": "Default",
-        "wrap": true,
-        "maxLines": 1,
-        "spacing": "None"
-      },
-      {
-        "type": "TextBlock",
-        "text": "Claim Description",
-        "color": "dark",
-        "weight": "Bolder",
-        "size": "Default",
-        "wrap": true,
-        "maxLines": 1,
-        "spacing": "None"
+        "style": "heading"
       }, {
         "type": "Input.Text",
-        "id": "claimDescription",
+        "id": "multilinetext",
+        "placeholder": "Multi-Line Text",
+        "height": "stretch",
         "isMultiline": true,
-        "value": "${claim.claimDescription}"
+        "wrap": true,
+        "value": "${item.multilinetext}"
       },
       {
         "type": "TextBlock",
-        "text": " ",
-        "color": "dark",
+        "text": "Choice Field DDL",
         "weight": "Bolder",
-        "size": "Default",
         "wrap": true,
-        "maxLines": 1,
-        "spacing": "None"
+        "style": "heading"
+      }, {
+        "type": "Input.ChoiceSet",
+        "id": "choicefieldddl",
+        "value": "{item.choicefieldddl}",
+        "choices": [{
+          "$data": "${choiceFieldDDLValues}",
+          "title": "${choice}",
+          "value": "${value}"
+        }]
       },
       {
+        "type": "TextBlock",
+        "text": "Choice Field Radio",
+        "weight": "Bolder",
+        "wrap": true,
+        "style": "heading"
+      }, {
+        "type": "Input.ChoiceSet",
+        "id": "choicefieldradio",
+        "style": "expanded",
+        "value": "${item.choicefieldradio}",
+        "choices": [{
+          "$data": "${choiceFieldRadioValues}",
+          "title": "${choice}",
+          "value": "${value}"
+        }]
+      },
+      {
+        "type": "TextBlock",
+        "text": "Choice Field Checkbox",
+        "weight": "Bolder",
+        "wrap": true,
+        "style": "heading"
+      },
+      {
+        "type": "Input.ChoiceSet",
+        "id": "choicefieldcheckbox",
+        "isMultiSelect": true,
+        "value": "${item.choicefieldcheckbox}",
+        "choices": [{
+          "$data": "${choiceFieldCheckboxValues}",
+          "title": "${choice}",
+          "value": "${value}"
+        }]
+      },
+      {
+        "type": "TextBlock",
+        "text": "Number Field",
+        "weight": "Bolder",
+        "wrap": true,
+        "style": "heading"
+      }, {
+        "type": "Input.Number",
+        "id": "numberfield",
+        "value": "${item.numberfield}"
+      },
+      {
+        "type": "TextBlock",
+        "text": "Currency Field",
+        "weight": "Bolder",
+        "wrap": true,
+        "style": "heading"
+      }, {
+        "type": "Input.Number",
+        "id": "currencyfield",
+        "value": "${item.currencyfield}"
+      }, {
+        "type": "TextBlock",
+        "text": "Yes/No Field",
+        "weight": "Bolder",
+        "wrap": true,
+        "style": "heading"
+      }, {
+        "type": "Input.Toggle",
+        "title": "Yes/No",
+        "id": "yesnofield",
+        "value": "${item.yesnofield}"
+      }, {
         "type": "ActionSet",
         "actions": [{
           "type": "Action.Submit",
