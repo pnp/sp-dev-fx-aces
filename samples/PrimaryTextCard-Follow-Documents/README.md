@@ -2,7 +2,7 @@
 
 ## Summary
 
-This example shows how to build an ACE with multiple card and quick views to get current user "Follow Documents" marked by in Office 365 Homepage.
+This example shows how to build an ACE with multiple card and quick views to get the current users "Followed Documents" marked by Microsoft 365 Homepage.
 
 The sample uses **Microsoft Graph queries** to retrieve user **"Follow"** information of followed files and generate Thumbnails with links to support access to files.
 
@@ -23,8 +23,6 @@ Usage of following Technologies:
 - Usage of Graph queries using  [Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
 - Usage of  [adaptive cards](https://adaptivecards.io/)
 
-### Demo
-
 ### Add Files as Favorites in Office Home Page
 
 ![demo](./assets/FollowDocumentACE1.gif)
@@ -37,6 +35,15 @@ Usage of following Technologies:
 
 ![version](https://img.shields.io/badge/version-1.13-green.svg)
 
+## Permissions
+
+Microsoft Graph
+
+- Files.Read.All
+- Sites.Read.All
+- Files.ReadWrite
+- Sites.ReadWrite.All
+
 ## Applies to
 
 - [SharePoint Framework](https://aka.ms/spfx)
@@ -48,7 +55,7 @@ Usage of following Technologies:
 
 ### Grant the service principal permission to the Microsoft Graph API
 
-Once installed, the solution will request the required permissions via the **Office 365 admin portal > SharePoint > Advanced > API access**.
+Once installed, the solution will request the required permissions via the **Microsoft 365 admin portal > SharePoint > Advanced > API access**.
 If you prefer to approve the permissions in advance, for example when testing the solution in the Workbench page without installing it, you can do so using the [CLI for Microsoft 365](https://pnp.github.io/cli-microsoft365/):
 
 ```bash
@@ -81,7 +88,7 @@ Version|Date|Comments
 
 - Clone this repository
 - Ensure that you are at the solution folder
-- in the command-line run:
+- In the command-line run:
   - **npm install**
 - After that create the sppkg file using
   - **gulp bundle --ship**
