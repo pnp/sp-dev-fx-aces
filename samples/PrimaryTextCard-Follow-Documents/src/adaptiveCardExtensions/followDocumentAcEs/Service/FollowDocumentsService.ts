@@ -9,7 +9,7 @@ export default class FollowDocumentsService {
     this._context = context;
     const graphService: Graph = new Graph();
     let graphData: any = [];
-    graphData = await graphService.getGraphContent(`https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference,followed&Top=1000`, this._context);
+      graphData = await graphService.getGraphContent(`https://graph.microsoft.com/v1.0/me/drive/following?$select=id,name,webUrl,parentReference,followed,size&Top=1000&Filter=size%20ne%200`, this._context);
     if (graphData.value !== undefined) {
       graphData.value.forEach(data => {
 
