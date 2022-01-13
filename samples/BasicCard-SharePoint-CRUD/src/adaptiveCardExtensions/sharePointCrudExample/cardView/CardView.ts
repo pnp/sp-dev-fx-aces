@@ -4,7 +4,7 @@ import {
   ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'SharePointCrudExampleAdaptiveCardExtensionStrings';
-import { ISharePointCrudExampleAdaptiveCardExtensionProps, ISharePointCrudExampleAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../SharePointCrudExampleAdaptiveCardExtension';
+import { ISharePointCrudExampleAdaptiveCardExtensionProps, ISharePointCrudExampleAdaptiveCardExtensionState, NEW_VIEW_REGISTRY_ID, QUICK_VIEW_REGISTRY_ID } from '../SharePointCrudExampleAdaptiveCardExtension';
 
 export class CardView extends BaseBasicCardView<ISharePointCrudExampleAdaptiveCardExtensionProps, ISharePointCrudExampleAdaptiveCardExtensionState> {
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
@@ -23,7 +23,7 @@ export class CardView extends BaseBasicCardView<ISharePointCrudExampleAdaptiveCa
         action: {
           type: 'QuickView',
           parameters: {
-            view: QUICK_VIEW_REGISTRY_ID
+            view: NEW_VIEW_REGISTRY_ID
           }
         }
       }

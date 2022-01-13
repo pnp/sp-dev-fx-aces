@@ -1,17 +1,18 @@
 [{
   "name": "pnp-sp-fx-aces-ace-group-viewer",
   "source": "pnp",
-  "title": "Upcoming Events Viewer",
-  "shortDescription": "Loads upcoming events from the users calendar.",
-  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-Graph-UpcomingEvents",
+  "title": "SharePoint CRUD Example",
+  "shortDescription": "This Adaptive Card Extension shows how to work with form elements and form data in an Adaptive Card. It is an example of how to use an ACE to interact with SharePoint List data using PnPJS.",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-SharePoint-CRUD",
   "longDescription": [
-    "This adaptive card extension sample will load the calendar events from the logged in users Outlook Calendar. It leverages the Microsoft Graph to pull that data into the ACE. Requires Microsoft Graph Directory.Read.All and Calendars.Read permissions."
+    "This ACE shows how to work with different form elements to collect and display data from an Adaptive Card and store that data in a SharePoint list. A sample list is provisioned when the ACE is loaded for the first time. It also shows how to navigate from one view to another with multiple cards."
   ],
-  "creationDateTime": "2021-09-29",
-  "updateDateTime": "2021-11-29",
+  "creationDateTime": "2022-01-13",
+  "updateDateTime": "2022-01-13",
   "products": [
     "SharePoint",
-    "Office"
+    "Office",
+    "Viva"
   ],
   "metadata": [{
       "key": "CLIENT-SIDE-DEV",
@@ -25,13 +26,15 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-Graph-UpcomingEvents/assets/demo.gif",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-SharePoint-CRUD/assets/demo.gif",
     "alt": "Preview"
   }],
   "authors": [{
-    "gitHubAccount": "zachroberts8668",
-    "pictureUrl": "https://github.com/zachroberts8668.png",
-    "name": "Zach Roberts"
+    "gitHubAccount": "dcashpeterson",
+    "company": "Sympraxis Consulting",
+    "pictureUrl": "https://github.com/dcashpeterson.png",
+    "name": "Derek Cash-Peterson",
+    "twitter": "spdcp"
   }],
   "references": [{
     "name": "Viva Connections Extensibility guidance",

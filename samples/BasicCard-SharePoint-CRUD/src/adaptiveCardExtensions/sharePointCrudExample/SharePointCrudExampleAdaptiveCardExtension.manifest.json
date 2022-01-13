@@ -23,13 +23,13 @@
       "default": "SharePoint CRUD ACE Sample"
     },
     "description": {
-      "default": "This is a sample that shows how to read and write data from a SharePoint list using PnPJS and Adaptive Card Extensions."
+      "default": "This is a sample that shows how to work with form fields using Adaptive Card Extensions and integrate with SharePoint lists using PnPJS."
     },
     "officeFabricIconFontName": "SharePointLogo",
     "cardSize": "Large",
     "properties": {
       "title": "SharePoint CRUD ACE Sample",
-      "description": "This is a sample that shows how to read and write data from a SharePoint list using PnPJS and Adaptive Card Extensions.",
+      "description": "This is a sample that shows how to work with form fields using Adaptive Card Extensions and integrate with SharePoint lists using PnPJS.",
       "iconProperty": "" // Default to sharepointlogo
     }
   }]

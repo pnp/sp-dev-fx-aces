@@ -6,27 +6,16 @@
     "type": "Container",
     "separator": true,
     "items": [{
-        "type": "TextBlock",
-        "text": "Title",
-        "weight": "Bolder",
-        "wrap": true,
-        "style": "heading"
-      },
-      {
         "type": "Input.Text",
         "id": "title",
+        "label": "Title",
         "placeholder": "Title",
         "isMultiline": false,
         "value": "${item.title}"
       },
       {
-        "type": "TextBlock",
-        "text": "Multi-Line Text",
-        "weight": "Bolder",
-        "wrap": true,
-        "style": "heading"
-      }, {
         "type": "Input.Text",
+        "label": "Multi-Line Text",
         "id": "multilinetext",
         "placeholder": "Multi-Line Text",
         "height": "stretch",
@@ -35,13 +24,8 @@
         "value": "${item.multilinetext}"
       },
       {
-        "type": "TextBlock",
-        "text": "Choice Field DDL",
-        "weight": "Bolder",
-        "wrap": true,
-        "style": "heading"
-      }, {
         "type": "Input.ChoiceSet",
+        "label": "Choice Field DDL",
         "id": "choicefieldddl",
         "value": "{item.choicefieldddl}",
         "choices": [{
@@ -51,13 +35,14 @@
         }]
       },
       {
-        "type": "TextBlock",
-        "text": "Choice Field Radio",
-        "weight": "Bolder",
-        "wrap": true,
-        "style": "heading"
-      }, {
+        "type": "Input.Date",
+        "label": "Date Time Field",
+        "id": "datatimefield",
+        "value": "${formatDateTime(item.datetimefield, 'yyyy-MM-dd')}"
+      },
+      {
         "type": "Input.ChoiceSet",
+        "label": "Choice Field Radio",
         "id": "choicefieldradio",
         "style": "expanded",
         "value": "${item.choicefieldradio}",
@@ -68,14 +53,8 @@
         }]
       },
       {
-        "type": "TextBlock",
-        "text": "Choice Field Checkbox",
-        "weight": "Bolder",
-        "wrap": true,
-        "style": "heading"
-      },
-      {
         "type": "Input.ChoiceSet",
+        "label": "Choice Field Checkbox",
         "id": "choicefieldcheckbox",
         "isMultiSelect": true,
         "value": "${item.choicefieldcheckbox}",
@@ -86,34 +65,20 @@
         }]
       },
       {
-        "type": "TextBlock",
-        "text": "Number Field",
-        "weight": "Bolder",
-        "wrap": true,
-        "style": "heading"
-      }, {
         "type": "Input.Number",
+        "label": "Number Field",
         "id": "numberfield",
         "value": "${item.numberfield}"
       },
       {
-        "type": "TextBlock",
-        "text": "Currency Field",
-        "weight": "Bolder",
-        "wrap": true,
-        "style": "heading"
-      }, {
         "type": "Input.Number",
+        "label": "Currency Field",
         "id": "currencyfield",
         "value": "${item.currencyfield}"
-      }, {
-        "type": "TextBlock",
-        "text": "Yes/No Field",
-        "weight": "Bolder",
-        "wrap": true,
-        "style": "heading"
-      }, {
+      },
+      {
         "type": "Input.Toggle",
+        "label": "Yes/No Field",
         "title": "Yes/No",
         "id": "yesnofield",
         "value": "${item.yesnofield}"

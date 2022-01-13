@@ -1,5 +1,5 @@
 export enum Lists {
-  DEMOITEMSLIST = "DemoItems"
+  DEMOITEMSLIST = "SPCRUDACEExampleList"
 }
 
 export interface IDemoItem {
@@ -13,7 +13,9 @@ export interface IDemoItem {
   currencyfield: string;
   datetimefield: string;
   yesnofield: string;
+  modifiedbyid: number;
   modifiedby: string;
+  modified: string;
 
 }
 
@@ -29,7 +31,9 @@ export class DemoItem implements IDemoItem {
     public currencyfield: string = "",
     public datetimefield: string = "",
     public yesnofield: string = "",
-    public modifiedby: string = ""
+    public modifiedbyid: number = 0,
+    public modifiedby: string = "",
+    public modified: string = new Date().toLocaleDateString(),
   ) { }
 }
 

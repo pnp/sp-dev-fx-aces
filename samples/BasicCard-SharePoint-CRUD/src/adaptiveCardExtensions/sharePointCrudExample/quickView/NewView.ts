@@ -6,8 +6,9 @@ import { ISharePointCrudExampleAdaptiveCardExtensionProps, ISharePointCrudExampl
 
 export interface INewViewData {
   item: DemoItem;
-  claimTypeValues: Choice[];
-  claimStatusValues: Choice[];
+  choiceFieldDDLValues: Choice[];
+  choiceFieldRadioValues: Choice[];
+  choiceFieldCheckboxValues: Choice[];
 }
 
 export class NewView extends BaseAdaptiveCardView<
@@ -19,12 +20,14 @@ export class NewView extends BaseAdaptiveCardView<
   public get data(): INewViewData {
     let item: DemoItem = new DemoItem();
     item.datetimefield = new Date().toUTCString();
-    let claimStatusValues: Choice[] = SPCRUD.ChoiceFieldDDLValues;
-    let claimTypeValues: Choice[] = SPCRUD.ChoiceFieldRadioValues;
+    let choiceFieldDDLValues: Choice[] = SPCRUD.ChoiceFieldDDLValues;
+    let choiceFieldRadioValues: Choice[] = SPCRUD.ChoiceFieldRadioValues;
+    let choiceFieldCheckboxValues: Choice[] = SPCRUD.ChoiceFieldCheckboxValues;
     return {
       item,
-      claimTypeValues,
-      claimStatusValues
+      choiceFieldDDLValues,
+      choiceFieldRadioValues,
+      choiceFieldCheckboxValues
     };
   }
 

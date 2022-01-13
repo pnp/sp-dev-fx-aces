@@ -9,6 +9,7 @@ import { SPCRUD } from '../services/spcrud.service';
 import { sp } from "@pnp/sp";
 import { EditView } from './quickView/EditView';
 import { NewView } from './quickView/NewView';
+import { DisplayView } from './quickView/DisplayView';
 
 export interface ISharePointCrudExampleAdaptiveCardExtensionProps {
   title: string;
@@ -26,6 +27,7 @@ export interface ISharePointCrudExampleAdaptiveCardExtensionState {
 
 export const CARD_VIEW_REGISTRY_ID: string = 'CRUDDemo_CARD_VIEW';
 export const QUICK_VIEW_REGISTRY_ID: string = 'CRUDDemo_QUICK_VIEW';
+export const DISPLAY_VIEW_REGISTRY_ID: string = 'CRUDDemo_DISPLAY_VIEW';
 export const EDIT_VIEW_REGISTRY_ID: string = 'CRUDDemo_EDIT_VIEW';
 export const NEW_VIEW_REGISTRY_ID: string = 'CRUDDemo_NEW_VIEW';
 
@@ -47,6 +49,7 @@ export default class SharePointCrudExampleAdaptiveCardExtension extends BaseAdap
 
       this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
       this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
+      this.quickViewNavigator.register(DISPLAY_VIEW_REGISTRY_ID, () => new DisplayView());
       this.quickViewNavigator.register(EDIT_VIEW_REGISTRY_ID, () => new EditView());
       this.quickViewNavigator.register(NEW_VIEW_REGISTRY_ID, () => new NewView());
 
@@ -64,7 +67,7 @@ export default class SharePointCrudExampleAdaptiveCardExtension extends BaseAdap
       this.state = {
         homeSite: this.properties.homeSite,
         items: this._myItems,
-        currentItemID: 0,
+        currentItemID: 1,
         description: this.properties.description
       };
 
