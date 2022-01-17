@@ -54,7 +54,7 @@ Version|Date|Comments
 
 ## Features
 
-This ACE shows how to work with different form elements to collect and display data from an Adaptive Card and store that data in a SharePoint list. A sample list is provisioned when the ACE is loaded for the first time. It also shows how to navigate from one view to another with multiple cards.
+This ACE shows how to work with different form elements to collect and display data from an Adaptive Card and store that data in a SharePoint list. A sample list is automatically provisioned when the ACE is loaded for the first time. It also shows how to navigate from one view to another with multiple cards.
 
 ## References
 
@@ -65,3 +65,5 @@ This ACE shows how to work with different form elements to collect and display d
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/BasicCard-SharePoint-CRUD" />
