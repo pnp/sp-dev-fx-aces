@@ -1,0 +1,91 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [{
+    "type": "Container",
+    "separator": true,
+    "items": [{
+        "type": "Input.Text",
+        "id": "title",
+        "label": "Title",
+        "placeholder": "Title",
+        "isMultiline": false
+      },
+      {
+        "type": "Input.Text",
+        "label": "Multi-Line Text",
+        "id": "multilinetext",
+        "placeholder": "Multi-Line Text",
+        "height": "stretch",
+        "isMultiline": true,
+        "wrap": true
+      },
+      {
+        "type": "Input.ChoiceSet",
+        "label": "Choice Field DDL",
+        "id": "choicefieldddl",
+        "value": "",
+        "choices": [{
+          "$data": "${choiceFieldDDLValues}",
+          "title": "${choice}",
+          "value": "${value}"
+        }]
+      },
+      {
+        "type": "Input.Date",
+        "label": "Date Time Field",
+        "id": "datatimefield"
+      },
+      {
+        "type": "Input.ChoiceSet",
+        "label": "Choice Field Radio",
+        "id": "choicefieldradio",
+        "style": "expanded",
+        "value": "",
+        "choices": [{
+          "$data": "${choiceFieldRadioValues}",
+          "title": "${choice}",
+          "value": "${value}"
+        }]
+      }, {
+        "type": "Input.ChoiceSet",
+        "label": "Choice Field Checkbox",
+        "id": "choicefieldcheckbox",
+        "isMultiSelect": true,
+        "value": "",
+        "choices": [{
+          "$data": "${choiceFieldCheckboxValues}",
+          "title": "${choice}",
+          "value": "${value}"
+        }]
+      },
+      {
+        "type": "Input.Number",
+        "label": "Number Field",
+        "id": "numberfield"
+      },
+      {
+        "type": "Input.Number",
+        "label": "Currency Field",
+        "id": "currencyfield"
+      },
+      {
+        "type": "Input.Toggle",
+        "label": "Yes/No Field",
+        "title": "Yes/No",
+        "id": "yesnofield"
+      }, {
+        "type": "ActionSet",
+        "actions": [{
+          "type": "Action.Submit",
+          "title": "Save",
+          "data": {
+            "id": "save",
+            "itemId": "${id}"
+          }
+        }]
+      }
+    ]
+  }]
+}
