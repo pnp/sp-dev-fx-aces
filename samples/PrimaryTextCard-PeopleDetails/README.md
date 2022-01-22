@@ -2,7 +2,7 @@
 
 ## Summary
 
-This Adaptive Card Extension shows how to work with form data in an Adaptive Card. It is an example of how to use an ACE to interact with SharePoint List data using PnPJS.
+This Adaptive Card Extension shows general CRUD operations for people details using SharePoint list and Adaptive Card which involves multiple QuickViews and pnp js.
 
 ![screenshot](assets/PrimaryTextCard-PeopleDetails-Demo.gif)
 
@@ -61,9 +61,6 @@ This extension illustrates the following concepts:
 - Adaptive Card Extension - PrimaryTextCard Template 
 - SharePoint CRUD Operation using PnP with ACE
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
 ## References
 
