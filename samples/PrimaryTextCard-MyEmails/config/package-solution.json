@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-graph-myemails-client-side-solution",
+    "id": "6f515498-8dc9-4ee6-a354-e5712f655da4",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0-beta.4"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ace-graph-myemails description"
+      },
+      "longDescription": {
+        "default": "ace-graph-myemails description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-graph-myemails Feature",
+        "description": "The feature that activates elements of the ace-graph-myemails solution.",
+        "id": "ab43fc1c-88c2-45ec-9354-bf8fa7fbd5ac",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-graph-myemails.sppkg"
+  }
+}
