@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "follow-document-ac-es-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/followDocumentAcEs/FollowDocumentAcEsAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/followDocumentAcEs/FollowDocumentAcEsAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FollowDocumentAcEsAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/followDocumentAcEs/loc/{locale}.js"
+  }
+}

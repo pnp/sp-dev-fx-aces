@@ -1,0 +1,370 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Input.Text",
+                            "placeholder": "Search file name",
+                            "id": "SearchText",
+                            "inlineAction": {
+                                "type": "Action.Submit",
+                                "iconUrl": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1344 0q97 0 187 25t168 71 142 110 111 143 71 168 25 187q0 97-25 187t-71 168-110 142-143 111-168 71-187 25q-125 0-239-42t-211-121l-785 784q-19 19-45 19t-45-19-19-45q0-26 19-45l784-785q-79-96-121-210t-42-240q0-97 25-187t71-168 110-142T989 96t168-71 187-25zm0 1280q119 0 224-45t183-124 123-183 46-224q0-119-45-224t-124-183-183-123-224-46q-119 0-224 45T937 297 814 480t-46 224q0 119 45 224t124 183 183 123 224 46z\" ></path></svg>",
+                                "data": {
+                                    "id": "Search"
+                                }
+                            },
+                            "value": "{searchText}"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1297 38q166 45 304 140t237 226 155 289 55 331q0 141-36 272t-103 245-160 207-208 160-245 103-272 37q-141 0-272-36t-245-103-207-160-160-208-103-244-37-273q0-140 37-272t105-248 167-212 221-164H256V0h512v512H640V215q-117 56-211 140T267 545 164 773t-36 251q0 123 32 237t90 214 141 182 181 140 214 91 238 32q123 0 237-32t214-90 182-141 140-181 91-214 32-238q0-150-48-289t-136-253-207-197-266-124l34-123z\" ></path></svg>",
+                            "width": "25px",
+                            "selectAction": {
+                                "type": "Action.Submit",
+                                "data": {
+                                    "id": "refresh"
+                                }
+                            },
+                            "altText": "Refresh"
+                        }
+                    ],
+                    "verticalContentAlignment": "Center"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "selectAction": {
+                                "type": "Action.OpenUrl",
+                                "url": "${SearchfollowDocuments.WebUrl}"
+                            },
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M960 768q93 0 174 35t142 96 96 142 36 175q0 93-35 174t-96 142-142 96-175 36q-93 0-174-35t-142-96-96-142-36-175q0-93 35-174t96-142 142-96 175-36zm346 384q-15-80-63-145t-120-103q29 58 42 121t17 127h124zm-221 128H834q1 16 4 44t10 60 17 64 24 59 31 44 40 17q21 0 38-17t30-44 24-60 17-65 11-59 5-43zm-251-128h252q-1-15-5-42t-11-59-17-65-24-60-31-45-38-17q-22 0-39 17t-31 44-24 60-17 65-10 59-5 43zm-41-246q-35 19-64 45t-53 57-39 68-23 76h124q4-63 16-125t39-121zm-179 374q14 78 61 142t116 103q-26-57-37-119t-16-126H614zm510 248q71-38 119-103t63-145h-124q-5 63-18 126t-40 122zM1115 0l549 549v1371H256V0h859zm37 219v293h293l-293-293zM384 1792h1152V640h-512V128H384v1664z\" ></path></svg>",
+                                    "width": "25px"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${SearchfollowDocuments.WebName}",
+                                    "wrap": true,
+                                    "horizontalAlignment": "Left",
+                                    "size": "Medium",
+                                    "weight": "Bolder",
+                                    "color": "Accent"
+                                }
+                            ],
+                            "selectAction": {
+                                "type": "Action.OpenUrl",
+                                "url": "${SearchfollowDocuments.WebUrl}"
+                            }
+                        }
+                    ],
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "30px",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1443 2045L421 1024 1443 3l90 90-930 931 930 931-90 90z\"></path></svg>",
+                                    "size": "Small",
+                                    "width": "30px",
+                                    "selectAction": {
+                                        "type": "Action.Submit",
+                                        "title": "Previous",
+                                        "data": {
+                                            "id": "previous",
+                                            "SearchText": "{{SearchText.value}}"
+                                        }
+                                    },
+                                    "horizontalAlignment": "Left"
+                                }
+                            ],
+                            "horizontalAlignment": "Left",
+                            "height": "stretch",
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "230px",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "horizontalAlignment": "Center",
+                                    "url": "${SearchfollowDocuments.IconUrl}",
+                                    "selectAction": {
+                                        "type": "Action.OpenUrl",
+                                        "url": "${SearchfollowDocuments.WebFileUrl}"
+                                    }
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${SearchfollowDocuments.Title}",
+                                    "horizontalAlignment": "Center",
+                                    "size": "Medium",
+                                    "height": "stretch",
+                                    "color": "Accent",
+                                    "weight": "Bolder"
+                                }
+                            ],
+                            "selectAction": {
+                                "type": "Action.OpenUrl",
+                                "url": "${SearchfollowDocuments.WebFileUrl}"
+                            }
+                        },
+                        {
+                            "type": "Column",
+                            "width": "30px",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M515 1955l930-931L515 93l90-90 1022 1021L605 2045l-90-90z\"></path></svg>",
+                                    "size": "Small",
+                                    "width": "30px",
+                                    "selectAction": {
+                                        "type": "Action.Submit",
+                                        "title": "Next",
+                                        "data": {
+                                            "id": "next",
+                                            "SearchText": "{{SearchText.value}}"
+                                        }
+                                    }
+                                }
+                            ],
+                            "horizontalAlignment": "Right",
+                            "verticalContentAlignment": "Center"
+                        }
+                    ],
+                    "spacing": "None"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "(${ID}/${Total})",
+                    "wrap": true,
+                    "horizontalAlignment": "Center",
+                    "size": "Medium",
+                    "spacing": "None",
+                    "color": "Default"
+                }
+            ],
+            "style": "emphasis",
+            "separator": true,
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "selectAction": {
+                                        "type": "Action.OpenUrl",
+                                        "url": "https://teams.microsoft.com/share?href=${SearchfollowDocuments.Url}&referrer=${SearchfollowDocuments.Domain}",
+                                        "title": "Share with Teams",
+                                        "tooltip": "Share with Teams"
+                                    },
+                                    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1760 704q-47 0-87-17t-71-48-48-71-18-88q0-46 17-87t48-71 71-48 88-18q46 0 87 17t71 48 48 72 18 87q0 47-17 87t-48 71-72 48-87 18zm0-320q-40 0-68 28t-28 68q0 40 28 68t68 28q40 0 68-28t28-68q0-40-28-68t-68-28zm288 480v476q0 66-25 124t-68 102-102 69-125 25q-38 0-77-9t-73-28q-25 81-73 147t-112 114-143 74-162 26q-98 0-184-34t-154-94-112-142-58-178H85q-35 0-60-25t-25-60V597q0-35 25-60t60-25h733q-29-61-29-128 0-62 23-116t64-95 95-64 117-24q62 0 116 23t95 64 64 95 24 117q0 62-23 116t-64 95-95 64-117 24q-16 0-32-2t-32-5v92h928q40 0 68 28t28 68zm-960-651q-35 0-66 13t-55 37-36 55-14 66q0 35 13 66t37 55 54 36 67 14q35 0 66-13t54-37 37-54 14-67q0-35-13-66t-37-54-55-37-66-14zM592 848h192V688H240v160h192v512h160V848zm880 624V896h-448v555q0 35-25 60t-60 25H709q13 69 47 128t84 101 113 67 135 24q79 0 149-30t122-82 83-122 30-150zm448-132V896h-320v585q26 26 59 38t69 13q40 0 75-15t61-41 41-61 15-75z\" ></path></svg>",
+                                    "width": "25px",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M2048 512v1024q0 27-10 50t-27 40-41 28-50 10H128q-27 0-50-10t-40-27-28-41-10-50V256q0-27 10-50t27-40 41-28 50-10h736q37 0 69 13t58 36 48 51 40 59q13 23 25 41t28 30 35 19 49 7h704q27 0 50 10t40 27 28 41 10 50zM864 256H128v256h736q27 0 45-9t35-22 34-28 39-28q-15-17-31-45t-36-56-40-48-46-20zm1056 1280V512h-704q-56 0-90 9t-58 24-41 31-37 31-50 23-76 10H128v896h1792z\" ></path></svg>",
+                                    "horizontalAlignment": "Center",
+                                    "width": "25px",
+                                    "selectAction": {
+                                        "type": "Action.OpenUrl",
+                                        "url": "${SearchfollowDocuments.Folder}",
+                                        "title": "Folder",
+                                        "tooltip": "Folder"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1416 1254l248 794-640-492-640 492 248-794L0 768h784L1024 0l240 768h784l-632 486z\" ></path></svg>",
+                                    "width": "25px",
+                                    "horizontalAlignment": "Center",
+                                    "selectAction": {
+                                        "type": "Action.Submit",
+                                        "title": "unfollow",
+                                        "data": {
+                                            "id": "unfollow",
+                                            "DriveID": "${SearchfollowDocuments.DriveId}",
+                                            "ItemID": "${SearchfollowDocuments.ItemId}",
+                                            "SearchText": "{{SearchText.value}}"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M960 1920q-133 0-255-34t-230-96-194-150-150-195-97-229T0 960q0-133 34-255t96-230 150-194 195-150 229-97T960 0q133 0 255 34t230 96 194 150 150 195 97 229 34 256q0 133-34 255t-96 230-150 194-195 150-229 97-256 34zm0-1792q-115 0-221 30t-198 84-169 130-130 168-84 199-30 221q0 114 30 220t84 199 130 169 168 130 199 84 221 30q114 0 220-30t199-84 169-130 130-168 84-199 30-221q0-114-30-220t-84-199-130-169-168-130-199-84-221-30zm-64 640h128v640H896V768zm0-256h128v128H896V512z\" ></path></svg>",
+                                    "horizontalAlignment": "Center",
+                                    "width": "25px",
+                                    "selectAction": {
+                                        "type": "Action.OpenUrl",
+                                        "url": "${SearchfollowDocuments.ItemProperties}",
+                                        "title": "File Properties",
+                                        "tooltip": "File Properties"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M384 2048v-128h1152v128H384zm1197-979l-621 626-621-626 90-90 467 470V0h128v1449l467-470 90 90z\" ></path></svg>",
+                                    "width": "25px",
+                                    "horizontalAlignment": "Center",
+                                    "selectAction": {
+                                        "type": "Action.OpenUrl",
+                                        "url": "${SearchfollowDocuments.DownloadFile}",
+                                        "title": "Download file"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1664 896q79 0 149 30t122 82 82 123 30 149q0 80-30 149t-82 122-122 83-149 30q-60 0-117-18t-105-53l-437 436q-19 19-45 19t-45-19-19-45q0-26 19-45l436-437q-35-48-53-105t-18-117q0-79 30-149t82-122 122-83 150-30zm0 640q53 0 99-20t82-55 55-81 20-100q0-53-20-99t-55-82-81-55-100-20q-53 0-99 20t-82 55-55 81-20 100q0 53 20 99t55 82 81 55 100 20zm-656 128l-128 128H256V0h859l549 549v219h-128V640h-512V128H384v1536h624zm144-1152h293l-293-293v293z\" ></path></svg>",
+                                    "horizontalAlignment": "Center",
+                                    "width": "25px",
+                                    "altText": "Thumbnail",
+                                    "selectAction": {
+                                        "type": "Action.ToggleVisibility",
+                                        "title": "Preview File",
+                                        "targetElements": [
+                                            "cardContent${$index}",
+                                            "chevronDown${$index}",
+                                            "chevronUp${$index}"
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "20px",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAWpJREFUWEft1bFuwjAQBuBzpAgJVuYu3XmDLs0TdOojWEICwZOAqITkR+jUJwhL3yA7CzMrSChSjEyIoCngs+8GhmOKiM/+8vucKHjyn3pyHwiQukOSoCRITYBaLz0oCVIToNaje3CxMK+dDmy01iVlUWNMejjAy3is15h5UMD5fDmoqioHgN9eL/2MRTrcbld+A8BbkiTZZDIsfEgv8IKz/Xoy9RODvODsx3meLQbpBc5mX7m18P73ScOQ/3FnooLVdDrKHqXoBRpj+vt9mVtrBzHI+zhVdLtpprXekoCuOBZJxZ0aytekzf1QJAcuCBiSJBcuGIhBujH1q6Q5rc2BwPVce0fRW3xd+Gi763E8uKgE/T3ZOusqLrlmlqgEsUhFxJES9CE5cCzAWweHC8cGvEa6a8wXAvv+JfVgexF3ut1/vs8XFseaYMiiIWNZEwxZGDtWgNik7o2TBCVBagLUeulBSZCaALX+CDt39Sl5bk3ZAAAAAElFTkSuQmCC",
+                                    "width": "20px",
+                                    "id": "chevronDown${$index}"
+                                },
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAVdJREFUWEft1rFqwzAQBuCTwRiStXOX7nmDLPUTdOojCAIJyZMkpFDQI3TKEzhL3iB7l85ZEwgGq5yLmiagSPJdwcN5tU/6+O+ErKDnj+q5DwRI7ZAkKAlSE6DWywxKgtQEqPWsM2iMeUCQ1vpAhbl6NiDiTqe6woUHg7zkQrIAHc5aO0KgUmrPhSQDb3G/rWFCkoA+HCeyMzCE40J2AvpxavMDsy9/TzFlJpOB93DDYf6KsOOx/uBCJgFDOK11jUBjTM6FjAbG4lxruZBRwFQcJzII7IrjQgaBy+VbZS08X9+taoMHws1c6N71txu2i8W0vFcfBK5W76OmaSoA2/4IAKTh/EmqQ5Zl5Xw+2ZOAWHxBwi4luduNL0nCOAbXxhFqj3u/XpunooCv2Lb61kXk+QyPs5n+jNk7Ghiz2H98I0BqqpKgJEhNgFovMygJUhOg1vd+Br8B0eT1KeZc8nAAAAAASUVORK5CYII=",
+                                    "isVisible": false,
+                                    "width": "20px",
+                                    "id": "chevronUp${$index}"
+                                }
+                            ],
+                            "selectAction": {
+                                "type": "Action.ToggleVisibility",
+                                "title": "expand",
+                                "targetElements": [
+                                    "cardContent${$index}",
+                                    "chevronDown${$index}",
+                                    "chevronUp${$index}"
+                                ]
+                            }
+                        }
+                    ],
+                    "spacing": "None"
+                }
+            ],
+            "style": "emphasis",
+            "spacing": "None"
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "${SearchfollowDocuments.Title}",
+                    "wrap": true
+                },
+                {
+                    "type": "Image",
+                    "url": "${SearchfollowDocuments.Thumbnail}",
+                    "separator": true,
+                    "selectAction": {
+                        "type": "Action.OpenUrl",
+                        "url": "${SearchfollowDocuments.WebFileUrl}"
+                    }
+                }
+            ],
+            "isVisible": false,
+            "id": "cardContent${$index}",
+            "separator": true
+        }
+    ]
+}

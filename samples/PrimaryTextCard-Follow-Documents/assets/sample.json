@@ -1,0 +1,44 @@
+[{
+  "name": "pnp-sp-fx-aces-ace-followdocument",
+  "source": "pnp",
+  "title": "Follow Documents",
+  "shortDescription": "Adaptive Card showing Followed Documents",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-Follow-Documents",
+  "longDescription": [
+    "ACE showing documents the current user follows. Allows the user to see a preview, view document metadata, share via Teams, and download the document."
+  ],
+  "creationDateTime": "2021-12-01",
+  "updateDateTime": "2021-12-01",
+  "products": [
+    "SharePoint",
+    "Office",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.13.0"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-Follow-Documents/assets/demo.gif",
+    "alt": "Follow Document demo"
+  }],
+  "authors": [{
+    "gitHubAccount": "aaclage",
+    "company": "Datalynx AG",
+    "pictureUrl": "https://github.com/aaclage.png",
+    "name": "André Lage",
+    "twitter": "aaclage"
+  }],
+  "references": [{
+    "name": "Viva Connections Extensibility guidance",
+    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+    "url": "https://aka.ms/viva/connections/extensibility"
+  }]
+}]

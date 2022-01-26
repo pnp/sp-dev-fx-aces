@@ -1,0 +1,134 @@
+{
+    "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Input.Text",
+                                    "placeholder": "Search file name",
+                                    "id": "SearchText",
+                                    "inlineAction": {
+                                        "type": "Action.Submit",
+                                        "iconUrl": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1344 0q97 0 187 25t168 71 142 110 111 143 71 168 25 187q0 97-25 187t-71 168-110 142-143 111-168 71-187 25q-125 0-239-42t-211-121l-785 784q-19 19-45 19t-45-19-19-45q0-26 19-45l784-785q-79-96-121-210t-42-240q0-97 25-187t71-168 110-142T989 96t168-71 187-25zm0 1280q119 0 224-45t183-124 123-183 46-224q0-119-45-224t-124-183-183-123-224-46q-119 0-224 45T937 297 814 480t-46 224q0 119 45 224t124 183 183 123 224 46z\" ></path></svg>",
+                                        "data": {
+                                            "id": "Search"
+                                        }
+                                    },
+                                    "value": "{searchText}"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1297 38q166 45 304 140t237 226 155 289 55 331q0 141-36 272t-103 245-160 207-208 160-245 103-272 37q-141 0-272-36t-245-103-207-160-160-208-103-244-37-273q0-140 37-272t105-248 167-212 221-164H256V0h512v512H640V215q-117 56-211 140T267 545 164 773t-36 251q0 123 32 237t90 214 141 182 181 140 214 91 238 32q123 0 237-32t214-90 182-141 140-181 91-214 32-238q0-150-48-289t-136-253-207-197-266-124l34-123z\" ></path></svg>",
+                                    "horizontalAlignment": "Right",
+                                    "width": "25px",
+                                    "selectAction": {
+                                        "type": "Action.Submit",
+                                        "data": {
+                                            "id": "refresh"
+                                        }
+                                    },
+                                    "altText": "Refresh"
+                                }
+                            ],
+                            "horizontalAlignment": "Center",
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "$data": "${SearchfollowDocuments}",
+            "separator": true,
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "25px",
+                    "horizontalAlignment": "Center",
+                    "verticalContentAlignment": "Center",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "${IconUrl}",
+                            "width": "25px"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "verticalContentAlignment": "Center",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${Title}",
+                            "horizontalAlignment": "Left",
+                            "size": "Medium"
+                        }
+                    ],
+                    "selectAction": {
+                        "type": "Action.OpenUrl",
+                        "url": "${WebFileUrl}"
+                    }
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "verticalContentAlignment": "Center",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "data:image/png;base64,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",
+                            "width": "25px",
+                            "selectAction": {
+                                "type": "Action.OpenUrl",
+                                "url": "${Folder}",
+                                "title": "folder"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 2048 2048\"><path d=\"M1416 1254l248 794-640-492-640 492 248-794L0 768h784L1024 0l240 768h784l-632 486z\" ></path></svg>",
+                            "width": "25px",
+                            "selectAction": {
+                                "type": "Action.Submit",
+                                "title": "unfollow",
+                                "data": {
+                                    "id": "unfollow",
+                                    "DriveID": "${DriveId}",
+                                    "ItemID": "${ItemId}",
+                                    "SearchText": "{{SearchText.value}}"
+                                }
+                            }
+                        }
+                    ],
+                    "verticalContentAlignment": "Center"
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}
