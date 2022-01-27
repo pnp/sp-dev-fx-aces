@@ -2,7 +2,7 @@
 
 ## Summary
 
-This ACEs access to RSS from PnP Weekly and display in  episodes, audio and description as slider with search capability of description.
+This ACEs access to RSS from PnP Weekly and display episodes, audio and description as slider with search capability of description.
 
 ![demo](./assets/PnPWeekly.png)
 
