@@ -22,7 +22,7 @@ export default class PnPPodcastsService {
 
       let items: ItemEntity[] = [];
       podcastJson.rss.channel.item.forEach(item => {
-        let _ItemEntity: ItemEntity = {
+        let _itemEntity: ItemEntity = {
           title: item.title,
           link: item.link,
           description: item.description.replace(/(<([^>]+)>)/gi, ""),
@@ -31,7 +31,7 @@ export default class PnPPodcastsService {
           image: item["itunes:image"],
           enclosure: item.enclosure,
         } as ItemEntity;
-        items.push(_ItemEntity);
+        items.push(_itemEntity);
       });
       let image: Image = {
         url: podcastJson.rss.channel.image.url,

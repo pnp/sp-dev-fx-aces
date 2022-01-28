@@ -62,7 +62,7 @@ This extension illustrates the following concepts:
 
 - Access to RSS from PnP Weekly and convert to json objects
 - Slider of each episode with audio and description
-- Search capabilty of description of episodes.
+- Search capabilty of description in episodes.
 
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 
