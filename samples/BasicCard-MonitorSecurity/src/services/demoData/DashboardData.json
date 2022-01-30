@@ -1,0 +1,13 @@
+{
+    "categories": [
+      {      
+        "name": "Security alerts",
+        "description": "⚠️ 2 security alerts"
+      },
+      {
+        
+        "name": "Identity risks",
+        "description": "⚠️ 9 identity risks"
+      }
+    ]
+  }
