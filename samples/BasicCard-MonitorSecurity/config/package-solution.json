@@ -6,6 +6,16 @@
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "IdentityRiskEvent.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "IdentityRiskyUser.Read.All"
+      }
+    ],
     "developer": {
       "name": "",
       "websiteUrl": "",

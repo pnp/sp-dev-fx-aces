@@ -9,7 +9,7 @@ define([], function() {
     "Title": "Adaptive Card Extension",
     "SubTitle": "Quick View",
     "Description": "Create your SPFx Adaptive Card Extension solution!",
-    "PrimaryText": "SPFx Adaptive Card Extension",
+    "PrimaryText": "Risk detections : {riskNo}  Risky users : {userNo}",
     "QuickViewButton": "Monitor",
     "DemoDataLabel":"demo data enabled now",
     "LiveDataLabel":"live data enabled now"

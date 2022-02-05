@@ -1,0 +1,28 @@
+{
+    "userData": [
+        {
+            "riskLevel": "none",
+            "riskState": "remediated",
+            "riskDetail": "userPerformedSecuredPasswordReset",
+            "userDisplayName": "Alex Wilber"
+        },
+        {
+            "riskLevel": "none",
+            "riskState": "remediated",
+            "riskDetail": "userPerformedSecuredPasswordReset",
+            "userDisplayName": "Pradeep Gupta"
+        },
+        {
+            "riskLevel": "medium",
+            "riskState": "atRisk",
+            "riskDetail": "none",
+            "userDisplayName": "System Administrator"
+        },
+        {
+            "riskLevel": "none",
+            "riskState": "remediated",
+            "riskDetail": "userPerformedSecuredPasswordReset",
+            "userDisplayName": "Allan Deyoung"
+        }
+    ]
+}

@@ -1,13 +1,14 @@
 {
     "categories": [
-      {      
-        "name": "Security alerts",
-        "description": "⚠️ 2 security alerts"
+      {   
+        "id":"riskyUsers",   
+        "name": "Risky users",
+        "description": "⚠️ 4 risky user"
       },
       {
-        
-        "name": "Identity risks",
-        "description": "⚠️ 9 identity risks"
+        "id":"idRisk",
+        "name": "Risk detections",
+        "description": "⚠️ 8 risk detection"
       }
     ]
   }

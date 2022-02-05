@@ -5,7 +5,7 @@
     "body": [
         {
             "type": "TextBlock",
-            "text": "🕵️ Monitor alert & risk",
+            "text": "🕵️ Monitor Identity",
             "wrap": true,
             "fontType": "Default",
             "size": "Medium",
@@ -52,6 +52,7 @@
                             "type": "ActionSet",
                             "actions": [
                                 {
+                                    "id": "${id}",
                                     "type": "Action.Submit",
                                     "title": "Details"
                                 }

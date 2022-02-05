@@ -1,27 +1,26 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'SecurityMonitorAdaptiveCardExtensionStrings';
+import { securityCenterUrl } from '../../../common/Constants';
 import { ISecurityMonitorAdaptiveCardExtensionProps, ISecurityMonitorAdaptiveCardExtensionState } from '../SecurityMonitorAdaptiveCardExtension';
 
-export interface IQuickViewData {
-  subTitle: string;
-  title: string;
-  description: string;
+export interface IDetailUserViewData {
+  userData: any[];
+  moreLink: string;
 }
 
-export class QuickView extends BaseAdaptiveCardView<
+export class DetailUserView extends BaseAdaptiveCardView<
   ISecurityMonitorAdaptiveCardExtensionProps,
   ISecurityMonitorAdaptiveCardExtensionState,
-  IQuickViewData
+  IDetailUserViewData
 > {
-  public get data(): IQuickViewData {
+  public get data(): IDetailUserViewData {
     return {
-      subTitle: strings.SubTitle,
-      title: strings.Title,
-      description: this.properties.description
+      userData: this.state.userData,
+      moreLink: securityCenterUrl
     };
   }
 
   public get template(): ISPFxAdaptiveCard {
-    return require('./template/QuickViewTemplate.json');
+    return require('./template/DetailUserViewTemplate.json');
   }
 }

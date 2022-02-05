@@ -1,4 +1,4 @@
-import { IPropertyPaneConfiguration, PropertyPaneTextField, PropertyPaneToggle } from '@microsoft/sp-property-pane';
+import { IPropertyPaneConfiguration, PropertyPaneSlider, PropertyPaneTextField, PropertyPaneToggle } from '@microsoft/sp-property-pane';
 import * as strings from 'SecurityMonitorAdaptiveCardExtensionStrings';
 
 export class SecurityMonitorPropertyPane {
@@ -23,8 +23,20 @@ export class SecurityMonitorPropertyPane {
                 }),
                 PropertyPaneToggle('isloadDemoData', {
                   label: strings.DemoDataOptionFieldLabel,
-                  onText:strings.DemoDataLabel,
-                  offText:strings.LiveDataLabel
+                  onText: strings.DemoDataLabel,
+                  offText: strings.LiveDataLabel
+                }),
+                PropertyPaneSlider('maxRiskDetectionCount', {
+                  label: strings.DemoDataOptionFieldLabel,
+                  min: 1,
+                  max: 20,
+                  value: 10
+                }),
+                PropertyPaneSlider('maxRiskyUserCount', {
+                  label: strings.DemoDataOptionFieldLabel,
+                  min: 1,
+                  max: 20,
+                  value: 10
                 })
               ]
             }

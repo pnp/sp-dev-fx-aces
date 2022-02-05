@@ -25,8 +25,11 @@ export class CardView extends BaseBasicCardView<ISecurityMonitorAdaptiveCardExte
   }
 
   public get data(): IBasicCardParameters {
+    const riskCount = this.state.riskData ? this.state.riskData.length : 0;
+    const userCount = this.state.userData ? this.state.userData.length : 0;
+    const primaryText = strings.PrimaryText.replace("{riskNo}", riskCount.toString());
     return {
-      primaryText: strings.PrimaryText
+      primaryText: primaryText.replace("{userNo}", userCount.toString())
     };
   }
 

@@ -18,11 +18,11 @@
     "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
     "group": { "default": "Dashboard" },
     "title": { "default": "Security Monitor" },
-    "description": { "default": "Displays quick info about alerts and risks" },
+    "description": { "default": "Displays quick info of risky users and identity risks" },
     "officeFabricIconFontName": "ShieldAlert",
     "properties": {
       "title": "Security Monitor",
-      "description": "Displays quick info about alerts and risks",
+      "description": "Displays quick info of risky users and identity risks",
       "iconProperty": "shield" // Default to sharepointlogo
     }
   }]
