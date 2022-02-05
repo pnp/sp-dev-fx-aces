@@ -27,13 +27,13 @@ export class SecurityMonitorPropertyPane {
                   offText: strings.LiveDataLabel
                 }),
                 PropertyPaneSlider('maxRiskDetectionCount', {
-                  label: strings.DemoDataOptionFieldLabel,
+                  label: strings.RiskDetectionCountFieldLabel,
                   min: 1,
                   max: 20,
                   value: 10
                 }),
                 PropertyPaneSlider('maxRiskyUserCount', {
-                  label: strings.DemoDataOptionFieldLabel,
+                  label: strings.RiskyUserCountFieldLabel,
                   min: 1,
                   max: 20,
                   value: 10

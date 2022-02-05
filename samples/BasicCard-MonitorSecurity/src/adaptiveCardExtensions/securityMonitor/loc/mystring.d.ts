@@ -4,6 +4,8 @@ declare interface ISecurityMonitorAdaptiveCardExtensionStrings {
   DescriptionFieldLabel: string;
   TitleFieldLabel: string;
   DemoDataOptionFieldLabel: string;
+  RiskDetectionCountFieldLabel: string;
+  RiskyUserCountFieldLabel: string;
   IconPropertyFieldLabel: string;
   Title: string;
   SubTitle: string;

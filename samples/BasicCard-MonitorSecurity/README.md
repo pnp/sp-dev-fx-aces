@@ -1,38 +1,51 @@
-# basic-card-monitor-security
+# Identity Protection Security Monitor from Adaptive Card Extension
+
 
 ## Summary
 
-Short summary on functionality and used technologies.
+This solution provides a security monitoring feature using identity protection graph endpoint and ACE 
 
-[picture of the solution in action, if possible]
+>See [Features](#Features) section for individual listing of features.
 
-## Used SharePoint Framework Version
+![Identity Protection Security Monitor](./assets/demo.gif)
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+## Compatibility
+
+![SPFx 1.13.1](https://img.shields.io/badge/SPFx-1.13.1-green.svg) 
+![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg) 
+![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg) 
+![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
+
+## Permissions
+
+Microsoft Graph
+
+- IdentityRiskEvent.Read.All
+- IdentityRiskyUser.Read.All
 
 ## Applies to
 
-- [SharePoint Framework](https://aka.ms/spfx)
-- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+* [SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
+* [Microsoft 365 tenant](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-development-environment)
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
 ## Prerequisites
 
-> Any special pre-requisites?
+After deploying the solution to app catalog, SharePoint administrator needs to approve the Graph API permissions from SharePoint admin center > Advanced > API access.
+![Permissions](assets/Permissions.gif)
+
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-folder name | Author details (name, company, twitter alias with link)
+Security Monitor | [Arijit Mondal](https://www.linkedin.com/in/arijit-cloud/)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.1|March 10, 2021|Update comment
-1.0|January 29, 2021|Initial release
+1.0|February 06, 2022|Initial release
 
 ## Disclaimer
 
@@ -42,27 +55,19 @@ Version|Date|Comments
 
 ## Minimal Path to Awesome
 
-- Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
-
-> Include any additional steps as needed.
+* Clone this repository
+* Ensure all pre-requisites are met
+* Ensure that you are at the solution folder
+* in the command line run:
+  * `npm install`
+  * `gulp serve`
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+* This adaptive card extension is build for identity administors to review security risks and risky user from Viva Connection dashboard. 
+* This also illustrates ability to use [identity protection](https://docs.microsoft.com/en-us/graph/api/resources/identityprotection-overview) graph api on top of the SharePoint Framework.
+* Dynamic data and demo data toggle option, and set maximum number of returned result from graph Api using property pane
 
-This extension illustrates the following concepts:
-
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
 ## References
 
@@ -71,3 +76,4 @@ This extension illustrates the following concepts:
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+- [Tutorial to create ACE](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)

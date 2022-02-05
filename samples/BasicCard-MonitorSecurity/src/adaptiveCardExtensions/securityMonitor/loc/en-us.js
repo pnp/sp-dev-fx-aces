@@ -5,6 +5,8 @@ define([], function() {
     "DescriptionFieldLabel": "Description Field",
     "TitleFieldLabel": "Card Title",
     "DemoDataOptionFieldLabel":"Load demo data?",
+    "RiskDetectionCountFieldLabel":"Maximum risk detection to display",
+    "RiskyUserCountFieldLabel":"Maximum risky users to display",
     "IconPropertyFieldLabel": "Card Icon",
     "Title": "Adaptive Card Extension",
     "SubTitle": "Quick View",
