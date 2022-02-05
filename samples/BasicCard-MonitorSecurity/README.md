@@ -39,7 +39,7 @@ After deploying the solution to app catalog, SharePoint administrator needs to a
 
 Solution|Author(s)
 --------|---------
-Security Monitor | [Arijit Mondal](https://www.linkedin.com/in/arijit-cloud/)
+Monitor Security | [Arijit Mondal](https://www.linkedin.com/in/arijit-cloud/)
 
 ## Version history
 
@@ -66,7 +66,7 @@ Version|Date|Comments
 
 * This adaptive card extension is build for identity administors to review security risks and risky user from Viva Connection dashboard. 
 * This also illustrates ability to use [identity protection](https://docs.microsoft.com/en-us/graph/api/resources/identityprotection-overview) graph api on top of the SharePoint Framework.
-* Dynamic data and demo data toggle option, and set maximum number of returned result from graph Api using property pane
+* Graph api data and demo data toggle option, and set maximum number of returned result from graph Api using property pane
 
 
 ## References
