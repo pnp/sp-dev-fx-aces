@@ -45,7 +45,7 @@ Monitor Security | [Arijit Mondal](https://www.linkedin.com/in/arijit-cloud/)
 
 Version|Date|Comments
 -------|----|--------
-1.0|February 06, 2022|Initial release
+1.0|February 05, 2022|Initial release
 
 ## Disclaimer
 
