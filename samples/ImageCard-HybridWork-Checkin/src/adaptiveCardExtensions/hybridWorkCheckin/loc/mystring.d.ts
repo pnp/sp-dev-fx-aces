@@ -17,6 +17,7 @@ declare interface IHybridWorkCheckinAdaptiveCardExtensionStrings {
   VaccinationCheckLabel: string;
   CovidSymptomsCheckLabel: string;
   DeclareSectionHeaderLabel: string;
+  SubmitButtonLabel: string;
 }
 
 declare module 'HybridWorkCheckinAdaptiveCardExtensionStrings' {

@@ -84,7 +84,7 @@
     "actions": [
         {
             "type": "Action.Submit",
-            "title": "Submit"            
+            "title": "${labels.submitButtonLabel}"            
         }
     ]
 }

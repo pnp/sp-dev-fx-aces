@@ -8,7 +8,8 @@ export const CheckinFormTemplateLabels = {
     workOptionLabel: Localizations.WorkLocationOptionLabel,
     vaccineCheckLabel: Localizations.VaccinationCheckLabel,
     symptomCheckLabel: Localizations.CovidSymptomsCheckLabel,
-    declarationSectionLabel: Localizations.DeclareSectionHeaderLabel
+    declarationSectionLabel: Localizations.DeclareSectionHeaderLabel,
+    submitButtonLabel: Localizations.SubmitButtonLabel
 };
 
 export const listName = "Hybrid Work Employee Check in";

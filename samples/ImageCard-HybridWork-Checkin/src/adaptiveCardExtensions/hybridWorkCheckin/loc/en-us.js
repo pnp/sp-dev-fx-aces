@@ -17,6 +17,7 @@ define([], function() {
     "WorkLocationOptionLabel":"Which location do you want to work from?",
     "VaccinationCheckLabel":"I am vaccinated",
     "CovidSymptomsCheckLabel":"I don't have Covid symptoms",
-    "DeclareSectionHeaderLabel":"Self-declarations"
+    "DeclareSectionHeaderLabel":"Self-declarations",
+    "SubmitButtonLabel":"Submit"
   }
 });

@@ -17,6 +17,7 @@ define([], function() {
       "WorkLocationOptionLabel":"Von welchem ​​Standort aus möchten Sie arbeiten?",
       "VaccinationCheckLabel":"Ich bin geimpft",
       "CovidSymptomsCheckLabel":"Ich habe keine Covid-Symptome",
-      "DeclareSectionHeaderLabel":"Selbsterklärungen"
+      "DeclareSectionHeaderLabel":"Selbsterklärungen",
+      "SubmitButtonLabel":"Senden"
     }
   });

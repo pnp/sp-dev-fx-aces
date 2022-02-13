@@ -38,5 +38,4 @@ export class CheckinFormView extends BaseAdaptiveCardView<
       this.quickViewNavigator.push(COMPLETE_VIEW_REGISTRY_ID);
     });
   }
-
 }
