@@ -8,6 +8,7 @@ This solution provides a employee check-in feature in hybrid work scenario using
 >See [Features](#Features) section for individual listing of samples.
 
 ![Hybrid Work Employee Check-in](./assets/demo.gif)
+![LocalizedForm](./assets/LocalizedForm.jpg)
 
 ## Compatibility
 
@@ -48,6 +49,7 @@ Hybrid Work Check-in | [Arijit Mondal](https://www.linkedin.com/in/arijit-cloud/
 Version|Date|Comments
 -------|----|--------
 1.0|November 29, 2021|Initial release
+1.1|February 14, 2022|Added localization support for form, choice option from sp list
 
 ## Disclaimer
 
@@ -68,6 +70,7 @@ Version|Date|Comments
 
 This adaptive card extension is based on need for checking in employee status on the covid related declaration and where they want work from for next n number of days. 
 This Adaptive Card Extension also illustrates ability to use form inputs via adaptive cards(https://adaptivecards.io/) on top of the SharePoint Framework.
+Localization support for the form labels in quickview
 
 
 ## References

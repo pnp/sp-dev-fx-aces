@@ -21,11 +21,11 @@ export class CheckinCompleteView extends BaseAdaptiveCardView<
     }
 
     public get template(): ISPFxAdaptiveCard {
-        return require('./template/QuickViewTemplate.json');
+        return require('./template/CheckinCompleteTemplate.json');
     }
 
     public onAction(action: IActionArguments | any): void {
-        if(action.id=="close"){
+        if(action.id==="close"){
             this.quickViewNavigator.close();
         }
     }
