@@ -5,7 +5,7 @@ $PeopleListName = "People"
 $CountryListName = "Country"
 
 try{
-    Connect-PnPOnline -Url $siteUrl -UseWebLogin
+    Connect-PnPOnline -Url $siteUrl -Interactive
 
     Write-Host "You are connected to "$siteUrl -ForegroundColor Green
     Write-Host "Lists with name "$PeopleListName " and " $CountryListName " will be created.." -ForegroundColor Yellow
