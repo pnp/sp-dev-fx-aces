@@ -19,6 +19,8 @@ This Adaptive Card Extension shows general CRUD operations for people details us
 
 ## Prerequisites
 > Run the PowerShell **`CreatePeopleList.ps1`** script under *Prerequisites* folder to create required Lists
+* Lists with name **People** and **Country** will be created
+* Put some value in the **Country** list 
 
 ## Solution
 
