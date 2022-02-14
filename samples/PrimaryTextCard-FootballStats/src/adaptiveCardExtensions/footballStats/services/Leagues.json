@@ -1,0 +1,22 @@
+[
+    {
+        "title": "English Premier League",
+        "value": "PL"
+    },
+    {
+        "title": "Spanish La Liga",
+        "value": "PD"
+    },
+    {
+        "title": "German Bundesliga",
+        "value": "BL1"
+    },
+    {
+        "title": "Italian Serie A",
+        "value": "SA"
+    },
+    {
+        "title": "French Ligue 1",
+        "value": "FL1"
+    }
+]
