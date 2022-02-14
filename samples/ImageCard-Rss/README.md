@@ -2,7 +2,7 @@
 
 ## Summary
 
-This ACEs access to RSS from PnP Weekly and display episodes, audio and description as slider with search capability of description.
+This ACEs accesses the RSS feed from PnP Weekly and display episodes, audio and description as slider with search capability of description.
 
 ![demo](./assets/PnPWeekly.png)
 
@@ -16,8 +16,6 @@ This ACEs access to RSS from PnP Weekly and display episodes, audio and descript
 - [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
-
 
 ## Solution
 
@@ -49,10 +47,9 @@ Version|Date|Comments
 - Deploy the package to the app catalogue site in your tenant
 - in the command-line run:
   - **gulp serve -l --nobrowser**
-- Open the workbench page (https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx)
+- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE to the page
 - Edit the properties of ACE based on the user needs.
-
 
 ## Features
 
@@ -62,11 +59,10 @@ This extension illustrates the following concepts:
 
 - Access to RSS from PnP Weekly and convert to json objects
 - Slider of each episode with audio and description
-- Search capabilty of description in episodes.
+- Search capability of description in episodes.
 
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from <http://aka.ms/m365pnp>.
 
 ## References
 
@@ -75,3 +71,5 @@ This extension illustrates the following concepts:
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-Rss" />
