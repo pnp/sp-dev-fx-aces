@@ -109,6 +109,7 @@ The list must have the following `single line of text` columns
 - Longitude
 - MapImageLink
 - TimeZone
+
 When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x300. 
 
 #### Usage of Maps API
