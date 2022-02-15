@@ -94,7 +94,7 @@ The `Map Image Link` by default contains a blank placeholder image. When maps AP
 
 A termset can be used as a data source for office locations.
 The office terms have to be first level child.
-Each office term must have custom properties called `Address`, `Latitude`, `Longitude` and `MapImageLink` (optional).
+Each office term must have custom properties called `Address`, `Latitude`, `Longitude`, `TimeZone` and `MapImageLink` (optional).
 When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x300. 
 
 3. SharePoint list
@@ -108,6 +108,7 @@ The list must have the following `single line of text` columns
 - Latitude
 - Longitude
 - MapImageLink
+- TimeZone
 When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x300. 
 
 #### Usage of Maps API
