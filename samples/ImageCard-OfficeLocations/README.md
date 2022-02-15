@@ -7,6 +7,7 @@ This sample shows how to build an ACE with multiple card views to show the detai
 ### Highlights
 - Usage of multiple data sources (local properties, taxonomy or SharePoint list) to get the required data
 - Usage of Bing and Google maps to get static maps
+- Usage of OpenWeather API to get weather
 - Conditional enabling/disabling of properties
 
 ### Demo
@@ -34,7 +35,8 @@ This sample shows how to build an ACE with multiple card views to show the detai
 ## Prerequisites
 
 > Get a [Bing maps API key](https://www.bingmapsportal.com/) or a [Google maps API key](https://developers.google.com/maps/documentation/static-maps/get-api-key)
-> Get an [Open weather API key](https://home.openweathermap.org/api_keys)
+
+> Get an [OpenWeather API key](https://home.openweathermap.org/api_keys)
 
 ## Solution
 
@@ -67,6 +69,8 @@ Version|Date|Comments
 - Select a map source
 - Set `Use maps API for showing the map` as `true`
 - Add either Bing maps API key or Google maps API key
+- Set `Show weather` as `true`
+- Add the OpenWeather API key
 - Save the page
 
 ## Features
@@ -122,8 +126,8 @@ The following links can be used to generate a static image
 
 #### Weather details
 
-The sample uses Open Weather API to show the weather.
-Set the [Open weather API](https://home.openweathermap.org/api_keys) key in properties to display the weather.
+The sample uses OpenWeather API to show the weather.
+Set the [OpenWeather API](https://home.openweathermap.org/api_keys) key in properties to display the weather.
 To avoid multiple API calls, the weather can be stored in a list. To do that, create a list in the Home site with the following single line of text columns:
 - Title
 - Latitude
