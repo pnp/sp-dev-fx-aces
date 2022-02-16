@@ -16,7 +16,7 @@
               "type": "Input.Text",
               "placeholder": "Search by name",
               "id": "searchText",
-              "value": "{searchText}"
+              "value": "${searchText}"
             }
           ]
         },
@@ -54,7 +54,7 @@
               "selectAction": {
                 "type": "Action.Submit",
                 "data": {
-                  "id": "ClearSearch"
+                  "id": "Clear"
                 }
               }
             }

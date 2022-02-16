@@ -91,8 +91,8 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       (this.properties.dataSource === DataSource.Taxonomy && isEmpty(this.properties.officesTermSetId)) ||
       (this.properties.dataSource === DataSource.List && isEmpty(this.properties.list)) ||
       isEmpty(this.properties.mapsSource) ||
-      (this.properties.mapsSource === MapsSource.Bing && isEmpty(this.properties.bingMapsApiKey)) ||
-      (this.properties.mapsSource === MapsSource.Google && isEmpty(this.properties.googleMapsApiKey)) ||
+      (this.properties.useMapsAPI && this.properties.mapsSource === MapsSource.Bing && isEmpty(this.properties.bingMapsApiKey)) ||
+      (this.properties.useMapsAPI && this.properties.mapsSource === MapsSource.Google && isEmpty(this.properties.googleMapsApiKey)) ||
       (this.properties.showWeather && this.properties.getWeatherFromList && isEmpty(this.properties.weatherList)) ||
       (this.properties.showWeather && !this.properties.getWeatherFromList && isEmpty(this.properties.openWeatherMapApiKey))
     ) {

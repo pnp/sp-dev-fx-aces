@@ -151,12 +151,12 @@ export class QuickView extends BaseAdaptiveCardView<
         newOfficeIndex = (newOfficeIndex < totalNumberOfOffices) ? newOfficeIndex : 0;
         this.setState({ currentOfficeIndex: newOfficeIndex });
       } else if (id === 'Search') {
-        let searchText = isEmpty(action.data.searchText) ? "" : action.data.searchText;
+        let searchTextEntered = isEmpty(action.data.searchText) ? "" : action.data.searchText;
         this.setState({
-          searchText,
+          searchText: searchTextEntered,
           currentOfficeIndex: 0,
         });
-      } else if (id === 'ClearSearch') {
+      } else if (id === 'Clear') {
         this.setState({
           searchText: "",
           currentOfficeIndex: 0,
