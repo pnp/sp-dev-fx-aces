@@ -14,7 +14,7 @@
     "@microsoft/sp-core-library": "1.13.1",
     "@microsoft/sp-property-pane": "1.13.1",
     "@pnp/sp": "^2.12.0",
-    "@pnp/spfx-property-controls": "^3.4.0"
+    "@pnp/spfx-property-controls": "^3.5.0-beta.1849437"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "1.13.1",

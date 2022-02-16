@@ -20,6 +20,7 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
   useSiteCollectionTermStore: boolean;
   officesTermSetId: string;
   list: string;
+  showSearch: boolean;
   showMaps: boolean;
   mapsSource: MapsSource;
   useMapsAPI: boolean;
@@ -35,6 +36,7 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
 export interface IOfficeLocationsAdaptiveCardExtensionState {
   offices: Office[];
   currentOfficeIndex: number;
+  searchText: string;
   cardViewToRender: string;
   errorMessage: string;
 }
@@ -63,6 +65,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       this.state = {
         offices: null,
         currentOfficeIndex: 0,
+        searchText: '',
         cardViewToRender: CARD_VIEW_REGISTRY_ID,
         errorMessage: ''
       };

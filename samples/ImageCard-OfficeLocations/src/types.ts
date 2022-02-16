@@ -45,3 +45,10 @@ export type OfficeLocationMap = {
     directionUrl: string;
     directionVisible: boolean;
 };
+
+export type Icons = {
+    searchIcon: string;
+    previousIcon: string;
+    nextIcon: string;
+    clearIcon: string;
+}

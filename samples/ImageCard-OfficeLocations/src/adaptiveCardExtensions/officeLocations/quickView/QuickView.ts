@@ -1,23 +1,21 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'OfficeLocationsAdaptiveCardExtensionStrings';
-import { MapsSource, Office, OfficeLocationMap } from '../../../types';
+import { Icons, MapsSource, Office, OfficeLocationMap } from '../../../types';
 import { IOfficeLocationsAdaptiveCardExtensionProps, IOfficeLocationsAdaptiveCardExtensionState } from '../OfficeLocationsAdaptiveCardExtension';
 import { Logger, LogLevel } from "@pnp/logging";
 import { isEmpty } from '@microsoft/sp-lodash-subset';
 import { getOfficeLocationWeatherFromAPI, getOfficeLocationWeatherFromList, PLACEHOLDER_IMAGE_URL } from '../../../officelocation.service';
+import { CLEAR_ICON, NEXT_ICON, PREVIOUS_ICON, SEARCH_ICON } from '../../../icons';
 
-/* interface IOfficeLocationMap {
-  imageUrl: string;
-  imageAlt: string;
-  directionUrl: string;
-  directionVisible: boolean;
-} */
 
 export interface IQuickViewData {
-  subTitle: string;
   title: string;
+  icons: Icons;
   office: Office;
-  // officeLocationMap: IOfficeLocationMap;
+  showSearch: boolean;
+  searchText: string;
+  showOffices: boolean;
+  showNoResults: boolean;
   showWeather: boolean;
   showMaps: boolean;
 }
@@ -68,10 +66,32 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   public get data(): IQuickViewData {
-    let dataToReturn: IQuickViewData = null;
+
+    const { title, showSearch, showMaps, showTime, showWeather } = this.properties;
+
+    let icons: Icons = {
+      searchIcon: SEARCH_ICON,
+      previousIcon: PREVIOUS_ICON,
+      nextIcon: NEXT_ICON,
+      clearIcon: CLEAR_ICON
+    };
+
+    let dataToReturn: IQuickViewData = {
+      title,
+      office: null,
+      icons,
+      showSearch,
+      searchText : this.state.searchText,
+      showOffices: false,
+      showNoResults: true,
+      showWeather: false,
+      showMaps: false
+    };
+
     try {
-      const { offices } = this.state;
-      const office: Office = this.state.offices[this.state.currentOfficeIndex];
+      const { offices, searchText } = this.state;
+      let filteredOffices: Office[] = isEmpty(searchText) ? offices : offices.filter(office => office.name.toLowerCase().indexOf(searchText.toLowerCase()) > -1);
+      const office: Office = filteredOffices[this.state.currentOfficeIndex];
       if (office) {
 
         if (this.properties.showMaps && !office.gotMap) {
@@ -92,11 +112,15 @@ export class QuickView extends BaseAdaptiveCardView<
         office.time = this.properties.showTime && !isEmpty(office.timeZone) ? `(${new Date().toLocaleString('en-GB', { timeZone: office.timeZone, hour: '2-digit', minute: '2-digit' })})` : '';
 
         dataToReturn = {
-          subTitle: office.name,
-          title: this.properties.title,
-          office: office,
-          showWeather: this.properties.showWeather && !isEmpty(office.weather),
-          showMaps: this.properties.showMaps && !isEmpty(office.locationMap)
+          title,
+          office,
+          icons,
+          showSearch,
+          searchText,
+          showOffices: filteredOffices.length > 0,
+          showNoResults: filteredOffices.length === 0,
+          showWeather: showWeather && !isEmpty(office.weather),
+          showMaps: showMaps && !isEmpty(office.locationMap)
         };
       }
     } catch (error) {
@@ -116,6 +140,17 @@ export class QuickView extends BaseAdaptiveCardView<
         let newOfficeIndex: number = this.state.currentOfficeIndex + 1;
         newOfficeIndex = (newOfficeIndex < this.state.offices.length) ? newOfficeIndex : 0;
         this.setState({ currentOfficeIndex: newOfficeIndex });
+      } else if (id === 'Search') {
+        let searchText = isEmpty(action.data.searchText) ? "" : action.data.searchText;
+        this.setState({
+          searchText,
+          currentOfficeIndex: 0,
+        });
+      } else if (id === 'ClearSearch') {
+        this.setState({
+          searchText: "",
+          currentOfficeIndex: 0,
+        });
       }
     }
   }

@@ -129,7 +129,12 @@ export class OfficeLocationsPropertyPane {
                   deferredValidationTime: 0,
                   listsToExclude: ["Site Assets", "Site Pages", "Style Library", "Form Templates", "Documents", "Events"],
                   key: 'listPickerFieldId'
-                })
+                }),
+                PropertyPaneToggle('showSearch', {
+                  label: 'Show search box',
+                  onText: 'Yes',
+                  offText: 'No'
+                }),
               ]
             },
             {
