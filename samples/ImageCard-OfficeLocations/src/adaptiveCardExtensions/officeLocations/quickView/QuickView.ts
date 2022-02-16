@@ -81,7 +81,7 @@ export class QuickView extends BaseAdaptiveCardView<
       office: null,
       icons,
       showSearch,
-      searchText : this.state.searchText,
+      searchText: this.state.searchText,
       showOffices: false,
       showNoResults: true,
       showWeather: false,
@@ -90,7 +90,7 @@ export class QuickView extends BaseAdaptiveCardView<
 
     try {
       const { offices, searchText } = this.state;
-      let filteredOffices: Office[] = isEmpty(searchText) ? offices : offices.filter(office => office.name.toLowerCase().indexOf(searchText.toLowerCase()) > -1);
+      let filteredOffices: Office[] = isEmpty(searchText) ? offices : offices.filter(o => o.name.toLowerCase().indexOf(searchText.toLowerCase()) > -1);
       const office: Office = filteredOffices[this.state.currentOfficeIndex];
       if (office) {
 
@@ -130,15 +130,25 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   public async onAction(action: IActionArguments): Promise<void> {
+
+    const { offices, searchText } = this.state;
+    let totalNumberOfOffices: number = offices.length;
+
     if (action.type === 'Submit') {
-      const { id, newIndex } = action.data;
+      const { id } = action.data;
+
+      if (!isEmpty(searchText) && (id === 'previous' || id === 'next')) {
+        let filteredOffices: Office[] = offices.filter(o => o.name.toLowerCase().indexOf(searchText.toLowerCase()) > -1);
+        totalNumberOfOffices = filteredOffices.length;
+      }
+
       if (id === 'previous') {
         let newOfficeIndex: number = this.state.currentOfficeIndex - 1;
-        newOfficeIndex = (newOfficeIndex < 0) ? (this.state.offices.length - 1) : newOfficeIndex;
+        newOfficeIndex = (newOfficeIndex < 0) ? (totalNumberOfOffices - 1) : newOfficeIndex;
         this.setState({ currentOfficeIndex: newOfficeIndex });
       } else if (id === 'next') {
         let newOfficeIndex: number = this.state.currentOfficeIndex + 1;
-        newOfficeIndex = (newOfficeIndex < this.state.offices.length) ? newOfficeIndex : 0;
+        newOfficeIndex = (newOfficeIndex < totalNumberOfOffices) ? newOfficeIndex : 0;
         this.setState({ currentOfficeIndex: newOfficeIndex });
       } else if (id === 'Search') {
         let searchText = isEmpty(action.data.searchText) ? "" : action.data.searchText;

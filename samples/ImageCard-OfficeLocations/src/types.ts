@@ -51,4 +51,4 @@ export type Icons = {
     previousIcon: string;
     nextIcon: string;
     clearIcon: string;
-}
+};
