@@ -1,5 +1,5 @@
 [{
-  "name": "pnp-sp-fx-aces-ace-group-viewer",
+  "name": "pnp-sp-fx-aces-sharepoint-crud",
   "source": "pnp",
   "title": "SharePoint CRUD Example",
   "shortDescription": "This Adaptive Card Extension shows how to work with form elements and form data in an Adaptive Card. It is an example of how to use an ACE to interact with SharePoint List data using PnPJS.",
