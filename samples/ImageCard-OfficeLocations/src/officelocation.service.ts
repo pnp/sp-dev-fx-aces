@@ -73,7 +73,7 @@ export async function getOfficesFromList(listId: string): Promise<Office[]> {
     }
 }
 
-export async function getOfficeLocationWeatherFromAPI(httpClient: HttpClient, openWeatherMapApiKey: string, latitude: string, longitude: string): Promise<OfficeLocationWeather> {
+export async function getOfficeLocationWeatherFromAPI(httpClient: any, openWeatherMapApiKey: string, latitude: string, longitude: string): Promise<OfficeLocationWeather> {
     try {
 
         if (isEmpty(latitude) || isEmpty(longitude)) {

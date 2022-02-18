@@ -1,12 +1,12 @@
 import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
-import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
+import { BaseAdaptiveCardExtension, BaseCardView } from '@microsoft/sp-adaptive-card-extension-base';
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
 import { OfficeLocationsPropertyPane } from './OfficeLocationsPropertyPane';
 import { SetupCardView } from './cardView/SetupCardView';
 import { isEmpty } from '@microsoft/sp-lodash-subset';
 import { DataSource, MapsSource, Office } from '../../types';
-import { getOfficesFromTermStore, getOfficesFromList } from '../../officelocation.service';
+import { getOfficesFromTermStore, getOfficesFromList, PLACEHOLDER_IMAGE_URL } from '../../officelocation.service';
 import { sp } from "@pnp/sp/presets/all";
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
 import { ErrorCardView } from './cardView/ErrorCardView';
@@ -21,7 +21,7 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
   officesTermSetId: string;
   list: string;
   showSearch: boolean;
-  showMaps: boolean;
+  showMapsInQuickView: boolean;
   mapsSource: MapsSource;
   useMapsAPI: boolean;
   bingMapsApiKey: string;
@@ -34,6 +34,7 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
 }
 
 export interface IOfficeLocationsAdaptiveCardExtensionState {
+  mainImage: string;
   offices: Office[];
   currentOfficeIndex: number;
   searchText: string;
@@ -54,6 +55,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
   private LOG_SOURCE: string = "🔶 OfficeLocationsAdaptiveCardExtension";
 
   public async onInit(): Promise<void> {
+
     try {
       Logger.subscribe(new ConsoleListener());
       Logger.activeLogLevel = LogLevel.Info;
@@ -63,6 +65,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       });
 
       this.state = {
+        mainImage: this.properties.mainImage,
         offices: null,
         currentOfficeIndex: 0,
         searchText: '',
@@ -83,16 +86,23 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
     }
   }
 
-  private async loadOffices(): Promise<void> {
+  /* public getCachedState(state: IOfficeLocationsAdaptiveCardExtensionState): Partial<IOfficeLocationsAdaptiveCardExtensionState> {
+    console.log("getCachedState - %o", state);
+    return {
+      offices: state.offices
+    }
+  } */
+
+  private loadOffices = async (): Promise<void> => {
 
     if (
       isEmpty(this.properties.dataSource) ||
       (this.properties.dataSource === DataSource.Local && isEmpty(this.properties.offices)) ||
       (this.properties.dataSource === DataSource.Taxonomy && isEmpty(this.properties.officesTermSetId)) ||
       (this.properties.dataSource === DataSource.List && isEmpty(this.properties.list)) ||
-      isEmpty(this.properties.mapsSource) ||
-      (this.properties.useMapsAPI && this.properties.mapsSource === MapsSource.Bing && isEmpty(this.properties.bingMapsApiKey)) ||
-      (this.properties.useMapsAPI && this.properties.mapsSource === MapsSource.Google && isEmpty(this.properties.googleMapsApiKey)) ||
+      (this.properties.showMapsInQuickView && isEmpty(this.properties.mapsSource)) ||
+      (this.properties.showMapsInQuickView && this.properties.useMapsAPI && this.properties.mapsSource === MapsSource.Bing && isEmpty(this.properties.bingMapsApiKey)) ||
+      (this.properties.showMapsInQuickView && this.properties.useMapsAPI && this.properties.mapsSource === MapsSource.Google && isEmpty(this.properties.googleMapsApiKey)) ||
       (this.properties.showWeather && this.properties.getWeatherFromList && isEmpty(this.properties.weatherList)) ||
       (this.properties.showWeather && !this.properties.getWeatherFromList && isEmpty(this.properties.openWeatherMapApiKey))
     ) {
@@ -105,7 +115,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
 
     setTimeout(async () => {
 
-      let offices: Office[] = [];
+      let offices: Office[] = null;
 
       switch (this.properties.dataSource) {
         case DataSource.Local:
@@ -115,7 +125,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
           offices = await getOfficesFromTermStore(this.properties.useSiteCollectionTermStore, this.properties.officesTermSetId);
           break;
         case DataSource.List:
-          offices = await getOfficesFromList(this.properties.list);
+          offices = isEmpty(this.properties.list) ? null : await getOfficesFromList(this.properties.list);
           break;
       }
 
@@ -128,7 +138,11 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
         return;
       }
 
-      this.setState({ offices });
+      this.setState({
+        offices,
+        cardViewToRender: CARD_VIEW_REGISTRY_ID
+      });
+      this.cardNavigator.replace(this.state.cardViewToRender);
     }, 300);
   }
 
@@ -160,7 +174,33 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
     return this.state.cardViewToRender;
   }
 
+  protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {
+    if (propertyPath === 'mainImage' && newValue !== oldValue) {
+      if (newValue) {
+        this.setState({
+          mainImage: newValue
+        });
+      }
+    }
+
+    if ((propertyPath === 'dataSource' ||
+      propertyPath === 'officesTermSetId' ||
+      propertyPath === 'list' ||
+      propertyPath === 'offices') && newValue !== oldValue) {
+      if (newValue) {
+        this.loadOffices();
+      } else {
+        this.setState({
+          offices: null,
+          cardViewToRender: SETUP_CARD_VIEW_REGISTRY_ID
+        });
+        this.cardNavigator.replace(this.state.cardViewToRender);
+      }
+    }
+
+  }
+
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-    return this._deferredPropertyPane!.getPropertyPaneConfiguration(this.properties, this.context, this.onPropertyPaneFieldChanged);
+    return this._deferredPropertyPane!.getPropertyPaneConfiguration(this.properties, this.context, this.onPropertyPaneFieldChanged.bind(this));
   }
 }

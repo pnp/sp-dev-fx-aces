@@ -1,4 +1,4 @@
-import { IPropertyPaneChoiceGroupOption, IPropertyPaneConfiguration, PropertyPaneChoiceGroup, PropertyPaneTextField, PropertyPaneToggle } from '@microsoft/sp-property-pane';
+import { IPropertyPaneChoiceGroupOption, IPropertyPaneConfiguration, PropertyPaneChoiceGroup, PropertyPaneDropdown, PropertyPaneTextField, PropertyPaneToggle } from '@microsoft/sp-property-pane';
 import * as strings from 'OfficeLocationsAdaptiveCardExtensionStrings';
 import { DataSource, MapsSource } from '../../types';
 import { IOfficeLocationsAdaptiveCardExtensionProps } from './OfficeLocationsAdaptiveCardExtension';
@@ -36,8 +36,8 @@ export class OfficeLocationsPropertyPane {
 
   public getPropertyPaneConfiguration(
     properties: IOfficeLocationsAdaptiveCardExtensionProps,
-    context: BaseComponentContext,
-    onPropertyPaneFieldChanged): IPropertyPaneConfiguration {
+    context: any,
+    onPropertyPaneFieldChanged: () => void): IPropertyPaneConfiguration {
     return {
       pages: [
         {
@@ -140,18 +140,20 @@ export class OfficeLocationsPropertyPane {
             {
               groupName: "Properties related to maps",
               groupFields: [
-                PropertyPaneToggle('showMaps', {
-                  label: 'Show maps',
+                PropertyPaneToggle('showMapsInQuickView', {
+                  label: 'Show maps in quick view',
                   onText: 'Yes',
                   offText: 'No'
                 }),
-                PropertyPaneChoiceGroup('mapsSource', {
+                PropertyPaneDropdown('mapsSource', {
                   label: "Maps source",
-                  options: this.getMapsSourceOptions()
+                  options: this.getMapsSourceOptions(),
+                  disabled: !properties.showMapsInQuickView
                 }),
                 PropertyPaneToggle('useMapsAPI', {
                   label: 'Use maps API for showing the map',
-                  disabled: !properties.showMaps,
+                  checked: !properties.showMapsInQuickView ? false : properties.useMapsAPI,
+                  disabled: !properties.showMapsInQuickView,
                   onText: 'Yes',
                   offText: 'No (Use mapImageLink property instead)'
                 }),

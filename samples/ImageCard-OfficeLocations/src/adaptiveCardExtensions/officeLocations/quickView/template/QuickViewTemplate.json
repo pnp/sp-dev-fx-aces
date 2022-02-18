@@ -33,7 +33,8 @@
               "selectAction": {
                 "type": "Action.Submit",
                 "data": {
-                  "id": "Search"
+                  "id": "Search",
+                  "searchText": "${searchText}"
                 }
               }
             }
@@ -130,7 +131,7 @@
           "url": "${office.locationMap.imageUrl}",
           "altText": "${office.locationMap.imageAlt}",
           "separator": true,
-          "isVisible": "${showMaps}"
+          "isVisible": "${showMapsInQuickView}"
         },
         {
           "type": "TextBlock",
@@ -141,6 +142,39 @@
           "separator": true,
           "wrap": true,
           "horizontalAlignment": "Center"
+        },
+        {
+          "type": "ActionSet",
+          "isVisible": "${showOpenMapsButton}",
+          "separator": true,
+          "actions": [
+            {
+              "type": "VivaAction.ShowLocation",
+              "title": "Open in maps",
+              "style": "positive",
+              "id": "ShowLocation",
+              "parameters": {
+                "locationCoordinates": {
+                  "latitude": "${office.latitude}",
+                  "longitude": "${office.longitude}"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "ActionSet",
+          "isVisible": "${office.locationMap.directionVisible}",
+          "separator": true,
+          "actions": [
+            {
+              "type": "Action.OpenUrl",
+              "title": "Get directions",
+              "style": "positive",
+              "url": "${office.locationMap.directionUrl}",
+              "tooltip": "Open directions in maps"
+            }
+          ]
         },
         {
           "type": "ColumnSet",
@@ -221,20 +255,6 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "ActionSet",
-          "isVisible": "${office.locationMap.directionVisible}",
-          "separator": true,
-          "actions": [
-            {
-              "type": "Action.OpenUrl",
-              "title": "Get directions",
-              "style": "positive",
-              "url": "${office.locationMap.directionUrl}",
-              "tooltip": "Open directions in maps"
             }
           ]
         }

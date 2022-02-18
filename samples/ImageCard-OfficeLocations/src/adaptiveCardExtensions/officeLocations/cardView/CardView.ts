@@ -39,7 +39,7 @@ export class CardView extends BaseImageCardView<IOfficeLocationsAdaptiveCardExte
     const numberOfOffices = offices?.length;
     return {
       title,
-      imageUrl: this.properties.mainImage || require('../assets/OfficeLocation.svg'),
+      imageUrl: this.state.mainImage || require('../assets/OfficeLocation.svg'),
       primaryText: `We have ${numberOfOffices} office${numberOfOffices > 1 ? 's' : ''}`
     };
   }

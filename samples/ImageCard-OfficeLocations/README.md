@@ -15,12 +15,15 @@ This sample shows how to build an ACE with multiple card views to show the detai
 ### Desktop view
 ![demo desktop](./assets/ace-demo.gif)
 
+### Desktop view with show location feature introduced in SPFx v1.14
+![demo desktop showlocation](./assets/ace-demo-showlocation.gif)
+
 ### Mobile view
 ![demo mobile](./assets/ace-demo-mobile.gif)
 
 ## Used SharePoint Framework Version
 
-![SPFx 1.13.0](https://img.shields.io/badge/SPFx-1.13.1-green.svg)
+![SPFx 1.14.0](https://img.shields.io/badge/SPFx-1.14.0-green.svg)
 ![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)

@@ -1,4 +1,5 @@
-import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
+import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments, ISubmitActionArguments, IActionErrorArguments, DeviceContext } from '@microsoft/sp-adaptive-card-extension-base';
+import { ITextInput } from 'adaptivecards/lib/schema';
 import * as strings from 'OfficeLocationsAdaptiveCardExtensionStrings';
 import { Icons, MapsSource, Office, OfficeLocationMap } from '../../../types';
 import { IOfficeLocationsAdaptiveCardExtensionProps, IOfficeLocationsAdaptiveCardExtensionState } from '../OfficeLocationsAdaptiveCardExtension';
@@ -17,7 +18,8 @@ export interface IQuickViewData {
   showOffices: boolean;
   showNoResults: boolean;
   showWeather: boolean;
-  showMaps: boolean;
+  showMapsInQuickView: boolean;
+  showOpenMapsButton: boolean;
 }
 
 
@@ -36,11 +38,15 @@ export class QuickView extends BaseAdaptiveCardView<
       directionVisible: false
     };
 
-    if (!this.properties.showMaps) {
+    if (isEmpty(office.latitude) || isEmpty(office.longitude)) {
       return officeLocationMap;
     }
 
-    if (isEmpty(office.latitude) || isEmpty(office.longitude)) {
+    //Show directions with Bing maps to maintain consistency with the "Open in Maps" button as that button shows the Bing maps app by default
+    officeLocationMap.directionUrl = `https://www.bing.com/maps?rtp=~pos.${office.latitude}_${office.longitude}&rtop=0~1~0&lvl=15&toWww=1`;
+    officeLocationMap.directionVisible = true;
+
+    if (!this.properties.showMapsInQuickView) {
       return officeLocationMap;
     }
 
@@ -49,8 +55,8 @@ export class QuickView extends BaseAdaptiveCardView<
         if (this.properties.useMapsAPI) {
           officeLocationMap.imageUrl = `https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/${office.latitude}%2C${office.longitude}/15?mapSize=400,300&format=png&pushpin=${office.latitude},${office.longitude};46;&key=${this.properties.bingMapsApiKey}`;
         }
-        officeLocationMap.directionUrl = `https://www.bing.com/maps?rtp=~pos.${office.latitude}_${office.longitude}&rtop=0~1~0&lvl=15&toWww=1`;
-        officeLocationMap.directionVisible = true;
+        // officeLocationMap.directionUrl = `https://www.bing.com/maps?rtp=~pos.${office.latitude}_${office.longitude}&rtop=0~1~0&lvl=15&toWww=1`;
+        // officeLocationMap.directionVisible = true;
         break;
       case MapsSource.Google:
         if (this.properties.useMapsAPI) {
@@ -67,7 +73,7 @@ export class QuickView extends BaseAdaptiveCardView<
 
   public get data(): IQuickViewData {
 
-    const { title, showSearch, showMaps, showTime, showWeather } = this.properties;
+    const { title, showSearch, showMapsInQuickView, showTime, showWeather } = this.properties;
 
     let icons: Icons = {
       searchIcon: SEARCH_ICON,
@@ -85,7 +91,8 @@ export class QuickView extends BaseAdaptiveCardView<
       showOffices: false,
       showNoResults: true,
       showWeather: false,
-      showMaps: false
+      showMapsInQuickView: false,
+      showOpenMapsButton: false
     };
 
     try {
@@ -94,7 +101,7 @@ export class QuickView extends BaseAdaptiveCardView<
       const office: Office = filteredOffices[this.state.currentOfficeIndex];
       if (office) {
 
-        if (this.properties.showMaps && !office.gotMap) {
+        if (!office.gotMap) {
           office.locationMap = this.getOfficeLocationMapDetails(office);
           office.gotMap = true;
         }
@@ -109,18 +116,19 @@ export class QuickView extends BaseAdaptiveCardView<
           }, 0);
         }
 
-        office.time = this.properties.showTime && !isEmpty(office.timeZone) ? `(${new Date().toLocaleString('en-GB', { timeZone: office.timeZone, hour: '2-digit', minute: '2-digit' })})` : '';
+        office.time = showTime && !isEmpty(office.timeZone) ? `(${new Date().toLocaleString('en-GB', { timeZone: office.timeZone, hour: '2-digit', minute: '2-digit' })})` : '';
 
         dataToReturn = {
           title,
           office,
           icons,
-          showSearch,
+          showSearch : this.context.deviceContext === 'Mobile' ? false : showSearch, //Don't show search on mobile as there is an issue with getting data - https://github.com/SharePoint/sp-dev-docs/issues/7671
           searchText,
           showOffices: filteredOffices.length > 0,
           showNoResults: filteredOffices.length === 0,
           showWeather: showWeather && !isEmpty(office.weather),
-          showMaps: showMaps && !isEmpty(office.locationMap)
+          showMapsInQuickView: showMapsInQuickView && !isEmpty(office.locationMap),
+          showOpenMapsButton: this.context.deviceContext === 'WebView' && !showMapsInQuickView && !isEmpty(office.latitude) && !isEmpty(office.longitude)
         };
       }
     } catch (error) {
@@ -134,8 +142,9 @@ export class QuickView extends BaseAdaptiveCardView<
     const { offices, searchText } = this.state;
     let totalNumberOfOffices: number = offices.length;
 
-    if (action.type === 'Submit') {
-      const { id } = action.data;
+    if ((<ISubmitActionArguments>action).type === 'Submit') {
+      const submitAction = <ISubmitActionArguments>action;
+      const { id } = submitAction.data;
 
       if (!isEmpty(searchText) && (id === 'previous' || id === 'next')) {
         let filteredOffices: Office[] = offices.filter(o => o.name.toLowerCase().indexOf(searchText.toLowerCase()) > -1);
@@ -151,7 +160,9 @@ export class QuickView extends BaseAdaptiveCardView<
         newOfficeIndex = (newOfficeIndex < totalNumberOfOffices) ? newOfficeIndex : 0;
         this.setState({ currentOfficeIndex: newOfficeIndex });
       } else if (id === 'Search') {
-        let searchTextEntered = isEmpty(action.data.searchText) ? "" : action.data.searchText;
+        
+        let searchTextEntered = isEmpty(submitAction.data.searchText) ? "" : submitAction.data.searchText;
+        // alert(`${JSON.stringify(submitAction as any)}`);
         this.setState({
           searchText: searchTextEntered,
           currentOfficeIndex: 0,

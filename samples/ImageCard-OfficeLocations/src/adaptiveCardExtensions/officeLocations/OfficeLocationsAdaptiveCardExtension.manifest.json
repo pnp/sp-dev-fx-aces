@@ -22,7 +22,16 @@
     "officeFabricIconFontName": "BankSolid",
     "properties": {
       "title": "Office Locations",
-      "iconProperty": "" // Default to sharepointlogo
+      "iconProperty": "", // Default to sharepointlogo
+      "useSiteCollectionTermStore": false,
+      "showSearch":true,
+      "showMapsInQuickView":false,
+      "useMapsAPI":false,
+      "bingMapsApiKey":"AobmrKIjQInHa8zf5IjtCu3zVgIZFewRhY9M8NUzpYfvMdO2RKDO2eKI6uRFrP6b", //Used by Show Location action
+      "showTime":true,
+      "showWeather":false,
+      "getWeatherFromList":false
+
     }
   }]
 }
