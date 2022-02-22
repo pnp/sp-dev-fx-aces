@@ -14,7 +14,7 @@
           "items": [
             {
               "type": "Input.Text",
-              "placeholder": "Search by name",
+              "placeholder": "Search...",
               "id": "searchText",
               "value": "${searchText}"
             }
@@ -45,6 +45,7 @@
         {
           "type": "Column",
           "width": "25px",
+          "isVisible": "${showClearSearch}",
           "items": [
             {
               "type": "Image",
@@ -76,6 +77,7 @@
             {
               "type": "Column",
               "width": "20px",
+              "isVisible": "${showNavigationButtons}",
               "items": [
                 {
                   "type": "Image",
@@ -99,16 +101,28 @@
               "items": [
                 {
                   "type": "TextBlock",
-                  "text": "${office.name} ${office.time}",
+                  "text": "${office.name}",
+                  "weight": "Bolder",
                   "wrap": true,
                   "size": "Large",
                   "horizontalAlignment": "Center"
+                },
+                {
+                  "type": "TextBlock",
+                  "isVisible": "${showTime}",
+                  "horizontalAlignment": "Center",
+                  "verticalContentAlignment": "Center",
+                  "text": "${office.time}",
+                  "wrap": true,
+                  "size": "Medium"
                 }
-              ]
+              ],
+              "verticalContentAlignment": "Center"
             },
             {
               "type": "Column",
               "width": "20px",
+              "isVisible": "${showNavigationButtons}",
               "items": [
                 {
                   "type": "Image",
@@ -136,7 +150,6 @@
         {
           "type": "TextBlock",
           "size": "Medium",
-          "weight": "Bolder",
           "text": "${office.address}",
           "spacing": "Padding",
           "separator": true,
@@ -164,7 +177,7 @@
         },
         {
           "type": "ActionSet",
-          "isVisible": "${office.locationMap.directionVisible}",
+          "isVisible": "${office.locationMap.directionUrl != '#'}",
           "separator": true,
           "actions": [
             {
@@ -181,6 +194,7 @@
           "separator": true,
           "isVisible": "${showWeather}",
           "style": "accent",
+          "minHeight": "100px",
           "columns": [
             {
               "type": "Column",
@@ -188,6 +202,8 @@
               "items": [
                 {
                   "type": "ColumnSet",
+                  "spacing": "none",
+                  "isVisible": "${office.gotWeather && office.weather != null}",
                   "columns": [
                     {
                       "type": "Column",
@@ -198,20 +214,8 @@
                           "url": "${office.weather.icon}",
                           "size": "Small"
                         }
-                      ]
-                    },
-                    {
-                      "type": "Column",
-                      "width": "auto",
-                      "items": [
-                        {
-                          "type": "TextBlock",
-                          "text": "${office.weather.temperature}",
-                          "size": "ExtraLarge",
-                          "spacing": "None",
-                          "wrap": true
-                        }
-                      ]
+                      ],
+                      "verticalContentAlignment": "Center"
                     },
                     {
                       "type": "Column",
@@ -219,12 +223,13 @@
                       "items": [
                         {
                           "type": "TextBlock",
-                          "text": "°C",
-                          "weight": "Bolder",
-                          "spacing": "Small",
+                          "text": "${office.weather.temperature}°C",
+                          "size": "ExtraLarge",
+                          "spacing": "None",
                           "wrap": true
                         }
-                      ]
+                      ],
+                      "verticalContentAlignment": "Center"
                     },
                     {
                       "type": "Column",
@@ -250,11 +255,31 @@
                           "spacing": "None",
                           "wrap": true
                         }
-                      ]
+                      ],
+                      "verticalContentAlignment": "Center"
                     }
                   ]
+                },
+                {
+                  "type": "Image",
+                  "url": "${weatherLoadingImage}",
+                  "altText": "Loading...",
+                  "isVisible": "${!office.gotWeather}",
+                  "horizontalAlignment": "Center",
+                  "width": "50px"
+                },
+                {
+                  "type": "TextBlock",
+                  "size": "Medium",
+                  "isVisible": "${office.gotWeather && office.weather == null}",
+                  "text": "No weather data available",
+                  "spacing": "none",
+                  "separator": true,
+                  "wrap": true,
+                  "horizontalAlignment": "Center"
                 }
-              ]
+              ],
+              "verticalContentAlignment": "Center"
             }
           ]
         }
@@ -262,7 +287,8 @@
     },
     {
       "type": "Container",
-      "isVisible": "${showNoResults}",
+      "isVisible": "${!showOffices}",
+      "style": "warning",
       "items": [
         {
           "type": "TextBlock",

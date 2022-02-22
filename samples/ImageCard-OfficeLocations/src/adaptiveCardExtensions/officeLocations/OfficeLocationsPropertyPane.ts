@@ -5,6 +5,8 @@ import { IOfficeLocationsAdaptiveCardExtensionProps } from './OfficeLocationsAda
 import { PropertyFieldCollectionData, CustomCollectionFieldType } from '@pnp/spfx-property-controls/lib/PropertyFieldCollectionData';
 import { PropertyFieldListPicker, PropertyFieldListPickerOrderBy } from '@pnp/spfx-property-controls/lib/PropertyFieldListPicker';
 import { BaseComponentContext } from '@microsoft/sp-component-base';
+import { isEmpty } from '@microsoft/sp-lodash-subset';
+
 
 export class OfficeLocationsPropertyPane {
 
@@ -143,7 +145,7 @@ export class OfficeLocationsPropertyPane {
                 PropertyPaneToggle('showMapsInQuickView', {
                   label: 'Show maps in quick view',
                   onText: 'Yes',
-                  offText: 'No'
+                  offText: 'No (Show open maps button instead)'
                 }),
                 PropertyPaneDropdown('mapsSource', {
                   label: "Maps source",
@@ -153,17 +155,18 @@ export class OfficeLocationsPropertyPane {
                 PropertyPaneToggle('useMapsAPI', {
                   label: 'Use maps API for showing the map',
                   checked: !properties.showMapsInQuickView ? false : properties.useMapsAPI,
-                  disabled: !properties.showMapsInQuickView,
+                  disabled: !properties.showMapsInQuickView && !isEmpty(properties.mapsSource),
                   onText: 'Yes',
                   offText: 'No (Use mapImageLink property instead)'
                 }),
                 PropertyPaneTextField('bingMapsApiKey', {
                   label: "Bing maps API Key",
-                  disabled: !properties.useMapsAPI || properties.mapsSource !== MapsSource.Bing
+                  disabled: !properties.showMapsInQuickView || !properties.useMapsAPI || properties.mapsSource !== MapsSource.Bing,
+                  description: properties.bingMapsApiKey === "AobmrKIjQInHa8zf5IjtCu3zVgIZFewRhY9M8NUzpYfvMdO2RKDO2eKI6uRFrP6b" ? "This is the key used by Microsoft for maps functionality. You can use a different one if needed." : ""
                 }),
                 PropertyPaneTextField('googleMapsApiKey', {
                   label: "Google maps API Key",
-                  disabled: !properties.useMapsAPI || properties.mapsSource !== MapsSource.Google
+                  disabled: !properties.showMapsInQuickView || !properties.useMapsAPI || properties.mapsSource !== MapsSource.Google
                 })
               ]
             },
@@ -179,6 +182,10 @@ export class OfficeLocationsPropertyPane {
                   label: 'Show weather',
                   onText: 'Yes',
                   offText: 'No'
+                }),
+                PropertyPaneTextField('weatherLoadingImage', {
+                  label: "Image to show while loading weather",
+                  disabled: !properties.showWeather
                 }),
                 PropertyPaneToggle('getWeatherFromList', {
                   label: 'Get weather from list',

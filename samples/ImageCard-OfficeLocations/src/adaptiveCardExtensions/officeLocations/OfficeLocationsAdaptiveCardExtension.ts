@@ -1,5 +1,5 @@
 import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
-import { BaseAdaptiveCardExtension, BaseCardView } from '@microsoft/sp-adaptive-card-extension-base';
+import { BaseAdaptiveCardExtension, BaseCardView, RenderType } from '@microsoft/sp-adaptive-card-extension-base';
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
 import { OfficeLocationsPropertyPane } from './OfficeLocationsPropertyPane';
@@ -10,6 +10,7 @@ import { getOfficesFromTermStore, getOfficesFromList, PLACEHOLDER_IMAGE_URL } fr
 import { sp } from "@pnp/sp/presets/all";
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
 import { ErrorCardView } from './cardView/ErrorCardView';
+import Fuse from 'fuse.js';
 
 export interface IOfficeLocationsAdaptiveCardExtensionProps {
   title: string;
@@ -28,14 +29,17 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
   googleMapsApiKey: string;
   showTime: boolean;
   showWeather: boolean;
+  weatherLoadingImage: string;
   getWeatherFromList: boolean;
   weatherList: string;
   openWeatherMapApiKey: string;
+  fuse: Fuse<Office>;
 }
 
 export interface IOfficeLocationsAdaptiveCardExtensionState {
   mainImage: string;
   offices: Office[];
+  filteredOffices: Office[];
   currentOfficeIndex: number;
   searchText: string;
   cardViewToRender: string;
@@ -67,11 +71,13 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       this.state = {
         mainImage: this.properties.mainImage,
         offices: null,
+        filteredOffices: null,
         currentOfficeIndex: 0,
         searchText: '',
         cardViewToRender: CARD_VIEW_REGISTRY_ID,
         errorMessage: ''
       };
+
 
       this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
       this.cardNavigator.register(SETUP_CARD_VIEW_REGISTRY_ID, () => new SetupCardView());
@@ -79,6 +85,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
 
       await this.loadOffices();
+
       return Promise.resolve();
 
     } catch (error) {
@@ -138,11 +145,25 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
         return;
       }
 
+      offices.forEach(office => {
+        office.gotWeather = false;
+        office.gotMap = false;
+        office.weather = null;
+      });
+
       this.setState({
         offices,
+        filteredOffices: offices,
         cardViewToRender: CARD_VIEW_REGISTRY_ID
       });
+
+      this.properties.fuse = new Fuse(offices, {
+        keys: ['name', 'address'],
+        includeScore: true
+      });
+
       this.cardNavigator.replace(this.state.cardViewToRender);
+
     }, 300);
   }
 
@@ -156,6 +177,17 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
 
   protected get dataSource(): DataSource {
     return this.properties.dataSource;
+  }
+
+  protected onRenderTypeChanged(oldRenderType: RenderType): void {
+    if (oldRenderType === 'QuickView') {
+      // Reset to the Card state when the Quick View was opened.
+      this.setState({
+        searchText: "",
+        currentOfficeIndex: 0,
+        filteredOffices: this.state.offices
+      });
+    }
   }
 
   protected loadPropertyPaneResources(): Promise<void> {
@@ -174,6 +206,14 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
     return this.state.cardViewToRender;
   }
 
+  private showSetupCard = (): void => {
+    this.setState({
+      offices: null,
+      cardViewToRender: SETUP_CARD_VIEW_REGISTRY_ID
+    });
+    this.cardNavigator.replace(this.state.cardViewToRender);
+  }
+
   protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {
     if (propertyPath === 'mainImage' && newValue !== oldValue) {
       if (newValue) {
@@ -183,20 +223,105 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       }
     }
 
-    if ((propertyPath === 'dataSource' ||
-      propertyPath === 'officesTermSetId' ||
-      propertyPath === 'list' ||
-      propertyPath === 'offices') && newValue !== oldValue) {
+    if (
+      (propertyPath === 'dataSource' ||
+        propertyPath === 'officesTermSetId' ||
+        propertyPath === 'list' ||
+        propertyPath === 'offices') && newValue !== oldValue) {
       if (newValue) {
         this.loadOffices();
       } else {
-        this.setState({
-          offices: null,
-          cardViewToRender: SETUP_CARD_VIEW_REGISTRY_ID
-        });
-        this.cardNavigator.replace(this.state.cardViewToRender);
+        this.showSetupCard();
       }
     }
+
+    //TODO: see if the below can be simplified
+
+    if (propertyPath === 'showMapsInQuickView' && newValue !== oldValue) {
+      if (newValue && isEmpty(this.properties.mapsSource)) {
+        this.showSetupCard();
+      } else {
+        this.loadOffices();
+      }
+    }
+
+    if (propertyPath === 'mapsSource' && newValue !== oldValue) {
+      if (isEmpty(newValue)) {
+        this.showSetupCard();
+      } else {
+        this.loadOffices();
+      }
+    }
+
+    if (propertyPath === 'useMapsAPI' && newValue !== oldValue) {
+      if (newValue) {
+        if ((this.properties.mapsSource === 'Bing' && isEmpty(this.properties.bingMapsApiKey)) ||
+          (this.properties.mapsSource === 'Google' && isEmpty(this.properties.googleMapsApiKey))) {
+          this.showSetupCard();
+        }
+      } else {
+        this.loadOffices();
+      }
+    }
+
+    if (propertyPath === 'bingMapsApiKey' || propertyPath === 'googleMapsApiKey' && newValue !== oldValue) {
+      if (isEmpty(newValue)) {
+        this.showSetupCard();
+      } else {
+        this.loadOffices();
+      }
+    }
+
+    if (propertyPath === 'showWeather' && newValue !== oldValue) {
+      if (
+        newValue &&
+        (this.properties.getWeatherFromList && isEmpty(this.properties.weatherList)) ||
+        (!this.properties.getWeatherFromList && isEmpty(this.properties.openWeatherMapApiKey))
+      ) {
+
+        this.showSetupCard();
+
+      } else {
+        this.loadOffices();
+      }
+    }
+
+    if (propertyPath === 'getWeatherFromList' && newValue !== oldValue) {
+      if (newValue) {
+        if (isEmpty(this.properties.weatherList)) {
+          this.showSetupCard();
+        } else {
+          this.loadOffices();
+        }
+      } else {
+        if (isEmpty(this.properties.openWeatherMapApiKey)) {
+          this.showSetupCard();
+        } else {
+          this.loadOffices();
+        }
+      }
+    }
+
+    if (propertyPath === 'weatherList' && newValue !== oldValue) {
+      if (this.properties.showWeather && this.properties.getWeatherFromList) {
+        if (isEmpty(newValue)) {
+          this.showSetupCard();
+        } else {
+          this.loadOffices();
+        }
+      }
+    }
+
+    if (propertyPath === 'openWeatherMapApiKey' && newValue !== oldValue) {
+      if (this.properties.showWeather && !this.properties.getWeatherFromList) {
+        if (isEmpty(newValue)) {
+          this.showSetupCard();
+        } else {
+          this.loadOffices();
+        }
+      }
+    }
+
 
   }
 

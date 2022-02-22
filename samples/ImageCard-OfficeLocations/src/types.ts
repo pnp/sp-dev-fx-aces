@@ -1,4 +1,5 @@
 export type Office = {
+    uniqueId: string | number;
     name: string;
     address: string;
     latitude: string;
@@ -43,7 +44,6 @@ export type OfficeLocationMap = {
     imageUrl: string;
     imageAlt: string;
     directionUrl: string;
-    directionVisible: boolean;
 };
 
 export type Icons = {
@@ -51,4 +51,5 @@ export type Icons = {
     previousIcon: string;
     nextIcon: string;
     clearIcon: string;
+    timeIcon: string;
 };

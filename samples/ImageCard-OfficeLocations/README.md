@@ -7,7 +7,10 @@ This sample shows how to build an ACE with multiple card views to show the detai
 ### Highlights
 - Usage of multiple data sources (local properties, taxonomy or SharePoint list) to get the required data
 - Usage of Bing and Google maps to get static maps
+- Usage of the new "Show location" action
 - Usage of OpenWeather API to get weather
+- Load data on demand asynchronously in quick view
+- Usage of fuzzy search to search data
 - Conditional enabling/disabling of properties
 
 ### Demo

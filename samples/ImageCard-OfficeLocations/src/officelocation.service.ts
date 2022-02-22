@@ -4,7 +4,7 @@ import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
 import { ITermStoreInfo } from "@pnp/sp/taxonomy";
-import { taxonomy, ITermData, ITerm } from "@pnp/sp-taxonomy";
+import { taxonomy, ITermSetData, ITermSet, ITermData, ITerm } from "@pnp/sp-taxonomy";
 import { Office, OfficeLocationWeather, OfficeTermsCustomProperties } from "./types";
 import { Logger, LogLevel } from "@pnp/logging";
 import { HttpClient } from "@microsoft/sp-http";
@@ -17,19 +17,33 @@ export const PLACEHOLDER_IMAGE_URL: string = "https://via.placeholder.com/400x30
 export async function getOfficesFromTermStore(useSiteCollectionTermStore: boolean, termSetId: string): Promise<Office[]> {
     try {
         let officeTerms: (ITermData & ITerm)[] = [];
+        let officesTermset: (ITermSetData & ITermSet) = null;
         if (useSiteCollectionTermStore) {
             let siteCollectionTermStore = taxonomy.getDefaultSiteCollectionTermStore();
-            officeTerms = await siteCollectionTermStore.getTermSetById(termSetId).terms.get();
+            officesTermset = await siteCollectionTermStore.getTermSetById(termSetId).get();
         } else {
             let termStoreInfo: ITermStoreInfo = await sp.termStore();
-            officeTerms = await taxonomy.termStores.getById(termStoreInfo.id).getTermSetById(termSetId).terms.get();
+            officesTermset = await taxonomy.termStores.getById(termStoreInfo.id).getTermSetById(termSetId).get();
         }
 
+        if(isEmpty(officesTermset)) {
+            Logger.write(`${LOG_SOURCE} (getOfficesFromTermStore) - error getting termset`, LogLevel.Error);
+            return null;
+        }
+
+        let termsetCustomProperties: any = officesTermset.CustomProperties;
+        if(!termsetCustomProperties.UsedForOfficeLocations) {
+            Logger.write(`${LOG_SOURCE} (getOfficesFromTermStore) - termset is not used for office locations`, LogLevel.Warning);
+            return null;
+        }
+
+        officeTerms =  await officesTermset.terms.get();
         console.debug(`${LOG_SOURCE} (getOfficesFromTermStore) - Data from term store - %o`, officeTerms);
 
         let offices: Office[] = officeTerms.map(term => {
             let customProperties: OfficeTermsCustomProperties = term.CustomProperties;
             return {
+                uniqueId: term.Id,
                 name: term.Name,
                 address: customProperties.Address,
                 latitude: customProperties.Latitude ?? null,
@@ -51,11 +65,12 @@ export async function getOfficesFromTermStore(useSiteCollectionTermStore: boolea
 export async function getOfficesFromList(listId: string): Promise<Office[]> {
     try {
 
-        const officeListItems: any[] = await sp.web.lists.getById(listId).items.select("Title", "Address", "Latitude", "Longitude", "MapImageLink", "TimeZone").get();
+        const officeListItems: any[] = await sp.web.lists.getById(listId).items.select("Id", "Title", "Address", "Latitude", "Longitude", "MapImageLink", "TimeZone").get();
         console.debug(`${LOG_SOURCE} (getOfficesFromList) - Data from list - %o`, officeListItems);
 
         let offices: Office[] = officeListItems.map(item => {
             return {
+                uniqueId: item.Id,
                 name: item.Title,
                 address: item.Address,
                 latitude: item.Latitude ?? null,
