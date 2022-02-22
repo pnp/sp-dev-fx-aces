@@ -23,6 +23,7 @@
     "properties": {
       "title": "Office Locations",
       "iconProperty": "", // Default to sharepointlogo
+      "showQuickViewAsList": false,
       "useSiteCollectionTermStore": false,
       "showSearch":true,
       "showMapsInQuickView":false,

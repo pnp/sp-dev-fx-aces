@@ -4,18 +4,20 @@ import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
 import { OfficeLocationsPropertyPane } from './OfficeLocationsPropertyPane';
 import { SetupCardView } from './cardView/SetupCardView';
-import { isEmpty } from '@microsoft/sp-lodash-subset';
+import { isEmpty, sortBy } from '@microsoft/sp-lodash-subset';
 import { DataSource, MapsSource, Office } from '../../types';
 import { getOfficesFromTermStore, getOfficesFromList, PLACEHOLDER_IMAGE_URL } from '../../officelocation.service';
 import { sp } from "@pnp/sp/presets/all";
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
 import { ErrorCardView } from './cardView/ErrorCardView';
 import Fuse from 'fuse.js';
+import { ListView } from './listView/ListView';
 
 export interface IOfficeLocationsAdaptiveCardExtensionProps {
   title: string;
   iconProperty: string;
   mainImage: string;
+  showQuickViewAsList: boolean;
   dataSource: DataSource;
   offices: Office[];
   useSiteCollectionTermStore: boolean;
@@ -50,6 +52,7 @@ const CARD_VIEW_REGISTRY_ID: string = 'OfficeLocations_CARD_VIEW';
 const SETUP_CARD_VIEW_REGISTRY_ID: string = 'OfficeLocations_SETUP_CARD_VIEW';
 const ERROR_CARD_VIEW_REGISTRY_ID: string = 'OfficeLocations_ERROR_CARD_VIEW';
 export const QUICK_VIEW_REGISTRY_ID: string = 'OfficeLocations_QUICK_VIEW';
+export const LIST_VIEW_REGISTRY_ID: string = 'OfficeLocations_LIST_VIEW';
 
 export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCardExtension<
   IOfficeLocationsAdaptiveCardExtensionProps,
@@ -83,6 +86,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       this.cardNavigator.register(SETUP_CARD_VIEW_REGISTRY_ID, () => new SetupCardView());
       this.cardNavigator.register(ERROR_CARD_VIEW_REGISTRY_ID, () => new ErrorCardView());
       this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
+      this.quickViewNavigator.register(LIST_VIEW_REGISTRY_ID, () => new ListView());
 
       await this.loadOffices();
 
@@ -144,6 +148,8 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
         this.cardNavigator.replace(this.state.cardViewToRender);
         return;
       }
+
+      offices = sortBy(offices, (office: Office) => office.name);
 
       offices.forEach(office => {
         office.gotWeather = false;

@@ -56,6 +56,11 @@ export class OfficeLocationsPropertyPane {
                 }),
                 PropertyPaneTextField('mainImage', {
                   label: "Image to show on the card"
+                }),
+                PropertyPaneToggle('showQuickViewAsList', {
+                  label: 'Show quick view as list',
+                  onText: 'Yes',
+                  offText: 'No'
                 })
               ]
             },
@@ -135,7 +140,8 @@ export class OfficeLocationsPropertyPane {
                 PropertyPaneToggle('showSearch', {
                   label: 'Show search box',
                   onText: 'Yes',
-                  offText: 'No'
+                  offText: 'No',
+                  disabled: properties.showQuickViewAsList
                 }),
               ]
             },

@@ -12,7 +12,7 @@ import { isEmpty } from '@microsoft/sp-lodash-subset';
 
 
 const LOG_SOURCE: string = "🔶 OfficeLocationService";
-export const PLACEHOLDER_IMAGE_URL: string = "https://via.placeholder.com/400x300?text=Map%20unavailable";
+export const PLACEHOLDER_IMAGE_URL: string = "https://via.placeholder.com/400x240?text=Map%20unavailable";
 
 export async function getOfficesFromTermStore(useSiteCollectionTermStore: boolean, termSetId: string): Promise<Office[]> {
     try {

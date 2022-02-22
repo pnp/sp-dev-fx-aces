@@ -96,7 +96,7 @@ The ACE has capability to use one of 3 data sources
 ![data source local property collection](./assets/data-source-local-property-collection.png)
 
 Data can be added here as per the properties.
-The `Map Image Link` by default contains a blank placeholder image. When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x300. 
+The `Map Image Link` by default contains a blank placeholder image. When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240. 
 
 2. Term store
 
@@ -105,7 +105,7 @@ The `Map Image Link` by default contains a blank placeholder image. When maps AP
 A termset can be used as a data source for office locations.
 The office terms have to be first level child.
 Each office term must have custom properties called `Address`, `Latitude`, `Longitude`, `TimeZone` and `MapImageLink` (optional).
-When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x300. 
+When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240. 
 
 3. SharePoint list
 
@@ -120,7 +120,7 @@ The list must have the following `single line of text` columns
 - MapImageLink
 - TimeZone
 
-When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x300. 
+When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240. 
 
 #### Usage of Maps API
 

@@ -76,10 +76,14 @@ export class QuickView extends BaseAdaptiveCardView<
     return officeLocationMap;
   }
 
+  public get title(): string {
+    return this.properties.showQuickViewAsList ? "Office details" : this.properties.title;
+  }
+
   public get data(): IQuickViewData {
 
     const { offices, searchText, filteredOffices } = this.state;
-    const { title, showSearch, showMapsInQuickView, showTime, showWeather, weatherLoadingImage, fuse } = this.properties;
+    const { title, showQuickViewAsList, showSearch, showMapsInQuickView, showTime, showWeather, weatherLoadingImage, fuse } = this.properties;
 
     let dataToReturn: IQuickViewData = {
       title,
@@ -110,7 +114,7 @@ export class QuickView extends BaseAdaptiveCardView<
           office.gotMap = true;
         }
 
-        office.time = showTime && !isEmpty(office.timeZone) ? `🕙 ${new Date().toLocaleString('en-GB', { timeZone: office.timeZone, hour: '2-digit', minute: '2-digit' })}` : '';
+        office.time = showTime && !isEmpty(office.timeZone) ? `🕙 ${new Date().toLocaleString('en-GB', { timeZone: office.timeZone, hour12: true, hour: '2-digit', minute: '2-digit', weekday: 'short' })}` : '';
 
         //check if office already has the weather data
         //if not, get it from the API or from the list
@@ -138,9 +142,9 @@ export class QuickView extends BaseAdaptiveCardView<
         dataToReturn = {
           ...dataToReturn,
           office,
-          showSearch: this.context.deviceContext === 'Mobile' ? false : showSearch && offices.length > 1, //Don't show search on mobile as there is an issue with getting data - https://github.com/SharePoint/sp-dev-docs/issues/7671
+          showSearch: showQuickViewAsList ? false : this.context.deviceContext === 'Mobile' ? false : showSearch && offices.length > 1, //Don't show search on mobile as there is an issue with getting data - https://github.com/SharePoint/sp-dev-docs/issues/7671
           showOffices: filteredOffices.length > 0,
-          showNavigationButtons: filteredOffices.length > 1,
+          showNavigationButtons: showQuickViewAsList ? false : filteredOffices.length > 1,
           showTime: showTime && !isEmpty(office.time),
           showMapsInQuickView: showMapsInQuickView && !isEmpty(office.locationMap),
           showOpenMapsButton: this.context.deviceContext === 'WebView' && !showMapsInQuickView && !isEmpty(office.latitude) && !isEmpty(office.longitude)

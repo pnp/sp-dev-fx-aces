@@ -6,7 +6,7 @@ import {
   ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'OfficeLocationsAdaptiveCardExtensionStrings';
-import { IOfficeLocationsAdaptiveCardExtensionProps, IOfficeLocationsAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../OfficeLocationsAdaptiveCardExtension';
+import { IOfficeLocationsAdaptiveCardExtensionProps, IOfficeLocationsAdaptiveCardExtensionState, LIST_VIEW_REGISTRY_ID, QUICK_VIEW_REGISTRY_ID } from '../OfficeLocationsAdaptiveCardExtension';
 
 export class CardView extends BaseImageCardView<IOfficeLocationsAdaptiveCardExtensionProps, IOfficeLocationsAdaptiveCardExtensionState> {
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
@@ -17,7 +17,7 @@ export class CardView extends BaseImageCardView<IOfficeLocationsAdaptiveCardExte
           action: {
             type: 'QuickView',
             parameters: {
-              view: QUICK_VIEW_REGISTRY_ID
+              view: this.properties.showQuickViewAsList ? LIST_VIEW_REGISTRY_ID : QUICK_VIEW_REGISTRY_ID
             }
           }
         }
@@ -51,7 +51,7 @@ export class CardView extends BaseImageCardView<IOfficeLocationsAdaptiveCardExte
       return {
         type: 'QuickView',
         parameters: {
-          view: QUICK_VIEW_REGISTRY_ID
+          view: this.properties.showQuickViewAsList ? LIST_VIEW_REGISTRY_ID : QUICK_VIEW_REGISTRY_ID
         }
       };
     }

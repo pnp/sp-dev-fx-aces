@@ -145,7 +145,8 @@
           "url": "${office.locationMap.imageUrl}",
           "altText": "${office.locationMap.imageAlt}",
           "separator": true,
-          "isVisible": "${showMapsInQuickView}"
+          "isVisible": "${showMapsInQuickView}",
+          "height": "205.8px"
         },
         {
           "type": "TextBlock",
