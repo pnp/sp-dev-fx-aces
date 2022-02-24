@@ -6,6 +6,9 @@ export type Office = {
     longitude: string;
     mapImageLink: string;
     timeZone: string;
+    pageUrl: string;
+    managerEmailAddress?: string;
+    chatWithManagerLink: string;
     locationMap?: OfficeLocationMap;
     gotMap?: boolean;
     weather?: OfficeLocationWeather;
@@ -19,6 +22,8 @@ export type OfficeTermsCustomProperties = {
     Longitude: string;
     MapImageLink: string;
     TimeZone: string;
+    PageUrl: string;
+    ManagerEmailAddress: string;
 };
 
 export enum MapsSource {
@@ -51,5 +56,5 @@ export type Icons = {
     previousIcon: string;
     nextIcon: string;
     clearIcon: string;
-    timeIcon: string;
+    copyIcon: string;
 };

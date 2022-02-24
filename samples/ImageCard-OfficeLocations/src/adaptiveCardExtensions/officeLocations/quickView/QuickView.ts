@@ -6,7 +6,8 @@ import { IOfficeLocationsAdaptiveCardExtensionProps, IOfficeLocationsAdaptiveCar
 import { Logger, LogLevel } from "@pnp/logging";
 import { isEmpty, findIndex } from '@microsoft/sp-lodash-subset';
 import { getOfficeLocationWeatherFromAPI, getOfficeLocationWeatherFromList, PLACEHOLDER_IMAGE_URL } from '../../../officelocation.service';
-import { CLEAR_ICON, NEXT_ICON, PREVIOUS_ICON, SEARCH_ICON, TIME_ICON } from '../../../icons';
+import { DateTime } from 'luxon';
+import { CLEAR_ICON, COPY_ICON, NEXT_ICON, PREVIOUS_ICON, SEARCH_ICON } from '../../../icons';
 
 
 export interface IQuickViewData {
@@ -34,11 +35,11 @@ export class QuickView extends BaseAdaptiveCardView<
 > {
   private LOG_SOURCE: string = "🔶 QuickView";
   private ICONS: Icons = {
-    searchIcon: SEARCH_ICON,
-    previousIcon: PREVIOUS_ICON,
-    nextIcon: NEXT_ICON,
-    clearIcon: CLEAR_ICON,
-    timeIcon: TIME_ICON
+    searchIcon: require('../assets/search.png'),
+    previousIcon: require('../assets/previous.png'),
+    nextIcon: require('../assets/next.png'),
+    clearIcon: require('../assets/clear.png'),
+    copyIcon: require('../assets/copy.png'),
   };
   private loadingImage: string = require('../assets/loading.gif');
 
@@ -90,7 +91,7 @@ export class QuickView extends BaseAdaptiveCardView<
 
     let dataToReturn: IQuickViewData = {
       title,
-      minHeight: showMapsInQuickView ? showWeather ? '570px' : '460px' : 'auto',
+      minHeight: showMapsInQuickView ? showWeather ? '580px' : '470px' : 'auto',
       office: null,
       icons: this.ICONS,
       showSearch,
@@ -118,11 +119,16 @@ export class QuickView extends BaseAdaptiveCardView<
           office.gotMap = true;
         }
 
-        office.time = showTime && !isEmpty(office.timeZone) ? `🕙 ${new Date().toLocaleString('en-GB', { timeZone: office.timeZone, hour: '2-digit', minute: '2-digit', weekday: 'short' })}` : '';
+        if(showTime && !isEmpty(office.timeZone)) {
+          const officeLocalDateTime = DateTime.local().setZone(office.timeZone);
+          office.time = `🕙 ${officeLocalDateTime.toLocaleString(DateTime.TIME_SIMPLE)} (${officeLocalDateTime.toFormat('ZZ')})`;
+        }
+
+        // office.time = showTime && !isEmpty(office.timeZone) ? `🕙 ${new Date().toLocaleString('en-GB', { timeZone: office.timeZone, hour: '2-digit', minute: '2-digit', weekday: 'short' })}` : '';
 
         //check if office already has the weather data
         //if not, get it from the API or from the list
-        
+
         if (this.properties.showWeather && !gotWeather) {
           setTimeout(async () => {
             office.weather = this.properties.getWeatherFromList
@@ -185,7 +191,7 @@ export class QuickView extends BaseAdaptiveCardView<
           this.setState({ currentOfficeIndex: nextOfficeIndex });
           break;
 
-        case 'Search':
+        case 'search':
           let searchTextEntered = isEmpty(searchText) ? "" : searchText;
           this.setState({
             searchText: searchTextEntered,
@@ -194,12 +200,16 @@ export class QuickView extends BaseAdaptiveCardView<
           });
           break;
 
-        case 'Clear':
+        case 'clear':
           this.setState({
             searchText: "",
             currentOfficeIndex: 0,
             filteredOffices: offices
           });
+          break;
+
+        case 'copy':
+          navigator.clipboard.writeText(filteredOffices[currentOfficeIndex].address);
           break;
 
         default:

@@ -52,7 +52,9 @@ export async function getOfficesFromTermStore(termSetId: string): Promise<Office
                 latitude: customProperties.Latitude ?? null,
                 longitude: customProperties.Longitude ?? null,
                 mapImageLink: customProperties.MapImageLink ?? PLACEHOLDER_IMAGE_URL,
-                timeZone: customProperties.TimeZone
+                timeZone: customProperties.TimeZone,
+                pageUrl: customProperties.PageUrl,
+                chatWithManagerLink: customProperties.ManagerEmailAddress ? `https://teams.microsoft.com/l/chat/0/0?users=${customProperties.ManagerEmailAddress}` : null,
             };
         });
 
@@ -68,7 +70,7 @@ export async function getOfficesFromTermStore(termSetId: string): Promise<Office
 export async function getOfficesFromList(listId: string): Promise<Office[]> {
     try {
 
-        const selectFields: string = "Id,Title,Address,Latitude,Longitude,MapImageLink,TimeZone";
+        const selectFields: string = "Id,Title,Address,Latitude,Longitude,MapImageLink,TimeZone,PageUrl,ManagerEmailAddress";
         const officeListItems: any[] = await sp.web.lists.getById(listId).items.select(selectFields).usingCaching({...cachingOptions, key: `${CACHE_KEY_PREFIX}listitems`}).get();
         console.debug(`${LOG_SOURCE} (getOfficesFromList) - Data from list - %o`, officeListItems);
 
@@ -80,7 +82,9 @@ export async function getOfficesFromList(listId: string): Promise<Office[]> {
                 latitude: item.Latitude ?? null,
                 longitude: item.Longitude ?? null,
                 mapImageLink: item.MapImageLink ?? PLACEHOLDER_IMAGE_URL,
-                timeZone: item.TimeZone
+                timeZone: item.TimeZone,
+                pageUrl: item.PageUrl,
+                chatWithManagerLink: item.ManagerEmailAddress ? `https://teams.microsoft.com/l/chat/0/0?users=${item.ManagerEmailAddress}` : null,
             };
         });
         console.debug(`${LOG_SOURCE} (getOfficesFromList) - formatted data - %o`, offices);

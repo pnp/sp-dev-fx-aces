@@ -130,6 +130,9 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       switch (this.properties.dataSource) {
         case DataSource.Local:
           offices = this.properties.offices;
+          offices.forEach(office => {
+            office.chatWithManagerLink = office.managerEmailAddress ? `https://teams.microsoft.com/l/chat/0/0?users=${office.managerEmailAddress}` : '';
+          });
           break;
         case DataSource.Taxonomy:
           offices = await getOfficesFromTermStore(this.properties.officesTermSetId);
@@ -151,6 +154,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       offices = sortBy(offices, (office: Office) => office.name);
 
       offices.forEach(office => {
+        office.time = '';
         office.gotWeather = false;
         office.gotMap = false;
         office.weather = null;

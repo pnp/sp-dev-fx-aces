@@ -7,7 +7,7 @@ This sample shows how to build an ACE with multiple card views to show the detai
 ### Highlights
 - Usage of multiple data sources (local properties, taxonomy or SharePoint list) to get the required data
 - Usage of Bing and Google maps to get static maps
-- Usage of the new "Show location" action
+- Usage of the new `Show location` action
 - Usage of OpenWeather API to get weather
 - Load data on demand asynchronously in quick view
 - Usage of fuzzy search to search data
@@ -102,11 +102,11 @@ The `Map Image Link` by default contains a blank placeholder image. When maps AP
 
 ![data source term store](./assets/data-source-taxonomy.png)
 
-A termset can be used as a data source for office locations.
-That termset should have a custom property called `UsedForOfficeLocations` set to `true`.
-The office terms have to be first level child of the termset.
-Each office term must have custom properties called `Address`, `Latitude`, `Longitude`, `TimeZone` and `MapImageLink` (optional).
-When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240. 
+- A termset can be used as a data source for office locations.
+- That termset should have a custom property called `UsedForOfficeLocations` set to `true`.
+- The office terms have to be first level child of the termset.
+- Each office term must have custom properties called `Address`, `Latitude`, `Longitude`, `TimeZone`, `MapImageLink` (optional), `PageUrl` (optional) and `ManagerEmailAddress` (optional).
+- When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240. 
 
 3. SharePoint list
 
@@ -120,6 +120,8 @@ The list must have the following `single line of text` columns
 - Longitude
 - MapImageLink
 - TimeZone
+- PageUrl
+- ManagerEmailAddress
 
 When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240. 
 

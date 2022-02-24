@@ -27,14 +27,13 @@
           "items": [
             {
               "type": "Image",
-              "color": "Light",
               "spacing": "Padding",
               "url": "${icons.searchIcon}",
-              "width": "20px",
+              "width": "25px",
               "selectAction": {
                 "type": "Action.Submit",
                 "data": {
-                  "id": "Search"
+                  "id": "search"
                 }
               }
             }
@@ -49,14 +48,13 @@
           "items": [
             {
               "type": "Image",
-              "color": "Light",
               "url": "${icons.clearIcon}",
               "spacing": "Padding",
-              "width": "20px",
+              "width": "25px",
               "selectAction": {
                 "type": "Action.Submit",
                 "data": {
-                  "id": "Clear"
+                  "id": "clear"
                 }
               }
             }
@@ -65,6 +63,15 @@
           "style": "default"
         }
       ]
+    },
+    {
+      "type": "TextBlock",
+      "size": "small",
+      "isVisible": "${showClearSearch}",
+      "text": "Showing results for: **${searchText}**",
+      "spacing": "none",
+      "wrap": true,
+      "horizontalAlignment": "left"
     },
     {
       "type": "Container",
@@ -81,7 +88,6 @@
               "items": [
                 {
                   "type": "Image",
-                  "color": "Light",
                   "url": "${icons.previousIcon}",
                   "selectAction": {
                     "type": "Action.Submit",
@@ -114,7 +120,7 @@
                   "verticalContentAlignment": "Center",
                   "text": "${office.time}",
                   "wrap": true,
-                  "size": "Medium"
+                  "size": "default"
                 }
               ],
               "verticalContentAlignment": "Center"
@@ -148,45 +154,43 @@
           "isVisible": "${showMapsInQuickView}"
         },
         {
-          "type": "TextBlock",
-          "size": "Medium",
-          "text": "${office.address}",
-          "spacing": "Padding",
+          "type": "ColumnSet",
           "separator": true,
-          "maxLines": 2,
-          "wrap": true,
-          "horizontalAlignment": "Center"
-        },
-        {
-          "type": "ActionSet",
-          "isVisible": "${showOpenMapsButton}",
-          "separator": true,
-          "actions": [
+          "columns": [
             {
-              "type": "VivaAction.ShowLocation",
-              "title": "Open in maps",
-              "style": "positive",
-              "id": "ShowLocation",
-              "parameters": {
-                "locationCoordinates": {
-                  "latitude": "${office.latitude}",
-                  "longitude": "${office.longitude}"
+              "type": "Column",
+              "verticalContentAlignment": "Center",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "size": "Medium",
+                  "text": "${office.address}",
+                  "spacing": "Padding",
+                  "separator": true,
+                  "maxLines": 2,
+                  "wrap": true,
+                  "horizontalAlignment": "Center"
                 }
-              }
-            }
-          ]
-        },
-        {
-          "type": "ActionSet",
-          "isVisible": "${office.locationMap.directionUrl != '#'}",
-          "separator": true,
-          "actions": [
+              ]
+            },
             {
-              "type": "Action.OpenUrl",
-              "title": "Get directions",
-              "style": "positive",
-              "url": "${office.locationMap.directionUrl}",
-              "tooltip": "Open directions in maps"
+              "type": "Column",
+              "width": "25px",
+              "separator": true,
+              "verticalContentAlignment": "Center",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "${icons.copyIcon}",
+                  "selectAction": {
+                    "type": "Action.Submit",
+                    "title": "Copy",
+                    "data": {
+                      "id": "copy"
+                    }
+                  }
+                }
+              ]
             }
           ]
         },
@@ -283,6 +287,95 @@
                 }
               ],
               "verticalContentAlignment": "Center"
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "separator": true,
+          "columns": [
+            {
+              "type": "Column",
+              "isVisible": "${showOpenMapsButton}",
+              "items": [
+                {
+                  "type": "ActionSet",
+                  "actions": [
+                    {
+                      "type": "VivaAction.ShowLocation",
+                      "title": "Open in maps",
+                      "style": "positive",
+                      "id": "ShowLocation",
+                      "parameters": {
+                        "locationCoordinates": {
+                          "latitude": "${office.latitude}",
+                          "longitude": "${office.longitude}"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "isVisible": "${office.locationMap.directionUrl != '#'}",
+              "items": [
+                {
+                  "type": "ActionSet",
+                  "actions": [
+                    {
+                      "type": "Action.OpenUrl",
+                      "title": "Get directions",
+                      "style": "positive",
+                      "url": "${office.locationMap.directionUrl}",
+                      "tooltip": "Open directions in maps"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "separator": true,
+          "columns": [
+            {
+              "type": "Column",
+              "isVisible": "${office.chatWithManagerLink != null}",
+              "items": [
+                {
+                  "type": "ActionSet",
+                  "actions": [
+                    {
+                      "type": "Action.OpenUrl",
+                      "title": "Speak with manager",
+                      "style": "positive",
+                      "url": "${office.chatWithManagerLink}",
+                      "tooltip": "Chat with the manager"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "isVisible": "${office.pageUrl != null}",
+              "items": [
+                {
+                  "type": "ActionSet",
+                  "actions": [
+                    {
+                      "type": "Action.OpenUrl",
+                      "title": "More details",
+                      "style": "positive",
+                      "url": "${office.pageUrl}",
+                      "tooltip": "View more details of this office"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

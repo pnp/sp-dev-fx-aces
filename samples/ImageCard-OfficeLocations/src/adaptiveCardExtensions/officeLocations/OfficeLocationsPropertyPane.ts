@@ -106,12 +106,22 @@ export class OfficeLocationsPropertyPane {
                     {
                       id: "mapImageLink",
                       title: "Map Image Link",
-                      defaultValue: "https://via.placeholder.com/400x300?text=Map%20unavailable",
+                      defaultValue: "https://via.placeholder.com/400x240?text=Map%20unavailable",
                       type: CustomCollectionFieldType.string
                     },
                     {
                       id: "timeZone",
                       title: "Time zone",
+                      type: CustomCollectionFieldType.string
+                    },
+                    {
+                      id: "pageUrl",
+                      title: "Page URL",
+                      type: CustomCollectionFieldType.string
+                    },
+                    {
+                      id: "managerEmailAddress",
+                      title: "Manager email address",
                       type: CustomCollectionFieldType.string
                     }
                   ],
@@ -178,12 +188,12 @@ export class OfficeLocationsPropertyPane {
               groupName: "Properties related to weather and time",
               groupFields: [
                 PropertyPaneToggle('showTime', {
-                  label: 'Show time',
+                  label: 'Show local time',
                   onText: 'Yes',
                   offText: 'No'
                 }),
                 PropertyPaneToggle('showWeather', {
-                  label: 'Show weather',
+                  label: 'Show local weather',
                   onText: 'Yes',
                   offText: 'No'
                 }),
