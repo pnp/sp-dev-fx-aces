@@ -11,6 +11,7 @@ import { CLEAR_ICON, NEXT_ICON, PREVIOUS_ICON, SEARCH_ICON, TIME_ICON } from '..
 
 export interface IQuickViewData {
   title: string;
+  minHeight: string;
   icons: Icons;
   office: Office;
   showSearch: boolean;
@@ -86,8 +87,10 @@ export class QuickView extends BaseAdaptiveCardView<
     const { offices, searchText, filteredOffices } = this.state;
     const { title, showQuickViewAsList, showSearch, showMapsInQuickView, showTime, showWeather, loadingImage, fuse } = this.properties;
 
+
     let dataToReturn: IQuickViewData = {
       title,
+      minHeight: showMapsInQuickView ? showWeather ? '570px' : '460px' : 'auto',
       office: null,
       icons: this.ICONS,
       showSearch,
@@ -115,7 +118,7 @@ export class QuickView extends BaseAdaptiveCardView<
           office.gotMap = true;
         }
 
-        office.time = showTime && !isEmpty(office.timeZone) ? `🕙 ${new Date().toLocaleString('en-GB', { timeZone: office.timeZone, hour12: true, hour: '2-digit', minute: '2-digit', weekday: 'short' })}` : '';
+        office.time = showTime && !isEmpty(office.timeZone) ? `🕙 ${new Date().toLocaleString('en-GB', { timeZone: office.timeZone, hour: '2-digit', minute: '2-digit', weekday: 'short' })}` : '';
 
         //check if office already has the weather data
         //if not, get it from the API or from the list
