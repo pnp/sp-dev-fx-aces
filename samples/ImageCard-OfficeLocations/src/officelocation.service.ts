@@ -3,7 +3,7 @@ import "@pnp/sp/taxonomy";
 import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
-import { ITermStoreInfo } from "@pnp/sp/taxonomy";
+import { dateAdd } from "@pnp/common";
 import { taxonomy, ITermSetData, ITermSet, ITermData, ITerm } from "@pnp/sp-taxonomy";
 import { Office, OfficeLocationWeather, OfficeTermsCustomProperties } from "./types";
 import { Logger, LogLevel } from "@pnp/logging";
@@ -12,32 +12,35 @@ import { isEmpty } from '@microsoft/sp-lodash-subset';
 
 
 const LOG_SOURCE: string = "🔶 OfficeLocationService";
+const CACHE_KEY_PREFIX: string = "OfficeLocations_";
 export const PLACEHOLDER_IMAGE_URL: string = "https://via.placeholder.com/400x240?text=Map%20unavailable";
 
-export async function getOfficesFromTermStore(useSiteCollectionTermStore: boolean, termSetId: string): Promise<Office[]> {
+// not able to set defaultCachingTimeoutSeconds in sp.setup for some reason. Hence using this object.
+let cachingOptions: any = {
+    expiration: dateAdd(new Date(), "day", 1),
+    storeName: "session"
+};
+
+export async function getOfficesFromTermStore(termSetId: string): Promise<Office[]> {
     try {
         let officeTerms: (ITermData & ITerm)[] = [];
         let officesTermset: (ITermSetData & ITermSet) = null;
-        if (useSiteCollectionTermStore) {
-            let siteCollectionTermStore = taxonomy.getDefaultSiteCollectionTermStore();
-            officesTermset = await siteCollectionTermStore.getTermSetById(termSetId).get();
-        } else {
-            let termStoreInfo: ITermStoreInfo = await sp.termStore();
-            officesTermset = await taxonomy.termStores.getById(termStoreInfo.id).getTermSetById(termSetId).get();
-        }
 
-        if(isEmpty(officesTermset)) {
+        let siteCollectionTermStore = await taxonomy.getDefaultSiteCollectionTermStore().usingCaching({...cachingOptions, key: `${CACHE_KEY_PREFIX}termstore`}).get();
+        officesTermset = await siteCollectionTermStore.getTermSetById(termSetId).usingCaching({...cachingOptions, key: `${CACHE_KEY_PREFIX}termset`}).get();
+
+        if (isEmpty(officesTermset)) {
             Logger.write(`${LOG_SOURCE} (getOfficesFromTermStore) - error getting termset`, LogLevel.Error);
             return null;
         }
 
         let termsetCustomProperties: any = officesTermset.CustomProperties;
-        if(!termsetCustomProperties.UsedForOfficeLocations) {
+        if (!termsetCustomProperties.UsedForOfficeLocations) {
             Logger.write(`${LOG_SOURCE} (getOfficesFromTermStore) - termset is not used for office locations`, LogLevel.Warning);
             return null;
         }
 
-        officeTerms =  await officesTermset.terms.get();
+        officeTerms = await officesTermset.terms.usingCaching({...cachingOptions, key: `${CACHE_KEY_PREFIX}terms`}).get();
         console.debug(`${LOG_SOURCE} (getOfficesFromTermStore) - Data from term store - %o`, officeTerms);
 
         let offices: Office[] = officeTerms.map(term => {
@@ -65,7 +68,8 @@ export async function getOfficesFromTermStore(useSiteCollectionTermStore: boolea
 export async function getOfficesFromList(listId: string): Promise<Office[]> {
     try {
 
-        const officeListItems: any[] = await sp.web.lists.getById(listId).items.select("Id", "Title", "Address", "Latitude", "Longitude", "MapImageLink", "TimeZone").get();
+        const selectFields: string = "Id,Title,Address,Latitude,Longitude,MapImageLink,TimeZone";
+        const officeListItems: any[] = await sp.web.lists.getById(listId).items.select(selectFields).usingCaching({...cachingOptions, key: `${CACHE_KEY_PREFIX}listitems`}).get();
         console.debug(`${LOG_SOURCE} (getOfficesFromList) - Data from list - %o`, officeListItems);
 
         let offices: Office[] = officeListItems.map(item => {

@@ -20,7 +20,7 @@ export interface IQuickViewData {
   showNavigationButtons: boolean;
   showTime: boolean;
   showWeather: boolean;
-  weatherLoadingImage: string;
+  loadingImage: string;
   showMapsInQuickView: boolean;
   showOpenMapsButton: boolean;
 }
@@ -39,6 +39,7 @@ export class QuickView extends BaseAdaptiveCardView<
     clearIcon: CLEAR_ICON,
     timeIcon: TIME_ICON
   };
+  private loadingImage: string = require('../assets/loading.gif');
 
   private getOfficeLocationMapDetails(office: Office): OfficeLocationMap {
     let officeLocationMap: OfficeLocationMap = {
@@ -83,7 +84,7 @@ export class QuickView extends BaseAdaptiveCardView<
   public get data(): IQuickViewData {
 
     const { offices, searchText, filteredOffices } = this.state;
-    const { title, showQuickViewAsList, showSearch, showMapsInQuickView, showTime, showWeather, weatherLoadingImage, fuse } = this.properties;
+    const { title, showQuickViewAsList, showSearch, showMapsInQuickView, showTime, showWeather, loadingImage, fuse } = this.properties;
 
     let dataToReturn: IQuickViewData = {
       title,
@@ -96,7 +97,7 @@ export class QuickView extends BaseAdaptiveCardView<
       showNavigationButtons: false,
       showTime,
       showWeather,
-      weatherLoadingImage: isEmpty(weatherLoadingImage) ? "https://upload.wikimedia.org/wikipedia/commons/7/7d/Pedro_luis_romani_ruiz.gif" : weatherLoadingImage,
+      loadingImage: isEmpty(loadingImage) ? this.loadingImage : loadingImage,
       showMapsInQuickView: false,
       showOpenMapsButton: false
     };

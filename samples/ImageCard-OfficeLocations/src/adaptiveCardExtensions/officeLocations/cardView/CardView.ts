@@ -7,6 +7,8 @@ import {
 } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'OfficeLocationsAdaptiveCardExtensionStrings';
 import { IOfficeLocationsAdaptiveCardExtensionProps, IOfficeLocationsAdaptiveCardExtensionState, LIST_VIEW_REGISTRY_ID, QUICK_VIEW_REGISTRY_ID } from '../OfficeLocationsAdaptiveCardExtension';
+import { isEmpty } from '@microsoft/sp-lodash-subset';
+
 
 export class CardView extends BaseImageCardView<IOfficeLocationsAdaptiveCardExtensionProps, IOfficeLocationsAdaptiveCardExtensionState> {
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
@@ -27,10 +29,12 @@ export class CardView extends BaseImageCardView<IOfficeLocationsAdaptiveCardExte
 
   public get data(): IImageCardParameters {
 
+    const { loadingImage } = this.properties;
+
     if (this.state.offices === null) {
       return {
         primaryText: "Loading...",
-        imageUrl: 'https://miro.medium.com/max/1000/1*J_f1db1aAuOhVY3rWVOKTA.gif',
+        imageUrl: isEmpty(loadingImage) ? require('../assets/loading.gif') : loadingImage,
         title: "Loading...",
         iconProperty: "Refresh"
       };

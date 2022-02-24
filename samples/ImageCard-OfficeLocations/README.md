@@ -103,7 +103,8 @@ The `Map Image Link` by default contains a blank placeholder image. When maps AP
 ![data source term store](./assets/data-source-taxonomy.png)
 
 A termset can be used as a data source for office locations.
-The office terms have to be first level child.
+That termset should have a custom property called `UsedForOfficeLocations` set to `true`.
+The office terms have to be first level child of the termset.
 Each office term must have custom properties called `Address`, `Latitude`, `Longitude`, `TimeZone` and `MapImageLink` (optional).
 When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240. 
 

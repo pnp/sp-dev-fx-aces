@@ -6,9 +6,9 @@
 
 // you can add your project related webpack configuration here, it will be merged using webpack-merge module
 // i.e. plugins: [new webpack.Plugin()]
-// const { NgrokServePlugin } = require("spfx-fast-serve-helpers");
+const { NgrokServePlugin } = require("spfx-fast-serve-helpers");
 const webpackConfig = {
-  // plugins: [new NgrokServePlugin({ host: "111f-80-235-134-227.ngrok.io" })]
+  plugins: [new NgrokServePlugin({ host: "088e-80-235-134-227.ngrok.io" })]
 }
 
 // for even more fine-grained control, you can apply custom webpack settings using below function

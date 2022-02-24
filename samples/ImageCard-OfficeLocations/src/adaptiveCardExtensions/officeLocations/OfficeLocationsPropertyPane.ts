@@ -57,6 +57,10 @@ export class OfficeLocationsPropertyPane {
                 PropertyPaneTextField('mainImage', {
                   label: "Image to show on the card"
                 }),
+                PropertyPaneTextField('loadingImage', {
+                  label: "Loading gif",
+                  description: "This gif will be shown on the main card and while loading weather data. If not specified, the default loading gif will be used."
+                }),
                 PropertyPaneToggle('showQuickViewAsList', {
                   label: 'Show quick view as list',
                   onText: 'Yes',
@@ -112,12 +116,6 @@ export class OfficeLocationsPropertyPane {
                     }
                   ],
                   disabled: properties.dataSource !== DataSource.Local
-                }),
-                PropertyPaneToggle('useSiteCollectionTermStore', {
-                  label: 'Use site collection term store',
-                  disabled: properties.dataSource !== DataSource.Taxonomy,
-                  onText: 'Yes',
-                  offText: 'No (Use global term store instead)'
                 }),
                 PropertyPaneTextField('officesTermSetId', {
                   label: "ID of the term set containing the offices",
@@ -188,10 +186,6 @@ export class OfficeLocationsPropertyPane {
                   label: 'Show weather',
                   onText: 'Yes',
                   offText: 'No'
-                }),
-                PropertyPaneTextField('weatherLoadingImage', {
-                  label: "Image to show while loading weather",
-                  disabled: !properties.showWeather
                 }),
                 PropertyPaneToggle('getWeatherFromList', {
                   label: 'Get weather from list',

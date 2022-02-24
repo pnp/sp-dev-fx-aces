@@ -8,6 +8,7 @@
     "clean": "gulp clean",
     "test": "gulp test",
     "pack": "gulp clean && gulp bundle --ship && gulp package-solution --ship",
+    "packfordebug": "gulp clean && gulp bundle && gulp package-solution",
     "serve": "gulp bundle --custom-serve --max_old_space_size=4096 && fast-serve"
   },
   "dependencies": {

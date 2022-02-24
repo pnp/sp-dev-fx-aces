@@ -20,7 +20,6 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
   showQuickViewAsList: boolean;
   dataSource: DataSource;
   offices: Office[];
-  useSiteCollectionTermStore: boolean;
   officesTermSetId: string;
   list: string;
   showSearch: boolean;
@@ -31,7 +30,7 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
   googleMapsApiKey: string;
   showTime: boolean;
   showWeather: boolean;
-  weatherLoadingImage: string;
+  loadingImage: string;
   getWeatherFromList: boolean;
   weatherList: string;
   openWeatherMapApiKey: string;
@@ -133,7 +132,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
           offices = this.properties.offices;
           break;
         case DataSource.Taxonomy:
-          offices = await getOfficesFromTermStore(this.properties.useSiteCollectionTermStore, this.properties.officesTermSetId);
+          offices = await getOfficesFromTermStore(this.properties.officesTermSetId);
           break;
         case DataSource.List:
           offices = isEmpty(this.properties.list) ? null : await getOfficesFromList(this.properties.list);
@@ -212,122 +211,36 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
     return this.state.cardViewToRender;
   }
 
-  private showSetupCard = (): void => {
-    this.setState({
-      offices: null,
-      cardViewToRender: SETUP_CARD_VIEW_REGISTRY_ID
-    });
-    this.cardNavigator.replace(this.state.cardViewToRender);
-  }
-
   protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {
     if (propertyPath === 'mainImage' && newValue !== oldValue) {
       if (newValue) {
         this.setState({
           mainImage: newValue
         });
+      } else {
+        this.setState({
+          mainImage: require('./assets/OfficeLocation.svg')
+        });
       }
     }
 
     if (
-      (propertyPath === 'dataSource' ||
-        propertyPath === 'officesTermSetId' ||
-        propertyPath === 'list' ||
-        propertyPath === 'offices') && newValue !== oldValue) {
-      if (newValue) {
-        this.loadOffices();
-      } else {
-        this.showSetupCard();
-      }
+      propertyPath === 'dataSource' ||
+      propertyPath === 'officesTermSetId' ||
+      propertyPath === 'list' ||
+      propertyPath === 'offices' ||
+      propertyPath === 'showMapsInQuickView' ||
+      propertyPath === 'mapsSource' ||
+      propertyPath === 'useMapsAPI' ||
+      propertyPath === 'bingMapsApiKey' ||
+      propertyPath === 'googleMapsApiKey' ||
+      propertyPath === 'showWeather' ||
+      propertyPath === 'getWeatherFromList' ||
+      propertyPath === 'weatherList' ||
+      propertyPath === 'openWeatherMapApiKey'
+    ) {
+      this.loadOffices();
     }
-
-    //TODO: see if the below can be simplified
-
-    if (propertyPath === 'showMapsInQuickView' && newValue !== oldValue) {
-      if (newValue && isEmpty(this.properties.mapsSource)) {
-        this.showSetupCard();
-      } else {
-        this.loadOffices();
-      }
-    }
-
-    if (propertyPath === 'mapsSource' && newValue !== oldValue) {
-      if (isEmpty(newValue)) {
-        this.showSetupCard();
-      } else {
-        this.loadOffices();
-      }
-    }
-
-    if (propertyPath === 'useMapsAPI' && newValue !== oldValue) {
-      if (newValue) {
-        if ((this.properties.mapsSource === 'Bing' && isEmpty(this.properties.bingMapsApiKey)) ||
-          (this.properties.mapsSource === 'Google' && isEmpty(this.properties.googleMapsApiKey))) {
-          this.showSetupCard();
-        }
-      } else {
-        this.loadOffices();
-      }
-    }
-
-    if (propertyPath === 'bingMapsApiKey' || propertyPath === 'googleMapsApiKey' && newValue !== oldValue) {
-      if (isEmpty(newValue)) {
-        this.showSetupCard();
-      } else {
-        this.loadOffices();
-      }
-    }
-
-    if (propertyPath === 'showWeather' && newValue !== oldValue) {
-      if (
-        newValue &&
-        (this.properties.getWeatherFromList && isEmpty(this.properties.weatherList)) ||
-        (!this.properties.getWeatherFromList && isEmpty(this.properties.openWeatherMapApiKey))
-      ) {
-
-        this.showSetupCard();
-
-      } else {
-        this.loadOffices();
-      }
-    }
-
-    if (propertyPath === 'getWeatherFromList' && newValue !== oldValue) {
-      if (newValue) {
-        if (isEmpty(this.properties.weatherList)) {
-          this.showSetupCard();
-        } else {
-          this.loadOffices();
-        }
-      } else {
-        if (isEmpty(this.properties.openWeatherMapApiKey)) {
-          this.showSetupCard();
-        } else {
-          this.loadOffices();
-        }
-      }
-    }
-
-    if (propertyPath === 'weatherList' && newValue !== oldValue) {
-      if (this.properties.showWeather && this.properties.getWeatherFromList) {
-        if (isEmpty(newValue)) {
-          this.showSetupCard();
-        } else {
-          this.loadOffices();
-        }
-      }
-    }
-
-    if (propertyPath === 'openWeatherMapApiKey' && newValue !== oldValue) {
-      if (this.properties.showWeather && !this.properties.getWeatherFromList) {
-        if (isEmpty(newValue)) {
-          this.showSetupCard();
-        } else {
-          this.loadOffices();
-        }
-      }
-    }
-
 
   }
 
