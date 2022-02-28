@@ -6,7 +6,6 @@
   "body": [
     {
       "type": "ColumnSet",
-      "separator": true,
       "isVisible": "${showSearch}",
       "columns": [
         {
@@ -38,8 +37,7 @@
               }
             }
           ],
-          "verticalContentAlignment": "Center",
-          "style": "default"
+          "verticalContentAlignment": "Center"
         },
         {
           "type": "Column",
@@ -59,8 +57,7 @@
               }
             }
           ],
-          "verticalContentAlignment": "Center",
-          "style": "default"
+          "verticalContentAlignment": "Center"
         }
       ]
     },
@@ -98,8 +95,7 @@
                   }
                 }
               ],
-              "verticalContentAlignment": "Center",
-              "style": "default"
+              "verticalContentAlignment": "Center"
             },
             {
               "type": "Column",
@@ -111,6 +107,7 @@
                   "weight": "Bolder",
                   "wrap": true,
                   "size": "Large",
+                  "spacing": "none",
                   "horizontalAlignment": "Center"
                 },
                 {
@@ -120,6 +117,7 @@
                   "verticalContentAlignment": "Center",
                   "text": "${office.time}",
                   "wrap": true,
+                  "spacing": "none",
                   "size": "default"
                 }
               ],
@@ -198,8 +196,8 @@
           "type": "ColumnSet",
           "separator": true,
           "isVisible": "${showWeather}",
-          "style": "accent",
-          "minHeight": "100px",
+          "style": "default",
+          "minHeight": "70px",
           "columns": [
             {
               "type": "Column",
@@ -218,7 +216,7 @@
                           "type": "Image",
                           "url": "${office.weather.icon}",
                           "size": "Small",
-                          "width": "60px"
+                          "width": "50px"
                         }
                       ],
                       "verticalContentAlignment": "Center"
@@ -230,7 +228,7 @@
                         {
                           "type": "TextBlock",
                           "text": "${office.weather.temperature}°C",
-                          "size": "ExtraLarge",
+                          "size": "Large",
                           "spacing": "None",
                           "wrap": true
                         }
@@ -245,6 +243,7 @@
                           "type": "TextBlock",
                           "text": "High ${office.weather.high}°C",
                           "horizontalAlignment": "Left",
+                          "spacing": "None",
                           "wrap": true
                         },
                         {
@@ -272,7 +271,7 @@
                   "altText": "Loading...",
                   "isVisible": "${!office.gotWeather}",
                   "horizontalAlignment": "Center",
-                  "width": "60px",
+                  "width": "45px",
                   "spacing": "padding"
                 },
                 {
@@ -339,7 +338,6 @@
         },
         {
           "type": "ColumnSet",
-          "separator": true,
           "columns": [
             {
               "type": "Column",

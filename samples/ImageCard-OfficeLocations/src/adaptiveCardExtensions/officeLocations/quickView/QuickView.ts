@@ -44,6 +44,9 @@ export class QuickView extends BaseAdaptiveCardView<
   private loadingImage: string = require('../assets/loading.gif');
 
   private getOfficeLocationMapDetails(office: Office): OfficeLocationMap {
+
+    const { showMapsInQuickView, mapsSource, useMapsAPI, bingMapsApiKey, googleMapsApiKey } = this.properties;
+
     let officeLocationMap: OfficeLocationMap = {
       imageUrl: isEmpty(office.mapImageLink) ? PLACEHOLDER_IMAGE_URL : office.mapImageLink,
       imageAlt: `${office.name} Office Location`,
@@ -57,19 +60,19 @@ export class QuickView extends BaseAdaptiveCardView<
     //Show directions with Bing maps to maintain consistency with the "Open in Maps" button as that button shows the Bing maps app by default
     officeLocationMap.directionUrl = `https://www.bing.com/maps?rtp=~pos.${office.latitude}_${office.longitude}&rtop=0~1~0&lvl=15&toWww=1`;
 
-    if (!this.properties.showMapsInQuickView) {
+    if (!showMapsInQuickView) {
       return officeLocationMap;
     }
 
-    switch (this.properties.mapsSource) {
+    switch (mapsSource) {
       case MapsSource.Bing:
-        if (this.properties.useMapsAPI) {
-          officeLocationMap.imageUrl = `https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/${office.latitude}%2C${office.longitude}/15?mapSize=400,240&format=png&pushpin=${office.latitude},${office.longitude};46;&key=${this.properties.bingMapsApiKey}`;
+        if (useMapsAPI) {
+          officeLocationMap.imageUrl = `https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/${office.latitude}%2C${office.longitude}/15?mapSize=400,240&format=png&pushpin=${office.latitude},${office.longitude};46;&key=${bingMapsApiKey}`;
         }
         break;
       case MapsSource.Google:
-        if (this.properties.useMapsAPI) {
-          officeLocationMap.imageUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${office.latitude},${office.longitude}&zoom=15&size=400x240&maptype=roadmap&markers=color:red%7C${office.latitude},${office.longitude}&key=${this.properties.googleMapsApiKey}`;
+        if (useMapsAPI) {
+          officeLocationMap.imageUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${office.latitude},${office.longitude}&zoom=15&size=400x240&maptype=roadmap&markers=color:red%7C${office.latitude},${office.longitude}&key=${googleMapsApiKey}`;
         }
         officeLocationMap.directionUrl = `https://www.google.com/maps/dir/?api=1&destination=${office.latitude},${office.longitude}`;
         break;
@@ -86,12 +89,15 @@ export class QuickView extends BaseAdaptiveCardView<
   public get data(): IQuickViewData {
 
     const { offices, searchText, filteredOffices } = this.state;
-    const { title, showQuickViewAsList, showSearch, showMapsInQuickView, showTime, showWeather, loadingImage, fuse } = this.properties;
+    const {
+      title, showQuickViewAsList, showSearch, showMapsInQuickView, showTime,
+      showWeather, getWeatherFromList, weatherList, openWeatherMapApiKey, loadingImage, fuse
+    } = this.properties;
 
 
     let dataToReturn: IQuickViewData = {
       title,
-      minHeight: showMapsInQuickView ? showWeather ? '580px' : '470px' : 'auto',
+      minHeight: showMapsInQuickView ? showWeather ? '560px' : '450px' : 'auto',
       office: null,
       icons: this.ICONS,
       showSearch,
@@ -108,44 +114,59 @@ export class QuickView extends BaseAdaptiveCardView<
 
     try {
 
-      const office: Office = filteredOffices[this.state.currentOfficeIndex];
+      //Get the office in the state using the correct index 
+      //(when in search filtered offices will have a different index than the original offices) 
+      const filteredOffice: Partial<Office> = filteredOffices[this.state.currentOfficeIndex];
+      const filteredOfficeIndex = !isEmpty(searchText) ? findIndex(offices, (o: Office) => o.uniqueId === filteredOffice.uniqueId) : this.state.currentOfficeIndex;
+      const office: Office = offices[filteredOfficeIndex];
 
       if (office) {
 
         const { gotMap, gotWeather } = office;
 
+        //check if office already has the map data
+        //if not, get it using the static image URLs
         if (!gotMap) {
           office.locationMap = this.getOfficeLocationMapDetails(office);
           office.gotMap = true;
+
+          //update the fuse collection since the data in the state "offices" has changed.
+          //This is because when fuse searches the data it should use the updated data
+          //if not it uses the initial data (onInit - line 167) in which gotMap will be false for the office.
+          //Can do this before returing IQuickViewData, but that happens every time irrespective of whether the offices in the state was updated
+          fuse.setCollection(offices);
         }
 
-        if(showTime && !isEmpty(office.timeZone)) {
+
+        if (showTime && !isEmpty(office.timeZone)) {
           const officeLocalDateTime = DateTime.local().setZone(office.timeZone);
           office.time = `🕙 ${officeLocalDateTime.toLocaleString(DateTime.TIME_SIMPLE)} (${officeLocalDateTime.toFormat('ZZ')})`;
-        }
 
-        // office.time = showTime && !isEmpty(office.timeZone) ? `🕙 ${new Date().toLocaleString('en-GB', { timeZone: office.timeZone, hour: '2-digit', minute: '2-digit', weekday: 'short' })}` : '';
+          //although the data in the state "offices" has changed,
+          //there is no need to update the fuse collection because we are getting the time every time for each office when rendering
+        }
 
         //check if office already has the weather data
         //if not, get it from the API or from the list
 
-        if (this.properties.showWeather && !gotWeather) {
+        if (showWeather && !gotWeather) {
           setTimeout(async () => {
-            office.weather = this.properties.getWeatherFromList
-              ? await getOfficeLocationWeatherFromList(office.name, this.properties.weatherList)
-              : await getOfficeLocationWeatherFromAPI(this.context.httpClient, this.properties.openWeatherMapApiKey, office.latitude, office.longitude);
+            office.weather = getWeatherFromList
+              ? await getOfficeLocationWeatherFromList(office.name, weatherList)
+              : await getOfficeLocationWeatherFromAPI(this.context.httpClient, openWeatherMapApiKey, office.latitude, office.longitude);
 
             //set the flag to true so we don't get the weather again
             office.gotWeather = true;
 
-            //Update the office in the state using the correct index 
-            //(filtered offices will have a different index than the original offices) 
-            const requiredIndex = findIndex(this.state.offices, (o: Office) => o.uniqueId === office.uniqueId);
-            offices[requiredIndex] = office;
-            this.setState({ offices });
+            //update the fuse collection since the data in the state "offices" has changed.
+            //This is because when fuse searches the data it should use the updated data
+            //if not it uses the initial data (onInit - line 166) in which gotWeather will be false for the office.
+            //Can do this before returing IQuickViewData, but that happens every time irrespective of whether the offices in the state was updated
+            fuse.setCollection(offices);
 
-            //update the fuse collection
-            fuse.setCollection(this.state.offices);
+            //re-render as the offices data in the state has been updated after the asyncronous operation
+            this.setState();
+
           }, 500);
         }
 
@@ -165,6 +186,10 @@ export class QuickView extends BaseAdaptiveCardView<
     }
 
     return dataToReturn;
+  }
+
+  private getFilteredOffices(): Partial<Office>[] {
+    return this.state.offices.map(office => ({ uniqueId: office.uniqueId, address: office.address }));
   }
 
 
@@ -196,7 +221,7 @@ export class QuickView extends BaseAdaptiveCardView<
           this.setState({
             searchText: searchTextEntered,
             currentOfficeIndex: 0,
-            filteredOffices: isEmpty(searchText) ? offices : this.properties.fuse.search(searchText)?.map(o => o.item)
+            filteredOffices: isEmpty(searchText) ? this.getFilteredOffices() : this.properties.fuse.search(searchText)?.map(o => o.item)
           });
           break;
 
@@ -204,7 +229,7 @@ export class QuickView extends BaseAdaptiveCardView<
           this.setState({
             searchText: "",
             currentOfficeIndex: 0,
-            filteredOffices: offices
+            filteredOffices: this.getFilteredOffices()
           });
           break;
 

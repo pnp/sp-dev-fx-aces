@@ -40,7 +40,7 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
 export interface IOfficeLocationsAdaptiveCardExtensionState {
   mainImage: string;
   offices: Office[];
-  filteredOffices: Office[];
+  filteredOffices: Partial<Office>[];
   currentOfficeIndex: number;
   searchText: string;
   cardViewToRender: string;
@@ -105,16 +105,24 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
 
   private loadOffices = async (): Promise<void> => {
 
+    const {
+      dataSource,
+      officesTermSetId,
+      list,
+      useMapsAPI, showMapsInQuickView, mapsSource, bingMapsApiKey, googleMapsApiKey,
+      showWeather, getWeatherFromList, weatherList, openWeatherMapApiKey 
+    } = this.properties;
+
     if (
-      isEmpty(this.properties.dataSource) ||
-      (this.properties.dataSource === DataSource.Local && isEmpty(this.properties.offices)) ||
-      (this.properties.dataSource === DataSource.Taxonomy && isEmpty(this.properties.officesTermSetId)) ||
-      (this.properties.dataSource === DataSource.List && isEmpty(this.properties.list)) ||
-      (this.properties.showMapsInQuickView && isEmpty(this.properties.mapsSource)) ||
-      (this.properties.showMapsInQuickView && this.properties.useMapsAPI && this.properties.mapsSource === MapsSource.Bing && isEmpty(this.properties.bingMapsApiKey)) ||
-      (this.properties.showMapsInQuickView && this.properties.useMapsAPI && this.properties.mapsSource === MapsSource.Google && isEmpty(this.properties.googleMapsApiKey)) ||
-      (this.properties.showWeather && this.properties.getWeatherFromList && isEmpty(this.properties.weatherList)) ||
-      (this.properties.showWeather && !this.properties.getWeatherFromList && isEmpty(this.properties.openWeatherMapApiKey))
+      isEmpty(dataSource) ||
+      (dataSource === DataSource.Local && isEmpty(this.properties.offices)) ||
+      (dataSource === DataSource.Taxonomy && isEmpty(officesTermSetId)) ||
+      (dataSource === DataSource.List && isEmpty(list)) ||
+      (showMapsInQuickView && isEmpty(mapsSource)) ||
+      (showMapsInQuickView && useMapsAPI && mapsSource === MapsSource.Bing && isEmpty(bingMapsApiKey)) ||
+      (showMapsInQuickView && useMapsAPI && mapsSource === MapsSource.Google && isEmpty(googleMapsApiKey)) ||
+      (showWeather && getWeatherFromList && isEmpty(weatherList)) ||
+      (showWeather && !getWeatherFromList && isEmpty(openWeatherMapApiKey))
     ) {
       this.setState({
         cardViewToRender: SETUP_CARD_VIEW_REGISTRY_ID
@@ -127,7 +135,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
 
       let offices: Office[] = null;
 
-      switch (this.properties.dataSource) {
+      switch (dataSource) {
         case DataSource.Local:
           offices = this.properties.offices;
           offices.forEach(office => {
@@ -135,10 +143,10 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
           });
           break;
         case DataSource.Taxonomy:
-          offices = await getOfficesFromTermStore(this.properties.officesTermSetId);
+          offices = await getOfficesFromTermStore(officesTermSetId);
           break;
         case DataSource.List:
-          offices = isEmpty(this.properties.list) ? null : await getOfficesFromList(this.properties.list);
+          offices = isEmpty(list) ? null : await getOfficesFromList(list);
           break;
       }
 
@@ -162,7 +170,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
 
       this.setState({
         offices,
-        filteredOffices: offices,
+        filteredOffices: offices.map(office => ({ uniqueId: office.uniqueId, address: office.address })),
         cardViewToRender: CARD_VIEW_REGISTRY_ID
       });
 
