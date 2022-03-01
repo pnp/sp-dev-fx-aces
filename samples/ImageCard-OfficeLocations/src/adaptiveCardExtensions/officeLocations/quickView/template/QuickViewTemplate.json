@@ -1,7 +1,7 @@
 {
   "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.3",
+  "version": "1.2",
   "minHeight": "${minHeight}",
   "body": [
     {
@@ -10,7 +10,7 @@
       "columns": [
         {
           "type": "Column",
-          "width": "stretch",
+          "width": 80,
           "items": [
             {
               "type": "Input.Text",
@@ -22,39 +22,39 @@
         },
         {
           "type": "Column",
-          "width": "25px",
+          "width": 10,
           "items": [
             {
-              "type": "Image",
-              "spacing": "Padding",
-              "url": "${icons.searchIcon}",
-              "width": "25px",
-              "selectAction": {
-                "type": "Action.Submit",
-                "data": {
-                  "id": "search"
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "iconUrl": "${icons.searchIcon}",
+                  "data": {
+                    "id": "search"
+                  }
                 }
-              }
+              ]
             }
           ],
           "verticalContentAlignment": "Center"
         },
         {
           "type": "Column",
-          "width": "25px",
+          "width": 10,
           "isVisible": "${showClearSearch}",
           "items": [
             {
-              "type": "Image",
-              "url": "${icons.clearIcon}",
-              "spacing": "Padding",
-              "width": "25px",
-              "selectAction": {
-                "type": "Action.Submit",
-                "data": {
-                  "id": "clear"
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "iconUrl": "${icons.clearIcon}",
+                  "data": {
+                    "id": "clear"
+                  }
                 }
-              }
+              ]
             }
           ],
           "verticalContentAlignment": "Center"
@@ -100,6 +100,7 @@
             {
               "type": "Column",
               "width": "stretch",
+              "separator": true,
               "items": [
                 {
                   "type": "TextBlock",
@@ -126,6 +127,7 @@
             {
               "type": "Column",
               "width": "25px",
+              "separator": true,
               "isVisible": "${showNavigationButtons}",
               "items": [
                 {
@@ -157,15 +159,28 @@
           "columns": [
             {
               "type": "Column",
+              "width": "25px",
+              "separator": true,
               "verticalContentAlignment": "Center",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "${icons.addressIcon}"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "verticalContentAlignment": "Center",
+              "separator": true,
+              "minHeight": "72px",
               "items": [
                 {
                   "type": "TextBlock",
                   "size": "Medium",
                   "text": "${office.address}",
                   "spacing": "Padding",
-                  "separator": true,
-                  "maxLines": 2,
+                  "maxLines": 3,
                   "wrap": true,
                   "horizontalAlignment": "Center"
                 }
@@ -201,7 +216,6 @@
           "columns": [
             {
               "type": "Column",
-              "width": 20,
               "items": [
                 {
                   "type": "ColumnSet",
@@ -210,13 +224,11 @@
                   "columns": [
                     {
                       "type": "Column",
-                      "width": "auto",
+                      "width": "50px",
                       "items": [
                         {
                           "type": "Image",
-                          "url": "${office.weather.icon}",
-                          "size": "Small",
-                          "width": "50px"
+                          "url": "${office.weather.icon}"
                         }
                       ],
                       "verticalContentAlignment": "Center"
@@ -230,7 +242,8 @@
                           "text": "${office.weather.temperature}°C",
                           "size": "Large",
                           "spacing": "None",
-                          "wrap": true
+                          "wrap": true,
+                          "horizontalAlignment": "Center"
                         }
                       ],
                       "verticalContentAlignment": "Center"
@@ -348,7 +361,7 @@
                   "actions": [
                     {
                       "type": "Action.OpenUrl",
-                      "title": "Speak with manager",
+                      "title": "Contact the manager",
                       "style": "positive",
                       "url": "${office.chatWithManagerLink}",
                       "tooltip": "Chat with the manager"

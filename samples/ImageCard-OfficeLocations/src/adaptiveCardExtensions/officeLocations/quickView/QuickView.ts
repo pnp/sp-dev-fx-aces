@@ -40,6 +40,7 @@ export class QuickView extends BaseAdaptiveCardView<
     nextIcon: require('../assets/next.png'),
     clearIcon: require('../assets/clear.png'),
     copyIcon: require('../assets/copy.png'),
+    addressIcon: require('../assets/address.png')
   };
   private loadingImage: string = require('../assets/loading.gif');
 
@@ -82,6 +83,29 @@ export class QuickView extends BaseAdaptiveCardView<
     return officeLocationMap;
   }
 
+  private getOfficeLocalTime(officeTimeZone: string): string {
+
+    const officeLocalDateTime = DateTime.local().setZone(officeTimeZone);
+   
+    if (!officeLocalDateTime.isValid) {
+      return "";
+    }
+
+    const officeTime: string = `🕙 ${officeLocalDateTime.toLocaleString(DateTime.TIME_SIMPLE)}`;
+    const offset: number = officeLocalDateTime.offset;
+
+    if (offset === 0) {
+      return `${officeTime} - Same time zone as you`;
+    }
+
+    const offsetHours: number = Math.abs(offset / 60 ^ 0);
+    const offsetMinutes: number = Math.abs(offset % 60);
+    const offsetHoursString: string = offsetHours > 0 ? `${offsetHours}h` : '';
+    const offsetMinutesString: string = offsetMinutes > 0 ? `${offsetMinutes}m` : '';
+    let offsetSuffix: string = `${offsetHoursString} ${offsetMinutesString} ${offset > 0 ? 'ahead of' : 'behind'} you`;
+    return `${officeTime} - ${offsetSuffix}`;
+  }
+
   public get title(): string {
     return this.properties.showQuickViewAsList ? "Office details" : this.properties.title;
   }
@@ -97,7 +121,7 @@ export class QuickView extends BaseAdaptiveCardView<
 
     let dataToReturn: IQuickViewData = {
       title,
-      minHeight: showMapsInQuickView ? showWeather ? '560px' : '450px' : 'auto',
+      minHeight: showMapsInQuickView ? showWeather ? '578px' : '468px' : 'auto',
       office: null,
       icons: this.ICONS,
       showSearch,
@@ -115,11 +139,11 @@ export class QuickView extends BaseAdaptiveCardView<
     try {
 
       //Get the office in the state using the correct index 
-      //(when in search filtered offices will have a different index than the original offices) 
+      //(when in search, filtered offices will have a different index than the original offices) 
       const filteredOffice: Partial<Office> = filteredOffices[this.state.currentOfficeIndex];
       const filteredOfficeIndex = !isEmpty(searchText) ? findIndex(offices, (o: Office) => o.uniqueId === filteredOffice.uniqueId) : this.state.currentOfficeIndex;
       const office: Office = offices[filteredOfficeIndex];
-
+      
       if (office) {
 
         const { gotMap, gotWeather } = office;
@@ -139,8 +163,7 @@ export class QuickView extends BaseAdaptiveCardView<
 
 
         if (showTime && !isEmpty(office.timeZone)) {
-          const officeLocalDateTime = DateTime.local().setZone(office.timeZone);
-          office.time = `🕙 ${officeLocalDateTime.toLocaleString(DateTime.TIME_SIMPLE)} (${officeLocalDateTime.toFormat('ZZ')})`;
+          office.time = this.getOfficeLocalTime(office.timeZone);
 
           //although the data in the state "offices" has changed,
           //there is no need to update the fuse collection because we are getting the time every time for each office when rendering
@@ -173,7 +196,7 @@ export class QuickView extends BaseAdaptiveCardView<
         dataToReturn = {
           ...dataToReturn,
           office,
-          showSearch: showQuickViewAsList ? false : this.context.deviceContext === 'Mobile' ? false : showSearch && offices.length > 1, //Don't show search on mobile as there is an issue with getting data - https://github.com/SharePoint/sp-dev-docs/issues/7671
+          showSearch: showQuickViewAsList ? false : showSearch && offices.length > 1,
           showOffices: filteredOffices.length > 0,
           showNavigationButtons: showQuickViewAsList ? false : filteredOffices.length > 1,
           showTime: showTime && !isEmpty(office.time),
@@ -188,7 +211,7 @@ export class QuickView extends BaseAdaptiveCardView<
     return dataToReturn;
   }
 
-  private getFilteredOffices(): Partial<Office>[] {
+  private getOfficesWithLimitedProps(): Partial<Office>[] {
     return this.state.offices.map(office => ({ uniqueId: office.uniqueId, address: office.address }));
   }
 
@@ -221,7 +244,10 @@ export class QuickView extends BaseAdaptiveCardView<
           this.setState({
             searchText: searchTextEntered,
             currentOfficeIndex: 0,
-            filteredOffices: isEmpty(searchText) ? this.getFilteredOffices() : this.properties.fuse.search(searchText)?.map(o => o.item)
+            filteredOffices:
+              isEmpty(searchText) ?
+                this.getOfficesWithLimitedProps() :
+                this.properties.fuse.search(searchText)?.map(o => ({ uniqueId: o.item.uniqueId, address: o.item.address }))
           });
           break;
 
@@ -229,7 +255,7 @@ export class QuickView extends BaseAdaptiveCardView<
           this.setState({
             searchText: "",
             currentOfficeIndex: 0,
-            filteredOffices: this.getFilteredOffices()
+            filteredOffices: this.getOfficesWithLimitedProps()
           });
           break;
 

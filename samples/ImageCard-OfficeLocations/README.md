@@ -13,7 +13,7 @@ This sample shows how to build an ACE with multiple card views to show the detai
 - Usage of fuzzy search to search data
 - Conditional enabling/disabling of properties
 
-### Demo
+## Demo
 
 ### Desktop view
 ![demo desktop](./assets/ace-demo.gif)
@@ -21,8 +21,6 @@ This sample shows how to build an ACE with multiple card views to show the detai
 ### Desktop view with show location feature introduced in SPFx v1.14
 ![demo desktop showlocation](./assets/ace-demo-showlocation.gif)
 
-### Mobile view
-![demo mobile](./assets/ace-demo-mobile.gif)
 
 ## Used SharePoint Framework Version
 

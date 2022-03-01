@@ -202,7 +202,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       this.setState({
         searchText: "",
         currentOfficeIndex: 0,
-        filteredOffices: this.state.offices
+        filteredOffices: this.state.offices.map(office => ({ uniqueId: office.uniqueId, address: office.address }))
       });
     }
   }

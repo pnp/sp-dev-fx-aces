@@ -57,4 +57,5 @@ export type Icons = {
     nextIcon: string;
     clearIcon: string;
     copyIcon: string;
+    addressIcon: string;
 };
