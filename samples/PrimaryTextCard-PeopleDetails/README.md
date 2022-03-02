@@ -18,9 +18,12 @@ This Adaptive Card Extension shows general CRUD operations for people details us
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
 ## Prerequisites
+
 > Run the PowerShell **`CreatePeopleList.ps1`** script under *Prerequisites* folder to create required Lists
-* Lists with name **People** and **Country** will be created
-* Put some value in the **Country** list 
+
+- Lists with name **People** and **Country** will be created
+- Put some value in the **Country** list
+- Add at least one entry into the **People** list
 
 ## Solution
 
@@ -45,14 +48,13 @@ Version|Date|Comments
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
-  * Serve the solution
+  - Serve the solution
     - **`npm install`**
     - **`gulp serve`**
-  * Bundle the solution
+  - Bundle the solution
     - **`gulp build --ship`**
     - **`gulp bundle --ship`**
     - **`gulp package-solution --ship`**
-
 
 ## Features
 
@@ -60,9 +62,8 @@ Description of the extension that expands upon high-level summary above.
 
 This extension illustrates the following concepts:
 
-- Adaptive Card Extension - PrimaryTextCard Template 
+- Adaptive Card Extension - PrimaryTextCard Template
 - SharePoint CRUD Operation using PnP with ACE
-
 
 ## References
 
@@ -71,3 +72,5 @@ This extension illustrates the following concepts:
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/primarytextcard-peopledetails" />
