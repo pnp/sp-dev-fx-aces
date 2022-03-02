@@ -1,0 +1,52 @@
+[{
+  "name": "pnp-sp-fx-aces-peopledetails",
+  "source": "pnp",
+  "title": "People Details",
+  "shortDescription": "This Adaptive Card Extension shows general CRUD operations for people details using SharePoint list and Adaptive Card which involves multiple QuickViews and pnp js",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-PeopleDetails",
+  "longDescription": [
+    "This Adaptive Card Extension shows general CRUD operations for people details using SharePoint list and Adaptive Card which involves multiple QuickViews and pnp js."
+  ],
+  "creationDateTime": "2022-01-03",
+  "updateDateTime": "2022-01-03",
+  "products": [
+    "SharePoint",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.13.1"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-PeopleDetails/assets/CreateView.png",
+    "alt": "Preview"
+  }],
+  "authors": [{
+      "gitHubAccount": "soumyadeep2207",
+      "pictureUrl": "https://github.com/soumyadeep2207.png",
+      "name": "Soumyadeep Mukherjee"
+    },
+    {
+      "gitHubAccount": "msoumit",
+      "pictureUrl": "https://github.com/msoumit.png",
+      "name": "Soumit Mukherjee"
+    },
+    {
+      "gitHubAccount": "XLR8-0",
+      "pictureUrl": "https://github.com/XLR8-0.png",
+      "name": "Sourav Paul"
+    }
+  ],
+  "references": [{
+    "name": "Viva Connections Extensibility guidance",
+    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+    "url": "https://aka.ms/viva/connections/extensibility"
+  }]
+}]
