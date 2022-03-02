@@ -1,0 +1,1 @@
+export const securityCenterUrl="https://security.microsoft.com/";

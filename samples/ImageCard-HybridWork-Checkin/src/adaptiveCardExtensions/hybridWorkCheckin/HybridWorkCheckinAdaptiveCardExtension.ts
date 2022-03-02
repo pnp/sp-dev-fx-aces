@@ -1,11 +1,9 @@
 import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
 import { CardView } from './cardView/CardView';
-import { QuickView } from './quickView/QuickView';
+import { CheckinFormView } from './quickView/CheckinFormView';
 import { HybridWorkCheckinPropertyPane } from './HybridWorkCheckinPropertyPane';
-import { IEmployeeCheckinModel } from '../../models/EmployeeCheckin';
-import { ICheckinViewModel } from '../../models/CheckinView';
-import { MockDataService } from '../../services/MockDataService';
+import { ICheckinPrefillModel } from '../../models/CheckinPrefill';
 import { HybridWorkCheckinListService } from '../../services/HybridWorkCheckinListService';
 import { CheckinCompleteView } from './quickView/CheckinCompleteView';
 
@@ -16,14 +14,14 @@ export interface IHybridWorkCheckinAdaptiveCardExtensionProps {
 }
 
 export interface IHybridWorkCheckinAdaptiveCardExtensionState {
-  employeeCheckinData: IEmployeeCheckinModel | undefined;
-  checkInView: ICheckinViewModel | undefined;
+  userDiplayName?: string;
+  prefilledData?: ICheckinPrefillModel;
   hybridCheckinService: HybridWorkCheckinListService;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'HybridWorkCheckin_CARD_VIEW';
-export const QUICK_VIEW_REGISTRY_ID: string = 'HybridWorkCheckin_QUICK_VIEW';
-export const CHECKIN_VIEW_REGISTRY_ID: string = 'HybridWorkCheckin_CheckIn_VIEW';
+export const FORM_VIEW_REGISTRY_ID: string = 'HybridWorkCheckin_FORM_VIEW';
+export const COMPLETE_VIEW_REGISTRY_ID: string = 'HybridWorkCheckin_COMPLETE_VIEW';
 
 export default class HybridWorkCheckinAdaptiveCardExtension extends BaseAdaptiveCardExtension<
   IHybridWorkCheckinAdaptiveCardExtensionProps,
@@ -32,23 +30,30 @@ export default class HybridWorkCheckinAdaptiveCardExtension extends BaseAdaptive
   private _deferredPropertyPane: HybridWorkCheckinPropertyPane | undefined;
 
   public onInit(): Promise<void> {
+    const listService = new HybridWorkCheckinListService(this.context);
+
     this.state = {
-      employeeCheckinData: undefined,
-      checkInView: undefined,
-      hybridCheckinService: new HybridWorkCheckinListService(this.context)
+      userDiplayName: this.context.pageContext.user.displayName,
+      prefilledData: undefined,
+      hybridCheckinService: listService
     };
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
-    this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
-    this.quickViewNavigator.register(CHECKIN_VIEW_REGISTRY_ID, () => new CheckinCompleteView());
+    this.quickViewNavigator.register(FORM_VIEW_REGISTRY_ID, () => new CheckinFormView());
+    this.quickViewNavigator.register(COMPLETE_VIEW_REGISTRY_ID, () => new CheckinCompleteView());
 
-    const defaultData = new MockDataService();
-    return defaultData.getDefaultCheckInData().then((d) => {
-      this.setState({
-        checkInView: { ...d, UserIdentifier: this.context.pageContext.user.displayName }
-      });
+    //get choice options
+    return listService.getWorkLocationOptions().then((d) => {
+      if (d.value && d.value.length > 0) {
+        const choices = d.value[0].Choices.map((c, index) => ({ choice: c, value: index.toString() }));
+        this.setState({
+          prefilledData: {
+            workOptionItems: choices,
+            UserIdentifier: this.context.pageContext.user.displayName
+          }
+        });
+      }
     });
-    // return Promise.resolve();
   }
 
   public get title(): string {

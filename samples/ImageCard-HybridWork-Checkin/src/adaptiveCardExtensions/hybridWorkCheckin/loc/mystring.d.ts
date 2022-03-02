@@ -9,6 +9,15 @@ declare interface IHybridWorkCheckinAdaptiveCardExtensionStrings {
   Description: string;
   PrimaryText: string;
   QuickViewButton: string;
+  MainFormHeaderLabel: string;
+  NameInputLabel: string;
+  CheckinTillDateLabel: string;
+  SurveySectionHeaderLabel: string;
+  WorkLocationOptionLabel: string;
+  VaccinationCheckLabel: string;
+  CovidSymptomsCheckLabel: string;
+  DeclareSectionHeaderLabel: string;
+  SubmitButtonLabel: string;
 }
 
 declare module 'HybridWorkCheckinAdaptiveCardExtensionStrings' {

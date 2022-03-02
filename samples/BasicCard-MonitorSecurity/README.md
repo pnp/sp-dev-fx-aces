@@ -1,21 +1,27 @@
-# Hybrid Work Employee Check-in from Adaptive Card Extension
+# Identity Protection Security Monitor from Adaptive Card Extension
 
 
 ## Summary
 
-This solution provides a employee check-in feature in hybrid work scenario using SharePoint List and ACE 
+This solution provides a security monitoring feature using identity protection graph endpoint and ACE 
 
->See [Features](#Features) section for individual listing of samples.
+>See [Features](#Features) section for individual listing of features.
 
-![Hybrid Work Employee Check-in](./assets/demo.gif)
-![LocalizedForm](./assets/LocalizedForm.jpg)
+![Identity Protection Security Monitor](./assets/demo.gif)
 
 ## Compatibility
 
-![SPFx 1.13](https://img.shields.io/badge/SPFx-1.13.0-green.svg) 
+![SPFx 1.13.1](https://img.shields.io/badge/SPFx-1.13.1-green.svg) 
 ![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg) 
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg) 
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
+
+## Permissions
+
+Microsoft Graph
+
+- IdentityRiskEvent.Read.All
+- IdentityRiskyUser.Read.All
 
 ## Applies to
 
@@ -23,33 +29,23 @@ This solution provides a employee check-in feature in hybrid work scenario using
 * [Microsoft 365 tenant](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-development-environment)
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
 ## Prerequisites
 
-> Create a SharePoint list with generic template and the following configurations:
-- List Name: Hybrid Work Employee Check in
-
-> Columns: 
-- Work Location: Choice (Remote, Office)
-- Checkin Till (Date and Time)
-- Is Vaccinated (Yes/No)
-- No Covid Symptoms	(Yes/No) 
-
-![List Configurations ](assets/SPListColumns.jpg)
+After deploying the solution to app catalog, SharePoint administrator needs to approve the Graph API permissions from SharePoint admin center > Advanced > API access.
+![Permissions](assets/Permissions.gif)
 
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-Hybrid Work Check-in | [Arijit Mondal](https://www.linkedin.com/in/arijit-cloud/)
+Monitor Security | [Arijit Mondal](https://www.linkedin.com/in/arijit-cloud/)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.0|November 29, 2021|Initial release
-1.1|February 14, 2022|Added localization support for form, choice option from sp list
+1.0|February 05, 2022|Initial release
 
 ## Disclaimer
 
@@ -68,9 +64,9 @@ Version|Date|Comments
 
 ## Features
 
-This adaptive card extension is based on need for checking in employee status on the covid related declaration and where they want work from for next n number of days. 
-This Adaptive Card Extension also illustrates ability to use form inputs via adaptive cards(https://adaptivecards.io/) on top of the SharePoint Framework.
-Localization support for the form labels in quickview
+* This adaptive card extension is build for identity administors to review security risks and risky user from Viva Connection dashboard. 
+* This also illustrates ability to use [identity protection](https://docs.microsoft.com/en-us/graph/api/resources/identityprotection-overview) graph api on top of the SharePoint Framework.
+* Graph api data and demo data toggle option, and set maximum number of returned result from graph Api using property pane
 
 
 ## References
@@ -81,5 +77,3 @@ Localization support for the form labels in quickview
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Tutorial to create ACE](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)
-
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/ImageCard-HybridWork-Checkin" />

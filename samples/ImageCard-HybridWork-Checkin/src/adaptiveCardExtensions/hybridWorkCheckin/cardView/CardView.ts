@@ -6,7 +6,7 @@ import {
   ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'HybridWorkCheckinAdaptiveCardExtensionStrings';
-import { IHybridWorkCheckinAdaptiveCardExtensionProps, IHybridWorkCheckinAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../HybridWorkCheckinAdaptiveCardExtension';
+import { IHybridWorkCheckinAdaptiveCardExtensionProps, IHybridWorkCheckinAdaptiveCardExtensionState, FORM_VIEW_REGISTRY_ID } from '../HybridWorkCheckinAdaptiveCardExtension';
 
 export class CardView extends BaseImageCardView<IHybridWorkCheckinAdaptiveCardExtensionProps, IHybridWorkCheckinAdaptiveCardExtensionState> {
   /**
@@ -20,7 +20,7 @@ export class CardView extends BaseImageCardView<IHybridWorkCheckinAdaptiveCardEx
         action: {
           type: 'QuickView',
           parameters: {
-            view: QUICK_VIEW_REGISTRY_ID
+            view: FORM_VIEW_REGISTRY_ID
           }
         }
       }
@@ -35,11 +35,12 @@ export class CardView extends BaseImageCardView<IHybridWorkCheckinAdaptiveCardEx
   }
 
   public get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | undefined {
-    return {
-      type: 'ExternalLink',
-      parameters: {
-        target: 'https://www.bing.com'
-      }
-    };
+    return;
+    // {
+    //   type: 'ExternalLink',
+    //   parameters: {
+    //     target: 'https://www.bing.com'
+    //   }
+    // };
   }
 }
