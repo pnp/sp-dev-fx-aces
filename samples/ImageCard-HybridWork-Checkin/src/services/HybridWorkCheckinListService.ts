@@ -1,5 +1,6 @@
 import { AdaptiveCardExtensionContext } from "@microsoft/sp-adaptive-card-extension-base";
 import { SPHttpClient } from '@microsoft/sp-http';
+import { checkinListApi, checkinLocationOptionApi } from "../common/Constants";
 
 export class HybridWorkCheckinListService {
     public _context: AdaptiveCardExtensionContext;
@@ -20,7 +21,7 @@ export class HybridWorkCheckinListService {
         };
 
         return this._context.spHttpClient
-            .post(`${this._context.pageContext.web.absoluteUrl}/_api/web/lists/getByTitle('Hybrid Work Employee Check in')/items`,
+            .post(`${this._context.pageContext.web.absoluteUrl}${checkinListApi}`,
                 SPHttpClient.configurations.v1,
                 spHttpClientOption
             )
@@ -29,6 +30,15 @@ export class HybridWorkCheckinListService {
                 return createdResult;
             })
             .catch(error => console.error(error));
+    }
+
+    public getWorkLocationOptions = (): Promise<any> => {
+        return this._context.spHttpClient
+            .get(`${this._context.pageContext.web.absoluteUrl}${checkinLocationOptionApi}`,
+                SPHttpClient.configurations.v1
+            )
+            .then(result => result.json())
+            .catch(error => console.log(error));
     }
 
 }
