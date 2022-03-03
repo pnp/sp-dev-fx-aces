@@ -2,7 +2,7 @@
 
 ## Summary
 
-This ACE show user events for especific day
+This ACE show user events for specific day
 
 ![my-calendar-plan](assets/my-calendar-plan-01.png)
 ![my-calendar-plan](assets/my-calendar-plan-02.png)
@@ -19,7 +19,6 @@ This ACE show user events for especific day
 Microsoft Graph
 
 - Calendars.Read
- 
 
 ## Applies to
 
@@ -31,7 +30,6 @@ Microsoft Graph
 This ACE need Microsoft Graph Permissions:
 
 - Calendars.Read
- 
 
 ## Solution
 
@@ -69,4 +67,4 @@ Version|Date|Comments
         * `gulp serve --nobrowser`
     - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-My-Calendar-Plan" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-my-calendar-plan" />

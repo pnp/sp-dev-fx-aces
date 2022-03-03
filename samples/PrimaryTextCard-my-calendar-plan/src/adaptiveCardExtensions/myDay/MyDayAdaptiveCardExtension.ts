@@ -32,7 +32,7 @@ export interface IMyDayAdaptiveCardExtensionState {
   date: string;
   numberItems: string;
   timeZone: string;
-  locale:string;
+  locale: string;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = "MyDay_CARD_VIEW";
@@ -48,11 +48,11 @@ export default class MyDayAdaptiveCardExtension extends BaseAdaptiveCardExtensio
     services = new Services(this.context);
     await services.init();
     if (isEmpty(this.properties.date)) {
-      const _date =  startOfDay(new Date()).toISOString() as any;
+      const _date = startOfDay(new Date()).toISOString() as any;
       this.properties.date = { value: _date, displayValue: "" };
     }
 
-    const events: Event[] = await  this._getEvents( (this.properties.date.value as any));
+    const events: Event[] = await this._getEvents((this.properties.date.value as any));
 
     this.state = {
       title: this.properties.title,
@@ -70,23 +70,23 @@ export default class MyDayAdaptiveCardExtension extends BaseAdaptiveCardExtensio
     return Promise.resolve();
   }
   protected get iconProperty(): string {
-    return require("./../../assets/events.png");
+    return require('../../../assets/events.png');
   }
 
   protected onPropertyPaneFieldChanged = async (propertyPath: string, oldValue: any, newValue: any) => {
     super.onPropertyPaneFieldChanged(propertyPath, oldValue, newValue);
     if (propertyPath === "date") {
       const _newValue = newValue.value.toISOString() as any;
-        this.properties.date.value = _newValue;
-      const events: Event[] = await this._getEvents( _newValue);
+      this.properties.date.value = _newValue;
+      const events: Event[] = await this._getEvents(_newValue);
       this.setState({ events: events, date: _newValue, numberItems: events.length.toString() });
     }
     this.renderCard();
   }
 
 
-  private _getEvents = async (isoDate:string): Promise<Event[]> => {
-    const events: Event[] = await services.getEvents( (isoDate));
+  private _getEvents = async (isoDate: string): Promise<Event[]> => {
+    const events: Event[] = await services.getEvents((isoDate));
     return events;
   }
 

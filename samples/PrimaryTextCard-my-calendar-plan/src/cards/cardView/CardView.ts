@@ -14,7 +14,7 @@ import {
   QUICK_VIEW_REGISTRY_ID,
 } from "../../adaptiveCardExtensions/myDay/MyDayAdaptiveCardExtension";
 
-const line1 = require("./../../assets/line1Orange.png");
+const line1 = require('../../../assets/line1Orange.png');
 
 export class CardView extends BasePrimaryTextCardView<
   IMyDayAdaptiveCardExtensionProps,
@@ -40,8 +40,8 @@ export class CardView extends BasePrimaryTextCardView<
  */
   public get data(): IPrimaryTextCardParameters {
     const selectedDate = (this.properties.date.value as any) as string;
-    const weekDay = format( parseISO(selectedDate), "cccc").toUpperCase();
-    const day = format( parseISO(selectedDate) , this.cardSize === "Medium" ? "d MMM" : "d MMMM").toUpperCase();
+    const weekDay = format(parseISO(selectedDate), "cccc").toUpperCase();
+    const day = format(parseISO(selectedDate), this.cardSize === "Medium" ? "d MMM" : "d MMMM").toUpperCase();
     const numberofEvents = this.state.events.length;
     const eventsInfo = numberofEvents > 0 ? `( **${numberofEvents}** events)` : "( no events )";
     const CARDDATA_TEMPLATE = `

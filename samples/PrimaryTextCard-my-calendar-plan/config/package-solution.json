@@ -14,25 +14,12 @@
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.14.0"
     },
-    "metadata": {
-      "shortDescription": {
-        "default": "spfx-ace-my-day description"
-      },
-      "longDescription": {
-        "default": "spfx-ace-my-day description"
-      },
-      "screenshotPaths": [],
-      "videoUrl": "",
-      "categories": []
-    },
-    "features": [
-      {
-        "title": "spfx-ace-my-day Feature",
-        "description": "The feature that activates elements of the spfx-ace-my-day solution.",
-        "id": "109f694b-b0a4-4bfc-8fec-147e89957f02",
-        "version": "1.0.0.0"
-      }
-    ]
+    "features": [{
+      "title": "spfx-ace-my-day Feature",
+      "description": "The feature that activates elements of the spfx-ace-my-day solution.",
+      "id": "109f694b-b0a4-4bfc-8fec-147e89957f02",
+      "version": "1.0.0.0"
+    }]
   },
   "paths": {
     "zippedPackage": "solution/spfx-ace-my-day.sppkg"
