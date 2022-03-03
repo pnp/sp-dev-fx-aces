@@ -2,9 +2,10 @@
 
 ## Summary
 
-This sample shows how to build an ACE with multiple card views to show the details of the offices in an organisation.
+This sample shows how to build an ACE with multiple card views to show the details of the offices in an organization.
 
 ### Highlights
+
 - Usage of multiple data sources (local properties, taxonomy or SharePoint list) to get the required data
 - Usage of Bing and Google maps to get static maps
 - Usage of the new `Show location` action
@@ -16,16 +17,17 @@ This sample shows how to build an ACE with multiple card views to show the detai
 ## Demo
 
 ### Desktop view
+
 ![demo desktop](./assets/ace-demo.gif)
 
 ### Desktop view with show location feature introduced in SPFx v1.14
-![demo desktop showlocation](./assets/ace-demo-showlocation.gif)
 
+![demo desktop showlocation](./assets/ace-demo-showlocation.gif)
 
 ## Used SharePoint Framework Version
 
 ![SPFx 1.14.0](https://img.shields.io/badge/SPFx-1.14.0-green.svg)
-![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
+![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
 
@@ -94,7 +96,7 @@ The ACE has capability to use one of 3 data sources
 ![data source local property collection](./assets/data-source-local-property-collection.png)
 
 Data can be added here as per the properties.
-The `Map Image Link` by default contains a blank placeholder image. When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240. 
+The `Map Image Link` by default contains a blank placeholder image. When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240.
 
 2. Term store
 
@@ -104,14 +106,15 @@ The `Map Image Link` by default contains a blank placeholder image. When maps AP
 - That termset should have a custom property called `UsedForOfficeLocations` set to `true`.
 - The office terms have to be first level child of the termset.
 - Each office term must have custom properties called `Address`, `Latitude`, `Longitude`, `TimeZone`, `MapImageLink` (optional), `PageUrl` (optional) and `ManagerEmailAddress` (optional).
-- When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240. 
+- When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240.
 
 3. SharePoint list
 
 ![data source SharePoint list](./assets/data-source-list.png)
 
 A list in the Home site can be used as a data source for office locations.
-The list must have the following `single line of text` columns 
+The list must have the following `single line of text` columns
+
 - Title
 - Address
 - Latitude
@@ -121,13 +124,14 @@ The list must have the following `single line of text` columns
 - PageUrl
 - ManagerEmailAddress
 
-When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240. 
+When maps API is not being used then this can be updated to point to a [static map image](#usage-of-maps-api) of size 400x240.
 
 #### Usage of Maps API
 
 The sample uses Bing maps or Google maps static API to show the map of the office location based on the latiude and longitude.
 Since the image won't change frequently (and to avaoid multiple API calls), the image for a location can be generated in advance and stored in a document library.
 The following links can be used to generate a static image
+
 - [Bing maps static map image](https://staticmapmaker.com/bing/)
 - [Google maps static map image](https://staticmapmaker.com/google/)
 
@@ -136,6 +140,7 @@ The following links can be used to generate a static image
 The sample uses OpenWeather API to show the weather.
 Set the [OpenWeather API](https://home.openweathermap.org/api_keys) key in properties to display the weather.
 To avoid multiple API calls, the weather can be stored in a list. To do that, create a list in the Home site with the following single line of text columns:
+
 - Title
 - Latitude
 - Longitude
@@ -157,4 +162,4 @@ The data from this list can then be used by setting the property `getWeatherFrom
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/ImageCard-Office-Locations />
+<img src="<https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-Office-Locations> />
