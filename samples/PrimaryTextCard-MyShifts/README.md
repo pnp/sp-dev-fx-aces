@@ -2,10 +2,10 @@
 
 ## Summary
 
-This sample shows how to build an ACE with a PrimaryText card view and a quick view to display current logged in user's immediate upcoming shift in card view and all upcoming shifts in Quick view. This sample also show concept on how to make the ACE configurable based on logged in user preference. It allows users to select a particlar team from his joined teams to select from where he wanted to show his upcoming shift.
+This sample shows how to build an ACE with a PrimaryText card view and a quick view to display current logged in user's immediate upcoming shift in card view and all upcoming shifts in Quick view. This sample also show concept on how to make the ACE configurable based on logged in user preference. It allows users to select a particular team from his joined teams to select from where he wanted to show his upcoming shift.
 User preference(settings) would be stored in his OneDrive as json file on applications's personal folder.
 
-##  ACE in Action
+## ACE in Action
 
 ![webpart in action](./assets/aceinaction.gif)
 
@@ -77,13 +77,13 @@ Version|Date|Comments
 | Group.Read.All      |
 | Schedule.Read.All   |
 
-
 - in the command-line run:
   - **gulp serve -l --nobrowser**
 - or if using spfx-fast-serve, in the command-line run:
   - **npm run serve**
-- Open the workbench page (https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx)
-- Add the ACE [***MyEmails***] to the page
+- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
+- Add the ACE [***My Shifts***] to the page
+- Ensure Shifts is installed and configured and you are an owner of the group
 
 ## Concept Explored
 
@@ -91,7 +91,6 @@ This extension illustrates the following technical concepts:
 
 - Using Microsoft Graph to get the Logged in information
 - Using Microsoft Graph to store/read user's settings(preference) in application's personal folder of user's OneDrive
-- Using State and actions buttons to navigate through different emails by adding previous and next buttons
 - Submit action handling of Card view to show Quick view
 - Customizing Quick View Adaptive Card JSON template to create customized UI
 - Usage of multiple Quickviews
@@ -106,4 +105,4 @@ This extension illustrates the following technical concepts:
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-MyShits" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-MyShifts" />
