@@ -39,7 +39,7 @@ Version|Date|Comments
 
 ## Minimal Path to Awesome
 
-The [deploy](./deploy) contains a pre-built production solution (ace-cardgallery-spfx.sppkg) that can be uploaded into your app catalog. Follow these [instructions](https://docs.microsoft.com/en-us/sharepoint/administration/manage-the-app-catalog#add-apps-to-the-app-catalog) to add the sppkg file to the tenant app catalog in your environment. If you do not have a tenant app catalog the same instructions detail creating one.
+The [deployment](./deployment) contains a pre-built production solution (ace-cardgallery-spfx.sppkg) that can be uploaded into your app catalog. Follow these [instructions](https://docs.microsoft.com/en-us/sharepoint/administration/manage-the-app-catalog#add-apps-to-the-app-catalog) to add the sppkg file to the tenant app catalog in your environment. If you do not have a tenant app catalog the same instructions detail creating one.
 
 To test the solution yourself, you can follow these steps:
 

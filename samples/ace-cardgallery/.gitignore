@@ -13,7 +13,7 @@ release
 solution
 sharepoint
 temp
-*.sppkg
+
 
 # Coverage directory used by tools like istanbul
 coverage
