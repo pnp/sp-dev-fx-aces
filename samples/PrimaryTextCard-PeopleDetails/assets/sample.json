@@ -45,8 +45,18 @@
     }
   ],
   "references": [{
-    "name": "Viva Connections Extensibility guidance",
-    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
-    "url": "https://aka.ms/viva/connections/extensibility"
-  }]
+      "name": "Viva Connections Extensibility guidance",
+      "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+      "url": "https://aka.ms/viva/connections/extensibility"
+    },
+    {
+      "name": "Adaptive Card Documentation",
+      "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+      "url": "https://adaptivecards.io/"
+    }, {
+      "name": "Adaptive Card Extension Design Guidance",
+      "description": "Design guidance for laying out Adaptive Card Extensions.",
+      "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+    }
+  ]
 }]
