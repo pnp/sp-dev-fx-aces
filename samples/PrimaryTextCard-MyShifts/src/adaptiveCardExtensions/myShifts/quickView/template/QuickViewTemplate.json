@@ -1,0 +1,60 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "Container",
+      "$data": "${shifts}",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "size": "Medium",
+                  "text": "${sharedShift.displayName}",
+                  "wrap": true,
+                  "weight": "Bolder"
+                },
+                {
+                  "type": "TextBlock",
+                  "spacing": "Small",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "text": "Start Time: {{DATE(${sharedShift.startDateTime}, SHORT)}} {{TIME(${sharedShift.startDateTime})}}",
+                  "wrap": true,
+                  "isSubtle": true
+                },
+                {
+                  "type": "TextBlock",
+                  "spacing": "Small",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "text": "End Time: {{DATE(${sharedShift.endDateTime}, SHORT)}} {{TIME(${sharedShift.endDateTime})}}",
+                  "wrap": true,
+                  "isSubtle": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${sharedShift.notes}",
+                  "wrap": true
+                }
+              ],
+              "width": "stretch",
+              "height": "stretch"
+            }
+          ],
+          "style": "emphasis",
+          "bleed": true
+        }
+      ],
+      "style": "default",
+      "separator": true,
+      "spacing": "Medium"
+    }
+  ]
+}
