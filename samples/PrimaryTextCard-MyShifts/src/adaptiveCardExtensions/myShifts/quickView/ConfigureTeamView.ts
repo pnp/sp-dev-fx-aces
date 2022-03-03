@@ -29,9 +29,9 @@ export class ConfigureTeamView extends BaseAdaptiveCardView<
        
         const { id } = action.data;
         if (id === 'save') {
-         console.log(action.data.teamID)
+         console.log(action.data.teamID);
          
-         this.storeTeamsID(action.data.teamID)
+         this.storeTeamsID(action.data.teamID);
          //todo SHOW HERE SUCESS MESSAGE VIEW
         }
         
@@ -57,14 +57,14 @@ private async storeTeamsID(teamid){
             await graphClient.api("/teams/" + this.state.settings.shiftsTeamsIDs + "/schedule/shifts?$filter=sharedShift/startDateTime ge " + startDateTime).get(async (error, response: any) => {
                 if(response){
                 console.log(response.value);
-                var filteredShift = response.value.filter(el => el.userId == this.state.currentuser.id)
+                var filteredShift = response.value.filter(el => el.userId == this.state.currentuser.id);
                 if(filteredShift.length == 0 ){
-                    this.setState({shiftTitle:"No upcoming shifts",shiftDescription:"Enjoy your family time"})
+                    this.setState({shiftTitle:"No upcoming shifts",shiftDescription:"Enjoy your family time"});
                 }
                 this.setState({shifts:filteredShift,error:null});
               }
               if(error){
-                this.setState({error:error})
+                this.setState({error:error});
               }
               this.quickViewNavigator.replace(SUBMITMESSAGE_REGISTRY_ID);
           });

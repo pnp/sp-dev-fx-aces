@@ -19,7 +19,7 @@ User preference(settings) would be stored in his OneDrive as json file on applic
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.14-green.svg)
+![version](https://img.shields.io/badge/version-1.14.0beta4-green.svg)
 
 ## Applies to
 

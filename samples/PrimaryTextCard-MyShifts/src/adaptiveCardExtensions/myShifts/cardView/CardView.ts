@@ -55,7 +55,7 @@ export class CardView extends BasePrimaryTextCardView<IMyShiftsAdaptiveCardExten
       return {
         primaryText: "Shifts not found",
         description: "Shifts app is not configured for this teams, please choose another one"
-      }
+      };
       }
     }
     if(this.state.shifts.length >0 ) {
@@ -63,13 +63,13 @@ export class CardView extends BasePrimaryTextCardView<IMyShiftsAdaptiveCardExten
       return {
         primaryText:  moment(this.state.shifts[0].sharedShift.startDateTime).format("dddd, MMM D"),
         description:  moment(this.state.shifts[0].sharedShift.startDateTime).format("h:mm A") + " - " +  moment(this.state.shifts[0].sharedShift.endDateTime).format("h:mm A")
-      }
+      };
     }
     else{
       return {
         primaryText:  this.state.shifts[0].sharedShift.displayName,
         description:  moment(this.state.shifts[0].sharedShift.startDateTime).format("ddd, Do, h:mm A") + " - " +  moment(this.state.shifts[0].sharedShift.endDateTime).format("h:mm A")
-      }
+      };
     }
       }
       else{
@@ -77,13 +77,13 @@ export class CardView extends BasePrimaryTextCardView<IMyShiftsAdaptiveCardExten
           return {
             primaryText: this.state.shiftTitle,
             description: this.state.shiftDescription
-          }
+          };
         }
         else{
             return {
               primaryText: "Loading",
               description: "Loading"
-            }
+            };
         }
       }
   }

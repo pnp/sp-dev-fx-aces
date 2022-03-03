@@ -22,7 +22,7 @@ export interface IMyShiftsAdaptiveCardExtensionState {
   myteams:[];
   selectedTeamId:string;
   currentuser:any;
-  error:any,
+  error:any;
   shiftTitle:string;
   shiftDescription:string;
   
@@ -59,7 +59,7 @@ export default class MyShiftsAdaptiveCardExtension extends BaseAdaptiveCardExten
     this.quickViewNavigator.register(CONFIGURETEAMVIEW_REGISTRY_ID, () => new ConfigureTeamView());
     this.quickViewNavigator.register(SUBMITMESSAGE_REGISTRY_ID, () => new SubmitMessage());
    
-    this.intialize()
+    this.intialize();
     this.properties.referesh = this.refreshCard;
  
     return Promise.resolve();
@@ -80,17 +80,17 @@ export default class MyShiftsAdaptiveCardExtension extends BaseAdaptiveCardExten
   private async getTeamsIds(){
 
     var loggedinuser = await this.graphClient.api("/me").get();
-      this.setState({currentuser:loggedinuser})
+      this.setState({currentuser:loggedinuser});
 
     var teamsdata = await this.graphClient.api("/me/joinedTeams").get();
-    this.setState({myteams:teamsdata.value})
+    this.setState({myteams:teamsdata.value});
 
    this.graphClient.api('/me/drive/special/approot:/shiftsviasettings.json?select=@microsoft.graph.downloadUrl')
   .header('content-type', 'text/plain')
   .get(async (error, settings: any) => {
       if(error)
       {
-        this.setState({shiftTitle:"Card not configured",shiftDescription:"Select Configure Team button to select Team"})
+        this.setState({shiftTitle:"Card not configured",shiftDescription:"Select Configure Team button to select Team"});
       }
       else{
         console.log(settings);
@@ -104,12 +104,12 @@ export default class MyShiftsAdaptiveCardExtension extends BaseAdaptiveCardExten
           if(response.ok)
           {
             var settingsdata = await response.text();
-            console.log(settingsdata)
+            console.log(settingsdata);
             this.setState({settings:JSON.parse(settingsdata),selectedTeamId:JSON.parse(settingsdata).shiftsTeamsIDs});
             this.getShifts();  
           }
           else{
-            this.setState({shiftTitle:"Card not configured",shiftDescription:"Select Configure Team button to select Team"})
+            this.setState({shiftTitle:"Card not configured",shiftDescription:"Select Configure Team button to select Team"});
           }
       }
     }
@@ -150,14 +150,14 @@ export default class MyShiftsAdaptiveCardExtension extends BaseAdaptiveCardExten
       await this.graphClient.api("/teams/" + this.state.settings.shiftsTeamsIDs + "/schedule/shifts?$filter=sharedShift/startDateTime ge " + startDateTime).get(async (error, response: any) => {
           if(response){
           console.log(response.value);
-          var filteredShift = response.value.filter(el => el.userId == this.state.currentuser.id)
+          var filteredShift = response.value.filter(el => el.userId == this.state.currentuser.id);
           if(filteredShift.length == 0 ){
-              this.setState({shiftTitle:"No upcoming shifts",shiftDescription:"Enjoy your family time"})
+              this.setState({shiftTitle:"No upcoming shifts",shiftDescription:"Enjoy your family time"});
           }
           this.setState({shifts:filteredShift,error:null});
         }
         if(error){
-          this.setState({error:error})
+          this.setState({error:error});
         }
      
     });

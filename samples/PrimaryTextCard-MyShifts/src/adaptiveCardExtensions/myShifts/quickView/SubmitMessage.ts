@@ -29,7 +29,7 @@ export class SubmitMessage extends BaseAdaptiveCardView<
        
         const { id } = action.data;
         if (id === 'ok') {
-         console.log(action.data.teamID)
+         console.log(action.data.teamID);
           this.quickViewNavigator.close();
         } 
         
