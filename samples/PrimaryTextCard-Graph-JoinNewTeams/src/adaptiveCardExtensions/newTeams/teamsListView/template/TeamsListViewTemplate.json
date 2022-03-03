@@ -1,0 +1,89 @@
+{
+    "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "Container",
+            "$data": "${teams}",
+            "style": "default",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "80px",
+                            "minHeight": "80px",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "backgroundImage": {
+                                        "url": "data:image/png;base64,${picture}",
+                                        "horizontalAlignment": "Center",
+                                        "verticalAlignment": "Center"
+                                    },
+                                    "minHeight": "80px",
+                                    "horizontalAlignment": "Center",
+                                    "verticalContentAlignment": "Center"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center",
+                            "horizontalAlignment": "Left"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${displayName}",
+                                    "wrap": true,
+                                    "weight": "Bolder",
+                                    "size": "Medium"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Created on ${createdDateTime}",
+                                    "isSubtle": true,
+                                    "wrap": true,
+                                    "spacing": "Small",
+                                    "maxLines": 2
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "20px",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "selectAction": {
+                                        "type": "Action.Submit",
+                                        "data": {
+                                            "team": "${displayName}",
+                                            "action": "click"
+                                        }
+                                    },
+                                    "url": "https://raw.githubusercontent.com/pnp/AdaptiveCards-Templates/main/samples/visual-list/assets/arrow-right.png"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ],
+                    "selectAction": {
+                        "type": "Action.ToggleVisibility"
+                    }
+                }
+            ],
+            "spacing": "Medium",
+            "id": "tab_menu_${displayName}"
+        }
+    ],
+    "backgroundImage": {
+        "horizontalAlignment": "Center"
+    },
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}
