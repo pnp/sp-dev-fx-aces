@@ -1,0 +1,34 @@
+{
+  "name": "primary-text-card-office-locations",
+  "version": "0.0.1",
+  "private": true,
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "gulp bundle",
+    "clean": "gulp clean",
+    "test": "gulp test",
+    "pack": "gulp clean && gulp bundle --ship && gulp package-solution --ship",
+    "packfordebug": "gulp clean && gulp bundle && gulp package-solution",
+    "serve": "gulp bundle --custom-serve --max_old_space_size=4096 && fast-serve"
+  },
+  "dependencies": {
+    "@microsoft/sp-adaptive-card-extension-base": "1.14.0",
+    "@microsoft/sp-core-library": "1.14.0",
+    "@microsoft/sp-property-pane": "1.14.0",
+    "@pnp/sp": "^2.12.0",
+    "@pnp/spfx-property-controls": "^3.5.0",
+    "fuse.js": "^6.5.3",
+    "luxon": "^2.3.1"
+  },
+  "devDependencies": {
+    "@microsoft/rush-stack-compiler-3.9": "0.4.47",
+    "@microsoft/sp-build-web": "1.14.0",
+    "@microsoft/sp-module-interfaces": "1.14.0",
+    "@microsoft/sp-tslint-rules": "1.14.0",
+    "@types/luxon": "^2.0.9",
+    "@types/webpack-env": "1.13.1",
+    "ajv": "~5.2.2",
+    "gulp": "~4.0.2",
+    "spfx-fast-serve-helpers": "~1.14.0"
+  }
+}
