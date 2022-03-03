@@ -6,7 +6,7 @@ This sample shows how to build an ACE that displays recently created Teams.
 
 ### Highlights
 
-- Displays the last created Teams (up to 20) 
+- Displays the most recently created public Teams (up to 20) that you are not a member of
 - Quick view showing more details
 - Quick view to join a specific team
 
@@ -31,7 +31,9 @@ This sample shows how to build an ACE that displays recently created Teams.
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
 ## Permissions
+
 Microsoft Graph
+
 - GroupMember.ReadWrite.All
 - Group.Read.All
 
@@ -49,7 +51,7 @@ Join New Teams | [Aimery Thomas](https://github.com/a1mery), [@aimery_thomas](ht
 
 Version|Date|Comments
 -------|----|--------
-1.0|February 29, 2021|Initial release
+1.0|February 28, 2021|Initial release
 
 ## Disclaimer
 
@@ -73,13 +75,12 @@ Version|Date|Comments
   | GroupMember.ReadWrite.All |
   | Group.Read.All            |
 
-
 - Add the ACE **New Teams** to the Dashboard.
+- Be sure to create a new Public Team if no new ones exist. Make sure you create the team with a user that isn't the user you are testing with as the user creating teh team is automatically added to the team as an owner.
 
 ## Features
 
 This sample uses the Graph API to display recently created Teams (public ones) and allows the user join a specific team.
-
 
 ## References
 
@@ -89,4 +90,4 @@ This sample uses the Graph API to display recently created Teams (public ones) a
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-Graph-JoinNewTeams" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-Graph-JoinNewTeams" />
