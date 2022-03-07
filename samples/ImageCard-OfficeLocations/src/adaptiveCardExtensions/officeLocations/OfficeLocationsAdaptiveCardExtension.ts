@@ -6,12 +6,12 @@ import { OfficeLocationsPropertyPane } from './OfficeLocationsPropertyPane';
 import { SetupCardView } from './cardView/SetupCardView';
 import { isEmpty, sortBy } from '@microsoft/sp-lodash-subset';
 import { DataSource, MapsSource, Office } from '../../types';
-import { getOfficesFromTermStore, getOfficesFromList, PLACEHOLDER_IMAGE_URL } from '../../officelocation.service';
-import { sp } from "@pnp/sp/presets/all";
+import { getSP } from '../../officelocation.service';
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
 import { ErrorCardView } from './cardView/ErrorCardView';
 import Fuse from 'fuse.js';
 import { ListView } from './listView/ListView';
+import { SPFI } from '@pnp/sp';
 
 export interface IOfficeLocationsAdaptiveCardExtensionProps {
   title: string;
@@ -57,6 +57,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
   IOfficeLocationsAdaptiveCardExtensionProps,
   IOfficeLocationsAdaptiveCardExtensionState
 > {
+
   private _deferredPropertyPane: OfficeLocationsPropertyPane | undefined;
   private LOG_SOURCE: string = "🔶 OfficeLocationsAdaptiveCardExtension";
 
@@ -65,10 +66,6 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
     try {
       Logger.subscribe(new ConsoleListener());
       Logger.activeLogLevel = LogLevel.Info;
-
-      sp.setup({
-        spfxContext: this.context
-      });
 
       this.state = {
         mainImage: this.properties.mainImage,
@@ -110,7 +107,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       officesTermSetId,
       list,
       useMapsAPI, showMapsInQuickView, mapsSource, bingMapsApiKey, googleMapsApiKey,
-      showWeather, getWeatherFromList, weatherList, openWeatherMapApiKey 
+      showWeather, getWeatherFromList, weatherList, openWeatherMapApiKey
     } = this.properties;
 
     if (
@@ -133,6 +130,8 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
 
     setTimeout(async () => {
 
+      let sp: SPFI = null;
+
       let offices: Office[] = null;
 
       switch (dataSource) {
@@ -143,10 +142,17 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
           });
           break;
         case DataSource.Taxonomy:
-          offices = await getOfficesFromTermStore(officesTermSetId);
+          sp = getSP(this.context);
+          let isTermsetValid: boolean = await sp.termStore.validateTermSet(officesTermSetId, "UsedForOfficeLocations", "true");
+          if (isTermsetValid) {
+            offices = await sp.termStore.getOfficeTerms(officesTermSetId);
+          }
           break;
         case DataSource.List:
-          offices = isEmpty(list) ? null : await getOfficesFromList(list);
+          if (!isEmpty(list)) {
+            sp = getSP(this.context);
+            offices = await sp.web.getOfficeItems(list);
+          }
           break;
       }
 

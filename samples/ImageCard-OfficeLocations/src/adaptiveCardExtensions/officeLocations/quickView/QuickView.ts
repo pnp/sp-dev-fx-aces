@@ -5,7 +5,7 @@ import { Icons, MapsSource, Office, OfficeLocationMap } from '../../../types';
 import { IOfficeLocationsAdaptiveCardExtensionProps, IOfficeLocationsAdaptiveCardExtensionState } from '../OfficeLocationsAdaptiveCardExtension';
 import { Logger, LogLevel } from "@pnp/logging";
 import { isEmpty, findIndex } from '@microsoft/sp-lodash-subset';
-import { getOfficeLocationWeatherFromAPI, getOfficeLocationWeatherFromList, PLACEHOLDER_IMAGE_URL } from '../../../officelocation.service';
+import { getOfficeLocationWeatherFromAPI, getSP, PLACEHOLDER_IMAGE_URL } from '../../../officelocation.service';
 import { DateTime } from 'luxon';
 import { CLEAR_ICON, COPY_ICON, NEXT_ICON, PREVIOUS_ICON, SEARCH_ICON } from '../../../icons';
 
@@ -47,19 +47,20 @@ export class QuickView extends BaseAdaptiveCardView<
   private getOfficeLocationMapDetails(office: Office): OfficeLocationMap {
 
     const { showMapsInQuickView, mapsSource, useMapsAPI, bingMapsApiKey, googleMapsApiKey } = this.properties;
+    const { name, mapImageLink, latitude, longitude } = office;
 
     let officeLocationMap: OfficeLocationMap = {
-      imageUrl: isEmpty(office.mapImageLink) ? PLACEHOLDER_IMAGE_URL : office.mapImageLink,
-      imageAlt: `${office.name} Office Location`,
+      imageUrl: isEmpty(mapImageLink) ? PLACEHOLDER_IMAGE_URL : mapImageLink,
+      imageAlt: `${name} Office Location`,
       directionUrl: '#'
     };
 
-    if (isEmpty(office.latitude) || isEmpty(office.longitude)) {
+    if (isEmpty(latitude) || isEmpty(longitude)) {
       return officeLocationMap;
     }
 
     //Show directions with Bing maps to maintain consistency with the "Open in Maps" button as that button shows the Bing maps app by default
-    officeLocationMap.directionUrl = `https://www.bing.com/maps?rtp=~pos.${office.latitude}_${office.longitude}&rtop=0~1~0&lvl=15&toWww=1`;
+    officeLocationMap.directionUrl = `https://www.bing.com/maps?rtp=~pos.${latitude}_${longitude}&rtop=0~1~0&lvl=15&toWww=1`;
 
     if (!showMapsInQuickView) {
       return officeLocationMap;
@@ -68,14 +69,14 @@ export class QuickView extends BaseAdaptiveCardView<
     switch (mapsSource) {
       case MapsSource.Bing:
         if (useMapsAPI) {
-          officeLocationMap.imageUrl = `https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/${office.latitude}%2C${office.longitude}/15?mapSize=400,240&format=png&pushpin=${office.latitude},${office.longitude};46;&key=${bingMapsApiKey}`;
+          officeLocationMap.imageUrl = `https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/${latitude}%2C${longitude}/15?mapSize=400,240&format=png&pushpin=${latitude},${longitude};46;&key=${bingMapsApiKey}`;
         }
         break;
       case MapsSource.Google:
         if (useMapsAPI) {
-          officeLocationMap.imageUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${office.latitude},${office.longitude}&zoom=15&size=400x240&maptype=roadmap&markers=color:red%7C${office.latitude},${office.longitude}&key=${googleMapsApiKey}`;
+          officeLocationMap.imageUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&zoom=15&size=400x240&maptype=roadmap&markers=color:red%7C${latitude},${longitude}&key=${googleMapsApiKey}`;
         }
-        officeLocationMap.directionUrl = `https://www.google.com/maps/dir/?api=1&destination=${office.latitude},${office.longitude}`;
+        officeLocationMap.directionUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
         break;
       default:
         break;
@@ -86,7 +87,7 @@ export class QuickView extends BaseAdaptiveCardView<
   private getOfficeLocalTime(officeTimeZone: string): string {
 
     const officeLocalDateTime = DateTime.local().setZone(officeTimeZone);
-   
+
     if (!officeLocalDateTime.isValid) {
       return "";
     }
@@ -112,7 +113,7 @@ export class QuickView extends BaseAdaptiveCardView<
 
   public get data(): IQuickViewData {
 
-    const { offices, searchText, filteredOffices } = this.state;
+    const { offices, searchText, filteredOffices, currentOfficeIndex } = this.state;
     const {
       title, showQuickViewAsList, showSearch, showMapsInQuickView, showTime,
       showWeather, getWeatherFromList, weatherList, openWeatherMapApiKey, loadingImage, fuse
@@ -121,14 +122,14 @@ export class QuickView extends BaseAdaptiveCardView<
 
     let dataToReturn: IQuickViewData = {
       title,
-      minHeight: showMapsInQuickView ? showWeather ? '578px' : '468px' : 'auto',
+      minHeight: showMapsInQuickView ? showWeather ? '570px' : '460px' : 'auto',
       office: null,
       icons: this.ICONS,
-      showSearch,
+      showSearch: showQuickViewAsList ? false : showSearch && offices.length > 1,
       showClearSearch: !isEmpty(searchText),
       searchText,
-      showOffices: false,
-      showNavigationButtons: false,
+      showOffices: filteredOffices.length > 0,
+      showNavigationButtons: filteredOffices.length > 1,
       showTime,
       showWeather,
       loadingImage: isEmpty(loadingImage) ? this.loadingImage : loadingImage,
@@ -140,13 +141,13 @@ export class QuickView extends BaseAdaptiveCardView<
 
       //Get the office in the state using the correct index 
       //(when in search, filtered offices will have a different index than the original offices) 
-      const filteredOffice: Partial<Office> = filteredOffices[this.state.currentOfficeIndex];
-      const filteredOfficeIndex = !isEmpty(searchText) ? findIndex(offices, (o: Office) => o.uniqueId === filteredOffice.uniqueId) : this.state.currentOfficeIndex;
+      const filteredOffice: Partial<Office> = filteredOffices[currentOfficeIndex];
+      const filteredOfficeIndex = !isEmpty(searchText) ? findIndex(offices, (o: Office) => o.uniqueId === filteredOffice.uniqueId) : currentOfficeIndex;
       const office: Office = offices[filteredOfficeIndex];
-      
+
       if (office) {
 
-        const { gotMap, gotWeather } = office;
+        const { name, timeZone, gotMap, gotWeather, latitude, longitude } = office;
 
         //check if office already has the map data
         //if not, get it using the static image URLs
@@ -162,8 +163,8 @@ export class QuickView extends BaseAdaptiveCardView<
         }
 
 
-        if (showTime && !isEmpty(office.timeZone)) {
-          office.time = this.getOfficeLocalTime(office.timeZone);
+        if (showTime && !isEmpty(timeZone)) {
+          office.time = this.getOfficeLocalTime(timeZone);
 
           //although the data in the state "offices" has changed,
           //there is no need to update the fuse collection because we are getting the time every time for each office when rendering
@@ -174,9 +175,13 @@ export class QuickView extends BaseAdaptiveCardView<
 
         if (showWeather && !gotWeather) {
           setTimeout(async () => {
-            office.weather = getWeatherFromList
-              ? await getOfficeLocationWeatherFromList(office.name, weatherList)
-              : await getOfficeLocationWeatherFromAPI(this.context.httpClient, openWeatherMapApiKey, office.latitude, office.longitude);
+
+            if (getWeatherFromList) {
+              const sp = getSP(this.context);
+              office.weather = await sp.web.getOfficeLocationWeather(name, weatherList);
+            } else {
+              office.weather = await getOfficeLocationWeatherFromAPI(this.context.httpClient, openWeatherMapApiKey, latitude, longitude);
+            }
 
             //set the flag to true so we don't get the weather again
             office.gotWeather = true;
@@ -196,9 +201,6 @@ export class QuickView extends BaseAdaptiveCardView<
         dataToReturn = {
           ...dataToReturn,
           office,
-          showSearch: showQuickViewAsList ? false : showSearch && offices.length > 1,
-          showOffices: filteredOffices.length > 0,
-          showNavigationButtons: showQuickViewAsList ? false : filteredOffices.length > 1,
           showTime: showTime && !isEmpty(office.time),
           showMapsInQuickView: showMapsInQuickView && !isEmpty(office.locationMap),
           showOpenMapsButton: this.context.deviceContext === 'WebView' && !showMapsInQuickView && !isEmpty(office.latitude) && !isEmpty(office.longitude)

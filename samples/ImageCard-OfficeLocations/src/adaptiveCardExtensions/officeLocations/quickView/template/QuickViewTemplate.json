@@ -173,14 +173,13 @@
               "type": "Column",
               "verticalContentAlignment": "Center",
               "separator": true,
-              "minHeight": "72px",
               "items": [
                 {
                   "type": "TextBlock",
-                  "size": "Medium",
+                  "size": "Default",
                   "text": "${office.address}",
                   "spacing": "Padding",
-                  "maxLines": 3,
+                  "maxLines": 2,
                   "wrap": true,
                   "horizontalAlignment": "Center"
                 }
