@@ -1,100 +1,180 @@
-import { sp } from "@pnp/sp";
+import { AdaptiveCardExtensionContext } from "@microsoft/sp-adaptive-card-extension-base";
+import { spfi, SPFx, SPFI } from "@pnp/sp";
+import { extendFactory, dateAdd } from "@pnp/core";
+import { Caching, ICachingProps } from "@pnp/queryable";
+import { TermStore, ITermStore, ITaxonomyProperty, ITermInfo, ITermSetInfo } from "@pnp/sp/taxonomy";
+import { Web, IWeb } from "@pnp/sp/webs";
 import "@pnp/sp/taxonomy";
-import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
-import { dateAdd } from "@pnp/common";
-import { taxonomy, ITermSetData, ITermSet, ITermData, ITerm } from "@pnp/sp-taxonomy";
-import { Office, OfficeLocationWeather, OfficeTermsCustomProperties } from "./types";
+import { Office, OfficeLocationWeather } from "./types";
 import { Logger, LogLevel } from "@pnp/logging";
 import { HttpClient } from "@microsoft/sp-http";
-import { isEmpty } from '@microsoft/sp-lodash-subset';
+import { find, isEmpty } from '@microsoft/sp-lodash-subset';
 
 
 const LOG_SOURCE: string = "🔶 OfficeLocationService";
 const CACHE_KEY_PREFIX: string = "OfficeLocations_";
 export const PLACEHOLDER_IMAGE_URL: string = "https://via.placeholder.com/400x240?text=Map%20unavailable";
+let _sp: SPFI = null;
 
-// not able to set defaultCachingTimeoutSeconds in sp.setup for some reason. Hence using this object.
-let cachingOptions: any = {
-    expiration: dateAdd(new Date(), "day", 1),
-    storeName: "session"
-};
+const cachingProps: ICachingProps = {
+    store: "local",
+    expireFunc: () => dateAdd(new Date(), "day", 1)
+}
 
-export async function getOfficesFromTermStore(termSetId: string): Promise<Office[]> {
-    try {
-        let officeTerms: (ITermData & ITerm)[] = [];
-        let officesTermset: (ITermSetData & ITermSet) = null;
+export function getSP(context?: AdaptiveCardExtensionContext): SPFI {
 
-        let siteCollectionTermStore = await taxonomy.getDefaultSiteCollectionTermStore().usingCaching({...cachingOptions, key: `${CACHE_KEY_PREFIX}termstore`}).get();
-        officesTermset = await siteCollectionTermStore.getTermSetById(termSetId).usingCaching({...cachingOptions, key: `${CACHE_KEY_PREFIX}termset`}).get();
+    if (_sp === null && typeof context !== "undefined") {
+        _sp = spfi().using(SPFx(context));
+    }
+
+    return _sp;
+}
+
+declare module "@pnp/sp/taxonomy" {
+    interface ITermStore {
+        validateTermSet: (this: ITermStore, termSetId: string, termSetCustomPropertyKey: string, termSetCustomPropertyValue: string) => Promise<boolean>;
+        getOfficeTerms: (this: ITermStore, termSetId: string) => Promise<Office[]>;
+    }
+}
+
+declare module "@pnp/sp/webs" {
+    interface IWeb {
+        getOfficeItems: (this: IWeb, listId: string) => Promise<Office[]>;
+        getOfficeLocationWeather: (this: IWeb, officeName: string, weatherListId: string) => Promise<OfficeLocationWeather>;
+    }
+}
+
+extendFactory(TermStore, {
+
+    validateTermSet: async function (this: ITermStore, termSetId: string, termSetCustomPropertyKey: string, termSetCustomPropertyValue: string): Promise<boolean> {
+        let officesTermset: ITermSetInfo = null;
+
+        officesTermset = await this.sets.getById(termSetId)
+            .select("id", "properties")
+            .using(Caching({ ...cachingProps, keyFactory: () => `${CACHE_KEY_PREFIX}termset` }))();
 
         if (isEmpty(officesTermset)) {
             Logger.write(`${LOG_SOURCE} (getOfficesFromTermStore) - error getting termset`, LogLevel.Error);
-            return null;
+            return false;
         }
 
-        let termsetCustomProperties: any = officesTermset.CustomProperties;
-        if (!termsetCustomProperties.UsedForOfficeLocations) {
-            Logger.write(`${LOG_SOURCE} (getOfficesFromTermStore) - termset is not used for office locations`, LogLevel.Warning);
-            return null;
+        let termsetCustomProperties: ITaxonomyProperty[] = officesTermset.properties;
+        let usedForOfficeLocationsProperty: ITaxonomyProperty = find(termsetCustomProperties, (p: ITaxonomyProperty) => p.key === termSetCustomPropertyKey);
+
+        if (isEmpty(usedForOfficeLocationsProperty)) {
+            Logger.write(`${LOG_SOURCE} (getOfficesFromTermStore) - termset does not have the property UsedForOfficeLocations`, LogLevel.Warning);
+            return false;
         }
 
-        officeTerms = await officesTermset.terms.usingCaching({...cachingOptions, key: `${CACHE_KEY_PREFIX}terms`}).get();
-        console.debug(`${LOG_SOURCE} (getOfficesFromTermStore) - Data from term store - %o`, officeTerms);
+        if (usedForOfficeLocationsProperty.value !== termSetCustomPropertyValue) {
+            Logger.write(`${LOG_SOURCE} (getOfficesFromTermStore) - termset's prroperty UsedForOfficeLocations is not set to true`, LogLevel.Warning);
+            return false;
+        }
 
-        let offices: Office[] = officeTerms.map(term => {
-            let customProperties: OfficeTermsCustomProperties = term.CustomProperties;
-            return {
-                uniqueId: term.Id,
-                name: term.Name,
-                address: customProperties.Address,
-                latitude: customProperties.Latitude ?? null,
-                longitude: customProperties.Longitude ?? null,
-                mapImageLink: customProperties.MapImageLink ?? PLACEHOLDER_IMAGE_URL,
-                timeZone: customProperties.TimeZone,
-                pageUrl: customProperties.PageUrl,
-                chatWithManagerLink: customProperties.ManagerEmailAddress ? `https://teams.microsoft.com/l/chat/0/0?users=${customProperties.ManagerEmailAddress}` : null,
-            };
-        });
+        return true;
+    },
 
-        console.debug(`${LOG_SOURCE} (getOfficesFromTermStore) - formatted data - %o`, offices);
-        return offices;
-    } catch (error) {
-        Logger.write(`${LOG_SOURCE} (getOfficesFromTermStore) - ${error}`, LogLevel.Error);
-        console.error(error);
-        return null;
+    getOfficeTerms: async function (this: ITermStore, termSetId: string): Promise<Office[]> {
+        try {
+            let officeTerms: ITermInfo[] = [];
+
+            officeTerms = await this.sets.getById(termSetId).terms
+                .select("id", "labels", "properties")
+                .using(Caching({ ...cachingProps, keyFactory: () => `${CACHE_KEY_PREFIX}terms` }))();
+            console.debug(`${LOG_SOURCE} (getOfficesFromTermStore) - Data from term store - %o`, officeTerms);
+
+            let offices: Office[] = officeTerms.map(term => {
+
+                const termProperties: ITaxonomyProperty[] = term.properties;
+                const managerEmailAddress: string = find(termProperties, (p: ITaxonomyProperty) => p.key === "ManagerEmailAddress")?.value;
+
+                return {
+                    uniqueId: term.id,
+                    name: term.labels[0].name,
+                    address: find(termProperties, (p: ITaxonomyProperty) => p.key === "Address")?.value,
+                    latitude: find(termProperties, (p: ITaxonomyProperty) => p.key === "Latitude")?.value ?? null,
+                    longitude: find(termProperties, (p: ITaxonomyProperty) => p.key === "Longitude")?.value ?? null,
+                    mapImageLink: find(termProperties, (p: ITaxonomyProperty) => p.key === "MapImageLink")?.value ?? PLACEHOLDER_IMAGE_URL,
+                    timeZone: find(termProperties, (p: ITaxonomyProperty) => p.key === "TimeZone")?.value,
+                    pageUrl: find(termProperties, (p: ITaxonomyProperty) => p.key === "PageUrl")?.value,
+                    chatWithManagerLink: managerEmailAddress ? `https://teams.microsoft.com/l/chat/0/0?users=${managerEmailAddress}` : null,
+                };
+            });
+
+            console.debug(`${LOG_SOURCE} (getOfficesFromTermStore) - formatted data - %o`, offices);
+            return offices;
+        } catch (error) {
+            Logger.write(`${LOG_SOURCE} (getOfficesFromTermStore) - ${error}`, LogLevel.Error);
+            console.error(error);
+            return null;
+        }
     }
-}
+});
 
-export async function getOfficesFromList(listId: string): Promise<Office[]> {
-    try {
+extendFactory(Web, {
 
-        const selectFields: string = "Id,Title,Address,Latitude,Longitude,MapImageLink,TimeZone,PageUrl,ManagerEmailAddress";
-        const officeListItems: any[] = await sp.web.lists.getById(listId).items.select(selectFields).usingCaching({...cachingOptions, key: `${CACHE_KEY_PREFIX}listitems`}).get();
-        console.debug(`${LOG_SOURCE} (getOfficesFromList) - Data from list - %o`, officeListItems);
+    getOfficeItems: async function (this: IWeb, listId: string): Promise<Office[]> {
+        try {
 
-        let offices: Office[] = officeListItems.map(item => {
+            const selectFields: string = "Id,Title,Address,Latitude,Longitude,MapImageLink,TimeZone,PageUrl,ManagerEmailAddress";
+            const officeListItems: any[] = await this.lists.getById(listId).items
+                .select(selectFields)
+                .using(Caching({ ...cachingProps, keyFactory: () => `${CACHE_KEY_PREFIX}listitems` }))();
+            console.debug(`${LOG_SOURCE} (getOfficesFromList) - Data from list - %o`, officeListItems);
+
+            let offices: Office[] = officeListItems.map(item => {
+                return {
+                    uniqueId: item.Id,
+                    name: item.Title,
+                    address: item.Address,
+                    latitude: item.Latitude ?? null,
+                    longitude: item.Longitude ?? null,
+                    mapImageLink: item.MapImageLink ?? PLACEHOLDER_IMAGE_URL,
+                    timeZone: item.TimeZone,
+                    pageUrl: item.PageUrl,
+                    chatWithManagerLink: item.ManagerEmailAddress ? `https://teams.microsoft.com/l/chat/0/0?users=${item.ManagerEmailAddress}` : null,
+                };
+            });
+            console.debug(`${LOG_SOURCE} (getOfficesFromList) - formatted data - %o`, offices);
+            return offices;
+        } catch (error) {
+            Logger.write(`${LOG_SOURCE} (getOfficesFromList) - ${error}`, LogLevel.Error);
+            console.error(error);
+            return null;
+        }
+    },
+
+    getOfficeLocationWeather: async function (this: IWeb, officeName: string, weatherListId: string): Promise<OfficeLocationWeather> {
+        try {
+
+            const officeWeatherListItems: any[] = await this.lists.getById(weatherListId)
+                .items.select("Title", "Icon", "Temperature", "High", "Low", "WindSpeed")
+                .filter("Title eq '" + officeName + "'")();
+            console.debug(`${LOG_SOURCE} (getOfficeLocationWeatherFromList) - Data from list - %o`, officeWeatherListItems);
+
+            if (officeWeatherListItems.length === 0) {
+                Logger.write(`${LOG_SOURCE} (getOfficeLocationWeatherFromList) - Office weather data not found`, LogLevel.Warning);
+                return null;
+            }
+
             return {
-                uniqueId: item.Id,
-                name: item.Title,
-                address: item.Address,
-                latitude: item.Latitude ?? null,
-                longitude: item.Longitude ?? null,
-                mapImageLink: item.MapImageLink ?? PLACEHOLDER_IMAGE_URL,
-                timeZone: item.TimeZone,
-                pageUrl: item.PageUrl,
-                chatWithManagerLink: item.ManagerEmailAddress ? `https://teams.microsoft.com/l/chat/0/0?users=${item.ManagerEmailAddress}` : null,
+                icon: officeWeatherListItems[0].Icon,
+                temperature: parseFloat(officeWeatherListItems[0].Temperature).toFixed(1),
+                high: parseFloat(officeWeatherListItems[0].High).toFixed(0),
+                low: parseFloat(officeWeatherListItems[0].Low).toFixed(0),
+                windSpeed: `${parseFloat(officeWeatherListItems[0].WindSpeed).toFixed(0)} km/h`
             };
-        });
-        console.debug(`${LOG_SOURCE} (getOfficesFromList) - formatted data - %o`, offices);
-        return offices;
-    } catch (error) {
-        Logger.write(`${LOG_SOURCE} (getOfficesFromList) - ${error}`, LogLevel.Error);
-        console.error(error);
-        return null;
+        } catch (error) {
+            Logger.write(`${LOG_SOURCE} (getOfficeLocationWeatherFromList) - ${error}`, LogLevel.Error);
+            console.error(error);
+            return null;
+        }
     }
-}
+
+});
+
 
 export async function getOfficeLocationWeatherFromAPI(httpClient: any, openWeatherMapApiKey: string, latitude: string, longitude: string): Promise<OfficeLocationWeather> {
     try {
@@ -117,31 +197,6 @@ export async function getOfficeLocationWeatherFromAPI(httpClient: any, openWeath
         };
     } catch (error) {
         Logger.write(`${LOG_SOURCE} (getOfficeLocationWeatherFromAPI) - ${error}`, LogLevel.Error);
-        console.error(error);
-        return null;
-    }
-}
-
-export async function getOfficeLocationWeatherFromList(officeName: string, weatherListId: string): Promise<OfficeLocationWeather> {
-    try {
-
-        const officeWeatherListItems: any[] = await sp.web.lists.getById(weatherListId).items.select("Title", "Icon", "Temperature", "High", "Low", "WindSpeed").filter("Title eq '" + officeName + "'").get();
-        console.debug(`${LOG_SOURCE} (getOfficeLocationWeatherFromList) - Data from list - %o`, officeWeatherListItems);
-
-        if (officeWeatherListItems.length === 0) {
-            Logger.write(`${LOG_SOURCE} (getOfficeLocationWeatherFromList) - Office weather data not found`, LogLevel.Warning);
-            return null;
-        }
-
-        return {
-            icon: officeWeatherListItems[0].Icon,
-            temperature: parseFloat(officeWeatherListItems[0].Temperature).toFixed(1),
-            high: parseFloat(officeWeatherListItems[0].High).toFixed(0),
-            low: parseFloat(officeWeatherListItems[0].Low).toFixed(0),
-            windSpeed: `${parseFloat(officeWeatherListItems[0].WindSpeed).toFixed(0)} km/h`
-        };
-    } catch (error) {
-        Logger.write(`${LOG_SOURCE} (getOfficeLocationWeatherFromList) - ${error}`, LogLevel.Error);
         console.error(error);
         return null;
     }

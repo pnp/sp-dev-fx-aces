@@ -14,6 +14,7 @@ export type Office = {
     weather?: OfficeLocationWeather;
     gotWeather?: boolean;
     time?: string;
+    gotTime?: boolean;
 };
 
 export type OfficeTermsCustomProperties = {
