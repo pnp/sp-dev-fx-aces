@@ -8,7 +8,7 @@ export type Office = {
     timeZone: string;
     pageUrl: string;
     managerEmailAddress?: string;
-    chatWithManagerLink: string;
+    chatWithManagerLink?: string;
     locationMap?: OfficeLocationMap;
     gotMap?: boolean;
     weather?: OfficeLocationWeather;

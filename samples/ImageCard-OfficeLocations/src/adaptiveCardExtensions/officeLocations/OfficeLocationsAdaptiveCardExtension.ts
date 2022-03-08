@@ -9,7 +9,6 @@ import { DataSource, MapsSource, Office } from '../../types';
 import { getSP } from '../../officelocation.service';
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
 import { ErrorCardView } from './cardView/ErrorCardView';
-// import Fuse from 'fuse.js';
 import { ListView } from './listView/ListView';
 import { SPFI } from '@pnp/sp';
 
@@ -137,9 +136,6 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       switch (dataSource) {
         case DataSource.Local:
           offices = this.properties.offices;
-          offices.forEach(office => {
-            office.chatWithManagerLink = office.managerEmailAddress ? `https://teams.microsoft.com/l/chat/0/0?users=${office.managerEmailAddress}` : '';
-          });
           break;
         case DataSource.Taxonomy:
           sp = getSP(this.context);
@@ -168,7 +164,8 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       offices = sortBy(offices, (office: Office) => office.name);
 
       offices.forEach(office => {
-        office.time = '';
+        office.chatWithManagerLink = !isEmpty(office.managerEmailAddress) ? `https://teams.microsoft.com/l/chat/0/0?users=${office.managerEmailAddress}` : null;
+        office.time = null;
         office.gotTime = false;
         office.gotWeather = false;
         office.gotMap = false;

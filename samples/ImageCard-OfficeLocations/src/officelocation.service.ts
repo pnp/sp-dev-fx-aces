@@ -88,18 +88,17 @@ extendFactory(TermStore, {
             let offices: Office[] = officeTerms.map(term => {
 
                 const termProperties: ITaxonomyProperty[] = term.properties;
-                const managerEmailAddress: string = find(termProperties, (p: ITaxonomyProperty) => p.key === "ManagerEmailAddress")?.value;
 
                 return {
                     uniqueId: term.id,
                     name: term.labels[0].name,
-                    address: find(termProperties, (p: ITaxonomyProperty) => p.key === "Address")?.value,
+                    address: find(termProperties, (p: ITaxonomyProperty) => p.key === "Address")?.value ?? null,
                     latitude: find(termProperties, (p: ITaxonomyProperty) => p.key === "Latitude")?.value ?? null,
                     longitude: find(termProperties, (p: ITaxonomyProperty) => p.key === "Longitude")?.value ?? null,
                     mapImageLink: find(termProperties, (p: ITaxonomyProperty) => p.key === "MapImageLink")?.value ?? PLACEHOLDER_IMAGE_URL,
-                    timeZone: find(termProperties, (p: ITaxonomyProperty) => p.key === "TimeZone")?.value,
-                    pageUrl: find(termProperties, (p: ITaxonomyProperty) => p.key === "PageUrl")?.value,
-                    chatWithManagerLink: managerEmailAddress ? `https://teams.microsoft.com/l/chat/0/0?users=${managerEmailAddress}` : null,
+                    timeZone: find(termProperties, (p: ITaxonomyProperty) => p.key === "TimeZone")?.value ?? null,
+                    pageUrl: find(termProperties, (p: ITaxonomyProperty) => p.key === "PageUrl")?.value ?? null,
+                    managerEmailAddress: find(termProperties, (p: ITaxonomyProperty) => p.key === "ManagerEmailAddress")?.value ?? null
                 };
             });
 
@@ -128,13 +127,13 @@ extendFactory(Web, {
                 return {
                     uniqueId: item.Id,
                     name: item.Title,
-                    address: item.Address,
+                    address: item.Address ?? null,
                     latitude: item.Latitude ?? null,
                     longitude: item.Longitude ?? null,
                     mapImageLink: item.MapImageLink ?? PLACEHOLDER_IMAGE_URL,
-                    timeZone: item.TimeZone,
-                    pageUrl: item.PageUrl,
-                    chatWithManagerLink: item.ManagerEmailAddress ? `https://teams.microsoft.com/l/chat/0/0?users=${item.ManagerEmailAddress}` : null,
+                    timeZone: item.TimeZone ?? null,
+                    pageUrl: item.PageUrl ?? null,
+                    managerEmailAddress: item.ManagerEmailAddress ?? null,
                 };
             });
             console.debug(`${LOG_SOURCE} (getOfficesFromList) - formatted data - %o`, offices);

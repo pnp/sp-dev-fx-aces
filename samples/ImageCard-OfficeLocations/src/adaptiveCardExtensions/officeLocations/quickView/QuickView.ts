@@ -4,7 +4,6 @@ import { IOfficeLocationsAdaptiveCardExtensionProps, IOfficeLocationsAdaptiveCar
 import { Logger, LogLevel } from "@pnp/logging";
 import { isEmpty, findIndex } from '@microsoft/sp-lodash-subset';
 import { getOfficeLocationWeatherFromAPI, getSP, PLACEHOLDER_IMAGE_URL } from '../../../officelocation.service';
-// import { DateTime } from 'luxon';
 
 export interface IQuickViewData {
   title: string;
@@ -109,6 +108,10 @@ export class QuickView extends BaseAdaptiveCardView<
     return `${officeTime} - ${offsetSuffix}`;
   }
 
+  private getOfficesWithLimitedProps(): Partial<Office>[] {
+    return this.state.offices.map(office => ({ uniqueId: office.uniqueId, address: office.address }));
+  }
+
   public get title(): string {
     return this.properties.showQuickViewAsList ? "Office details" : this.properties.title;
   }
@@ -159,7 +162,7 @@ export class QuickView extends BaseAdaptiveCardView<
 
           //update the fuse collection since the data in the state "offices" has changed.
           //This is because when fuse searches the data it should use the updated data
-          //if not it uses the initial data (onInit - line 167) in which gotMap will be false for the office.
+          //if not it uses the initial data (onInit - line 171) in which gotMap will be false for the office.
           //Can do this before returing IQuickViewData, but that happens every time irrespective of whether the offices in the state was updated
           if (showSearch) {
             fuse.setCollection(offices);
@@ -193,7 +196,7 @@ export class QuickView extends BaseAdaptiveCardView<
 
             //update the fuse collection since the data in the state "offices" has changed.
             //This is because when fuse searches the data it should use the updated data
-            //if not it uses the initial data (onInit - line 166) in which gotWeather will be false for the office.
+            //if not it uses the initial data (onInit - line 170) in which gotWeather will be false for the office.
             //Can do this before returing IQuickViewData, but that happens every time irrespective of whether the offices in the state was updated
             if (showSearch) {
               fuse.setCollection(offices);
@@ -220,14 +223,9 @@ export class QuickView extends BaseAdaptiveCardView<
     return dataToReturn;
   }
 
-  private getOfficesWithLimitedProps(): Partial<Office>[] {
-    return this.state.offices.map(office => ({ uniqueId: office.uniqueId, address: office.address }));
-  }
-
-
   public async onAction(action: IActionArguments): Promise<void> {
 
-    const { offices, filteredOffices, currentOfficeIndex } = this.state;
+    const { filteredOffices, currentOfficeIndex } = this.state;
 
     let totalNumberOfOffices: number = filteredOffices.length;
 
