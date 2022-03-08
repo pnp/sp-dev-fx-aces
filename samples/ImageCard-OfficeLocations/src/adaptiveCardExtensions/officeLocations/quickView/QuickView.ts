@@ -1,14 +1,10 @@
-import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments, ISubmitActionArguments, IActionErrorArguments, DeviceContext } from '@microsoft/sp-adaptive-card-extension-base';
-import { ITextInput } from 'adaptivecards/lib/schema';
-import * as strings from 'OfficeLocationsAdaptiveCardExtensionStrings';
+import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments, ISubmitActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
 import { Icons, MapsSource, Office, OfficeLocationMap } from '../../../types';
 import { IOfficeLocationsAdaptiveCardExtensionProps, IOfficeLocationsAdaptiveCardExtensionState } from '../OfficeLocationsAdaptiveCardExtension';
 import { Logger, LogLevel } from "@pnp/logging";
 import { isEmpty, findIndex } from '@microsoft/sp-lodash-subset';
 import { getOfficeLocationWeatherFromAPI, getSP, PLACEHOLDER_IMAGE_URL } from '../../../officelocation.service';
-import { DateTime } from 'luxon';
-import { CLEAR_ICON, COPY_ICON, NEXT_ICON, PREVIOUS_ICON, SEARCH_ICON } from '../../../icons';
-
+// import { DateTime } from 'luxon';
 
 export interface IQuickViewData {
   title: string;
@@ -84,7 +80,13 @@ export class QuickView extends BaseAdaptiveCardView<
     return officeLocationMap;
   }
 
-  private getOfficeLocalTime(officeTimeZone: string): string {
+  private async getOfficeLocalTime(officeTimeZone: string): Promise<string> {
+
+    const luxon = await import(
+      /* webpackChunkName: 'luxon' */
+      'luxon'
+    );
+    const { DateTime } = luxon;
 
     const officeLocalDateTime = DateTime.local().setZone(officeTimeZone);
 
@@ -147,7 +149,7 @@ export class QuickView extends BaseAdaptiveCardView<
 
       if (office) {
 
-        const { name, timeZone, gotMap, gotWeather, latitude, longitude } = office;
+        const { name, timeZone, gotMap, gotTime, gotWeather, latitude, longitude } = office;
 
         //check if office already has the map data
         //if not, get it using the static image URLs
@@ -159,15 +161,18 @@ export class QuickView extends BaseAdaptiveCardView<
           //This is because when fuse searches the data it should use the updated data
           //if not it uses the initial data (onInit - line 167) in which gotMap will be false for the office.
           //Can do this before returing IQuickViewData, but that happens every time irrespective of whether the offices in the state was updated
-          fuse.setCollection(offices);
+          if (showSearch) {
+            fuse.setCollection(offices);
+          }
         }
 
 
-        if (showTime && !isEmpty(timeZone)) {
-          office.time = this.getOfficeLocalTime(timeZone);
-
-          //although the data in the state "offices" has changed,
-          //there is no need to update the fuse collection because we are getting the time every time for each office when rendering
+        if (showTime && !isEmpty(timeZone) && !gotTime) {
+          setTimeout(async () => {
+            office.time = await this.getOfficeLocalTime(timeZone);
+            office.gotTime = true;
+            this.setState();
+          }, 100);
         }
 
         //check if office already has the weather data
@@ -190,7 +195,9 @@ export class QuickView extends BaseAdaptiveCardView<
             //This is because when fuse searches the data it should use the updated data
             //if not it uses the initial data (onInit - line 166) in which gotWeather will be false for the office.
             //Can do this before returing IQuickViewData, but that happens every time irrespective of whether the offices in the state was updated
-            fuse.setCollection(offices);
+            if (showSearch) {
+              fuse.setCollection(offices);
+            }
 
             //re-render as the offices data in the state has been updated after the asyncronous operation
             this.setState();

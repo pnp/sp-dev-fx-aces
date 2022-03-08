@@ -19,7 +19,7 @@ export const PLACEHOLDER_IMAGE_URL: string = "https://via.placeholder.com/400x24
 let _sp: SPFI = null;
 
 const cachingProps: ICachingProps = {
-    store: "session",
+    store: "local",
     expireFunc: () => dateAdd(new Date(), "day", 1)
 }
 

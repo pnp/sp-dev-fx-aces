@@ -9,7 +9,7 @@ import { DataSource, MapsSource, Office } from '../../types';
 import { getSP } from '../../officelocation.service';
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
 import { ErrorCardView } from './cardView/ErrorCardView';
-import Fuse from 'fuse.js';
+// import Fuse from 'fuse.js';
 import { ListView } from './listView/ListView';
 import { SPFI } from '@pnp/sp';
 
@@ -34,7 +34,7 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
   getWeatherFromList: boolean;
   weatherList: string;
   openWeatherMapApiKey: string;
-  fuse: Fuse<Office>;
+  fuse: any;
 }
 
 export interface IOfficeLocationsAdaptiveCardExtensionState {
@@ -169,6 +169,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
 
       offices.forEach(office => {
         office.time = '';
+        office.gotTime = false;
         office.gotWeather = false;
         office.gotMap = false;
         office.weather = null;
@@ -180,10 +181,18 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
         cardViewToRender: CARD_VIEW_REGISTRY_ID
       });
 
-      this.properties.fuse = new Fuse(offices, {
-        keys: ['name', 'address'],
-        includeScore: true
-      });
+      if(this.properties.showSearch) {
+
+        const fuse = await import(
+          /* webpackChunkName: 'fuse-js' */
+          'fuse.js'
+        );
+
+        this.properties.fuse = new fuse.default(offices, {
+          keys: ['name', 'address'],
+          includeScore: true
+        });
+      }
 
       this.cardNavigator.replace(this.state.cardViewToRender);
 
