@@ -79,6 +79,31 @@ export class QuickView extends BaseAdaptiveCardView<
     return officeLocationMap;
   }
 
+  //* Polling functionality as done in https://github.com/pnp/spfx-reference-scenarios/blob/main/samples/ace-chat/chat-spfx/src/adaptiveCardExtensions/teamsChat/messages.ts#L136
+  private getTime(officeTimeZone: string, callback: (time: string) => void, pollingInterval = 60000): () => void {
+
+    let timeout: number;
+    const seconds = (new Date()).getSeconds();
+    const getOfficeLocalTime = async () => {
+      
+      //Calculate the time to wait before the next poll
+      pollingInterval = this.properties.pollingTimeForFirstTime ? 60000 - (seconds * 1000) : 60000;
+      console.log("pollingInterval", pollingInterval);
+
+      if (this.properties.pollingTimeForFirstTime) {
+        this.properties.pollingTimeForFirstTime = false;
+      }
+      
+      const time = await this.getOfficeLocalTime(officeTimeZone);
+      callback(time);
+      timeout = setTimeout(getOfficeLocalTime, pollingInterval);
+    };
+    getOfficeLocalTime();
+
+    //* This will be assigned to cancelPollingForTime
+    return () => clearTimeout(timeout);
+  }
+
   private async getOfficeLocalTime(officeTimeZone: string): Promise<string> {
 
     const luxon = await import(
@@ -121,7 +146,8 @@ export class QuickView extends BaseAdaptiveCardView<
     const { offices, searchText, filteredOffices, currentOfficeIndex } = this.state;
     const {
       title, showQuickViewAsList, showSearch, showMapsInQuickView, showTime,
-      showWeather, getWeatherFromList, weatherList, openWeatherMapApiKey, loadingImage, fuse
+      showWeather, getWeatherFromList, weatherList, openWeatherMapApiKey, loadingImage, fuse,
+      pollingForTimeStarted
     } = this.properties;
 
 
@@ -152,10 +178,10 @@ export class QuickView extends BaseAdaptiveCardView<
 
       if (office) {
 
-        const { name, timeZone, gotMap, gotTime, gotWeather, latitude, longitude } = office;
+        const { name, timeZone, gotMap, gotWeather, latitude, longitude } = office;
 
-        //check if office already has the map data
-        //if not, get it using the static image URLs
+        //* check if office already has the map data
+        //* if not, get it using the static image URLs
         if (!gotMap) {
           office.locationMap = this.getOfficeLocationMapDetails(office);
           office.gotMap = true;
@@ -170,16 +196,24 @@ export class QuickView extends BaseAdaptiveCardView<
         }
 
 
-        if (showTime && !isEmpty(timeZone) && !gotTime) {
-          setTimeout(async () => {
-            office.time = await this.getOfficeLocalTime(timeZone);
-            office.gotTime = true;
-            this.setState();
-          }, 100);
+        if (showTime && !isEmpty(timeZone)) {
+          
+          if (!pollingForTimeStarted) {
+            this.properties.pollingForTimeStarted = true;
+            this.properties.cancelPollingForTime = this.getTime(
+              timeZone,
+              (time: string) => {
+                office.time = time;
+                console.log("time", time);
+                this.setState();
+              }
+            );
+
+          }
         }
 
-        //check if office already has the weather data
-        //if not, get it from the API or from the list
+        //* check if office already has the weather data
+        //* if not, get it from the API or from the list
 
         if (showWeather && !gotWeather) {
           setTimeout(async () => {
@@ -191,10 +225,10 @@ export class QuickView extends BaseAdaptiveCardView<
               office.weather = await getOfficeLocationWeatherFromAPI(this.context.httpClient, openWeatherMapApiKey, latitude, longitude);
             }
 
-            //set the flag to true so we don't get the weather again
+            //* set the flag to true so we don't get the weather again
             office.gotWeather = true;
 
-            //update the fuse collection since the data in the state "offices" has changed.
+            //* update the fuse collection since the data in the state "offices" has changed.
             //This is because when fuse searches the data it should use the updated data
             //if not it uses the initial data (onInit - line 170) in which gotWeather will be false for the office.
             //Can do this before returing IQuickViewData, but that happens every time irrespective of whether the offices in the state was updated
@@ -202,7 +236,7 @@ export class QuickView extends BaseAdaptiveCardView<
               fuse.setCollection(offices);
             }
 
-            //re-render as the offices data in the state has been updated after the asyncronous operation
+            //* re-render as the offices data in the state has been updated after the asyncronous operation
             this.setState();
 
           }, 500);
@@ -235,18 +269,21 @@ export class QuickView extends BaseAdaptiveCardView<
 
       switch (id) {
         case 'previous':
+          this.properties.stopPollingForTime();
           let prevOfficeIndex: number = currentOfficeIndex - 1;
           prevOfficeIndex = (prevOfficeIndex < 0) ? (totalNumberOfOffices - 1) : prevOfficeIndex;
           this.setState({ currentOfficeIndex: prevOfficeIndex });
           break;
 
         case 'next':
+          this.properties.stopPollingForTime();
           let nextOfficeIndex: number = currentOfficeIndex + 1;
           nextOfficeIndex = (nextOfficeIndex < totalNumberOfOffices) ? nextOfficeIndex : 0;
           this.setState({ currentOfficeIndex: nextOfficeIndex });
           break;
 
         case 'search':
+          this.properties.stopPollingForTime();
           let searchTextEntered = isEmpty(searchText) ? "" : searchText;
           this.setState({
             searchText: searchTextEntered,
@@ -259,6 +296,7 @@ export class QuickView extends BaseAdaptiveCardView<
           break;
 
         case 'clear':
+          this.properties.stopPollingForTime();
           this.setState({
             searchText: "",
             currentOfficeIndex: 0,

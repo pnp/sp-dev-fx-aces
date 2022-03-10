@@ -34,6 +34,10 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
   weatherList: string;
   openWeatherMapApiKey: string;
   fuse: any;
+  pollingTimeForFirstTime: boolean;
+  pollingForTimeStarted: boolean;
+  cancelPollingForTime: () => void;
+  stopPollingForTime: () => void;
 }
 
 export interface IOfficeLocationsAdaptiveCardExtensionState {
@@ -106,7 +110,8 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       officesTermSetId,
       list,
       useMapsAPI, showMapsInQuickView, mapsSource, bingMapsApiKey, googleMapsApiKey,
-      showWeather, getWeatherFromList, weatherList, openWeatherMapApiKey
+      showWeather, getWeatherFromList, weatherList, openWeatherMapApiKey,
+      showTime
     } = this.properties;
 
     if (
@@ -166,7 +171,6 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       offices.forEach(office => {
         office.chatWithManagerLink = !isEmpty(office.managerEmailAddress) ? `https://teams.microsoft.com/l/chat/0/0?users=${office.managerEmailAddress}` : null;
         office.time = null;
-        office.gotTime = false;
         office.gotWeather = false;
         office.gotMap = false;
         office.weather = null;
@@ -178,7 +182,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
         cardViewToRender: CARD_VIEW_REGISTRY_ID
       });
 
-      if(this.properties.showSearch) {
+      if (this.properties.showSearch) {
 
         const fuse = await import(
           /* webpackChunkName: 'fuse-js' */
@@ -189,6 +193,21 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
           keys: ['name', 'address'],
           includeScore: true
         });
+      }
+
+      //* Init polling related properties
+
+      this.properties.stopPollingForTime = () => { };
+
+      if (showTime) {
+        this.properties.pollingTimeForFirstTime = true;
+        this.properties.pollingForTimeStarted = false;
+
+        this.properties.stopPollingForTime = () => {
+          this.properties.pollingTimeForFirstTime = true;
+          this.properties.pollingForTimeStarted = false;
+          this.properties.cancelPollingForTime();
+        }
       }
 
       this.cardNavigator.replace(this.state.cardViewToRender);
@@ -210,6 +229,10 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
 
   protected onRenderTypeChanged(oldRenderType: RenderType): void {
     if (oldRenderType === 'QuickView') {
+      // Stop polling when the quick view is closed
+      // If this is not done then the polling will continue to run even after the quick view is closed
+      // If there was an onDispose handler for the QuickView, then this could have been done there
+      this.properties.stopPollingForTime();
       // Reset to the Card state when the Quick View was opened.
       this.setState({
         searchText: "",
