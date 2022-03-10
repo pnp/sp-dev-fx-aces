@@ -1,18 +1,18 @@
-import * as strings from "MyDayAdaptiveCardExtensionStrings";
+import * as strings from 'MyDayAdaptiveCardExtensionStrings';
 
 import {
   AdaptiveCardExtensionContext,
-} from "@microsoft/sp-adaptive-card-extension-base";
+} from '@microsoft/sp-adaptive-card-extension-base';
 import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField,
-} from "@microsoft/sp-property-pane";
+} from '@microsoft/sp-property-pane';
 import {
   DateConvention,
   PropertyFieldDateTimePicker,
-} from "@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker";
+} from '@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker';
 
-import { IMyDayAdaptiveCardExtensionProps } from "./MyDayAdaptiveCardExtension";
+import { IMyDayAdaptiveCardExtensionProps } from './MyDayAdaptiveCardExtension';
 
 export class MyDayPropertyPane {
   private context = undefined;
@@ -31,11 +31,6 @@ export class MyDayPropertyPane {
     console.log(properties);
   }
   public getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-
-   /*  const defaultDateProp: IDateTimeFieldValue = { value: new Date(), displayValue:'' };
-    if (isEmpty(this.properties.date)) {
-      this.properties.date = defaultDateProp;
-    } */
     return {
       pages: [
         {
