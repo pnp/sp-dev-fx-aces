@@ -8,7 +8,7 @@
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "webApiPermissionRequests": [{
-      "resource": "https://graph.microsoft.com",
+      "resource": "Microsoft Graph",
       "scope": "Calendars.Read"
     }],
     "developer": {
