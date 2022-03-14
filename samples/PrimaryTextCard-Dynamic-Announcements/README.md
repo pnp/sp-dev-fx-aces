@@ -19,6 +19,7 @@ This sample is for more like ACE component for read only information which can b
 - Prev and Next button to navigate through diffrent items
 - Option to create List from configuration Panel
 - Option to enable Auto Rotate card every 4 seconds
+- Same card be added multiple times on Dashboard pointing to diffrent lists.
 
 List Data Sample Screenshot
 ![Web part in Action](./assets/listsdataexample.png)
@@ -56,14 +57,14 @@ You can refer and download sample data for quick reference from [here](./assets/
 
 Solution|Author(s)
 --------|---------
-PrimaryTextCard-DynamicACE | [Siddharth Vaghasia](https://siddharthvaghasia.com)
+PrimaryTextCard-Dynamic-Announcements | [Siddharth Vaghasia](https://siddharthvaghasia.com)
 
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.0|March 08, 2022|Initial release
+1.0|March 14, 2022|Initial release
 
 ## Disclaimer
 
