@@ -2,7 +2,7 @@
 
 ## Summary
 
-This ACE card would be useful for organization use it as make Annoucements driven from SharePoint List.  This dynamic ACE component can be used to add to Viva connection dashboard and drive the CardView and QuickView from SP list. It filters the data form SP list based on start date and end date and for each row.
+This ACE card would be useful for organization use it to make Annoucements driven from SharePoint List.  This dynamic ACE component can be used to add to Viva connection dashboard and drive the CardView and QuickView from SP list. It filters the data form SP list based on start date and end date and for each row.
 Each row will represents the Card view with title and description and it can be configured from List if we want to open external link or display a Quick View. The Quickview adaptive card template and data is also read from column in SP list to resuse same card for diffrent scenarios. 
 
 This sample is for more like ACE component for read only information which can be displayed. 
