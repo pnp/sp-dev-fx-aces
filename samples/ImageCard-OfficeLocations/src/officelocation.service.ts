@@ -96,7 +96,7 @@ extendFactory(TermStore, {
                     latitude: find(termProperties, (p: ITaxonomyProperty) => p.key === "Latitude")?.value ?? null,
                     longitude: find(termProperties, (p: ITaxonomyProperty) => p.key === "Longitude")?.value ?? null,
                     mapImageLink: find(termProperties, (p: ITaxonomyProperty) => p.key === "MapImageLink")?.value ?? PLACEHOLDER_IMAGE_URL,
-                    timeZone: find(termProperties, (p: ITaxonomyProperty) => p.key === "TimeZone")?.value ?? null,
+                    timeZoneId: find(termProperties, (p: ITaxonomyProperty) => p.key === "TimeZone")?.value ?? null,
                     pageUrl: find(termProperties, (p: ITaxonomyProperty) => p.key === "PageUrl")?.value ?? null,
                     managerEmailAddress: find(termProperties, (p: ITaxonomyProperty) => p.key === "ManagerEmailAddress")?.value ?? null
                 };
@@ -131,7 +131,7 @@ extendFactory(Web, {
                     latitude: item.Latitude ?? null,
                     longitude: item.Longitude ?? null,
                     mapImageLink: item.MapImageLink ?? PLACEHOLDER_IMAGE_URL,
-                    timeZone: item.TimeZone ?? null,
+                    timeZoneId: item.TimeZone ?? null,
                     pageUrl: item.PageUrl ?? null,
                     managerEmailAddress: item.ManagerEmailAddress ?? null,
                 };

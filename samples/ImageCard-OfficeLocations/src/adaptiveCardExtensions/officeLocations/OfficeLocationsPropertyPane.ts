@@ -110,7 +110,7 @@ export class OfficeLocationsPropertyPane {
                       type: CustomCollectionFieldType.string
                     },
                     {
-                      id: "timeZone",
+                      id: "timeZoneId",
                       title: "Time zone",
                       type: CustomCollectionFieldType.string
                     },
@@ -191,6 +191,12 @@ export class OfficeLocationsPropertyPane {
                   label: 'Show local time',
                   onText: 'Yes',
                   offText: 'No'
+                }),
+                PropertyPaneToggle('showTimeUsingTemporal', {
+                  label: 'Use Temporal API',
+                  onText: 'Yes',
+                  offText: 'No (use luxon)',
+                  disabled: !properties.showTime
                 }),
                 PropertyPaneToggle('showWeather', {
                   label: 'Show local weather',

@@ -28,6 +28,7 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
   bingMapsApiKey: string;
   googleMapsApiKey: string;
   showTime: boolean;
+  showTimeUsingTemporal: boolean;
   showWeather: boolean;
   loadingImage: string;
   getWeatherFromList: boolean;

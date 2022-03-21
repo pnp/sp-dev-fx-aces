@@ -80,12 +80,13 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   //* Polling functionality as done in https://github.com/pnp/spfx-reference-scenarios/blob/main/samples/ace-chat/chat-spfx/src/adaptiveCardExtensions/teamsChat/messages.ts#L136
-  private getTime(officeTimeZone: string, callback: (time: string) => void, pollingInterval = 60000): () => void {
+  private getTime(officeTimeZoneId: string, callback: (time: string) => void, pollingInterval = 60000): () => void {
 
     let timeout: number;
     const seconds = (new Date()).getSeconds();
+    const { showTimeUsingTemporal } = this.properties;
     const getOfficeLocalTime = async () => {
-      
+
       //Calculate the time to wait before the next poll
       pollingInterval = this.properties.pollingTimeForFirstTime ? 60000 - (seconds * 1000) : 60000;
       console.log("pollingInterval", pollingInterval);
@@ -93,8 +94,8 @@ export class QuickView extends BaseAdaptiveCardView<
       if (this.properties.pollingTimeForFirstTime) {
         this.properties.pollingTimeForFirstTime = false;
       }
-      
-      const time = await this.getOfficeLocalTime(officeTimeZone);
+
+      const time = showTimeUsingTemporal ? await this.getOfficeLocalTimeUsingTemporal(officeTimeZoneId) : await this.getOfficeLocalTimeUsingLuxon(officeTimeZoneId);
       callback(time);
       timeout = setTimeout(getOfficeLocalTime, pollingInterval);
     };
@@ -104,7 +105,7 @@ export class QuickView extends BaseAdaptiveCardView<
     return () => clearTimeout(timeout);
   }
 
-  private async getOfficeLocalTime(officeTimeZone: string): Promise<string> {
+  private async getOfficeLocalTimeUsingLuxon(officeTimeZoneId: string): Promise<string> {
 
     const luxon = await import(
       /* webpackChunkName: 'luxon' */
@@ -112,7 +113,7 @@ export class QuickView extends BaseAdaptiveCardView<
     );
     const { DateTime } = luxon;
 
-    const officeLocalDateTime = DateTime.local().setZone(officeTimeZone);
+    const officeLocalDateTime = DateTime.local().setZone(officeTimeZoneId);
 
     if (!officeLocalDateTime.isValid) {
       return "";
@@ -125,6 +126,44 @@ export class QuickView extends BaseAdaptiveCardView<
       return `${officeTime} - Same time zone as you`;
     }
 
+    return this.formatTimeUsingOffset(officeTime, offset);
+  }
+
+  //* See - https://www.npmjs.com/package/@js-temporal/polyfill
+  private async getOfficeLocalTimeUsingTemporal(officeTimeZoneId: string): Promise<string> {
+    const jstemporal = await import(
+      /* webpackChunkName: 'jstemporal' */
+      '@js-temporal/polyfill'
+    );
+
+    try {
+      const { Temporal } = jstemporal;
+      const now = Temporal.Now;
+      let officeTime: string = `🕙 ${now.plainTimeISO().toLocaleString().substring(0, 5)}`;
+
+      const localTimeZoneString: string = now.timeZone().toString();
+      if (localTimeZoneString === officeTimeZoneId) {
+        return `${officeTime} - Same time zone as you`;
+      }
+
+      const officeTimeZone = new Temporal.TimeZone(officeTimeZoneId);
+      const offsetNanoseconds: number = officeTimeZone.getOffsetNanosecondsFor(now.instant());
+      if (offsetNanoseconds === 0) {
+        return `${officeTime} - Same time zone as you`;
+      }
+
+      officeTime = `🕙 ${now.plainTimeISO(officeTimeZone).toLocaleString().substring(0, 5)}`;
+      const offset: number = offsetNanoseconds / 1000000000 / 60;
+
+      return this.formatTimeUsingOffset(officeTime, offset);
+
+    } catch (error) {
+      console.error(error);
+      return "";
+    }
+  }
+
+  private formatTimeUsingOffset(officeTime: string, offset: number): string {
     const offsetHours: number = Math.abs(offset / 60 ^ 0);
     const offsetMinutes: number = Math.abs(offset % 60);
     const offsetHoursString: string = offsetHours > 0 ? `${offsetHours}h` : '';
@@ -178,7 +217,7 @@ export class QuickView extends BaseAdaptiveCardView<
 
       if (office) {
 
-        const { name, timeZone, gotMap, gotWeather, latitude, longitude } = office;
+        const { name, timeZoneId, gotMap, gotWeather, latitude, longitude } = office;
 
         //* check if office already has the map data
         //* if not, get it using the static image URLs
@@ -196,12 +235,12 @@ export class QuickView extends BaseAdaptiveCardView<
         }
 
 
-        if (showTime && !isEmpty(timeZone)) {
-          
+        if (showTime && !isEmpty(timeZoneId)) {
+
           if (!pollingForTimeStarted) {
             this.properties.pollingForTimeStarted = true;
             this.properties.cancelPollingForTime = this.getTime(
-              timeZone,
+              timeZoneId,
               (time: string) => {
                 office.time = time;
                 console.log("time", time);

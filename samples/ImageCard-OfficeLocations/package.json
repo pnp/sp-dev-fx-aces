@@ -12,6 +12,7 @@
     "serve": "gulp bundle --custom-serve --max_old_space_size=4096 && fast-serve"
   },
   "dependencies": {
+    "@js-temporal/polyfill": "^0.4.0",
     "@microsoft/sp-adaptive-card-extension-base": "1.14.0",
     "@microsoft/sp-core-library": "1.14.0",
     "@microsoft/sp-property-pane": "1.14.0",
