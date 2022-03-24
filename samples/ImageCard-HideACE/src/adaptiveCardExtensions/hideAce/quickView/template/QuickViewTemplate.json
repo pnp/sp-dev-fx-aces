@@ -1,0 +1,103 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3",
+  "body": [{
+      "type": "TextBlock",
+      "text": "${$root.strings.EventTitle}",
+      "wrap": true,
+      "size": "Large",
+      "weight": "Bolder",
+      "spacing": "Medium"
+    },
+    {
+      "type": "TextBlock",
+      "text": "${$root.strings.EventIntroText}",
+      "wrap": true
+    },
+    {
+      "type": "ActionSet",
+      "$when": "${showRegister != true}",
+      "actions": [{
+        "type": "Action.Submit",
+        "title": "${$root.strings.RegisterButtonText}",
+        "associatedInputs": "none",
+        "style": "positive",
+        "data": {
+          "id": "register"
+        }
+      }],
+      "spacing": "ExtraLarge",
+      "id": "show_reg"
+    },
+    {
+      "type": "Container",
+      "spacing": "ExtraLarge",
+      "$when": "${showRegister == true}",
+      "id": "Reg_form",
+      "items": [{
+          "type": "TextBlock",
+          "text": "${$root.strings.RegistrationFormHeading}",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder",
+          "spacing": "ExtraLarge"
+        },
+        {
+          "type": "Input.Text",
+          "label": "${$root.strings.FirstNameLabel}",
+          "value": "",
+          "isRequired": true,
+          "errorMessage": "${$root.strings.FirstNameError}",
+          "id": "first_name"
+        },
+        {
+          "type": "Input.Text",
+          "label": "${$root.strings.LastNameLabel}",
+          "isRequired": true,
+          "value": "",
+          "errorMessage": "${$root.strings.LastNameError}",
+          "id": "last_name"
+        },
+        {
+          "type": "Input.Text",
+          "label": "${$root.strings.CompanyNameLabel}",
+          "isRequired": true,
+          "value": "",
+          "errorMessage": "${$root.strings.CompanyNameError}",
+          "id": "company_name"
+        },
+        {
+          "type": "Input.Text",
+          "label": "${$root.strings.PhoneLabel}",
+          "value": "",
+          "isRequired": true,
+          "errorMessage": "${$root.strings.PhoneError}",
+          "id": "phone"
+        },
+        {
+          "type": "ActionSet",
+          "spacing": "Medium",
+          "actions": [{
+              "type": "Action.Submit",
+              "title": "${$root.strings.SubmitButtonText}",
+              "style": "positive",
+              "data": {
+                "id": "submit"
+              }
+            },
+            {
+              "type": "Action.Submit",
+              "title": "${$root.strings.CancelButtonText}",
+              "style": "negative",
+              "associatedInputs": "none",
+              "data": {
+                "id": "cancel"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Adaptive Card Extension - Hidable ACE",
+    "id": "9644d2d6-0be7-4512-9d1f-c3ae2f93c962",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Derek Cash-Peterson",
+      "websiteUrl": "https://sympraxisconsulting.com/",
+      "privacyUrl": "https://privacy.microsoft.com/en-us/privacystatement",
+      "termsOfUseUrl": "https://www.microsoft.com/en-us/servicesagreement",
+      "mpnId": "M365PNP"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "This sample shows how to hide an adaptive card extension after the user takes an action."
+      },
+      "longDescription": {
+        "default": "This sample shows a form that when filled out will hide the ACE from the dashboard. The amount of time it is hidden is configurable in the property pane."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [{
+      "title": "hide-ace Feature",
+      "description": "The feature that activates elements of the hide-ace solution.",
+      "id": "0a1165de-bb79-4bb3-ac7d-9045bff28fe0",
+      "version": "1.0.0.0"
+    }]
+  },
+  "paths": {
+    "zippedPackage": "solution/hide-ace.sppkg"
+  }
+}
