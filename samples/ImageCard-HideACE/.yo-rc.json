@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "hide-ace",
+    "libraryId": "9644d2d6-0be7-4512-9d1f-c3ae2f93c962",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "HideAce",
+    "solutionShortDescription": "HideAce description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Image"
+  }
+}
