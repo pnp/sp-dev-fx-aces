@@ -1,19 +1,19 @@
-import startOfDay from "date-fns/startOfDay";
-import { isEmpty } from "lodash";
+import startOfDay from 'date-fns/startOfDay';
+import { isEmpty } from 'lodash';
 
-import { Event } from "@microsoft/microsoft-graph-types";
+import { Event } from '@microsoft/microsoft-graph-types';
 import {
   BaseAdaptiveCardExtension,
-} from "@microsoft/sp-adaptive-card-extension-base";
-import { IPropertyPaneConfiguration } from "@microsoft/sp-property-pane";
+} from '@microsoft/sp-adaptive-card-extension-base';
+import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import {
   IDateTimeFieldValue,
-} from "@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker";
+} from '@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker';
 
-import { CardView } from "../../cards/cardView/CardView";
-import { QuickView } from "../../cards/quickView/QuickView";
-import { Services } from "../../services";
-import { MyDayPropertyPane } from "./MyDayPropertyPane";
+import { CardView } from '../../cards/cardView/CardView';
+import { QuickView } from '../../cards/quickView/QuickView';
+import { Services } from '../../services';
+import { MyDayPropertyPane } from './MyDayPropertyPane';
 
 export interface IPropertyControlsTestWebPartProps {
   datetime: IDateTimeFieldValue;
