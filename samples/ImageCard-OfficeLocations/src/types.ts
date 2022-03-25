@@ -5,10 +5,10 @@ export type Office = {
     latitude: string;
     longitude: string;
     mapImageLink: string;
-    timeZone: string;
+    timeZoneId: string;
     pageUrl: string;
     managerEmailAddress?: string;
-    chatWithManagerLink: string;
+    chatWithManagerLink?: string;
     locationMap?: OfficeLocationMap;
     gotMap?: boolean;
     weather?: OfficeLocationWeather;

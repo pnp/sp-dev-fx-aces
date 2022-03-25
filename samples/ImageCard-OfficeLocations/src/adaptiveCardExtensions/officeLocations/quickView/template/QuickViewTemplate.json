@@ -101,6 +101,7 @@
               "type": "Column",
               "width": "stretch",
               "separator": true,
+              "minHeight": "54px",
               "items": [
                 {
                   "type": "TextBlock",
@@ -122,7 +123,7 @@
                   "size": "default"
                 }
               ],
-              "verticalContentAlignment": "Center"
+              "verticalContentAlignment": "${showTime ? 'Top' : 'Center'}"
             },
             {
               "type": "Column",
@@ -151,7 +152,8 @@
           "url": "${office.locationMap.imageUrl}",
           "altText": "${office.locationMap.imageAlt}",
           "separator": true,
-          "isVisible": "${showMapsInQuickView}"
+          "isVisible": "${showMapsInQuickView}",
+          "height": "206px"
         },
         {
           "type": "ColumnSet",
@@ -173,14 +175,13 @@
               "type": "Column",
               "verticalContentAlignment": "Center",
               "separator": true,
-              "minHeight": "72px",
               "items": [
                 {
                   "type": "TextBlock",
-                  "size": "Medium",
+                  "size": "Default",
                   "text": "${office.address}",
                   "spacing": "Padding",
-                  "maxLines": 3,
+                  "maxLines": 2,
                   "wrap": true,
                   "horizontalAlignment": "Center"
                 }
