@@ -1,13 +1,13 @@
-import { Event } from "@microsoft/microsoft-graph-types";
+import { Event } from '@microsoft/microsoft-graph-types';
 import {
   BaseAdaptiveCardView,
   ISPFxAdaptiveCard,
-} from "@microsoft/sp-adaptive-card-extension-base";
+} from '@microsoft/sp-adaptive-card-extension-base';
 
 import {
   IMyDayAdaptiveCardExtensionProps,
   IMyDayAdaptiveCardExtensionState,
-} from "../../adaptiveCardExtensions/myDay/MyDayAdaptiveCardExtension";
+} from '../../adaptiveCardExtensions/myDay/MyDayAdaptiveCardExtension';
 
 export interface IQuickViewData {
   title: string;
