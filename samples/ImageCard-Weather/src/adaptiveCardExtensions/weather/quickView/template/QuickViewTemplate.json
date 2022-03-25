@@ -1,0 +1,184 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.3",
+  "body": [
+    {
+      "type": "TextBlock",
+      "color": "accent",
+      "text": "**${title}**",
+      "size": "Large",
+      "isSubtle": true,
+      "wrap": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "isSubtle": "true",
+              "size": "small",
+              "text": "{{DATE(${dt}, SHORT)}}",
+              "spacing": "None",
+              "wrap": true
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "TextBlock",
+              "isSubtle": "true",
+              "size": "small",
+              "text": "{{TIME(${dt})}}",
+              "spacing": "None",
+              "wrap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "${imageUrl}",
+              "size": "Small"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "**${temperature}**",
+              "size": "ExtraLarge",
+              "spacing": "None",
+              "wrap": true
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "**°${temperatureUnit}**",
+              "weight": "Bolder",
+              "spacing": "Small",
+              "wrap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "separator": true,
+      "text": "Weather Conditions",
+      "color": "accent",
+      "size": "Medium",
+      "spacing": "Medium",
+      "wrap": true
+    },
+    {
+      "type": "ColumnSet",
+      "style": "emphasis",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Cloud Cover:  \r**${cloudCover}%**",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "Wind Speed:  \r**${windSpeed} ${windSpeedUnit}**",
+              "wrap": true
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Pressure:  \r**${pressure} ${pressureUnit}**",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "Visibility:  \r**${visibility} ${visibilityUnit}**",
+              "wrap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "separator": true,
+      "text": "Health Conditions",
+      "color": "accent",
+      "size": "Medium",
+      "spacing": "Medium",
+      "wrap": true
+    },
+    {
+      "type": "ColumnSet",
+      "style": "emphasis",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Air Quality:  \r**${airQualityCategory}**",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "Asthma Forecast:  \r**${asthmaForecast}**",
+              "wrap": true
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Flu Forecast:  \r**${fluForecast}**",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "Dust Forecast:  \r**${dustForecast}**",
+              "wrap": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
