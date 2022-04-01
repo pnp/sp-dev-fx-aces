@@ -2,6 +2,7 @@ define([], function() {
   return {
     "TitleFieldLabel": "Card title",
     "CookieLengthFieldLabel": "Cookie length in minutes",
+    "IconFieldLabel": "Icon name",
     "PrimaryText": "Hidable ACE showing visibility property",
     "QuickViewButton": "Register",
     "RegisterButtonText": "Register",

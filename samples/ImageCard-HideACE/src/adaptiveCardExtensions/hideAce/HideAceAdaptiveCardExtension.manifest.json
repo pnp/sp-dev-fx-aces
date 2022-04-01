@@ -25,7 +25,7 @@
     "description": {
       "default": "This sample shows how to hide an adaptive card extension after the user takes an action."
     },
-    "officeFabricIconFontName": "Hide",
+    "officeFabricIconFontName": "Blocked2Solid",
     "cardSize": "Large",
     "properties": {
       "title": "Hidable ACE",
