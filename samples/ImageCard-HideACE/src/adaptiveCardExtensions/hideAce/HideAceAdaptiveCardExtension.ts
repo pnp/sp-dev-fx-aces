@@ -8,6 +8,7 @@ import { Logger, LogLevel } from "@pnp/logging";
 export interface IHideAceAdaptiveCardExtensionProps {
   title: string;
   cookieLength: string;
+  iconProperty: string;
 }
 
 export interface IHideAceAdaptiveCardExtensionState {
@@ -26,6 +27,7 @@ export default class HideAceAdaptiveCardExtension extends BaseAdaptiveCardExtens
 
   public onInit(): Promise<void> {
     try {
+      this._iconProperty = this.properties.iconProperty;
       //Ensure that the ACE is visible by default
       this.isVisible = true;
       //Get the value from local storage

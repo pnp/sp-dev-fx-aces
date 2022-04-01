@@ -1,6 +1,7 @@
 declare interface IHideAceAdaptiveCardExtensionStrings {
   TitleFieldLabel: string;
   CookieLengthFieldLabel: string;
+  IconFieldLabel: string;
 
   PrimaryText: string;
 

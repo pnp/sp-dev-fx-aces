@@ -15,7 +15,10 @@ export class HideAcePropertyPane {
                 }),
                 PropertyPaneTextField('cookieLength', {
                   label: strings.CookieLengthFieldLabel
-                })
+                }),
+                PropertyPaneTextField('iconProperty', {
+                  label: strings.IconFieldLabel
+                }),
               ]
             }
           ]
