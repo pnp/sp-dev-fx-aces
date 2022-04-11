@@ -1,0 +1,118 @@
+{
+    "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "weight": "Bolder",
+            "text": "${title}",
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "Container",
+            "minHeight": "20px"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "verticalContentAlignment": "Center",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAedJREFUWEfFl7/LQVEYx7+3LJJFGawWdhnkD7BYDCY2i0zya7nCqEhKmWTyY2NR8gfIIDuLlSKLJCn37Tx1b+e975u3F/eeM93t+dznfJ7vOUdSFEWBwCUdj0clFothNpuh1+uBfRu9LpcL+v0+otEoTAdYr9fI5/O43+8EYRrA7XbDYDBALpfD6XRCKBQyD2C/30OWZXS7XW13TQF4PB6YTqfIZrPYbDZU3OVyYbfbGd+B8/mMarWKVqsF9u1wOFCv18GGLpFIGAfACqxWK6TTacznc/rrcDiMWq0Gr9dL+x6Px40BYKJ1Oh2USiUSzW63k/GZTAY2m41gDAPYbrdk+Hg8pkJ+vx/NZhOBQACSJGnyfRyAiTYajVAsFjXRUqkUKpUKnE7nj0z7KMDhcKBC7XabCnk8HpTLZUo4i8Xya6B+BICJtlgsSLTlckmFIpEIWe52u58m+dsALMcbjQZZrY4Xa38ymYTVav3zGHkLQM3xyWRChYLBIInm8/m+ifaM4iUAfY6z8WKiFQoFCpj/rJcArtcrhsMhzbQ636YCqH8obAv4FguVUAUROoZ8N4QFEQ8hNIp5EGGHEQ8h9DjmBRV2IeG7IexKphdU2KWUBxF2LdcLKuxhwoMIe5rpzxPtcSr6ef4FJTDpHSIDsz8AAAAASUVORK5CYII=",
+                            "width": "20px",
+                            "$when": "${$root.isFirstElement == false}"
+                        }
+                    ],
+                    "selectAction": {
+                        "type": "Action.Submit",
+                        "id": "prev"
+                    }
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Container",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${currentFile.name}",
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${formatDateTime(currentFile.lastModifiedDateTime, 'dd/MM/yyyy')}",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "verticalContentAlignment": "Center",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAeBJREFUWEfFl7+rQWEYx79HSZJFKVYLuwzyB0hZ2PyYZFJKogySRCk/UsrExqRYLP4AGWRnsRroLDJYnNv71LHc7rkux33e6e0s38953+/3eZ5XUhRFAeOSZFlWptMpEokELBbLx1EmkwmSySSCwSDEXjqfz4oQNxqNaLVa8Hg8H4X4EWC5XMJms6HdbiMej8NkMn0ERBNAVUylUmg0GnA4HLpDaAI4nU4cj0cSdbvd6HQ6CIVCMBgMuoFoAoxGI0iShEKhAFmWYbVakc1mUSqVaK/H0gQYj8eUht1uh2KxiMViQZqBQAC9Xg9er5cA31lPAQiB6/WKbrdLybhcLmTQWq2GdDr9lkGfBhAQokat12vkcjlsNhv68UgkQklxuVwvHcSfAFSF0+mEarWKwWDwMGi9Xkc0Gv2zQV8CEKr3+x2z2Qzlchn7/Z5AMpkMgdnt9qdP42UAVeFwOFBK5vM5ffL5fGRQv9//lEHfBhCit9sNw+EQlUrlEVeRmnw+/2s/0QVANeh2uyWDrlYrOo1wOPxrP9ENQL0SEdFms4l+v/+Iq1Y/+RcAUTtisRjMZvM3c+oGIGoE2xWwmpAthqyFiK0UszYj1nbMNpCwj2TsQyn7WM76MGF7mrE/Trmf519Ap60ReTNQbwAAAABJRU5ErkJggg==",
+                            "width": "20px",
+                            "selectAction": {
+                                "type": "Action.Submit",
+                                "id": "next"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "minHeight": "20px"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "Container",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Open",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ],
+                            "horizontalAlignment": "Center",
+                            "verticalContentAlignment": "Center",
+                            "height": "stretch",
+                            "style": "accent",
+                            "selectAction": {
+                                "type": "Action.OpenUrl",
+                                "url": "${if(currentFile != null && currentFile.webUrl != null, currentFile.webUrl, 'http://onedrive.com')}"
+                            }
+                        }
+                    ],
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch"
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}
