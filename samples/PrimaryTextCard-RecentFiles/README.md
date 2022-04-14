@@ -4,22 +4,25 @@
 
 Viva Connection Adaptive Card Extension (ACE) that shows the recent files for the current user.
 
-![CardView](./assets/QuickViewAndCardView.png)
+Quick view and card view
 
-![CardView](./assets/CardView.png)
+![Quick view and card view](./assets/QuickViewAndCardView.png)
 
-![QuickView](./assets/QuickView.png)
+Card view
+
+![Card view](./assets/CardView.png)
+
+Quick view
+
+![Quick view](./assets/QuickView.png)
 
 ## Designer
 
 Just want to see the Adaptive Card template?
 
 <p>
-    <a href="https://adaptivecards.io/designer/index.html?card=https%3A%2F%2Fraw.githubusercontent.com%2FGuidoZam%2FPrimaryText-RecentFiles-ACE%2Fmain%2Fsrc%2FadaptiveCardExtensions%2FrecentFilesAce%2FquickView%2Ftemplate%2FQuickViewTemplate.json&data=https%3A%2F%2Fraw.githubusercontent.com%2FGuidoZam%2FPrimaryText-RecentFiles-ACE%2Fmain%2Fassets%2FquickViewSampleData.json">
-        <img src="https://raw.githubusercontent.com/GuidoZam/PrimaryText-RecentFiles-ACE/main/assets/btn-open-in-designer.png" alt="Open in Adaptive Card Designer" />
-    </a>
-    <a href="https://adaptivecards.io/designer/index.html?card=https%3A%2F%2Fraw.githubusercontent.com%2Fpnp%2Fsp-dev-fx-aces%2Fmain%2Fsamples%2FPrimaryText-RecentFiles%2Fsrc%2FadaptiveCardExtensions%2FrecentFilesAce%2FquickView%2Ftemplate%2FQuickViewTemplate.json&data=https%3A%2F%2Fraw.githubusercontent.com%2Fpnp%2Fsp-dev-fx-aces%2Fmain%2Fsamples%2FPrimaryText-RecentFiles%2Fassets%2FquickViewSampleData.json">
-        <img src="https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryText-RecentFiles/assets/btn-open-in-designer.png" alt="Open in Adaptive Card Designer" />
+    <a href="https://adaptivecards.io/designer/index.html?card=https%3A%2F%2Fraw.githubusercontent.com%2Fpnp%2Fsp-dev-fx-aces%2Fmain%2Fsamples%2FPrimaryTextCard-RecentFiles%2Fsrc%2FadaptiveCardExtensions%2FrecentFilesAce%2FquickView%2Ftemplate%2FQuickViewTemplate.json&data=https%3A%2F%2Fraw.githubusercontent.com%2Fpnp%2Fsp-dev-fx-aces%2Fmain%2Fsamples%2FPrimaryTextCard-RecentFiles%2Fassets%2FquickViewSampleData.json">
+        <img src="https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-RecentFiles/assets/btn-open-in-designer.png" alt="Open in Adaptive Card Designer" />
 </p>
 
 ## Used SharePoint Framework Version
