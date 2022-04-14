@@ -25,6 +25,15 @@ Property pane
 
 ![Property pane](./assets/PropertyPane.png)
 
+## Designer
+
+Just want to see the Adaptive Card template?
+
+<p>
+    <a href="https://adaptivecards.io/designer/index.html?card=https%3A%2F%2Fraw.githubusercontent.com%2Fpnp%2Fsp-dev-fx-aces%2Fmain%2Fsamples%2FPrimaryTextCard-WordOfTheDay%2Fsrc%2FadaptiveCardExtensions%2FrecentFilesAce%2FquickView%2Ftemplate%2FQuickViewTemplate.json&data=https%3A%2F%2Fraw.githubusercontent.com%2Fpnp%2Fsp-dev-fx-aces%2Fmain%2Fsamples%2FPrimaryTextCard-WordOfTheDay%2Fassets%2FquickViewSampleData.json">
+        <img src="https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-WordOfTheDay/assets/btn-open-in-designer.png" alt="Open in Adaptive Card Designer" />
+</p>
+
 ## Used SharePoint Framework Version
 
 ![version](https://img.shields.io/badge/version-1.13-green.svg)
