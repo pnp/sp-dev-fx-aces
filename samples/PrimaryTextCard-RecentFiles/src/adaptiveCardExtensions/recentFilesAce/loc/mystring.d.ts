@@ -8,6 +8,8 @@ declare interface IRecentFilesAceAdaptiveCardExtensionStrings {
   NoRecentsDescription: string;
   QuickViewButton: string;
   RecentFiles: string;
+  LoadingTitle: string;
+  LoadingDescription: string;
 }
 
 declare module 'RecentFilesAceAdaptiveCardExtensionStrings' {

@@ -12,7 +12,7 @@ export class CardView extends BasePrimaryTextCardView<IRecentFilesAceAdaptiveCar
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
     let buttons = [];
 
-    if (this.getRecentFilesCount() > 0) {
+    if (this.state.isLoading == false && this.getRecentFilesCount() > 0) {
       buttons.push({
         title: strings.QuickViewButton,
         action: {
@@ -27,11 +27,19 @@ export class CardView extends BasePrimaryTextCardView<IRecentFilesAceAdaptiveCar
     return <[ICardButton] | [ICardButton, ICardButton] | undefined>buttons;
   }
 
-  public get data(): IPrimaryTextCardParameters {
+  public get data(): IPrimaryTextCardParameters {    
     const recentCount: number = this.getRecentFilesCount();
+    let primaryText = `${recentCount} ${strings.RecentFiles}`;
+    let description = (recentCount > 0) ? strings.RecentsDescription : strings.NoRecentsDescription;
+
+    if (this.state.isLoading == true) {
+      primaryText = strings.LoadingTitle;
+      description = strings.LoadingDescription;
+    }
+
     return {
-      primaryText: `${recentCount} ${strings.RecentFiles}`,
-      description: (recentCount > 0) ? strings.RecentsDescription : strings.NoRecentsDescription,
+      primaryText: primaryText,
+      description: description,
       title: this.properties.title
     };
   }

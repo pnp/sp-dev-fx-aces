@@ -1,6 +1,6 @@
 define([], function() {
   return {
-    "PropertyPaneDescription": "Write 1-3 sentences describing the functionality of this component.",
+    "PropertyPaneDescription": "Viva Connection Adaptive Card Extension (ACE) that shows the recent files for the current user.",
     "TitleFieldLabel": "Card title",
     "Title": "Adaptive Card Extension",
     "SubTitle": "Quick view",
@@ -8,6 +8,8 @@ define([], function() {
     "RecentsDescription": "View your recent files by clicking the button below.",
     "NoRecentsDescription": "No recent file to view.",
     "QuickViewButton": "View files",
-    "RecentFiles": "recent files"
+    "RecentFiles": "recent files",
+    "LoadingTitle": "Loading...",
+    "LoadingDescription": "Loading, please wait."
   }
 });
