@@ -48,7 +48,7 @@ export default class WordOfTheDayAdaptiveCardExtension extends BaseAdaptiveCardE
   }
 
   private loadWordOfTheDay() {
-    if(this.properties.useSampleData == undefined) {
+    if((this.properties.useSampleData == undefined || this.properties.useSampleData == false) && (this.properties.apiKey == undefined || this.properties.apiKey.length == 0)) {
       this.setState({
         wordOfTheDay: undefined,
         isError: true
@@ -56,7 +56,7 @@ export default class WordOfTheDayAdaptiveCardExtension extends BaseAdaptiveCardE
       return;
     }
 
-    if(this.properties.useSampleData == false) {
+    if((this.properties.useSampleData == undefined || this.properties.useSampleData == false) && (this.properties.apiKey && this.properties.apiKey.length > 0)) {
       this.context.httpClient.get(`${WORDNIK_API_URL}${WORD_OF_THE_DAY}?${API_KEY}=${this.properties.apiKey}`, HttpClient.configurations.v1)
         .then(response => {
           if(response.ok) {
