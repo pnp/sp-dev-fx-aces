@@ -4,7 +4,7 @@
     "name": "spfx-ace-my-day-client-side-solution",
     "title": "My Day Adaptive Card Extension",
     "id": "1703fd43-24c6-4796-8375-fe92504ca9f9",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

@@ -42,6 +42,7 @@ ACE-MY-CALENDAR-PLAN | [João Mendes](https://github.com/joaojmendes) ([@joaojme
 Version|Date|Comments
 -------|----|--------
 1.0|February 25, 2022|Initial release
+1.1|April 21, 2022|Switch to using localized date/time formatting in the card view
 
 ## Disclaimer
 

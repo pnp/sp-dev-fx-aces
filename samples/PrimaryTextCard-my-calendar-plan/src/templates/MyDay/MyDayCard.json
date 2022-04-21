@@ -64,7 +64,7 @@
                               {
                                   "type": "TextBlock",
                                   "wrap": true,
-                                  "text": "${utcNow('HH:mm:ss')}",
+                                  "text": "{{TIME(${formatDateTime(utcNow(), 'yyyy-MM-ddTHH:mm:ssZ')})}}",
                                   "horizontalAlignment": "Right",
                                   "size": "Default",
                                   "isSubtle": true,
@@ -77,7 +77,7 @@
               },
               {
                   "type": "TextBlock",
-                  "text": "${formatDateTime(date,'d, MMMM yyyy')}",
+                  "text": "{{DATE(${formatDateTime(date, 'yyyy-MM-ddTHH:mm:ssZ' )},SHORT)}}",
                   "wrap": true,
                   "size": "Medium",
                   "weight": "Default",
@@ -173,7 +173,7 @@
                                   "maxLines": 1,
                                   "size": "Medium",
                                   "spacing": "None",
-                                  "text": "${formatDateTime(start.dateTime,'HH:mm')}"
+                                  "text": "{{TIME(${formatDateTime(start.dateTime, 'yyyy-MM-ddTHH:mm:ss')}Z)}}"
                               },
                               {
                                   "type": "TextBlock",
