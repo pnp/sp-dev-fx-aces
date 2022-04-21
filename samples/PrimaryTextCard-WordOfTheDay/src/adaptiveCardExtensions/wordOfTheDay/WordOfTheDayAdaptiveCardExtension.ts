@@ -42,12 +42,14 @@ export default class WordOfTheDayAdaptiveCardExtension extends BaseAdaptiveCardE
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
 
-    this.loadWordOfTheDay();
+    setTimeout(async () => {
+      await this.loadWordOfTheDay();
+    }, 500);
 
     return Promise.resolve();
   }
 
-  private loadWordOfTheDay() {
+  private async loadWordOfTheDay() {
     if((this.properties.useSampleData == undefined || this.properties.useSampleData == false) && (this.properties.apiKey == undefined || this.properties.apiKey.length == 0)) {
       this.setState({
         wordOfTheDay: undefined,
@@ -57,28 +59,25 @@ export default class WordOfTheDayAdaptiveCardExtension extends BaseAdaptiveCardE
     }
 
     if((this.properties.useSampleData == undefined || this.properties.useSampleData == false) && (this.properties.apiKey && this.properties.apiKey.length > 0)) {
-      this.context.httpClient.get(`${WORDNIK_API_URL}${WORD_OF_THE_DAY}?${API_KEY}=${this.properties.apiKey}`, HttpClient.configurations.v1)
-        .then(response => {
-          if(response.ok) {
-            return response.json();
-          }
-          
-          return undefined;
-        })
-        .then(wordOfTheDay => {
-          if(!wordOfTheDay) {
-            this.setState({
-              wordOfTheDay: undefined,
-              isError: true
-            });
+      var response = await this.context.httpClient.get(`${WORDNIK_API_URL}${WORD_OF_THE_DAY}?${API_KEY}=${this.properties.apiKey}`, HttpClient.configurations.v1);
+      var wordOfTheDay: any = undefined;
 
-            return;
-          }
-
-          this.setState({
-            wordOfTheDay: wordOfTheDay
-          });
+      if(response.ok) {
+        wordOfTheDay = await response.json();
+      }
+      
+      if(!wordOfTheDay) {
+        this.setState({
+          wordOfTheDay: undefined,
+          isError: true
         });
+
+        return;
+      }
+
+      this.setState({
+        wordOfTheDay: wordOfTheDay
+      });
     }
     else if(this.properties.useSampleData == true){
       this.setState({
