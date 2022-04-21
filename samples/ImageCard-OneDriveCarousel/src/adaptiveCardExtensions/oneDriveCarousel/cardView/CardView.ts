@@ -16,7 +16,7 @@ export class CardView extends BaseImageCardView<IOneDriveCarouselAdaptiveCardExt
   public get cardButtons():[ICardButton] | [ICardButton, ICardButton] | undefined {
     var buttons = [];
     
-    if(!this.state.error && 
+    if(!this.state.error && !this.state.isLoading && this.state.folderHasImages && 
       (this.properties.hideButtons == undefined || this.properties.hideButtons == false) &&
        this.state.targetFolder != undefined) {
       buttons = [
@@ -64,13 +64,20 @@ export class CardView extends BaseImageCardView<IOneDriveCarouselAdaptiveCardExt
       return require('../assets/Error.png');
     }
     
-    let imageUrl: string = require('../assets/MicrosoftLogo.png');
-    
-    if (this.state.targetFolder && this.state.targetFolder.children && this.state.targetFolder.children.length > 0) {
-      imageUrl = this.state.targetFolder.children[this.state.itemIndex].webUrl;
+    // If not loading
+    if(this.state.isLoading == false) {
+      // If there is an image set the image webUrl
+      if (this.state.targetFolder && this.state.targetFolder.children && this.state.targetFolder.children.length > 0) {
+        return this.state.targetFolder.children[this.state.itemIndex].webUrl;
+      }
+      
+      // If there are no images in the target folder set a default image
+      if(this.state.folderHasImages == false) {
+        return require("../assets/MicrosoftLogo.png");
+      }
     }
 
-    return imageUrl;
+    return require("../assets/loading.svg");
   }
 
   public get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | undefined {

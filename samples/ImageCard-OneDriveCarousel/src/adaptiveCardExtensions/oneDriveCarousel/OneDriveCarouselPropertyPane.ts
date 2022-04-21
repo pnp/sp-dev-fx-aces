@@ -25,10 +25,10 @@ export class OneDriveCarouselPropertyPane {
                   label: strings.SelectedDriveIdDropdownLabel,
                   options: drivesResults,
                 }),
-                PropertyPaneSlider("timerMinutes", {
-                  label: strings.TimerMinutesSliderLabel,
+                PropertyPaneSlider("timerSeconds", {
+                  label: strings.TimerSliderLabel,
                   min: 1,
-                  max: 60,
+                  max: 3600,
                   step: 1
                 }),
                 PropertyPaneToggle("randomizeImage", {

@@ -12,7 +12,7 @@ export interface IOneDriveCarouselAdaptiveCardExtensionProps {
   description: string;
   iconProperty: string;
   selectedDriveId: string;
-  timerMinutes: number;
+  timerSeconds: number;
   randomizeImage: boolean;
   hideButtons: boolean;
 }
@@ -24,6 +24,8 @@ export interface IOneDriveCarouselAdaptiveCardExtensionState {
   itemIndex: number;
   targetFolder: MicrosoftGraph.DriveItem;
   error: object;
+  isLoading: boolean;
+  folderHasImages: boolean;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'OneDriveCarousel_CARD_VIEW';
@@ -35,6 +37,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
 > {
   private _deferredPropertyPane: OneDriveCarouselPropertyPane | undefined;
   private updateImageTimer;
+  private graphClient: MSGraphClient;
 
   public onInit(): Promise<void> {
     this.state = {
@@ -43,15 +46,19 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
       drivesResults: undefined,
       itemIndex: 0,
       targetFolder: undefined,
-      error: undefined
+      error: undefined,
+      isLoading: true,
+      folderHasImages: false
     };
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
 
-    // Get the first drive as root and load the children for the dropdown control
-    this.context.msGraphClientFactory.getClient().then((client: MSGraphClient): void => {
-      client
+    setTimeout(async () => {
+      this.graphClient = await this.context.msGraphClientFactory.getClient();      
+      // Get the first drive as root and load the children for the dropdown control
+      
+      this.graphClient
       .api(`/${gu.path_me}/${gu.path_drives}`)
       .select(`${gu.prop_id},${gu.prop_name}`)
       .get((error, drives) => {
@@ -64,17 +71,24 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
           rootDriveId: (drives && drives.value && drives.value.length > 0) ? drives.value[0].id : undefined
         });
         
-        this.loadDrives();
+        if(this.state.rootDriveId) {
+          this.loadDrives();
 
-        if (this.properties.selectedDriveId) {
-          this.loadTargetDriveItems();
+          if (this.properties.selectedDriveId) {
+            this.loadTargetDriveItems();
 
-          if (this.properties.timerMinutes) {
-            this.updateImageTimer = setInterval(this.updateImageIndex, (this.properties.timerMinutes * 60 * 1000));
+            if (this.properties.timerSeconds) {
+              this.updateImageTimer = setInterval(this.updateImageIndex, (this.properties.timerSeconds * 1000));
+            }
           }
         }
+        else {
+          this.setState({
+            isLoading: false
+          });
+        }
       });
-    });
+    }, 500);
 
     return Promise.resolve();
   }
@@ -107,9 +121,9 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
     if (propertyPath == "selectedDriveId") {
       this.loadTargetDriveItems();
     }
-    else if (propertyPath == "timerMinutes") {
+    else if (propertyPath == "timerSeconds") {
       clearInterval(this.updateImageTimer);
-      this.updateImageTimer = setInterval(this.updateImageIndex, (this.properties.timerMinutes * 60 * 1000));
+      this.updateImageTimer = setInterval(this.updateImageIndex, (this.properties.timerSeconds * 1000));
     }
   }
 
@@ -117,13 +131,12 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
     return CARD_VIEW_REGISTRY_ID;
   }
 
-  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {    
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return this._deferredPropertyPane!.getPropertyPaneConfiguration(this.state.drivesResults);
   }
 
   private loadDrives = async (): Promise<void> => {
-    var graphClient: MSGraphClient = await this.context.msGraphClientFactory.getClient();
-    await graphClient.api(`/${gu.path_me}/${gu.path_drives}/${this.state.rootDriveId}/${gu.path_root}/${gu.path_children}`)
+    await this.graphClient.api(`/${gu.path_me}/${gu.path_drives}/${this.state.rootDriveId}/${gu.path_root}/${gu.path_children}`)
           .select(`${gu.prop_id},${gu.prop_name}`)
           .get((error, drives) => {
             if (error) {
@@ -138,25 +151,28 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
   }
 
   private loadTargetDriveItems = () => {
-    this.context.msGraphClientFactory.getClient().then((client: MSGraphClient): void => {
-      client.api(`/${gu.path_me}/${gu.path_drives}/${this.state.rootDriveId}/${gu.path_items}/${this.properties.selectedDriveId}`)
-        .expand(gu.path_children)
-        .get((error, targetFolder: MicrosoftGraph.DriveItem) => {          
-          if (error) {
-            this.setError(error);
-            return;
-          }
-
-          if(targetFolder && targetFolder.children) {
-            // Remove the non image children
-            targetFolder.children = targetFolder.children.filter(c => c.image);
-          }
-
-          this.setState({
-            targetFolder: targetFolder
-          });
-        });
+    this.setState({
+      isLoading: true
     });
+    this.graphClient.api(`/${gu.path_me}/${gu.path_drives}/${this.state.rootDriveId}/${gu.path_items}/${this.properties.selectedDriveId}`)
+      .expand(gu.path_children)
+      .get((error, targetFolder: MicrosoftGraph.DriveItem) => {          
+        if (error) {
+          this.setError(error);
+          return;
+        }
+
+        if(targetFolder && targetFolder.children) {
+          // Remove the non image children
+          targetFolder.children = targetFolder.children.filter(c => c.image);
+        }
+
+        this.setState({
+          targetFolder: targetFolder,
+          folderHasImages: targetFolder.children && targetFolder.children.length > 0,
+          isLoading: false
+        });
+      });
   }
 
   private updateImageIndex = () => {
@@ -194,7 +210,8 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
 
   private setError = (error: object) => {
     this.setState({
-      error: error
+      error: error,
+      isLoading: false
     });
 
     console.log(error);

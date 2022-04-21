@@ -74,7 +74,7 @@ Version|Date|Comments
 
 ## Features
 
-Viva Connection Adaptive Card Extension (ACE) that shows an auto updating carousel of the images placed inside a OneDrive folder. It is possible to set a time range (in minutes) to specify the timing for the updates and is also possible to randomize the selected image.
+Viva Connection Adaptive Card Extension (ACE) that shows an auto updating carousel of the images placed inside a OneDrive folder. It is possible to set a time range (in seconds) to specify the timing for the updates and is also possible to randomize the selected image.
 When clicked it opens up the selected OneDrive folder if specified, otherwise it opens the base OneDrive url.
 
 ## References

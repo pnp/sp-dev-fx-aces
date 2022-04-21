@@ -9,6 +9,8 @@ export interface IQuickViewData {
   sizeLabel: string;
   modifiedLabel: string;
   currentItem: MicrosoftGraph.DriveItem;
+  hasImage: boolean;
+  hasDateTime: boolean;
 }
 
 export class QuickView extends BaseAdaptiveCardView<
@@ -17,12 +19,16 @@ export class QuickView extends BaseAdaptiveCardView<
   IQuickViewData
 > {
   public get data(): IQuickViewData {
+    var currentItem = (this.state.targetFolder && this.state.targetFolder.children) ? this.state.targetFolder.children[this.state.itemIndex] : undefined;
+
     return {
       detailsLabel: strings.DetailsLabel,
       fileNameLabel: strings.FileNameLabel,
       sizeLabel: strings.SizeLabel,
       modifiedLabel: strings.ModifiedLabel,
-      currentItem: (this.state.targetFolder && this.state.targetFolder.children) ? this.state.targetFolder.children[this.state.itemIndex] : undefined
+      currentItem: currentItem,
+      hasImage: (currentItem && currentItem.image != undefined && currentItem.image.width != undefined && currentItem.image.height != undefined),
+      hasDateTime: (currentItem && currentItem.lastModifiedDateTime != undefined)
     };
   }
 

@@ -11,7 +11,7 @@ declare interface IOneDriveCarouselAdaptiveCardExtensionStrings {
   QuickViewButton: string;
   ErrorMessage: string;
   SelectedDriveIdDropdownLabel: string;
-  TimerMinutesSliderLabel: string;
+  TimerSliderLabel: string;
   DetailsLabel: string;
   FileNameLabel: string;
   SizeLabel: string;

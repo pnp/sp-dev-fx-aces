@@ -73,7 +73,8 @@
                       }
                   ],
                   "spacing": "Medium",
-                  "separator": false
+                  "separator": false,
+                  "$when": "${hasImage}"
               },
                 {
                   "type": "ColumnSet",
@@ -103,7 +104,8 @@
                       }
                   ],
                   "spacing": "Medium",
-                  "separator": false
+                  "separator": false,
+                  "$when": "${hasDateTime}"
               },
               {
                   "type": "Container",
