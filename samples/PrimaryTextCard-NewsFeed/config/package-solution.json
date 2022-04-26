@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "primary-text-card-news-feed-client-side-solution",
+    "id": "64e804ea-d24c-4729-9315-6a71663add16",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "primary-text-card-news-feed description"
+      },
+      "longDescription": {
+        "default": "primary-text-card-news-feed description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "primary-text-card-news-feed Feature",
+        "description": "The feature that activates elements of the primary-text-card-news-feed solution.",
+        "id": "8c5f99da-2dfc-4513-a715-ceea618fd72d",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/primary-text-card-news-feed.sppkg"
+  }
+}
