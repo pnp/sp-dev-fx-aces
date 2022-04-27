@@ -23,6 +23,7 @@ let services: Services = undefined;
 export interface IMyDayAdaptiveCardExtensionProps {
   title: string;
   date: IDateTimeFieldValue;
+  useDate: boolean;
 }
 
 export interface IMyDayAdaptiveCardExtensionState {
@@ -47,7 +48,7 @@ export default class MyDayAdaptiveCardExtension extends BaseAdaptiveCardExtensio
   public async onInit(): Promise<void> {
     services = new Services(this.context);
     await services.init();
-    if (isEmpty(this.properties.date)) {
+    if (isEmpty(this.properties.date) || !this.properties.useDate) {
       const _date = startOfDay(new Date()).toISOString() as any;
       this.properties.date = { value: _date, displayValue: "" };
     }
@@ -79,7 +80,7 @@ export default class MyDayAdaptiveCardExtension extends BaseAdaptiveCardExtensio
       const _newValue = newValue.value.toISOString() as any;
       this.properties.date.value = _newValue;
       const events: Event[] = await this._getEvents(_newValue);
-      this.setState({ events: events, date: _newValue, numberItems: events.length.toString() });
+      this.setState({ events: events, date: this.properties.date.value as any, numberItems: events.length.toString() });
     }
     this.renderCard();
   }
