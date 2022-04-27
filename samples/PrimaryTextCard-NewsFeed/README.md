@@ -1,9 +1,10 @@
-# primary-text-card-news-feed
+# News Adaptive Card Extension
 
 ## Summary
 
 Shows a count of SP news articles in the last 30 days and a quick view of those articles
 
+![Screenshot of the Viva News Feed Card](./assets/Screenshot-2022-04-27-095421.png "Viva News Feed Card")
 
 ## Compatibility
 
@@ -48,6 +49,7 @@ Version|Date|Comments
   - **npm install**
   - **gulp serve**
   - **Add to workbench**
+- You may need to ./assets to ./sharepoint/assets for the icon to compile correctly.
 
 ## Features
 
