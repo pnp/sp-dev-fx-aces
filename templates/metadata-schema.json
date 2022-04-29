@@ -7,7 +7,7 @@
       "properties": {
           "name": {
               "type": "string",
-              "pattern": "pnp-sp-fx-aces-ace-.*"
+              "pattern": "pnp-sp-fx-aces-.*"
           },
           "version": {
               "type": "string"
