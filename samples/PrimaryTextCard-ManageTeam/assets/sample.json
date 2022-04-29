@@ -4,7 +4,7 @@
     "source": "pnp",
     "title": "Display and Manage Team",
     "shortDescription": "Display all team members who directly reports to current viewing user.",
-    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/master/samples/PrimaryTextCard-ManageTeam",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-ManageTeam",
     "longDescription": [
       "Display all team members who directly reports to me using Graph API in ACEs card View with two button."
     ],

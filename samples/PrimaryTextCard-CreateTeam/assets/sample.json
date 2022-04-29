@@ -4,7 +4,7 @@
     "source": "pnp",
     "title": "Create a new Team",
     "shortDescription": "Provision a Team based on default templates using Graph API",
-    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/master/samples/PrimaryTextCard-CreateTeam",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-CreateTeam",
     "longDescription": [
       "ACE that provisions a Microsoft Teams team baed on templates using the Microsoft Graph API."
     ],
