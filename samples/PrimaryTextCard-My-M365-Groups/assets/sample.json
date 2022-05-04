@@ -4,7 +4,7 @@
       "source": "pnp",
       "title": "My M365 Groups",
       "shortDescription": "Adaptive Card Extension that shows logged-in user M365 Unified Groups",
-      "url": "https://github.com/pnp/sp-dev-fx-aces/tree/master/samples/PrimaryTextCard-My-M365-Groups",
+      "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-My-M365-Groups",
       "longDescription": [
         "ACE with a PrimaryText card view and multiple quick views to display the logged-in user M365 Unified Groups."
       ],
