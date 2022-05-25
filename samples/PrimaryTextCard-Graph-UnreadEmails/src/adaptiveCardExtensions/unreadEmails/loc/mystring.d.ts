@@ -8,6 +8,7 @@ declare interface IUnreadEmailsAdaptiveCardExtensionStrings {
   NoUnread: IPrimaryTextCardParameters;
   Unread: IPrimaryTextCardParameters;
   LargeUnread: IPrimaryTextCardParameters;
+  Error: IPrimaryTextCardParameters;
 }
 
 declare module 'UnreadEmailsAdaptiveCardExtensionStrings' {

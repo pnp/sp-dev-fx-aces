@@ -32,8 +32,6 @@ export interface IMyDayAdaptiveCardExtensionState {
   title: string;
   date: string;
   numberItems: string;
-  timeZone: string;
-  locale: string;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = "MyDay_CARD_VIEW";
@@ -53,20 +51,20 @@ export default class MyDayAdaptiveCardExtension extends BaseAdaptiveCardExtensio
       this.properties.date = { value: _date, displayValue: "" };
     }
 
-    const events: Event[] = await this._getEvents((this.properties.date.value as any));
-
     this.state = {
       title: this.properties.title,
-      events: events,
+      events: [],
       userDisplayName: this.context.pageContext.user.displayName,
       date: this.properties.date.value as any,
-      numberItems: events.length.toString(),
-      timeZone: await services.getTimeZone(),
-      locale: this.context.pageContext.cultureInfo.currentCultureName
+      numberItems: "0"
     };
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
+
+    this._getEvents((this.properties.date.value as any)).then((_events) => {
+      this.setState({...this.state, events: _events, numberItems: _events.length.toString() });
+    });
 
     return Promise.resolve();
   }
@@ -87,8 +85,12 @@ export default class MyDayAdaptiveCardExtension extends BaseAdaptiveCardExtensio
 
 
   private _getEvents = async (isoDate: string): Promise<Event[]> => {
-    const events: Event[] = await services.getEvents((isoDate));
-    return events;
+    try {
+      const events: Event[] = await services.getEvents((isoDate));
+      return events;
+    } catch (e) {
+      return [{ "subject": `Error ${e}`, start: { "dateTime": new Date().toISOString() } }];
+    }
   }
 
   protected async loadPropertyPaneResources(): Promise<void> {

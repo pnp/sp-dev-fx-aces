@@ -3,7 +3,7 @@
     "plusBeta": false,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.13.1",
+    "version": "1.14.0",
     "libraryName": "basic-card-unread-emails",
     "libraryId": "3b7583e0-46e7-472e-a128-deed4be07243",
     "packageManager": "npm",
