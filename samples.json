@@ -106,6 +106,64 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-oneDriveImageOnlyCarousel",
+    "source": "pnp",
+    "title": "OneDrive Carousel",
+    "shortDescription": "This solution provides a carousel that takes images from a OneDrive folder using microsoft graph and ACE and display only the current image.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-OneDriveCarousel",
+    "longDescription": [
+      "This solution provides a carousel that takes images from a OneDrive folder using microsoft graph and ACE and display only the current image."
+    ],
+    "creationDateTime": "2022-04-11",
+    "updateDateTime": "2022-04-11",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.13.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-OneDriveCarousel/assets/mediumCardView.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "GuidoZam",
+        "pictureUrl": "https://github.com/GuidoZam.png",
+        "name": "Guido Zambarda"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-sharepoint-crud",
     "source": "pnp",
     "title": "SharePoint CRUD Example",
