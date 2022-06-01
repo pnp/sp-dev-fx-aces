@@ -111,22 +111,31 @@ export class QuickView extends BaseAdaptiveCardView<
       /* webpackChunkName: 'luxon' */
       'luxon'
     );
-    const { DateTime } = luxon;
 
-    const officeLocalDateTime = DateTime.local().setZone(officeTimeZoneId);
+    try {
+      const { DateTime } = luxon;
 
-    if (!officeLocalDateTime.isValid) {
+      const officeTime = DateTime.local().setZone(officeTimeZoneId);
+      if (!officeTime.isValid) {
+        return "";
+      }
+
+      const officeTimeToDisplay: string = `🕙 ${officeTime.toLocaleString(DateTime.TIME_SIMPLE)}`;
+
+      const localTime = DateTime.local();
+      if (localTime.zoneName === officeTimeZoneId) {
+        return `${officeTimeToDisplay} (Same time zone as you)`;
+      }
+
+      const localTimeOffset: number = localTime.offset;
+      const officeTimeOffset: number = officeTime.offset;
+
+      return this.formatTimeUsingOffset(officeTimeToDisplay, officeTimeOffset - localTimeOffset);
+
+    } catch (error) {
+      console.error(error);
       return "";
     }
-
-    const officeTime: string = `🕙 ${officeLocalDateTime.toLocaleString(DateTime.TIME_SIMPLE)}`;
-    const offset: number = officeLocalDateTime.offset;
-
-    if (offset === 0) {
-      return `${officeTime} - Same time zone as you`;
-    }
-
-    return this.formatTimeUsingOffset(officeTime, offset);
   }
 
   //* See - https://www.npmjs.com/package/@js-temporal/polyfill
@@ -139,23 +148,19 @@ export class QuickView extends BaseAdaptiveCardView<
     try {
       const { Temporal } = jstemporal;
       const now = Temporal.Now;
-      let officeTime: string = `🕙 ${now.plainTimeISO().toLocaleString().substring(0, 5)}`;
+      const officeTime = now.zonedDateTimeISO(officeTimeZoneId);
 
-      const localTimeZoneString: string = now.timeZone().toString();
-      if (localTimeZoneString === officeTimeZoneId) {
-        return `${officeTime} - Same time zone as you`;
+      const officeTimeToDisplay: string = `🕙 ${String(officeTime.hour).padStart(2, '0')}:${String(officeTime.minute).padStart(2, '0')}`;
+
+      const localTime = now.zonedDateTimeISO();
+      if (localTime.timeZone.toString() === officeTimeZoneId) {
+        return `${officeTimeToDisplay} (Same time zone as you)`;
       }
 
-      const officeTimeZone = new Temporal.TimeZone(officeTimeZoneId);
-      const offsetNanoseconds: number = officeTimeZone.getOffsetNanosecondsFor(now.instant());
-      if (offsetNanoseconds === 0) {
-        return `${officeTime} - Same time zone as you`;
-      }
+      const localTimeOffset = localTime.offsetNanoseconds / 1000000000 / 60;
+      const officeTimeOffset = officeTime.offsetNanoseconds / 1000000000 / 60;
 
-      officeTime = `🕙 ${now.plainTimeISO(officeTimeZone).toLocaleString().substring(0, 5)}`;
-      const offset: number = offsetNanoseconds / 1000000000 / 60;
-
-      return this.formatTimeUsingOffset(officeTime, offset);
+      return this.formatTimeUsingOffset(officeTimeToDisplay, officeTimeOffset - localTimeOffset);
 
     } catch (error) {
       console.error(error);
@@ -163,13 +168,18 @@ export class QuickView extends BaseAdaptiveCardView<
     }
   }
 
-  private formatTimeUsingOffset(officeTime: string, offset: number): string {
+  private formatTimeUsingOffset(time: string, offset: number): string {
+
+    if (offset === 0) {
+      return `${time} (Same time as you)`;
+    }
+
     const offsetHours: number = Math.abs(offset / 60 ^ 0);
     const offsetMinutes: number = Math.abs(offset % 60);
     const offsetHoursString: string = offsetHours > 0 ? `${offsetHours}h` : '';
     const offsetMinutesString: string = offsetMinutes > 0 ? `${offsetMinutes}m` : '';
     let offsetSuffix: string = `${offsetHoursString} ${offsetMinutesString} ${offset > 0 ? 'ahead of' : 'behind'} you`;
-    return `${officeTime} - ${offsetSuffix}`;
+    return `${time} (${offsetSuffix})`;
   }
 
   private getOfficesWithLimitedProps(): Partial<Office>[] {
