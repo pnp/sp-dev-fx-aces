@@ -2,10 +2,10 @@
   "name": "pnp-sp-fx-aces-oneDriveCarousel",
   "source": "pnp",
   "title": "OneDrive Carousel",
-  "shortDescription": "This solution provides a carousel that takes images from a OneDrive folder using microsoft graph and ACE.",
+  "shortDescription": "This solution provides a carousel that takes images from a OneDrive folder using Microsoft Graph and ACE.",
   "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-OneDriveCarousel",
   "longDescription": [
-    "This solution provides a carousel that takes images from a OneDrive folder using microsoft graph and ACE."
+    "This solution provides a carousel that takes images from a OneDrive folder using Microsoft Graph and ACE."
   ],
   "creationDateTime": "2022-04-11",
   "updateDateTime": "2022-04-11",
