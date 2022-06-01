@@ -55,6 +55,7 @@ office-locations | [Anoop Tatti](https://github.com/anoopt) ([https://linktr.ee/
 Version|Date|Comments
 -------|----|--------
 1.0|February 15, 2022|Initial release
+1.1|June 01, 2022|Updates for summer time
 
 ## Disclaimer
 
