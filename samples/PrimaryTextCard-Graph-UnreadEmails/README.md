@@ -36,6 +36,7 @@ PrimaryTextCard-Graph-UnreadEmails | [Nick Brown](https://github.com/techienickb
 Version|Date|Comments
 -------|----|--------
 1.0|December 06, 2021|Initial release
+1.0.1|May 04, 2022|Updated to SPFX 1.14
 
 ## Disclaimer
 

@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "primary-text-card-news-feed",
+    "libraryId": "64e804ea-d24c-4729-9315-6a71663add16",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "primary-text-card-news-feed",
+    "solutionShortDescription": "primary-text-card-news-feed description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "PrimaryText"
+  }
+}

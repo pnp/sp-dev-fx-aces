@@ -13,6 +13,7 @@ import {
 } from '@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker';
 
 import { IMyDayAdaptiveCardExtensionProps } from './MyDayAdaptiveCardExtension';
+import { PropertyFieldToggleWithCallout } from '@pnp/spfx-property-controls';
 
 export class MyDayPropertyPane {
   private context = undefined;
@@ -41,7 +42,12 @@ export class MyDayPropertyPane {
                 PropertyPaneTextField("title", {
                   label: strings.TitleFieldLabel,
                 }),
-                PropertyFieldDateTimePicker("date", {
+                PropertyFieldToggleWithCallout('useDate', {
+                  label: "Use Date",
+                  key: 'Use Date',
+                  checked: this.properties.useDate,
+                }),
+                this.properties.useDate && PropertyFieldDateTimePicker("date", {
                   label: 'Select the date and time',
                   initialDate: this.properties.date,
                   dateConvention: DateConvention.Date,

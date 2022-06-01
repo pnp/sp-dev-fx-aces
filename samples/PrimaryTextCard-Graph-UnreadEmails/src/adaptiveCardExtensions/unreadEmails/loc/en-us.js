@@ -28,6 +28,12 @@ define([], function() {
       "title": "My Email",
       "iconProperty": "MailAlert",
       "description": "Some heavy reading 📖"
-    }
+    },
+    "Error": {
+      "primaryText": "An Error occured",
+      "title": "My Email",
+      "iconProperty": "Mail",
+      "description": ""
+    },
   }
 }); 
