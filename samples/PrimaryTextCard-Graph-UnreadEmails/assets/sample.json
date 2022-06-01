@@ -8,7 +8,7 @@
     "This Adaptive Card Extension uses the Microsoft Graph to get unread emails in your inbox and displays that as a ACE"
   ],
   "creationDateTime": "2021-12-06",
-  "updateDateTime": "2021-12-06",
+  "updateDateTime": "2022-05-04",
   "products": [
     "SharePoint",
     "Viva"
@@ -19,7 +19,7 @@
     },
     {
       "key": "SPFX-VERSION",
-      "value": "1.13.1"
+      "value": "1.14.0"
     }
   ],
   "thumbnails": [{

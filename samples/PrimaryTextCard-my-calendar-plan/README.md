@@ -8,7 +8,7 @@ This ACE show user events for specific day
 ![my-calendar-plan](assets/my-calendar-plan-02.png)
 ![my-calendar-plan](assets/my-calendar-plan-03.png)
 
-![SPFx 1.13](https://img.shields.io/badge/SPFx-1.13.1-green.svg)
+![SPFx 1.14](https://img.shields.io/badge/SPFx-1.14.0-green.svg)
 ![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams")
@@ -42,6 +42,9 @@ ACE-MY-CALENDAR-PLAN | [João Mendes](https://github.com/joaojmendes) ([@joaojme
 Version|Date|Comments
 -------|----|--------
 1.0|February 25, 2022|Initial release
+1.1|April 21, 2022|Switch to using localized date/time formatting in the card view
+1.2|April 27, 2022|Toggle to turn off the set date
+1.3|May 05, 2022|Upgrade to SPFX 1.14.0
 
 ## Disclaimer
 

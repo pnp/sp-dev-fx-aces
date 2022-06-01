@@ -2,12 +2,12 @@ import endOfDay from 'date-fns/endOfDay';
 import parseISO from 'date-fns/parseISO';
 
 import { Event } from '@microsoft/microsoft-graph-types';
-import { BaseComponentContext } from '@microsoft/sp-component-base';
+import { AdaptiveCardExtensionContext } from '@microsoft/sp-adaptive-card-extension-base';
 
 export class Services {
-  private _context: BaseComponentContext = undefined;
+  private _context: AdaptiveCardExtensionContext = undefined;
   private _msGraphClient = undefined;
-  constructor(context: BaseComponentContext) {
+  constructor(context: AdaptiveCardExtensionContext) {
     this._context = context;
   }
   public init = async  () => {
@@ -29,8 +29,7 @@ export class Services {
       if (!this._msGraphClient) return;
       const startDate = eventsDate  || new Date().toISOString();
       const endDate =   endOfDay( parseISO(eventsDate) ?? new Date()  ).toISOString();
-      const timeZone = await this.getTimeZone();
-      const eventsResults  = await this._msGraphClient.api(`me/events`,{Headers: {'prefer': `outlook.timezone="${timeZone}"`}})
+      const eventsResults  = await this._msGraphClient.api(`me/events`)
       .select("subject,body,bodyPreview,organizer,attendees,start,end,location, id")
       .filter(`start/dateTime ge '${startDate}' and start/dateTime le '${endDate}'`)
       .orderby("start/dateTime")

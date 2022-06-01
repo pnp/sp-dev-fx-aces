@@ -9,9 +9,20 @@ export interface IUnreadEmailsAdaptiveCardExtensionProps {
   iconProperty: string;
 }
 
-export interface IUnreadEmailsAdaptiveCardExtensionState extends MicrosoftGraph.MailFolder {
-
+export interface IUnreadEmailsAdaptiveCardExtensionState {
+  results?: MicrosoftGraph.MailFolder;
+  error?: GraphError;
 }
+
+export interface GraphError {
+  statusCode?: number;
+  code?: string;
+  message: string;
+  requestId?: string;
+  date?: Date;
+  body?: string;
+}
+
 
 const CARD_VIEW_REGISTRY_ID: string = 'UnreadEmails_CARD_VIEW';
 export const QUICK_VIEW_REGISTRY_ID: string = 'UnreadEmails_QUICK_VIEW';
@@ -23,11 +34,12 @@ export default class UnreadEmailsAdaptiveCardExtension extends BaseAdaptiveCardE
   private _deferredPropertyPane: UnreadEmailsPropertyPane | undefined;
 
   public onInit(): Promise<void> {
-    this.state = { unreadItemCount: -1 };
+    this.state = { };
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.context.msGraphClientFactory.getClient().then((client: MSGraphClient): void => {
-      client.api("/me/mailfolders/Inbox").select("unreadItemCount").get((error, inbox: MicrosoftGraph.MailFolder) => {
-        this.setState(inbox);
+      client.api("/me/mailfolders/Inbox").select("unreadItemCount").get((error: GraphError, inbox: MicrosoftGraph.MailFolder) => {
+        if (error) this.setState({ error: error });
+        else this.setState({ results: inbox });
       });
     });
     return Promise.resolve();
