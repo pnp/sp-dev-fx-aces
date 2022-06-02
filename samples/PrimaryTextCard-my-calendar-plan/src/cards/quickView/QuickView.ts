@@ -9,14 +9,17 @@ import {
   IMyDayAdaptiveCardExtensionState,
 } from '../../adaptiveCardExtensions/myDay/MyDayAdaptiveCardExtension';
 
+export interface IQuickViewDataEvent extends Event {
+  startTime?: string;
+}
+
 export interface IQuickViewData {
   title: string;
   userDisplayName: string;
-  events: Event[];
+  events: IQuickViewDataEvent[];
   date: string;
+  time: string;
   numberItems: string;
-  timeZone: string;
-  locale: string;
 }
 
 export class QuickView extends BaseAdaptiveCardView<
@@ -29,11 +32,16 @@ export class QuickView extends BaseAdaptiveCardView<
     return {
       title:this.state.title,
       userDisplayName:this.state.userDisplayName,
-      events:this.state.events,
-      date:this.state.date,
-      numberItems:this.state.numberItems,
-      timeZone:this.state.timeZone,
-      locale:this.state.locale
+      events:this.state.events.map(e => (
+        {...e, startTime: new Date(e.start.dateTime + 'Z').toLocaleTimeString().split(':').length > 2 ? 
+                            new Date(e.start.dateTime + 'Z').toLocaleTimeString().split(':').slice(0, 2).join(':') :
+                            new Date(e.start.dateTime + 'Z').toLocaleTimeString() //If locale time contains seconds remove seconds
+        })),
+      date: this.state.date,
+      time: new Date().toTimeString().split(':').length > 2 ? 
+              new Date().toTimeString().split(':').slice(0, 2).join(':') :
+              new Date().toTimeString(),
+      numberItems:this.state.numberItems
     };
   }
 

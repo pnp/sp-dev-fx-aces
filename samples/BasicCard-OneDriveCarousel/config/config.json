@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "one-drive-full-image-carousel-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/oneDriveFullImageCarousel/OneDriveFullImageCarouselAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/oneDriveFullImageCarousel/OneDriveFullImageCarouselAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "OneDriveFullImageCarouselAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/oneDriveFullImageCarousel/loc/{locale}.js"
+  }
+}

@@ -4,7 +4,7 @@
     "source": "pnp",
     "title": "Article Content at a glance",
     "shortDescription": "Adaptive Card displays of Article Content",
-    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/master/samples/ImageCard-At-a-glance",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-At-a-glance",
     "longDescription": [
       "ACE with multiple card views to show the first few sentences of an article in a SharePoint site"
     ],
