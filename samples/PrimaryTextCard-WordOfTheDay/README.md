@@ -1,6 +1,5 @@
 # primary-text-word-of-the-day
 
-
 ## Summary
 
 Viva Connection Adaptive Card Extension (ACE) that shows the word of the day.
@@ -47,7 +46,7 @@ Just want to see the Adaptive Card template?
 
 ## Prerequisites
 
-You should get an API key from [Wordnik](https://www.wordnik.com/) to configure properly the ACE, otherwise you can still use it with some sample data.
+You should get an API key from [Wordnik](https://www.wordnik.com/) to properly configure the ACE, otherwise you can still use it with sample data.
 
 ## Solution
 
@@ -70,7 +69,7 @@ Version|Date|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
-- Sign up on [Wordnik site](https://www.wordnik.com/) and ask for an API key (otherwise you can still use the ACE with some sample data)
+- Sign up on [Wordnik site](https://www.wordnik.com/) and ask for an API key (otherwise you can still use the ACE with some sample data). Note it can take up to 7 business days to get the API key from Wordnik.
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
