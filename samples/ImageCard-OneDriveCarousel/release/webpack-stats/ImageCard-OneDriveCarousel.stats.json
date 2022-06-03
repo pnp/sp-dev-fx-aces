@@ -1,0 +1,2445 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.44.2",
+  "hash": "3ca49cca504716207f52",
+  "time": 759,
+  "builtAt": 1654084433782,
+  "publicPath": "",
+  "outputPath": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/dist",
+  "assetsByChunkName": {
+    "OneDriveCarousel-property-pane": "chunk.OneDriveCarousel-property-pane_b870227300eb37ad716d.js",
+    "one-drive-carousel-adaptive-card-extension": "one-drive-carousel-adaptive-card-extension_88c4e77e1b6f2797a99d.js"
+  },
+  "assets": [
+    {
+      "name": "457c1b53-ad6c-425e-8c45-4dd5cac1eabe.manifest.json",
+      "size": 1728,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "Error_91219b53ac61ffdaeadf71e2bc0fb628.png",
+      "size": 4084,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "MicrosoftLogo_fd1e2cfef93de5e13caec63b01c66b4e.png",
+      "size": 4773,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "OneDriveCarouselAdaptiveCardExtensionStrings_en-us_7dcb6419ec220459c145404e83257bbb.js",
+      "size": 1033,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "SharePointLogo_0101288365319b852f2a3b625daa3a5d.svg",
+      "size": 3286,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "chunk.OneDriveCarousel-property-pane_b870227300eb37ad716d.js",
+      "size": 1072,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "OneDriveCarousel-property-pane"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    },
+    {
+      "name": "loading_98fcf8590b4fadb6e8c8653a1a1627a4.svg",
+      "size": 2060,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "one-drive-carousel-adaptive-card-extension_88c4e77e1b6f2797a99d.js",
+      "size": 13662,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "one-drive-carousel-adaptive-card-extension"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "one-drive-carousel-adaptive-card-extension": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "one-drive-carousel-adaptive-card-extension_88c4e77e1b6f2797a99d.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "one-drive-carousel-adaptive-card-extension": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "one-drive-carousel-adaptive-card-extension_88c4e77e1b6f2797a99d.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "OneDriveCarousel-property-pane": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "chunk.OneDriveCarousel-property-pane_b870227300eb37ad716d.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": false,
+      "entry": false,
+      "size": 2487,
+      "names": [
+        "OneDriveCarousel-property-pane"
+      ],
+      "files": [
+        "chunk.OneDriveCarousel-property-pane_b870227300eb37ad716d.js"
+      ],
+      "hash": "202e8e142609b41e77a2",
+      "siblings": [],
+      "parents": [
+        1
+      ],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": "QKni",
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "index": 11,
+          "index2": 12,
+          "size": 2487,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerId": null,
+          "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "import()",
+              "userRequest": "./OneDriveCarouselPropertyPane",
+              "loc": "204:15-206:41"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [
+            "OneDriveCarouselPropertyPane"
+          ],
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js (referenced with import())"
+          ],
+          "depth": 1,
+          "source": "import { PropertyPaneTextField, PropertyPaneDropdown, PropertyPaneSlider, PropertyPaneToggle } from '@microsoft/sp-property-pane';\nimport * as strings from 'OneDriveCarouselAdaptiveCardExtensionStrings';\nvar OneDriveCarouselPropertyPane = /** @class */ (function () {\n    function OneDriveCarouselPropertyPane() {\n    }\n    OneDriveCarouselPropertyPane.prototype.getPropertyPaneConfiguration = function (drivesResults) {\n        return {\n            pages: [\n                {\n                    header: { description: strings.PropertyPaneDescription },\n                    groups: [\n                        {\n                            groupName: strings.BasicGroupName,\n                            groupFields: [\n                                PropertyPaneTextField('title', {\n                                    label: strings.TitleFieldLabel\n                                }),\n                                PropertyPaneTextField('iconProperty', {\n                                    label: strings.IconPropertyFieldLabel\n                                }),\n                                PropertyPaneTextField('description', {\n                                    label: strings.DescriptionFieldLabel,\n                                    multiline: true\n                                }),\n                                PropertyPaneDropdown(\"selectedDriveId\", {\n                                    label: strings.SelectedDriveIdDropdownLabel,\n                                    options: drivesResults,\n                                }),\n                                PropertyPaneSlider(\"timerSeconds\", {\n                                    label: strings.TimerSliderLabel,\n                                    min: 1,\n                                    max: 3600,\n                                    step: 1\n                                }),\n                                PropertyPaneToggle(\"randomizeImage\", {\n                                    label: strings.RandomizeImageToggleLabel\n                                }),\n                                PropertyPaneToggle(\"hideButtons\", {\n                                    label: strings.HideButtonsLabel\n                                })\n                            ]\n                        }\n                    ]\n                }\n            ]\n        };\n    };\n    return OneDriveCarouselPropertyPane;\n}());\nexport { OneDriveCarouselPropertyPane };\n//# sourceMappingURL=OneDriveCarouselPropertyPane.js.map"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": null,
+          "module": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "loc": "204:15-206:41",
+          "request": "./OneDriveCarouselPropertyPane",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 24217,
+      "names": [
+        "one-drive-carousel-adaptive-card-extension"
+      ],
+      "files": [
+        "one-drive-carousel-adaptive-card-extension_88c4e77e1b6f2797a99d.js"
+      ],
+      "hash": "213d09fd3558023b2e78",
+      "siblings": [],
+      "parents": [],
+      "children": [
+        0
+      ],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": "HL1r",
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/node_modules/file-loader/dist/cjs.js??ref--7-0!/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/assets/Error.png",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/assets/Error.png",
+          "index": 4,
+          "index2": 2,
+          "size": 88,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+          "issuerId": null,
+          "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+            },
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [
+            "Error_91219b53ac61ffdaeadf71e2bc0fb628.png"
+          ],
+          "reasons": [
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "cjs require",
+              "userRequest": "../assets/Error.png",
+              "loc": "74:19-49"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 2,
+          "source": "module.exports = __webpack_public_path__ + \"Error_91219b53ac61ffdaeadf71e2bc0fb628.png\";"
+        },
+        {
+          "id": "HgIW",
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "index": 0,
+          "index2": 10,
+          "size": 18546,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "loc": "one-drive-carousel-adaptive-card-extension"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [
+            "QUICK_VIEW_REGISTRY_ID",
+            "default"
+          ],
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Cannot concat with external \"@microsoft/sp-adaptive-card-extension-base\" (<- Module is not an ECMAScript module)",
+            "ModuleConcatenation bailout: Cannot concat with external \"OneDriveCarouselAdaptiveCardExtensionStrings\" (<- Module is not an ECMAScript module)"
+          ],
+          "depth": 0,
+          "modules": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "index": 0,
+              "index2": 10,
+              "size": 11774,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": null,
+              "issuerId": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "../OneDriveCarouselAdaptiveCardExtension",
+                  "loc": "16:0-82"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../OneDriveCarouselAdaptiveCardExtension",
+                  "loc": "38:38-60"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": null,
+                  "module": null,
+                  "moduleName": null,
+                  "type": "single entry",
+                  "userRequest": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "loc": "one-drive-carousel-adaptive-card-extension"
+                }
+              ],
+              "usedExports": true,
+              "providedExports": [
+                "QUICK_VIEW_REGISTRY_ID",
+                "default"
+              ],
+              "optimizationBailout": [
+                "ModuleConcatenation bailout: Module is an entry point"
+              ],
+              "depth": 0,
+              "source": "var __extends = (this && this.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nimport { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';\nimport { CardView } from './cardView/CardView';\nimport { QuickView } from './quickView/QuickView';\nimport gu from './GraphUtility';\nvar CARD_VIEW_REGISTRY_ID = 'OneDriveCarousel_CARD_VIEW';\nexport var QUICK_VIEW_REGISTRY_ID = 'OneDriveCarousel_QUICK_VIEW';\nvar OneDriveCarouselAdaptiveCardExtension = /** @class */ (function (_super) {\n    __extends(OneDriveCarouselAdaptiveCardExtension, _super);\n    function OneDriveCarouselAdaptiveCardExtension() {\n        var _this = _super !== null && _super.apply(this, arguments) || this;\n        _this.loadDrives = function () { return __awaiter(_this, void 0, void 0, function () {\n            var _this = this;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.graphClient.api(\"/\" + gu.path_me + \"/\" + gu.path_drives + \"/\" + this.state.rootDriveId + \"/\" + gu.path_root + \"/\" + gu.path_children)\n                            .select(gu.prop_id + \",\" + gu.prop_name)\n                            .get(function (error, drives) {\n                            if (error) {\n                                _this.setError(error);\n                                return;\n                            }\n                            _this.setState({\n                                drivesResults: drives.value.map(function (v, i) { return { key: v.id, text: v.name }; })\n                            });\n                        })];\n                    case 1:\n                        _a.sent();\n                        return [2 /*return*/];\n                }\n            });\n        }); };\n        _this.loadTargetDriveItems = function () {\n            _this.setState({\n                isLoading: true\n            });\n            _this.graphClient.api(\"/\" + gu.path_me + \"/\" + gu.path_drives + \"/\" + _this.state.rootDriveId + \"/\" + gu.path_items + \"/\" + _this.properties.selectedDriveId)\n                .expand(gu.path_children)\n                .get(function (error, targetFolder) {\n                if (error) {\n                    _this.setError(error);\n                    return;\n                }\n                if (targetFolder && targetFolder.children) {\n                    // Remove the non image children\n                    targetFolder.children = targetFolder.children.filter(function (c) { return c.image; });\n                }\n                _this.setState({\n                    targetFolder: targetFolder,\n                    folderHasImages: targetFolder.children && targetFolder.children.length > 0,\n                    isLoading: false\n                });\n            });\n        };\n        _this.updateImageIndex = function () {\n            if (_this.state.targetFolder &&\n                _this.state.targetFolder.children &&\n                _this.state.targetFolder.children.length > 0) {\n                var i = _this.state.itemIndex;\n                if (_this.properties.randomizeImage == true) {\n                    i = _this.randomIndex(0, _this.state.targetFolder.children.length - 1);\n                }\n                else {\n                    i++;\n                    if (i >= _this.state.targetFolder.children.length) {\n                        i = 0;\n                    }\n                }\n                _this.setState({\n                    itemIndex: i\n                });\n            }\n        };\n        _this.setError = function (error) {\n            _this.setState({\n                error: error,\n                isLoading: false\n            });\n            console.log(error);\n        };\n        return _this;\n    }\n    OneDriveCarouselAdaptiveCardExtension.prototype.onInit = function () {\n        var _this = this;\n        this.state = {\n            description: this.properties.description,\n            rootDriveId: undefined,\n            drivesResults: undefined,\n            itemIndex: 0,\n            targetFolder: undefined,\n            error: undefined,\n            isLoading: true,\n            folderHasImages: false\n        };\n        this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, function () { return new CardView(); });\n        this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, function () { return new QuickView(); });\n        setTimeout(function () { return __awaiter(_this, void 0, void 0, function () {\n            var _a;\n            var _this = this;\n            return __generator(this, function (_b) {\n                switch (_b.label) {\n                    case 0:\n                        _a = this;\n                        return [4 /*yield*/, this.context.msGraphClientFactory.getClient()];\n                    case 1:\n                        _a.graphClient = _b.sent();\n                        // Get the first drive as root and load the children for the dropdown control\n                        this.graphClient\n                            .api(\"/\" + gu.path_me + \"/\" + gu.path_drives)\n                            .select(gu.prop_id + \",\" + gu.prop_name)\n                            .get(function (error, drives) {\n                            if (error) {\n                                _this.setError(error);\n                                return;\n                            }\n                            _this.setState({\n                                rootDriveId: (drives && drives.value && drives.value.length > 0) ? drives.value[0].id : undefined\n                            });\n                            if (_this.state.rootDriveId) {\n                                _this.loadDrives();\n                                if (_this.properties.selectedDriveId) {\n                                    _this.loadTargetDriveItems();\n                                    if (_this.properties.timerSeconds) {\n                                        _this.updateImageTimer = setInterval(_this.updateImageIndex, (_this.properties.timerSeconds * 1000));\n                                    }\n                                }\n                            }\n                            else {\n                                _this.setState({\n                                    isLoading: false\n                                });\n                            }\n                        });\n                        return [2 /*return*/];\n                }\n            });\n        }); }, 500);\n        return Promise.resolve();\n    };\n    Object.defineProperty(OneDriveCarouselAdaptiveCardExtension.prototype, \"title\", {\n        get: function () {\n            return this.properties.title;\n        },\n        enumerable: false,\n        configurable: true\n    });\n    Object.defineProperty(OneDriveCarouselAdaptiveCardExtension.prototype, \"iconProperty\", {\n        get: function () {\n            return this.properties.iconProperty || require('./assets/SharePointLogo.svg');\n        },\n        enumerable: false,\n        configurable: true\n    });\n    OneDriveCarouselAdaptiveCardExtension.prototype.loadPropertyPaneResources = function () {\n        var _this = this;\n        return import(\n        /* webpackChunkName: 'OneDriveCarousel-property-pane'*/\n        './OneDriveCarouselPropertyPane')\n            .then(function (component) {\n            _this._deferredPropertyPane = new component.OneDriveCarouselPropertyPane();\n        });\n    };\n    OneDriveCarouselAdaptiveCardExtension.prototype.onPropertyPaneFieldChanged = function (propertyPath, oldValue, newValue) {\n        if (oldValue == newValue) {\n            return;\n        }\n        if (propertyPath == \"selectedDriveId\") {\n            this.loadTargetDriveItems();\n        }\n        else if (propertyPath == \"timerSeconds\") {\n            clearInterval(this.updateImageTimer);\n            this.updateImageTimer = setInterval(this.updateImageIndex, (this.properties.timerSeconds * 1000));\n        }\n    };\n    OneDriveCarouselAdaptiveCardExtension.prototype.renderCard = function () {\n        return CARD_VIEW_REGISTRY_ID;\n    };\n    OneDriveCarouselAdaptiveCardExtension.prototype.getPropertyPaneConfiguration = function () {\n        return this._deferredPropertyPane.getPropertyPaneConfiguration(this.state.drivesResults);\n    };\n    OneDriveCarouselAdaptiveCardExtension.prototype.randomIndex = function (min, max) {\n        var result = Math.floor(Math.random() * (max - min + 1) + min);\n        // Avoid displaying the same image again\n        if (result == this.state.itemIndex) {\n            return this.randomIndex(min, max);\n        }\n        return result;\n    };\n    return OneDriveCarouselAdaptiveCardExtension;\n}(BaseAdaptiveCardExtension));\nexport default OneDriveCarouselAdaptiveCardExtension;\n//# sourceMappingURL=OneDriveCarouselAdaptiveCardExtension.js.map"
+            },
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+              "index": 2,
+              "index2": 5,
+              "size": 4064,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "issuerId": null,
+              "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./cardView/CardView",
+                  "loc": "51:0-47"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./cardView/CardView",
+                  "loc": "143:84-92"
+                }
+              ],
+              "usedExports": [
+                "CardView"
+              ],
+              "providedExports": [
+                "CardView"
+              ],
+              "optimizationBailout": [],
+              "depth": 1,
+              "source": "var __extends = (this && this.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nimport { BaseImageCardView } from '@microsoft/sp-adaptive-card-extension-base';\nimport * as strings from 'OneDriveCarouselAdaptiveCardExtensionStrings';\nimport { QUICK_VIEW_REGISTRY_ID } from '../OneDriveCarouselAdaptiveCardExtension';\nvar CardView = /** @class */ (function (_super) {\n    __extends(CardView, _super);\n    function CardView() {\n        return _super !== null && _super.apply(this, arguments) || this;\n    }\n    Object.defineProperty(CardView.prototype, \"cardButtons\", {\n        /**\n         * Buttons will not be visible if card size is 'Medium' with Image Card View.\n         * It will support up to two buttons for 'Large' card size.\n         */\n        get: function () {\n            var buttons = [];\n            if (!this.state.error && !this.state.isLoading && this.state.folderHasImages &&\n                (this.properties.hideButtons == undefined || this.properties.hideButtons == false) &&\n                this.state.targetFolder != undefined) {\n                buttons = [\n                    {\n                        title: strings.QuickViewButton,\n                        action: {\n                            type: 'QuickView',\n                            parameters: {\n                                view: QUICK_VIEW_REGISTRY_ID\n                            }\n                        }\n                    }\n                ];\n            }\n            return buttons;\n        },\n        enumerable: false,\n        configurable: true\n    });\n    Object.defineProperty(CardView.prototype, \"data\", {\n        get: function () {\n            return {\n                primaryText: this.getPrimaryText(),\n                imageUrl: this.getImageUrl()\n            };\n        },\n        enumerable: false,\n        configurable: true\n    });\n    CardView.prototype.getPrimaryText = function () {\n        if (this.state.error) {\n            return strings.ErrorMessage;\n        }\n        var primaryText = strings.PrimaryText;\n        if (this.properties.description) {\n            primaryText = this.properties.description;\n        }\n        else if (this.state.targetFolder) {\n            primaryText = this.state.targetFolder.name;\n        }\n        return primaryText;\n    };\n    CardView.prototype.getImageUrl = function () {\n        if (this.state.error) {\n            return require('../assets/Error.png');\n        }\n        // If not loading\n        if (this.state.isLoading == false) {\n            // If there is an image set the image webUrl\n            if (this.state.targetFolder && this.state.targetFolder.children && this.state.targetFolder.children.length > 0) {\n                return this.state.targetFolder.children[this.state.itemIndex].webUrl;\n            }\n            // If there are no images in the target folder set a default image\n            if (this.state.folderHasImages == false) {\n                return require(\"../assets/MicrosoftLogo.png\");\n            }\n        }\n        return require(\"../assets/loading.svg\");\n    };\n    Object.defineProperty(CardView.prototype, \"onCardSelection\", {\n        get: function () {\n            return {\n                type: 'ExternalLink',\n                parameters: {\n                    target: (this.state.targetFolder) ? this.state.targetFolder.webUrl : \"https://onedrive.com/\"\n                }\n            };\n        },\n        enumerable: false,\n        configurable: true\n    });\n    return CardView;\n}(BaseImageCardView));\nexport { CardView };\n//# sourceMappingURL=CardView.js.map"
+            },
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js",
+              "index": 7,
+              "index2": 7,
+              "size": 2117,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "issuerId": null,
+              "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./quickView/QuickView",
+                  "loc": "52:0-50"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./quickView/QuickView",
+                  "loc": "144:90-99"
+                }
+              ],
+              "usedExports": [
+                "QuickView"
+              ],
+              "providedExports": [
+                "QuickView"
+              ],
+              "optimizationBailout": [],
+              "depth": 1,
+              "source": "var __extends = (this && this.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nimport { BaseAdaptiveCardView } from '@microsoft/sp-adaptive-card-extension-base';\nimport * as strings from 'OneDriveCarouselAdaptiveCardExtensionStrings';\nvar QuickView = /** @class */ (function (_super) {\n    __extends(QuickView, _super);\n    function QuickView() {\n        return _super !== null && _super.apply(this, arguments) || this;\n    }\n    Object.defineProperty(QuickView.prototype, \"data\", {\n        get: function () {\n            var currentItem = (this.state.targetFolder && this.state.targetFolder.children) ? this.state.targetFolder.children[this.state.itemIndex] : undefined;\n            return {\n                detailsLabel: strings.DetailsLabel,\n                fileNameLabel: strings.FileNameLabel,\n                sizeLabel: strings.SizeLabel,\n                modifiedLabel: strings.ModifiedLabel,\n                currentItem: currentItem,\n                hasImage: (currentItem && currentItem.image != undefined && currentItem.image.width != undefined && currentItem.image.height != undefined),\n                hasDateTime: (currentItem && currentItem.lastModifiedDateTime != undefined)\n            };\n        },\n        enumerable: false,\n        configurable: true\n    });\n    Object.defineProperty(QuickView.prototype, \"template\", {\n        get: function () {\n            return require('./template/QuickViewTemplate.json');\n        },\n        enumerable: false,\n        configurable: true\n    });\n    return QuickView;\n}(BaseAdaptiveCardView));\nexport { QuickView };\n//# sourceMappingURL=QuickView.js.map"
+            },
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/GraphUtility.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/GraphUtility.js",
+              "index": 9,
+              "index2": 8,
+              "size": 581,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "issuerId": null,
+              "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./GraphUtility",
+                  "loc": "53:0-32"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "64:76-78"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "64:95-97"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "64:149-151"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "64:170-172"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "65:36-38"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "65:55-57"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "85:40-42"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "85:59-61"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "85:114-116"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "86:24-26"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "157:39-41"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "157:58-60"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "158:36-38"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./GraphUtility",
+                  "loc": "158:55-57"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 1,
+              "source": "var GraphUtility = /** @class */ (function () {\n    function GraphUtility() {\n    }\n    GraphUtility.path_me = \"me\";\n    GraphUtility.path_drive = \"drive\";\n    GraphUtility.path_drives = \"drives\";\n    GraphUtility.path_root = \"root\";\n    GraphUtility.path_children = \"children\";\n    GraphUtility.path_items = \"items\";\n    GraphUtility.prop_id = \"id\";\n    GraphUtility.prop_name = \"name\";\n    GraphUtility.prop_webUrl = \"webUrl\";\n    GraphUtility.query_parameter_expand = \"expand\";\n    return GraphUtility;\n}());\nexport default GraphUtility;\n//# sourceMappingURL=GraphUtility.js.map"
+            }
+          ],
+          "filteredModules": 0
+        },
+        {
+          "id": "I6O9",
+          "identifier": "external \"@microsoft/sp-loader\"",
+          "name": "external \"@microsoft/sp-loader\"",
+          "index": null,
+          "index2": null,
+          "size": 42,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [],
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": null
+        },
+        {
+          "id": "fpkf",
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/node_modules/file-loader/dist/cjs.js??ref--7-0!/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/assets/SharePointLogo.svg",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/assets/SharePointLogo.svg",
+          "index": 10,
+          "index2": 9,
+          "size": 97,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerId": null,
+          "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [
+            "SharePointLogo_0101288365319b852f2a3b625daa3a5d.svg"
+          ],
+          "reasons": [
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "cjs require",
+              "userRequest": "./assets/SharePointLogo.svg",
+              "loc": "197:51-89"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1,
+          "source": "module.exports = __webpack_public_path__ + \"SharePointLogo_0101288365319b852f2a3b625daa3a5d.svg\";"
+        },
+        {
+          "id": "ksWx",
+          "identifier": "external \"OneDriveCarouselAdaptiveCardExtensionStrings\"",
+          "name": "external \"OneDriveCarouselAdaptiveCardExtensionStrings\"",
+          "index": 3,
+          "index2": 1,
+          "size": 42,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "issuerId": "QKni",
+          "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+            },
+            {
+              "id": "QKni",
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony side effect evaluation",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "15:0-72"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony side effect evaluation",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "15:0-72"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "25:30-50"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "26:31-52"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "27:27-44"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "28:31-52"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "34:31-54"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "61:19-39"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "63:26-45"
+            },
+            {
+              "moduleId": "QKni",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "2:0-72"
+            },
+            {
+              "moduleId": "QKni",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "10:43-74"
+            },
+            {
+              "moduleId": "QKni",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "13:39-61"
+            },
+            {
+              "moduleId": "QKni",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "16:43-66"
+            },
+            {
+              "moduleId": "QKni",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "19:43-73"
+            },
+            {
+              "moduleId": "QKni",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "22:43-72"
+            },
+            {
+              "moduleId": "QKni",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "26:43-79"
+            },
+            {
+              "moduleId": "QKni",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "30:43-67"
+            },
+            {
+              "moduleId": "QKni",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "36:43-76"
+            },
+            {
+              "moduleId": "QKni",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+              "type": "harmony import specifier",
+              "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+              "loc": "39:43-67"
+            }
+          ],
+          "usedExports": [
+            "BasicGroupName",
+            "DescriptionFieldLabel",
+            "DetailsLabel",
+            "ErrorMessage",
+            "FileNameLabel",
+            "HideButtonsLabel",
+            "IconPropertyFieldLabel",
+            "ModifiedLabel",
+            "PrimaryText",
+            "PropertyPaneDescription",
+            "QuickViewButton",
+            "RandomizeImageToggleLabel",
+            "SelectedDriveIdDropdownLabel",
+            "SizeLabel",
+            "TimerSliderLabel",
+            "TitleFieldLabel"
+          ],
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 2
+        },
+        {
+          "id": "lz/E",
+          "identifier": "external \"@microsoft/sp-adaptive-card-extension-base\"",
+          "name": "external \"@microsoft/sp-adaptive-card-extension-base\"",
+          "index": 1,
+          "index2": 0,
+          "size": 42,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerId": null,
+          "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+              "loc": "14:0-79"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+              "loc": "14:0-82"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony import specifier",
+              "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+              "loc": "45:2-22"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+              "loc": "50:0-87"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony import specifier",
+              "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+              "loc": "102:2-19"
+            },
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "harmony import specifier",
+              "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+              "loc": "238:2-27"
+            }
+          ],
+          "usedExports": [
+            "BaseAdaptiveCardExtension",
+            "BaseAdaptiveCardView",
+            "BaseImageCardView"
+          ],
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1
+        },
+        {
+          "id": "qWv0",
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/node_modules/file-loader/dist/cjs.js??ref--7-0!/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/assets/loading.svg",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/assets/loading.svg",
+          "index": 6,
+          "index2": 4,
+          "size": 90,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+          "issuerId": null,
+          "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+            },
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [
+            "loading_98fcf8590b4fadb6e8c8653a1a1627a4.svg"
+          ],
+          "reasons": [
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "cjs require",
+              "userRequest": "../assets/loading.svg",
+              "loc": "87:15-47"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 2,
+          "source": "module.exports = __webpack_public_path__ + \"loading_98fcf8590b4fadb6e8c8653a1a1627a4.svg\";"
+        },
+        {
+          "id": "wYKR",
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/quickView/template/QuickViewTemplate.json",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/quickView/template/QuickViewTemplate.json",
+          "index": 8,
+          "index2": 6,
+          "size": 5174,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js",
+          "issuerId": null,
+          "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+            },
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "cjs require",
+              "userRequest": "./template/QuickViewTemplate.json",
+              "loc": "39:19-63"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [
+            "type",
+            "$schema",
+            "version",
+            "body",
+            "default"
+          ],
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 2,
+          "source": "{\n    \"type\": \"AdaptiveCard\",\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.3\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"${detailsLabel}\",\n            \"wrap\": true,\n            \"size\": \"MediuLabelm\",\n            \"spacing\": \"Large\",\n            \"weight\": \"bolder\"\n        },\n        {\n            \"type\": \"Container\",\n            \"style\": \"emphasis\",\n            \"items\": [\n                {\n                    \"type\": \"ColumnSet\",\n                    \"columns\": [\n                        {\n                            \"type\": \"Column\",\n                            \"width\": \"stretch\",\n                            \"items\": [\n                                {\n                                    \"type\": \"TextBlock\",\n                                    \"text\": \"${fileNameLabel}\",\n                                    \"wrap\": true,\n                                    \"weight\": \"Bolder\"\n                                }\n                            ]\n                        },\n                        {\n                            \"type\": \"Column\",\n                            \"width\": \"stretch\",\n                            \"items\": [\n                                {\n                                    \"type\": \"TextBlock\",\n                                    \"text\": \"${currentItem.name}\",\n                                    \"wrap\": true\n                                }\n                            ]\n                        }\n                    ],\n                    \"spacing\": \"Medium\",\n                    \"separator\": false\n                },\n                {\n                  \"type\": \"ColumnSet\",\n                  \"columns\": [\n                      {\n                          \"type\": \"Column\",\n                          \"width\": \"stretch\",\n                          \"items\": [\n                              {\n                                  \"type\": \"TextBlock\",\n                                  \"text\": \"${sizeLabel}\",\n                                  \"wrap\": true,\n                                  \"weight\": \"Bolder\"\n                              }\n                          ]\n                      },\n                      {\n                          \"type\": \"Column\",\n                          \"width\": \"stretch\",\n                          \"items\": [\n                              {\n                                  \"type\": \"TextBlock\",\n                                  \"text\": \"${currentItem.image.width} x ${currentItem.image.height}\",\n                                  \"wrap\": true\n                              }\n                          ]\n                      }\n                  ],\n                  \"spacing\": \"Medium\",\n                  \"separator\": false,\n                  \"$when\": \"${hasImage}\"\n              },\n                {\n                  \"type\": \"ColumnSet\",\n                  \"columns\": [\n                      {\n                          \"type\": \"Column\",\n                          \"width\": \"stretch\",\n                          \"items\": [\n                              {\n                                  \"type\": \"TextBlock\",\n                                  \"text\": \"${modifiedLabel}\",\n                                  \"wrap\": true,\n                                  \"weight\": \"Bolder\"\n                              }\n                          ]\n                      },\n                      {\n                          \"type\": \"Column\",\n                          \"width\": \"stretch\",\n                          \"items\": [\n                              {\n                                  \"type\": \"TextBlock\",\n                                  \"text\": \"${formatDateTime(currentItem.lastModifiedDateTime, 'dd/MM/yyyy')}\",\n                                  \"wrap\": true\n                              }\n                          ]\n                      }\n                  ],\n                  \"spacing\": \"Medium\",\n                  \"separator\": false,\n                  \"$when\": \"${hasDateTime}\"\n              },\n              {\n                  \"type\": \"Container\",\n                  \"minHeight\": \"10px\"\n              },\n              {\n                  \"type\": \"Container\",\n                  \"items\": [\n                      {\n                          \"type\": \"ColumnSet\",\n                          \"columns\": [\n                              {\n                                  \"type\": \"Column\",\n                                  \"width\": \"stretch\",\n                                  \"backgroundImage\": {\n                                      \"url\": \"${currentItem.webUrl}\",\n                                      \"horizontalAlignment\": \"Center\"\n                                  },\n                                  \"minHeight\": \"240px\",\n                                  \"bleed\": true\n                              }\n                          ],\n                          \"horizontalAlignment\": \"Center\"\n                      }\n                  ],\n                  \"minHeight\": \"1px\",\n                  \"bleed\": true,\n                  \"spacing\": \"None\",\n                  \"id\": \"img_set_1\"\n              }\n            ]\n        }\n    ]\n}"
+        },
+        {
+          "id": "y8Iw",
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/node_modules/file-loader/dist/cjs.js??ref--7-0!/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/assets/MicrosoftLogo.png",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/assets/MicrosoftLogo.png",
+          "index": 5,
+          "index2": 3,
+          "size": 96,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+          "issuerId": null,
+          "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+            },
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [
+            "MicrosoftLogo_fd1e2cfef93de5e13caec63b01c66b4e.png"
+          ],
+          "reasons": [
+            {
+              "moduleId": "HgIW",
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+              "type": "cjs require",
+              "userRequest": "../assets/MicrosoftLogo.png",
+              "loc": "84:23-61"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 2,
+          "source": "module.exports = __webpack_public_path__ + \"MicrosoftLogo_fd1e2cfef93de5e13caec63b01c66b4e.png\";"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "one-drive-carousel-adaptive-card-extension",
+          "request": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "26ea",
+      "identifier": "external \"@microsoft/sp-property-pane\"",
+      "name": "external \"@microsoft/sp-property-pane\"",
+      "index": 12,
+      "index2": 11,
+      "size": 42,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [],
+      "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+      "issuerId": "QKni",
+      "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+        },
+        {
+          "id": "QKni",
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "@microsoft/sp-property-pane",
+          "loc": "1:0-130"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "@microsoft/sp-property-pane",
+          "loc": "15:32-53"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "@microsoft/sp-property-pane",
+          "loc": "18:32-53"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "@microsoft/sp-property-pane",
+          "loc": "21:32-53"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "@microsoft/sp-property-pane",
+          "loc": "25:32-52"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "@microsoft/sp-property-pane",
+          "loc": "29:32-50"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "@microsoft/sp-property-pane",
+          "loc": "35:32-50"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "@microsoft/sp-property-pane",
+          "loc": "38:32-50"
+        }
+      ],
+      "usedExports": [
+        "PropertyPaneDropdown",
+        "PropertyPaneSlider",
+        "PropertyPaneTextField",
+        "PropertyPaneToggle"
+      ],
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 2
+    },
+    {
+      "id": "HL1r",
+      "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/node_modules/file-loader/dist/cjs.js??ref--7-0!/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/assets/Error.png",
+      "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/assets/Error.png",
+      "index": 4,
+      "index2": 2,
+      "size": 88,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+      "issuerId": null,
+      "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+        },
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [
+        "Error_91219b53ac61ffdaeadf71e2bc0fb628.png"
+      ],
+      "reasons": [
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "cjs require",
+          "userRequest": "../assets/Error.png",
+          "loc": "74:19-49"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 2,
+      "source": "module.exports = __webpack_public_path__ + \"Error_91219b53ac61ffdaeadf71e2bc0fb628.png\";"
+    },
+    {
+      "id": "HgIW",
+      "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+      "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+      "index": 0,
+      "index2": 10,
+      "size": 18546,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "loc": "one-drive-carousel-adaptive-card-extension"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [
+        "QUICK_VIEW_REGISTRY_ID",
+        "default"
+      ],
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Cannot concat with external \"@microsoft/sp-adaptive-card-extension-base\" (<- Module is not an ECMAScript module)",
+        "ModuleConcatenation bailout: Cannot concat with external \"OneDriveCarouselAdaptiveCardExtensionStrings\" (<- Module is not an ECMAScript module)"
+      ],
+      "depth": 0,
+      "modules": [
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "index": 0,
+          "index2": 10,
+          "size": 11774,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "../OneDriveCarouselAdaptiveCardExtension",
+              "loc": "16:0-82"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+              "type": "harmony import specifier",
+              "userRequest": "../OneDriveCarouselAdaptiveCardExtension",
+              "loc": "38:38-60"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "loc": "one-drive-carousel-adaptive-card-extension"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [
+            "QUICK_VIEW_REGISTRY_ID",
+            "default"
+          ],
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is an entry point"
+          ],
+          "depth": 0,
+          "source": "var __extends = (this && this.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nimport { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';\nimport { CardView } from './cardView/CardView';\nimport { QuickView } from './quickView/QuickView';\nimport gu from './GraphUtility';\nvar CARD_VIEW_REGISTRY_ID = 'OneDriveCarousel_CARD_VIEW';\nexport var QUICK_VIEW_REGISTRY_ID = 'OneDriveCarousel_QUICK_VIEW';\nvar OneDriveCarouselAdaptiveCardExtension = /** @class */ (function (_super) {\n    __extends(OneDriveCarouselAdaptiveCardExtension, _super);\n    function OneDriveCarouselAdaptiveCardExtension() {\n        var _this = _super !== null && _super.apply(this, arguments) || this;\n        _this.loadDrives = function () { return __awaiter(_this, void 0, void 0, function () {\n            var _this = this;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.graphClient.api(\"/\" + gu.path_me + \"/\" + gu.path_drives + \"/\" + this.state.rootDriveId + \"/\" + gu.path_root + \"/\" + gu.path_children)\n                            .select(gu.prop_id + \",\" + gu.prop_name)\n                            .get(function (error, drives) {\n                            if (error) {\n                                _this.setError(error);\n                                return;\n                            }\n                            _this.setState({\n                                drivesResults: drives.value.map(function (v, i) { return { key: v.id, text: v.name }; })\n                            });\n                        })];\n                    case 1:\n                        _a.sent();\n                        return [2 /*return*/];\n                }\n            });\n        }); };\n        _this.loadTargetDriveItems = function () {\n            _this.setState({\n                isLoading: true\n            });\n            _this.graphClient.api(\"/\" + gu.path_me + \"/\" + gu.path_drives + \"/\" + _this.state.rootDriveId + \"/\" + gu.path_items + \"/\" + _this.properties.selectedDriveId)\n                .expand(gu.path_children)\n                .get(function (error, targetFolder) {\n                if (error) {\n                    _this.setError(error);\n                    return;\n                }\n                if (targetFolder && targetFolder.children) {\n                    // Remove the non image children\n                    targetFolder.children = targetFolder.children.filter(function (c) { return c.image; });\n                }\n                _this.setState({\n                    targetFolder: targetFolder,\n                    folderHasImages: targetFolder.children && targetFolder.children.length > 0,\n                    isLoading: false\n                });\n            });\n        };\n        _this.updateImageIndex = function () {\n            if (_this.state.targetFolder &&\n                _this.state.targetFolder.children &&\n                _this.state.targetFolder.children.length > 0) {\n                var i = _this.state.itemIndex;\n                if (_this.properties.randomizeImage == true) {\n                    i = _this.randomIndex(0, _this.state.targetFolder.children.length - 1);\n                }\n                else {\n                    i++;\n                    if (i >= _this.state.targetFolder.children.length) {\n                        i = 0;\n                    }\n                }\n                _this.setState({\n                    itemIndex: i\n                });\n            }\n        };\n        _this.setError = function (error) {\n            _this.setState({\n                error: error,\n                isLoading: false\n            });\n            console.log(error);\n        };\n        return _this;\n    }\n    OneDriveCarouselAdaptiveCardExtension.prototype.onInit = function () {\n        var _this = this;\n        this.state = {\n            description: this.properties.description,\n            rootDriveId: undefined,\n            drivesResults: undefined,\n            itemIndex: 0,\n            targetFolder: undefined,\n            error: undefined,\n            isLoading: true,\n            folderHasImages: false\n        };\n        this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, function () { return new CardView(); });\n        this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, function () { return new QuickView(); });\n        setTimeout(function () { return __awaiter(_this, void 0, void 0, function () {\n            var _a;\n            var _this = this;\n            return __generator(this, function (_b) {\n                switch (_b.label) {\n                    case 0:\n                        _a = this;\n                        return [4 /*yield*/, this.context.msGraphClientFactory.getClient()];\n                    case 1:\n                        _a.graphClient = _b.sent();\n                        // Get the first drive as root and load the children for the dropdown control\n                        this.graphClient\n                            .api(\"/\" + gu.path_me + \"/\" + gu.path_drives)\n                            .select(gu.prop_id + \",\" + gu.prop_name)\n                            .get(function (error, drives) {\n                            if (error) {\n                                _this.setError(error);\n                                return;\n                            }\n                            _this.setState({\n                                rootDriveId: (drives && drives.value && drives.value.length > 0) ? drives.value[0].id : undefined\n                            });\n                            if (_this.state.rootDriveId) {\n                                _this.loadDrives();\n                                if (_this.properties.selectedDriveId) {\n                                    _this.loadTargetDriveItems();\n                                    if (_this.properties.timerSeconds) {\n                                        _this.updateImageTimer = setInterval(_this.updateImageIndex, (_this.properties.timerSeconds * 1000));\n                                    }\n                                }\n                            }\n                            else {\n                                _this.setState({\n                                    isLoading: false\n                                });\n                            }\n                        });\n                        return [2 /*return*/];\n                }\n            });\n        }); }, 500);\n        return Promise.resolve();\n    };\n    Object.defineProperty(OneDriveCarouselAdaptiveCardExtension.prototype, \"title\", {\n        get: function () {\n            return this.properties.title;\n        },\n        enumerable: false,\n        configurable: true\n    });\n    Object.defineProperty(OneDriveCarouselAdaptiveCardExtension.prototype, \"iconProperty\", {\n        get: function () {\n            return this.properties.iconProperty || require('./assets/SharePointLogo.svg');\n        },\n        enumerable: false,\n        configurable: true\n    });\n    OneDriveCarouselAdaptiveCardExtension.prototype.loadPropertyPaneResources = function () {\n        var _this = this;\n        return import(\n        /* webpackChunkName: 'OneDriveCarousel-property-pane'*/\n        './OneDriveCarouselPropertyPane')\n            .then(function (component) {\n            _this._deferredPropertyPane = new component.OneDriveCarouselPropertyPane();\n        });\n    };\n    OneDriveCarouselAdaptiveCardExtension.prototype.onPropertyPaneFieldChanged = function (propertyPath, oldValue, newValue) {\n        if (oldValue == newValue) {\n            return;\n        }\n        if (propertyPath == \"selectedDriveId\") {\n            this.loadTargetDriveItems();\n        }\n        else if (propertyPath == \"timerSeconds\") {\n            clearInterval(this.updateImageTimer);\n            this.updateImageTimer = setInterval(this.updateImageIndex, (this.properties.timerSeconds * 1000));\n        }\n    };\n    OneDriveCarouselAdaptiveCardExtension.prototype.renderCard = function () {\n        return CARD_VIEW_REGISTRY_ID;\n    };\n    OneDriveCarouselAdaptiveCardExtension.prototype.getPropertyPaneConfiguration = function () {\n        return this._deferredPropertyPane.getPropertyPaneConfiguration(this.state.drivesResults);\n    };\n    OneDriveCarouselAdaptiveCardExtension.prototype.randomIndex = function (min, max) {\n        var result = Math.floor(Math.random() * (max - min + 1) + min);\n        // Avoid displaying the same image again\n        if (result == this.state.itemIndex) {\n            return this.randomIndex(min, max);\n        }\n        return result;\n    };\n    return OneDriveCarouselAdaptiveCardExtension;\n}(BaseAdaptiveCardExtension));\nexport default OneDriveCarouselAdaptiveCardExtension;\n//# sourceMappingURL=OneDriveCarouselAdaptiveCardExtension.js.map"
+        },
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+          "index": 2,
+          "index2": 5,
+          "size": 4064,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerId": null,
+          "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./cardView/CardView",
+              "loc": "51:0-47"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./cardView/CardView",
+              "loc": "143:84-92"
+            }
+          ],
+          "usedExports": [
+            "CardView"
+          ],
+          "providedExports": [
+            "CardView"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "var __extends = (this && this.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nimport { BaseImageCardView } from '@microsoft/sp-adaptive-card-extension-base';\nimport * as strings from 'OneDriveCarouselAdaptiveCardExtensionStrings';\nimport { QUICK_VIEW_REGISTRY_ID } from '../OneDriveCarouselAdaptiveCardExtension';\nvar CardView = /** @class */ (function (_super) {\n    __extends(CardView, _super);\n    function CardView() {\n        return _super !== null && _super.apply(this, arguments) || this;\n    }\n    Object.defineProperty(CardView.prototype, \"cardButtons\", {\n        /**\n         * Buttons will not be visible if card size is 'Medium' with Image Card View.\n         * It will support up to two buttons for 'Large' card size.\n         */\n        get: function () {\n            var buttons = [];\n            if (!this.state.error && !this.state.isLoading && this.state.folderHasImages &&\n                (this.properties.hideButtons == undefined || this.properties.hideButtons == false) &&\n                this.state.targetFolder != undefined) {\n                buttons = [\n                    {\n                        title: strings.QuickViewButton,\n                        action: {\n                            type: 'QuickView',\n                            parameters: {\n                                view: QUICK_VIEW_REGISTRY_ID\n                            }\n                        }\n                    }\n                ];\n            }\n            return buttons;\n        },\n        enumerable: false,\n        configurable: true\n    });\n    Object.defineProperty(CardView.prototype, \"data\", {\n        get: function () {\n            return {\n                primaryText: this.getPrimaryText(),\n                imageUrl: this.getImageUrl()\n            };\n        },\n        enumerable: false,\n        configurable: true\n    });\n    CardView.prototype.getPrimaryText = function () {\n        if (this.state.error) {\n            return strings.ErrorMessage;\n        }\n        var primaryText = strings.PrimaryText;\n        if (this.properties.description) {\n            primaryText = this.properties.description;\n        }\n        else if (this.state.targetFolder) {\n            primaryText = this.state.targetFolder.name;\n        }\n        return primaryText;\n    };\n    CardView.prototype.getImageUrl = function () {\n        if (this.state.error) {\n            return require('../assets/Error.png');\n        }\n        // If not loading\n        if (this.state.isLoading == false) {\n            // If there is an image set the image webUrl\n            if (this.state.targetFolder && this.state.targetFolder.children && this.state.targetFolder.children.length > 0) {\n                return this.state.targetFolder.children[this.state.itemIndex].webUrl;\n            }\n            // If there are no images in the target folder set a default image\n            if (this.state.folderHasImages == false) {\n                return require(\"../assets/MicrosoftLogo.png\");\n            }\n        }\n        return require(\"../assets/loading.svg\");\n    };\n    Object.defineProperty(CardView.prototype, \"onCardSelection\", {\n        get: function () {\n            return {\n                type: 'ExternalLink',\n                parameters: {\n                    target: (this.state.targetFolder) ? this.state.targetFolder.webUrl : \"https://onedrive.com/\"\n                }\n            };\n        },\n        enumerable: false,\n        configurable: true\n    });\n    return CardView;\n}(BaseImageCardView));\nexport { CardView };\n//# sourceMappingURL=CardView.js.map"
+        },
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js",
+          "index": 7,
+          "index2": 7,
+          "size": 2117,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerId": null,
+          "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./quickView/QuickView",
+              "loc": "52:0-50"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./quickView/QuickView",
+              "loc": "144:90-99"
+            }
+          ],
+          "usedExports": [
+            "QuickView"
+          ],
+          "providedExports": [
+            "QuickView"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "var __extends = (this && this.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nimport { BaseAdaptiveCardView } from '@microsoft/sp-adaptive-card-extension-base';\nimport * as strings from 'OneDriveCarouselAdaptiveCardExtensionStrings';\nvar QuickView = /** @class */ (function (_super) {\n    __extends(QuickView, _super);\n    function QuickView() {\n        return _super !== null && _super.apply(this, arguments) || this;\n    }\n    Object.defineProperty(QuickView.prototype, \"data\", {\n        get: function () {\n            var currentItem = (this.state.targetFolder && this.state.targetFolder.children) ? this.state.targetFolder.children[this.state.itemIndex] : undefined;\n            return {\n                detailsLabel: strings.DetailsLabel,\n                fileNameLabel: strings.FileNameLabel,\n                sizeLabel: strings.SizeLabel,\n                modifiedLabel: strings.ModifiedLabel,\n                currentItem: currentItem,\n                hasImage: (currentItem && currentItem.image != undefined && currentItem.image.width != undefined && currentItem.image.height != undefined),\n                hasDateTime: (currentItem && currentItem.lastModifiedDateTime != undefined)\n            };\n        },\n        enumerable: false,\n        configurable: true\n    });\n    Object.defineProperty(QuickView.prototype, \"template\", {\n        get: function () {\n            return require('./template/QuickViewTemplate.json');\n        },\n        enumerable: false,\n        configurable: true\n    });\n    return QuickView;\n}(BaseAdaptiveCardView));\nexport { QuickView };\n//# sourceMappingURL=QuickView.js.map"
+        },
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/GraphUtility.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/GraphUtility.js",
+          "index": 9,
+          "index2": 8,
+          "size": 581,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerId": null,
+          "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./GraphUtility",
+              "loc": "53:0-32"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "64:76-78"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "64:95-97"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "64:149-151"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "64:170-172"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "65:36-38"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "65:55-57"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "85:40-42"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "85:59-61"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "85:114-116"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "86:24-26"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "157:39-41"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "157:58-60"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "158:36-38"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+              "type": "harmony import specifier",
+              "userRequest": "./GraphUtility",
+              "loc": "158:55-57"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "var GraphUtility = /** @class */ (function () {\n    function GraphUtility() {\n    }\n    GraphUtility.path_me = \"me\";\n    GraphUtility.path_drive = \"drive\";\n    GraphUtility.path_drives = \"drives\";\n    GraphUtility.path_root = \"root\";\n    GraphUtility.path_children = \"children\";\n    GraphUtility.path_items = \"items\";\n    GraphUtility.prop_id = \"id\";\n    GraphUtility.prop_name = \"name\";\n    GraphUtility.prop_webUrl = \"webUrl\";\n    GraphUtility.query_parameter_expand = \"expand\";\n    return GraphUtility;\n}());\nexport default GraphUtility;\n//# sourceMappingURL=GraphUtility.js.map"
+        }
+      ],
+      "filteredModules": 0
+    },
+    {
+      "id": "I6O9",
+      "identifier": "external \"@microsoft/sp-loader\"",
+      "name": "external \"@microsoft/sp-loader\"",
+      "index": null,
+      "index2": null,
+      "size": 42,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [],
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": null
+    },
+    {
+      "id": "QKni",
+      "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+      "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+      "index": 11,
+      "index2": 12,
+      "size": 2487,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+      "issuerId": null,
+      "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "type": "import()",
+          "userRequest": "./OneDriveCarouselPropertyPane",
+          "loc": "204:15-206:41"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [
+        "OneDriveCarouselPropertyPane"
+      ],
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js (referenced with import())"
+      ],
+      "depth": 1,
+      "source": "import { PropertyPaneTextField, PropertyPaneDropdown, PropertyPaneSlider, PropertyPaneToggle } from '@microsoft/sp-property-pane';\nimport * as strings from 'OneDriveCarouselAdaptiveCardExtensionStrings';\nvar OneDriveCarouselPropertyPane = /** @class */ (function () {\n    function OneDriveCarouselPropertyPane() {\n    }\n    OneDriveCarouselPropertyPane.prototype.getPropertyPaneConfiguration = function (drivesResults) {\n        return {\n            pages: [\n                {\n                    header: { description: strings.PropertyPaneDescription },\n                    groups: [\n                        {\n                            groupName: strings.BasicGroupName,\n                            groupFields: [\n                                PropertyPaneTextField('title', {\n                                    label: strings.TitleFieldLabel\n                                }),\n                                PropertyPaneTextField('iconProperty', {\n                                    label: strings.IconPropertyFieldLabel\n                                }),\n                                PropertyPaneTextField('description', {\n                                    label: strings.DescriptionFieldLabel,\n                                    multiline: true\n                                }),\n                                PropertyPaneDropdown(\"selectedDriveId\", {\n                                    label: strings.SelectedDriveIdDropdownLabel,\n                                    options: drivesResults,\n                                }),\n                                PropertyPaneSlider(\"timerSeconds\", {\n                                    label: strings.TimerSliderLabel,\n                                    min: 1,\n                                    max: 3600,\n                                    step: 1\n                                }),\n                                PropertyPaneToggle(\"randomizeImage\", {\n                                    label: strings.RandomizeImageToggleLabel\n                                }),\n                                PropertyPaneToggle(\"hideButtons\", {\n                                    label: strings.HideButtonsLabel\n                                })\n                            ]\n                        }\n                    ]\n                }\n            ]\n        };\n    };\n    return OneDriveCarouselPropertyPane;\n}());\nexport { OneDriveCarouselPropertyPane };\n//# sourceMappingURL=OneDriveCarouselPropertyPane.js.map"
+    },
+    {
+      "id": "fpkf",
+      "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/node_modules/file-loader/dist/cjs.js??ref--7-0!/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/assets/SharePointLogo.svg",
+      "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/assets/SharePointLogo.svg",
+      "index": 10,
+      "index2": 9,
+      "size": 97,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+      "issuerId": null,
+      "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [
+        "SharePointLogo_0101288365319b852f2a3b625daa3a5d.svg"
+      ],
+      "reasons": [
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "cjs require",
+          "userRequest": "./assets/SharePointLogo.svg",
+          "loc": "197:51-89"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1,
+      "source": "module.exports = __webpack_public_path__ + \"SharePointLogo_0101288365319b852f2a3b625daa3a5d.svg\";"
+    },
+    {
+      "id": "ksWx",
+      "identifier": "external \"OneDriveCarouselAdaptiveCardExtensionStrings\"",
+      "name": "external \"OneDriveCarouselAdaptiveCardExtensionStrings\"",
+      "index": 3,
+      "index2": 1,
+      "size": 42,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+      "issuerId": "QKni",
+      "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+        },
+        {
+          "id": "QKni",
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony side effect evaluation",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "15:0-72"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony side effect evaluation",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "15:0-72"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "25:30-50"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "26:31-52"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "27:27-44"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "28:31-52"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "34:31-54"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "61:19-39"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "63:26-45"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "2:0-72"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "10:43-74"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "13:39-61"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "16:43-66"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "19:43-73"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "22:43-72"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "26:43-79"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "30:43-67"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "36:43-76"
+        },
+        {
+          "moduleId": "QKni",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselPropertyPane.js",
+          "type": "harmony import specifier",
+          "userRequest": "OneDriveCarouselAdaptiveCardExtensionStrings",
+          "loc": "39:43-67"
+        }
+      ],
+      "usedExports": [
+        "BasicGroupName",
+        "DescriptionFieldLabel",
+        "DetailsLabel",
+        "ErrorMessage",
+        "FileNameLabel",
+        "HideButtonsLabel",
+        "IconPropertyFieldLabel",
+        "ModifiedLabel",
+        "PrimaryText",
+        "PropertyPaneDescription",
+        "QuickViewButton",
+        "RandomizeImageToggleLabel",
+        "SelectedDriveIdDropdownLabel",
+        "SizeLabel",
+        "TimerSliderLabel",
+        "TitleFieldLabel"
+      ],
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 2
+    },
+    {
+      "id": "lz/E",
+      "identifier": "external \"@microsoft/sp-adaptive-card-extension-base\"",
+      "name": "external \"@microsoft/sp-adaptive-card-extension-base\"",
+      "index": 1,
+      "index2": 0,
+      "size": 42,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+      "issuerId": null,
+      "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony side effect evaluation",
+          "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+          "loc": "14:0-79"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony side effect evaluation",
+          "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+          "loc": "14:0-82"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony import specifier",
+          "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+          "loc": "45:2-22"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony side effect evaluation",
+          "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+          "loc": "50:0-87"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony import specifier",
+          "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+          "loc": "102:2-19"
+        },
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "harmony import specifier",
+          "userRequest": "@microsoft/sp-adaptive-card-extension-base",
+          "loc": "238:2-27"
+        }
+      ],
+      "usedExports": [
+        "BaseAdaptiveCardExtension",
+        "BaseAdaptiveCardView",
+        "BaseImageCardView"
+      ],
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1
+    },
+    {
+      "id": "qWv0",
+      "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/node_modules/file-loader/dist/cjs.js??ref--7-0!/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/assets/loading.svg",
+      "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/assets/loading.svg",
+      "index": 6,
+      "index2": 4,
+      "size": 90,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+      "issuerId": null,
+      "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+        },
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [
+        "loading_98fcf8590b4fadb6e8c8653a1a1627a4.svg"
+      ],
+      "reasons": [
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "cjs require",
+          "userRequest": "../assets/loading.svg",
+          "loc": "87:15-47"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 2,
+      "source": "module.exports = __webpack_public_path__ + \"loading_98fcf8590b4fadb6e8c8653a1a1627a4.svg\";"
+    },
+    {
+      "id": "wYKR",
+      "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/quickView/template/QuickViewTemplate.json",
+      "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/quickView/template/QuickViewTemplate.json",
+      "index": 8,
+      "index2": 6,
+      "size": 5174,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js",
+      "issuerId": null,
+      "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+        },
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/quickView/QuickView.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "cjs require",
+          "userRequest": "./template/QuickViewTemplate.json",
+          "loc": "39:19-63"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [
+        "type",
+        "$schema",
+        "version",
+        "body",
+        "default"
+      ],
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 2,
+      "source": "{\n    \"type\": \"AdaptiveCard\",\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.3\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"${detailsLabel}\",\n            \"wrap\": true,\n            \"size\": \"MediuLabelm\",\n            \"spacing\": \"Large\",\n            \"weight\": \"bolder\"\n        },\n        {\n            \"type\": \"Container\",\n            \"style\": \"emphasis\",\n            \"items\": [\n                {\n                    \"type\": \"ColumnSet\",\n                    \"columns\": [\n                        {\n                            \"type\": \"Column\",\n                            \"width\": \"stretch\",\n                            \"items\": [\n                                {\n                                    \"type\": \"TextBlock\",\n                                    \"text\": \"${fileNameLabel}\",\n                                    \"wrap\": true,\n                                    \"weight\": \"Bolder\"\n                                }\n                            ]\n                        },\n                        {\n                            \"type\": \"Column\",\n                            \"width\": \"stretch\",\n                            \"items\": [\n                                {\n                                    \"type\": \"TextBlock\",\n                                    \"text\": \"${currentItem.name}\",\n                                    \"wrap\": true\n                                }\n                            ]\n                        }\n                    ],\n                    \"spacing\": \"Medium\",\n                    \"separator\": false\n                },\n                {\n                  \"type\": \"ColumnSet\",\n                  \"columns\": [\n                      {\n                          \"type\": \"Column\",\n                          \"width\": \"stretch\",\n                          \"items\": [\n                              {\n                                  \"type\": \"TextBlock\",\n                                  \"text\": \"${sizeLabel}\",\n                                  \"wrap\": true,\n                                  \"weight\": \"Bolder\"\n                              }\n                          ]\n                      },\n                      {\n                          \"type\": \"Column\",\n                          \"width\": \"stretch\",\n                          \"items\": [\n                              {\n                                  \"type\": \"TextBlock\",\n                                  \"text\": \"${currentItem.image.width} x ${currentItem.image.height}\",\n                                  \"wrap\": true\n                              }\n                          ]\n                      }\n                  ],\n                  \"spacing\": \"Medium\",\n                  \"separator\": false,\n                  \"$when\": \"${hasImage}\"\n              },\n                {\n                  \"type\": \"ColumnSet\",\n                  \"columns\": [\n                      {\n                          \"type\": \"Column\",\n                          \"width\": \"stretch\",\n                          \"items\": [\n                              {\n                                  \"type\": \"TextBlock\",\n                                  \"text\": \"${modifiedLabel}\",\n                                  \"wrap\": true,\n                                  \"weight\": \"Bolder\"\n                              }\n                          ]\n                      },\n                      {\n                          \"type\": \"Column\",\n                          \"width\": \"stretch\",\n                          \"items\": [\n                              {\n                                  \"type\": \"TextBlock\",\n                                  \"text\": \"${formatDateTime(currentItem.lastModifiedDateTime, 'dd/MM/yyyy')}\",\n                                  \"wrap\": true\n                              }\n                          ]\n                      }\n                  ],\n                  \"spacing\": \"Medium\",\n                  \"separator\": false,\n                  \"$when\": \"${hasDateTime}\"\n              },\n              {\n                  \"type\": \"Container\",\n                  \"minHeight\": \"10px\"\n              },\n              {\n                  \"type\": \"Container\",\n                  \"items\": [\n                      {\n                          \"type\": \"ColumnSet\",\n                          \"columns\": [\n                              {\n                                  \"type\": \"Column\",\n                                  \"width\": \"stretch\",\n                                  \"backgroundImage\": {\n                                      \"url\": \"${currentItem.webUrl}\",\n                                      \"horizontalAlignment\": \"Center\"\n                                  },\n                                  \"minHeight\": \"240px\",\n                                  \"bleed\": true\n                              }\n                          ],\n                          \"horizontalAlignment\": \"Center\"\n                      }\n                  ],\n                  \"minHeight\": \"1px\",\n                  \"bleed\": true,\n                  \"spacing\": \"None\",\n                  \"id\": \"img_set_1\"\n              }\n            ]\n        }\n    ]\n}"
+    },
+    {
+      "id": "y8Iw",
+      "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/node_modules/file-loader/dist/cjs.js??ref--7-0!/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/assets/MicrosoftLogo.png",
+      "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/assets/MicrosoftLogo.png",
+      "index": 5,
+      "index2": 3,
+      "size": 96,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+      "issuerId": null,
+      "issuerName": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js"
+        },
+        {
+          "id": null,
+          "identifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js",
+          "name": "./lib/adaptiveCardExtensions/oneDriveCarousel/cardView/CardView.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [
+        "MicrosoftLogo_fd1e2cfef93de5e13caec63b01c66b4e.png"
+      ],
+      "reasons": [
+        {
+          "moduleId": "HgIW",
+          "moduleIdentifier": "/Users/dcashpeterson/Documents/Projects/sp-dev-fx-aces-dev/samples/ImageCard-OneDriveCarousel/lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js 166bf8bc926a276b996b4caa14633246",
+          "module": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "moduleName": "./lib/adaptiveCardExtensions/oneDriveCarousel/OneDriveCarouselAdaptiveCardExtension.js + 3 modules",
+          "type": "cjs require",
+          "userRequest": "../assets/MicrosoftLogo.png",
+          "loc": "84:23-61"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 2,
+      "source": "module.exports = __webpack_public_path__ + \"MicrosoftLogo_fd1e2cfef93de5e13caec63b01c66b4e.png\";"
+    }
+  ],
+  "filteredModules": 0,
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}

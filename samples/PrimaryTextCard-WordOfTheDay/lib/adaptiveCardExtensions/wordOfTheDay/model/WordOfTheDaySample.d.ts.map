@@ -1,0 +1,1 @@
+{"version":3,"file":"WordOfTheDaySample.d.ts","sourceRoot":"","sources":["../../../../src/adaptiveCardExtensions/wordOfTheDay/model/WordOfTheDaySample.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,gBAAgB,CAAC;AAE9C,MAAM,CAAC,OAAO,CAAC,QAAQ,OAAO,sBAAsB;IAChD,OAAc,kBAAkB,QAAO,YAAY,CAqClD;CACJ"}
