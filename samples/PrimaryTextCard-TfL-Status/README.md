@@ -7,24 +7,26 @@ This example shows how to build an ACE with multiple card and quick views to get
 The sample also allows user to mark a train line as their favourite and that data is saved against the user as open extensions using Microsoft Graph.
 
 ### Highlights
+
 - Getting data using HttpClient
 - Using MS Graph for open extensions
 - Usage of SVG with multiple colours
 - Theme based display
 
 ### Demo
+
 #### Viva connections app (preview)
 
 ![demo](./assets/demo_mobile_app.gif)
 
-#### Dashboard in the home site 
+#### Dashboard in the home site
 
 ![demo](./assets/demo.gif)
 
 ## Used SharePoint Framework Version
 
 ![SPFx 1.13.0](https://img.shields.io/badge/SPFx-1.13.0-green.svg)
-![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
+![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
 
@@ -85,11 +87,9 @@ Version|Date|Comments
   - **gulp serve -l --nobrowser**
 - or if using spfx-fast-serve, in the command-line run:
   - **npm run serve**
-- Open the workbench page (https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx)
+- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE to the page
 - Edit the properties of ACE to include the name of an open extension (e.g. `com.tenantname.favline`)
-
-
 
 ## References
 
@@ -100,4 +100,4 @@ Version|Date|Comments
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Tutorial to create ACE](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-Tfl-Status />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-Tfl-Status" />

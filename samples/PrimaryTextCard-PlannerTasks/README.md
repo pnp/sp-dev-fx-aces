@@ -5,12 +5,12 @@
 This sample shows how to build an ACE with a PrimaryText card view and multiple quick views to display logged-in user Planner Tasks from all associated plans.
 
 ### Highlights
+
 - Using Microsoft Graph to get the planner tasks
 - Custom property control - Aysnc Dropdown Property pane field to fetch current user's associated Planner plans via Graph
 - Submit action handling in ACE and Quick View
 - Theme based display
   
-
 ### Demo
 
 ![demo](./assets/demo.gif)
@@ -28,15 +28,12 @@ View Card Tasks Detail
 Custom Async Dropdown control to show available plans
 ![View Card Tasks Detail](./assets/ace-tasks-propertypane.png)
 
-
-
 ## Used SharePoint Framework Version
 
 ![SPFx 1.13.0](https://img.shields.io/badge/SPFx-1.13.0-green.svg)
-![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
+![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
-
 
 ## Applies to
 
@@ -44,6 +41,7 @@ Custom Async Dropdown control to show available plans
 - [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
+
 ## Prerequisites
 
 > Following Microsoft Graph permissions needs to be approved after uploading the package in the App Catalog
@@ -54,7 +52,6 @@ Custom Async Dropdown control to show available plans
 | Tasks.ReadWrite     |
 | Group.Read.All      |
 | Group.ReadWrite.All |
-
 
 ## Solution
 
@@ -97,8 +94,8 @@ Custom Async Dropdown control to show available plans
   - **gulp serve -l --nobrowser**
 - or if using spfx-fast-serve, in the command-line run:
   - **npm run serve**
-- Open the workbench page (https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx)
-- Add the ACE [***PlannerTasks***] to the page 
+- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
+- Add the ACE [***PlannerTasks***] to the page
 
 ## Features
 
@@ -116,5 +113,4 @@ Custom Async Dropdown control to show available plans
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Tutorial to create ACE](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)
 
-
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-PlannerTasks" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-PlannerTasks" />

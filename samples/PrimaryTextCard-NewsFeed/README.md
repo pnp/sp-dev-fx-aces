@@ -22,7 +22,6 @@ Shows a count of SP news articles in the last 30 days and a quick view of those 
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
-
 ## Solution
 
 Solution|Author(s)
@@ -55,7 +54,6 @@ Version|Date|Comments
 
 Loads the latest news from the SharePoint api for the past 30 days and displays a count and quick view
 
-
 ## References
 
 - [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
@@ -63,3 +61,4 @@ Loads the latest news from the SharePoint api for the past 30 days and displays 
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-NewsFeed" />

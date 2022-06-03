@@ -10,7 +10,6 @@ This Adaptive Card Extension shows how to work with form elements and form data 
 
 ![version](https://img.shields.io/badge/version-1.13.1-green.svg)
 
-
 ## Applies to
 
 - [SharePoint Framework](https://aka.ms/spfx)
@@ -24,7 +23,7 @@ This Adaptive Card Extension shows how to work with form elements and form data 
 
 Solution|Author(s)
 --------|---------
-BasicCard-SharePoint-CRUD | Derek Cash-Peterson ([@spdcp](https://twitter.com/spdcp)) [Sympraxis Consulting] (https://www.sympraxisconsulting.com)
+BasicCard-SharePoint-CRUD | Derek Cash-Peterson ([@spdcp](https://twitter.com/spdcp)) [Sympraxis Consulting] (<https://www.sympraxisconsulting.com>)
 
 ## Version history
 
@@ -42,15 +41,15 @@ Version|Date|Comments
 
 - Clone this repository
 - Ensure that you are at the solution folder
-    * in the command line run:
-      * `npm install`
-      * `gulp build --ship`
-      * `gulp bundle --ship`
-      * `gulp package-solution --ship`
-    * Browse to your SharePoint app catalog and load the SPFX package. 
-    * in the command line run:
-        * `gulp serve --nobrowser`
-    * browse to your hosted workbench https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx and add the adaptive card extension.
+  - in the command line run:
+    - `npm install`
+    - `gulp build --ship`
+    - `gulp bundle --ship`
+    - `gulp package-solution --ship`
+  - Browse to your SharePoint app catalog and load the SPFX package.
+  - in the command line run:
+    - `gulp serve --nobrowser`
+  - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
 
 ## Features
 

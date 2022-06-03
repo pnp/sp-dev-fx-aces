@@ -56,7 +56,7 @@ Version|Date|Comments
   - Browse to your SharePoint app catalog and load the SPFX package.
   - Browse to your SharePoint Admin Center and under advanced you will need to open Api Access and allow the requests for Microsoft Graph.
 
-* If you have the APIs permissions already allowed you can follow the below steps.
+- If you have the APIs permissions already allowed you can follow the below steps.
   - in the command line run:
     - `npm install`
     - `gulp serve --nobrowser`
@@ -80,4 +80,4 @@ This extension illustrates the following concepts:
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-Graph-UnreadEmails" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-Graph-UnreadEmails" />

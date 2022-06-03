@@ -7,6 +7,7 @@ This sample shows how to build an ACE with multiple card views to show the first
 The idea is based off of the *At a glance* section of a news in the BBC news app (beta).
 
 ### Highlights
+
 - Usage of `SPHttpClient` or `PnP JS`
 - Conditional property enabling
 - Usage of emojis in buttons
@@ -75,4 +76,4 @@ The ACE also has properties to show custom text instead of article text. Upto 3 
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Tutorial to create ACE](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/ImageCard-At-a-glance" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-At-a-glance" />
