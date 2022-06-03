@@ -4,7 +4,7 @@
 
 This Adaptive Card Extension allows user quick access recent files
 
-This ACE, use Microsoft Graph API and needs the user approve the required permissions, after you have added the app to app catalog.
+This ACE, use Microsoft Graph API and needs the user approve the required permissions, after they have added the app to app catalog.
 
 ![ace-my-recent-files](./src/assets/my-recent-files01.png)
 
