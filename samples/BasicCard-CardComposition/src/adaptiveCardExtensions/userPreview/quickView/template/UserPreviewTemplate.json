@@ -1,0 +1,54 @@
+[
+    {
+        "type": "ColumnSet",
+        "columns": [
+            {
+                "type": "Column",
+                "items": [
+                    {
+                        "type": "Image",
+                        "style": "Person",
+                        "url": "${photo}",
+                        "size": "Small"
+                    }
+                ]
+            },
+            {
+                "type": "Column",
+                "items": [
+                    {
+                        "type": "TextBlock",
+                        "text": "${displayName}"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "${jobTitle}"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "ActionSet",
+        "actions": [
+            {
+                "type": "Action.Submit",
+                "title": "Chat",
+                "id": "chat-${id}",
+                "data": {
+                    "userId": "${id}",
+                    "loginName": "${userPrincipalName}"
+                }
+            },
+            {
+                "type": "Action.Submit",
+                "title": "Call",
+                "id": "call-${id}",
+                "data": {
+                    "userId": "${id}",
+                    "loginName": "${userPrincipalName}"
+                }
+            }
+        ]
+    }
+]

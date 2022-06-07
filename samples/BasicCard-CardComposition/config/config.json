@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "user-preview-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/userPreview/UserPreviewAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/userPreview/UserPreviewAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "UserPreviewAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/userPreview/loc/{locale}.js"
+  }
+}
