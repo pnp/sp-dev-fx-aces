@@ -64,7 +64,7 @@ This repository's contributors are all community members who volunteered their t
 
 ## Contributions
 
-These samples are direct from the feature teams, SharePoint PnP core team (http://aka.ms/m365/community) or shared by the community. We welcome your input on issues and suggestions for new samples. We do also welcome community contributions around the client-side web parts. If you have any questions, just let us know.
+These samples are direct from the feature teams, Microsoft 365 platform community team (http://aka.ms/m365/community) or shared by the community. We welcome your input on issues and suggestions for new samples. We do also welcome community contributions around the client-side web parts. If you have any questions, just let us know.
 
 Please have a look on our [Contribution Guidance](./CONTRIBUTING.md) before submitting your pull requests, so that we can get your contribution processed as fast as possible.
 
