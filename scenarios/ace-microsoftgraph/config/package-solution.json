@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-microsoftgraph-client-side-solution",
+    "id": "7d2334d9-79d4-4578-aa4e-1131d639c008",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ace-microsoftgraph description"
+      },
+      "longDescription": {
+        "default": "ace-microsoftgraph description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-microsoftgraph Feature",
+        "description": "The feature that activates elements of the ace-microsoftgraph solution.",
+        "id": "4fcb72e8-435b-43e1-96af-a7d778db121f",
+        "version": "1.0.0.0"
+      }
+    ],
+    "webApiPermissionRequests": [
+      {
+        "resource": "https://graph.microsoft.com",
+        "scope": "User.Read"
+      }
+    ] 
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-microsoftgraph.sppkg"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "ace-microsoftgraph",
+    "libraryId": "7d2334d9-79d4-4578-aa4e-1131d639c008",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "ace-microsoftgraph",
+    "solutionShortDescription": "ace-microsoftgraph description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Basic"
+  }
+}
