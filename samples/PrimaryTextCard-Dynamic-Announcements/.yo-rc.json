@@ -1,0 +1,15 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": true,
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.14.0-beta.4",
+    "libraryName": "ace-dynamic",
+    "libraryId": "eeafd47f-1e54-44bc-8c27-54674b369dd8",
+    "packageManager": "npm",
+    "solutionShortDescription": "ace-dynamic description",
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "PrimaryText"
+  }
+}
