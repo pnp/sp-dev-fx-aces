@@ -2,24 +2,22 @@
 
 ## Summary
 
-This ACE card would be useful for organization use it to make Annoucements driven from SharePoint List.  This dynamic ACE component can be used to add to Viva connection dashboard and drive the CardView and QuickView from SP list. It filters the data form SP list based on start date and end date and for each row.
-Each row will represents the Card view with title and description and it can be configured from List if we want to open external link or display a Quick View. The Quickview adaptive card template and data is also read from column in SP list to resuse same card for diffrent scenarios. 
-
-This sample is for more like ACE component for read only information which can be displayed. 
+This ACE card would be useful for an organization use it to make Announcements driven from SharePoint List.  This dynamic ACE component can be used to add to the Viva Connections dashboard and drive the CardView and QuickView from a SharePoint list. It filters the data from a SharePoint list based on the start date and end date for each row.
+Each row will represents the Card view with a title and description and it can be configured from the List if we want to open external link or display a Quick View. The Quick View adaptive card template and data is also read from column in SharePoint list to resuse cards for different scenarios.
 
 ![Web part in Action](./assets/aceinaction.gif)
 
 ## Features
 
-- ACE component to show multiple cards/items form SP list at a time based on dates
-- Same component can render diffrent Adaptive card format as Quickview based from individual SP list item
-- On click of Card view, it will open either external URL or Quick view or no action based on the item's configuration(OnCardSelectionType)
-- There are columns for Quickview adaptive card json template and seperate column for data which will drive how quickview is rendered for particular item
-- To make the card dynamic, we can write PowerAutomate or something and update the JSON object in the column based on our requirement according to the adaptive card template.
-- Prev and Next button to navigate through diffrent items
+- ACE component to show multiple cards/items from a SharePoint list at a time based on dates
+- The same component can render different Adaptive card formats as Quick View based on individual SharePoint list item
+- On click of the Card View, it will open either an External URL or Quick view or no action based on the item's configuration(OnCardSelectionType)
+- There are columns for Quick View adaptive card json template and for JSON data that will drive how the Quick View is rendered for a particular item
+- To make the card dynamic, we can write PowerAutomate or to update the JSON object in the data column based on our requirement according to the adaptive card template.
+- Prev and Next button to navigate through different items
 - Option to create List from configuration Panel
 - Option to enable Auto Rotate card every 4 seconds
-- Same card be added multiple times on Dashboard pointing to diffrent lists.
+- Same card be added multiple times on Dashboard pointing to different lists.
 
 List Data Sample Screenshot
 ![Web part in Action](./assets/listsdataexample.png)
@@ -44,10 +42,10 @@ List Data Sample Screenshot
 3. `OnCardSelectionType`: Choice column to what should be done on click on Card View, Options are
     a. Noaction: Nothing will happen on click on Card View
     b. ExternalLink: External link will open on click of cardview, which link to be opened can be added to column 'ExternalLinkURL'
-    c. QuickView: A QuickView will open on click on card for this item, Adapative card template will read from 'QuickViewAdaptiveCardJSON' and data will be read from 'QuickViewAdaptiveCardData'
-4. `ExternalLinkURL`: Link to open on click of Card View, this will only be applicatoin if OnCardSelectionType is selected as 'ExternalLink'
-5. `QuickViewAdaptiveCardJSON`: Multile line of text column where we can configure the Adaptive Card Template JSON object, it should be a valid JSON object which you get by desiging your adaptive card at this [link](https://adaptivecards.io/designer/)
-6. `QuickViewAdaptiveCardData`: Multile line of text column where we can put dynamic data in form of a valid JSON object to make the Adaptive card dynamic by passing values. This column can be updated via from PowerAutomate or scheduler to display data from external system or from anywhere within M365 product line. 
+    c. QuickView: A QuickView will open on click on card for this item, Adaptive card template will read from 'QuickViewAdaptiveCardJSON' and data will be read from 'QuickViewAdaptiveCardData'
+4. `ExternalLinkURL`: Link to open on click of Card View, this will only be application if OnCardSelectionType is selected as 'ExternalLink'
+5. `QuickViewAdaptiveCardJSON`: Multile line of text column where we can configure the Adaptive Card Template JSON object, it should be a valid JSON object which you get by designing your adaptive card at this [link](https://adaptivecards.io/designer/)
+6. `QuickViewAdaptiveCardData`: Multiple line of text column where we can put dynamic data in form of a valid JSON object to make the Adaptive card dynamic by passing values. This column can be updated via from PowerAutomate or scheduler to display data from external system or from anywhere within M365 product line.
 7. `StartDate`: Start date after which this entry should start displaying on the component
 8. `EndDate`: End date till which this entry should start displaying on the component. Data would be filtered based if today is greater than StartDate and less than EndDate.
 
@@ -58,7 +56,6 @@ You can refer and download sample data for quick reference from [here](./assets/
 Solution|Author(s)
 --------|---------
 PrimaryTextCard-Dynamic-Announcements | [Siddharth Vaghasia](https://siddharthvaghasia.com)
-
 
 ## Version history
 
@@ -95,4 +92,4 @@ This extension illustrates the following technical concepts:
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-Dynamic-Announcements" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-Dynamic-Announcements" />
