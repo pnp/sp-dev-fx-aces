@@ -63,7 +63,7 @@ export default class spService {
                 const batch = sp.web.createBatch();
                 colListColumns.forEach(fieldName => {
                     if (fieldName == "QuickViewAdaptiveCardJSON" || fieldName == "QuickViewAdaptiveCardData") {
-                        newList.fields.inBatch(batch).addMultilineText(fieldName, 6);
+                        newList.fields.inBatch(batch).addMultilineText(fieldName, 6,false,false,false);
                     }
                     else if(fieldName == "StartDate" || fieldName == "EndDate"){
                         newList.fields.inBatch(batch).addDateTime(fieldName, 6);
