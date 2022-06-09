@@ -816,6 +816,65 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-ace-dynamic-announcements",
+    "source": "pnp",
+    "title": "Dynamic Announcements",
+    "shortDescription": "This ACE card would be useful for an organization use it to make Announcements driven from SharePoint List.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-Dynamic-Announcements",
+    "longDescription": [
+      "This ACE card would be useful for an organization use it to make Announcements driven from SharePoint List.  This dynamic ACE component can be used to add to the Viva Connections dashboard and drive the CardView and QuickView from a SharePoint list. It filters the data from a SharePoint list based on the start date and end date for each row."
+    ],
+    "creationDateTime": "2022-03-12",
+    "updateDateTime": "2022-03-12",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.14.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-Dynamic-Announcements/assets/aceinaction.gif",
+        "alt": "Dynamic Announcement Card in Action"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "siddharth-vaghasia",
+        "pictureUrl": "https://github.com/siddharth-vaghasia.png",
+        "name": "Siddharth Vaghasia",
+        "twitter": "siddh_me"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-ace-followdocument",
     "source": "pnp",
     "title": "Follow Documents",
