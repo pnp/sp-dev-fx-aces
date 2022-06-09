@@ -22,7 +22,8 @@
     "officeFabricIconFontName": "EventDate",
     "properties": {
       "title": "My Calendar Plan",
-      "date":{}
+      "date":{},
+      "useDate": false
     }
   }]
 }

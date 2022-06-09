@@ -4,7 +4,7 @@
     "source": "pnp",
     "title": "Status of London Transport Services",
     "shortDescription": "Adaptive Card displays of London Train services and status",
-    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/master/samples/PrimaryTextCard-TfL-Status",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-TfL-Status",
     "longDescription": [
       "ACE with multiple card and quick views to display the status of London Train services and allows the user to mark a train line as their favourite with that data using Microsoft Graph."
     ],
@@ -12,7 +12,6 @@
     "updateDateTime": "2021-10-06",
     "products": [
       "SharePoint",
-      "Office",
       "Viva"
     ],
     "metadata": [

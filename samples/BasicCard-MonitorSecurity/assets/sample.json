@@ -3,7 +3,7 @@
   "source": "pnp",
   "title": "Monitor Security ACE",
   "shortDescription": "This solution provides a security monitoring feature using identity protection graph endpoint and ACE.",
-  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-PeopleDetails",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-MonitorSecurity",
   "longDescription": [
     "This solution provides a security monitoring feature using identity protection graph endpoint and ACE."
   ],

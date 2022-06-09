@@ -1,0 +1,52 @@
+[{
+  "name": "pnp-sp-fx-aces-weather-ace",
+  "source": "pnp",
+  "title": "Weather Adaptive Card Extension",
+  "shortDescription": "This Adaptive Card Extension allows users to display information about the weather in a specific location.",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-Weather",
+  "longDescription": [
+    "This Adaptive Card Extension allows users to search for and select a location to get information about its weather conditions, air quality, and health indices."
+  ],
+  "creationDateTime": "2022-03-24",
+  "updateDateTime": "2022-03-24",
+  "products": [
+    "SharePoint",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.14.0"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-Weather/assets/demo.gif",
+    "alt": "Preview"
+  }],
+  "authors": [{
+    "gitHubAccount": "aakashbhardwaj619",
+    "pictureUrl": "https://github.com/aakashbhardwaj619.png",
+    "name": "Aakash Bhardwaj",
+    "twitter": "aakash_316"
+  }],
+  "references": [{
+      "name": "Viva Connections Extensibility guidance",
+      "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+      "url": "https://aka.ms/viva/connections/extensibility"
+    },
+    {
+      "name": "Adaptive Card Documentation",
+      "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+      "url": "https://adaptivecards.io/"
+    }, {
+      "name": "Adaptive Card Extension Design Guidance",
+      "description": "Design guidance for laying out Adaptive Card Extensions.",
+      "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+    }
+  ]
+}]

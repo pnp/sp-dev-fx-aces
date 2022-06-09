@@ -60,12 +60,11 @@ Version|Date|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
-- Create the SP List described in _Pre-requisites_ section
+- Create the SP List described in *Pre-requisites* section
 - in the command line run:
   - `npm install`
   - `gulp serve --nobrowser`
-- browse to your hosted workbench https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx and add the adaptive card extension.    
-
+- browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
 
 ## Features
 
@@ -73,10 +72,10 @@ This extension illustrates the following concepts:
 
 - Using PnPJS to get data from a SP List.
 - Using PnPJS RenderListDataAsStream with filters
-- Custom _QuickViewTemplate_ adaptive card
-- List format in an adaptive card _TextBlock_
+- Custom *QuickViewTemplate* adaptive card
+- List format in an adaptive card *TextBlock*
 
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from <http://aka.ms/m365pnp>.
 
 ## References
 
@@ -86,4 +85,4 @@ This extension illustrates the following concepts:
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/ImageCard-TodaysLunch" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-TodaysLunch" />

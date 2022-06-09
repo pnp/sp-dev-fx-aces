@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "primary-text-card-news-feed-client-side-solution",
+    "title": "Viva News Feed Card",
+    "iconPath": "assets/News.png",
+    "id": "64e804ea-d24c-4729-9315-6a71663add16",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Nick Brown",
+      "websiteUrl": "https://nbdev.uk",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Viva Connections News Feed Card"
+      },
+      "longDescription": {
+        "default": "Displays the last 30 days of News Feed Articles in a Viva Connections Card"
+      },
+      "screenshotPaths": [
+        "../assets/Screenshot-2022-04-27-095421.png"
+      ],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Viva Connections News Feed Carde",
+        "description": "Displays the last 30 days of News Feed Articles in a Viva Connections Card",
+        "id": "8c5f99da-2dfc-4513-a715-ceea618fd72d",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/primary-text-card-news-feed.sppkg"
+  }
+}

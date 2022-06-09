@@ -6,12 +6,11 @@ import { OfficeLocationsPropertyPane } from './OfficeLocationsPropertyPane';
 import { SetupCardView } from './cardView/SetupCardView';
 import { isEmpty, sortBy } from '@microsoft/sp-lodash-subset';
 import { DataSource, MapsSource, Office } from '../../types';
-import { getOfficesFromTermStore, getOfficesFromList, PLACEHOLDER_IMAGE_URL } from '../../officelocation.service';
-import { sp } from "@pnp/sp/presets/all";
+import { getSP } from '../../officelocation.service';
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
 import { ErrorCardView } from './cardView/ErrorCardView';
-import Fuse from 'fuse.js';
 import { ListView } from './listView/ListView';
+import { SPFI } from '@pnp/sp';
 
 export interface IOfficeLocationsAdaptiveCardExtensionProps {
   title: string;
@@ -29,12 +28,17 @@ export interface IOfficeLocationsAdaptiveCardExtensionProps {
   bingMapsApiKey: string;
   googleMapsApiKey: string;
   showTime: boolean;
+  showTimeUsingTemporal: boolean;
   showWeather: boolean;
   loadingImage: string;
   getWeatherFromList: boolean;
   weatherList: string;
   openWeatherMapApiKey: string;
-  fuse: Fuse<Office>;
+  fuse: any;
+  pollingTimeForFirstTime: boolean;
+  pollingForTimeStarted: boolean;
+  cancelPollingForTime: () => void;
+  stopPollingForTime: () => void;
 }
 
 export interface IOfficeLocationsAdaptiveCardExtensionState {
@@ -57,6 +61,7 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
   IOfficeLocationsAdaptiveCardExtensionProps,
   IOfficeLocationsAdaptiveCardExtensionState
 > {
+
   private _deferredPropertyPane: OfficeLocationsPropertyPane | undefined;
   private LOG_SOURCE: string = "🔶 OfficeLocationsAdaptiveCardExtension";
 
@@ -65,10 +70,6 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
     try {
       Logger.subscribe(new ConsoleListener());
       Logger.activeLogLevel = LogLevel.Info;
-
-      sp.setup({
-        spfxContext: this.context
-      });
 
       this.state = {
         mainImage: this.properties.mainImage,
@@ -110,7 +111,8 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       officesTermSetId,
       list,
       useMapsAPI, showMapsInQuickView, mapsSource, bingMapsApiKey, googleMapsApiKey,
-      showWeather, getWeatherFromList, weatherList, openWeatherMapApiKey 
+      showWeather, getWeatherFromList, weatherList, openWeatherMapApiKey,
+      showTime
     } = this.properties;
 
     if (
@@ -133,20 +135,26 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
 
     setTimeout(async () => {
 
+      let sp: SPFI = null;
+
       let offices: Office[] = null;
 
       switch (dataSource) {
         case DataSource.Local:
           offices = this.properties.offices;
-          offices.forEach(office => {
-            office.chatWithManagerLink = office.managerEmailAddress ? `https://teams.microsoft.com/l/chat/0/0?users=${office.managerEmailAddress}` : '';
-          });
           break;
         case DataSource.Taxonomy:
-          offices = await getOfficesFromTermStore(officesTermSetId);
+          sp = getSP(this.context);
+          let isTermsetValid: boolean = await sp.termStore.validateTermSet(officesTermSetId, "UsedForOfficeLocations", "true");
+          if (isTermsetValid) {
+            offices = await sp.termStore.getOfficeTerms(officesTermSetId);
+          }
           break;
         case DataSource.List:
-          offices = isEmpty(list) ? null : await getOfficesFromList(list);
+          if (!isEmpty(list)) {
+            sp = getSP(this.context);
+            offices = await sp.web.getOfficeItems(list);
+          }
           break;
       }
 
@@ -162,7 +170,8 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
       offices = sortBy(offices, (office: Office) => office.name);
 
       offices.forEach(office => {
-        office.time = '';
+        office.chatWithManagerLink = !isEmpty(office.managerEmailAddress) ? `https://teams.microsoft.com/l/chat/0/0?users=${office.managerEmailAddress}` : null;
+        office.time = null;
         office.gotWeather = false;
         office.gotMap = false;
         office.weather = null;
@@ -174,10 +183,33 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
         cardViewToRender: CARD_VIEW_REGISTRY_ID
       });
 
-      this.properties.fuse = new Fuse(offices, {
-        keys: ['name', 'address'],
-        includeScore: true
-      });
+      if (this.properties.showSearch) {
+
+        const fuse = await import(
+          /* webpackChunkName: 'fuse-js' */
+          'fuse.js'
+        );
+
+        this.properties.fuse = new fuse.default(offices, {
+          keys: ['name', 'address'],
+          includeScore: true
+        });
+      }
+
+      //* Init polling related properties
+
+      this.properties.stopPollingForTime = () => { };
+
+      if (showTime) {
+        this.properties.pollingTimeForFirstTime = true;
+        this.properties.pollingForTimeStarted = false;
+
+        this.properties.stopPollingForTime = () => {
+          this.properties.pollingTimeForFirstTime = true;
+          this.properties.pollingForTimeStarted = false;
+          this.properties.cancelPollingForTime();
+        }
+      }
 
       this.cardNavigator.replace(this.state.cardViewToRender);
 
@@ -198,6 +230,10 @@ export default class OfficeLocationsAdaptiveCardExtension extends BaseAdaptiveCa
 
   protected onRenderTypeChanged(oldRenderType: RenderType): void {
     if (oldRenderType === 'QuickView') {
+      // Stop polling when the quick view is closed
+      // If this is not done then the polling will continue to run even after the quick view is closed
+      // If there was an onDispose handler for the QuickView, then this could have been done there
+      this.properties.stopPollingForTime();
       // Reset to the Card state when the Quick View was opened.
       this.setState({
         searchText: "",

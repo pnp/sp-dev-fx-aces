@@ -1,0 +1,52 @@
+{
+    "detailsLabel": "Details",
+    "fileNameLabel": "File name",
+    "sizeLabel": "Size",
+    "modifiedLabel": "Modified",
+    "currentItem": {
+        "@microsoft.graph.downloadUrl": "urlToDownloadPicture",
+        "createdDateTime": "2021-11-01T12:34:56Z",
+        "id": "FileId",
+        "lastModifiedDateTime": "2021-11-01T12:34:56Z",
+        "name": "VIVA-background-Abstract-04.jpg",
+        "webUrl": "oneDriveWebUrl",
+        "size": 123456,
+        "createdBy": {
+            "user": {
+                "email": "userEmail",
+                "id": "userGuid",
+                "displayName": "userDisplayName"
+            }
+        },
+        "lastModifiedBy": {
+            "user": {
+                "email": "userEmail",
+                "id": "userGuid",
+                "displayName": "userDisplayName"
+            }
+        },
+        "parentReference": {
+            "driveId": "driveId",
+            "driveType": "driveType",
+            "id": "parentId",
+            "path": "parentPath"
+        },
+        "file": {
+            "mimeType": "image/jpeg",
+            "hashes": {
+                "quickXorHash": "hashOfTheFile"
+            }
+        },
+        "fileSystemInfo": {
+            "createdDateTime": "2021-11-01T12:34:56Z",
+            "lastModifiedDateTime": "2021-11-01T12:34:56Z"
+        },
+        "image": {
+            "height": 1080,
+            "width": 1920
+        },
+        "photo": {
+            "takenDateTime": "2021-11-01T12:34:56Z"
+        }
+    }
+}

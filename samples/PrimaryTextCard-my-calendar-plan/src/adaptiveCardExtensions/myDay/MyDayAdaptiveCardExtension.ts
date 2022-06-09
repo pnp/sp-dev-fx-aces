@@ -1,19 +1,19 @@
-import startOfDay from "date-fns/startOfDay";
-import { isEmpty } from "lodash";
+import startOfDay from 'date-fns/startOfDay';
+import { isEmpty } from 'lodash';
 
-import { Event } from "@microsoft/microsoft-graph-types";
+import { Event } from '@microsoft/microsoft-graph-types';
 import {
   BaseAdaptiveCardExtension,
-} from "@microsoft/sp-adaptive-card-extension-base";
-import { IPropertyPaneConfiguration } from "@microsoft/sp-property-pane";
+} from '@microsoft/sp-adaptive-card-extension-base';
+import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import {
   IDateTimeFieldValue,
-} from "@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker";
+} from '@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker';
 
-import { CardView } from "../../cards/cardView/CardView";
-import { QuickView } from "../../cards/quickView/QuickView";
-import { Services } from "../../services";
-import { MyDayPropertyPane } from "./MyDayPropertyPane";
+import { CardView } from '../../cards/cardView/CardView';
+import { QuickView } from '../../cards/quickView/QuickView';
+import { Services } from '../../services';
+import { MyDayPropertyPane } from './MyDayPropertyPane';
 
 export interface IPropertyControlsTestWebPartProps {
   datetime: IDateTimeFieldValue;
@@ -23,6 +23,7 @@ let services: Services = undefined;
 export interface IMyDayAdaptiveCardExtensionProps {
   title: string;
   date: IDateTimeFieldValue;
+  useDate: boolean;
 }
 
 export interface IMyDayAdaptiveCardExtensionState {
@@ -31,8 +32,6 @@ export interface IMyDayAdaptiveCardExtensionState {
   title: string;
   date: string;
   numberItems: string;
-  timeZone: string;
-  locale: string;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = "MyDay_CARD_VIEW";
@@ -47,25 +46,25 @@ export default class MyDayAdaptiveCardExtension extends BaseAdaptiveCardExtensio
   public async onInit(): Promise<void> {
     services = new Services(this.context);
     await services.init();
-    if (isEmpty(this.properties.date)) {
+    if (isEmpty(this.properties.date) || !this.properties.useDate) {
       const _date = startOfDay(new Date()).toISOString() as any;
       this.properties.date = { value: _date, displayValue: "" };
     }
 
-    const events: Event[] = await this._getEvents((this.properties.date.value as any));
-
     this.state = {
       title: this.properties.title,
-      events: events,
+      events: [],
       userDisplayName: this.context.pageContext.user.displayName,
       date: this.properties.date.value as any,
-      numberItems: events.length.toString(),
-      timeZone: await services.getTimeZone(),
-      locale: this.context.pageContext.cultureInfo.currentCultureName
+      numberItems: "0"
     };
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
+
+    this._getEvents((this.properties.date.value as any)).then((_events) => {
+      this.setState({...this.state, events: _events, numberItems: _events.length.toString() });
+    });
 
     return Promise.resolve();
   }
@@ -79,15 +78,19 @@ export default class MyDayAdaptiveCardExtension extends BaseAdaptiveCardExtensio
       const _newValue = newValue.value.toISOString() as any;
       this.properties.date.value = _newValue;
       const events: Event[] = await this._getEvents(_newValue);
-      this.setState({ events: events, date: _newValue, numberItems: events.length.toString() });
+      this.setState({ events: events, date: this.properties.date.value as any, numberItems: events.length.toString() });
     }
     this.renderCard();
   }
 
 
   private _getEvents = async (isoDate: string): Promise<Event[]> => {
-    const events: Event[] = await services.getEvents((isoDate));
-    return events;
+    try {
+      const events: Event[] = await services.getEvents((isoDate));
+      return events;
+    } catch (e) {
+      return [{ "subject": `Error ${e}`, start: { "dateTime": new Date().toISOString() } }];
+    }
   }
 
   protected async loadPropertyPaneResources(): Promise<void> {

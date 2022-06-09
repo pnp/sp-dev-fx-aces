@@ -4,7 +4,7 @@
     "source": "pnp",
     "title": "Planner Tasks",
     "shortDescription": "Adaptive Card displays of Planner Tasks",
-    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/master/samples/PrimaryTextCard-PlannerTasks",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-PlannerTasks",
     "longDescription": [
       "ACE with a PrimaryText card view and multiple quick views to display the logged-in user Planner Tasks from all associated plans."
     ],
@@ -12,7 +12,6 @@
     "updateDateTime": "2021-10-06",
     "products": [
       "SharePoint",
-      "Office",
       "Viva"
     ],
     "metadata": [
