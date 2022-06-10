@@ -1,6 +1,7 @@
 # Display and Manage Team
 
 ## Summary
+
 > Display all team members who directly reports to me using Graph API in ACEs card View with two button.
 
 ![Card view with team members information](assets/ACEs2.gif)
@@ -15,12 +16,11 @@
 
 ## Compatibility
 
-![SPFx 1.13](https://img.shields.io/badge/SPFx-1.13.0-green.svg) 
-![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg) 
-![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg) 
-![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams") 
+![SPFx 1.13](https://img.shields.io/badge/SPFx-1.13.0-green.svg)
+![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg)
+![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
+![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams")
 ![Workbench Local | Hosted](https://img.shields.io/badge/Workbench-Local%20%7C%20Hosted-green.svg)
-
 
 ## Applies to
 
@@ -64,10 +64,11 @@ Version|Date|Comments
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
 ## Features
+
 This Adaptive Card Extension illustrates the following concepts on top of the SharePoint Framework:
 
 * Introduction on ACEs
 * Graph API integration
 * Handle Queries on Quick View
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-ManageTeam" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-ManageTeam" />

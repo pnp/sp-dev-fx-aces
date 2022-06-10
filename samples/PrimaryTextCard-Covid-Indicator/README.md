@@ -2,7 +2,7 @@
 
 ## Summary
 
-This Adaptive Card Extension allow user select a country to get information about COVID-19 cases. The data is retrieved by REST API provided by https://rapidapi.com/api-sports/api/covid-193/ .
+This Adaptive Card Extension allow user select a country to get information about COVID-19 cases. The data is retrieved by REST API provided by <https://rapidapi.com/api-sports/api/covid-193/> .
 
  The Data is updated every hour.
 
@@ -55,7 +55,6 @@ Version|Date|Comments
       - `gulp bundle --ship`
       - `gulp package-solution --ship`
     - Browse to your SharePoint app catalog and load the SPFx package.
-   
 
 - If you have the APIs permissions already allowed you can follow the below steps.
   - in the command line run:
@@ -63,4 +62,4 @@ Version|Date|Comments
         * `gulp serve --nobrowser`
     - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-Covid-Indicator" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-Covid-Indicator" />

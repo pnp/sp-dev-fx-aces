@@ -5,6 +5,7 @@
 This sample shows how to build an ACE with a card view and multiple quick views to display the status of the affected services in a tenant.
 
 ### Highlights
+
 - Using Microsoft Graph to get service health data
 - Submit action handling in ACE and Quick View
 - Theme based display
@@ -16,7 +17,7 @@ This sample shows how to build an ACE with a card view and multiple quick views 
 
 ![demo](./assets/demo_mobile_app.gif)
 
-#### Dashboard in the home site 
+#### Dashboard in the home site
 
 ![demo](./assets/demo.gif)
 
@@ -27,13 +28,14 @@ This sample shows how to build an ACE with a card view and multiple quick views 
 ## Used SharePoint Framework Version
 
 ![SPFx 1.13.0](https://img.shields.io/badge/SPFx-1.13.0-green.svg)
-![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg) 
+![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
 
-
 ## Permissions
+
 Microsoft Graph
+
 - ServiceHealth.Read.All
 
 ## Applies to
@@ -81,7 +83,7 @@ Version|Date|Comments
   - **gulp serve -l --nobrowser**
 - or if using spfx-fast-serve, in the command-line run:
   - **npm run serve**
-- Open the workbench page (https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx)
+- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE to the page
 
 ## Features
@@ -97,4 +99,4 @@ This sample uses Microsoft Graph API to get service health data of the tenant. T
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Tutorial to create ACE](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-Service=Health" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-Service-Health" />

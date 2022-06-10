@@ -1,0 +1,69 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+      {
+          "type": "ColumnSet",
+          "$data": "${news}",
+          "separator": true,
+          "columns": [
+              {
+                  "type": "Column",
+                  "width": "60px",
+                  "horizontalAlignment": "Left",
+                  "verticalContentAlignment": "Top",
+                  "items": [
+                      {
+                          "type": "Image",
+                          "size": "Small",
+                          "url": "${PictureThumbnailURL}"
+                      }
+                  ]
+              },
+              {
+                  "type": "Column",
+                  "width": "stretch",
+                  "verticalContentAlignment": "Center",
+                  "items": [
+                      {
+                          "type": "TextBlock",
+                          "text": "${Title}",
+                          "horizontalAlignment": "Left",
+                          "size": "Medium"
+                      },
+                      {
+                          "type": "TextBlock",
+                          "text": "${HitHighlightedSummary}",
+                          "horizontalAlignment": "Left",
+                          "size": "Small",
+                          "wrap": true,
+                          "maxLines": 3
+                      }
+                  ]
+              },
+              {
+                  "type": "Column",
+                  "width": "auto",
+                  "verticalContentAlignment": "Top",
+                  "items": [
+                      {
+                          "type": "ActionSet",
+                          "horizontalAlignment": "right",
+                          "actions": [
+                              {
+                                  "type": "Action.OpenUrl",
+                                  "title": "🌐",
+                                  "url": "${Path}",
+                                  "style": "positive"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "spacing": "Large"
+      }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}

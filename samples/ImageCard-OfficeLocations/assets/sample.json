@@ -8,7 +8,7 @@
     "This sample shows how to build an ACE with a PrimaryText card view and a quick view to display current logged in user's immediate upcoming shift in card view and all upcoming shifts in Quick view."
   ],
   "creationDateTime": "2022-02-15",
-  "updateDateTime": "2022-02-15",
+  "updateDateTime": "2022-06-01",
   "products": [
     "SharePoint",
     "Viva"

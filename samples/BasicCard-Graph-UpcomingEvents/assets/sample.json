@@ -1,5 +1,5 @@
 [{
-  "name": "pnp-sp-fx-aces-ace-group-viewer",
+  "name": "pnp-sp-fx-aces-ace-upcoming-events",
   "source": "pnp",
   "title": "Upcoming Events Viewer",
   "shortDescription": "Loads upcoming events from the users calendar.",
