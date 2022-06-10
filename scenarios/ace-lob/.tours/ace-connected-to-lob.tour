@@ -1,0 +1,125 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "ACE connected to a Line of Business API",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "### Introduction\n\nThis code tour will walk you through the process of connecting an Adaptive Card Extension (ACE) for Microsoft Viva Connections to a custom API secured with Azure Active Directory that you use in your organization. After you complete this tour, you'll have a functioning ACE that loads data from your API and shows it on the card- and quick view.\n\n![Adaptive Card Extension showing data from a custom API displayed in the SharePoint workbench](./assets/preview.png)\n\nFor more information about how to extend Viva Connections, see https://docs.microsoft.com/sharepoint/dev/spfx/viva/overview-viva-connections"
+    },
+    {
+      "file": "src/adaptiveCardExtensions/ace/AceAdaptiveCardExtension.ts",
+      "description": "### Define state object\n\nDefine the object to store the data that you retrieve from your API and want to show in the Adaptive Card Extension. You'll be able to access this object from the card- and quick View. This state object is similar to how you'd define state in a React component.",
+      "line": 14,
+      "title": "Define state object",
+      "selection": {
+        "start": {
+          "line": 12,
+          "character": 1
+        },
+        "end": {
+          "line": 14,
+          "character": 2
+        }
+      }
+    },
+    {
+      "file": "src/adaptiveCardExtensions/ace/AceAdaptiveCardExtension.ts",
+      "description": "### Create instance of the Azure AD HTTP client\n\nBecause your API is secured with Azure Active Directory, to call it, you need to have a valid access token. In SharePoint Framework, the Azure Active Directory HTTP client takes care of authentication for you, allowing you to focus on building your app and not worrying about retrieving the access token.\n\nTo create an instance of an Azure AD HTTP client, call the `aadHttpClientFactory.getClient()` method, passing the **Application (client) ID** of the Azure AD application registration that's used to secure your API. This method will return an instance of the Azure AD HTTP client authenticated for your API.\n\n\n**Important**: If you want to call multiple APIs, and they're secured using different Azure AD applications, you'll need to create a separate instance of the Azure AD HTTP client for each one of them.\n\nMore information: [Configure your App Service or Azure Functions app to use Azure AD login](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-aad)",
+      "line": 56
+    },
+    {
+      "file": "src/adaptiveCardExtensions/ace/AceAdaptiveCardExtension.ts",
+      "description": "### Call your API to get data\n\nCall your API to retrieve data that you'd like to show in the Adaptive Card Extension. In the `get()` method, specify the URL that you'd like to call. If you need to, you can call your API multiple times and combine all the data you retrieved in a single result.\n\nMore information: [Connect to Azure AD applications using the AadHttpClient](https://docs.microsoft.com/sharepoint/dev/spfx/use-aadhttpclient#connect-to-azure-ad-applications-using-the-aadhttpclient)",
+      "line": 57,
+      "selection": {
+        "start": {
+          "line": 57,
+          "character": 35
+        },
+        "end": {
+          "line": 57,
+          "character": 79
+        }
+      }
+    },
+    {
+      "file": "src/adaptiveCardExtensions/ace/AceAdaptiveCardExtension.ts",
+      "description": "### Update state\n\nAfter you retrieved data from your API, and are ready to display it on the ACE, call the `this.setState()` method and update your state object with the retrieved data. It will cause the ACE to re-render and show the data on card- and quick view.",
+      "line": 62,
+      "selection": {
+        "start": {
+          "line": 60,
+          "character": 9
+        },
+        "end": {
+          "line": 62,
+          "character": 12
+        }
+      }
+    },
+    {
+      "file": "config/package-solution.json",
+      "description": "### Request permissions\n\nBefore an Adaptive Card Extension can call a custom API secured with AAD, it must request the necessary permissions. In the `resource` property, specify the display name of the Azure AD application that's used to secure your API. If your API defines custom scopes, add them in the `scope` property. Otherwise, leave the default value of `user_impersonation`.\n\nPermissions that you specify in this section, will be requested when you deploy the solution package to the app catalog. Tenant admin will need to review and approve the request, before your solution will be able to connect to your custom API.\n\nMore information: https://docs.microsoft.com/sharepoint/dev/spfx/use-aadhttpclient#request-permissions-to-an-azure-ad-application",
+      "line": 39,
+      "selection": {
+        "start": {
+          "line": 38,
+          "character": 9
+        },
+        "end": {
+          "line": 39,
+          "character": 38
+        }
+      }
+    },
+    {
+      "file": "src/adaptiveCardExtensions/ace/cardView/CardView.ts",
+      "description": "### Show data on the card view\n\nAssign the data, that you retrieved from your API, to properties that are mapped to the card view. The state object, that you defined previously, is accessible through `this.state`. The properties `primaryText` and `title` are fixed and correspond to properties on the card that's displayed in the card view.",
+      "line": 30,
+      "selection": {
+        "start": {
+          "line": 27,
+          "character": 12
+        },
+        "end": {
+          "line": 30,
+          "character": 6
+        }
+      }
+    },
+    {
+      "file": "src/adaptiveCardExtensions/ace/quickView/QuickView.ts",
+      "description": "### Show data on the quick view\n\nAssign the data, that you retrieved from your API, to properties that are mapped to the quick view. The state object, that you defined previously, is accessible through `this.state`. The properties `primaryText` and `title` correspond to properties on the card that are defined in the [card template](./src/adaptiveCardExtensions/ace/quickView/template/QuickViewTemplate.json).",
+      "line": 19,
+      "selection": {
+        "start": {
+          "line": 16,
+          "character": 12
+        },
+        "end": {
+          "line": 19,
+          "character": 6
+        }
+      }
+    },
+    {
+      "file": "config/serve.json",
+      "description": "### Update tenant URL\n\nUpdate the URL of your SharePoint tenant. This URL is used to launch the workbench and preview your ACE during development.",
+      "line": 5,
+      "selection": {
+        "start": {
+          "line": 5,
+          "character": 19
+        },
+        "end": {
+          "line": 5,
+          "character": 49
+        }
+      }
+    },
+    {
+      "title": "Preview",
+      "description": "### Preview your ACE\n\nCongratulations! You've arrived at the end of this code tour. The last thing left is to see your ACE in action.\n\n[Preview ACE in the workbench](command:viva-connections-toolkit.executeTerminalCommand?[\"gulp%20serve\"])\n"
+    }
+  ]
+}
