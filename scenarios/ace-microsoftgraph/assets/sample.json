@@ -4,7 +4,7 @@
     "source": "pnp",
     "title": "ACE Scenario - Microsoft Graph",
     "shortDescription": "",
-    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/scenario-ace-graph/scenarios/ace-microsoftgraph",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/scenarios/ace-microsoftgraph",
     "longDescription": [
       ""
     ],
@@ -34,7 +34,7 @@
     ],
     "authors": [
       {
-        "gitHubAccount": "https://github.com/waldekmastykarz",
+        "gitHubAccount": "waldekmastykarz",
         "pictureUrl": "https://github.com/waldekmastykarz.png",
         "name": "Waldek Mastykarz"
       }

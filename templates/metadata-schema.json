@@ -22,7 +22,7 @@
           },
           "url": {
               "type": "string",
-              "pattern": "https:\/\/github.com\/pnp\/sp-dev-fx-aces\/tree\/main\/samples\/.*"
+              "pattern": "https:\/\/github.com\/pnp\/sp-dev-fx-aces\/tree\/main\/(samples|scenarios)\/.*"
           },
           "creationDateTime": {
               "type": "string",
