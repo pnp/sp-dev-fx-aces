@@ -1758,5 +1758,53 @@
         "url": "https://aka.ms/viva/connections/extensibility"
       }
     ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-scenario-ace-microsoftgraph",
+    "source": "pnp",
+    "title": "ACE Scenario - Microsoft Graph",
+    "shortDescription": "",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/scenarios/ace-microsoftgraph",
+    "longDescription": [
+      ""
+    ],
+    "creationDateTime": "2021-06-08",
+    "updateDateTime": "2021-06-08",
+    "products": [
+      "SharePoint",
+      "Office"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.14.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/scenarios/ace-microsoftgraph/assets/preview.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
   }
 ]
