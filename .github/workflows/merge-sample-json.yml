@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - 'samples/**/assets/sample.json'
+      - 'scenarios/**/assets/sample.json'
   workflow_dispatch:
 
 jobs:
@@ -26,7 +27,7 @@ jobs:
           path: gh-pages
       - name: Join samples  
         run: |
-          jq -s '[.[][]]' ./main/samples/**/assets/sample.json > ./gh-pages/samples.json
+          jq -s '[.[][]]' ./main/samples/**/assets/sample.json ./main/scenarios/**/assets/sample.json > ./gh-pages/samples.json
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
