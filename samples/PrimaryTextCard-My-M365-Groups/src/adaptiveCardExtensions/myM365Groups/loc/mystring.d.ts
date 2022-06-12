@@ -9,6 +9,11 @@ declare interface IMyM365GroupsAdaptiveCardExtensionStrings {
   Description: string;
   PrimaryText: string;
   QuickViewButton: string;
+  LoadingGroupsText: string;
+  GroupOwnerText: string;
+  GroupMemberText: string;
+  OwnedText: string;
+  MemberGroupsText: string;
 }
 
 declare module 'MyM365GroupsAdaptiveCardExtensionStrings' {
