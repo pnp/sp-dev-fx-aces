@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "basic-card-card-composition-client-side-solution",
+    "id": "d3e62c89-4f7d-40a4-84b8-adeaad4ce8a5",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.0-rc.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "basic-card-card-composition description"
+      },
+      "longDescription": {
+        "default": "basic-card-card-composition description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "basic-card-card-composition Feature",
+        "description": "The feature that activates elements of the basic-card-card-composition solution.",
+        "id": "39ad9ee1-6bb3-4b79-abab-cf017e547aee",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/basic-card-card-composition.sppkg"
+  }
+}
