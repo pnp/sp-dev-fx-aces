@@ -1,0 +1,15 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": true,
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.14.0-beta.4",
+    "libraryName": "primary-text-card-my-shifts",
+    "libraryId": "ea134f92-7a91-4259-850c-83a8b75b6988",
+    "packageManager": "npm",
+    "solutionShortDescription": "primary-text-card-my-shifts description",
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "PrimaryText"
+  }
+}

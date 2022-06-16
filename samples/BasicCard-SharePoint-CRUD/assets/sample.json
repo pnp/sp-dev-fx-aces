@@ -1,0 +1,43 @@
+[{
+  "name": "pnp-sp-fx-aces-sharepoint-crud",
+  "source": "pnp",
+  "title": "SharePoint CRUD Example",
+  "shortDescription": "This Adaptive Card Extension shows how to work with form elements and form data in an Adaptive Card. It is an example of how to use an ACE to interact with SharePoint List data using PnPJS.",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-SharePoint-CRUD",
+  "longDescription": [
+    "This ACE shows how to work with different form elements to collect and display data from an Adaptive Card and store that data in a SharePoint list. A sample list is provisioned when the ACE is loaded for the first time. It also shows how to navigate from one view to another with multiple cards."
+  ],
+  "creationDateTime": "2022-01-13",
+  "updateDateTime": "2022-01-13",
+  "products": [
+    "SharePoint",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.13.0"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-SharePoint-CRUD/assets/demo.gif",
+    "alt": "Preview"
+  }],
+  "authors": [{
+    "gitHubAccount": "dcashpeterson",
+    "company": "Sympraxis Consulting",
+    "pictureUrl": "https://github.com/dcashpeterson.png",
+    "name": "Derek Cash-Peterson",
+    "twitter": "spdcp"
+  }],
+  "references": [{
+    "name": "Viva Connections Extensibility guidance",
+    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+    "url": "https://aka.ms/viva/connections/extensibility"
+  }]
+}]

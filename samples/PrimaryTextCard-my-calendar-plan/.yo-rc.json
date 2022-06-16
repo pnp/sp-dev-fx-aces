@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "spfx-ace-my-day",
+    "libraryId": "1703fd43-24c6-4796-8375-fe92504ca9f9",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "spfx-ace-my-day",
+    "solutionShortDescription": "spfx-ace-my-day description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "PrimaryText"
+  }
+}

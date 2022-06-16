@@ -1,0 +1,43 @@
+[{
+  "name": "pnp-sp-fx-aces-hybridwork-checkin",
+  "source": "pnp",
+  "title": "Hybrid Work Employee Check-in Adaptive Card Extension",
+  "shortDescription": "Adaptive Card Extension that allows users to check in to the office.",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-HybridWork-Checkin",
+  "longDescription": [
+    "Adaptive Card Extension that allows users to check in for a desk in an office building. Stores data in a SharePoint list."
+  ],
+  "creationDateTime": "2021-11-08",
+  "updateDateTime": "2021-11-08",
+  "products": [
+    "SharePoint",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.13.0"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-HybridWork-Checkin/assets/demo.gif",
+    "alt": "Hybrid Work Employee Check-In"
+  }],
+  "authors": [{
+    "gitHubAccount": "ArijitCloud",
+    "company": "",
+    "pictureUrl": "https://github.com/ArijitCloud.png",
+    "name": "Arijit Mondal",
+    "twitter": ""
+  }],
+  "references": [{
+    "name": "Viva Connections Extensibility guidance",
+    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+    "url": "https://aka.ms/viva/connections/extensibility"
+  }]
+}]

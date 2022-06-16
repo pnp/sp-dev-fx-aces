@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "news-feed-card-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/newsFeedCard/NewsFeedCardAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/newsFeedCard/NewsFeedCardAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "NewsFeedCardAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/newsFeedCard/loc/{locale}.js"
+  }
+}

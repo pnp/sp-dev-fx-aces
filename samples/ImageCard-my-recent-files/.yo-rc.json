@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "spfx-ace-my-recent-files",
+    "libraryId": "d3a5b804-1ace-4c6e-b07c-5fc8efbc82aa",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "spfx-ace-my-recent-files",
+    "solutionShortDescription": "spfx-ace-my-recent-files description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Image"
+  }
+}

@@ -1,0 +1,51 @@
+[{
+  "name": "pnp-sp-fx-aces-monitorsecurity",
+  "source": "pnp",
+  "title": "Monitor Security ACE",
+  "shortDescription": "This solution provides a security monitoring feature using identity protection graph endpoint and ACE.",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-MonitorSecurity",
+  "longDescription": [
+    "This solution provides a security monitoring feature using identity protection graph endpoint and ACE."
+  ],
+  "creationDateTime": "2022-02-05",
+  "updateDateTime": "2022-02-05",
+  "products": [
+    "SharePoint",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.13.1"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-MonitorSecurity/assets/demo.gif",
+    "alt": "Preview"
+  }],
+  "authors": [{
+    "gitHubAccount": "ArijitCloud",
+    "pictureUrl": "https://github.com/ArijitCloud.png",
+    "name": "Arijit Mondal"
+  }],
+  "references": [{
+      "name": "Viva Connections Extensibility guidance",
+      "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+      "url": "https://aka.ms/viva/connections/extensibility"
+    },
+    {
+      "name": "Adaptive Card Documentation",
+      "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+      "url": "https://adaptivecards.io/"
+    }, {
+      "name": "Adaptive Card Extension Design Guidance",
+      "description": "Design guidance for laying out Adaptive Card Extensions.",
+      "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+    }
+  ]
+}]

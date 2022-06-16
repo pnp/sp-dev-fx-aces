@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "manage-team-client-side-solution",
+    "id": "cfe72a90-6319-4ad2-b810-0aabc6532da2",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Dipen Shah",
+      "websiteUrl": "https://dips365.wordpress.com",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": ""
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Directory.ReadWrite.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "User.ReadWrite.All"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/manage-team.sppkg"
+  }
+}

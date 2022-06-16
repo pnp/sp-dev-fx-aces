@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "primaytextcard-my-m365-groups-client-side-solution",
+    "id": "e85df1bc-b8d5-486d-bb26-8003414104de",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.13.1"
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Group.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Directory.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "User.Read.All"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/primaytextcard-my-m365-groups.sppkg"
+  }
+}

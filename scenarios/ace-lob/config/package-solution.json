@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-lob-client-side-solution",
+    "id": "debe5a00-562c-4830-b51f-61b2d93d4d22",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ace-lob description"
+      },
+      "longDescription": {
+        "default": "ace-lob description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-lob Feature",
+        "description": "The feature that activates elements of the ace-lob solution.",
+        "id": "92bef0ca-24f0-4bd9-8ed6-dee9d9492a92",
+        "version": "1.0.0.0"
+      }
+    ],
+    "webApiPermissionRequests": [
+      {
+        "resource": "contoso-api",
+        "scope": "user_impersonation"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-lob.sppkg"
+  }
+}

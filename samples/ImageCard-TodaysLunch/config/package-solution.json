@@ -1,0 +1,20 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-todays-lunch-client-side-solution",
+    "id": "f8db3365-08f3-4228-9d88-ce898a387293",
+    "version": "1.0.1.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.13.0-rc.1"
+    }
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-todays-lunch.sppkg"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "my-m365-groups-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/myM365Groups/MyM365GroupsAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/myM365Groups/MyM365GroupsAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MyM365GroupsAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/myM365Groups/loc/{locale}.js"
+  }
+}

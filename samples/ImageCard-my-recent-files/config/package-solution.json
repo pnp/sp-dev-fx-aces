@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-ace-my-recent-files-client-side-solution",
+    "id": "d3a5b804-1ace-4c6e-b07c-5fc8efbc82aa",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "webApiPermissionRequests": [{
+      "resource": "Microsoft Graph",
+      "scope": "Files.Read"
+    }],
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-ace-my-recent-files description"
+      },
+      "longDescription": {
+        "default": "spfx-ace-my-recent-files description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-ace-my-recent-files Feature",
+        "description": "The feature that activates elements of the spfx-ace-my-recent-files solution.",
+        "id": "a12e0361-5997-41cc-85df-126d838ab567",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-ace-my-recent-files.sppkg"
+  }
+}

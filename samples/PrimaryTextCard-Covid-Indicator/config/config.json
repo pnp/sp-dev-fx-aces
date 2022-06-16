@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "covid-indicator-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/covidIndicator/CovidIndicatorAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/covidIndicator/CovidIndicatorAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CovidIndicatorAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/covidIndicator/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}

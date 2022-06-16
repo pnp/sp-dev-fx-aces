@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "weather-ace",
+    "libraryId": "78827bb1-cb5e-4f90-83b9-46deec5ff1fa",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "Weather ACE",
+    "solutionShortDescription": "Weather ACE description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Image"
+  }
+}

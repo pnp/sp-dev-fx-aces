@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "basic-card-one-drive-carousel-client-side-solution",
+    "id": "0eb31e53-aba9-4115-a2f2-13b971af9e99",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.13.0"
+    }
+  },
+  "paths": {
+    "zippedPackage": "solution/basic-card-one-drive-carousel.sppkg"
+  }
+}

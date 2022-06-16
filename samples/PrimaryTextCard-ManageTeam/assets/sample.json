@@ -1,0 +1,69 @@
+[
+  {
+    "name": "pnp-sp-fx-aces-primarytextcard-manageteam",
+    "source": "pnp",
+    "title": "Display and Manage Team",
+    "shortDescription": "Display all team members who directly reports to current viewing user.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-ManageTeam",
+    "longDescription": [
+      "Display all team members who directly reports to me using Graph API in ACEs card View with two button."
+    ],
+    "creationDateTime": "2021-10-06",
+    "updateDateTime": "2021-10-06",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.13.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ManageTeam/assets/demo.gif",
+        "alt": "Manage my Team"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ManageTeam/assets/ACEs2.gif",
+        "alt": "Manage my Team"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ManageTeam/assets/ACEs3.gif",
+        "alt": "Manage my Team"
+      },
+      {
+        "type": "image",
+        "order": 400,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ManageTeam/assets/ACEs4.gif",
+        "alt": "Manage my Team"
+      }        
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "dips365",
+        "pictureUrl": "https://github.com/dips365.png",
+        "name": "Dipen Shah",
+        "twitter": "Dips_365"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  }
+]

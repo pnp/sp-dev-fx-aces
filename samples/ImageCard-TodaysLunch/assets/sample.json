@@ -1,0 +1,43 @@
+[{
+  "name": "pnp-sp-fx-aces-todays-lunch",
+  "source": "pnp",
+  "title": "Today's Lunch Adaptive Card Extension",
+  "shortDescription": "Adaptive Card Extension that shows today's lunch.",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-TodaysLunch",
+  "longDescription": [
+    "Adaptive Card Extension that shows the lunch menu for the current day using a SharePoint List and PnPJs"
+  ],
+  "creationDateTime": "2021-10-28",
+  "updateDateTime": "2021-12-13",
+  "products": [
+    "SharePoint",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.13.0"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImaceCard-TodaysLunch/assets/preview.gif",
+    "alt": "Today's Lunch ACE"
+  }],
+  "authors": [{
+    "gitHubAccount": "luismanez",
+    "company": "ClearPeople",
+    "pictureUrl": "https://github.com/luismanez.png",
+    "name": "Luis Manez",
+    "twitter": "luismanez"
+  }],
+  "references": [{
+    "name": "Viva Connections Extensibility guidance",
+    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+    "url": "https://aka.ms/viva/connections/extensibility"
+  }]
+}]
