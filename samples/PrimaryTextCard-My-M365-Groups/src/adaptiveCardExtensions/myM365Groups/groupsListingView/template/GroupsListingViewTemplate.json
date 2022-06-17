@@ -35,6 +35,19 @@
       "bleed": true
     },
     {
+      "type": "Input.Text",
+      "id": "filterByName",
+      "label": "Filter by name (${count(groups)} groups)",
+      "inlineAction": {
+        "type": "Action.Submit",
+        "iconUrl": "https://adaptivecards.io/content/send.png",
+        "tooltip": "Filter",
+        "data": {
+          "id": "groupFilter"
+        }
+      }
+    },
+    {
       "type": "Container",
       "$data": "${groups}",
       "items": [
@@ -58,7 +71,8 @@
                   "weight": "Lighter",
                   "text": "${description}",
                   "wrap": true,
-                  "isSubtle": true
+                  "isSubtle": true,
+                  "$when": "${description != null}"
                 },
                 {
                   "type": "TextBlock",
@@ -66,7 +80,6 @@
                   "size": "Small",
                   "weight": "Bolder",
                   "text": "${visibility}",
-                  "color": "",
                   "wrap": true,
                   "isSubtle": true
                 }
@@ -83,45 +96,80 @@
           "columns": [
             {
               "type": "Column",
+              "width": "20px",
               "items": [
                 {
                   "type": "Image",
                   "url": "https://static2.sharepointonline.com/files/fabric-cdn-prod_20200430.002/assets/brand-icons/product/svg/sharepoint_48x1.svg",
                   "selectAction": {
                     "type": "Action.Submit",
-                    "title": "Open in SPO",
+                    "title": "Open in SharePoint",
                     "data": {
                       "id": "spo",
                       "groupId": "${id}"
                     }
-                  }
+                  },
+                  "width": "20px",
+                  "height": "stretch",
+                  "separator": true
                 }
-              ],
-              "width": "20px",
-              "height": "stretch",
-              "separator": true,
-              "isVisible": "${spoConnected}"
+              ]
             },
             {
               "type": "Column",
+              "width": "stretch",
               "items": [
                 {
-                  "type": "Image",
-                  "url": "https://static2.sharepointonline.com/files/fabric-cdn-prod_20200430.002/assets/brand-icons/product/svg/teams_48x1.svg",
-                  "selectAction": {
-                    "type": "Action.Submit",
-                    "title": "Open in MS Teams",
-                    "data": {
-                      "id": "teams",
-                      "groupId": "${id}"
+                  "type": "Container",
+                  "$data": "${connectedServices}",
+                  "items": [
+                    {
+                      "type": "Container",
+                      "items": [
+                        {
+                          "type": "Image",
+                          "url": "https://static2.sharepointonline.com/files/fabric-cdn-prod_20200430.002/assets/brand-icons/product/svg/teams_48x1.svg",
+                          "selectAction": {
+                            "type": "Action.OpenUrl",
+                            "title": "Open in MS Teams",
+                            "url": "${uri}"
+                          },
+                          "$when": "${providerName == 'Microsoft Teams'}",
+                          "width": "20px",
+                          "height": "stretch",
+                          "separator": true
+                        },
+                        {
+                          "type": "Image",
+                          "url": "https://static2.sharepointonline.com/files/fabric-cdn-prod_20200430.002/assets/brand-icons/product/svg/outlook_48x1.svg",
+                          "selectAction": {
+                            "type": "Action.OpenUrl",
+                            "title": "Open in Exchange",
+                            "url": "${uri}"
+                          },
+                          "$when": "${providerName == 'Exchange'}",
+                          "width": "20px",
+                          "height": "stretch",
+                          "separator": true
+                        },
+                        {
+                          "type": "Image",
+                          "url": "https://static2.sharepointonline.com/files/fabric-cdn-prod_20200430.002/assets/brand-icons/product/svg/yammer_48x1.svg",
+                          "selectAction": {
+                            "type": "Action.OpenUrl",
+                            "title": "Open in Yammer",
+                            "url": "${uri}"
+                          },
+                          "$when": "${providerName == 'Yammer'}",
+                          "width": "20px",
+                          "height": "stretch",
+                          "separator": true
+                        }
+                      ]
                     }
-                  }
+                  ]
                 }
-              ],
-              "width": "20px",
-              "height": "stretch",
-              "separator": true,
-              "isVisible": "${teamsConnected}"
+              ]
             }
           ]
         }
