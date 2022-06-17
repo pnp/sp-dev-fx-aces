@@ -2,7 +2,7 @@
 
 ## Summary
 
-This sample tackles a scenario in which You want to reuse part of Your Adaptive Card in multiple places or You need to divide Your ACE QuickView into smaller ones for readability and maintainability. In real world scenario Your ACE can grow quite a lot making handling hundreds lines of JSON quite difficult.
+This sample tackles a scenario in which you want to reuse part of your Adaptive Card in multiple places or you need to divide your ACE QuickView into smaller ones for readability and maintainability. In a real world scenario your ACE can grow quite a lot making handling hundreds lines of JSON quite difficult.
 
 ![SearchUsers](./resources/UserSearch.PNG)
 ![Colleagues](./resources/Colleagues.PNG)
@@ -17,7 +17,6 @@ This sample tackles a scenario in which You want to reuse part of Your Adaptive 
 - [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
 
 ## Solution
 
@@ -77,3 +76,4 @@ Hope You'll enjoy the sample.
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/BasicCard-CardComposition" />
