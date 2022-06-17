@@ -25,8 +25,8 @@ export class CardView extends BasePrimaryTextCardView<IMyM365GroupsAdaptiveCardE
 
   public get data(): IPrimaryTextCardParameters {
     return {
-      primaryText: `${this.state.ownerGroups.length + this.state.memberGroups.length} ${strings.PrimaryText}`,
-      description: `${this.state.ownerGroups.length} owned, ${this.state.memberGroups.length} member groups`
+      primaryText: `${this.state.ownerGroupsCount + this.state.memberGroupsCount} ${strings.PrimaryText}`,
+      description: `${this.state.ownerGroupsCount} ${strings.OwnedText}, ${this.state.memberGroupsCount} ${strings.MemberGroupsText}`
     };
   }
 }

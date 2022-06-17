@@ -14,6 +14,25 @@
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.13.1"
     },
+    "metadata": {
+      "shortDescription": {
+        "default": "primaytextcard-my-m365-groups description"
+      },
+      "longDescription": {
+        "default": "primaytextcard-my-m365-groups description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "primaytextcard-my-m365-groups Feature",
+        "description": "The feature that activates elements of the primaytextcard-my-m365-groups solution.",
+        "id": "e5c685fa-1c58-44eb-822f-9effa263988a",
+        "version": "1.0.0.0"
+      }
+    ],
     "webApiPermissionRequests": [
       {
         "resource": "Microsoft Graph",

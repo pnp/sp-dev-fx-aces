@@ -17,17 +17,33 @@ This sample shows how to build an ACE with a card view and multiple quick views 
 
 ### Screenshots of other cards
 
-View Card - M365 Groups Summary
+### View Card - M365 Groups Summary
 
 ![View Card M365 Groups Summary](./assets/viewcard-m365groups-summary.png)
 
-View Card - M365 Group Details
+### View Card - M365 Group Details
 
 ![View Card M365 Group Details](./assets/viewcard-m365groups-details.png)
 
+### View Card - Search functionality
+
+If you own or a member of large number of groups, the search functionality will help to get to the group quicker. Type partial or full name of the group to perform a search.
+
+Search the group:
+
+1. Type the group name in the search box.
+2. Click the button next to it to perform the search.
+
+Clear the search:
+
+1. Clear the search box.
+2. Click the button next to it to see all related groups.
+
+> Note: Search is case insensitive.
+
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![version](https://img.shields.io/badge/version-1.14-green.svg)
 
 ## Applies to
 
@@ -72,6 +88,7 @@ My M365 Groups | [Nanddeep Nachan](https://github.com/nanddeepn), [@NanddeepNach
 
 Version|Date|Comments
 -------|----|--------
+2.0|June 12, 2022|Added search functionality ([Nanddeep Nachan](https://github.com/nanddeepn), [Smita Nachan](https://github.com/SmitaNachan))
 1.0|January 07, 2022|Initial release
 
 ## Disclaimer
