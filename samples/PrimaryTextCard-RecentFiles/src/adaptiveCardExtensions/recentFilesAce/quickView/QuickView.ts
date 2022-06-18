@@ -4,12 +4,14 @@ import { IRecentFilesAceAdaptiveCardExtensionProps, IRecentFilesAceAdaptiveCardE
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
 
 export interface IQuickViewData {
-  subTitle: string;
-  title: string;
-  recents: MicrosoftGraph.DriveItem[];
-  currentFile: MicrosoftGraph.DriveItem;
-  isFirstElement: boolean;
-  isLastElement: boolean;
+	subTitle: string;
+	title: string;
+	recents: MicrosoftGraph.DriveItem[];
+	currentFile: MicrosoftGraph.DriveItem;
+	isFirstElement: boolean;
+	isLastElement: boolean;
+	previousIcon: string;
+	nextIcon: string;
 }
 
 export class QuickView extends BaseAdaptiveCardView<
@@ -20,13 +22,24 @@ export class QuickView extends BaseAdaptiveCardView<
   public get data(): IQuickViewData {
     const currentFile = this.getCurrentFile();
     return {
-      subTitle: strings.SubTitle,
-      title: strings.Title,
-      recents: (this.state.recents && this.state.recents.length > 0) ? this.state.recents : [],
-      currentFile: currentFile,
-      isFirstElement: (this.state.recents && this.state.recents.length > 0) ? (this.state.recents.indexOf(currentFile) == 0) : true,
-      isLastElement: (this.state.recents && this.state.recents.length > 0) ? (this.state.recents.indexOf(currentFile) == (this.state.recents.length - 1)) : true
-    };
+			subTitle: strings.SubTitle,
+			title: strings.Title,
+			recents:
+				this.state.recents && this.state.recents.length > 0
+					? this.state.recents
+					: [],
+			currentFile: currentFile,
+			isFirstElement:
+				this.state.recents && this.state.recents.length > 0
+					? this.state.recents.indexOf(currentFile) == 0
+					: true,
+			isLastElement:
+				this.state.recents && this.state.recents.length > 0
+					? this.state.recents.indexOf(currentFile) == this.state.recents.length - 1
+					: true,
+			previousIcon: require("../assets/previous.png"),
+			nextIcon: require("../assets/next.png"),
+		};
   }
 
   private getCurrentFile = (): MicrosoftGraph.DriveItem => {
@@ -40,7 +53,6 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   public get template(): ISPFxAdaptiveCard {
-    console.log(this.data);
     return require('./template/QuickViewTemplate.json');
   }
 
@@ -67,7 +79,5 @@ export class QuickView extends BaseAdaptiveCardView<
           break;
       }
     }
-
-    // TODO: hide or disable the button when reached the last item in the array?
   }
 }
