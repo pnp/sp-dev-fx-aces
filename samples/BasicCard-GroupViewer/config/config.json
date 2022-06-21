@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "ace-group-viewer-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/aceGroupViewer/AceGroupViewerAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/aceGroupViewer/AceGroupViewerAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AceGroupViewerAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/aceGroupViewer/loc/{locale}.js"
+  }
+}

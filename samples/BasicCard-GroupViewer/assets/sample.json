@@ -1,0 +1,41 @@
+[{
+    "name": "pnp-sp-fx-aces-ace-group-viewer",
+    "source": "pnp",
+    "title": "Group Viewer",
+    "shortDescription": "Loads group and group members of the current. Clicking the card or quick view will display a list of members and with actions to email that member. ",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-GroupViewer",
+    "longDescription": [
+        "This adaptive card extension sample will load the group and group members of the current site it is on. Clicking the card or quick view will display a list of members and with actions to email that member. "
+    ],
+    "created": "2021-09-29",
+    "modified": "2021-09-29",
+    "products": [
+        "SharePoint",
+        "Office"
+    ],
+    "metadata": [{
+            "key": "CLIENT-SIDE-DEV",
+            "value": "React"
+        },
+        {
+            "key": "SPFX-VERSION",
+            "value": "1.13.0"
+        }
+    ],
+    "thumbnails": [{
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/main/samples/BasicCard-GroupViewer/assets/preview.gif",
+        "alt": "Preview"
+    }],
+    "authors": [{
+        "gitHubAccount": "zachroberts8668",
+        "pictureUrl": "https://github.com/zachroberts8668.png",
+        "name": "Zach Roberts"
+    }],
+    "references": [{
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+    }]
+}]
