@@ -1,7 +1,7 @@
 [{
   "name": "pnp-sp-fx-aces-ace-servicehealth",
   "source": "pnp",
-  "title": "Status of Tenant Service Helath",
+  "title": "Status of Tenant Service Health",
   "shortDescription": "Adaptive Card displays of Microsoft 365 Service Health",
   "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-Service-Health",
   "longDescription": [
