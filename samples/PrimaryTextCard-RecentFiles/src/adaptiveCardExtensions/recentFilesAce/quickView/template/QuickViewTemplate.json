@@ -1,0 +1,119 @@
+{
+    "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "weight": "Bolder",
+            "text": "${title}",
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "Container",
+            "minHeight": "20px"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "verticalContentAlignment": "Center",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "${previousIcon}",
+                            "width": "20px",
+                            "$when": "${$root.isFirstElement == false}"
+                        }
+                    ],
+                    "selectAction": {
+                        "type": "Action.Submit",
+                        "id": "prev"
+                    }
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Container",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${currentFile.name}",
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${formatDateTime(currentFile.lastModifiedDateTime, 'dd/MM/yyyy')}",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "verticalContentAlignment": "Center",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "${nextIcon}",
+                            "width": "20px",
+                            "$when": "${$root.isLastElement == false}"
+                        }
+                    ],
+                    "selectAction": {
+                        "type": "Action.Submit",
+                        "id": "next"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "minHeight": "20px"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "Container",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Open",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ],
+                            "horizontalAlignment": "Center",
+                            "verticalContentAlignment": "Center",
+                            "height": "stretch",
+                            "style": "accent",
+                            "selectAction": {
+                                "type": "Action.OpenUrl",
+                                "url": "${if(currentFile != null && currentFile.webUrl != null, currentFile.webUrl, 'http://onedrive.com')}"
+                            }
+                        }
+                    ],
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch"
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}
