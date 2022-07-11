@@ -2,7 +2,7 @@
 
 ## Summary
 
-This Adaptive Card Extension allows a user to get information about COVID-19 cases per country. The data is retrieved from <https://rapidapi.com/api-sports/api/covid-193/> via REST API and updated every hour.
+This Adaptive Card Extension (ACE) allows a user to get information about COVID-19 cases per country. The data is retrieved from <https://rapidapi.com/api-sports/api/covid-193/> via REST API and updated every hour.
 
 The following images are examples of this ACE.
 
