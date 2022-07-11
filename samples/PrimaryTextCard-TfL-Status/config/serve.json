@@ -1,6 +1,5 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
-  "port": 443,
-  "https": true,
-  "hostname": "hostname.ngrok.io"
+  "port": 4321,
+  "https": true
 }
