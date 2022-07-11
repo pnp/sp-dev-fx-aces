@@ -2,9 +2,9 @@
 
 ## Summary
 
-This Adaptive Card Extension allow user select a country to get information about COVID-19 cases. The data is retrieved by REST API provided by <https://rapidapi.com/api-sports/api/covid-193/> .
+This Adaptive Card Extension (ACE) allows a user to get information about COVID-19 cases per country. The data is retrieved from <https://rapidapi.com/api-sports/api/covid-193/> via REST API and updated every hour.
 
- The Data is updated every hour.
+The following images are examples of this ACE.
 
 ![ace-covid](assets/covid19.gif)
 
@@ -54,12 +54,12 @@ Version|Date|Comments
       - `gulp build --ship`
       - `gulp bundle --ship`
       - `gulp package-solution --ship`
-    - Browse to your SharePoint app catalog and load the SPFx package.
+    - browse to your SharePoint app catalog and load the SPFx package
 
-- If you have the APIs permissions already allowed you can follow the below steps.
+- If you have the APIs permissions already allowed, you can follow the following steps:
   - in the command line run:
-        *`npm install`
-        * `gulp serve --nobrowser`
-    - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
+    - `npm install`
+      - `gulp serve --nobrowser`
+    - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension
 
 <img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-Covid-Indicator" />
