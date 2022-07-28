@@ -106,7 +106,7 @@ export class SPCRUDService implements ISPCRUDService {
             item.NumberField,
             item.CurrencyField,
             dateFieldString,
-            item.YesNoField.toString(),
+            item.YesNoField?.toString() || "No",
             item.Editor.ID,
             item.Editor.FirstName + " " + item.Editor.LastName,
             item.Modified))
