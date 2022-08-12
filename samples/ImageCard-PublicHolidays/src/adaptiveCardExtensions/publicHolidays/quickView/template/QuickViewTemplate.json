@@ -1,0 +1,128 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "separator": true,
+      "spacing": "Medium",
+      "$when": "${currentLocation != null}",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "My location",
+              "isSubtle": true,
+              "weight": "Bolder",
+              "wrap": true
+            },
+            {
+                "type": "TextBlock",
+                "text": "${currentLocation}",
+                "spacing": "Small",
+                "wrap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "$data": "${upcomingHolidays}",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "Image",
+                  "style": "default",
+                  "url": "${ImageValue}",
+                  "altText": "${Title}",
+                  "size": "Small",
+                  "height": "50px",
+                  "width": "50px"
+                }
+              ],
+              "width": "auto"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "size": "Medium",
+                  "text": "${Title}",
+                  "wrap": true,
+                  "weight": "Bolder"
+                },
+                {
+                  "type": "TextBlock",
+                  "spacing": "Small",
+                  "size": "Small",
+                  "weight": "Lighter",
+                  "text": "${DateValue}",
+                  "wrap": true,
+                  "isSubtle": true
+                }
+              ],
+              "width": "stretch",
+              "height": "stretch"
+            }
+          ],
+          "style": "emphasis",
+          "bleed": true
+        }
+      ],
+      "style": "default",
+      "separator": true,
+      "spacing": "Medium"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.ShowCard",
+      "title": "Update location",
+      "card": {
+        "type": "AdaptiveCard",
+        "body": [
+          {
+            "type": "Input.ChoiceSet",
+            "id": "newLocation",
+            "label": "Select your new location",
+            "style": "compact",
+            "value": "1",
+            "choices": [
+              {
+                "$data": "${availableLocations.items}",
+                "title": "${title}",
+                "value": "${value}"
+              }
+            ]
+          },
+          {
+            "type": "ActionSet",
+            "actions": [
+              {
+                "type": "Action.Submit",
+                "id": "update${$index}",
+                "title": "Update",
+                "data": {
+                  "id": "${id}",
+                  "itemIndex": "{$index}"
+                }
+              }
+            ]
+          }
+        ],
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+      }
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0"
+}
