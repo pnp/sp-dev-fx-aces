@@ -25,14 +25,16 @@
       "videoUrl": "",
       "categories": []
     },
-    "features": [
-      {
-        "title": "primary-text-recent-files Feature",
-        "description": "The feature that activates elements of the primary-text-recent-files solution.",
-        "id": "b8178218-a33d-4209-af6c-2eaac38ae11e",
-        "version": "1.0.0.0"
-      }
-    ]
+    "webApiPermissionRequests": [{
+      "resource": "Microsoft Graph",
+      "scope": "Files.Read.All"
+    }],
+    "features": [{
+      "title": "primary-text-recent-files Feature",
+      "description": "The feature that activates elements of the primary-text-recent-files solution.",
+      "id": "b8178218-a33d-4209-af6c-2eaac38ae11e",
+      "version": "1.0.0.0"
+    }]
   },
   "paths": {
     "zippedPackage": "solution/primary-text-recent-files.sppkg"

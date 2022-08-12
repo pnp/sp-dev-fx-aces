@@ -38,7 +38,9 @@ Just want to see the Adaptive Card template?
 
 ## Prerequisites
 
-> None
+This ACE need Microsoft Graph Permissions:
+
+- Files.Read.All
 
 ## Solution
 
@@ -62,9 +64,19 @@ Version|Date|Comments
 
 - Clone this repository
 - Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
+  - in the command line run:
+    - `npm install`
+      - `gulp build --ship`
+      - `gulp bundle --ship`
+      - `gulp package-solution --ship`
+    - Browse to your SharePoint app catalog and load the SPFx package.
+    - Browse to your SharePoint Admin Center and under advanced you will need to open Api Access and allow the requests for Microsoft Graph.
+
+- If you have the APIs permissions already allowed you can follow the below steps.
+  - in the command line run:
+        *`npm install`
+        * `gulp serve --nobrowser`
+    - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
 
 ## Features
 
