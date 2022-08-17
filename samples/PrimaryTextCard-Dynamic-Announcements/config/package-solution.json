@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-dynamic-client-side-solution",
+    "id": "eeafd47f-1e54-44bc-8c27-54674b369dd8",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0-beta.4"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ace-dynamic description"
+      },
+      "longDescription": {
+        "default": "ace-dynamic description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-dynamic Feature",
+        "description": "The feature that activates elements of the ace-dynamic solution.",
+        "id": "b16875ad-dafb-4fb5-b634-02f91bd93e82",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-dynamic.sppkg"
+  }
+}

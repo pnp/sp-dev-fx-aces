@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "primary-text-recent-files-client-side-solution",
+    "id": "73a5f29d-d99f-493e-abe3-3ccfc1851f8e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "primary-text-recent-files description"
+      },
+      "longDescription": {
+        "default": "primary-text-recent-files description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "webApiPermissionRequests": [{
+      "resource": "Microsoft Graph",
+      "scope": "Files.Read.All"
+    }],
+    "features": [{
+      "title": "primary-text-recent-files Feature",
+      "description": "The feature that activates elements of the primary-text-recent-files solution.",
+      "id": "b8178218-a33d-4209-af6c-2eaac38ae11e",
+      "version": "1.0.0.0"
+    }]
+  },
+  "paths": {
+    "zippedPackage": "solution/primary-text-recent-files.sppkg"
+  }
+}

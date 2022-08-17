@@ -12,23 +12,11 @@
           "type": "Column",
           "items": [
             {
-              "type": "Image",
-              "url": "${icon}",
-              "height": "22px"
-            }
-          ],
-          "width": "auto"
-        },
-        {
-          "type": "Column",
-          "items": [
-            {
               "type": "RichTextBlock",
               "inlines": [
                 {
                   "type": "TextRun",
                   "text": "${title} (${count})",
-                  "color": "${if(id == 'overdue' , 'attention', 'accent')}",
                   "wrap": true,                                    
                   "size": "medium"
                 }

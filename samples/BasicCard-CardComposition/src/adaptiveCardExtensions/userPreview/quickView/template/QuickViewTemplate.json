@@ -2,32 +2,28 @@
   "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
   "version": "1.2",
-  "body": [
-    {
+  "body": [{
       "type": "TextBlock",
       "weight": "Bolder",
-      "text": "${title}"
+      "text": "${title}",
+      "$when": "${title != '${title}'}"
     },
     {
       "type": "ColumnSet",
-      "columns": [
-        {
-          "type": "Column",
-          "items": [
-            {
-              "type": "Input.Text",
-              "placeholder": "Start typing to search...",
-              "id": "PeopleSearchInput",
-              "label": "Search",
-              "inlineAction": {
-                "type": "Action.Submit",
-                "id": "PeopleSearchInputAction",
-                "title": "Search"
-              }
-            }
-          ]
-        }
-      ]
+      "columns": [{
+        "type": "Column",
+        "items": [{
+          "type": "Input.Text",
+          "placeholder": "Start typing to search...",
+          "id": "PeopleSearchInput",
+          "label": "Search",
+          "inlineAction": {
+            "type": "Action.Submit",
+            "id": "PeopleSearchInputAction",
+            "title": "Search"
+          }
+        }]
+      }]
     },
     {
       "type": "Container",

@@ -1,22 +1,17 @@
-[
-    {
+[{
         "type": "ColumnSet",
-        "columns": [
-            {
+        "columns": [{
                 "type": "Column",
-                "items": [
-                    {
-                        "type": "Image",
-                        "style": "Person",
-                        "url": "${photo}",
-                        "size": "Small"
-                    }
-                ]
+                "items": [{
+                    "type": "Image",
+                    "style": "Person",
+                    "url": "${photo}",
+                    "size": "Small"
+                }]
             },
             {
                 "type": "Column",
-                "items": [
-                    {
+                "items": [{
                         "type": "TextBlock",
                         "text": "${displayName}"
                     },
@@ -30,8 +25,7 @@
     },
     {
         "type": "ActionSet",
-        "actions": [
-            {
+        "actions": [{
                 "type": "Action.Submit",
                 "title": "Chat",
                 "id": "chat-${id}",
