@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.0-rc.0",
+    "libraryName": "trending-docs-ace",
+    "libraryId": "23f61e6e-f7a6-4e6e-a15f-6259a4b6c26e",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "trending-docs-ace",
+    "solutionShortDescription": "trending-docs-ace description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Basic"
+  }
+}

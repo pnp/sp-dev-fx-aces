@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.0-rc.0",
+    "libraryName": "shared-docs-ace",
+    "libraryId": "cbe8fc14-1c99-4fed-9415-1fb568b0ef13",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "shared-docs-ace",
+    "solutionShortDescription": "shared-docs-ace description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Basic"
+  }
+}

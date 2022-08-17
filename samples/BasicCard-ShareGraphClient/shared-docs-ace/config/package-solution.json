@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "shared-docs-ace-client-side-solution",
+    "id": "cbe8fc14-1c99-4fed-9415-1fb568b0ef13",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.0-rc.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "shared-docs-ace description"
+      },
+      "longDescription": {
+        "default": "shared-docs-ace description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "shared-docs-ace Feature",
+        "description": "The feature that activates elements of the shared-docs-ace solution.",
+        "id": "982dda21-1757-481f-ae01-f4c1174e97c0",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/shared-docs-ace.sppkg"
+  }
+}

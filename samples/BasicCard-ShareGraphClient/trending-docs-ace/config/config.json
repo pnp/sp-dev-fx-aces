@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "trending-documents-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/trendingDocuments/TrendingDocumentsAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/trendingDocuments/TrendingDocumentsAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TrendingDocumentsAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/trendingDocuments/loc/{locale}.js"
+  }
+}

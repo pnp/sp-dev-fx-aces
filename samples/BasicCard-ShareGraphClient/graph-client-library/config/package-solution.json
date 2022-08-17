@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "graph-client-library-client-side-solution",
+    "id": "42c1d54c-401b-409c-a012-5c1b67e7da42",
+    "version": "1.0.0.1",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.0-rc.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "graph-client-library description"
+      },
+      "longDescription": {
+        "default": "graph-client-library description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "graph-client-library Feature",
+        "description": "The feature that activates elements of the graph-client-library solution.",
+        "id": "d71d731b-77d3-43bc-833b-74032838e05e",
+        "version": "1.0.0.1"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/graph-client-library.sppkg"
+  }
+}
