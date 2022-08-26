@@ -44,7 +44,8 @@ Display Name|Internal Name|Type|Required|Comments
 ------------|-------------|----|--------|--------
 Title|Title|Single line of text|Y|OOB Title column
 OfficeLocation|OfficeLocation|Choice|Y|Type each office location on a separate line. This should be mapped with the user profile field from Azure AD which contains the user location.
-Image|Image|Image|N|Optionally upload an image related to the public holiday. If not specified, a generic image stored at `src\adaptiveCardExtensions\publicHolidays\assets\PublicHoliday.jpg` will be displayed in a quick view.
+Date|Date|Date and time|Y|Use this column to set public holiday date. Set `Include Time` to `No`.
+Image|Image|Image|N|Use this column to optionally upload an image related to the public holiday. If not specified, a generic image stored at `src\adaptiveCardExtensions\publicHolidays\assets\PublicHoliday.jpg` will be displayed in a quick view.
 
 ## Configuration
 
@@ -71,10 +72,12 @@ Follow the below steps to configure the Public Holidays card on the Viva Connect
 Below are the other screens displayed based on a scenarios mentioned below:
 
 1. If wrong list is selected or an error occured:
+
   ![Error occured card](./assets/Error-occured-card.png)
 
 
 2. If user profile property is not set:
+
   ![Office location not set card](./assets/Office-location-not-set.png)
 
 
