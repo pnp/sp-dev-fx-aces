@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "image-card-public-holidays-client-side-solution",
+    "id": "d19e1ab6-ebe7-4abb-92a5-e6ba9cfc370d",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ImageCard-PublicHolidays description"
+      },
+      "longDescription": {
+        "default": "ImageCard-PublicHolidays description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "image-card-public-holidays Feature",
+        "description": "The feature that activates elements of the image-card-public-holidays solution.",
+        "id": "fe161146-25e0-41cb-9dc7-33322297c2e1",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/image-card-public-holidays.sppkg"
+  }
+}
