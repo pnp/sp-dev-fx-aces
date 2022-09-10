@@ -49,16 +49,19 @@ Short summary on functionality and used technologies.
   - **npm install**
   - **gulp bundle --ship**
   - **gulp package-solution --ship**
+  - **npm link**
 - Upload package to app catalog
 - Navigate to shared-docs-ace
 - in the command-line run:
   - **npm install**
+  - **npm link graph-client-library**
   - **gulp bundle --ship**
   - **gulp package-solution --ship**
 - Upload package to app catalog
 - Navigate to trending-docs-ace
 - in the command-line run:
   - **npm install**
+  - **npm link graph-client-library**
   - **gulp bundle --ship**
   - **gulp package-solution --ship**
 - Upload package to app catalog

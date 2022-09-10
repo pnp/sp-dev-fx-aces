@@ -9,7 +9,6 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "graph-client-library": "0.0.1",
     "tslib": "2.3.1",
     "@microsoft/sp-core-library": "1.15.0-rc.0",
     "@microsoft/sp-property-pane": "1.15.0-rc.0",
