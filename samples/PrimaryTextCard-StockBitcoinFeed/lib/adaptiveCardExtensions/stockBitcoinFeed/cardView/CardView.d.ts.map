@@ -1,0 +1,1 @@
+{"version":3,"file":"CardView.d.ts","sourceRoot":"","sources":["../../../../src/adaptiveCardExtensions/stockBitcoinFeed/cardView/CardView.ts"],"names":[],"mappings":"AAAA,OAAO,EACL,uBAAuB,EACvB,0BAA0B,EAC3B,MAAM,4CAA4C,CAAC;AACpD,OAAO,EAAE,2CAA2C,EAAE,2CAA2C,EAAE,MAAM,0CAA0C,CAAC;AAEpJ,qBAAa,QAAS,SAAQ,uBAAuB,CAAC,2CAA2C,EAAE,2CAA2C,CAAC;IAE7I,IAAW,IAAI,IAAI,0BAA0B,CAM5C;CACF"}
