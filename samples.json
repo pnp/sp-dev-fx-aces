@@ -1994,7 +1994,7 @@
   {
     "name": "pnp-sp-fx-aces-scenario-ace-microsoftgraph",
     "source": "pnp",
-    "title": "ACE Scenario - Microsoft Graph",
+    "title": "Microsoft Graph - ACE Scenario",
     "shortDescription": "",
     "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/scenarios/ace-microsoftgraph",
     "longDescription": [
