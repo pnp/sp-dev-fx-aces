@@ -1947,7 +1947,7 @@
     "name": "pnp-sp-fx-aces-scenario-ace-lob",
     "source": "pnp",
     "title": "LOB integration - ACE scenario",
-    "shortDescription": "",
+    "shortDescription": "Starting point on building LOB API connected ACE extension for Microsoft Viva",
     "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/scenarios/ace-lob",
     "longDescription": [
       ""
