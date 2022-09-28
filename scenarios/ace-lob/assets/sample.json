@@ -2,7 +2,7 @@
   {
     "name": "pnp-sp-fx-aces-scenario-ace-lob",
     "source": "pnp",
-    "title": "ACE Scenario - Microsoft Graph",
+    "title": "LOB integration - ACE scenario",
     "shortDescription": "",
     "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/scenarios/ace-lob",
     "longDescription": [
