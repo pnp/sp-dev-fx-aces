@@ -2,17 +2,21 @@
 
 ## Summary
 
-> Display all team members who directly reports to me using Graph API in ACEs card View with two button.
+This sample shows how to manage a team using the Adaptive Card Extension (ACE).
 
-![Card view with team members information](assets/ACEs2.gif)
+The following are scenarios covered by this sample.
 
-> Display User's information on click on Card view. Information will display on Quick View component of ACEs.
+- Display all team members who directly reports to me using the Microsoft Graph API in the Card view along with two buttons.
 
-![employee information in Quick view](assets/ACEs3.gif)
+    ![Card view with team members information](assets/ACEs2.gif)
 
-> Change Block sign in property when user clicked on Block Sign-In Button in Quick View.
+- Display details about a user with a click on the Card view. The corresponding information will display on the Quick view component of the ACE.
 
-![Block Sign In](assets/ACEs4.gif)
+    ![employee information in Quick view](assets/ACEs3.gif)
+
+- Change the block sign-in property when the user chooses the **Block Sign-In** button in the Quick view.
+
+    ![Block Sign In](assets/ACEs4.gif)
 
 ## Compatibility
 
@@ -31,21 +35,21 @@
 
 ## Prerequisites
 
-> After deploy web-part in app catalog, User needs to approve Graph API permission from SharePoint admin center from API management blade to access team members and handle block Sign In query from SPFx Code.
+After deploying the solution to the app catalog, a SharePoint administrator needs to approve the Microsoft Graph API permissions from SharePoint admin center > Advanced > API access, which gives the solution access to team members and supports the handling of block sign-in.
 
 ![Approve API Permission from Admin ](assets/ACEs1.png)
 
 ## Solution
 
-Solution|Author(s)
---------|---------
-ManageTeam | [Dipen Shah](https://github.com/Dips365) [@Dips365](https://twitter.com/Dips_365) [Rapid Circle](https://en.rapidcircle.com/)
+| Solution   | Author(s)                                                                                                                     |
+|------------|-------------------------------------------------------------------------------------------------------------------------------|
+| ManageTeam | [Dipen Shah](https://github.com/Dips365) [@Dips365](https://twitter.com/Dips_365) [Rapid Circle](https://en.rapidcircle.com/) |
 
 ## Version history
 
-Version|Date|Comments
--------|----|--------
-1.0|September 20, 2021|Initial Commit
+| Version | Date               | Comments       |
+|---------|--------------------|----------------|
+| 1.0     | September 20, 2021 | Initial Commit |
 
 ## Disclaimer
 
@@ -53,22 +57,19 @@ Version|Date|Comments
 
 ---
 
-## Minimal Path to Awesome
+## Minimal path to awesome
 
 * Clone this repository
 * in the command line run:
   * `npm install`
   * `gulp serve`
 
-> Include any additional steps as needed.
-> DELETE THIS PARAGRAPH BEFORE SUBMITTING
-
 ## Features
 
 This Adaptive Card Extension illustrates the following concepts on top of the SharePoint Framework:
 
 * Introduction on ACEs
-* Graph API integration
-* Handle Queries on Quick View
+* Microsoft Graph API integration
+* Handle queries on Quick View
 
 <img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-ManageTeam" />
