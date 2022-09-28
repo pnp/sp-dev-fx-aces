@@ -1995,7 +1995,7 @@
     "name": "pnp-sp-fx-aces-scenario-ace-microsoftgraph",
     "source": "pnp",
     "title": "Microsoft Graph - ACE Scenario",
-    "shortDescription": "",
+    "shortDescription": "Starting point on building Microsoft Graph connected ACE extension for Microsoft Viva",
     "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/scenarios/ace-microsoftgraph",
     "longDescription": [
       ""
