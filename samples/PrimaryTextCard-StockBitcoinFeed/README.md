@@ -2,7 +2,7 @@
 
 ## Summary
 
-Adaptive card extension to display the last price udpates of US stocks, forex and crypto with the help of [finnhub APIs](https://finnhub.io)
+Adaptive card extension to display the last price updates of US stocks, forex and crypto with the help of [finnhub APIs](https://finnhub.io)
 
 ## Highlights
 - Display last traded price of US stocks, forex and crypto
@@ -70,3 +70,5 @@ This extension illustrates the following concepts:
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Finnhub API documentation](https://finnhub.io/docs/api/websocket-trades)
+
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-StockBitcoinFeed" />

@@ -1,0 +1,49 @@
+[{
+  "name": "pnp-PrimaryTextCard-StockBitcoinFeed",
+  "source": "pnp",
+  "title": "Price updates on stocks, rex and crypto",
+  "shortDescription": "Display the last price udpates of US stocks, forex and crypto with the help of finnhub APIs.",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-StockBitcoinFeed",
+  "longDescription": [
+    "Adaptive card extension to display the last price udpates of US stocks, forex and crypto with the help of finnhub APIs."
+  ],
+  "creationDateTime": "2022-09-11",
+  "updateDateTime": "2022-09-11",
+  "products": [
+    "SharePoint",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.15.2"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-StockBitcoinFeed/assets/stock-bitcoin-feed.gif",
+    "alt": "Demo on the ACE experience"
+  },
+  {
+    "type": "image",
+    "order": 200,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-StockBitcoinFeed/assets/stock-bitcoin-configuration.jpeg",
+    "alt": "Configuration options"
+  }],
+  "authors": [{
+    "gitHubAccount": "kunj-sangani",
+    "company": "Cognizant",
+    "pictureUrl": "https://avatars.githubusercontent.com/u/25693207?v=4",
+    "name": "Kunj Balkrishna Sangani",
+    "twitter": "sanganikunj"
+  }],
+  "references": [{
+    "name": "Viva Connections Extensibility guidance",
+    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+    "url": "https://aka.ms/viva/connections/extensibility"
+  }]
+}]
