@@ -2,7 +2,7 @@
 
 ## Summary
 
-This adaptive card extension sample will load upcoming events for the current user. The user can use the quick view card to view more details of the event and use the button to open the event details page. 
+This adaptive card extension sample will load upcoming events for the current user. The user can use the quick view card to view more details of the event and use the button to open the event details page.
 
 ![picture of the ace in action](assets/demo.gif)
 
@@ -15,7 +15,9 @@ Event Page that loads in Outlook online
 ![version](https://img.shields.io/badge/version-1.13-green.svg)
 
 ## Permissions
+
 Microsoft Graph
+
 - Directory.Read.All
 - Calendars.Read
 
@@ -54,19 +56,19 @@ Version|Date|Comments
 
 - Clone this repository
 - Ensure that you are at the solution folder
-* If your SharePoint tenant does not already allow API access to the following Microsoft Graph permissions: Directory.Read.All, Calendars.Read then please follow the below instructions.
-    * in the command line run:
-      * `npm install`
-      * `gulp build --ship`
-      * `gulp bundle --ship`
-      * `gulp package-solution --ship`
-    * browse to your SharePoint app catalog and load the SPFX package. Once loaded you will need to browse to your SharePoint Admin Center and under advanced you will need to open Api Access and allow the requests for Microsoft Graph. 
-* If you have the APIs permissions already allowed you can follow the below steps.
-    * in the command line run:
-        * `npm install`
-        * `gulp serve --nobrowser`
-    * browse to your hosted workbench https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx and add the adaptive card extension.
 
+* If your SharePoint tenant does not already allow API access to the following Microsoft Graph permissions: Directory.Read.All, Calendars.Read then please follow the below instructions.
+  - in the command line run:
+    - `npm install`
+    - `gulp build --ship`
+    - `gulp bundle --ship`
+    - `gulp package-solution --ship`
+  - browse to your SharePoint app catalog and load the SPFX package. Once loaded you will need to browse to your SharePoint Admin Center and under advanced you will need to open Api Access and allow the requests for Microsoft Graph.
+- If you have the APIs permissions already allowed you can follow the below steps.
+  - in the command line run:
+    - `npm install`
+    - `gulp serve --nobrowser`
+  - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
 
 ## Features
 
@@ -76,7 +78,7 @@ This extension illustrates the following concepts:
 - Iterate array content in an adaptive card.
 - Slider property to adjust the number of days in advance the events it loads.
 
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from <http://aka.ms/m365pnp>.
 
 ## References
 
@@ -86,4 +88,4 @@ This extension illustrates the following concepts:
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/BasicCard-Graph-UpcomingEvents" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/BasicCard-Graph-UpcomingEvents" />

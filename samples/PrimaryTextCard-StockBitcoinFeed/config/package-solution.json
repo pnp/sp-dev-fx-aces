@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "primary-text-card-stock-bitcoin-feed-client-side-solution",
+    "id": "a8b223e4-4ea8-4857-863b-25a355716b33",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "primary-text-card-stock-bitcoin-feed description"
+      },
+      "longDescription": {
+        "default": "primary-text-card-stock-bitcoin-feed description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "primary-text-card-stock-bitcoin-feed Feature",
+        "description": "The feature that activates elements of the primary-text-card-stock-bitcoin-feed solution.",
+        "id": "52c37da8-756a-4c99-a45d-4152c62dec4d",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/primary-text-card-stock-bitcoin-feed.sppkg"
+  }
+}

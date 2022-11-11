@@ -1,0 +1,56 @@
+{
+  "id": "5a92c1f0-9ebd-4a00-8d82-e4ca1274657f",
+  "alias": "StockBitcoinFeedAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "Dashboard"
+  ],
+  "preconfiguredEntries": [
+    {
+      "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c",
+      "group": {
+        "default": "Dashboard"
+      },
+      "title": {
+        "default": "StockBitcoinFeed"
+      },
+      "description": {
+        "default": "Provide Trades last price update for Stock or Bitcoin"
+      },
+      "officeFabricIconFontName": "CircleDollar",
+      "properties": {
+        "title": "StockBitcoinFeed"
+      },
+      "cardSize": "Medium"
+    }
+  ],
+  "loaderConfig": {
+    "internalModuleBaseUrls": [
+      "<!-- PATH TO CDN -->"
+    ],
+    "entryModuleId": "stock-bitcoin-feed-adaptive-card-extension",
+    "scriptResources": {
+      "stock-bitcoin-feed-adaptive-card-extension": {
+        "type": "path",
+        "path": "stock-bitcoin-feed-adaptive-card-extension.js"
+      },
+      "@microsoft/sp-loader": {
+        "type": "component",
+        "id": "1c6c9123-7aac-41f3-a376-3caea41ed83f",
+        "version": "1.15.2"
+      },
+      "@microsoft/sp-adaptive-card-extension-base": {
+        "type": "component",
+        "id": "eeec822e-c28a-46b4-affc-7058e4c1aa80",
+        "version": "1.15.2"
+      },
+      "StockBitcoinFeedAdaptiveCardExtensionStrings": {
+        "type": "path",
+        "path": "StockBitcoinFeedAdaptiveCardExtensionStrings_en-us.js"
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 ## Summary
 
-This solution provides a team provision feature based on default templates using Graph API and ACEs 
+This solution provides a team provision feature based on default templates using Graph API and ACEs
 >See [Features](#Features) section for individual listing of samples.
 
 ![Create Team](./assets/demo.gif)
@@ -72,4 +72,4 @@ To design your own adaptive cards to use with an Adaptive Card Extension check o
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-CreateTeam" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-CreateTeam" />

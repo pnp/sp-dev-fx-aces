@@ -4,7 +4,7 @@
 
 This sample shows how to build an ACE with a PrimaryText card view and a quick view to display current logged in user's emails in card view and detail in quick view
 
-##  ACE in Action
+## ACE in Action
 
 ![webpart in action](./assets/ace-inaction.gif)
 
@@ -20,7 +20,6 @@ Screenshots for quick reference
 ![webpart in action](./assets/Screenshot1.png)
 
 ![webpart in action](./assets/screenshot2.png)
-
 
 ## Used SharePoint Framework Version
 
@@ -82,7 +81,7 @@ Version|Date|Comments
   - **gulp serve -l --nobrowser**
 - or if using spfx-fast-serve, in the command-line run:
   - **npm run serve**
-- Open the workbench page (https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx)
+- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE [***MyEmails***] to the page
 
 ## Concept Explored
@@ -103,4 +102,4 @@ This extension illustrates the following technical concepts:
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-MyEmails" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-MyEmails" />

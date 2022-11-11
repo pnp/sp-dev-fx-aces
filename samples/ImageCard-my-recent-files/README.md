@@ -2,9 +2,9 @@
 
 ## Summary
 
-This Adaptive Card Extension allows user quaick access recent files
+This Adaptive Card Extension allows user quick access recent files
 
-This ACE, use Microsoft Graph API and needs the user approve the required permissions, after add app to appcatalog.
+This ACE, use Microsoft Graph API and needs the user approve the required permissions, after they have added the app to app catalog.
 
 ![ace-my-recent-files](./src/assets/my-recent-files01.png)
 
@@ -23,7 +23,6 @@ This ACE, use Microsoft Graph API and needs the user approve the required permis
 Microsoft Graph
 
 - Files.Read
- 
 
 ## Applies to
 
@@ -70,7 +69,7 @@ This ACE need Microsoft Graph Permissions:
 
   - in the command line run:
     *`npm install`
-    * `gulp serve --nobrowser`
+    - `gulp serve --nobrowser`
     - browse to your hosted workbench [https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx](https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx) and add the adaptive card extension.
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-My-Notifications" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-my-recent-files" />
