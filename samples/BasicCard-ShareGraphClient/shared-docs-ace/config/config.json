@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "documents-shared-with-me-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/documentsSharedWithMe/DocumentsSharedWithMeAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/documentsSharedWithMe/DocumentsSharedWithMeAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "DocumentsSharedWithMeAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/documentsSharedWithMe/loc/{locale}.js"
+  }
+}

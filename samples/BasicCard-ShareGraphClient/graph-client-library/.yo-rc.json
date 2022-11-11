@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.0-rc.0",
+    "libraryName": "graph-client-library",
+    "libraryId": "42c1d54c-401b-409c-a012-5c1b67e7da42",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "graph-client-library",
+    "solutionShortDescription": "graph-client-library description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "library"
+  }
+}

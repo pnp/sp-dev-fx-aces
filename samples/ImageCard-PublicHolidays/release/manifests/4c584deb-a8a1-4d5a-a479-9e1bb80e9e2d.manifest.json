@@ -1,0 +1,104 @@
+{
+  "id": "4c584deb-a8a1-4d5a-a479-9e1bb80e9e2d",
+  "alias": "PublicHolidaysAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "Dashboard"
+  ],
+  "preconfiguredEntries": [
+    {
+      "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c",
+      "group": {
+        "default": "Dashboard"
+      },
+      "title": {
+        "default": "Public Holidays"
+      },
+      "description": {
+        "default": "Know your location based public holidays"
+      },
+      "officeFabricIconFontName": "Vacation",
+      "cardSize": "Large",
+      "properties": {
+        "title": "Public Holidays",
+        "description": "Know your location based public holidays",
+        "userProfileProperty": "officeLocation",
+        "iconProperty": ""
+      }
+    }
+  ],
+  "loaderConfig": {
+    "internalModuleBaseUrls": [
+      "<!-- PATH TO CDN -->"
+    ],
+    "entryModuleId": "public-holidays-adaptive-card-extension",
+    "scriptResources": {
+      "public-holidays-adaptive-card-extension": {
+        "type": "path",
+        "path": "public-holidays-adaptive-card-extension_9a977e6d0b5d976a07b5.js"
+      },
+      "@microsoft/sp-image-helper": {
+        "type": "component",
+        "id": "2c46c8f0-e214-4f49-951e-fd5b9d7b4ae1",
+        "version": "1.15.0"
+      },
+      "@microsoft/sp-loader": {
+        "type": "component",
+        "id": "1c6c9123-7aac-41f3-a376-3caea41ed83f",
+        "version": "1.15.0"
+      },
+      "PublicHolidaysAdaptiveCardExtensionStrings": {
+        "type": "path",
+        "path": "PublicHolidaysAdaptiveCardExtensionStrings_en-us_da32728be766c5425ae1b0b1b95bf114.js"
+      },
+      "@microsoft/sp-lodash-subset": {
+        "type": "component",
+        "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a",
+        "version": "1.15.0"
+      },
+      "@microsoft/sp-adaptive-card-extension-base": {
+        "type": "component",
+        "id": "eeec822e-c28a-46b4-affc-7058e4c1aa80",
+        "version": "1.15.0"
+      },
+      "PropertyControlStrings": {
+        "type": "localizedPath",
+        "paths": {
+          "bg-BG": "PropertyControlStrings_bg-bg_915392adfc006178b111ef43c4c4f134.js",
+          "ca-ES": "PropertyControlStrings_ca-es_c189866c46fa54db663671ef3ffc58dd.js",
+          "da-DK": "PropertyControlStrings_da-dk_7aaa7cb9645d973bf154922d2da79bdc.js",
+          "de-DE": "PropertyControlStrings_de-de_91244fded178aa2c33e59da30f3b6b9e.js",
+          "el-GR": "PropertyControlStrings_el-gr_5fdb3d4823b1603ddda46e61518971e2.js",
+          "en-GB": "PropertyControlStrings_en-gb_edd9314c9df7e88545657a033f4e14ae.js",
+          "en-US": "PropertyControlStrings_en-us_642e92ef9954452370aba3137db21132.js",
+          "es-ES": "PropertyControlStrings_es-es_689c8b69f0a1361216f73608be6c063b.js",
+          "et-EE": "PropertyControlStrings_et-ee_01480cf74e5683e0a1b30c0969b469f9.js",
+          "fi-FI": "PropertyControlStrings_fi-fi_77eed38ef227577c1e777c90d4ab654c.js",
+          "fr-FR": "PropertyControlStrings_fr-fr_92db6779d4f95976c1f53f47fe1038cc.js",
+          "it-IT": "PropertyControlStrings_it-it_ec89b45255c58b8a32b116fc9ccfd1ac.js",
+          "ja-JP": "PropertyControlStrings_ja-jp_44544714256a75a221ff67e661917f7e.js",
+          "lt-LT": "PropertyControlStrings_lt-lt_8affd603f16b9120508d9494d908bf5b.js",
+          "lv-LV": "PropertyControlStrings_lv-lv_574ac773471a704a07ba0adc8b8ee94a.js",
+          "nb-NO": "PropertyControlStrings_nb-no_7679bdf20ca162ea3bb05d8b8e280057.js",
+          "nl-NL": "PropertyControlStrings_nl-nl_7a387682af8c11d2f375756cdbbefeb5.js",
+          "no": "PropertyControlStrings_no_a887d9d78383ae2b4bb5bb3ddc10c854.js",
+          "pl-PL": "PropertyControlStrings_pl-pl_10f17d41e78fea38f61da347c7630de6.js",
+          "pt-PT": "PropertyControlStrings_pt-pt_9c64098d8bf448198f22382f646fd38b.js",
+          "ro-RO": "PropertyControlStrings_ro-ro_b28611241b43c19c7d84b34844e1817b.js",
+          "ru-RU": "PropertyControlStrings_ru-ru_9f791d6cfde2af1db8815ef42ed8df3e.js",
+          "sk-SK": "PropertyControlStrings_sk-sk_11891e4bf57974962b4d6668a933e3c9.js",
+          "sr-Latn-RS": "PropertyControlStrings_sr-latn-rs_989dded8b40333ffc8ce6a73ee204c63.js",
+          "sv-SE": "PropertyControlStrings_sv-se_b216333496befe0fb66a6152ec1d3f95.js",
+          "tr-TR": "PropertyControlStrings_tr-tr_23555c2affff45982d4bc82da9c99f82.js",
+          "vi-VN": "PropertyControlStrings_vi-vn_0a42f174e7b546104c186b139e526bc4.js",
+          "zh-CN": "PropertyControlStrings_zh-cn_f52e3a43a2b9311567286b34565fc9aa.js",
+          "zh-TW": "PropertyControlStrings_zh-tw_3d1a41b32d4ad47d4654442a315ff2e2.js"
+        },
+        "defaultPath": "PropertyControlStrings_en-us_642e92ef9954452370aba3137db21132.js"
+      }
+    }
+  }
+}
