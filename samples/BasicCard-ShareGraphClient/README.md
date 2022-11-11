@@ -86,3 +86,4 @@ I did not implement any UI layer as this particular sample has nothing to do wit
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Platform Community](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Build solutions with the library component type in SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/library-component-tutorial)
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/BasicCard-ShareGraphClient" />
