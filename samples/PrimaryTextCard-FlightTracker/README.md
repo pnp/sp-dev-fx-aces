@@ -2,9 +2,9 @@
 
 ## Summary
 
-This Adaptive Card Extension allows user to follow in nreal time a flight 
+This Adaptive Card Extension allows user to follow in real time a flight.
 
-This ACE, use exteranl API (https://aerodatabox.p.rapidapi.com/flights/number/) to get data of flight, please see https://rapidapi.com/aedbx-aedbx/api/aerodatabox/ to get more information. 
+This ACE, uses the external API (<https://aerodatabox.p.rapidapi.com/flights/number/>) to get data of flight, please see <https://rapidapi.com/aedbx-aedbx/api/aerodatabox/> to get more information.
 
 ![flightTracker](./src/assets/FlightTracker.gif)
 
@@ -17,14 +17,13 @@ This ACE, use exteranl API (https://aerodatabox.p.rapidapi.com/flights/number/) 
 
 ## Compatibility
 
-![SPFx 1.15](https://img.shields.io/badge/SPFx-1.15.1-green.svg)
+![SPFx 1.15](https://img.shields.io/badge/SPFx-1.16.0-green.svg)
 ![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams")
 ![Workbench Local | Hosted](https://img.shields.io/badge/Workbench-Local%20%7C%20Hosted-green.svg)
 
 ## Permissions
-
 
 ## Applies to
 
@@ -33,9 +32,8 @@ This ACE, use exteranl API (https://aerodatabox.p.rapidapi.com/flights/number/) 
 
 ## Prerequisites
 
-This ACE use https://aerodatabox.p.rapidapi.com/flights/number/ API, please see https://rapidapi.com/aedbx-aedbx/api/aerodatabox/ to get more information. 
+This ACE use <https://aerodatabox.p.rapidapi.com/flights/number/> API, please see <https://rapidapi.com/aedbx-aedbx/api/aerodatabox/> to get more information.
 It has a limit number of request per month in free plan.
-
 
 ## Solution
 
@@ -71,7 +69,6 @@ It has a limit number of request per month in free plan.
 
   - in the command line run:
     *`npm install`
-    * `gulp serve --nobrowser`
+    - `gulp serve --nobrowser`
     - browse to your hosted workbench [https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx](https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx) and add the adaptive card extension.
-
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/PrimaryTextCard-FlightTracker" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-FlightTracker" />
