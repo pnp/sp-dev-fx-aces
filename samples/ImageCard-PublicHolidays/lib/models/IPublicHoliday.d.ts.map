@@ -1,0 +1,1 @@
+{"version":3,"file":"IPublicHoliday.d.ts","sourceRoot":"","sources":["../../src/models/IPublicHoliday.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,cAAc;IAC3B,KAAK,EAAE,MAAM,CAAC;IACd,cAAc,EAAE,MAAM,CAAC;IACvB,IAAI,EAAE,IAAI,CAAC;IACX,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,KAAK,CAAC,EAAE,GAAG,CAAC;IACZ,UAAU,CAAC,EAAE,MAAM,CAAC;CACvB"}

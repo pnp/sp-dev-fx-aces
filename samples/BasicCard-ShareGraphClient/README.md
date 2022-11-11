@@ -4,8 +4,6 @@
 
 Short summary on functionality and used technologies.
 
-[picture of the solution in action, if possible]
-
 ## Used SharePoint Framework Version
 
 ![version](https://img.shields.io/badge/version-1.15-green.svg)
@@ -76,7 +74,7 @@ This sample showcases how we can reuse single graph client between multiple aces
 
 Core of this solution is GraphClientProvider class which is exposed by spfx library component (graph-client-library). The trick here is to use SPFx ServiceScope to get AadHttpClient, pass it to BatchHttpClient and store our client as a private property in provider class. We will also register our GraphClientProvider in ServiceScope so we can share the instance between extensions.
 
-In our ACEs we will consume the GraphClientProvider and get the actual http client. As we are now sharing one instance of graph client, we can take advantage of batching between different ACEs provided by different sppkg. 
+In our ACEs we will consume the GraphClientProvider and get the actual http client. As we are now sharing one instance of graph client, we can take advantage of batching between different ACEs provided by different sppkg.
 
 I did not implement any UI layer as this particular sample has nothing to do with any UI. What You can notice, is when You open Dashboard.aspx and You have both ACEs added, there will be only one batch call to MS Graph API instead of two.
 
@@ -86,5 +84,5 @@ I did not implement any UI layer as this particular sample has nothing to do wit
 - [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+- [Microsoft 365 Platform Community](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Build solutions with the library component type in SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/library-component-tutorial)

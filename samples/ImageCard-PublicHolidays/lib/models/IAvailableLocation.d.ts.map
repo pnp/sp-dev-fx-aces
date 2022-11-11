@@ -1,0 +1,1 @@
+{"version":3,"file":"IAvailableLocation.d.ts","sourceRoot":"","sources":["../../src/models/IAvailableLocation.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,kBAAkB;IAC/B,KAAK,EAAE,sBAAsB,EAAE,CAAC;IAChC,SAAS,EAAE,MAAM,CAAC;CACrB;AAED,MAAM,WAAW,sBAAsB;IACnC,KAAK,EAAE,MAAM,CAAC;IACd,KAAK,EAAE,MAAM,CAAA;CAChB"}
