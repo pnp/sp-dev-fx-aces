@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "trending-docs-ace-client-side-solution",
+    "id": "23f61e6e-f7a6-4e6e-a15f-6259a4b6c26e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.0-rc.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "trending-docs-ace description"
+      },
+      "longDescription": {
+        "default": "trending-docs-ace description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "trending-docs-ace Feature",
+        "description": "The feature that activates elements of the trending-docs-ace solution.",
+        "id": "c2157474-be04-4232-8d23-a4709c91ae62",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/trending-docs-ace.sppkg"
+  }
+}
