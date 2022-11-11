@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "primarytext-flight-tracker-client-side-solution",
+    "id": "32b82d77-7cde-47d9-99d9-4b38edfa2e9d",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.0-beta.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "primarytext-flight-tracker description"
+      },
+      "longDescription": {
+        "default": "primarytext-flight-tracker description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "primarytext-flight-tracker Feature",
+        "description": "The feature that activates elements of the primarytext-flight-tracker solution.",
+        "id": "acc2ae3e-aea6-4128-ba9f-53613b7ac058",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/primarytext-flight-tracker.sppkg"
+  }
+}

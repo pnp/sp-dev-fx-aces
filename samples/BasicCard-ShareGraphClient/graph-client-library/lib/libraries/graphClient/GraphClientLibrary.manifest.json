@@ -1,0 +1,9 @@
+{
+  "id": "8f47beca-497f-4af8-994a-4144dec4406e",
+  "alias": "GraphClientLibrary",
+  "componentType": "Library",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2
+}
