@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": true,
+    "isCreatingSolution": true,
+    "nodeVersion": "17.9.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.0-beta.2",
+    "libraryName": "primarytext-flight-tracker",
+    "libraryId": "32b82d77-7cde-47d9-99d9-4b38edfa2e9d",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "primarytext-flight-tracker",
+    "solutionShortDescription": "primarytext-flight-tracker description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "PrimaryText"
+  }
+}
