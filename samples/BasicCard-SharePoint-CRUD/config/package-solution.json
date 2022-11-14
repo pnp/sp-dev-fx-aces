@@ -12,6 +12,17 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.13.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ACE that shows how to read and write data to a SharePoint list."
+      },
+      "longDescription": {
+        "default": "ACE that shows how to read and write data to a SharePoint list."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
     }
   },
   "paths": {

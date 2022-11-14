@@ -1,7 +1,6 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
 import { Choice, DemoItem } from '../../models/models';
 import { find } from "@microsoft/sp-lodash-subset";
-import { Logger, LogLevel } from "@pnp/logging";
 import { SPCRUD } from '../../services/spcrud.service';
 import { ISharePointCrudExampleAdaptiveCardExtensionProps, ISharePointCrudExampleAdaptiveCardExtensionState } from '../SharePointCrudExampleAdaptiveCardExtension';
 
@@ -17,12 +16,12 @@ export class EditView extends BaseAdaptiveCardView<
   ISharePointCrudExampleAdaptiveCardExtensionState,
   IEditViewData
 > {
-  private LOG_SOURCE: string = "🔶 CRUDDemoEditView";
+  private LOG_SOURCE = "🔶 CRUDDemoEditView";
   public get data(): IEditViewData {
-    let item: DemoItem = find(this.state.items, { id: this.state.currentItemID });
-    let choiceFieldDDLValues: Choice[] = SPCRUD.ChoiceFieldDDLValues;
-    let choiceFieldRadioValues: Choice[] = SPCRUD.ChoiceFieldRadioValues;
-    let choiceFieldCheckboxValues: Choice[] = SPCRUD.ChoiceFieldCheckboxValues;
+    const item: DemoItem = find(this.state.items, { id: this.state.currentItemID });
+    const choiceFieldDDLValues: Choice[] = SPCRUD.ChoiceFieldDDLValues;
+    const choiceFieldRadioValues: Choice[] = SPCRUD.ChoiceFieldRadioValues;
+    const choiceFieldCheckboxValues: Choice[] = SPCRUD.ChoiceFieldCheckboxValues;
     return {
       item,
       choiceFieldDDLValues,
@@ -32,8 +31,7 @@ export class EditView extends BaseAdaptiveCardView<
   }
 
   public get template(): ISPFxAdaptiveCard {
-    let template: ISPFxAdaptiveCard = require('./template/EditView.json');
-    return template;
+    return require('./template/EditView.json');
   }
 
   public async onAction(action: IActionArguments): Promise<void> {
@@ -41,7 +39,7 @@ export class EditView extends BaseAdaptiveCardView<
       if (action.type === 'Submit') {
         const { id } = action.data;
         if (id === 'update') {
-          let item: DemoItem = find(this.state.items, { id: this.state.currentItemID });
+          const item: DemoItem = find(this.state.items, { id: this.state.currentItemID });
           item.title = action.data.title;
           item.multilinetext = action.data.multilinetext;
           item.choicefieldddl = action.data.choicefieldddl;
@@ -52,13 +50,13 @@ export class EditView extends BaseAdaptiveCardView<
           item.datetimefield = action.data.datatimefield;
           item.yesnofield = action.data.yesnofield;
           await SPCRUD.UpdateItem(item);
-          let items = await SPCRUD.GetItemsByUser(this.context.pageContext.user.loginName);
+          const items = await SPCRUD.GetItemsByUser(this.context.pageContext.user.loginName);
           this.setState({ items: items });
           this.quickViewNavigator.pop();
         }
       }
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (onAction) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE}:(Quick Edit onAction) - ${err.message}`);
     }
   }
 }

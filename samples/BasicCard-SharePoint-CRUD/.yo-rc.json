@@ -3,7 +3,7 @@
     "plusBeta": false,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.13.1",
+    "version": "1.15.2",
     "libraryName": "basic-card-share-point-crud",
     "libraryId": "9422bf80-e0b3-4251-9d29-97ccc7de3617",
     "packageManager": "npm",
