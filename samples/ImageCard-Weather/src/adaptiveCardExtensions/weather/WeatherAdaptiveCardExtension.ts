@@ -58,7 +58,8 @@ export default class WeatherAdaptiveCardExtension extends BaseAdaptiveCardExtens
 
   private async getWeather() {
     if (!this.properties.azureMapsKey || !this.properties.bingMapsKey || !this.properties.selectedLocation) {
-      this.cardNavigator.replace(SETUP_CARD_VIEW_REGISTRY_ID);
+      //Commented this out to fix a race condition with the card not being rendered before doing the replace.
+      //this.cardNavigator.replace(SETUP_CARD_VIEW_REGISTRY_ID);
     } else {
       try {
         const locationName = this.properties.selectedLocation.split(';')[0];
@@ -117,7 +118,13 @@ export default class WeatherAdaptiveCardExtension extends BaseAdaptiveCardExtens
   }
 
   protected renderCard(): string | undefined {
-    return CARD_VIEW_REGISTRY_ID;
+    let cardRegistryView: string = "";
+    if (!this.properties.azureMapsKey || !this.properties.bingMapsKey || !this.properties.selectedLocation) {
+      cardRegistryView = SETUP_CARD_VIEW_REGISTRY_ID;
+    } else {
+      cardRegistryView = CARD_VIEW_REGISTRY_ID;
+    }
+    return cardRegistryView;
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
