@@ -15,7 +15,7 @@ Please do not open GitHub issues for general support questions as the GitHub lis
 
 If you have questions about how to use SharePoint Framework or any of the provided samples, please use the following locations.
 
-* [SharePoint Developer Space](http://aka.ms/SPPnP-Community) at http://techcommunity.microsoft.com
+* [SharePoint Developer Space](http://aka.ms/SPPnP-Community) at <http://techcommunity.microsoft.com>
 * [SharePoint Stack Exchange](http://sharepoint.stackexchange.com/) with 'spfx' tag
 
 ## Typos, Issues, Bugs and contributions
@@ -28,16 +28,15 @@ Whenever you are submitting any changes to the SharePoint repositories, please f
 * If you are submitting multiple samples, please create a specific PR for each of them
 * If you are submitting typo or documentation fix, you can combine modifications to single PR where suitable
 
-
 ## Sample Naming and Structure Guidelines
 
 When you submit a new sample, please follow these guidelines:
 
 * Each sample must be placed in a folder under the `samples` folder
 * Your sample folder must include the following content:
-    - Your solution's source code
-    - An `assets` folder, containing screenshots
-    - A `README.md` file
+  * Your solution's source code
+  * An `assets` folder, containing screenshots
+  * A `README.md` file
 * You must only submit samples for which you have the rights to share. Make sure that you asked for permission from your employer and/or clients before committing the code to an open-source repository, because once you submit a pull request, the information is public and _cannot be removed_.
 
 ### Sample Folder
@@ -51,30 +50,34 @@ When you submit a new sample, please follow these guidelines:
 
 ### Source Code
 
-* For security reasons, we do not accept pull requests containing `.sppkg` files. We only accept source code files for applications. 
+* For security reasons, we do not accept pull requests containing `.sppkg` files. We only accept source code files for applications.
 * Make sure to place the root of your solution's source code in sample folder
 
 ### README.md
 
 * You will need to have a `README.md` file for your contribution, which is based on [the provided template](../samples/README-template.md) under the `samples` folder. Please copy this template to your project and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
 * You will need to have a screenshot picture of your sample in action in the `README.md` file ("pics or it didn't happen"). The preview image must be located in the `assets` folder in the root of your sample folder.
-    * All screen shots must be located in the `assets` folder. Do not point to your own repository or any other external source
-* The README template contains a specific tracking image at the end of the file with an `img` element pointing to `https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/readme-template`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
-* Update the image `src` attribute according with the repository name and folder information. For example, if your sample is named `react-todo` in the `samples` folder, you should update the `src` attribute to `https://telemetry.sharepointpnp.com/sp-dev-fx-aces/samples/react-todo`
+  * All screen shots must be located in the `assets` folder. Do not point to your own repository or any other external source
+* The README template contains a specific tracking image at the end of the file with an `img` element pointing to `https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/readme-template`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
+* Update the image `src` attribute according with the repository name and folder information. For example, if your sample is named `react-todo` in the `samples` folder, you should update the `src` attribute to `https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/react-todo`
   * Update the image `src` attribute according with the repository name and folder information.
 * If you find an existing sample which is similar to yours, please extend the existing one rather than submitting a new similar sample
   * When you update existing samples, please update also `README.md` file accordingly with information on provided changes and with your author details
 * Make sure to document each function in the `README.md`
 * If you include your social media information under **Authors** in the **Solution** section, we'll use this information to promote your contribution on social media, blog posts, and community calls.
-    * Try to use the following syntax:
+  * Try to use the following syntax:
+
     ```md
     folder name | Author Name ([@yourtwitterhandle](https://twitter.com/yourtwitterhandle))
     ```
+
 * If you include your company name after your name, we'll try to include your company name in blog posts and community calls.
-    * Try to use the following syntax:
+  * Try to use the following syntax:
+
     ```md
     folder name | Author Name ([@yourtwitterhandle](https://twitter.com/yourtwitterhandle)), Company Name
     ```
+
 * For multiple authors, please provide one line per author
 * If you prefer to not use social media or disclose your name, we'll still accept your sample, but we'll assume that you don't want us to promote your contribution on social media.
 
@@ -85,12 +88,11 @@ When you submit a new sample, please follow these guidelines:
 * If possible, use a resolution of **1920x1080**
 * You can add as many screen shots as you'd like to help users understand your sample without having to download it and install it.
 * You can include animated images (such as `.gif` files), but you must provide at least one static `.png` file
-    * There is no need to include the steps where you find your ace and add it to a page. Just get to the good stuff!
+  * There is no need to include the steps where you find your ace and add it to a page. Just get to the good stuff!
 
 ## Submitting Pull Requests
 
 > If you aren't familiar with how to contribute to open-source repositories using GitHub, or if you find the instructions on this page confusing, [sign up](https://forms.office.com/Pages/ResponsePage.aspx?id=KtIy2vgLW0SOgZbwvQuRaXDXyCl9DkBHq4A2OG7uLpdUREZVRDVYUUJLT1VNRDM4SjhGMlpUNzBORy4u) for one of our [Sharing is Caring](https://pnp.github.io/sharing-is-caring/#pnp-sic-events) events. It's completely free, and we'll guide you through the process.
-
 
 Here's a high-level process for submitting new samples or updates to existing ones.
 
@@ -188,10 +190,10 @@ If the sample you wish to contribute is stored in your own GitHub repository, yo
 
 Before we can accept your pull requests you will be asked to sign electronically Contributor License Agreement (CLA), which is a pre-requisite for any contributions all PnP repositories. This will be one-time process, so for any future contributions you will not be asked to re-sign anything. After the CLA has been signed, our PnP core team members will have a look at your submission for a final verification of the submission. Please do not delete your development branch until the submission has been closed.
 
-You can find Microsoft CLA from the following address - https://cla.microsoft.com.
+You can find Microsoft CLA from the following address - <https://cla.microsoft.com>.
 
 Thank you for your contribution.
 
 > Sharing is caring.
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-fx-aces/.github/CONTRIBUTING.md" />
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/.github/CONTRIBUTING.md" />
