@@ -14,7 +14,7 @@ This Adaptive Card Extension allows users to search for and select a location to
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.14-green.svg)
+![version](https://img.shields.io/badge/version-1.15.2-green.svg)
 
 ## Applies to
 
