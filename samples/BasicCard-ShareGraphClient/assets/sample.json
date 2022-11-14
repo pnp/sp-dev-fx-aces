@@ -1,14 +1,14 @@
 [{
   "name": "pnp-sp-fx-aces-SharedGraphClient",
   "source": "pnp",
-  "title": "Shared Graph Client",
+  "title": "Using Shared Graph Client in ACEs",
   "shortDescription": "This solution shows how to use a shared Microsoft Graph client between ACEs.",
   "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-ShareGraphClient",
   "longDescription": [
     "This solution shows how to use a shared Microsoft Graph client between ACEs."
   ],
-  "creationDateTime": "2022-12-17",
-  "updateDateTime": "2022-12-17",
+  "creationDateTime": "2022-09-17",
+  "updateDateTime": "2022-09-17",
   "products": [
     "SharePoint",
     "Viva"
