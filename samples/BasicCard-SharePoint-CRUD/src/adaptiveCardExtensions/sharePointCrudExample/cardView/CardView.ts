@@ -31,7 +31,7 @@ export class CardView extends BaseBasicCardView<ISharePointCrudExampleAdaptiveCa
   }
 
   public get data(): IBasicCardParameters {
-    const cardText: string = `${strings.PrimaryText.replace("_xxx_", this.state.items.length.toString())} ${this.properties.description}`;
+    const cardText = `${strings.PrimaryText.replace("_xxx_", this.state.items.length.toString())} ${this.properties.description}`;
 
     return {
       primaryText: cardText

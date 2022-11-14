@@ -2,7 +2,6 @@ import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@micr
 import * as strings from 'SharePointCrudExampleAdaptiveCardExtensionStrings';
 import { DemoItem } from '../../models/models';
 import { DISPLAY_VIEW_REGISTRY_ID, EDIT_VIEW_REGISTRY_ID, ISharePointCrudExampleAdaptiveCardExtensionProps, ISharePointCrudExampleAdaptiveCardExtensionState } from '../SharePointCrudExampleAdaptiveCardExtension';
-import { Logger, LogLevel } from "@pnp/logging";
 import { find } from "@microsoft/sp-lodash-subset";
 import { SPCRUD } from '../../services/spcrud.service';
 
@@ -17,7 +16,7 @@ export class QuickView extends BaseAdaptiveCardView<
   ISharePointCrudExampleAdaptiveCardExtensionState,
   IQuickViewData
 > {
-  private LOG_SOURCE: string = "🔶 QuickView";
+  private LOG_SOURCE = "🔶 QuickView";
 
   public get data(): IQuickViewData {
     return {
@@ -43,14 +42,14 @@ export class QuickView extends BaseAdaptiveCardView<
           this.setState({ currentItemID: itemId });
         }
         else if (id === 'delete') {
-          let item: DemoItem = find(this.state.items, { id: itemId });
+          const item: DemoItem = find(this.state.items, { id: itemId });
           await SPCRUD.DeleteItem(item);
-          let items = await SPCRUD.GetItemsByUser(this.context.pageContext.user.loginName);
+          const items = await SPCRUD.GetItemsByUser(this.context.pageContext.user.loginName);
           this.setState({ items: items });
         }
       }
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (Quick View onAction) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE}:(Quick View onAction) - ${err.message}`);
     }
   }
 }

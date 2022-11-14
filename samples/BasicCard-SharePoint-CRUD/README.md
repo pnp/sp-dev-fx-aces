@@ -8,7 +8,7 @@ This Adaptive Card Extension shows how to work with form elements and form data 
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13.1-green.svg)
+![version](https://img.shields.io/badge/version-1.15.2-green.svg)
 
 ## Applies to
 
@@ -29,6 +29,7 @@ BasicCard-SharePoint-CRUD | Derek Cash-Peterson ([@spdcp](https://twitter.com/sp
 
 Version|Date|Comments
 -------|----|--------
+1.1|November 14, 2022|Upgrade to 1.15.2
 1.0|January 13, 2021|Initial release
 
 ## Disclaimer

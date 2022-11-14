@@ -1,6 +1,5 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
 import { Choice, DemoItem } from '../../models/models';
-import { Logger, LogLevel } from "@pnp/logging";
 import { SPCRUD } from '../../services/spcrud.service';
 import { ISharePointCrudExampleAdaptiveCardExtensionProps, ISharePointCrudExampleAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../SharePointCrudExampleAdaptiveCardExtension';
 
@@ -16,13 +15,13 @@ export class NewView extends BaseAdaptiveCardView<
   ISharePointCrudExampleAdaptiveCardExtensionState,
   INewViewData
 > {
-  private LOG_SOURCE: string = "🔶 CRUDDemoNewView";
+  private LOG_SOURCE = "🔶 CRUDDemoNewView";
   public get data(): INewViewData {
-    let item: DemoItem = new DemoItem();
+    const item: DemoItem = new DemoItem();
     item.datetimefield = new Date().toUTCString();
-    let choiceFieldDDLValues: Choice[] = SPCRUD.ChoiceFieldDDLValues;
-    let choiceFieldRadioValues: Choice[] = SPCRUD.ChoiceFieldRadioValues;
-    let choiceFieldCheckboxValues: Choice[] = SPCRUD.ChoiceFieldCheckboxValues;
+    const choiceFieldDDLValues: Choice[] = SPCRUD.ChoiceFieldDDLValues;
+    const choiceFieldRadioValues: Choice[] = SPCRUD.ChoiceFieldRadioValues;
+    const choiceFieldCheckboxValues: Choice[] = SPCRUD.ChoiceFieldCheckboxValues;
     return {
       item,
       choiceFieldDDLValues,
@@ -32,8 +31,7 @@ export class NewView extends BaseAdaptiveCardView<
   }
 
   public get template(): ISPFxAdaptiveCard {
-    let template: ISPFxAdaptiveCard = require('./template/NewView.json');
-    return template;
+    return require('./template/NewView.json');
   }
 
   public async onAction(action: IActionArguments): Promise<void> {
@@ -41,7 +39,7 @@ export class NewView extends BaseAdaptiveCardView<
       if (action.type === 'Submit') {
         const { id } = action.data;
         if (id === 'save') {
-          let item: DemoItem = new DemoItem();
+          const item: DemoItem = new DemoItem();
           item.title = action.data.title;
           item.multilinetext = action.data.multilinetext;
           item.choicefieldddl = action.data.choicefieldddl;
@@ -52,13 +50,13 @@ export class NewView extends BaseAdaptiveCardView<
           item.datetimefield = action.data.datatimefield;
           item.yesnofield = action.data.yesnofield;
           await SPCRUD.SaveItem(item);
-          let items = await SPCRUD.GetItemsByUser(this.context.pageContext.user.loginName);
+          const items = await SPCRUD.GetItemsByUser(this.context.pageContext.user.loginName);
           this.setState({ items: items });
           this.quickViewNavigator.push(QUICK_VIEW_REGISTRY_ID);
         }
       }
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (onAction) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE}:(New View onAction) - ${err.message}`);
     }
   }
 }
