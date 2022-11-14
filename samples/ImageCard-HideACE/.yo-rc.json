@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "version": "1.14.0",
+    "version": "1.15.2",
     "libraryName": "hide-ace",
     "libraryId": "9644d2d6-0be7-4512-9d1f-c3ae2f93c962",
     "environment": "spo",
