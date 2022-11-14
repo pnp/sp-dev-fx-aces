@@ -23,6 +23,7 @@ coverage
 # Visual Studio files
 .ntvs_analysis.dat
 .vs
+.heft
 bin
 obj
 

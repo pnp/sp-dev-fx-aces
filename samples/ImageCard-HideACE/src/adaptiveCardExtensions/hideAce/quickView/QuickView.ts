@@ -1,4 +1,4 @@
-import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments, ISubmitActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
+import { ISPFxAdaptiveCard, BaseAdaptiveCardView, ISubmitActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'HideAceAdaptiveCardExtensionStrings';
 import { Logger, LogLevel } from "@pnp/logging";
 import { IHideAceAdaptiveCardExtensionProps, IHideAceAdaptiveCardExtensionState } from '../HideAceAdaptiveCardExtension';
@@ -13,7 +13,7 @@ export class QuickView extends BaseAdaptiveCardView<
   IHideAceAdaptiveCardExtensionState,
   IQuickViewData
 > {
-  private LOG_SOURCE: string = "🔶 Hide ACE Quick View";
+  private LOG_SOURCE = "🔶 Hide ACE Quick View";
 
   public get data(): IQuickViewData {
     return {

@@ -15,15 +15,15 @@ export interface IHideAceAdaptiveCardExtensionState {
   showRegister: boolean;
 }
 
-const CARD_VIEW_REGISTRY_ID: string = 'HideAce_CARD_VIEW';
-export const QUICK_VIEW_REGISTRY_ID: string = 'HideAce_QUICK_VIEW';
+const CARD_VIEW_REGISTRY_ID = 'HideAce_CARD_VIEW';
+export const QUICK_VIEW_REGISTRY_ID = 'HideAce_QUICK_VIEW';
 
 export default class HideAceAdaptiveCardExtension extends BaseAdaptiveCardExtension<
   IHideAceAdaptiveCardExtensionProps,
   IHideAceAdaptiveCardExtensionState
 > {
   private _deferredPropertyPane: HideAcePropertyPane | undefined;
-  private LOG_SOURCE: string = "🔶 Hide ACE ";
+  private LOG_SOURCE = "🔶 Hide ACE ";
 
   public onInit(): Promise<void> {
     try {
@@ -34,7 +34,7 @@ export default class HideAceAdaptiveCardExtension extends BaseAdaptiveCardExtens
       const registrationDate: string = localStorage.getItem('registrationDate');
       //If the value is in localstorage
       if (registrationDate && registrationDate != "") {
-        let expiration: Date = new Date(registrationDate);
+        const expiration: Date = new Date(registrationDate);
         expiration.setMinutes(expiration.getMinutes() + parseInt(this.properties.cookieLength));
         const now: Date = new Date();
         //If the local storage date has not passed yet hide the card
