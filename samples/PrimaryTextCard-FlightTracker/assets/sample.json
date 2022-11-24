@@ -25,12 +25,12 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-FlightTracker/assets/mobile01.png",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-FlightTracker/assets/mobile01.PNG",
     "alt": "Preview"
   }, {
     "type": "image",
     "order": 200,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-FlightTracker/assets/mobile02.png",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-FlightTracker/assets/mobile02.PNG",
     "alt": "Preview"
   }],
   "authors": [{
