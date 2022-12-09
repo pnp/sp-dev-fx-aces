@@ -8,7 +8,7 @@ Short summary on functionality and used technologies.
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![version](https://img.shields.io/badge/version-1.16-green.svg)
 
 ## Applies to
 
@@ -31,8 +31,8 @@ folder name | Author details (name, company, twitter alias with link)
 
 Version|Date|Comments
 -------|----|--------
-1.1|March 10, 2021|Update comment
-1.0|January 29, 2021|Initial release
+1.1|January 10, 2023|Update comment
+1.0|December 12, 2022|Initial release
 
 ## Disclaimer
 
@@ -62,7 +62,9 @@ This extension illustrates the following concepts:
 
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+> Share your web part with others through Microsoft 365 Platform Community to get visibility and exposure. More details on the community, open-source projects and other activities from https://aka.ms/m365/community. 
+
+> Join on the community calls for seeing cool demos by Microsoft and others in the community - see more from https://aka.ms/m365/calls
 
 ## References
 
@@ -70,4 +72,4 @@ This extension illustrates the following concepts:
 - [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+- [Microsoft 365 Platform Community](https://aka.ms/m365/community) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development

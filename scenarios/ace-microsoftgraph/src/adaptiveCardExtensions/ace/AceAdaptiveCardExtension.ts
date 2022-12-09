@@ -53,7 +53,7 @@ export default class AceAdaptiveCardExtension extends BaseAdaptiveCardExtension<
 
   private _fetchData(): Promise<void> {
     return this.context.msGraphClientFactory
-      .getClient()
+      .getClient("3")
       .then(client => client.api('me').get())
       .then((user: User) => {
         this.setState({
