@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": true,
+    "isCreatingSolution": true,
+    "nodeVersion": "14.15.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.0-beta.2",
+    "libraryName": "primary-text-card-search",
+    "libraryId": "10b94520-077f-4f27-8257-40ffb04739e5",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "primary-text-card-search",
+    "solutionShortDescription": "primary-text-card-search description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "PrimaryText"
+  }
+}
