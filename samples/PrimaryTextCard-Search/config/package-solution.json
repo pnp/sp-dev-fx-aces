@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "primary-text-card-search-client-side-solution",
+    "id": "10b94520-077f-4f27-8257-40ffb04739e5",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.0-beta.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "primary-text-card-search description"
+      },
+      "longDescription": {
+        "default": "primary-text-card-search description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "primary-text-card-search Feature",
+        "description": "The feature that activates elements of the primary-text-card-search solution.",
+        "id": "ae27516c-66f7-4791-824b-09b4f96198e5",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/primary-text-card-search.sppkg"
+  }
+}
