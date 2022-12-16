@@ -1,0 +1,26 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "weight": "Bolder",
+      "text": "${title}"
+    },
+    {
+        "type": "Input.Text",
+        "placeholder": "Placeholder text",
+        "id": "searchInput",
+        "separator": true
+    }
+  ],
+  "actions": [
+      {
+          "type": "Action.Submit",
+          "title": "Search",
+          "id": "submitSearchQueryBtn",
+          "associatedInputs": "auto"
+      }
+  ]
+}
