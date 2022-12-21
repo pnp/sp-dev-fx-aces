@@ -31,6 +31,10 @@ export class StatusMessageService implements IStatusMessageService {
                 "message": {
                     "content": `${statusMessage}`,
                     "contentType": "text"
+                },
+                "expiryDateTime": {
+                    "dateTime": "9999-12-30T23:00:00.0000000",
+                    "timeZone": "UTC"
                 }
             }
         };

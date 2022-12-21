@@ -14,6 +14,8 @@ This ACE demonstrates how to use the setStatusMessage Graph API endpoint (beta) 
 
 ![card view updated](assets/card_view_updated.png)
 
+![teams client](assets/teams_client.png)
+
 ## Compatibility
 
 ![SPFx 1.16](https://img.shields.io/badge/SPFx-1.16.0-green.svg)
@@ -27,13 +29,14 @@ This ACE demonstrates how to use the setStatusMessage Graph API endpoint (beta) 
 
 ## Prerequisites
 
-> No prerequisites required.
+> You need to approve the following Microsoft Graph permissions at the tenant level:
+  * Presence.ReadWrite
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-BasicCard-StatusMessage | [Yves Habersaat](https://github.com/yhabersaat) ([@yourtwitterhandle](https://twitter.com/yhabersaat)), Sword Group
+BasicCard-StatusMessage | [Yves Habersaat](https://github.com/yhabersaat) ([@yhabersaat](https://twitter.com/yhabersaat)), Sword Group
 
 ## Version history
 
@@ -53,7 +56,3 @@ Version|Date|Comments
 * in the command line run:
   * `npm install`
   * `gulp serve`
-* You need to approve the following Microsoft Graph permissions at the tenant level:
-  * Presence.ReadWrite
-
-<img src="https:/pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/TODO" />

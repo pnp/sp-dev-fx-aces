@@ -3,6 +3,10 @@ export interface IStatusMessage {
         message: {
             content: string;
             contentType: string;
+        },
+        expiryDateTime: {
+            dateTime: string,
+            timeZone: string
         }
     }
 }
