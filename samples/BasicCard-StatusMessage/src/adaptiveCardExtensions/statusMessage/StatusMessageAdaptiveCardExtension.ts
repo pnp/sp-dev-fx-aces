@@ -75,8 +75,8 @@ export default class StatusMessageAdaptiveCardExtension extends BaseAdaptiveCard
   }
 
   private async _getCurrentUserStatusMessage(): Promise<void> {
-    let statusMsg: IStatusMessage = null;
-    let messageText: string = "";
+    let statusMsg: IStatusMessage;
+    let messageText: string;
 
     try {
       statusMsg = await this._statusMessageService.getCurrentUserStatusMessage();
