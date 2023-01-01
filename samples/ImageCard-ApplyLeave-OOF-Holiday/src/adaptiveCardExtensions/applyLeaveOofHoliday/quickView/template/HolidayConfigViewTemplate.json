@@ -1,0 +1,30 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Below option enable Holiday card in Dashboard",
+            "wrap": true,
+            "color": "Good",
+            "weight": "Bolder"
+        },         
+        {
+            "type": "Input.Toggle",
+            "id": "enableCardId",
+            "title": "Enable/Disable Holiday Card",           
+            "value": "${isEnabled}"
+           
+         
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Submit",
+            "style": "positive"
+           
+        }
+    ]
+}

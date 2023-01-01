@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "image-card-applyleave-oof-holiday-client-side-solution",
+    "id": "a6f0e9f4-b378-4b44-ba01-c6f9b9c36f2a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "image-card-applyleave-oof-holiday description"
+      },
+      "longDescription": {
+        "default": "image-card-applyleave-oof-holiday description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "image-card-applyleave-oof-holiday Feature",
+        "description": "The feature that activates elements of the image-card-applyleave-oof-holiday solution.",
+        "id": "f4e785f2-3c72-4cae-996c-c5909f3eae9d",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/image-card-applyleave-oof-holiday.sppkg"
+  }
+}

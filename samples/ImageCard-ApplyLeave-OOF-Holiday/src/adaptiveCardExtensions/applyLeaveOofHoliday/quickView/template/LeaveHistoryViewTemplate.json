@@ -1,0 +1,93 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "Container",           
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Leave History",
+                    "wrap": true,
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "horizontalAlignment": "Center"
+                }
+            ],
+            "style": "accent",
+            "backgroundImage": {
+                "horizontalAlignment": "Center"
+            }
+        },
+        {
+            "type": "Container",
+            "$data":"${leaveHistory}",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${formatDateTime(Created,'MMM-dd')}",
+                                    "size":"medium",
+                                    "wrap": true,                                    
+                                    "weight": "Bolder",
+                                    "color": "Accent"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": 4,
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "**Type** - ${LeaveType}",
+                                    "wrap": true,
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Left"
+                                }
+                            ]
+                        }
+                    ],
+                    "separator": true
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "**Leave Reason** - ${LeaveDescription}",
+                    "wrap": true,
+                    "maxLines": 3
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Status - ${Status}",
+                    "wrap": true,
+                    "horizontalAlignment": "Right",
+                    "color": "Good",
+                    "isSubtle": true,
+                    "size": "Small",
+                    "weight": "Bolder"
+                }
+            ],
+            "style": "emphasis"
+        },      
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Configuration View ",
+                    "style": "positive",
+                    "data":{
+                        "id":"configPageId"
+                    }
+                }
+            ]
+        }
+    ]
+}

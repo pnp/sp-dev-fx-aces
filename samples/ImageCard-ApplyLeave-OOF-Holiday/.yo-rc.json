@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "16.16.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "image-card-applyleave-oof-holiday",
+    "libraryId": "a6f0e9f4-b378-4b44-ba01-c6f9b9c36f2a",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "image-card-applyleave-oof-holiday",
+    "solutionShortDescription": "image-card-applyleave-oof-holiday description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Image"
+  }
+}

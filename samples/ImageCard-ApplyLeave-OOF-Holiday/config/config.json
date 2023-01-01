@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "apply-leave-oof-holiday-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/applyLeaveOofHoliday/ApplyLeaveOofHolidayAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/applyLeaveOofHoliday/ApplyLeaveOofHolidayAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    },
+    "my-holidays-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/myHolidays/MyHolidaysAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/myHolidays/MyHolidaysAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ApplyLeaveOofHolidayAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/applyLeaveOofHoliday/loc/{locale}.js",
+    "MyHolidaysAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/myHolidays/loc/{locale}.js"
+  }
+}
