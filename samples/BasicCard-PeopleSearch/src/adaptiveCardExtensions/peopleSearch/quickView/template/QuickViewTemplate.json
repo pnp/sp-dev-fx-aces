@@ -1,0 +1,81 @@
+{
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [{
+            "type": "Container",
+            "items": [{
+                "type": "ColumnSet",
+                "columns": [{
+                    "type": "Column",
+                    "items": [{
+                        "type": "TextBlock",
+                        "text": "People Search",
+                        "size": "large",
+                        "weight": "bolder"
+                    }],
+                    "width": "stretch"
+                }]
+            }],
+            "separator": true,
+            "bleed": true
+        },
+        {
+            "type": "Input.Text",
+            "id": "filterByName",
+            "inlineAction": {
+                "type": "Action.Submit",
+                "iconUrl": "https://adaptivecards.io/content/send.png",
+                "data": {
+                    "id": "userFilter"
+                }
+            },
+            "placeholder": "Search"
+        },
+        {
+            "type": "Container",
+            "$data": "${users}",
+            "items": [{
+                "type": "ColumnSet",
+                "columns": [{
+                        "type": "Column",
+                        "items": [{
+                            "type": "Image",
+                            "style": "Person",
+                            "url": "/_layouts/15/userphoto.aspx?size=S&username=${userPrincipalName}",
+                            "size": "Small"
+                        }],
+                        "width": "auto"
+                    },
+                    {
+                        "type": "Column",
+                        "items": [{
+                                "type": "TextBlock",
+                                "weight": "Bolder",
+                                "text": "${displayName}",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "spacing": "None",
+                                "text": "${if(length(jobTitle)!=0,jobTitle,userPrincipalName)}",
+                                "isSubtle": true,
+                                "wrap": true
+                            }
+                        ],
+                        "width": "stretch"
+                    }
+                ],
+                "style": "emphasis",
+                "bleed": true,
+                "selectAction": {
+                    "type": "Action.OpenUrl",
+                    "url": "https://teams.microsoft.com/l/chat/0/0?users=${userPrincipalName}&message=${$root.defaultMessageText}"
+                }
+            }],
+            "style": "default",
+            "separator": true,
+            "spacing": "Medium"
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}
