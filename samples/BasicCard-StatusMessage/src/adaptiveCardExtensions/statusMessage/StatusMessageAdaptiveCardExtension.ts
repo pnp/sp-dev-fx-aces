@@ -84,7 +84,9 @@ export default class StatusMessageAdaptiveCardExtension extends BaseAdaptiveCard
       console.log(err);
     }
 
-    if (statusMsg.statusMessage.message.content.length <= 0) {
+    if (statusMsg.statusMessage === null) {
+      messageText = strings.NoStatusMessageText;
+    } else if (statusMsg.statusMessage.message.content.length <= 0) {
       messageText = strings.NoStatusMessageText;
     } else {
       messageText = statusMsg.statusMessage.message.content.trim();
