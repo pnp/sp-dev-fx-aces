@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "basic-card-people-search-client-side-solution",
+    "id": "916d6720-264f-4e8c-a8d4-01a12215f9a7",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "basic-card-people-search description"
+      },
+      "longDescription": {
+        "default": "basic-card-people-search description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "basic-card-people-search Feature",
+        "description": "The feature that activates elements of the basic-card-people-search solution.",
+        "id": "2dcc2ead-0d33-4635-8006-02f5ab807a9d",
+        "version": "1.0.0.0"
+      }
+    ],
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "People.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Directory.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "User.Read.All"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/basic-card-people-search.sppkg"
+  }
+}
