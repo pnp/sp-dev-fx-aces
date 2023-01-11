@@ -7,6 +7,16 @@
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "MailboxSettings.ReadWrite"
+      },
+      {  
+        "resource": "Microsoft Graph",  
+        "scope": "Calendars.Read"  
+      } 
+    ],
     "developer": {
       "name": "",
       "websiteUrl": "",
