@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "status-message-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/statusMessage/StatusMessageAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/statusMessage/StatusMessageAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "StatusMessageAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/statusMessage/loc/{locale}.js"
+  }
+}
