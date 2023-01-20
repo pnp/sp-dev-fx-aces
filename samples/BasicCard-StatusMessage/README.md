@@ -30,7 +30,10 @@ This ACE demonstrates how to use the Presence Graph API endpoints (beta) to set 
 ## Prerequisites
 
 > You need to approve the following Microsoft Graph permissions at the tenant level:
-  * Presence.ReadWrite
+
+* Presence.ReadWrite
+
+NOTE: This sample uses a beta Graph endpoint. The beta endpoints can change at any time and should not be used in production.
 
 ## Solution
 
