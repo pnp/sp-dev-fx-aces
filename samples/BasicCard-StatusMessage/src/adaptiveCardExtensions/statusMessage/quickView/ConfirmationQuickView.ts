@@ -24,11 +24,11 @@ export class ConfirmationQuickView extends BaseAdaptiveCardView<
   }
 
   public async onAction(action: IActionArguments): Promise<void> {
-    if (action.type === 'Submit') {
+    if (action.type === "Submit") {
       const { id } = action.data;
-      if (id === 'back') {
+      if (id === "back") {
         return this.quickViewNavigator.pop();
-      } else if (id === 'close') {
+      } else if (id === "close") {
         return this.quickViewNavigator.close();
       } else {
         return;

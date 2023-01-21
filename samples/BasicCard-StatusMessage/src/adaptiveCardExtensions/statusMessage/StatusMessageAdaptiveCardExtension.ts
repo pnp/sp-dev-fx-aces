@@ -16,6 +16,8 @@ export interface IStatusMessageAdaptiveCardExtensionProps {
 export interface IStatusMessageAdaptiveCardExtensionState {
   currentStatusMessage: string;
   statusMessageService: IStatusMessageService;
+  currentUserId: string;
+  sessionId: string;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'StatusMessage_CARD_VIEW';
@@ -32,13 +34,17 @@ export default class StatusMessageAdaptiveCardExtension extends BaseAdaptiveCard
   public async onInit(): Promise<void> {
     this.state = {
       currentStatusMessage: "",
-      statusMessageService: null
+      statusMessageService: null,
+      currentUserId: "",
+      sessionId: ""
     };
 
     this._statusMessageService = this.context.serviceScope.consume(StatusMessageService.ServiceKey);
 
     this.setState({
-      statusMessageService: this._statusMessageService
+      statusMessageService: this._statusMessageService,
+      currentUserId: await this._statusMessageService.getCurrentUserId(),
+      sessionId: await this._statusMessageService.getCurrentSessionId()
     });
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());

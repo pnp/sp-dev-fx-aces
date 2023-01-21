@@ -3,7 +3,7 @@
   "solution": {
     "name": "basic-card-status-message-client-side-solution",
     "id": "de3a69f9-cb31-4599-ba96-8cd366334210",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -11,6 +11,10 @@
       {
         "resource": "Microsoft Graph",
         "scope": "Presence.ReadWrite"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Application.Read.All"
       }
     ],
     "developer": {

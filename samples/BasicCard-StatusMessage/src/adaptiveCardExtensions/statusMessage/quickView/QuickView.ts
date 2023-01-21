@@ -24,20 +24,44 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   public async onAction(action: IActionArguments): Promise<void> {
-    if (action.type === 'Submit') {
-      const { id } = action.data;
-      if (id === 'cancel') {
+    if (action.type === "Submit") {
+      const { id, txtStatusMessage, cmbAvailability } = action.data;
+      if (id === "cancel") {
         return this.quickViewNavigator.close();
-      } else if (id === 'submit') {
-        let newStatusMessageText: string = action.data.txtStatusMessage;
+      } else if (id === "submit") {
+        let newStatusMessageText: string = txtStatusMessage;
+        let newAvailabilityText: string = cmbAvailability;
+        let newActivityText: string = "";
+        switch (newAvailabilityText) {
+          case "Available":
+            newActivityText = "Available";
+            break;
+          case "Busy-Call":
+            newAvailabilityText = "Busy";
+            newActivityText = "InACall";
+            break;
+          case "Busy-Conf":
+            newAvailabilityText = "Busy";
+            newActivityText = "InAConferenceCall";
+            break;
+          case "Away":
+            newActivityText = "Away";
+            break;
+          case "DoNotDisturb":
+            newActivityText = "Presenting";
+            break;
+          default:
+            break;
+        }
         if (newStatusMessageText === undefined || newStatusMessageText === null) {
           newStatusMessageText = "";
         }
         try {
           await this.state.statusMessageService.setCurrentUserStatusMessage(newStatusMessageText);
+          await this.state.statusMessageService.setCurrentUserAvailability(this.state.currentUserId, this.state.sessionId, newAvailabilityText, newActivityText)
           return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
         } catch (err) {
-          console.log(err);
+          throw new Error(err);
         }
       } else {
         return;

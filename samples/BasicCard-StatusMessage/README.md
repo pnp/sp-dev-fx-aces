@@ -32,6 +32,7 @@ This ACE demonstrates how to use the Presence Graph API endpoints (beta) to set 
 > You need to approve the following Microsoft Graph permissions at the tenant level:
 
 * Presence.ReadWrite
+* Application.Read.All
 
 NOTE: This sample uses a beta Graph endpoint. The beta endpoints can change at any time and should not be used in production.
 
@@ -45,6 +46,7 @@ BasicCard-StatusMessage | [Yves Habersaat](https://github.com/yhabersaat) ([@yha
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 21, 2023|Added new Presence API capabilities (availability/activity)
 1.0|December 21, 2022|Initial release
 
 ## Disclaimer

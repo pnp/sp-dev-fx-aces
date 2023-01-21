@@ -2,6 +2,7 @@ import { ServiceKey, ServiceScope } from "@microsoft/sp-core-library";
 import { IStatusMessage } from "../models/IStatusMessage";
 import { IStatusMessageService } from "./IStatusMessageService";
 import { MSGraphClientFactory, MSGraphClientV3 } from '@microsoft/sp-http';
+import { IPresenceStatus } from "../models/IPresenceStatus";
 
 const StatusMessageService_ServiceKey = "yhabersaat:StatusMessageService";
 
@@ -16,16 +17,17 @@ export class StatusMessageService implements IStatusMessageService {
     }
 
     public async getCurrentUserStatusMessage(): Promise<IStatusMessage> {
-        const endpoint = "https://graph.microsoft.com/beta/me/presence";
+        const endpoint = "me/presence";
         const msGraphClient: MSGraphClientV3 = await this._msGraphClientFactory.getClient("3");
         const response = await msGraphClient
             .api(endpoint)
+            .version("beta")
             .get();
         return response;
     }
 
     public async setCurrentUserStatusMessage(statusMessage: string): Promise<void> {
-        const endpoint = "https://graph.microsoft.com/beta/me/presence/setStatusMessage";
+        const endpoint = "me/presence/setStatusMessage";
         const reqBody: IStatusMessage = {
             "statusMessage": {
                 "message": {
@@ -41,6 +43,45 @@ export class StatusMessageService implements IStatusMessageService {
         const msGraphClient: MSGraphClientV3 = await this._msGraphClientFactory.getClient("3");
         return await msGraphClient
             .api(endpoint)
+            .version("beta")
             .post(reqBody);
+    }
+
+    public async getCurrentUserId(): Promise<string> {
+        const endpoint = "me";
+        const msGraphClient: MSGraphClientV3 = await this._msGraphClientFactory.getClient("3");
+        const response = await msGraphClient
+            .api(endpoint)
+            .version("v1.0")
+            .select("id")
+            .get();
+        return response.id;
+    }
+
+    public async setCurrentUserAvailability(userId: string, sessionId: string, availability: string, activity: string): Promise<void> {
+        const endpoint = "users/" + userId + "/presence/setPresence";
+        const reqBody: IPresenceStatus = {
+            "sessionId": sessionId,
+            "availability": availability,
+            "activity": activity
+        }
+        const msGraphClient: MSGraphClientV3 = await this._msGraphClientFactory.getClient("3");
+        return await msGraphClient
+            .api(endpoint)
+            .version("beta")
+            .post(reqBody);
+    }
+
+    public async getCurrentSessionId(): Promise<string> {
+        const endpoint = "applications";
+        const msGraphClient: MSGraphClientV3 = await this._msGraphClientFactory.getClient("3");
+        const response = await msGraphClient
+            .api(endpoint)
+            .version("v1.0")
+            .filter("startswith(displayName, 'SharePoint Online Client Extensibility Web Application Principal')")
+            .top(1)
+            .select("appId")
+            .get();
+        return response.value[0].appId;
     }
 }
