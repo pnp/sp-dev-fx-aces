@@ -24,7 +24,7 @@
                 {
                     "type": "Action.Submit",
                     "title": "Back",
-                    "style": "destructive",
+                    "style": "positive",
                     "id": "btnBack",
                     "data": {
                         "id": "back"
