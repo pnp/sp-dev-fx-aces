@@ -1,5 +1,6 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'StatusMessageAdaptiveCardExtensionStrings';
+import { IPresenceStatus } from '../models/IPresenceStatus';
 import { CONFIRMATION_QUICK_VIEW_REGISTRY_ID, IStatusMessageAdaptiveCardExtensionProps, IStatusMessageAdaptiveCardExtensionState } from '../StatusMessageAdaptiveCardExtension';
 
 export interface IQuickViewData {
@@ -32,6 +33,7 @@ export class QuickView extends BaseAdaptiveCardView<
         let newStatusMessageText: string = txtStatusMessage;
         let newAvailabilityText: string = cmbAvailability;
         let newActivityText: string = "";
+        let presenceData: IPresenceStatus = null;
         switch (newAvailabilityText) {
           case "Available":
             newActivityText = "Available";
@@ -53,14 +55,27 @@ export class QuickView extends BaseAdaptiveCardView<
           default:
             break;
         }
+        presenceData = {
+          sessionId: this.state.currentSessionId,
+          availability: newAvailabilityText,
+          activity: newActivityText,
+          expirationDuration: "PT1H"
+        }
         if (newStatusMessageText === undefined || newStatusMessageText === null) {
           newStatusMessageText = "";
         }
         try {
-          await this.state.statusMessageService.setCurrentUserStatusMessage(newStatusMessageText);
-          await this.state.statusMessageService.setCurrentUserAvailability(this.state.currentUserId, this.state.sessionId, newAvailabilityText, newActivityText)
+          await this.state.presenceService.setCurrentUserStatusMessage(newStatusMessageText);
+          await this.state.presenceService.setCurrentUserAvailability(this.state.currentUserId, presenceData);
           return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
         } catch (err) {
+          throw new Error(err);
+        }
+      } else if (id === "clearAvail") {
+        try  {
+          await this.state.presenceService.clearPresence(this.state.currentUserId, this.state.currentSessionId);
+          return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
+        } catch(err) {
           throw new Error(err);
         }
       } else {

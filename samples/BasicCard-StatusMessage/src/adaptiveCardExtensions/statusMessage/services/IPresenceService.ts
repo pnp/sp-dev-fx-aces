@@ -1,9 +1,11 @@
+import { IPresenceStatus } from "../models/IPresenceStatus";
 import { IStatusMessage } from "../models/IStatusMessage";
 
-export interface IStatusMessageService {
+export interface IPresenceService {
     getCurrentUserStatusMessage(): Promise<IStatusMessage>;
     setCurrentUserStatusMessage(statusMessage: string): Promise<void>;
     getCurrentUserId(): Promise<string>;
-    setCurrentUserAvailability(userId: string, sessionId: string, availability: string, activity: string): Promise<void>;
     getCurrentSessionId(): Promise<string>;
+    setCurrentUserAvailability(userId: string, presence: IPresenceStatus): Promise<void>;
+    clearPresence(userId: string, sessionId: string): Promise<void>;
 }

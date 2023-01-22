@@ -1,13 +1,13 @@
 import { ServiceKey, ServiceScope } from "@microsoft/sp-core-library";
 import { IStatusMessage } from "../models/IStatusMessage";
-import { IStatusMessageService } from "./IStatusMessageService";
+import { IPresenceService } from "./IPresenceService";
 import { MSGraphClientFactory, MSGraphClientV3 } from '@microsoft/sp-http';
 import { IPresenceStatus } from "../models/IPresenceStatus";
 
 const StatusMessageService_ServiceKey = "yhabersaat:StatusMessageService";
 
-export class StatusMessageService implements IStatusMessageService {
-    public static readonly ServiceKey: ServiceKey<IStatusMessageService> = ServiceKey.create<IStatusMessageService>(StatusMessageService_ServiceKey, StatusMessageService);
+export class StatusMessageService implements IPresenceService {
+    public static readonly ServiceKey: ServiceKey<IPresenceService> = ServiceKey.create<IPresenceService>(StatusMessageService_ServiceKey, StatusMessageService);
     private _msGraphClientFactory: MSGraphClientFactory;
 
     public constructor(serviceScope: ServiceScope) {
@@ -58,13 +58,14 @@ export class StatusMessageService implements IStatusMessageService {
         return response.id;
     }
 
-    public async setCurrentUserAvailability(userId: string, sessionId: string, availability: string, activity: string): Promise<void> {
+    public async setCurrentUserAvailability(userId: string, presence: IPresenceStatus): Promise<void> {
         const endpoint = "users/" + userId + "/presence/setPresence";
         const reqBody: IPresenceStatus = {
-            "sessionId": sessionId,
-            "availability": availability,
-            "activity": activity
-        }
+            "sessionId": presence.sessionId,
+            "availability": presence.availability,
+            "activity": presence.activity,
+            "expirationDuration": presence.expirationDuration
+        };
         const msGraphClient: MSGraphClientV3 = await this._msGraphClientFactory.getClient("3");
         return await msGraphClient
             .api(endpoint)
@@ -83,5 +84,17 @@ export class StatusMessageService implements IStatusMessageService {
             .select("appId")
             .get();
         return response.value[0].appId;
+    }
+
+    public async clearPresence(userId: string, sessionId: string): Promise<void> {
+        const endpoint = "users/" + userId + "/presence/clearPresence";
+        const reqBody = {
+            "sessionId": sessionId,
+        };
+        const msGraphClient: MSGraphClientV3 = await this._msGraphClientFactory.getClient("3");
+        return await msGraphClient
+            .api(endpoint)
+            .version("beta")
+            .post(reqBody);
     }
 }

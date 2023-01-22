@@ -10,8 +10,6 @@
                     "type": "Input.Text",
                     "placeholder": "Enter your status message",
                     "id": "txtStatusMessage",
-                    "isRequired": true,
-                    "errorMessage": "Please enter a valid status message",
                     "label": "Status message"
                 },
                 {
@@ -40,11 +38,9 @@
                     ],
                     "placeholder": "Select your availability",
                     "id": "cmbAvailability",
-                    "isRequired": true,
-                    "errorMessage": "Please select your current availability",
                     "separator": true,
                     "label": "Availability",
-                    "value": "available",
+                    "value": "Available",
                     "style": "expanded"
                 },
                 {
@@ -56,6 +52,14 @@
                             "style": "positive",
                             "data": {
                                 "id": "submit"
+                            }
+                        },
+                        {
+                            "type": "Action.Submit",
+                            "title": "Clear availability",
+                            "style": "destructive",
+                            "data": {
+                                "id": "clearAvail"
                             }
                         },
                         {
