@@ -19,6 +19,7 @@ This card helps end user to apply leave and set out of office in parallel with l
 ## Permissions
 Microsoft Graph
 - MailboxSettings.ReadWrite
+- Calendars.Read
 
 ## Prerequisites
 
@@ -28,11 +29,14 @@ Microsoft Graph
   - LeaveType (Single line of text)
   - LeaveDescription (Multi line of text)
   - AppliedBy (People & Group)
+  - Status (Choice) with choices 'Approved' and 'Rejected'
 
 > Create a SharePoint list (named "ConfigList") with the below columns
+  - Title (Single line of text)
   - Value (Single line of text)
   - Email (Single line of text)
 
+'Title' column is default column in SharePoint list, which is Name of the
   Note: To keep it simple I used column names type as "Single line of text", we can change the type of the column at any time.
 
 ## Solution
