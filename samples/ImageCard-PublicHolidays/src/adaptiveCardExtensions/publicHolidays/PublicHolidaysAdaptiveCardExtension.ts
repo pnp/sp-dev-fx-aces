@@ -21,7 +21,7 @@ export interface IPublicHolidaysAdaptiveCardExtensionProps {
   limitToDate: IDateTimeFieldValue;
 }
 
-export interface IPublicHolidaysAdaptiveCardExtensionState {  
+export interface IPublicHolidaysAdaptiveCardExtensionState {
   userProfileProperty: string;
   availableLocations: IAvailableLocation;
   officeLocation: string;
@@ -70,55 +70,58 @@ export default class PublicHolidaysAdaptiveCardExtension extends BaseAdaptiveCar
 
     PublicHolidaysService.setup(this.context);
 
-    if (isEmpty(this.properties.listTitle)) {
-      this.cardNavigator.replace(CARD_VIEW_SETUP_ID);
-      return;
-    }
-
     await this._loadCardInfo(this.properties.listTitle, this.properties.userProfileProperty, this.properties.limitToDate);
+    return Promise.resolve();
   }
 
   private async _loadCardInfo(listGUID: string, userProfileProperty: string, limitToDate: IDateTimeFieldValue): Promise<void> {
-    const currentLocation: string = await PublicHolidaysService.getOfficeLocation(userProfileProperty);
-
-    PublicHolidaysService.getAvailableLocations(listGUID).then((availableLocations) => {
-      const listURLWithFilter: string = `${this.state.listURL}${availableLocations.listTitle}/AllItems.aspx?FilterField1=OfficeLocation&FilterValue1=${currentLocation}`;
-
-      this.setState({
-        availableLocations: availableLocations,
-        listURL: listURLWithFilter
-      });
-    })
-      .catch((error) => {
-        this.cardNavigator.replace(ERROR_CARD_VIEW_REGISTRY_ID);
+    setTimeout(async () => {
+      if (isEmpty(this.properties.listTitle)) {
+        this.cardNavigator.replace(CARD_VIEW_SETUP_ID);
         return;
-      });
+      }
 
-    PublicHolidaysService.getUpcomingPublicHolidays(listGUID, limitToDate, currentLocation, 1)
-      .then((holidays: IPublicHoliday[]) => {
+      const currentLocation: string = await PublicHolidaysService.getOfficeLocation(userProfileProperty);
+
+      PublicHolidaysService.getAvailableLocations(listGUID).then((availableLocations) => {
+        const listURLWithFilter: string = `${this.state.listURL}${availableLocations.listTitle}/AllItems.aspx?FilterField1=OfficeLocation&FilterValue1=${currentLocation}`;
+
         this.setState({
-          ...this.state,
-          userProfileProperty: userProfileProperty,
-          upcomingHolidays: holidays,
-          officeLocation: currentLocation,
-          isLocationUpdated: false,
-          areHolidaysLoaded: false,
-          limitToDate: limitToDate,
-          listGUID: listGUID
+          availableLocations: availableLocations,
+          listURL: listURLWithFilter
         });
-
-        this.cardNavigator.replace(CARD_VIEW_REGISTRY_ID);
-        return Promise.resolve();
       })
-      .catch((error) => {
-        this.cardNavigator.replace(ERROR_CARD_VIEW_REGISTRY_ID);
-        this.setState({
-          ...this.state,
-          upcomingHolidays: []
+        .catch((error) => {
+          this.cardNavigator.replace(ERROR_CARD_VIEW_REGISTRY_ID);
+          return;
         });
 
-        return;
-      });
+      PublicHolidaysService.getUpcomingPublicHolidays(listGUID, limitToDate, currentLocation, 1)
+        .then((holidays: IPublicHoliday[]) => {
+          this.setState({
+            ...this.state,
+            userProfileProperty: userProfileProperty,
+            upcomingHolidays: holidays,
+            officeLocation: currentLocation,
+            isLocationUpdated: false,
+            areHolidaysLoaded: false,
+            limitToDate: limitToDate,
+            listGUID: listGUID
+          });
+
+          this.cardNavigator.replace(CARD_VIEW_REGISTRY_ID);
+          return Promise.resolve();
+        })
+        .catch((error) => {
+          this.cardNavigator.replace(ERROR_CARD_VIEW_REGISTRY_ID);
+          this.setState({
+            ...this.state,
+            upcomingHolidays: []
+          });
+
+          return;
+        });
+    });
   }
 
   protected loadPropertyPaneResources(): Promise<void> {
@@ -142,14 +145,16 @@ export default class PublicHolidaysAdaptiveCardExtension extends BaseAdaptiveCar
   }
 
   protected async onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): Promise<void> {
-    if (propertyPath === "limitToDate") {
-      await this._loadCardInfo(this.properties.listTitle, this.properties.userProfileProperty, newValue);
-    }
-    else if (propertyPath === "listTitle") {
-      await this._loadCardInfo(newValue, this.properties.userProfileProperty, this.properties.limitToDate);
-    }
-    else if (propertyPath === "userProfileProperty") {
-      await this._loadCardInfo(this.properties.listTitle, newValue, this.properties.limitToDate);
+    if (newValue !== oldValue) {
+      if (propertyPath === "limitToDate") {
+        await this._loadCardInfo(this.properties.listTitle, this.properties.userProfileProperty, newValue);
+      }
+      else if (propertyPath === "listTitle") {
+        await this._loadCardInfo(newValue, this.properties.userProfileProperty, this.properties.limitToDate);
+      }
+      else if (propertyPath === "userProfileProperty") {
+        await this._loadCardInfo(this.properties.listTitle, newValue, this.properties.limitToDate);
+      }
     }
   }
 }
