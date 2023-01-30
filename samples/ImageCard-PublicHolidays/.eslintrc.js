@@ -3,6 +3,7 @@ module.exports = {
   extends: ['@microsoft/eslint-config-spfx/lib/profiles/default'],
   parserOptions: { tsconfigRootDir: __dirname },
   rules: {
-    "@microsoft/spfx/no-async-await": "off"
+    "@microsoft/spfx/no-async-await": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   }
 };

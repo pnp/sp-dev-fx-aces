@@ -106,51 +106,58 @@ var PublicHolidaysAdaptiveCardExtension = /** @class */ (function (_super) {
                         this.quickViewNavigator.register(ERROR_VIEW_REGISTRY_ID, function () { return new ErrorView(); });
                         this.quickViewNavigator.register(SUCCESS_VIEW_REGISTRY_ID, function () { return new SuccessView(); });
                         PublicHolidaysService.setup(this.context);
-                        if (isEmpty(this.properties.listTitle)) {
-                            this.cardNavigator.replace(CARD_VIEW_SETUP_ID);
-                            return [2 /*return*/];
-                        }
                         return [4 /*yield*/, this._loadCardInfo(this.properties.listTitle, this.properties.userProfileProperty, this.properties.limitToDate)];
                     case 1:
                         _a.sent();
-                        return [2 /*return*/];
+                        return [2 /*return*/, Promise.resolve()];
                 }
             });
         });
     };
     PublicHolidaysAdaptiveCardExtension.prototype._loadCardInfo = function (listGUID, userProfileProperty, limitToDate) {
         return __awaiter(this, void 0, void 0, function () {
-            var currentLocation;
             var _this = this;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, PublicHolidaysService.getOfficeLocation(userProfileProperty)];
-                    case 1:
-                        currentLocation = _a.sent();
-                        PublicHolidaysService.getAvailableLocations(listGUID).then(function (availableLocations) {
-                            var listURLWithFilter = "".concat(_this.state.listURL).concat(availableLocations.listTitle, "/AllItems.aspx?FilterField1=OfficeLocation&FilterValue1=").concat(currentLocation);
-                            _this.setState({
-                                availableLocations: availableLocations,
-                                listURL: listURLWithFilter
-                            });
-                        })
-                            .catch(function (error) {
-                            _this.cardNavigator.replace(ERROR_CARD_VIEW_REGISTRY_ID);
-                            return;
-                        });
-                        PublicHolidaysService.getUpcomingPublicHolidays(listGUID, limitToDate, currentLocation, 1)
-                            .then(function (holidays) {
-                            _this.setState(__assign(__assign({}, _this.state), { userProfileProperty: userProfileProperty, upcomingHolidays: holidays, officeLocation: currentLocation, isLocationUpdated: false, areHolidaysLoaded: false, limitToDate: limitToDate, listGUID: listGUID }));
-                            _this.cardNavigator.replace(CARD_VIEW_REGISTRY_ID);
-                            return Promise.resolve();
-                        })
-                            .catch(function (error) {
-                            _this.cardNavigator.replace(ERROR_CARD_VIEW_REGISTRY_ID);
-                            _this.setState(__assign(__assign({}, _this.state), { upcomingHolidays: [] }));
-                            return;
-                        });
-                        return [2 /*return*/];
-                }
+                setTimeout(function () { return __awaiter(_this, void 0, void 0, function () {
+                    var currentLocation;
+                    var _this = this;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                if (isEmpty(this.properties.listTitle)) {
+                                    this.cardNavigator.replace(CARD_VIEW_SETUP_ID);
+                                    return [2 /*return*/];
+                                }
+                                return [4 /*yield*/, PublicHolidaysService.getOfficeLocation(userProfileProperty)];
+                            case 1:
+                                currentLocation = _a.sent();
+                                PublicHolidaysService.getAvailableLocations(listGUID).then(function (availableLocations) {
+                                    var listURLWithFilter = "".concat(_this.state.listURL).concat(availableLocations.listTitle, "/AllItems.aspx?FilterField1=OfficeLocation&FilterValue1=").concat(currentLocation);
+                                    _this.setState({
+                                        availableLocations: availableLocations,
+                                        listURL: listURLWithFilter
+                                    });
+                                })
+                                    .catch(function (error) {
+                                    _this.cardNavigator.replace(ERROR_CARD_VIEW_REGISTRY_ID);
+                                    return;
+                                });
+                                PublicHolidaysService.getUpcomingPublicHolidays(listGUID, limitToDate, currentLocation, 1)
+                                    .then(function (holidays) {
+                                    _this.setState(__assign(__assign({}, _this.state), { userProfileProperty: userProfileProperty, upcomingHolidays: holidays, officeLocation: currentLocation, isLocationUpdated: false, areHolidaysLoaded: false, limitToDate: limitToDate, listGUID: listGUID }));
+                                    _this.cardNavigator.replace(CARD_VIEW_REGISTRY_ID);
+                                    return Promise.resolve();
+                                })
+                                    .catch(function (error) {
+                                    _this.cardNavigator.replace(ERROR_CARD_VIEW_REGISTRY_ID);
+                                    _this.setState(__assign(__assign({}, _this.state), { upcomingHolidays: [] }));
+                                    return;
+                                });
+                                return [2 /*return*/];
+                        }
+                    });
+                }); });
+                return [2 /*return*/];
             });
         });
     };
@@ -174,6 +181,7 @@ var PublicHolidaysAdaptiveCardExtension = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        if (!(newValue !== oldValue)) return [3 /*break*/, 6];
                         if (!(propertyPath === "limitToDate")) return [3 /*break*/, 2];
                         return [4 /*yield*/, this._loadCardInfo(this.properties.listTitle, this.properties.userProfileProperty, newValue)];
                     case 1:
