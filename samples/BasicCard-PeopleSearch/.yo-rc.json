@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.2",
+    "libraryName": "basic-card-people-search",
+    "libraryId": "916d6720-264f-4e8c-a8d4-01a12215f9a7",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "basic-card-people-search",
+    "solutionShortDescription": "basic-card-people-search description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Basic"
+  }
+}

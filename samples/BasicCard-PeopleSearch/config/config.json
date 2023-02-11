@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "people-search-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/peopleSearch/PeopleSearchAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/peopleSearch/PeopleSearchAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PeopleSearchAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/peopleSearch/loc/{locale}.js"
+  }
+}
