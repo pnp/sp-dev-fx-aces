@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.2",
+    "libraryName": "ace-chatgpt-thingsofday",
+    "libraryId": "0b0c66a6-7313-4f0f-a3a0-0a4bab24aeff",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "ace-chatgpt-thingsofday",
+    "solutionShortDescription": "ace-chatgpt-thingsofday description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "PrimaryText"
+  }
+}
