@@ -3,7 +3,7 @@
   "solution": {
     "name": "new-teams-client-side-solution",
     "id": "3d234977-0365-4ec7-ab4a-8cc91fcca7f1",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
