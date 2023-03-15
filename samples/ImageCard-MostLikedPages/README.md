@@ -10,9 +10,10 @@ This Adaptive Card Extension shows the most liked pages of selected SharePoint s
 
 ![Demo3](./assets/action-demo.gif)
 
-## Used SharePoint Framework Version
+## Compatibility
 
-![version](https://img.shields.io/badge/version-1.16.1-green.svg)
+![SPFx](https://img.shields.io/badge/SPFx-1.16.1-green.svg)
+![Node.js](https://img.shields.io/badge/Node.js-LTS%2016.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 
 ## Permissions
