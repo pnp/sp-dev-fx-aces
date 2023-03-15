@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "image-card-most-liked-pages-client-side-solution",
+    "id": "a48756a5-81e4-4b0a-919d-bcdeaf336f3e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.0-rc.0"
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.Read.All"
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "image-card-most-liked-pages description"
+      },
+      "longDescription": {
+        "default": "image-card-most-liked-pages description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "image-card-most-liked-pages Feature",
+        "description": "The feature that activates elements of the image-card-most-liked-pages solution.",
+        "id": "49a4ea04-fe99-4f7b-97de-9713c5b4b542",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/image-card-most-liked-pages.sppkg"
+  }
+}

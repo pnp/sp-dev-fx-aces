@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/adaptive-card-extension-manifest.schema.json",
+  "id": "dd3846b1-a93a-43aa-934c-6cbd64bdc6ab",
+  "alias": "MostLikedPagesAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportedHosts": ["Dashboard"],
+  "preconfiguredEntries": [{
+    "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
+    "group": { "default": "Dashboard" },
+    "title": { "default": "Most Liked Pages" },
+    "description": { "default": "Displays most liked pages of a set of sites" },
+    "officeFabricIconFontName": "Like",
+    "cardSize": "Large",
+    "properties": {
+      "title": "Most Liked Pages",
+      "description": "Displays most liked pages of a set of sites",
+      "selectedSource": "currentSite",
+      "selectedSites": [],
+      "iconProperty": "" // Default to sharepointlogo
+    }
+  }]
+}
