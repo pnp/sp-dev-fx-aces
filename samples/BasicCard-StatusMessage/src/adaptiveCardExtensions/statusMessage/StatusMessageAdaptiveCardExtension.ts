@@ -29,11 +29,11 @@ export default class StatusMessageAdaptiveCardExtension extends BaseAdaptiveCard
   IStatusMessageAdaptiveCardExtensionState
 > {
   private _deferredPropertyPane: StatusMessagePropertyPane | undefined;
-  private _presenceService: IPresenceService;
+  private _presenceService: IPresenceService | undefined;
 
   public async onInit(): Promise<void> {
     this.state = {
-      presenceService: null,
+      presenceService: undefined,
       currentStatusMessage: "",
       currentUserId: "",
       currentSessionId: ""
@@ -81,12 +81,13 @@ export default class StatusMessageAdaptiveCardExtension extends BaseAdaptiveCard
   }
 
   private async _getCurrentUserStatusMessage(): Promise<void> {
-    let statusMsg: IStatusMessage;
-    let messageText: string;
+    let statusMsg: IStatusMessage | undefined;
+    let messageText: string | undefined;
 
     try {
       statusMsg = await this._presenceService.getCurrentUserStatusMessage();
     } catch (err) {
+      console.log(err, "ERR: cannot retrieve status message from the current user.");
       throw new Error(err);
     }
 

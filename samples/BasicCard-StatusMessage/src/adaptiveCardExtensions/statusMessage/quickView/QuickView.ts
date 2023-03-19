@@ -26,14 +26,15 @@ export class QuickView extends BaseAdaptiveCardView<
 
   public async onAction(action: IActionArguments): Promise<void> {
     if (action.type === "Submit") {
-      const { id, txtStatusMessage, cmbAvailability } = action.data;
+      const { id, txtStatusMessage, cmbAvailability, cmbStatusMsgExp } = action.data;
       if (id === "cancel") {
         return this.quickViewNavigator.close();
       } else if (id === "submit") {
         let newStatusMessageText: string = txtStatusMessage;
+        const newStatusMessageExpiration: string = cmbStatusMsgExp;
         let newAvailabilityText: string = cmbAvailability;
         let newActivityText: string = "";
-        let presenceData: IPresenceStatus = null;
+        let presenceData: IPresenceStatus = undefined;
         switch (newAvailabilityText) {
           case "Available":
             newActivityText = "Available";
@@ -65,17 +66,27 @@ export class QuickView extends BaseAdaptiveCardView<
           newStatusMessageText = "";
         }
         try {
-          await this.state.presenceService.setCurrentUserStatusMessage(newStatusMessageText);
+          await this.state.presenceService.setCurrentUserStatusMessage(newStatusMessageText, newStatusMessageExpiration);
           await this.state.presenceService.setCurrentUserAvailability(this.state.currentUserId, presenceData);
           return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
         } catch (err) {
+          console.log(err, "ERR: cannot set current presence for the current user.");
           throw new Error(err);
         }
       } else if (id === "clearAvail") {
-        try  {
+        try {
           await this.state.presenceService.clearPresence(this.state.currentUserId, this.state.currentSessionId);
           return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
-        } catch(err) {
+        } catch (err) {
+          console.log(err, "ERR: cannot clear presence for the current user.");
+          throw new Error(err);
+        }
+      } else if (id === "clearStatusMsg") {
+        try {
+          await this.state.presenceService.setCurrentUserStatusMessage("", "never");
+          return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
+        } catch (err) {
+          console.log(err, "ERR: cannot reset status message for the current user.");
           throw new Error(err);
         }
       } else {

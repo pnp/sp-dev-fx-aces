@@ -16,6 +16,28 @@
                     "type": "Input.ChoiceSet",
                     "choices": [
                         {
+                            "title": "Never",
+                            "value": "never"
+                        },
+                        {
+                            "title": "1 hour",
+                            "value": "PT1H"
+                        },
+                        {
+                            "title": "4 hours",
+                            "value": "PT4H"
+                        }
+                    ],
+                    "placeholder": "Placeholder text",
+                    "style": "expanded",
+                    "id": "cmbStatusMsgExp",
+                    "label": "Status message expiration",
+                    "value": "PT1H"
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "choices": [
+                        {
                             "title": "Available",
                             "value": "Available"
                         },
@@ -60,6 +82,14 @@
                             "style": "destructive",
                             "data": {
                                 "id": "clearAvail"
+                            }
+                        },
+                        {
+                            "type": "Action.Submit",
+                            "title": "Clear status message",
+                            "style": "destructive",
+                            "data": {
+                                "id": "clearStatusMsg"
                             }
                         },
                         {
