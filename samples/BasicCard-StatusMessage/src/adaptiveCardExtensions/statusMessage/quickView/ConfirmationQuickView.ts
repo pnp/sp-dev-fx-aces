@@ -31,7 +31,7 @@ export class ConfirmationQuickView extends BaseAdaptiveCardView<
       } else if (id === "close") {
         return this.quickViewNavigator.close();
       } else {
-        return;
+        return Promise.reject("Action id " + id + " is not valid.");
       }
     }
   }

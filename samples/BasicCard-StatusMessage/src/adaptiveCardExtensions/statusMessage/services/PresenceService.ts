@@ -5,6 +5,7 @@ import { MSGraphClientFactory, MSGraphClientV3 } from '@microsoft/sp-http';
 import { IPresenceStatus } from "../models/IPresenceStatus";
 
 const StatusMessageService_ServiceKey = "yhabersaat:StatusMessageService";
+const NoExpirationDateString = "9999-12-30T23:00:00.0000000Z"; // This means no expiration datetime
 
 export class StatusMessageService implements IPresenceService {
     public static readonly ServiceKey: ServiceKey<IPresenceService> = ServiceKey.create<IPresenceService>(StatusMessageService_ServiceKey, StatusMessageService);
@@ -32,7 +33,7 @@ export class StatusMessageService implements IPresenceService {
         let expirationDate: Date = new Date();
         switch (expiration) {
             case "never":
-                expirationDate = new Date("9999-12-30T23:00:00.0000000") // This means no expiration date
+                expirationDate = new Date(NoExpirationDateString);
                 break;
             case "PT1H":
                 this._addHours(expirationDate, 1)
@@ -41,7 +42,7 @@ export class StatusMessageService implements IPresenceService {
                 this._addHours(expirationDate, 4)
                 break;
             default:
-                expirationDate = new Date("9999-12-30T23:00:00.0000000");
+                expirationDate = new Date(NoExpirationDateString);
                 break;
         }
         const reqBody: IStatusMessage = {

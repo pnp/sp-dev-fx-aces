@@ -28,11 +28,11 @@
                             "value": "PT4H"
                         }
                     ],
-                    "placeholder": "Placeholder text",
+                    "placeholder": "Select your status message expiration",
                     "style": "expanded",
                     "id": "cmbStatusMsgExp",
                     "label": "Status message expiration",
-                    "value": "PT1H"
+                    "value": "never"
                 },
                 {
                     "type": "Input.ChoiceSet",

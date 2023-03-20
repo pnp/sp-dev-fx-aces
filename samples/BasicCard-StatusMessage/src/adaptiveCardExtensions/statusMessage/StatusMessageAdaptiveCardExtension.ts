@@ -82,12 +82,12 @@ export default class StatusMessageAdaptiveCardExtension extends BaseAdaptiveCard
 
   private async _getCurrentUserStatusMessage(): Promise<void> {
     let statusMsg: IStatusMessage | undefined;
-    let messageText: string | undefined;
+    let messageText: string = "";
 
     try {
       statusMsg = await this._presenceService.getCurrentUserStatusMessage();
     } catch (err) {
-      console.log(err, "ERR: cannot retrieve status message from the current user.");
+      console.log(err, "getCurrentUserStatusMessage()");
       throw new Error(err);
     }
 
