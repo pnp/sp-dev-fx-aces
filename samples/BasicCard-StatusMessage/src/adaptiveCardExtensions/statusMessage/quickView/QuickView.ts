@@ -25,16 +25,21 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   public async onAction(action: IActionArguments): Promise<void> {
+
     if (action.type === "Submit") {
+
       const { id, txtStatusMessage, cmbStatusMsgExp, cmbAvailability } = action.data;
+
       if (id === "cancel") {
         return this.quickViewNavigator.close();
+
       } else if (id === "submit") {
         let newStatusMessageText: string | undefined = txtStatusMessage;
         let newStatusMessageExpiration: string | undefined = cmbStatusMsgExp;
         let newAvailabilityText: string | undefined = cmbAvailability;
         let newActivityText: string = "";
         let presenceData: IPresenceStatus | undefined = undefined;
+
         switch (newAvailabilityText) {
           case "Available":
             newActivityText = "Available";
@@ -58,6 +63,7 @@ export class QuickView extends BaseAdaptiveCardView<
             newActivityText = "Available";
             break;
         }
+
         if (newStatusMessageText === undefined
           || newStatusMessageText === null
           && newStatusMessageExpiration === undefined
@@ -65,37 +71,29 @@ export class QuickView extends BaseAdaptiveCardView<
           newStatusMessageText = "";
           newStatusMessageExpiration = "9999-12-30T23:00:00.0000000Z";
         }
+
         presenceData = {
           sessionId: this.state.currentSessionId,
           availability: newAvailabilityText,
           activity: newActivityText,
           expirationDuration: "PT1H" // Default value is 1 hour
         }
-        try {
-          await this.state.presenceService.setCurrentUserStatusMessage(newStatusMessageText, newStatusMessageExpiration);
-          await this.state.presenceService.setCurrentUserAvailability(this.state.currentUserId, presenceData);
-          return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
-        } catch (err) {
-          console.log(err, "setCurrentUserStatusMessage(), setCurrentUserAvailability()");
-          throw new Error(err);
-        }
+
+        await this.state.presenceService.setCurrentUserStatusMessage(newStatusMessageText, newStatusMessageExpiration);
+        await this.state.presenceService.setCurrentUserAvailability(this.state.currentUserId, presenceData);
+
+        return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
+
       } else if (id === "clearAvail") {
-        try {
-          await this.state.presenceService.clearPresence(this.state.currentUserId, this.state.currentSessionId);
-          return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
-        } catch (err) {
-          console.log(err, "clearPresence()");
-          throw new Error(err);
-        }
+        await this.state.presenceService.clearPresence(this.state.currentUserId, this.state.currentSessionId);
+        return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
+
       } else if (id === "clearStatusMsg") {
-        try {
-          await this.state.presenceService.setCurrentUserStatusMessage("", "never");
-          return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
-        } catch (err) {
-          console.log(err, "setCurrentUserStatusMessage()");
-          throw new Error(err);
-        }
+        await this.state.presenceService.setCurrentUserStatusMessage("", "never");
+        return this.quickViewNavigator.push(CONFIRMATION_QUICK_VIEW_REGISTRY_ID);
+
       } else {
+        console.log("Action id " + id + " is not valid.");
         return Promise.reject("Action id " + id + " is not valid.");
       }
     }

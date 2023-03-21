@@ -6,8 +6,8 @@ import { ConfirmationQuickView } from './quickView/ConfirmationQuickView'
 import { StatusMessagePropertyPane } from './StatusMessagePropertyPane';
 import { IPresenceService } from './services/IPresenceService';
 import { StatusMessageService } from './services/PresenceService';
-import { IStatusMessage } from './models/IStatusMessage';
 import * as strings from 'StatusMessageAdaptiveCardExtensionStrings';
+import { IStatusMessage } from './models/IStatusMessage';
 
 export interface IStatusMessageAdaptiveCardExtensionProps {
   title: string;
@@ -81,15 +81,9 @@ export default class StatusMessageAdaptiveCardExtension extends BaseAdaptiveCard
   }
 
   private async _getCurrentUserStatusMessage(): Promise<void> {
-    let statusMsg: IStatusMessage | undefined;
-    let messageText: string = "";
 
-    try {
-      statusMsg = await this._presenceService.getCurrentUserStatusMessage();
-    } catch (err) {
-      console.log(err, "getCurrentUserStatusMessage()");
-      throw new Error(err);
-    }
+    let messageText: string = "";
+    const statusMsg: IStatusMessage = await this._presenceService.getCurrentUserStatusMessage();
 
     if (statusMsg.statusMessage === null) {
       messageText = strings.NoStatusMessageText;
