@@ -5,7 +5,6 @@ import { MSGraphClientFactory, MSGraphClientV3 } from '@microsoft/sp-http';
 import { IPresenceStatus } from "../models/IPresenceStatus";
 
 const PresenceService_ServiceKey = "BasicCard-StatusMessage:PresenceService";
-const PresenceServiceLogSource = "PresenceService";
 const NoExpirationDateString = "9999-12-30T23:00:00.0000000Z"; // This means no expiration datetime for a status message
 
 export class StatusMessageService implements IPresenceService {
@@ -35,8 +34,8 @@ export class StatusMessageService implements IPresenceService {
             return response;
 
         } catch (error) {
-            Log.warn(PresenceServiceLogSource, `Unable to retrieve current user presence information. Details: ${error.message ? error.message : error}`, this._serviceScope);
-            return null;
+            Log.error("[PresenceService.getCurrentUserStatusMessage()]", error, this._serviceScope);
+            throw error;
         }
     }
 
@@ -82,8 +81,8 @@ export class StatusMessageService implements IPresenceService {
                 .post(reqBody);
 
         } catch (error) {
-            Log.warn(PresenceServiceLogSource, `Unable to set current user status message. Details: ${error.message ? error.message : error}`, this._serviceScope);
-            return error;
+            Log.error("[PresenceService.setCurrentUserStatusMessage()]", error, this._serviceScope);
+            throw error;
         }
     }
 
@@ -102,8 +101,8 @@ export class StatusMessageService implements IPresenceService {
             return response.id;
 
         } catch (error) {
-            Log.warn(PresenceServiceLogSource, `Unable to get current user ID. Details: ${error.message ? error.message : error}`, this._serviceScope);
-            return null;
+            Log.error("[PresenceService.getCurrentUserId()]", error, this._serviceScope);
+            throw error;
         }
     }
 
@@ -127,8 +126,8 @@ export class StatusMessageService implements IPresenceService {
                 .post(reqBody);
 
         } catch (error) {
-            Log.warn(PresenceServiceLogSource, `Unable to set current user availability. Details: ${error.message ? error.message : error}`, this._serviceScope);
-            return error;
+            Log.error("[setCurrentUserAvailability()]", error, this._serviceScope);
+            throw error;
         }
     }
 
@@ -149,8 +148,8 @@ export class StatusMessageService implements IPresenceService {
             return response.value[0].appId;
 
         } catch (error) {
-            Log.warn(PresenceServiceLogSource, `Unable to get current session ID. Details: ${error.message ? error.message : error}`, this._serviceScope);
-            return null;
+            Log.error("[getCurrentSessionId()]", error, this._serviceScope);
+            throw error;
         }
     }
 
@@ -171,8 +170,8 @@ export class StatusMessageService implements IPresenceService {
                 .post(reqBody);
 
         } catch (error) {
-            Log.warn(PresenceServiceLogSource, `Unable to clear current user presence. Details: ${error.message ? error.message : error}`, this._serviceScope);
-            return error;
+            Log.error("[clearPresence()]", error, this._serviceScope);
+            throw error;
         }
     }
 
