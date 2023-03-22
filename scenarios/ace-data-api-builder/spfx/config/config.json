@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "to-do-card-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/toDoCard/ToDoCardAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/toDoCard/ToDoCardAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ToDoCardAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/toDoCard/loc/{locale}.js",
+    "ToDoServiceStrings": "lib/services/loc/{locale}.js"
+  }
+}

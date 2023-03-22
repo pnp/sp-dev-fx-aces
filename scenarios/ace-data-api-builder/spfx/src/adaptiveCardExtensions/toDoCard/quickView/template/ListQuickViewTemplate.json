@@ -1,0 +1,166 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "Container",
+      "spacing": "Large",
+      "style": "emphasis",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Right",
+                  "text": "STATUS",
+                  "wrap": true
+                }
+              ],
+              "width": "50px"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "TITLE",
+                  "wrap": true
+                }
+              ],
+              "width": "250px"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "",
+                  "wrap": true
+                }
+              ],
+              "width": "auto"
+            }
+          ]
+        }
+      ],
+      "bleed": true
+    },
+    {
+      "$data": "${items}",
+      "type": "Container",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "Image",
+                  "id": "status${$index}",
+                  "url": "${if(completed == true, $root.imageCompleted, $root.imageNotCompleted)}",
+                  "width": "20px"
+                }
+              ],
+              "width": "50px"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${title}",
+                  "wrap": true
+                }
+              ],
+              "width": "250px"
+            },
+            {
+              "type": "Column",
+              "spacing": "Small",
+              "selectAction": {
+                "type": "Action.ToggleVisibility",
+                "targetElements": [
+                  "itemContent${$index}",
+                  "chevronDown${$index}",
+                  "chevronUp${$index}"
+                ]
+              },
+              "verticalContentAlignment": "Center",
+              "items": [
+                {
+                  "type": "Image",
+                  "id": "chevronDown${$index}",
+                  "url": "${$root.imageDownUrl}",
+                  "width": "20px"
+                },
+                {
+                  "type": "Image",
+                  "id": "chevronUp${$index}",
+                  "url": "${$root.imageUpUrl}",
+                  "width": "20px",
+                  "isVisible": false
+                }
+              ],
+              "width": "auto"
+            }
+          ]
+        },
+        {
+          "type": "Container",
+          "id": "itemContent${$index}",
+          "isVisible": false,
+          "items": [
+            {
+              "type": "Input.Text",
+              "id": "changeTitle${$index}",
+              "label": "Title",
+              "isRequired": true,
+              "value": "${title}",
+              "errorMessage": "Required field",
+              "placeholder": "${$root.taskTitlePlaceholder}"
+            },
+            {
+              "type": "Input.Toggle",
+              "id": "changeStatus${$index}",
+              "valueOn": true,
+              "valueOff": false,
+              "value": "${if(completed == true, 'true', 'false')}"
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "id": "update${$index}",
+                  "title": "Update",
+                  "data": {
+                    "id": "${id}",
+                    "itemIndex": "{$index}"
+                  }
+                },
+                {
+                  "type": "Action.Submit",
+                  "id": "delete${$index}",
+                  "title": "Delete",
+                  "data": {
+                    "id": "${id}",
+                    "itemIndex": "{$index}"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+     ]
+    }
+  ]
+}

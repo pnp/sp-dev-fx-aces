@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-dab-spfx-client-side-solution",
+    "id": "2f176fc2-60cb-453a-a84b-7f24694fb8f9",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Data API builder",
+        "scope": "Endpoint.Access"
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "ace-dab-spfx description"
+      },
+      "longDescription": {
+        "default": "ace-dab-spfx description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-dab-spfx Feature",
+        "description": "The feature that activates elements of the ace-dab-spfx solution.",
+        "id": "d54b4b39-a042-4998-8408-3aa92965d790",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-dab-spfx.sppkg"
+  }
+}
