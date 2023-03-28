@@ -8,20 +8,17 @@ ACE to display Daily Insights based on ChatGPT OpenAI API. This sample shows how
 
 Below are some screenshot of the ACE
 
-![webpart in action](./assets/2.png)
-![webpart in action](./assets/3.png)
+![ACE in action](./assets/2.png)
+![ACE in action](./assets/3.png)
 
-![webpart in action](./assets/4.png) ![webpart in action](./assets/1.png)
+![ACE in action](./assets/4.png) ![ACE in action](./assets/1.png)
 
-
-## Summary
-
-- Idea of this webpart is to send pre-configured prompt to ChatGPT API to get response and display in Quick View.
-- This card can be configured to show 
+- Idea of this ACE is to send pre-configured prompt to ChatGPT API to get response and display in Quick View.
+- This card can be configured to show
   - Quote of the day
   - Fact of the day
   - Tip of the day
-  - What happenend today in History
+  - What happened today in History
   - Grammar Tip
   - Motivational Words
   - Life Hack of the day
@@ -37,7 +34,7 @@ Below are some screenshot of the ACE
 - Using Session Storage to store the response per session to limit number of request per user.
 - Allowing user to Use Next button to get new response(limits to 5, to save requests)
 
-Note - It is advisable to have call API from server side 
+Note - It is advisable to have call API from server side
 
 ## Used SharePoint Framework Version
 
@@ -58,7 +55,7 @@ Note - It is advisable to have call API from server side
 
 Solution|Author(s)
 --------|---------
-ChatGPT-DailyInsights | [Siddharth Vaghasia](https://github.com/siddharth-vaghasia) 
+ChatGPT-DailyInsights | [Siddharth Vaghasia](https://github.com/siddharth-vaghasia)
 ChatGPT-DailyInsights | [Kunj Sangani](https://github.com/kunj-sangani)
 
 ## Version history
@@ -75,7 +72,7 @@ Version|Date|Comments
 
 ## Minimal Path to Awesome
 
-- If you want to direcly use the packge you can download it from [here](./assets/ace-chatgpt-dailyinsights.sppkg) or follow below steps to build in your enviorment.
+- If you want to directly use the package you can download it from [here](./assets/ace-chatgpt-dailyinsights.sppkg) or follow below steps to build in your environment.
 
 - Clone this repository
 - Ensure that you are at the solution folder
@@ -91,7 +88,7 @@ Version|Date|Comments
   - **npm run serve**
 - Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE [***Daily Insights***] to the page
-- Configure the webpart with required properties.
+- Configure the ACE with required properties.
 
 ## Concept Explored
 
@@ -100,7 +97,6 @@ This extension illustrates the following technical concepts:
 - Using ChatGPT API in ACE
 - State management in ACE
 - Card Properties Configuration.
-
 
 ## References
 
