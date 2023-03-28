@@ -13,10 +13,10 @@ export async function getRecentlyCreatedTeams(userEmail: string): Promise<Retrie
         };
         const userData = await GraphServiceInstance.GetUserId(userEmail);
         result.userId = userData.value[0].id;
-        const userTeams = await GraphServiceInstance.GetUserTeams(result.userId);
+        const userTeams:RetrievedTeams = await GraphServiceInstance.GetUserTeams(result.userId);
         if (userTeams.value.length > 0) {
             const userTeamsId = userTeams.value.map(team => team.id);
-            const allTeams = await GraphServiceInstance.GetTeams();
+            const allTeams:RetrievedTeams = await GraphServiceInstance.GetTeams();
             filteredTeams = allTeams.value.filter(team => !(userTeamsId.indexOf(team.id) > -1) && team.visibility == "Public");
         } else {
             filteredTeams = await GraphServiceInstance.GetTeams();
