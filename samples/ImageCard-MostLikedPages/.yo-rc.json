@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "14.18.2",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "image-card-most-liked-pages",
+    "libraryId": "a48756a5-81e4-4b0a-919d-bcdeaf336f3e",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "image-card-most-liked-pages",
+    "solutionShortDescription": "image-card-most-liked-pages description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Image"
+  }
+}
