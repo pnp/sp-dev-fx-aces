@@ -1,0 +1,31 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "weight": "Bolder",
+      "size": "Medium",
+      "text": "${category}",
+      "wrap": true
+    },
+    {
+      "type": "TextBlock",
+      "weight": "Bolder",
+      "text": "${insight}",
+      "wrap": true
+    },
+    {
+      "type": "ActionSet",
+      "$when":"${nextCount < 5}",
+      "actions": [{
+        "type": "Action.Submit",
+        "title": "Next",
+        "data": {
+          "id": "next"
+        }
+      }]
+    }
+  ]
+}
