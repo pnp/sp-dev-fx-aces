@@ -8,7 +8,7 @@
     "This ACE demonstrates how to use the Presence Graph API endpoints (beta) to set and retrieve a presence status message for a user."
   ],
   "creationDateTime": "2022-12-21",
-  "updateDateTime": "2022-12-21",
+  "updateDateTime": "2023-01-22",
   "products": [
     "SharePoint",
     "Viva"
