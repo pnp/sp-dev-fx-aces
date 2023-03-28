@@ -3,13 +3,18 @@
     "plusBeta": true,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.14.0-beta.4",
+    "version": "1.16.1",
+    "nodeVersion": "14.18.2",
     "libraryName": "new-teams",
     "libraryId": "3d234977-0365-4ec7-ab4a-8cc91fcca7f1",
     "packageManager": "npm",
     "solutionShortDescription": "New Teams description",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "PrimaryText"
+    "aceTemplateType": "PrimaryText",
+    "sdkVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    }
   }
 }

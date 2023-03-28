@@ -8,7 +8,7 @@ export interface IGraphService {
 
 
 class GraphService implements IGraphService {
-  public context = null;
+  public context:any = null;
   private graphClient: MSGraphClient;
 
   constructor() {
@@ -30,7 +30,7 @@ class GraphService implements IGraphService {
   }
 
 
-  public async GetProfilePicture(groupId): Promise<any> {
+  public async GetProfilePicture(groupId:any): Promise<any> {
     let photo: any = await this.GETPICTURE("/groups/" + groupId + "/photo/$value");
     var base64String = btoa(String.fromCharCode.apply(null, new Uint8Array(photo)));
 

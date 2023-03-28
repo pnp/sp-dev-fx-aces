@@ -4,6 +4,7 @@ export type Team = {
     description: string;
     picture: string;
     id: string;
+    visibility?: string;
 };
 
 export type RetrievedTeams = {
