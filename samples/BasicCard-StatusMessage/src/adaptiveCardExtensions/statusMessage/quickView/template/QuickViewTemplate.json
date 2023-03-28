@@ -1,15 +1,69 @@
 {
     "type": "AdaptiveCard",
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "version": "1.2",
+    "version": "1.3",
     "body": [
         {
             "type": "Container",
             "items": [
                 {
                     "type": "Input.Text",
-                    "placeholder": "Enter your status message here",
-                    "id": "txtStatusMessage"
+                    "placeholder": "Enter your status message",
+                    "id": "txtStatusMessage",
+                    "label": "Status message"
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "choices": [
+                        {
+                            "title": "Never",
+                            "value": "never"
+                        },
+                        {
+                            "title": "1 hour",
+                            "value": "PT1H"
+                        },
+                        {
+                            "title": "4 hours",
+                            "value": "PT4H"
+                        }
+                    ],
+                    "placeholder": "Select your status message expiration",
+                    "style": "expanded",
+                    "id": "cmbStatusMsgExp",
+                    "label": "Status message expiration",
+                    "value": "never"
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "choices": [
+                        {
+                            "title": "Available",
+                            "value": "Available"
+                        },
+                        {
+                            "title": "Busy - Call",
+                            "value": "Busy-Call"
+                        },
+                        {
+                            "title": "Busy - Conference call",
+                            "value": "Busy-Conf"
+                        },
+                        {
+                            "title": "Away",
+                            "value": "Away"
+                        },
+                        {
+                            "title": "Do Not Disturb",
+                            "value": "DoNotDisturb"
+                        }
+                    ],
+                    "placeholder": "Select your availability",
+                    "id": "cmbAvailability",
+                    "separator": true,
+                    "label": "Availability",
+                    "value": "Available",
+                    "style": "expanded"
                 },
                 {
                     "type": "ActionSet",
@@ -24,13 +78,31 @@
                         },
                         {
                             "type": "Action.Submit",
+                            "title": "Clear availability",
+                            "style": "destructive",
+                            "data": {
+                                "id": "clearAvail"
+                            }
+                        },
+                        {
+                            "type": "Action.Submit",
+                            "title": "Clear status message",
+                            "style": "destructive",
+                            "data": {
+                                "id": "clearStatusMsg"
+                            }
+                        },
+                        {
+                            "type": "Action.Submit",
                             "title": "Cancel",
                             "style": "destructive",
                             "data": {
                                 "id": "cancel"
                             }
                         }
-                    ]
+                    ],
+                    "separator": true,
+                    "spacing": "Medium"
                 }
             ]
         }

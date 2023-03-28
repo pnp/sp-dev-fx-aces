@@ -2,7 +2,7 @@
 
 ## Summary
 
-This ACE demonstrates how to use the Presence Graph API endpoints (beta) to set and retrieve a presence status message for a user.
+This ACE demonstrates how to use the Presence Graph API endpoints (beta) to get/set a status message and availability/activity for a user.
 
 ![card view](assets/card_view.png)
 
@@ -32,8 +32,9 @@ This ACE demonstrates how to use the Presence Graph API endpoints (beta) to set 
 > You need to approve the following Microsoft Graph permissions at the tenant level:
 
 * Presence.ReadWrite
+* Application.Read.All
 
-NOTE: This sample uses a beta Graph endpoint. The beta endpoints can change at any time and should not be used in production.
+NOTE: This sample uses some beta Graph endpoints (Presence). The beta endpoints can change at any time and should not be used in production.
 
 ## Solution
 
@@ -45,6 +46,7 @@ BasicCard-StatusMessage | [Yves Habersaat](https://github.com/yhabersaat) ([@yha
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 22, 2023|Added new Presence API capabilities (get/set availability and activity)
 1.0|December 21, 2022|Initial release
 
 ## Disclaimer

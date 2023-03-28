@@ -17,7 +17,7 @@
     "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
     "group": { "default": "Dashboard" },
     "title": { "default": "Status Message" },
-    "description": { "default": "This ACE demonstrates how to use the Presence Graph API endpoints (beta) to set and retrieve a presence status message for a user." },
+    "description": { "default": "This ACE demonstrates how to use the Presence Graph API endpoints (beta) to get/set a status message and availability/activity for a user." },
     "officeFabricIconFontName": "TeamsLogo",
     "properties": {
       "title": "Status Message"
