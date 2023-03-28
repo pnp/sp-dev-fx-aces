@@ -17,7 +17,9 @@ This Adaptive Card Extension shows the most liked pages of selected SharePoint s
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 
 ## Permissions
+
 Microsoft Graph
+
 - Sites.Read.All
 
 ## Applies to
@@ -75,11 +77,14 @@ This adaptive card extension illustrates the following concepts:
 - Use of the SharePoint Pages Microsoft Graph API
 - Use of PropertyFieldSitePicker control from [@pnp/spfx-property-controls](https://pnp.github.io/sp-dev-fx-property-controls/)
 
-
 ## References
 
 - [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- [Build your first SharePoint Adaptive Card Extension](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)
+- [Designing Viva Connections custom cards for your dashboard](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro)
 - [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-MostLikedPages" />
