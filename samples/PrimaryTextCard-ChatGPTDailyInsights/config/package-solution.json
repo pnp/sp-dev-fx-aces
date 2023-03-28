@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-chatgpt-dailyinsights-client-side-solution",
+    "id": "0b0c66a6-7313-4f0f-a3a0-0a4bab24aeff",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ace-chatgpt-dailyinsights description"
+      },
+      "longDescription": {
+        "default": "ace-chatgpt-dailyinsights description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-chatgpt-dailyinsights Feature",
+        "description": "The feature that activates elements of the ace-chatgpt-dailyinsights solution.",
+        "id": "3dbf1b27-0c22-48ec-a0e5-5a3ea964a643",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-chatgpt-dailyinsights.sppkg"
+  }
+}
