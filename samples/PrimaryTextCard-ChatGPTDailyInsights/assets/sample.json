@@ -25,8 +25,20 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ChatGPTDailyInsights/assets/2.gif",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ChatGPTDailyInsights/assets/3.png",
     "alt": "Preview"
+  },
+  {
+    "type": "image",
+    "order": 200,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ChatGPTDailyInsights/assets/2.png",
+    "alt": "Preview"
+  }
+  {
+    "type": "image",
+    "order": 300,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ChatGPTDailyInsights/assets/4.png",
+    "alt": "Configuration options"
   }],
   "authors": [{
     "gitHubAccount": "siddharth-vaghasia",
