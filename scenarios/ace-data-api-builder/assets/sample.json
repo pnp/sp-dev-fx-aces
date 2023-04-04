@@ -1,0 +1,85 @@
+[
+  {
+    "name": "pnp-sp-dev-fx-aces-scenarios-ace-data-api-builder",
+    "source": "pnp",
+    "title": "Exposing business data in Microsoft 365 using Azure Data API builder",
+    "shortDescription": "This is a sample application that shows you how to expose business data in Microsoft Viva Connections consuming a back-end API implemented with the preview version of Azure Data API builder.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/scenarios/ace-data-api-builder/",
+    "longDescription": [
+      "This is a sample application that shows you how to expose business data in Microsoft Viva Connections consuming a back-end API implemented with the preview version of Azure Data API builder."
+    ],
+    "creationDateTime": "2023-04-04",
+    "updateDateTime": "2023-04-04",
+    "products": [
+      "SharePoint",
+      "Viva",
+      "Microsoft Teams",
+      "AzureAD",
+      "Microsoft Graph"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "TypeScript,React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/main/scenarios/ace-data-api-builder/assets/ace-ui-sample.png",
+        "alt": "The Adaptive Card Extension UI"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "PaoloPia",
+        "company": "PiaSys.com",
+        "pictureUrl": "https://github.com/paolopia.png",
+        "name": "Paolo Pialorsi",
+        "twitter": "PaoloPia"
+      }
+    ],
+    "references": [
+      {
+        "name": "Getting started with SharePoint Framework",
+        "description": "Introduction about how to develop Microsoft 365 extensions using SharePoint Framework.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant"
+      },
+      {
+        "name": "Build your first SharePoint Adaptive Card Extension",
+        "description": "Learn how to develop your first Adaptive Card Extension (ACE) using SharePoint Framework (SPFx).",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension"
+      },
+      {
+        "name": "Building for Microsoft teams",
+        "description": "Learn how to develop for Microsoft Teams using SharePoint Framework.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview"
+      },
+      {
+        "name": "Use Microsoft Graph in your solution",
+        "description": "Learn how to consume Microsoft Graph using SharePoint Framework (SPFx).",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis"
+      },
+      {
+        "name": "Connect to Azure AD-secured APIs in SharePoint Framework solutions",
+        "description": "Learn how to consume Azure AD-secured APIs using SharePoint Framework (SPFx).",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient"
+      },
+      {
+        "name": "Data API builder for Azure Databases",
+        "description": "Learn about Data API builder for Azure Databases.",
+        "url": "https://aka.ms/dab"
+      },
+      {
+        "name": "Microsoft 365 Patterns and Practices",
+        "description": "Guidance, tooling, samples and open-source controls for your Microsoft 365 development.",
+        "url": "https://aka.ms/m365pnp"
+      }
+    ]
+  }
+]

@@ -50,7 +50,7 @@ export default class ToDoCardAdaptiveCardExtension extends BaseAdaptiveCardExten
     this.quickViewNavigator.register(CONFIRM_QUICK_VIEW_ID, () => new ConfirmQuickView());
     this.quickViewNavigator.register(ERROR_QUICK_VIEW_ID, () => new ErrorQuickView());
 
-    // Build the middleware service and initialize it
+    // Build the middleware service
     this._toDoService = this.context.serviceScope.consume(ToDoService.serviceKey);
 
     this.properties.listToDo = this.listToDo;
