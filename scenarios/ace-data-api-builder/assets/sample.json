@@ -42,6 +42,13 @@
         "pictureUrl": "https://github.com/paolopia.png",
         "name": "Paolo Pialorsi",
         "twitter": "PaoloPia"
+      },
+      {
+        "gitHubAccount": "yorek",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/yorek.png",
+        "name": "Davide Mauri",
+        "twitter": "mauridb"
       }
     ],
     "references": [
@@ -74,6 +81,11 @@
         "name": "Data API builder for Azure Databases",
         "description": "Learn about Data API builder for Azure Databases.",
         "url": "https://aka.ms/dab"
+      },
+      {
+        "name": "Data API builder sample for Microsoft 365",
+        "description": "Here you can find the DAB model and settings used in this sample.",
+        "url": "https://github.com/yorek/dab-microsoft365-demo"
       },
       {
         "name": "Microsoft 365 Patterns and Practices",

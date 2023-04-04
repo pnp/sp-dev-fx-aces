@@ -1,10 +1,10 @@
-# ace-dab-spfx
+# Exposing business data in Microsoft 365 using Azure Data API builder
 
 ## Summary
 
-Short summary on functionality and used technologies.
+This is a sample application that shows you how to expose business data in Microsoft Viva Connections consuming a back-end API implemented with the preview version of Azure Data API builder.
 
-[picture of the solution in action, if possible]
+![The sample UI of the solution](./assets/ace-ui-sample.png)
 
 ## Used SharePoint Framework Version
 
@@ -19,20 +19,21 @@ Short summary on functionality and used technologies.
 
 ## Prerequisites
 
-> Any special pre-requisites?
+In order to use this sample solution, you will need to host a Data API builder model like the one defined [here](https://github.com/yorek/dab-microsoft365-demo). 
 
 ## Solution
 
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+Solution|Author(s)
+--------|---------
+ace-data-api-builder | Paolo Pialorsi - [PiaSys.com](https://www.piasys.com/) - [@PaoloPia](https://twitter.com/PaoloPia)
+ | Davide Mauri - [Microsoft](https://www.microsoft.com/) - [@mauridb](https://twitter.com/mauridb)
+
 
 ## Version history
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
+| 1.0     | March 23, 2023   | Initial release |
 
 ## Disclaimer
 
@@ -52,22 +53,16 @@ Short summary on functionality and used technologies.
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+To learn more about this sample, please watch the following video:
 
-This extension illustrates the following concepts:
-
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+[![IMAGE_ALT](https://img.youtube.com/vi/v-P2Hcwcarc/0.jpg)](https://www.youtube.com/watch?v=v-P2Hcwcarc&t=2435s)
 
 ## References
-
 - [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- [Build your first SharePoint Adaptive Card Extension](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension)
 - [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+- [Connect to Azure AD-secured APIs in SharePoint Framework solutions](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient)
+- [Data API builder for Azure Databases](https://aka.ms/dab)
+- [Data API builder sample for Microsoft 365](https://github.com/yorek/dab-microsoft365-demo)
+- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp)
