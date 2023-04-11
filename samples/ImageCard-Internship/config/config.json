@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "intern-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/intern/InternAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/intern/InternAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "InternAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/intern/loc/{locale}.js"
+  }
+}

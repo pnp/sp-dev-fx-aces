@@ -1,0 +1,283 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "Container",
+      "id": "newInternshipsTab",
+      "items": [
+        {
+          "type": "Container",
+          "items": [
+            {
+              "type": "ColumnSet",
+              "columns": [
+                {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${newHeader}",
+                      "wrap": true,
+                      "weight": "Bolder",
+                      "horizontalAlignment": "Center",
+                      "size": "default",
+                      "fontType": "default",
+                      "color": "default"
+                    }                    
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${recentHeader}",
+                      "wrap": true,
+                      "color": "Dark",
+                      "horizontalAlignment": "Center",
+                      "size": "default",
+                      "weight": "default",
+                      "fontType": "default"
+                    }
+                   ],
+                  "verticalContentAlignment": "Center",
+                  "id": "showRecentInternshipsButton",
+                  "selectAction": {
+                    "type": "Action.ToggleVisibility",
+                    "title": "Show recent internships",
+                    "targetElements": ["newInternshipsTab", "recentInternshipsTab"]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Container",
+          "items": [
+            {
+              "type": "ColumnSet",  
+              "$data": "${newInternData}",           
+              "spacing": "ExtraLarge",
+              "selectAction": {
+                "type": "Action.OpenUrl",
+                "url": "https://www.linkedin.com/jobs/view/3481897276/?alternateChannel=search&refId=p50dyTFuXOS4H60W8vcrww%3D%3D&trackingId=LTx7xRH0q0OESc%2BTz%2FFvig%3D%3D"
+              },
+              "separator": true,
+              "columns": [
+                {
+                  "type": "Column",
+                  "items": [
+                    {
+                      "type": "Container",
+                      "items": [
+                        {
+                          "type": "ColumnSet",
+                       
+                          "columns": [
+                            {
+                              "type": "Column",
+                              "width": "auto",
+                              "items": [
+                                {
+                                  "type": "Image",
+                                  "url": "${companyImage}",
+                                  "horizontalAlignment": "Left",
+                                  "width": "40px"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Column",
+                              "width": "stretch",
+                              "items": [
+                                {
+                                  "type": "TextBlock",
+                                  "weight": "Bolder",
+                                  "text": "${companyName}",
+                                  "wrap": false,
+                                  "fontType": "Default",
+                                  "size": "Default",
+                                  "color": "Default"
+                                }
+                              ],
+                              "verticalContentAlignment": "Bottom"
+                            }                          
+                          ]
+                        },
+                        {
+                          "type": "TextBlock",
+                          "text": "${internshipMode}",
+                          "wrap": false,
+                          "weight": "default",
+                          "spacing": "Medium",
+                          "size": "Small",
+                          "color": "Dark",
+                          "fontType": "default"
+                        },
+                        {
+                          "type": "TextBlock",
+                          "text": "${description}",
+                          "wrap": true,
+                          "spacing": "Small",
+                          "size": "Small",
+                          "fontType": "default",
+                          "color": "default",
+                          "weight": "default"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }            
+          ]
+        }
+      ],
+      "spacing": "None"
+    },
+    {
+      "type": "Container",
+      "id": "recentInternshipsTab",
+      "items": [
+        {
+          "type": "Container",
+          "items": [
+            {
+              "type": "ColumnSet",
+              "columns": [
+                {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${newHeader}",
+                      "wrap": true,
+                      "weight": "Default",
+                      "color": "Default",
+                      "horizontalAlignment": "Center",
+                      "fontType": "Default",
+                      "size": "Default"
+                    }
+                    
+                  ],
+                  "selectAction": {
+                    "type": "Action.ToggleVisibility",
+                    "title": "Show new internships",
+                    "targetElements": ["newInternshipsTab", "recentInternshipsTab"]
+                  },
+                  "id": "showNewInternshipsButton",
+                  "verticalContentAlignment": "Center"
+                },
+                {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${recentHeader}",
+                      "wrap": true,
+                      "color": "Default",
+                      "weight": "Bolder",
+                      "horizontalAlignment": "Center",
+                      "size": "default",
+                      "fontType": "default"
+                    }                    
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Container",
+          "items": [
+            {
+              "type": "ColumnSet",
+              "$data": "${recentInternData}",             
+              "spacing": "ExtraLarge",
+              "selectAction": {
+                "type": "Action.OpenUrl",
+                "url": "https://www.linkedin.com/jobs/view/3465512883/?alternateChannel=search&refId=QLrntZUBlK9xeA4vUnv7MA%3D%3D&trackingId=rE926iqEqiwNbVH2DTHsjQ%3D%3D"
+              },
+              "separator": true,
+              "columns": [
+                {
+                  "type": "Column",
+                  "items": [
+                    {
+                      "type": "Container",
+                      "items": [
+                        {
+                          "type": "ColumnSet",
+                          "columns": [
+                            {
+                              "type": "Column",
+                              "width": "auto",
+                              "items": [
+                                {
+                                  "type": "Image",
+                                  "url": "${companyImage}",
+                                  "horizontalAlignment": "Left",
+                                  "width": "40px"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Column",
+                              "width": "stretch",
+                              "items": [
+                                {
+                                  "type": "TextBlock",
+                                  "weight": "Bolder",
+                                  "text": "${companyName}",
+                                  "wrap": false,
+                                  "fontType": "default",
+                                  "size": "default",
+                                  "color": "Default"
+                                }
+                              ],
+                              "verticalContentAlignment": "Bottom"
+                            }
+                            
+                          ]
+                        },
+                        {
+                          "type": "TextBlock",
+                          "text": "${internshipMode}",
+                          "wrap": false,
+                          "weight": "default",
+                          "spacing": "Medium",
+                          "size": "default",
+                          "color": "default",
+                          "fontType": "default"
+                        },
+                        {
+                          "type": "TextBlock",
+                          "text": "${description}",
+                          "wrap": true,
+                          "spacing": "Small",
+                          "size": "Small",
+                          "fontType": "default",
+                          "color": "default",
+                          "weight": "default"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "spacing": "None",
+      "isVisible": false
+    }  
+  ]  
+}
