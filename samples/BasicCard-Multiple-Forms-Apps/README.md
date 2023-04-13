@@ -6,7 +6,7 @@ This Adaptive Card Extension shows how to have a single ACE card to display mult
 
 - Multiple Microsoft Forms
 
-![screenshot](assets/Forms-List-ACE.gif)
+![screenshot](assets/MSForms-List-ACE.gif)
 
 - Multiple PowerApps
 
