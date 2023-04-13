@@ -25,7 +25,19 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-StatusMessage/assets/demo.png",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-StatusMessage/assets/card_view.png",
+    "alt": "Preview"
+  },
+  {
+    "type": "image",
+    "order": 200,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-StatusMessage/assets/quick_view.png",
+    "alt": "Preview"
+  },
+  {
+    "type": "image",
+    "order": 300,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-StatusMessage/assets/quick_view_success.png",
     "alt": "Preview"
   }],
   "authors": [{
