@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.18.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "spfx-ace-forms",
+    "libraryId": "16685ce5-3dce-4203-a5ea-110ef96a23c5",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "spfx-ace-forms",
+    "solutionShortDescription": "spfx-ace-forms description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Basic"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/adaptive-card-extension-manifest.schema.json",
+  "id": "2eddbda9-807a-4712-a6a0-88b8d2b9a964",
+  "alias": "AceFormsAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": ["Dashboard"],
+  "preconfiguredEntries": [{
+    "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c",
+    "group": { "default": "Dashboard" },
+    "title": { "default": "ACE Forms" },
+    "description": { "default": "ACE Forms description" },
+    "officeFabricIconFontName": "SharePointLogo",
+    "properties": {
+      "title": "ACE Forms",
+      "description": "",
+      "showAllItems": false,
+      "buttonText":"View All Items",
+      "allItemsURL": ""
+    },
+    "cardSize": "Medium"
+  }]
+}
