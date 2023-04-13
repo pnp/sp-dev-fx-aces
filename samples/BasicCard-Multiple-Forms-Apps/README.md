@@ -10,7 +10,7 @@ This Adaptive Card Extension shows how to have a single ACE card to display mult
 
 - Multiple PowerApps
 
-![screenshot](assets/PowerApps-List-ACE.gif)
+![screenshot](assets/Apps-List-ACE.gif)
 
 The main advantage of opening on Stage View is that the user does not looses the context of Viva Connections by not being redirected somewhere else.
 
