@@ -3,7 +3,7 @@
   "source": "pnp",
   "title": "Internship",
   "shortDescription": "This education sample shows how to build an ACE with a card view and quick view to display new and recent internships available to gain work experience.",
-  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-internship",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-internships",
   "longDescription": [
     "This education sample shows how to build an ACE with a card view and quick view to display new and recent internships available to gain work experience."
   ],
@@ -25,7 +25,7 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-Internship/assets/demo.png",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-Internships/assets/demo.png",
     "alt": "Preview"
   }],
   "authors": [{
