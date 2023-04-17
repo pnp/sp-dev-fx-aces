@@ -1,0 +1,29 @@
+{
+    "studentName" : "Alex",
+    "studentNumber" : "1653072",
+    "datePrepared" : "September 1, 2022",
+    "total" : "2600.00",
+    "balance" : "1229.00",
+    "transactionDetails" : [
+        {
+            "date" : "05/02/2022",
+            "transaction" : "Fall Tuition",
+            "payments" : "11400",
+            "charges" : "3829.00"
+        },
+        {
+            "date" : "09/02/2022",
+            "transaction" : "Payment 2",
+            "payments" : "11400",
+            "charges" : ""
+        },
+        {
+            "date" : "19/02/2022",
+            "transaction" : "payment 1",
+            "payments" : "11400",
+            "charges" : ""
+        }
+    ]
+
+
+}
