@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-ace-forms-client-side-solution",
+    "id": "16685ce5-3dce-4203-a5ea-110ef96a23c5",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-ace-forms description"
+      },
+      "longDescription": {
+        "default": "spfx-ace-forms description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-ace-forms Feature",
+        "description": "The feature that activates elements of the spfx-ace-forms solution.",
+        "id": "c1b3745b-70b6-4ad1-b342-6b0fe54799e1",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-ace-forms.sppkg"
+  }
+}
