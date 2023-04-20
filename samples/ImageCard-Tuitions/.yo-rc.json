@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.14.2",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.0",
+    "libraryName": "tuitions-image-card",
+    "libraryId": "7e6e55db-1aac-4478-86cf-cc9d802921c8",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "tuitions-image-card",
+    "solutionShortDescription": "tuitions-image-card description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Image"
+  }
+}

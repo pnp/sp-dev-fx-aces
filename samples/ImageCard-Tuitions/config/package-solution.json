@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "tuitions-image-card-client-side-solution",
+    "id": "7e6e55db-1aac-4478-86cf-cc9d802921c8",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "tuitions-image-card description"
+      },
+      "longDescription": {
+        "default": "tuitions-image-card description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "tuitions-image-card Feature",
+        "description": "The feature that activates elements of the tuitions-image-card solution.",
+        "id": "38b21a14-a219-4f06-a994-8c164f47ca8b",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/tuitions-image-card.sppkg"
+  }
+}

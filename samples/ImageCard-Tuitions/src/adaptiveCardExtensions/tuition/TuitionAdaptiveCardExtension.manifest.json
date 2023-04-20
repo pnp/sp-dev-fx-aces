@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/adaptive-card-extension-manifest.schema.json",
+  "id": "9012336c-b17e-417a-92ed-3472f5cafea8",
+  "alias": "TuitionAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportedHosts": ["Dashboard"],
+  "preconfiguredEntries": [{
+    "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
+    "group": { "default": "Dashboard" },
+    "title": { "default": "Tuition" },
+    "description": { "default": "Tuition ACE card is the part of Student hub project. In this card once the student will click on 'Detail' button he or she will be able to quickly see the tuition balance and payment due dates." },
+    "officeFabricIconFontName": "PaymentCard",
+    "cardSize": "Large",
+    "properties": {
+      "title": "Tuition",
+      "description": "Tuition ACE card is the part of Student hub project. In this card once the student will click on 'Detail' button he or she will be able to quickly see the tuition balance and payment due dates.",
+      "iconProperty": "" // Default to sharepointlogo
+    }
+  }]
+}
