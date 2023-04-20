@@ -1,0 +1,220 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body":  [
+    {
+      "type": "ColumnSet",
+      "style": "accent",
+      "columns": [
+          {
+              "type": "Column",
+              "width": 4,
+              "items": [
+                  {
+                      "type": "TextBlock",
+                      "text": "Tuition Statement",
+                      "weight": "Bolder",
+                      "size": "Large",
+                      "spacing": "None",
+                      "wrap": true
+                  },
+                  {
+                    "type": "Container",
+                    "size": "Small",
+                    "wrap": true,
+                    "items": [
+                        {
+                            "type": "FactSet",
+                            "width" : "auto",
+                            "spacing": "Large",
+                            "facts": [
+                                {
+                                    "title": "Student name:",
+                                    "value": "${tutionDetails.studentName}"
+                                },
+                                {
+                                    "title": "Student num:",
+                                    "value": "${tutionDetails.studentNumber}"
+                                },
+                                {
+                                    "title": "Date prepared:",
+                                    "value": "${tutionDetails.datePrepared}"
+                                }
+                            ]
+                        }
+                    ]
+                  }
+              ]
+          },
+          {
+              "type": "Column",
+              "width": 1,
+              "items": [
+                  {
+                      "type": "Image",
+                      "url": "${illustrationImg}",
+                      "altText": "books",
+                      "size": "auto"
+                  }
+              ]
+          }
+      ]
+    },
+    {
+        "type": "ColumnSet",
+        "spacing": "Medium",
+        "style": "emphasis",
+        "separator": true,
+        "columns": [
+            {
+                "type": "Column",
+                "width": 1.2,
+                "items": [
+                    {
+                        "type": "TextBlock",
+                        "text": "Date",
+                        "isSubtle": true,
+                        "weight": "Bolder",
+                        "wrap": true
+                    },
+                    {
+                        "type" : "Container",
+                        "$data": "${dateObjects}",
+                        "items": [
+                            {
+                                "type": "TextBlock",
+                                "text": "${date}",
+                                "spacing": "Small",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                    
+                ]
+            },
+            {
+                "type": "Column",
+                "width": 1.2,
+                "items": [
+                    {
+                        "type": "TextBlock",
+                        "text": "Transaction",
+                        "isSubtle": true,
+                        "horizontalAlignment": "Center",
+                        "weight": "Bolder",
+                        "wrap": true
+                    },
+                    {
+                        "type" : "Container",
+                        "$data": "${transactionObjects}",
+                        "items" : [
+                            {
+                                "type": "TextBlock",
+                                "text": "${transaction}",                     
+                               
+                                "horizontalAlignment": "Center",
+                                "spacing": "Small",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                    
+                ]
+            },
+            {
+                "type": "Column",
+                "width": 1,
+                "items": [
+                    {
+                        "type": "TextBlock",
+                        "text": "Payments",
+                        "isSubtle": true,
+                        "horizontalAlignment": "Right",
+                        "weight": "Bolder",
+                        "wrap": true
+                    },
+                    {
+                        "type" : "Container",
+                        "$data": "${paymentsObjects}",
+                        "items": [
+                            {
+                                "type": "TextBlock",
+                                "text": "${payment}",                      
+                                "horizontalAlignment": "Right",
+                               
+                                "spacing": "Small",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                    
+                ]
+            },
+            {
+                "type": "Column",
+                "width": 1,
+                "items": [
+                    {
+                        "type": "TextBlock",
+                        "text": "Charges",
+                        "isSubtle": true,
+                        "horizontalAlignment": "Right",
+                        "weight": "Bolder",
+                        "wrap": true
+                    },
+                    {
+                       "type" : "Container",
+                       "$data": "${chargesObjects}",
+                       "items" : [
+                        {
+                            "type": "TextBlock",
+                            "text": "${charges}",                      
+                            "horizontalAlignment": "Right",
+                            "spacing": "Small",
+                            "wrap": true
+                        }
+                       ]  
+                    }
+                    
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Container",
+        "size": "Small",
+        "separator": true,
+        "wrap": true,
+       
+        "items": [
+            {
+                "type": "FactSet",
+                "spacing": "Large",
+                "facts": [
+                    {
+                        "title": "Total",
+                        "value": "${tutionDetails.total}"
+                    },
+                    {
+                        "title": "Balance",
+                        "separator": true,
+                        "value": "${tutionDetails.balance}"
+                    }
+                ]
+            }
+        ]
+    }
+    
+],
+"actions": [
+    {
+        "type": "Action.OpenUrl",
+        "url": "https://www.msn.com",
+        "separator": true,
+        "title": "Pay tuition",
+        "style": "positive",
+        "color": "accent"
+    }
+]
+}

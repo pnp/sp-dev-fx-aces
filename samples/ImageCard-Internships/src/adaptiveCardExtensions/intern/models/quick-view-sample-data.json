@@ -1,0 +1,38 @@
+{
+    "newInternTabData" : [
+        {
+            "companyName": "Accenture",
+            "internshipMode": "Remote | San Francisco",
+            "description": "Summer Analyst (Intern)",
+            "companyImage": "https://180dc.org/wp-content/uploads/2014/04/accenture-logo.png"
+        },
+        {
+            "companyName": "Cisco",
+            "internshipMode": "Summer intern analyst",
+            "description": "Marketing/Creative Intern",
+            "companyImage": "https://www.markpollock.com/wp-content/uploads/2021/01/Cisco-logo.png"
+         },
+         {
+            "companyName": "Ansys",
+            "internshipMode": "DevOps Engineer Intern",
+            "description": "Seattle, WA",
+            "companyImage": "https://www.drivingvisionnews.com/wp-content/uploads/2020/11/ansys-logo.jpg"
+         }
+         
+    ],
+    "recentInternTabData" : [
+        {
+            "companyName": "Cisco",
+            "internshipMode": "Summer intern analyst",
+            "description": "Marketing/Creative Intern",
+            "companyImage": "https://www.markpollock.com/wp-content/uploads/2021/01/Cisco-logo.png"
+        },
+        {
+            "companyName": "Ansys",
+            "internshipMode": "DevOps Engineer Intern",
+            "description": "Seattle,WA",
+            "companyImage": "https://www.drivingvisionnews.com/wp-content/uploads/2020/11/ansys-logo.jpg"
+        }
+
+    ]
+}

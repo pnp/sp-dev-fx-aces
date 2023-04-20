@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "tuition-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/tuition/TuitionAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/tuition/TuitionAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TuitionAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/tuition/loc/{locale}.js"
+  }
+}
