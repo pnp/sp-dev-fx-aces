@@ -1,0 +1,63 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+      {
+          "type": "Container",
+          "$data": "${items}",
+          "separator": true,
+          "items": [{
+              "type": "ColumnSet",
+              "columns": [
+                  {
+                      "type": "Column",
+                      "width": "80px",
+                      "minHeight": "80px",
+                      "items": [
+                          {
+                              "type": "Container",
+                              "backgroundImage": {
+                                  "url": "${imageURL}",
+                                  "horizontalAlignment": "Center",
+                                  "verticalAlignment": "Center"
+                              },
+                              "minHeight": "80px",
+                              "horizontalAlignment": "Center",
+                              "verticalContentAlignment": "Center"
+                          }
+                      ],
+                      "verticalContentAlignment": "Center",
+                      "horizontalAlignment": "Left"
+                  },
+                  {
+                      "type": "Column",
+                      "width": "auto",
+                      "items": [
+                          {
+                              "type": "TextBlock",
+                              "text": "${title}",
+                              "wrap": true,
+                              "weight": "Bolder",
+                              "size": "Medium"
+                          },
+                          {
+                              "type": "TextBlock",
+                              "text": "${description}",
+                              "isSubtle": true,
+                              "wrap": true,
+                              "spacing": "Small",
+                              "maxLines": 2
+                          }
+                      ],
+                      "verticalContentAlignment": "Center"
+                  }
+              ],
+              "selectAction": {
+                  "type": "Action.OpenUrl",
+                  "url": "${linkURL}"
+              }
+          }]
+      }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5"
+}
