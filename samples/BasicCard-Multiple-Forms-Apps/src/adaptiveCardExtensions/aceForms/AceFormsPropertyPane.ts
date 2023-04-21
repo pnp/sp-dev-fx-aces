@@ -23,7 +23,8 @@ export class AceFormsPropertyPane {
                   label: 'List ID (GUID)'
                 }),
                 PropertyPaneToggle('showAllItems', {
-                  label: 'Show all Items button?'
+                  label: 'Show all Items button?',
+                  checked: false
                 }),
                 PropertyPaneTextField('buttonText', {
                   label: 'All Items button text'

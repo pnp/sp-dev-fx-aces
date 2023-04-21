@@ -29,8 +29,8 @@ The main advantage of opening on Stage View is that the user does not looses the
 
 > Create a SharePoint list with the following fields:
 
-| Column Title | Type             | 
-| ------- | ---------------- 
+| Column Title | Type             |
+| ------- | ----------------
 | Title    | Single Line of Text |
 | Image    | Image |
 | Description    | Single Line of Text |
@@ -42,7 +42,7 @@ The main advantage of opening on Stage View is that the user does not looses the
 
 | Solution    | Author(s)                                               |
 | ----------- | ------------------------------------------------------- |
-| BasicCard-Multiple-Forms | Marcus Castro (https://www.linkedin.com/in/marcuscastrosp), Microsoft |
+| BasicCard-Multiple-Forms | Marcus Castro ([LinkedIn](https://www.linkedin.com/in/marcuscastrosp)), Microsoft
 
 ## Version history
 
@@ -81,7 +81,7 @@ This ACE card shows how you can a have a single ACE Card to display multiple Mic
 - Shows the list of items on Viva Connections.
 - Open the Form or App on Stage View in Teams.
 
-If you have the requirement of some items to be visible only to a set of users, you can use SharePoint out of the box item permission level to break item level permission and select groups that should be able to see each form. 
+If you have the requirement of some items to be visible only to a set of users, you can use SharePoint out of the box item permission level to break item level permission and select groups that should be able to see each form.
 
 - Recommended only if you have a small number of items due to performance.
 
