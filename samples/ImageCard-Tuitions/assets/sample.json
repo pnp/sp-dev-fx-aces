@@ -1,7 +1,7 @@
 [{
   "name": "pnp-sp-fx-aces-tuitions",
   "source": "pnp",
-  "title": "Tuitions ACE",
+  "title": "Tuitions Viva Connections EDU ACE",
   "shortDescription": "This sample shows how to build an ACE with a card view to display outstanding payment for Tuitions and payment breakage.",
   "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-Tuitions",
   "longDescription": [
@@ -25,7 +25,7 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-Tuitions/assets/tuitions.gif",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/raw/main/samples/ImageCard-Tuitions/assets/Tuitions.gif",
     "alt": "Preview"
   }],
   "authors": [{
