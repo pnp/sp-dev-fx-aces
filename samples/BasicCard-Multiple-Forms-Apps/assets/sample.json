@@ -1,14 +1,14 @@
 [{
-  "name": "pnp-sp-fx-aces-internship",
+  "name": "pnp-sp-fx-aces-multi-forms",
   "source": "pnp",
-  "title": "Internship",
-  "shortDescription": "This education sample shows how to build an ACE with a card view and quick view to display new and recent internships available to gain work experience.",
-  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-Internships",
+  "title": "Multiple Forms",
+  "shortDescription": "This Adaptive Card Extension shows how to have a single ACE card to display multiple Microsoft Forms or Multiple Power Apps that opens in the Stage View on Teams.",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-Multiple-Forms-Apps",
   "longDescription": [
-    "This education sample shows how to build an ACE with a card view and quick view to display new and recent internships available to gain work experience."
+    "This Adaptive Card Extension shows how to have a single ACE card to display multiple Microsoft Forms or Multiple Power Apps that opens in the Stage View on Teams."
   ],
-  "creationDateTime": "2023-04-15",
-  "updateDateTime": "2023-04-15",
+  "creationDateTime": "2023-04-13",
+  "updateDateTime": "2023-04-13",
   "products": [
     "SharePoint",
     "Viva"
@@ -19,21 +19,20 @@
     },
     {
       "key": "SPFX-VERSION",
-      "value": "1.16.0"
+      "value": "1.16.1"
     }
   ],
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-Internships/assets/demo.png",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-Multiple-Forms-Apps/assets/ACEForms.png",
     "alt": "Preview"
   }],
   "authors": [{
-    "gitHubAccount": "jesegher",
+    "gitHubAccount": "marcus-castro-sp",
     "company": "Microsoft",
-    "pictureUrl": "https://github.com/jesegher.png",
-    "name": "Jethro Seghers",
-    "twitter": "jseghers"
+    "pictureUrl": "https://github.com/marcus-castro-sp.png",
+    "name": "Marcus Castro"
   }],
   "references": [{
       "name": "Viva Connections Extensibility guidance",

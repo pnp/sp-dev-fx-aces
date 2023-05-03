@@ -7,6 +7,16 @@
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Mail.Read"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Mail.ReadBasic"
+      }
+    ],
     "developer": {
       "name": "",
       "websiteUrl": "",
