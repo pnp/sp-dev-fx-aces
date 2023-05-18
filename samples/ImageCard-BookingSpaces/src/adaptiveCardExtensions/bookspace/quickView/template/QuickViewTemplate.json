@@ -1,0 +1,680 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "Container",
+      "id": "adaptivecard1",
+      "items": [
+        {
+          "id": "tabview",
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "${tabOne}",
+                  "wrap": true
+                }
+              ],
+              "selectAction": {
+                "type": "Action.ToggleVisibility",
+                "title": "find spaces",
+                "targetElements": [
+                  {
+                    "elementId": "reservationItemDetails",
+                    "isVisible": false
+                  },
+                  {
+                    "elementId": "reservationList",
+                    "isVisible": false
+                  },
+                  {
+                    "elementId": "formContainer",
+                    "isVisible": true
+                  },
+                  {
+                    "elementId": "bookItemList",
+                    "isVisible": false
+                  },
+                  {
+                    "elementId": "editFormContainer",
+                    "isVisible": false
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "${tabTwo}",
+                  "wrap": true
+                }
+              ],
+              "selectAction": {
+                "type": "Action.ToggleVisibility",
+                "title": "find spaces",
+                "targetElements": [
+                  {
+                    "elementId": "cancelButtonColumnSubset",
+                    "isVisible": true
+                  },
+                  {
+                    "elementId": "confirmPositiveButton",
+                    "isVisible": false
+                  },
+                  {
+                    "elementId": "reservationItemDetails",
+                    "isVisible": false
+                  },
+                  {
+                    "elementId": "reservationList",
+                    "isVisible": true
+                  },
+                  {
+                    "elementId": "bookItemList",
+                    "isVisible": false
+                  },
+                  {
+                    "elementId": "formContainer",
+                    "isVisible": false
+                  },
+                  {
+                    "elementId": "editFormContainer",
+                    "isVisible": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "Container",
+          "id": "formContainer",
+          "items": [
+            {
+              "id": "availabelspace",
+              "type": "Container",
+              "style": "emphasis",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "size": "large",
+                  "weight": "bolder",
+                  "text": "20",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "size": "small",
+                  "weight": "bolder",
+                  "text": "${availableSpacesText}",
+                  "wrap": true,
+                  "spacing": "small"
+                },
+                {
+                  "type": "TextBlock",
+                  "size": "small",
+                  "weight": "lighter",
+                  "text": "${asOfText} ${allBookspacesData.presentDate}",
+                  "wrap": true,
+                  "spacing": "none"
+                }
+              ]
+            },
+            {
+              "type": "Input.ChoiceSet",
+              "id": "CompactSelectVal1",
+              "label": "${amenityText}",
+              "style": "compact",
+              "value": "1",
+              "choices": [
+                {
+                  "$data": "${amenityChoiceWithLabel.choices}",
+                  "title": "${choice}",
+                  "value": "${value}"
+                }
+              ]
+            },
+            {
+              "type": "Input.ChoiceSet",
+              "id": "CompactSelectVal2",
+              "label": "${buildingText}",
+              "style": "compact",
+              "value": "1",
+              "choices": [
+                {
+                  "$data": "${buildingChoiceWithLabel.choices}",
+                  "title": "${choice}",
+                  "value": "${value}"
+                }
+              ]
+            },
+            {
+              "type": "Input.Date",
+              "label": "${dateText}",
+              "id": "DateVal",
+              "value": ""
+            },
+            {
+              "type": "Input.Time",
+              "label": "${fromText}",
+              "id": "fromTimeVal",
+              "value": ""
+            },
+            {
+              "type": "Input.Time",
+              "label": "${toText}",
+              "id": "toTimeVal",
+              "value": ""
+            },
+            {
+              "type": "Input.ChoiceSet",
+              "id": "allDayChoice",
+              "isMultiSelect": true,
+              "style": "expanded",
+              "choices": [
+                {
+                  "title": "${allDayText}",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "id": "searchButton",
+              "type": "ActionSet",
+              "spacing": "medium",
+              "actions": [
+                {
+                  "id": "searchButtonAction",
+                  "type": "Action.ToggleVisibility",
+                  "style": "positive",
+                  "title": "${searchText}",
+                  "targetElements": [
+                    {
+                      "elementId": "formContainer",
+                      "isVisible": false
+                    },
+                    {
+                      "elementId": "bookItemList",
+                      "isVisible": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Container",
+          "id": "editFormContainer",
+          "isVisible": false,
+          "items": [
+            {
+              "id": "editAvailabelspace",
+              "type": "Container",
+              "style": "emphasis",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "size": "large",
+                  "weight": "bolder",
+                  "text": "20",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "size": "small",
+                  "weight": "bolder",
+                  "text": "${availableSpacesText}",
+                  "wrap": true,
+                  "spacing": "small"
+                },
+                {
+                  "type": "TextBlock",
+                  "size": "small",
+                  "weight": "lighter",
+                  "text": "${asOfText} ${allBookspacesData.presentDate}",
+                  "wrap": true,
+                  "spacing": "none"
+                }
+              ]
+            },
+            {
+              "type": "Input.ChoiceSet",
+              "id": "editCompactSelectVal1",
+              "label": "${amenityText}",
+              "style": "compact",
+              "value": "1",
+              "choices": [
+                {
+                  "$data": "${amenityChoiceWithLabel.choices}",
+                  "title": "${choice}",
+                  "value": "${value}"
+                }
+              ]
+            },
+            {
+              "type": "Input.ChoiceSet",
+              "id": "editCompactSelectVal2",
+              "label": "${buildingText}",
+              "style": "compact",
+              "value": "1",
+              "choices": [
+                {
+                  "$data": "${buildingChoiceWithLabel.choices}",
+                  "title": "${choice}",
+                  "value": "${value}"
+                }
+              ]
+            },
+            {
+              "type": "Input.Date",
+              "label": "${dateText}",
+              "id": "editDateVal",
+              "value": "2023-09-20"
+            },
+            {
+              "type": "Input.Time",
+              "label": "${fromText}",
+              "id": "editFromTimeVal",
+              "value": "05:30"
+            },
+            {
+              "type": "Input.Time",
+              "label": "${toText}",
+              "id": "editToTimeVal",
+              "value": "16:00"
+            },
+            {
+              "type": "Input.ChoiceSet",
+              "id": "editAllDayChoice",
+              "isMultiSelect": true,
+              "style": "expanded",
+              "choices": [
+                {
+                  "title": "${allDayText}",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "id": "editSearchButton",
+              "type": "ActionSet",
+              "spacing": "medium",
+              "actions": [
+                {
+                  "id": "editSearchButtonAction",
+                  "type": "Action.ToggleVisibility",
+                  "style": "positive",
+                  "title": "${searchText}",
+                  "targetElements": [
+                    {
+                      "elementId": "editFormContainer",
+                      "isVisible": false
+                    },
+                    {
+                      "elementId": "bookItemList",
+                      "isVisible": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bookItemList",
+          "type": "Container",
+          "isVisible": false,
+          "items": [
+            {
+              "type": "ColumnSet",
+              "$data": "${availableSpacesArray}",
+              "columns": [
+                {
+                  "type": "Column",
+                  "items": [
+                    {
+                      "type": "Image",
+                      "url": "${url}",
+                      "altText": "image",
+                      "width": "80px"
+                    }
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "verticalContentAlignment": "center",
+                  "horizontalContentAlignment": "center",
+                  "width": "auto",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "size": "medium",
+                      "weight": "bolder",
+                      "text": "${buildingName}",
+                      "wrap": false
+                    },
+                    {
+                      "type": "TextBlock",
+                      "size": "small",
+                      "weight": "lighter",
+                      "text": "Room ${roomNo} | ${seats} seats",
+                      "wrap": false,
+                      "spacing": "small"
+                    },
+                    {
+                      "type": "TextBlock",
+                      "size": "small",
+                      "weight": "lighter",
+                      "text": " ${dateOfAvailability}, ${timeOfAvailability}",
+                      "wrap": false,
+                      "spacing": "none"
+                    }
+                  ]
+                },
+                {
+                  "verticalContentAlignment": "center",
+                  "horizontalContentAlignment": "right",
+                  "width": "60px",
+                  "type": "Column",
+                  "items": [
+                    {
+                      "type": "ActionSet",
+                      "size": "small",
+                      "actions": [
+                        {
+                          "type": "Action.ToggleVisibility",
+                          "style": "positive",
+                          "title": "Book"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reservationList",
+          "type": "Container",
+          "isVisible": false,
+          "items": [
+            {
+              "$data": "${reservedSpacesArray}",
+              "type": "ColumnSet",
+              "columns": [
+                {
+                  "type": "Column",
+                  "items": [
+                    {
+                      "type": "Image",
+                      "url": "${url}",
+                      "altText": "image",
+                      "width": "80px"
+                    }
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "verticalContentAlignment": "center",
+                  "horizontalContentAlignment": "center",
+                  "width": "auto",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "size": "medium",
+                      "weight": "bolder",
+                      "text": "${buildingName}",
+                      "wrap": false
+                    },
+                    {
+                      "type": "TextBlock",
+                      "size": "small",
+                      "weight": "lighter",
+                      "text": "Room ${roomNo} | ${seats} seats",
+                      "wrap": false,
+                      "spacing": "small"
+                    },
+                    {
+                      "type": "TextBlock",
+                      "size": "small",
+                      "weight": "lighter",
+                      "text": " ${dateOfAvailability}, ${timeOfAvailability}",
+                      "wrap": false,
+                      "spacing": "none"
+                    }
+                  ]
+                },
+                {
+                  "width": "60px",
+                  "type": "Column",
+                  "verticalContentAlignment": "center",
+                  "items": [
+                    {
+                      "horizontalAlignment": "center",
+                      "type": "Image",
+                      "url": "${arrowIconButtonImage}",
+                      "size": "small",
+                      "altText": "image",
+                      "width": "7px",
+                      "selectAction": {
+                        "type": "Action.ToggleVisibility",
+                        "targetElements": [
+                          {
+                            "elementId": "reservationList",
+                            "isVisible": false
+                          },
+                          {
+                            "elementId": "reservationItemDetails",
+                            "isVisible": true
+                          },
+                          {
+                            "elementId": "modifyButtonColumnSubset",
+                            "isVisible": true
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reservationItemDetails",
+          "type": "Container",
+          "isVisible": false,
+          "items": [
+            {
+              "type": "Image",
+              "url": "https://th.bing.com/th?q=Middle+School+Library&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247",
+              "altText": "image",
+              "width": "288px",
+              "height": "113px"
+            },
+            {
+              "id": "modifyButtonColumnset",
+              "type": "ColumnSet",
+              "columns": [
+                {
+                  "type": "Column",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "size": "small",
+                      "weight": "lighter",
+                      "text": "${reservationDetailsText}"
+                    }
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "width": "auto",
+                  "items": [
+                    {
+                      "id": "modifyButtonColumnSubset",
+                      "type": "ColumnSet",
+                      "columns": [
+                        {
+                          "type": "Column",
+                          "width": "auto",
+                          "items": [
+                            {
+                              "type": "Image",
+                              "url": "${editIcon}",
+                              "altText": "editIcon",
+                              "width": "12px"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Column",
+                          "width": "auto",
+                          "items": [
+                            {
+                              "type": "TextBlock",
+                              "size": "small",
+                              "text": "${modifyText}",
+                              "color": "accent"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "selectAction": {
+                "type": "Action.ToggleVisibility",
+                "targetElements": [
+                  {
+                    "elementId": "editFormContainer",
+                    "isVisible": true
+                  },
+                  {
+                    "elementId": "reservationItemDetails",
+                    "isVisible": false
+                  }
+                ]
+              }
+            },
+            {
+              "type": "TextBlock",
+              "weight": "bolder",
+              "text": "${buildingText}",
+              "spacing": "medium"
+            },
+            {
+              "type": "TextBlock",
+              "size": "small",
+              "weight": "lighter",
+              "text": "Room 100 | 5 seats",
+              "spacing": "none"
+            },
+            {
+              "type": "TextBlock",
+              "weight": "bolder",
+              "text": "${dateText}",
+              "spacing": "medium"
+            },
+            {
+              "type": "TextBlock",
+              "size": "small",
+              "weight": "lighter",
+              "text": "10/30/22",
+              "spacing": "none"
+            },
+            {
+              "type": "TextBlock",
+              "weight": "bolder",
+              "text": "${timeText}",
+              "spacing": "medium"
+            },
+            {
+              "type": "TextBlock",
+              "size": "small",
+              "weight": "lighter",
+              "text": "12:00 PM - 5:00 PM",
+              "spacing": "none"
+            },
+            {
+              "id": "cancelButtonColumnSubset",
+              "isVisible": true,
+              "type": "ColumnSet",
+              "spacing": "ExtraLarge",
+              "columns": [
+                {
+                  "type": "Column",
+                  "width": "auto",
+                  "items": [
+                    {
+                      "type": "Image",
+                      "url": "${cancelIcon}",
+                      "altText": "cancel icon",
+                      "width": "12px"
+                    }
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "width": "auto",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "size": "small",
+                      "text": "${cancelReservationText}",
+                      "color": "accent"
+                    }
+                  ]
+                }
+              ],
+              "selectAction": {
+                "type": "Action.ToggleVisibility",
+                "targetElements": [
+                  {
+                    "elementId": "cancelButtonColumnSubset",
+                    "isVisible": false
+                  },
+                  {
+                    "elementId": "confirmPositiveButton",
+                    "isVisible": true
+                  },
+                  {
+                    "elementId": "modifyButtonColumnSubset",
+                    "isVisible": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": "confirmPositiveButton",
+              "type": "ActionSet",
+              "isVisible": false,
+              "spacing": "ExtraLarge",
+              "actions": [
+                {
+                  "id": "confirmPositiveButtonActions",
+                  "type": "Action.ToggleVisibility",
+                  "style": "positive",
+                  "title": "${confirmCancellationText}",
+                  "targetElements": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

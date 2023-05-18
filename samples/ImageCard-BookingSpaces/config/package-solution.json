@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "book-spaces-client-side-solution",
+    "id": "d350b33a-f7c1-40a4-8d69-afc7814cfac7",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "book-spaces description"
+      },
+      "longDescription": {
+        "default": "book-spaces description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "book-spaces Feature",
+        "description": "The feature that activates elements of the book-spaces solution.",
+        "id": "4b55b4a5-46fe-4d22-825d-5f4883f41394",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/book-spaces.sppkg"
+  }
+}

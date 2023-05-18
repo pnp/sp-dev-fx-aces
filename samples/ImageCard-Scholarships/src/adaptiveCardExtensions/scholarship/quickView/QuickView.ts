@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView, } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'ScholarshipAdaptiveCardExtensionStrings';
 import { IScholarshipAdaptiveCardExtensionProps, IScholarshipAdaptiveCardExtensionState } from '../ScholarshipAdaptiveCardExtension';
@@ -26,7 +29,7 @@ export class QuickView extends BaseAdaptiveCardView<
 > {
 
   private  sortItemsAccordingToDueDate(datesArray : any[])  {
-    let res  = datesArray.sort((date1,date2)=>
+    const res  = datesArray.sort((date1,date2)=>
     {
         const val1 : any = new Date (date1.deadlineDetails.split("-")[1]);
         const val2  : any= new Date (date2.deadlineDetails.split("-")[1]);

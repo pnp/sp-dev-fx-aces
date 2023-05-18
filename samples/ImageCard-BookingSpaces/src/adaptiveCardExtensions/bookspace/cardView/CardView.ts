@@ -5,10 +5,10 @@ import {
   IQuickViewCardAction,
   ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'LibraryAdaptiveCardExtensionStrings';
-import { ILibraryAdaptiveCardExtensionProps, ILibraryAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../LibraryAdaptiveCardExtension';
+import * as strings from 'BookspaceAdaptiveCardExtensionStrings';
+import { IBookspaceAdaptiveCardExtensionProps, IBookspaceAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../BookspaceAdaptiveCardExtension';
 
-export class CardView extends BaseImageCardView<ILibraryAdaptiveCardExtensionProps, ILibraryAdaptiveCardExtensionState> {
+export class CardView extends BaseImageCardView<IBookspaceAdaptiveCardExtensionProps, IBookspaceAdaptiveCardExtensionState> {
   /**
    * Buttons will not be visible if card size is 'Medium' with Image Card View.
    * It will support up to two buttons for 'Large' card size.
@@ -30,7 +30,7 @@ export class CardView extends BaseImageCardView<ILibraryAdaptiveCardExtensionPro
   public get data(): IImageCardParameters {
     return {
       primaryText: strings.PrimaryText,
-      imageUrl: require('../assets/library.png'),
+      imageUrl: require('../assets/Imagedesktop.png'),
       title: this.properties.title
     };
   }

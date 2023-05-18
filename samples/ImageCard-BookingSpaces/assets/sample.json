@@ -1,0 +1,43 @@
+[{
+  "name": "pnp-sp-fx-aces-bookingspace",
+  "source": "pnp",
+  "title": "Booking Spaces ACE",
+  "shortDescription": "This sample shows how to build an ACE with a card view and quick view to search spaces in the campus and be able to quickly check previous/upcoming reservations.",
+  "url": "<<To Do>>",
+  "longDescription": [
+    "This sample shows how to build an ACE with a card view and quick view to search spaces in the campus and be able to quickly check previous/upcoming reservations."
+  ],
+  "creationDateTime": "2023-05-16",
+  "updateDateTime": "2023-05-16",
+  "products": [
+    "SharePoint",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.16.0"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "<<To Do>>/assets/BookSpaces1.PNG",
+    "alt": "Preview"
+  }],
+  "authors": [{
+    "gitHubAccount": "<<To Do>>",
+    "company": "<<To Do>>",
+    "pictureUrl": "<<To Do>>",
+    "name": "<<To Do>>",
+    "twitter": "<<To Do>>"
+  }],
+  "references": [{
+    "name": "Viva Connections Extensibility guidance",
+    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+    "url": "https://aka.ms/viva/connections/extensibility"
+  }]
+}]
