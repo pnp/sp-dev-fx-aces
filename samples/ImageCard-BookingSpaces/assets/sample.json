@@ -3,7 +3,7 @@
   "source": "pnp",
   "title": "Booking Spaces ACE",
   "shortDescription": "This sample shows how to build an ACE with a card view and quick view to search spaces in the campus and be able to quickly check previous/upcoming reservations.",
-  "url": "<<To Do>>",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-BookingSpaces",
   "longDescription": [
     "This sample shows how to build an ACE with a card view and quick view to search spaces in the campus and be able to quickly check previous/upcoming reservations."
   ],
@@ -25,15 +25,15 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "<<To Do>>/assets/BookSpaces1.PNG",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-BookingSpaces/assets/BookSpaces1.PNG",
     "alt": "Preview"
   }],
   "authors": [{
-    "gitHubAccount": "<<To Do>>",
-    "company": "<<To Do>>",
-    "pictureUrl": "<<To Do>>",
-    "name": "<<To Do>>",
-    "twitter": "<<To Do>>"
+    "gitHubAccount": "jesegher",
+    "company": "Microsoft",
+    "pictureUrl": "https://github.com/jesegher.png",
+    "name": "Jethro Seghers",
+    "twitter": "jseghers"
   }],
   "references": [{
     "name": "Viva Connections Extensibility guidance",
