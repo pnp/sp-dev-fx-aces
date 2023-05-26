@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'InternAdaptiveCardExtensionStrings';
 import { IInternAdaptiveCardExtensionProps, IInternAdaptiveCardExtensionState } from '../InternAdaptiveCardExtension';
@@ -22,7 +23,7 @@ export class QuickView extends BaseAdaptiveCardView<
   
   public get data(): IQuickViewData {
 
-    let allTabData : IQuickViewAllInternData  =  require('../../intern/models/quick-view-sample-data.json');
+    const allTabData : IQuickViewAllInternData  =  require('../../intern/models/quick-view-sample-data.json');
 
 //     var newTabInterndata: IQuickViewInternData[] =
 //     [

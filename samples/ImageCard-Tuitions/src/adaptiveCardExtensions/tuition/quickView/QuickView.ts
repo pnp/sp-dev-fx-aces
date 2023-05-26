@@ -18,10 +18,10 @@ export interface IQuickViewData {
   balanceText: string;
   payButtonText: string;
   tutionDetails : IQuickViewTutionData;
-  dateObjects : any[];
-  transactionObjects : any[];
-  paymentsObjects : any[];
-  chargesObjects : any[];
+  dateObjects : unknown[];
+  transactionObjects : unknown[];
+  paymentsObjects : unknown[];
+  chargesObjects : unknown[];
 }
 
 export class QuickView extends BaseAdaptiveCardView<
@@ -31,11 +31,12 @@ export class QuickView extends BaseAdaptiveCardView<
 > {
   public get data(): IQuickViewData {
 
-    let tutionDetails : IQuickViewTutionData  =  require('../../tuition/models/sample-tution-template.json');
-    let dateObjects : any[]  = [];
-    let transactionObjects : any[]  = [];
-    let paymentsObjects : any[]  = [];
-    let chargesObjects : any[]  = [];
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const tutionDetails : IQuickViewTutionData  =  require('../../tuition/models/sample-tution-template.json');    
+    const dateObjects : unknown[]  = [];
+    const transactionObjects : unknown[]  = [];
+    const paymentsObjects : unknown[]  = [];
+    const chargesObjects : unknown[]  = [];
 
     tutionDetails.transactionDetails.forEach(element => {
       dateObjects.push({"date" : element.date});

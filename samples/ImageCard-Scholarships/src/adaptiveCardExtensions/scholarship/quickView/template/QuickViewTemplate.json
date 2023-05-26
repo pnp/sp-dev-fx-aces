@@ -1,0 +1,549 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "Container",
+      "id": "fullContainer",
+      "items": [
+        {
+          "type": "Container",
+          "id": "headerItemsTab",
+          "items": [
+            {
+              "type": "ColumnSet",
+              "columns": [
+                {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${newHeader} (${newTabCount})",
+                      "wrap": true,
+                      "weight": "default",
+                      "horizontalAlignment": "Center",
+                      "size": "default",
+                      "fontType": "default",
+                      "color": "default"
+                    }
+                  ],
+                  "id": "showNewScholarshipsButton",
+                  "selectAction": {
+                    "type": "Action.ToggleVisibility",
+                    "title": "Show new Scholarships",
+                    "targetElements": [
+                      {
+                        "elementId": "selectedNewItemDetailsContainer",
+                        "isVisible": false
+                      },
+                      {
+                        "elementId": "newScholarshipsTab",
+                        "isVisible": true
+                      },
+                      {
+                        "elementId": "recentScholarshipsTab",
+                        "isVisible": false
+                      },
+                      {
+                        "elementId": "appliedScholarshipsTab",
+                        "isVisible": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${recentHeader} (${recentTabCount})",
+                      "wrap": true,
+                      "color": "default",
+                      "horizontalAlignment": "Center",
+                      "size": "default",
+                      "weight": "default",
+                      "fontType": "default"
+                    }
+                  ],
+                  "id": "showRecentScholarshipsButton",
+                  "selectAction": {
+                    "type": "Action.ToggleVisibility",
+                    "title": "Show recent Scholarships",
+                    "targetElements": [
+                      {
+                        "elementId": "selectedNewItemDetailsContainer",
+                        "isVisible": false
+                      },
+                      {
+                        "elementId": "newScholarshipsTab",
+                        "isVisible": false
+                      },
+                      {
+                        "elementId": "recentScholarshipsTab",
+                        "isVisible": true
+                      },
+                      {
+                        "elementId": "appliedScholarshipsTab",
+                        "isVisible": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${appliedHeader} (${appliedTabCount})",
+                      "wrap": true,
+                      "color": "Default",
+                      "weight": "default",
+                      "horizontalAlignment": "Center",
+                      "size": "default",
+                      "fontType": "default"
+                    }
+                  ],
+                  "id": "showAppliedScholarshipsButton",
+                  "verticalContentAlignment": "Center",
+                  "selectAction": {
+                    "type": "Action.ToggleVisibility",
+                    "title": "Show applied Scholarships",
+                    "targetElements": [
+                      {
+                        "elementId": "selectedNewItemDetailsContainer",
+                        "isVisible": false
+                      },
+                      {
+                        "elementId": "newScholarshipsTab",
+                        "isVisible": false
+                      },
+                      {
+                        "elementId": "recentScholarshipsTab",
+                        "isVisible": false
+                      },
+                      {
+                        "elementId": "appliedScholarshipsTab",
+                        "isVisible": true
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Container",
+          "isVisible": true,
+          "id": "newScholarshipsTab",
+          "items": [
+            {
+              "type": "ColumnSet",
+              "selectAction": {
+                "type": "Action.ToggleVisibility",
+                "title": "Show new Scholarships",
+                "targetElements": [
+                  {
+                    "elementId": "selectedNewItemDetailsContainer",
+                    "isVisible": true
+                  },
+                  {
+                    "elementId": "newScholarshipsTab",
+                    "isVisible": false
+                  },
+                  {
+                    "elementId": "recentScholarshipsTab",
+                    "isVisible": false
+                  },
+                  {
+                    "elementId": "appliedScholarshipsTab",
+                    "isVisible": false
+                  }
+                ]
+              },
+              "$data": "${newScholarData}",
+              "spacing": "ExtraLarge",
+              "separator": true,
+              "columns": [
+                {
+                  "type": "Column",
+                  "items": [
+                    {
+                      "type": "Container",
+                      "items": [
+                        {
+                          "type": "ColumnSet",
+                          "columns": [
+                            {
+                              "type": "Column",
+                              "width": "auto",
+                              "items": [
+                                {
+                                  "type": "Image",
+                                  "url": "${companyImage}",
+                                  "horizontalAlignment": "Left",
+                                  "width": "40px"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Column",
+                              "width": "stretch",
+                              "items": [
+                                {
+                                  "type": "TextBlock",
+                                  "weight": "Bolder",
+                                  "text": "${companyName}",
+                                  "wrap": false,
+                                  "fontType": "Default",
+                                  "size": "Default",
+                                  "color": "Default"
+                                }
+                              ],
+                              "verticalContentAlignment": "Bottom"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "TextBlock",
+                          "text": "${amountDetails}",
+                          "wrap": false,
+                          "weight": "default",
+                          "spacing": "Medium",
+                          "size": "Small",
+                          "color": "default",
+                          "fontType": "default"
+                        },
+                        {
+                          "type": "TextBlock",
+                          "text": "${deadlineDetails}",
+                          "wrap": true,
+                          "spacing": "Small",
+                          "size": "Small",
+                          "fontType": "default",
+                          "color": "default",
+                          "weight": "default"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Container",
+          "id": "recentScholarshipsTab",
+          "isVisible": false,
+          "items": [
+            {
+              "type": "ColumnSet",
+              "$data": "${recentScholarData}",
+              "spacing": "ExtraLarge",
+              "separator": true,
+              "columns": [
+                {
+                  "type": "Column",
+                  "items": [
+                    {
+                      "type": "Container",
+                      "items": [
+                        {
+                          "type": "ColumnSet",
+                          "columns": [
+                            {
+                              "type": "Column",
+                              "width": "auto",
+                              "items": [
+                                {
+                                  "type": "Image",
+                                  "url": "${companyImage}",
+                                  "horizontalAlignment": "Left",
+                                  "width": "40px"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Column",
+                              "width": "stretch",
+                              "items": [
+                                {
+                                  "type": "TextBlock",
+                                  "weight": "Bolder",
+                                  "text": "${companyName}",
+                                  "wrap": false,
+                                  "fontType": "default",
+                                  "size": "default",
+                                  "color": "Default"
+                                }
+                              ],
+                              "verticalContentAlignment": "Bottom"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "TextBlock",
+                          "text": "${amountDetails}",
+                          "wrap": false,
+                          "weight": "default",
+                          "spacing": "Medium",
+                          "size": "small",
+                          "color": "default",
+                          "fontType": "default"
+                        },
+                        {
+                          "type": "TextBlock",
+                          "text": "${deadlineDetails}",
+                          "wrap": true,
+                          "spacing": "Small",
+                          "size": "Small",
+                          "fontType": "default",
+                          "color": "default",
+                          "weight": "default"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Container",
+          "isVisible": false,
+          "id": "appliedScholarshipsTab",
+          "items": [
+            {
+              "type": "ColumnSet",
+              "$data": "${appliedScholarData}",
+              "spacing": "ExtraLarge",
+              "separator": true,
+              "columns": [
+                {
+                  "type": "Column",
+                  "items": [
+                    {
+                      "type": "Container",
+                      "items": [
+                        {
+                          "type": "ColumnSet",
+                          "columns": [
+                            {
+                              "type": "Column",
+                              "width": "auto",
+                              "items": [
+                                {
+                                  "type": "Image",
+                                  "url": "${companyImage}",
+                                  "horizontalAlignment": "Left",
+                                  "width": "40px"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Column",
+                              "width": "stretch",
+                              "items": [
+                                {
+                                  "type": "TextBlock",
+                                  "weight": "Bolder",
+                                  "text": "${companyName}",
+                                  "wrap": false,
+                                  "fontType": "default",
+                                  "size": "default",
+                                  "color": "Default"
+                                }
+                              ],
+                              "verticalContentAlignment": "Bottom"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "TextBlock",
+                          "text": "${amountDetails}",
+                          "wrap": false,
+                          "weight": "default",
+                          "spacing": "Medium",
+                          "size": "small",
+                          "color": "default",
+                          "fontType": "default"
+                        },
+                        {
+                          "type": "TextBlock",
+                          "text": "${deadlineDetails}",
+                          "wrap": true,
+                          "spacing": "Small",
+                          "size": "Small",
+                          "fontType": "default",
+                          "color": "default",
+                          "weight": "default"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "spacing": "None"
+    },
+    {
+      "type": "Container",
+      "id": "selectedNewItemDetailsContainer",
+      "isVisible": false,
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": 1,
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "${seletedNewItemData.companyImage}",
+                  "horizontalAlignment": "Left",
+                  "width": "auto",
+                  "height": "auto"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": 3,
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${seletedNewItemData.companyName}",
+                  "size": "Medium",
+                  "weight": "Bolder",
+                  "fontType": "default",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "spacing": "large",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Application Deadline",
+                  "weight": "Bolder",
+                  "size": "default",
+                  "fontType": "default"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${seletedNewItemData.deadline}",
+                  "weight": "lighter",
+                  "size": "default",
+                  "fontType": "default",
+                  "spacing": "none"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Award Amount",
+                  "weight": "Bolder",
+                  "size": "default",
+                  "fontType": "default",
+                  "color": "default"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${seletedNewItemData.amount}",
+                  "weight": "lighter",
+                  "size": "default",
+                  "fontType": "default",
+                  "spacing": "none"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "spacing": "medium",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Minimum GPA",
+                  "weight": "Bolder",
+                  "size": "default",
+                  "fontType": "default"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${seletedNewItemData.minimumGpa}",
+                  "weight": "lighter",
+                  "size": "default",
+                  "fontType": "default",
+                  "spacing": "none"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Class Standing",
+                  "weight": "Bolder",
+                  "size": "default",
+                  "fontType": "default"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${seletedNewItemData.classStanding}",
+                  "weight": "lighter",
+                  "size": "default",
+                  "fontType": "default",
+                  "spacing": "none"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "spacing": "large",
+          "text": "Description:",
+          "weight": "Bolder",
+          "size": "large",
+          "fontType": "default",
+          "color": "default"
+        },
+        {
+          "type": "TextBlock",
+          "spacing": "medium",
+          "text": "${seletedNewItemData.descriptionDetails}",
+          "size": "default",
+          "fontType": "default",
+          "color": "default",
+          "wrap": true
+        }
+      ]
+    }
+  ]
+}
