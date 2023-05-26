@@ -30,7 +30,7 @@ export class CardView extends BaseImageCardView<ITuitionAdaptiveCardExtensionPro
   public get data(): IImageCardParameters {
     return {
       primaryText: strings.PrimaryText,
-      imageUrl: require('../assets/PaymentCard.png'),
+      imageUrl: require('../assets/credit-card.png'),
       title: this.properties.title
     };
   }

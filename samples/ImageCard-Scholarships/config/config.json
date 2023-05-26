@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "scholarship-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/scholarship/ScholarshipAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/scholarship/ScholarshipAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ScholarshipAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/scholarship/loc/{locale}.js"
+  }
+}

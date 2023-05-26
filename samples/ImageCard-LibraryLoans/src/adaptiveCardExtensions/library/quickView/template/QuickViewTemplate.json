@@ -1,0 +1,82 @@
+{
+    "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "Image",
+                    "url": "${libraryImage}",
+                    "altText": "Library"
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "OUTSTANDING LOANS",
+            "isSubtle": true
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "$data": "${libraryData}",
+                    "spacing": "medium",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "${imageUrl}",
+                                    "altText": "No-No Boy",
+                                    "horizontalAlignment": "Left",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${bookName}",
+                                    "weight": "bolder",
+                                    "wrap": false,
+                                    "fontType": "Default",
+                                    "size": "Default",
+                                    "color": "Default"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${authorName}",
+                                    "wrap": false,
+                                    "weight": "default",
+                                    "spacing": "none",
+                                    "size": "Small",
+                                    "color": "Dark",
+                                    "fontType": "default"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${dueDate}",
+                                    "wrap": true,
+                                    "spacing": "Small",
+                                    "size": "Small",
+                                    "fontType": "default",
+                                    "color": "default",
+                                    "weight": "default"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
