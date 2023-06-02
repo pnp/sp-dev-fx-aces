@@ -25,7 +25,7 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-Scholarships/assets/Scholarship.gif",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-Scholarships/assets/Scholarship.gif",
     "alt": "Preview"
   }],
   "authors": [{
