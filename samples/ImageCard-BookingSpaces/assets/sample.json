@@ -25,7 +25,7 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-BookingSpaces/assets/BookSpaces1.PNG",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-BookingSpaces/assets/BookSpaces1.png",
     "alt": "Preview"
   }],
   "authors": [{
