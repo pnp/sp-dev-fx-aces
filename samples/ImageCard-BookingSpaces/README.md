@@ -4,9 +4,9 @@
 
 This sample shows how to build an ACE with a card view and quick view to search spaces in the campus and be able to quickly check previous/upcoming reservations.
 
-![BookingSpaces.png](./assets/BookSpaces1.PNG)
+![BookingSpaces.png](./assets/BookSpaces2.png)
 
-![BookingSpaces.png](./assets/BookSpaces2.PNG)
+![BookingSpaces.png](./assets/BookSpaces2.png)
 
 ### Used SharePoint Framework Version
 
