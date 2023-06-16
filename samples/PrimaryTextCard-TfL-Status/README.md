@@ -65,6 +65,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|September 09, 2021|Initial release
 1.1|November 1, 2021|Updated to SPFx 1.13.0, Minor UI updates
+1.2|November 1, 2021|Updated to SPFx 1.17.2
 
 ## Disclaimer
 

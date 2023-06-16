@@ -1,7 +1,7 @@
 {
-  "extends": "./node_modules/@microsoft/rush-stack-compiler-3.7/includes/tsconfig-web.json",
+  "extends": "./node_modules/@microsoft/rush-stack-compiler-4.5/includes/tsconfig-web.json",
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5",
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -14,6 +14,7 @@
     "inlineSources": false,
     "strictNullChecks": false,
     "noUnusedLocals": false,
+    "noImplicitAny": true,
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@microsoft"
