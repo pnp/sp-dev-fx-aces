@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-prompt-survey-client-side-solution",
+    "id": "17e93696-6274-4f04-a8e8-7b77773bf7b4",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.0-beta.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "prompt-survey description"
+      },
+      "longDescription": {
+        "default": "prompt-survey description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "prompt-survey Feature",
+        "description": "The feature that activates elements of the prompt-survey solution.",
+        "id": "2a6b55b5-5130-4e58-baf3-79aaf2cf0bed",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/prompt-survey.sppkg"
+  }
+}

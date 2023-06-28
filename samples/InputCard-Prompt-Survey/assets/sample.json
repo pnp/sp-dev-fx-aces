@@ -1,0 +1,47 @@
+[{
+  "name": "pnp-sp-fx-aces-start-survey-input-card",
+  "source": "pnp",
+  "title": "Text box Survey Card",
+  "shortDescription": "Input Text Box ACE with start a survey scenario.",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/InputCard-Prompt-Survey",
+  "longDescription": [
+    "Input Text Box ACE with start a survey scenario."
+  ],
+  "creationDateTime": "2023-06-28",
+  "updateDateTime": "2023-06-28",
+  "products": [
+    "SharePoint",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.18"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-Prompt-Survey/assets/ace-survey.png",
+    "alt": "Preview"
+  },{
+    "type": "image",
+    "order": 200,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-Prompt-Survey/assets/ace-survey-thanks.png",
+    "alt": "Preview"
+  }
+  ],
+  "authors": [{
+    "gitHubAccount": "AJIXuMuK",
+    "pictureUrl": "https://avatars.githubusercontent.com/u/17036219?v=4",
+    "name": "Alex Terentiev"
+  }],
+  "references": [{
+    "name": "Viva Connections Extensibility guidance",
+    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+    "url": "https://aka.ms/viva/connections/extensibility"
+  }]
+}]

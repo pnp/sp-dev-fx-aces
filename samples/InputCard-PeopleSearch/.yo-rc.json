@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.19.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.0-dev.140",
+    "libraryName": "peoplesearch-tutorial",
+    "libraryId": "a5938ba3-bb6f-4930-93e1-4ea22d2ed864",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "peoplesearch-tutorial",
+    "solutionShortDescription": "peoplesearch-tutorial description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Search"
+  }
+}

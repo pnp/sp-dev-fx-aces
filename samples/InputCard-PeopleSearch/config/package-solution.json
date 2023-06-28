@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "peoplesearch-tutorial-client-side-solution",
+    "id": "a5938ba3-bb6f-4930-93e1-4ea22d2ed864",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.0-dev.140"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "peoplesearch-tutorial description"
+      },
+      "longDescription": {
+        "default": "peoplesearch-tutorial description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "peoplesearch-tutorial Feature",
+        "description": "The feature that activates elements of the peoplesearch-tutorial solution.",
+        "id": "a5c51890-b06f-4578-ac8d-2aa2c3e5dcf0",
+        "version": "1.0.0.0"
+      }
+    ],
+    "webApiPermissionRequests": [{
+      "resource": "Microsoft Graph",
+      "scope": "User.Read"
+    }, {
+      "resource": "Microsoft Graph",
+      "scope": "People.Read"
+    }]
+  },
+  "paths": {
+    "zippedPackage": "solution/peoplesearch-tutorial.sppkg"
+  }
+}

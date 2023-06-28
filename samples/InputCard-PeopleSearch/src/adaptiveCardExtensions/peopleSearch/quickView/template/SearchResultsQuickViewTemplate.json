@@ -1,0 +1,94 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Input.Text",
+      "id": "queryString",
+      "inlineAction": {
+        "type": "Action.Submit",
+        "title": "${searchActionTitle}",
+        "data": {
+          "id": "search"
+        }
+      },
+      "value": "${queryString}",
+      "placeholder": "${placeholder}"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Loading...",
+      "size": "small",
+      "separator": true,
+      "spacing": "extraLarge",
+      "$when": "${isLoading}"
+    },
+    {
+      "type": "TextBlock",
+      "text": "We found ${numberOfResults} result(s)",
+      "size": "small",
+      "isSubtle": true,
+      "separator": true,
+      "spacing": "extraLarge",
+      "$when": "${!isLoading}"
+    },
+    {
+      "type": "Container",
+      "$data": "${results}",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "Image",
+                  "style": "Person",
+                  "url": "${picture}",
+                  "size": "Small",
+                  "height": "48px",
+                  "width": "48px"
+                }
+              ],
+              "width": "auto"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${displayName}",
+                  "wrap": false,
+                  "size": "medium"
+                },
+                {
+                  "type": "TextBlock",
+                  "spacing": "None",
+                  "text": "${if(length(jobTitle)!=0,jobTitle,emailAddress)}",
+                  "isSubtle": true,
+                  "wrap": false,
+                  "size": "default"
+                }
+              ],
+              "width": "stretch"
+            }
+          ],
+          "bleed": true,
+          "spacing": "none",
+          "selectAction": {
+            "type": "Action.Submit",
+            "data": {
+              "id": "selectPerson",
+              "personId": "${id}"
+            }
+          }
+        }
+      ],
+      "style": "default",
+      "separator": true,
+      "spacing": "Medium"
+    }
+  ]
+}

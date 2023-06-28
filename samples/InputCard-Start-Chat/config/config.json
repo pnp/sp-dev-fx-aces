@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "technical-support-chat-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/technicalSupportChat/TechnicalSupportChatAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/technicalSupportChat/TechnicalSupportChatAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TechnicalSupportChatAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/technicalSupportChat/loc/{locale}.js"
+  }
+}

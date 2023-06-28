@@ -1,0 +1,165 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "$data": "${$root.person}",
+  "body": [
+    {
+      "type": "Container",
+      "style": "emphasis",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "Image",
+                  "style": "Person",
+                  "url": "${picture}",
+                  "size": "Small",
+                  "height": "48px",
+                  "width": "48px"
+                }
+              ],
+              "width": "auto"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${displayName}",
+                  "wrap": false,
+                  "size": "medium"
+                },
+                {
+                  "type": "TextBlock",
+                  "spacing": "None",
+                  "text": "${if(length(jobTitle)!=0,jobTitle,emailAddress)}",
+                  "isSubtle": true,
+                  "wrap": false,
+                  "size": "default"
+                }
+              ],
+              "width": "stretch"
+            }
+          ],
+          "bleed": true,
+          "spacing": "none"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "size": "Medium",
+      "weight": "Bolder",
+      "text": "Contact"
+    },
+    {
+      "type": "Table",
+      "gridStyle": "default",
+      "firstRowAsHeader": false,
+      "showGridLines": false,
+      "verticalCellContentAlignment": "center",
+      "columns": [
+        {
+          "width": "20px",
+          "horizontalCellContentAlignment": "center",
+          "verticalCellContentAlignment": "center"
+        },
+        {
+          "width": 1
+        }
+      ],
+      "rows": [
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIGNsYXNzPSJzdmdfZGQ3OTBlZTMiIGZvY3VzYWJsZT0iZmFsc2UiPjxwYXRoIGQ9Ik0yMDQ4IDM4NHYxMjgwSDBWMzg0aDIwNDh6TTE0MyA1MTJsODgxIDQ0MSA4ODEtNDQxSDE0M3ptMTc3NyAxMDI0VjY0OGwtODk2IDQ0Ny04OTYtNDQ3djg4OGgxNzkyeiI+PC9wYXRoPjwvc3ZnPg==",
+                  "size": "Small",
+                  "width": "16px",
+                  "height": "16px"
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${emailAddress}",
+                  "weight": "default",
+                  "wrap": false
+                }
+              ]
+            }
+          ],
+          "style": "default"
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIGNsYXNzPSJzdmdfZGQ3OTBlZTMiIGZvY3VzYWJsZT0iZmFsc2UiPjxwYXRoIGQ9Ik0xNjA3IDEyMTNxNDQgMCA4NCAxNnQ3MiA0OGwyMjAgMjIwcTMxIDMxIDQ3IDcxdDE3IDg1cTAgNDQtMTYgODR0LTQ4IDcybC0xNCAxNHEtNTQgNTQtOTkgOTZ0LTk0IDcwLTEwOSA0NC0xNDMgMTVxLTEyNSAwLTI1Ny0zOXQtMjYyLTEwOC0yNTYtMTY0LTIzNy0yMDctMjA2LTIzOC0xNjItMjU2VDM4IDc3NSAwIDUyM3EwLTgzIDE0LTE0MnQ0My0xMDggNzAtOTMgOTYtOTlsMTYtMTZxMzEtMzEgNzEtNDh0ODUtMTdxNDQgMCA4NCAxN3Q3MiA0OGwyMjAgMjIwcTMxIDMxIDQ3IDcxdDE3IDg1cTAgNDQtMTUgNzh0LTM3IDYzLTQ4IDUxLTQ5IDQ1LTM3IDQ0LTE1IDQ5cTAgMzggMjcgNjVsNTUxIDU1MXEyNyAyNyA2NSAyNyAyNiAwIDQ4LTE1dDQ1LTM3IDQ1LTQ4IDUxLTQ5IDYyLTM3IDc5LTE1em0tODMgNzA3cTcyIDAgMTIwLTEzdDg4LTM5IDc2LTY0IDg1LTg2cTI3LTI3IDI3LTY1IDAtMTgtMTQtNDJ0LTM4LTUyLTUxLTU1LTU2LTU0LTUxLTQ3LTM3LTM1cS0yNy0yNy02Ni0yNy0yNiAwLTQ4IDE1dC00NCAzNy00NSA0OC01MiA0OS02MiAzNy03OSAxNXEtNDQgMC04NC0xNnQtNzItNDhMNTcwIDkyN3EtMzEtMzEtNDctNzF0LTE3LTg1cTAtNDQgMTUtNzh0MzctNjMgNDgtNTEgNDktNDYgMzctNDQgMTUtNDhxMC0zOS0yNy02Ni0xMy0xMy0zNC0zNnQtNDctNTEtNTQtNTYtNTYtNTItNTEtMzctNDMtMTVxLTM4IDAtNjUgMjdsLTg1IDg1cS0zNyAzNy02NCA3NnQtNDAgODctMTQgMTIwcTAgMTEyIDM2IDIzMXQxMDEgMjM4IDE1MyAyMzQgMTkyIDIxOSAyMTkgMTkwIDIzNCAxNTAgMjM2IDk5IDIyNiAzNnoiPjwvcGF0aD48L3N2Zz4=",
+                  "size": "Small",
+                  "width": "16px",
+                  "height": "16px"
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${phone}",
+                  "wrap": false
+                }
+              ]
+            }
+          ],
+          "style": "default"
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIGNsYXNzPSJzdmdfZGQ3OTBlZTMiIGZvY3VzYWJsZT0iZmFsc2UiPjxwYXRoIGQ9Ik0xMDI0IDBxODggMCAxNzAgMjN0MTUzIDY0IDEyOSAxMDAgMTAwIDEzMCA2NSAxNTMgMjMgMTcwcTAgNjktMTYgMTMxdC00OCAxMjVsLTU3NiAxMTUyTDQ0OCA4OTZxLTMxLTYyLTQ3LTEyNHQtMTctMTMycTAtODggMjMtMTcwdDY0LTE1MyAxMDAtMTI5VDcwMSA4OHQxNTMtNjUgMTcwLTIzem00NzYgODQ2di0xbDEtMXEyNS00NyAzOC05OXQxMy0xMDVxMC0xMDktNDEtMjA1dC0xMTQtMTY4LTE2OC0xMTMtMjA1LTQycS0xMDkgMC0yMDUgNDFUNjUxIDI2NyA1MzggNDM1dC00MiAyMDVxMCA1MyAxMyAxMDV0MzggOTl2MWwxIDEgNDc2IDk1MiA0NzYtOTUyem0tNDc2LTU4MnE3OCAwIDE0NiAyOXQxMjAgODEgODAgMTE5IDMwIDE0N3EwIDc4LTI5IDE0NnQtODEgMTIwLTExOSA4MC0xNDcgMzBxLTc4IDAtMTQ2LTI5dC0xMjAtODEtODAtMTE5LTMwLTE0N3EwLTc4IDI5LTE0NnQ4MS0xMjAgMTE5LTgwIDE0Ny0zMHptMCA2NDBxNTUgMCAxMDMtMjB0ODQtNTcgNTYtODQgMjEtMTAzcTAtNTUtMjAtMTAzdC01Ny04NC04NC01Ni0xMDMtMjFxLTU1IDAtMTAzIDIwdC04NCA1Ny01NiA4NC0yMSAxMDNxMCA1NSAyMCAxMDN0NTcgODQgODQgNTYgMTAzIDIxeiI+PC9wYXRoPjwvc3ZnPg==",
+                  "size": "Small",
+                  "width": "16px",
+                  "height": "16px"
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${officeLocation}",
+                  "wrap": false
+                }
+              ]
+            }
+          ],
+          "style": "default"
+        }
+      ]
+    }
+  ]
+}
