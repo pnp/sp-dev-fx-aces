@@ -25,7 +25,7 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-Prompt-Survey/assets/qv-person.png",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-PeopleSearch/assets/qv-person.png",
     "alt": "Preview"
   },{
     "type": "image",
