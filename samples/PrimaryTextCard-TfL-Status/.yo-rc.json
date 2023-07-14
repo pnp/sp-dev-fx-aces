@@ -3,12 +3,17 @@
     "plusBeta": true,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.13.0-beta.17",
+    "version": "1.17.2",
     "libraryName": "spfx-ace-tfl-status",
     "libraryId": "93db7268-7178-4e16-a5c4-e4657a509222",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "templateType": "PrimaryText"
+    "templateType": "PrimaryText",
+    "nodeVersion": "14.21.3",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.9.1",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    }
   }
 }
