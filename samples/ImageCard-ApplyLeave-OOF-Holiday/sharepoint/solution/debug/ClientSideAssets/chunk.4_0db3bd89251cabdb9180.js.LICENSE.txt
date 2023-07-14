@@ -1,0 +1,1 @@
+//!isEmpty(res)? window.location.reload():null;

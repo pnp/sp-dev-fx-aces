@@ -1,0 +1,144 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Leave Type",
+                    "wrap": true,
+                    "weight": "Bolder"
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${leaveType}",
+                            "wrap": true
+                        }
+                    ],
+                    "style": "emphasis"
+                }
+            ],
+            "separator": true
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "From",
+                    "wrap": true,
+                    "weight": "Bolder"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${startDate}",
+                                    "wrap": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${endDate}",
+                                    "wrap": true
+                                }
+                            ]
+                        }
+                    ],
+                    "style": "emphasis"
+                }
+            ],
+            "separator": true
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Reporting Manager",
+                    "wrap": true,
+                    "weight": "Bolder"
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Arjun Das",
+                            "wrap": true
+                        }
+                    ],
+                    "style": "emphasis"
+                }
+            ],
+            "separator": true
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Leave Description",
+                    "wrap": true,
+                    "weight": "Bolder"
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${leaveDesc}",
+                            "wrap": true
+                        }
+                    ],
+                    "style": "emphasis"
+                }
+            ],
+            "separator": true
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "Input.Text",
+                    "placeholder": "Add automatic replay available to all",
+                    "isMultiline": true,
+                    "label": "Set OOF message",
+                    "id": "oofMessage"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Out of office works for current/future date",
+                    "wrap": true,
+                    "color": "Attention",
+                    "isVisible": "${if(errOnSubmit == true, true, false)}"
+                }
+            ],
+            "separator": true,
+            "$when": "${isOOFEnabled == true}",
+            "style": "emphasis"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Confirm"
+        }
+    ]
+}

@@ -1,0 +1,217 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3",
+  "body": [
+      {
+          "type": "Container",
+          "items": [
+              {
+                  "type": "ColumnSet",
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "CL-20",
+                                  "wrap": true,
+                                  "size": "Small",
+                                  "weight": "Bolder"
+                              }
+                          ],
+                          "verticalContentAlignment": "Center",
+                          "style": "emphasis"
+                      },
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "EL-20",
+                                  "wrap": true,
+                                  "size": "Small",
+                                  "weight": "Bolder"
+                              }
+                          ],
+                          "verticalContentAlignment": "Center",
+                          "style": "emphasis"
+                      },
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "SL-25",
+                                  "wrap": true,
+                                  "size": "Small",
+                                  "weight": "Bolder"
+                              }
+                          ],
+                          "verticalContentAlignment": "Center",
+                          "style": "emphasis"
+                      },
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "BL-5",
+                                  "wrap": true,
+                                  "size": "Small",
+                                  "weight": "Bolder"
+                              }
+                          ],
+                          "verticalContentAlignment": "Center",
+                          "style": "emphasis"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "type": "Container",
+          "items": [
+              {
+                  "type": "Input.ChoiceSet",
+                  "choices": [
+                      {
+                          "title": "Casual Leave",
+                          "value": "Casual Leave"
+                      },
+                      {
+                          "title": "Earned Leave",
+                          "value": "Earned Leave"
+                      },
+                      {
+                          "title": "Sick Leave",
+                          "value": "Sick Leave"
+                      },
+                      {
+                          "title": "Maternity Leave",
+                          "value": "Maternity Leave"
+                      },
+                      {
+                          "title": "Paternity Leave",
+                          "value": "Paternity Leave"
+                      }
+                  ],
+                  "placeholder": "Choose any",
+                  "label": "Leave Type",
+                  "wrap": true,
+                  "isRequired": true,
+                  "errorMessage": "Select leave type",
+                  "id": "leaveTypeId"
+              }
+          ],
+          "separator": true
+      },
+      {
+          "type": "Container",
+          "items": [
+              {
+                  "type": "TextBlock",
+                  "text": "From",
+                  "wrap": true
+              },
+              {
+                  "type": "TextBlock",
+                  "text": "* Start date cannot be less than end date",
+                  "wrap": true,
+                  "color": "Attention",
+                  "isVisible": "${if(isDateTrue == true, true, false)}"
+              },
+              {
+                  "type": "ColumnSet",
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "Input.Date",
+                                  "id": "startDate",
+                                  "placeholder": "Enter a date",
+                                  "value": ""
+                              }
+                          ]
+                      },
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "Input.Date",
+                                  "id": "endDate",
+                                  "placeholder": "Enter a date",
+                                  "value": ""
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "separator": true
+      },
+      {
+          "type": "Container",
+          "items": [
+              {
+                  "type": "TextBlock",
+                  "text": "Reporting Manager",
+                  "wrap": true
+              },
+              {
+                  "type": "TextBlock",
+                  "text": "Arjun Kumar",
+                  "wrap": true,
+                  "color": "Accent",
+                  "id": "reportingMnger"
+              }
+          ],
+          "separator": true
+      },
+      {
+          "type": "Container",
+          "items": [
+              {
+                  "type": "TextBlock",
+                  "text": "Leave Description",
+                  "wrap": true
+              },
+              {
+                  "type": "Input.Text",
+                  "placeholder": "leave description",
+                  "id": "leaveDescId"
+              },
+              {
+                  "type": "Input.ChoiceSet",
+                  "id": "setOOFId",
+                  "style": "expanded",
+                  "choices": [
+                      {
+                          "title": "Set out of office message",
+                          "value": "1"
+                      }
+                  ]
+              }
+          ],
+          "separator": true
+      },
+      {
+          "type": "ActionSet",
+          "actions": [
+              {
+                  "type": "Action.Submit",
+                  "title": "Apply Leave",
+                  "style": "positive",
+                  "id": "submitId"
+              }
+          ]
+      }
+  ]
+}

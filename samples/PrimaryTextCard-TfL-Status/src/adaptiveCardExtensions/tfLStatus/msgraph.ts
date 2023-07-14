@@ -1,11 +1,11 @@
 import { AdaptiveCardExtensionContext } from '@microsoft/sp-adaptive-card-extension-base';
 import { GraphError } from '@microsoft/microsoft-graph-client';
-import { MSGraphClient } from '@microsoft/sp-http';
+import { MSGraphClientV3 } from '@microsoft/sp-http';
 
 export class MSGraph {
-    private static _graphClient: MSGraphClient;
+    private static _graphClient: MSGraphClientV3;
     public static async Init(context: AdaptiveCardExtensionContext) {
-        this._graphClient = await context.msGraphClientFactory.getClient();
+        this._graphClient = await context.msGraphClientFactory.getClient('3')
     }
 
     public static async Get(apiUrl: string, version: string = "v1.0", selectProperties?: string[], expandProperties?: string[], filter?: string): Promise<any> {

@@ -13,6 +13,28 @@
       "termsOfUseUrl": "",
       "mpnId": ""
     },
+    "features": [
+      {
+        "title": "spfx-ace-tfl-status TfLStatusAdaptiveCardExtension Feature",
+        "description": "The feature that activates TfLStatusAdaptiveCardExtension from the spfx-ace-tfl-status solution.",
+        "id": "418d92cb-fcbe-42b3-96c2-5c7043b51bb3",
+        "version": "1.2.0.0",
+        "componentIds": [
+          "418d92cb-fcbe-42b3-96c2-5c7043b51bb3"
+        ]
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-ace-tfl-status description"
+      },
+      "longDescription": {
+        "default": "spfx-ace-tfl-status description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
     "webApiPermissionRequests": [
       {
         "resource": "Microsoft Graph",

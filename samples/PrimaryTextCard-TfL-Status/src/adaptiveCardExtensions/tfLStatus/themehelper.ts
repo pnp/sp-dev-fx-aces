@@ -7,6 +7,6 @@ export function getThemeColor(slot: string) {
     if (ThemeState && ThemeState.theme && ThemeState.theme[slot]) {
         return ThemeState.theme[slot];
     }
-    const theme = getTheme();
+    const theme: any = getTheme();
     return theme[slot];
 }
