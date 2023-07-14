@@ -25,8 +25,8 @@ The sample also allows user to mark a train line as their favourite and that dat
 
 ## Used SharePoint Framework Version
 
-![SPFx 1.13.0](https://img.shields.io/badge/SPFx-1.13.0-green.svg)
-![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg)
+![SPFx 1.17.0](https://img.shields.io/badge/SPFx-1.17.0-green.svg)
+![Node.js LTS v16](https://img.shields.io/badge/Node.js-LTS%20v16-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
 
@@ -65,7 +65,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|September 09, 2021|Initial release
 1.1|November 1, 2021|Updated to SPFx 1.13.0, Minor UI updates
-1.2|November 1, 2021|Updated to SPFx 1.17.2
+1.2|June 16, 2023|Updated to SPFx 1.17.2
 
 ## Disclaimer
 

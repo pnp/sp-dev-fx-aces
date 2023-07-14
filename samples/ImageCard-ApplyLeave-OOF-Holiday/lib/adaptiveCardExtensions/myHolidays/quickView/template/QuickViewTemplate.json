@@ -1,0 +1,93 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3",
+  "body": [
+      {
+          "type": "Container",
+          "$data": "${myHolidays}",
+          "selectAction": {
+            "type": "Action.Submit",
+            "data": {
+              "id": "selectAction",
+              "newIndex": "${$index}"
+            }
+          },
+          "separator": true,
+          "items": [
+              {
+                  "type": "ColumnSet",
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "width": 1,
+                          "items": [
+                              {
+                                  "type": "Image",
+                                  "url": "${img}",
+                                  "style": "Person",
+                                  "size": "Small"
+                              }
+                          ]
+                      },
+                      {
+                          "type": "Column",
+                          "width": 4,
+                          "items": [
+                              {
+                                  "type": "Container",
+                                  "items": [
+                                      {
+                                          "type": "ColumnSet",
+                                          "columns": [
+                                              {
+                                                  "type": "Column",
+                                                  "width": 4,
+                                                  "items": [
+                                                      {
+                                                          "type": "TextBlock",
+                                                          "text": "**Name**: ${name}",
+                                                          "wrap": true,
+                                                          "horizontalAlignment": "Center"
+                                                                                                             
+                                                      }
+                                                  ]
+                                              },
+                                              {
+                                                  "type": "Column",
+                                                  "width": 2,
+                                                  "items": [
+                                                      {
+                                                          "type": "TextBlock",
+                                                          "text": "${date.iso}",
+                                                          "wrap": true,
+                                                          "size": "Small",
+                                                          "weight": "Bolder",
+                                                          "color": "Good",
+                                                          "isSubtle": true,
+                                                          "horizontalAlignment": "Center"
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              },
+                              {
+                                  "type": "TextBlock",
+                                  "text": "${description}",
+                                  "wrap": true,
+                                  "maxLines": 2
+                              }
+                          ],
+                          "horizontalAlignment": "Center",
+                          "verticalContentAlignment": "Center"
+                      }
+                  ],
+                  "separator": true,
+                  "style": "emphasis"
+              }
+          ]
+      }
+  ]
+}
