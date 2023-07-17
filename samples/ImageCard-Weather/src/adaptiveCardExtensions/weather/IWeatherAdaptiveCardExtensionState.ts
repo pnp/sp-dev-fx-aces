@@ -16,6 +16,7 @@ interface AirQuality {
 }
 
 export interface IWeatherAdaptiveCardExtensionState {
+  loading: boolean;
   temperature: WeatherUnit;
   wind: {
     speed: WeatherUnit;
