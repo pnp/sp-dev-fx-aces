@@ -44,6 +44,7 @@ Microsoft Graph
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | March 15, 2023 | Initial release |
+| 1.1     | July 21, 2023 | SharePoint Pages API update |
 
 ## Disclaimer
 
