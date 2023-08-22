@@ -1,0 +1,103 @@
+{
+    "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "Container",
+            "$data": "${page}",
+            "style": "default",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "80px",
+                            "minHeight": "80px",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "backgroundImage": {
+                                        "url": "${thumbnailWebUrl}",
+                                        "horizontalAlignment": "Center",
+                                        "verticalAlignment": "Center"
+                                    },
+                                    "minHeight": "80px",
+                                    "horizontalAlignment": "Center",
+                                    "verticalContentAlignment": "Center"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center",
+                            "horizontalAlignment": "Left"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "150px",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${title}",
+                                    "wrap": true,
+                                    "weight": "Bolder",
+                                    "size": "Medium"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${parentSiteTitle}",
+                                    "isSubtle": true,
+                                    "wrap": true,
+                                    "spacing": "Small",
+                                    "maxLines": 2
+                                }
+                            ],
+                            "verticalContentAlignment": "Center",
+                            "minHeight": "5px"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "ActionSet",
+                                    "actions": [
+                                        {
+                                            "type": "Action.Submit",
+                                            "style": "positive",
+                                            "title": "Promote",
+                                            "id": "Submit",
+                                            "data":{
+                                                "description": "${description}",
+                                                "displayName": "${displayName}",
+                                                "id":"${id}"
+                                              }
+                                        }
+                                    ],
+                                    "horizontalAlignment": "Right"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center",
+                            "horizontalAlignment": "Right",
+                            "spacing": "Padding",
+                            "height": "stretch",
+                            "minHeight": "45px",
+                            "backgroundImage": {
+                                "horizontalAlignment": "Right"
+                            }
+                        }
+                    ],
+                    "selectAction": {
+                        "type": "Action.ToggleVisibility"
+                    }
+                }
+            ],
+            "id": "tab_menu_${title}",
+            "spacing": "Medium"
+        }
+    ],
+    "backgroundImage": {
+        "horizontalAlignment": "Center"
+    },
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}

@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "14.18.2",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.4",
+    "libraryName": "image-card-promote-pages",
+    "libraryId": "4276b069-256a-45cb-826e-9c65902b42be",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "image-card-promote-pages",
+    "solutionShortDescription": "image-card-promote-pages description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Image"
+  }
+}
