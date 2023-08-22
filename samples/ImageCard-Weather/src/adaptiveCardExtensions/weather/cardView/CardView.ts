@@ -29,8 +29,17 @@ export class CardView extends BaseImageCardView<IWeatherAdaptiveCardExtensionPro
   }
 
   public get data(): IImageCardParameters {
-    const primaryTextLarge = `${this.state.locationName}  \r${this.state.phrase}  \r${this.state.temperature.value}°${this.state.temperature.unit}`;
-    const primaryTextMedium = `${this.state.locationName.split(',')[0]}, ${this.state.temperature.value}°${this.state.temperature.unit}`;
+
+    if (this.state.loading) {
+      return {
+        primaryText: "Loading...",
+        imageUrl: this.properties.imageUrl,
+        title: this.properties.title
+      };
+    }
+
+    const primaryTextLarge = `${this.state.locationName}  \r${this.state.phrase}  \r${this.state.temperature?.value}°${this.state.temperature?.unit}`;
+    const primaryTextMedium = `${this.state.locationName.split(',')[0]}, ${this.state.temperature?.value}°${this.state.temperature?.unit}`;
     return {
       primaryText: this.state.cardSize === 'Large' ? primaryTextLarge : primaryTextMedium,
       imageUrl: this.properties.imageUrl,

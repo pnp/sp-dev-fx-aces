@@ -31,6 +31,7 @@ export default class WeatherAdaptiveCardExtension extends BaseAdaptiveCardExtens
 
   public async onInit(): Promise<void> {
     this.state = {
+      loading: true,
       temperature: undefined,
       wind: undefined,
       visibility: undefined,
@@ -61,39 +62,42 @@ export default class WeatherAdaptiveCardExtension extends BaseAdaptiveCardExtens
       //Commented this out to fix a race condition with the card not being rendered before doing the replace.
       //this.cardNavigator.replace(SETUP_CARD_VIEW_REGISTRY_ID);
     } else {
-      try {
-        const locationName = this.properties.selectedLocation.split(';')[0];
-        const latitude = this.properties.selectedLocation.split(';')[1];
-        const longitude = this.properties.selectedLocation.split(';')[2];
+      setTimeout(async () => {
+        try {
+          const locationName = this.properties.selectedLocation.split(';')[0];
+          const latitude = this.properties.selectedLocation.split(';')[1];
+          const longitude = this.properties.selectedLocation.split(';')[2];
 
-        const weatherResult = await this.weatherService.GetWeatherResponse(latitude, longitude, this.properties.azureMapsKey);
-        const airQuality = await this.weatherService.GetAirQuality(latitude, longitude, this.properties.azureMapsKey);
-        const healthConditions = await this.weatherService.GetDailyIndices(latitude, longitude, 10, this.properties.azureMapsKey);
-        console.log(healthConditions);
-        if (!weatherResult) {
+          const weatherResult = await this.weatherService.GetWeatherResponse(latitude, longitude, this.properties.azureMapsKey);
+          const airQuality = await this.weatherService.GetAirQuality(latitude, longitude, this.properties.azureMapsKey);
+          const healthConditions = await this.weatherService.GetDailyIndices(latitude, longitude, 10, this.properties.azureMapsKey);
+          console.log(healthConditions);
+          if (!weatherResult) {
+            this.cardNavigator.replace(ERROR_CARD_VIEW_REGISTRY_ID);
+            return;
+          }
+          this.setState({
+            loading: false,
+            temperature: weatherResult.temperature,
+            wind: weatherResult.wind,
+            visibility: weatherResult.visibility,
+            pressure: weatherResult.pressure,
+            iconCode: weatherResult.iconCode,
+            cloudCover: weatherResult.cloudCover,
+            dateTime: weatherResult.dateTime,
+            locationName: locationName,
+            airQuality: airQuality,
+            asthmaForecast: healthConditions.filter(x => x.indexId === 23)[0],
+            fluForecast: healthConditions.filter(x => x.indexId === 26)[0],
+            dustForecast: healthConditions.filter(x => x.indexId === 18)[0],
+            phrase: weatherResult.phrase
+          });
+          this.cardNavigator.replace(CARD_VIEW_REGISTRY_ID);
+        } catch (error) {
+          console.log(error);
           this.cardNavigator.replace(ERROR_CARD_VIEW_REGISTRY_ID);
-          return;
         }
-        this.setState({
-          temperature: weatherResult.temperature,
-          wind: weatherResult.wind,
-          visibility: weatherResult.visibility,
-          pressure: weatherResult.pressure,
-          iconCode: weatherResult.iconCode,
-          cloudCover: weatherResult.cloudCover,
-          dateTime: weatherResult.dateTime,
-          locationName: locationName,
-          airQuality: airQuality,
-          asthmaForecast: healthConditions.filter(x => x.indexId === 23)[0],
-          fluForecast: healthConditions.filter(x => x.indexId === 26)[0],
-          dustForecast: healthConditions.filter(x => x.indexId === 18)[0],
-          phrase: weatherResult.phrase
-        });
-        this.cardNavigator.replace(CARD_VIEW_REGISTRY_ID);
-      } catch (error) {
-        console.log(error);
-        this.cardNavigator.replace(ERROR_CARD_VIEW_REGISTRY_ID);
-      }
+      }, 300);
     }
   }
 
