@@ -4,6 +4,8 @@
 
 This Adaptive Card Extension (ACE) allows a user to get information about COVID-19 cases per country. The data is retrieved from <https://rapidapi.com/api-sports/api/covid-193/> via REST API and updated every hour.
 
+NOTE: This sample is useful as an example of how to get data from external APIs. The code that displays Markdown in the CardView is not supported in Teams Mobile. 
+
 The following images are examples of this ACE.
 
 ![ace-covid](assets/covid19.gif)
