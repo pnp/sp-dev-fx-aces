@@ -12,7 +12,7 @@ class GraphService implements IGraphService {
   private graphClient: MSGraphClientV3;
 
   public async GetPages(site: IPropertyFieldSite): Promise<GraphPages> {
-    const pages: GraphPages = await this.GET("sites/" + site.id + "/pages", "", "reactions,title,webUrl,thumbnailWebUrl", 50);
+    const pages: GraphPages = await this.GET("sites/" + site.id + "/pages/microsoft.graph.sitePage", "", "reactions,title,webUrl,thumbnailWebUrl", 50);
     pages.value = pages.value.filter(p => p.reactions.likeCount > 0)
     pages.value.map(p => p.webTitle = site.title)
     pages.value.map(p => p.webUrl = site.url + "/" + p.webUrl)

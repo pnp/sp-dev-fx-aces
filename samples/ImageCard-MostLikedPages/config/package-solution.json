@@ -3,7 +3,7 @@
   "solution": {
     "name": "image-card-most-liked-pages-client-side-solution",
     "id": "a48756a5-81e4-4b0a-919d-bcdeaf336f3e",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
