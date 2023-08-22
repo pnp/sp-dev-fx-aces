@@ -62,7 +62,7 @@ This Adaptive Card Extension shows the most recent pages on selected SharePoint 
 
 ## Features
 
-Displays most recently modified pages among a list of selected SharePoint sites (through the property pane) and give the ability to promote a page to a news post.
+Displays most recently modified pages among a list of selected SharePoint sites (through the property pane) and gives the ability to promote a page to a news post.
 
 This adaptive card extension illustrates the following concepts:
 
