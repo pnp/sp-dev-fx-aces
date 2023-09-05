@@ -29,7 +29,6 @@ export class CardView extends BaseComponentsCardView<IPeopleSearchAdaptiveCardEx
     const { suggested } = this.state;
     if (suggested) {
       footer.text = suggested.displayName;
-      footer.secondaryText = suggested.jobTitle || suggested.emailAddress;
       footer.imageUrl = suggested.picture;
       footer.onSelection = {
         type: 'QuickView',
