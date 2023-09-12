@@ -48,6 +48,7 @@ Thank you message:
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | June 28, 2023 | Initial release |
+| 1.1     | September 12, 2023 | Bump to SPFx 1.18.0 |
 
 ## Disclaimer
 

@@ -43,7 +43,7 @@ export default class PeopleSearchAdaptiveCardExtension extends BaseAdaptiveCardE
           suggested: suggested
         });
       })
-      .catch((error: any) => {
+      .catch((error: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
         // TODO: handle error
       });
     });
