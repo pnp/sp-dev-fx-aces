@@ -7,7 +7,7 @@
       "@microsoft/microsoft-graph-client": "3.0.2",
       "@microsoft/teams-js": "2.12.0"
     },
-    "version": "1.18.0-beta.1",
+    "version": "1.18.0",
     "libraryName": "ace-start-chat",
     "libraryId": "14de5417-0770-49aa-9bab-54e2ea50dd9f",
     "environment": "spo",

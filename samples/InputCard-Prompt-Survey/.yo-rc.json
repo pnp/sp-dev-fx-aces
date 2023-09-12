@@ -7,7 +7,7 @@
       "@microsoft/microsoft-graph-client": "3.0.2",
       "@microsoft/teams-js": "2.12.0"
     },
-    "version": "1.18.0-beta.1",
+    "version": "1.18.0",
     "libraryName": "prompt-survey",
     "libraryId": "17e93696-6274-4f04-a8e8-7b77773bf7b4",
     "environment": "spo",
