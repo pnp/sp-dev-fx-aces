@@ -7,11 +7,11 @@
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "developer": {
-      "name": "",
-      "websiteUrl": "",
-      "privacyUrl": "",
-      "termsOfUseUrl": "",
-      "mpnId": "Undefined-1.13.1"
+      "name": "Sympraxis Consulting",
+      "websiteUrl": "https://sympraxisconsulting.com",
+      "privacyUrl": "https://symp.info/acegalleryprivacy",
+      "termsOfUseUrl": "https://symp.info/acegalleryterms",
+      "mpnId": "2459569"
     },
     "metadata": {
       "shortDescription": {
