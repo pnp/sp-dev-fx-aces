@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "image-card-promote-pages-client-side-solution",
+    "id": "4276b069-256a-45cb-826e-9c65902b42be",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.ReadWrite.All"
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "image-card-promote-pages description"
+      },
+      "longDescription": {
+        "default": "image-card-promote-pages description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "image-card-promote-pages Feature",
+        "description": "The feature that activates elements of the image-card-promote-pages solution.",
+        "id": "55a73937-83ab-4383-ac98-0dfa81d627d3",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/image-card-promote-pages.sppkg"
+  }
+}
