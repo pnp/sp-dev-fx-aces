@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "input-card-status-message-client-side-solution",
+    "id": "5bd0d1dc-2938-4def-ba1b-4f75ec95116d",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Presence.ReadWrite"
+      }
+    ],
+    "developer": {
+      "name": "Aimery Thomas",
+      "websiteUrl": "https://athsharepoint.com/",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "input-card-status-message description"
+      },
+      "longDescription": {
+        "default": "input-card-status-message description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "input-card-status-message Feature",
+        "description": "The feature that activates elements of the input-card-status-message solution.",
+        "id": "7acfe746-7889-40a1-bd5a-e60b20edb579",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/input-card-status-message.sppkg"
+  }
+}
