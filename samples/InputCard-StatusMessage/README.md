@@ -2,7 +2,7 @@
 
 ## Summary
 
-This Adaptive Card Extension let you set your Teams status message directly from the card view.
+This Adaptive Card Extension let you set your presence status message directly from the card view.
 
 Default view of the card:
 
@@ -71,7 +71,7 @@ Demo:
 
 ## Features
 
-This sample demonstrates how to use new SPFx v1.18 ACE feature to add text input in the card and use it to set Teams status message.
+This sample demonstrates how to use new SPFx v1.18 ACE feature to add text input in the card and use it to set presence status message.
 
 ## References
 
