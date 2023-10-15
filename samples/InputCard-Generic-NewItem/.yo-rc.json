@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.18.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.0",
+    "libraryName": "input-card-generic-new-item",
+    "libraryId": "9396c1d0-c85a-4657-8ace-2e7271aaba93",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "input-card-generic-new-item",
+    "solutionShortDescription": "input-card-generic-new-item description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic"
+  }
+}
