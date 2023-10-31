@@ -1,10 +1,17 @@
-# spfx-search-ace
+# searchcard-samplesgallery
 
 ## Summary
 
-Short summary on functionality and used technologies.
+Viva Connection Adaptive Card Extension (ACE) that shows how to create a search card.
 
-[picture of the solution in action, if possible]
+Here you can see the Search CardView in action:
+
+![Search CardView in action](./assets/search-cardview.png)
+
+While here you can see the Search Results QuickView in action:
+
+![Search QuickView in action](./assets/search-quickview.png)
+
 
 ## Used SharePoint Framework Version
 
@@ -17,22 +24,17 @@ Short summary on functionality and used technologies.
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
-## Prerequisites
-
-> Any special pre-requisites?
-
 ## Solution
 
 | Solution    | Author(s)                                               |
 | ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+| searchcard-samplesgallery | Paolo Pialorsi Paolo Pialorsi - [PiaSys.com](https://www.piasys.com/) - [@PaoloPia](https://twitter.com/PaoloPia) |
 
 ## Version history
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
+| 1.0     | October 31, 2023   | Initial release |
 
 ## Disclaimer
 
@@ -52,22 +54,14 @@ Short summary on functionality and used technologies.
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
-
-This extension illustrates the following concepts:
-
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+This is a sample Adaptive Card Extension (ACE) that shows how to implement a Search enabled CardView, leveraging the new flexible templates for ACEs introduced by Microsoft in SharePoint Framework 1.18.x.
+This sample ACE consumes the search engine of the [Microsoft Samples Gallery](https://adoption.microsoft.com/en-us/sample-solution-gallery/).
 
 ## References
 
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+- [Viva Connections Extensibility guidance](https://aka.ms/viva/connections/extensibility)
+- [Adaptive Card Documentation](https://adaptivecards.io/)
+- [Adaptive Card Extension Design Guidance](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro)
+- [New Search Card Template for Adaptive Card Extensions](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/release-1.18#new-search-card-template-for-adaptive-card-extensions)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-sp-fx-aces-searchcard-samples-gallery" />
