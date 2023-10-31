@@ -1,0 +1,91 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Input.Text",
+      "id": "filterByName",
+      "inlineAction": {
+        "type": "Action.Submit",
+        "title": "${searchActionTitle}",
+        "data": {
+          "id": "search"
+        }
+      },
+      "value": "${queryString}",
+      "placeholder": "${placeholder}"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Loading...",
+      "size": "small",
+      "separator": true,
+      "spacing": "extraLarge",
+      "$when": "${isLoading}"
+    },
+    {
+      "type": "TextBlock",
+      "text": "We found ${count(searchResults)} result(s)",
+      "size": "small",
+      "isSubtle": true,
+      "separator": true,
+      "spacing": "extraLarge",
+      "$when": "${!isLoading}"
+    },
+    {
+      "type": "Container",
+      "$data": "${searchResults}",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "Image",
+                  "style": "Person",
+                  "url": "${authors[0].pictureUrl}",
+                  "size": "Small",
+                  "height": "48px",
+                  "width": "48px"
+                }
+              ],
+              "width": "auto"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${title}",
+                  "wrap": false,
+                  "size": "medium"
+                },
+                {
+                  "type": "TextBlock",
+                  "spacing": "None",
+                  "text": "${shortDescription}",
+                  "isSubtle": true,
+                  "wrap": false,
+                  "size": "default"
+                }
+              ],
+              "width": "stretch"
+            }
+          ],
+          "bleed": true,
+          "spacing": "none",
+          "selectAction": {
+            "type": "Action.OpenUrl",
+            "url": "${url}"
+          }
+        }
+      ],
+      "style": "default",
+      "separator": true,
+      "spacing": "Medium"
+    }
+  ]
+}

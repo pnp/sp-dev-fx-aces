@@ -1,0 +1,71 @@
+[{
+  "name": "pnp-sp-fx-aces-searchcard-samples-gallery",
+  "source": "pnp",
+  "title": "Search Samples Gallery ACE",
+  "shortDescription": "Viva Connection Adaptive Card Extension (ACE) that shows how to create a search card.",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/SearchCard-SamplesGallerySearch",
+  "longDescription": [
+    "Viva Connection Adaptive Card Extension (ACE) that shows how to create a search card."
+  ],
+  "creationDateTime": "2023-10-31",
+  "updateDateTime": "2023-10-31",
+  "products": [
+    "SharePoint",
+    "Viva"
+  ],
+  "metadata": [
+    {
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.18.0"
+    }
+  ],
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/SearchCard-SamplesGallerySearch/assets/search-cardview.png",
+      "alt": "Preview"
+    },
+    {
+      "type": "image",
+      "order": 200,
+      "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/SearchCard-SamplesGallerySearch/assets/search-quickview.png",
+      "alt": "Preview"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "PaoloPia",
+      "company": "PiaSys.com",
+      "pictureUrl": "https://github.com/paolopia.png",
+      "name": "Paolo Pialorsi",
+      "twitter": "PaoloPia"
+    }
+  ],
+  "references": [
+    {
+      "name": "Viva Connections Extensibility guidance",
+      "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+      "url": "https://aka.ms/viva/connections/extensibility"
+    },
+    {
+      "name": "Adaptive Card Documentation",
+      "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+      "url": "https://adaptivecards.io/"
+    }, 
+    {
+      "name": "Adaptive Card Extension Design Guidance",
+      "description": "Design guidance for laying out Adaptive Card Extensions.",
+      "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+    }, 
+    {
+      "name": "New Search Card Template for Adaptive Card Extensions",
+      "description": "Introduction to new Search Card Template for Adaptive Card Extensions.",
+      "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/release-1.18#new-search-card-template-for-adaptive-card-extensions"
+    }
+  ]
+}]

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-search-ace-client-side-solution",
+    "id": "236bf050-ed8b-4d08-a80a-874f3852b7e5",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "PiaSys.com",
+      "websiteUrl": "https://www.piasys.com/",
+      "privacyUrl": "http://piasys.com/privacy/",
+      "termsOfUseUrl": "https://www.piasys.com/terms-of-use/",
+      "mpnId": "1075379"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-search-ace description"
+      },
+      "longDescription": {
+        "default": "spfx-search-ace description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-search-ace Feature",
+        "description": "The feature that activates elements of the spfx-search-ace solution.",
+        "id": "cc5dd8af-2532-48fa-969a-424e332c8fc3",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-search-ace.sppkg"
+  }
+}
