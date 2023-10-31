@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "input-card-generic-new-item-client-side-solution",
+    "id": "9396c1d0-c85a-4657-8ace-2e7271aaba93",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.ReadWrite.All"
+      }
+    ],
+    "developer": {
+      "name": "Aimery Thomas",
+      "websiteUrl": "https://athsharepoint.com/",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "input-card-generic-new-item description"
+      },
+      "longDescription": {
+        "default": "input-card-generic-new-item description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "input-card-generic-new-item Feature",
+        "description": "The feature that activates elements of the input-card-generic-new-item solution.",
+        "id": "f5fb8094-22b2-470f-af24-134acdb6decb",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/input-card-generic-new-item.sppkg"
+  }
+}
