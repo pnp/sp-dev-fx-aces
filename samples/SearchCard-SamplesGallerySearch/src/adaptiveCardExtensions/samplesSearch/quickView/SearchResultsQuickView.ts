@@ -23,6 +23,7 @@ export class SearchResultsQuickView extends BaseAdaptiveCardQuickView<
   private _lastQueryString: string | undefined;
 
   public get data(): ISearchResultsQuickViewData {
+
     const isNewSearch: boolean = this._lastQueryString !== this.state.queryString;
     // initiate search if the query string has changed
     if (isNewSearch) {
@@ -56,7 +57,7 @@ export class SearchResultsQuickView extends BaseAdaptiveCardQuickView<
     if (data.id === 'search') {
       // update query string
       this.setState({
-        queryString: data.queryString
+        queryString: data.filterByName
       });
     }
   }
