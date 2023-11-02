@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "generic-new-item-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/genericNewItem/GenericNewItemAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/genericNewItem/GenericNewItemAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "GenericNewItemAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/genericNewItem/loc/{locale}.js"
+  }
+}
