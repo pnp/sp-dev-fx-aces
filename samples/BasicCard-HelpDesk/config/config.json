@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "basic-card-help-desk-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/basicCardHelpDesk/BasicCardHelpDeskAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/basicCardHelpDesk/BasicCardHelpDeskAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "BasicCardHelpDeskAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/basicCardHelpDesk/loc/{locale}.js"
+  }
+}

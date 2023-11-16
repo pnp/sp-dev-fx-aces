@@ -1,0 +1,267 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "spacing": "Large",
+      "style": "default",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": 75,
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${ticket.requestType} ${ticket.incidentNumber}",
+                  "wrap": true,
+                  "size": "Medium",
+                  "weight": "Bolder"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Container",
+          "items": [
+            {
+              "type": "ColumnSet",
+              "columns": [
+                {
+                  "type": "Column",
+                  "width": 30,
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Created by",
+                      "wrap": true,
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "width": 70,
+                  "items": [
+                    {
+                      "type": "ColumnSet",
+                      "columns": [
+                        {
+                          "type": "Column",
+                          "width": "32px",
+                          "items": [
+                            {
+                              "type": "Image",
+                              "url": "${ticket.requestedBy.imageUrl}"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                            {
+                              "type": "TextBlock",
+                              "text": "${ticket.requestedBy.displayName}",
+                              "wrap": true
+                            }
+                          ],
+                          "verticalContentAlignment": "Center"
+                        }
+                      ],
+                      "spacing": "Medium"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "ColumnSet",
+              "columns": [
+                {
+                  "type": "Column",
+                  "width": 30,
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Opened",
+                      "wrap": true,
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "width": 70,
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "{{DATE(${ticket.createDate},COMPACT)}}",
+                      "wrap": true,
+                      "size": "Default",
+                      "isSubtle": false,
+                      "color": "${if(ticket.overdue == true, 'attention','Default')}",
+                      "weight": "Bolder"
+                    }
+                  ]
+                }
+              ],
+              "spacing": "Large"
+            },
+            {
+              "type": "ColumnSet",
+              "columns": [
+                {
+                  "type": "Column",
+                  "width": 30,
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Description",
+                      "wrap": true,
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${ticket.description}",
+                      "wrap": true,
+                      "spacing": "Medium"
+                    }
+                  ],
+                  "width": 70
+                }
+              ],
+              "spacing": "Large"
+            }
+          ],
+          "spacing": "Large"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "$when": "${count($root.ticket.imageNames) >= 1}",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": 30,
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${$root.strings.ImagesLabel}",
+                  "wrap": true,
+                  "weight": "Bolder"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": 70,
+              "items": [
+                {
+                  "type": "Container",
+                  "$data": "${$root.ticket.imageNames}",
+                  "$when": "${count($root.ticket.imageNames) >= 1}",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${$data}",
+                      "wrap": true,
+                      "color": "accent"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "spacing": "Large"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "spacing": "Large",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${$root.errorMessage}",
+          "wrap": true,
+          "color": "attention"
+        }
+      ],
+      "$when": "${$root.errorMessage != ''}"
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": 30,
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${$root.strings.LocationLabel}",
+              "wrap": true,
+              "weight": "Bolder"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": 70,
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${ticket.location}",
+              "wrap": true
+            }
+          ]
+        }
+      ],
+      "spacing": "Large"
+    },
+    {
+      "type": "ActionSet",
+      "actions": [
+        {
+          "type": "Action.OpenUrl",
+          "url": "${ticketDirectionUrl}",
+          "title": "${$root.strings.GetDirectionsLabel}",
+          "style": "positive"
+        },
+        {
+          "type": "VivaAction.SelectMedia",
+          "id": "files",
+          "parameters": {
+            "mediaType": "MediaType.Image",
+            "allowMultipleCapture": true
+          },
+          "title": "${$root.strings.UploadImageLabel}",
+          "$when": "${canUpload == true}"
+        },
+        {
+          "type": "Action.Submit",
+          "title": "${$root.strings.CloseTicketLabel}",
+          "data": {
+            "id": "close",
+            "ticket": "${ticket}"
+          }
+        }
+      ],
+      "spacing": "Large"
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3"
+}

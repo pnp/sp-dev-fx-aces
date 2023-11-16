@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/adaptive-card-extension-manifest.schema.json",
+  "id": "d91c2331-09ef-4159-aaaf-1ea2b5da6efb",
+  "alias": "BasicCardHelpDeskAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "Dashboard"
+  ],
+  "preconfiguredEntries": [
+    {
+      "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
+      "group": {
+        "default": "Dashboard"
+      },
+      "title": {
+        "default": "ACE - Help Desk"
+      },
+      "description": {
+        "default": "Adaptive Card Extensions sample that demonstrates how to use Geo-location in a Help Desk scenario."
+      },
+      "officeFabricIconFontName": "Telemarketer",
+      "properties": {
+        "title": "Help Desk",
+        "iconProperty": "person_support" // Default to sharepointlogo
+      },
+      "cardSize": "Medium"
+    }
+  ]
+}
