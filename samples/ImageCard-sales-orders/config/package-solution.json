@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-ace-sales-orders-client-side-solution",
+    "id": "29e1538f-b3ef-4e1e-b351-69748d4e639e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-ace-sales-orders description"
+      },
+      "longDescription": {
+        "default": "spfx-ace-sales-orders description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-ace-sales-orders Feature",
+        "description": "The feature that activates elements of the spfx-ace-sales-orders solution.",
+        "id": "127cb2e8-7622-4c73-94f1-cab6ef1e106a",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-ace-sales-orders.sppkg"
+  }
+}

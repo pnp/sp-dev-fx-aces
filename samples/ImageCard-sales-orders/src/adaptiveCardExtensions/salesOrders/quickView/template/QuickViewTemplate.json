@@ -1,0 +1,184 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+      {
+          "type": "ColumnSet",
+          "columns": [
+              {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                      {
+                          "type": "Input.Text",
+                          "placeholder": "Search",
+                          "id": "input",
+                          "inlineAction": {
+                              "type": "Action.Submit",
+                              "iconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADBUlEQVRoge2ZW4hNcRTGl8EDCQ255mFIGhHJg2QeMFLkRR6RF42UQRPjkhqX8KLEg9weKA9CSbzIy1AeqKEcUUy55ZJxybg1HHzLWrt95syeM3vPf+19Nu2vvofpnPNb339f/pc1RJn+Hw2ER8Bj4SFlzhJKlfBK+AL8DP5d5A/wdbgRnlSmjIHiMOfgH9Q58Es4B7fAT+COos/vwkuSj+uLH4sj5Ad/B5+Cl8KDA77fH54N74cfkj8QvivTEsjbSRPg+xrgs4YKCl1KtfA9ZXyDl1sGLKUakqvNha/BIx1YfFd2wr/UO5zT9aDx8FuS8Ec1gIWWkdxJ5tYZMbuIH5GcFjkUA38ByfvEL/vcGPh0nCT8VbhfHAWgeq3xHB5gCZ4M/4Q/wsMtwQG6QjKILZbQiwrdagntRlNJLhYvfJUWQJ5l8vAbku1BEjpNcsE2WMBWK+yYBSykarTmTQvYZYUttoCFVAX8nmRWirpAdhHP+/xMms4KIeS9zHNcIEMV0mqRKKIOaO1VLpAqhdwyCBRV27T2RhfIRDJ8mSJqk9be7AIZrZCcRaKI2q2117hA+pJsdXmj1ccgVBSdIRnAIldQi4KmuIIi6oHWrXIF7VHQdldQBI3Tmk8tYDMVdtsCFlKNWvOwBYyf/VYF1loAe9Ag+BXJCW2GFXQF+Z2ECitoN2rSWuctoRz6joLrLcFF4nNHO8keyLx3xHuSDoXH8SgNgx+TXKS9MfD/qo78HtAsQy4fXG4ou5lk/YlNB8m2l1MNP1JmG/wVnm/ALSme5vJalFfM3iw2fLrjDdsn8ud8r1v3hRIYBPc127Tgd5I5e3qI340i2WG+0N/yWeMkSejC3in/Pc88dZG4P7qP5LZ7hTnYWXgXvB5eS7KKnyCZyfIF371EMvOw+BjZHjCI2O8EawxJW9DrdZbya5LzddAkUNZBeOIuxkJ4Hckz3gQ3kLQPq0P8PhWDcFU2iLQoG0RalA0iLeKVuXjFbi5rol6o8E5ww8GkBZ+0eBD879l/MnymVOsP1qz7R/xTU/sAAAAASUVORK5CYII=",
+                              "associatedInputs": "auto",
+                              "id": "search"
+                          }
+                      }
+                  ]
+              },
+              {
+                  "type": "Column",
+                  "width": "auto",
+                  "items": [
+                      {
+                          "type": "ActionSet",
+                          "actions": [
+                              {
+                                  "type": "Action.Submit",
+                                  "title": "${refreshLabel}",
+                                  "iconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAIbEAACGxAAGFqWwEAAABbUlEQVR4nO2Wv0rDUBjFf1Gxb1BBwaGC7eBcNA6+iEWpoHbsJnYRnAvq5At0SBcfwcHNpY8iioi0QeXCF/i4Gpub3BaFHDgQcnPuOd/9GyhR4h+iCrSAPjAQmud9aZsZ6kAETIDPFE7km4Zv8y7w/oux5guw69P8yjIYAR0ZkYpwEzgFHnybd5XxG3ACBMwJDTXsxnyvQF9reUSRqv64gHkPeAZCF1FVrfZRgWHvqSKcQrSUsOPB3DlEX4nqnsynhggUB0pQsdqm4Rz4UNTmybtvIbaBJyAWamGseJEhwKLisupraLUt2MJQkqUN3SXuqCn9TRZBmBIij7nBkeqjnVUUWiHympv18qimcdVFHEqIvOYGh6qIuzwdrBcw3wFexXwMbDEnBFJ5Ym545tOgCdzL3bABLMmWqsmCS+Y84a3P27MpZ8VPB4u9a8ZSeeD7eh5O+SWLZcHNdM5XgAPgWq7sSA6ZtutWK1HiT+ALe4yg9m0GKZIAAAAASUVORK5CYII=",
+                                  "id": "refresh"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "type": "ColumnSet",
+          "columns": [
+              {
+                  "type": "Column",
+                  "width": "80px",
+                  "items": [
+                      {
+                          "type": "TextBlock",
+                          "text": "Customer",
+                          "wrap": true,
+                          "color": "Accent",
+                          "weight": "Bolder"
+                      }
+                  ]
+              },
+              {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                      {
+                          "type": "TextBlock",
+                          "text": "Order",
+                          "wrap": true,
+                          "color": "Accent",
+                          "weight": "Bolder",
+                          "height": "stretch"
+                      }
+                  ]
+              },
+              {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                      {
+                          "type": "TextBlock",
+                          "text": "Date",
+                          "wrap": true,
+                          "color": "Accent",
+                          "weight": "Bolder"
+                      }
+                  ]
+              },
+              {
+                  "type": "Column",
+                  "width": "80px",
+                  "items": [
+                      {
+                          "type": "TextBlock",
+                          "text": "Status",
+                          "wrap": true,
+                          "color": "Accent",
+                          "weight": "Bolder"
+                      }
+                  ]
+              }
+          ],
+          "separator": true,
+          "style": "accent",
+          "spacing": "Medium"
+      },
+      {
+          "type": "Container",
+          "items": [
+              {
+                  "type": "Container",
+                  "items": [
+                      {
+                          "type": "ColumnSet",
+                          "columns": [
+                              {
+                                  "type": "Column",
+                                  "items": [
+                                      {
+                                          "type": "TextBlock",
+                                          "weight": "Bolder",
+                                          "text": "${customer}",
+                                          "height": "stretch",
+                                          "wrap": true,
+                                          "color": "Default",
+                                          "isSubtle": false,
+                                          "size": "Default"
+                                      }
+                                  ],
+                                  "width": "stretch",
+                                  "height": "stretch"
+                              },
+                              {
+                                  "type": "Column",
+                                  "width": "stretch",
+                                  "items": [
+                                      {
+                                          "type": "TextBlock",
+                                          "text": "${order}",
+                                          "wrap": true
+                                      }
+                                  ],
+                                  "height": "stretch"
+                              },
+                              {
+                                  "type": "Column",
+                                  "width": "stretch",
+                                  "items": [
+                                      {
+                                          "type": "TextBlock",
+                                          "text": "${orderDate}",
+                                          "height": "stretch",
+                                          "wrap": true
+                                      }
+                                  ],
+                                  "height": "stretch"
+                              },
+                              {
+                                  "type": "Column",
+                                  "width": "80px",
+                                  "items": [
+                                      {
+                                          "type": "TextBlock",
+                                          "text": "${status}",
+                                          "wrap": true,
+                                          "height": "stretch",
+                                          "color": "Good",
+                                          "weight": "Bolder"
+                                      }
+                                  ],
+                                  "height": "stretch"
+                              }
+                          ]
+                      }
+                  ],
+                  "style": "emphasis",
+                  "separator": true,
+                  "spacing": "Small"
+              }
+          ],
+          "$data": "${orders}"
+      }
+  ],
+  "minHeight": "400px"
+}
