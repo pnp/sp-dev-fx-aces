@@ -4,7 +4,7 @@
 
 This Adaptive Card Extension allows user  list and Search Data (Sales Orders) using Microsoft Graph Connector.
 
-This ACE, uses  Microsoft Graph Connector to get data of Sales Order, please see <https://docs.microsoft.com/en-us/graph/connectors-overview> to get more information. To run this sample you need to create a Microsoft Graph Connector available on <https://github.com/pnp/graph-connectors-samples> . Please see the following link to create a Microsoft Graph Connector  for this sample <https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-IBMDB2>
+This ACE, uses  Microsoft Graph Connector to get data of Sales Order. To run this sample you need to create a Microsoft Graph Connector available on <https://github.com/pnp/graph-connectors-samples> . Please see the following link to create a Microsoft Graph Connector  for this sample <https://github.com/pnp/graph-connectors-samples/tree/main/samples/nodejs-javascript-IBMDB2>
 
 ![salesOrders](./assets/SalesOrders.gif)
 
