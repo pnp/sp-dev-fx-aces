@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
 using System.IO;
+using AdaptiveCards.Templating;
 
 namespace BotPowered_BasicAce
 {
@@ -28,23 +29,27 @@ namespace BotPowered_BasicAce
 
         private static ConcurrentDictionary<string, CardViewResponse> cardViews = new ConcurrentDictionary<string, CardViewResponse>();
         private static ConcurrentDictionary<string, QuickViewResponse> quickViews = new ConcurrentDictionary<string, QuickViewResponse>();
+        private static bool cardsInitialized = false;
 
         private static string MainCardView_ID = "MAIN_TASKS_CARD_VIEW";
         private static string SingleTaskCardView_ID = "SINGLE_TASK_CARD_VIEW";
         private static string ListTasksQuickView_ID = "LIST_TASKS_QUICK_VIEW";
 
-        private static List<TaskItem> tasks = new List<TaskItem>(new TaskItem[] { 
+        private static List<TaskItem> tasks = new List<TaskItem>(new TaskItem[] {
             new TaskItem { ID = Guid.NewGuid(), Title = "Wash your car", Description = "Remember to wash your car", DueDate = DateTime.Now.AddDays(2) },
             new TaskItem { ID = Guid.NewGuid(), Title = "Buy groceries", Description = "Buy ham, cheese and bread", DueDate= DateTime.Now.AddDays(1) },
             new TaskItem { ID = Guid.NewGuid(), Title = "Pickup kids at school", Description = "Stop coding! You have kids to pickup at school!", DueDate = DateTime.Now },
             new TaskItem { ID = Guid.NewGuid(), Title = "Take a little break", Description = "Remember to stop few minutes and breath", DueDate = DateTime.Now }
-        }); 
+        });
 
         public TasksBot(IConfiguration configuration)
             : base()
         {
             this.configuration = configuration;
             this.baseUrl = configuration["BaseUrl"];
+
+            // Skip cards init if it has already been done
+            // if (cardsInitialized) return;
 
             // Add the CardViews
             var aceData = new AceData()
@@ -71,6 +76,7 @@ namespace BotPowered_BasicAce
                 {
                     new CardButtonComponent()
                     {
+                        Id = "AllTasks",
                         Title = "All Tasks",
                         Action = new QuickViewAction()
                         {
@@ -82,7 +88,8 @@ namespace BotPowered_BasicAce
                     },
                     new CardButtonComponent()
                     {
-                        Title = "Next task",
+                        Id = "SingleTask",
+                        Title = "Single task",
                         Action = new SubmitAction()
                         {
                             Parameters = new Dictionary<string, object>()
@@ -129,19 +136,18 @@ namespace BotPowered_BasicAce
                 {
                     new CardButtonComponent()
                     {
-                        Title = "Complete",
-                        Style = CardButtonStyle.Positive,
+                        Id = "MainView",
+                        Title = "Recap",
                         Action = new SubmitAction()
                         {
                             Parameters = new Dictionary<string, object>()
-                            {
-                                {"taskId", "<TaskId>"}
-                            }
                         }
                     },
                     new CardButtonComponent()
                     {
+                        Id = "NextTask",
                         Title = "Next task",
+                        Style = CardButtonStyle.Positive,
                         Action = new SubmitAction()
                         {
                             Parameters = new Dictionary<string, object>()
@@ -159,11 +165,19 @@ namespace BotPowered_BasicAce
 
             // Add the QuickViews
             QuickViewResponse listTasksQuickViewResponse = new QuickViewResponse();
-            listTasksQuickViewResponse.Title = "Primary Text quick view";
-            listTasksQuickViewResponse.Template = AdaptiveCard.FromJson(readQuickViewJson("ListTasksQuickView.json")).Card;
+            listTasksQuickViewResponse.Title = "Detailed tasks list";
+            listTasksQuickViewResponse.Template = createDynamicAdaptiveCard(
+                readQuickViewJson("ListTasksQuickView.json"), 
+                new {
+                    title = "Here are your tasks:",
+                    tasks 
+                });
             listTasksQuickViewResponse.ViewId = ListTasksQuickView_ID;
 
             quickViews.TryAdd(listTasksQuickViewResponse.ViewId, listTasksQuickViewResponse);
+
+            // Set cards as already initialized
+            cardsInitialized = true;
         }
 
         protected override Task<CardViewResponse> OnSharePointTaskGetCardViewAsync(ITurnContext<IInvokeActivity> turnContext, AceRequest aceRequest, CancellationToken cancellationToken)
@@ -364,11 +378,14 @@ namespace BotPowered_BasicAce
             Trace.Write("\n\n\nStarted to handle action.\n\n\n");
             JObject actionParameters = (JObject)((JObject)turnContext.Activity.Value).Property("data").Value;
 
-            if (actionParameters["type"].ToString().Equals("Submit"))
+            if (actionParameters["type"].ToString().Equals("Submit", StringComparison.InvariantCultureIgnoreCase) &&
+                (actionParameters["id"].ToString().Equals("NextTask", StringComparison.InvariantCultureIgnoreCase)) ||
+                actionParameters["id"].ToString().Equals("SingleTask", StringComparison.InvariantCultureIgnoreCase))
             {
-                string viewToNavigateTo = actionParameters["data"]["viewToNavigateTo"].ToString();
-                int nextTaskId = int.Parse(actionParameters["data"]["nextTaskId"].ToString());
                 CardViewHandleActionResponse response = new CardViewHandleActionResponse();
+
+                string viewToNavigateTo = actionParameters["data"]["viewToNavigateTo"].ToString();
+                int nextTaskId = int.Parse(actionParameters["data"]["nextTaskId"]?.ToString() ?? "0");
 
                 var nextCard = cardViews[viewToNavigateTo];
 
@@ -377,12 +394,23 @@ namespace BotPowered_BasicAce
                 ((nextCard.CardViewParameters.Body.ToList())[0] as CardTextComponent).Text = tasks[nextTaskId].Description;
 
                 // Configure next task submit action parameters
-                var newNextTaskId = nextTaskId + 1 > tasks.Count ? 0 : nextTaskId + 1;
-                var submitActionParameters = ((SubmitAction)((nextCard.CardViewParameters.Footer.ToList())[1] as CardButtonComponent).Action);
-                submitActionParameters.Parameters["nextTaskId"] = newNextTaskId;
+                var newNextTaskId = nextTaskId + 1 >= tasks.Count ? 0 : nextTaskId + 1;
+                var nextTaskSubmitActionParameters = ((SubmitAction)((nextCard.CardViewParameters.Footer.ToList())[1] as CardButtonComponent).Action);
+                nextTaskSubmitActionParameters.Parameters["nextTaskId"] = newNextTaskId;
 
                 // Set the response for the action
                 response.RenderArguments = cardViews[viewToNavigateTo];
+
+                Trace.Write("\n\n\nFinished handling action.\n\n\n");
+                return Task.FromResult<BaseHandleActionResponse>(response);
+            }
+            else if (actionParameters["type"].ToString().Equals("Submit", StringComparison.InvariantCultureIgnoreCase) &&
+                actionParameters["id"].ToString().Equals("MainView", StringComparison.InvariantCultureIgnoreCase))
+            {
+                CardViewHandleActionResponse response = new CardViewHandleActionResponse();
+
+                // Return to the main view
+                response.RenderArguments = cardViews[MainCardView_ID];
 
                 Trace.Write("\n\n\nFinished handling action.\n\n\n");
                 return Task.FromResult<BaseHandleActionResponse>(response);
@@ -405,6 +433,30 @@ namespace BotPowered_BasicAce
             }
 
             return json;
+        }
+
+        private AdaptiveCard createDynamicAdaptiveCard(string cardJson, object dataSource)
+        {
+            AdaptiveCardTemplate template = new AdaptiveCardTemplate(cardJson);
+            var cardJsonWithData = template.Expand(dataSource);
+
+            // Deserialize the JSON string into an AdaptiveCard object
+            AdaptiveCardParseResult parseResult = AdaptiveCard.FromJson(cardJsonWithData);
+
+            // Check for errors during parsing
+            if (parseResult.Warnings.Count > 0)
+            {
+                Trace.Write("Warnings during parsing:");
+                foreach (var warning in parseResult.Warnings)
+                {
+                    Trace.Write(warning.Message);
+                }
+            }
+
+            // Get the AdaptiveCard object
+            AdaptiveCard card = parseResult.Card;
+
+            return card;
         }
     }
 }
