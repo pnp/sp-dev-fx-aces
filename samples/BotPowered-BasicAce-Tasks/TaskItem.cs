@@ -1,7 +1,7 @@
 ﻿using Microsoft.Bot.Schema.SharePoint;
 using System;
 
-namespace BotPowered_BasicAce
+namespace BotPowered_BasicAce_Tasks
 {
     public class TaskItem
     {

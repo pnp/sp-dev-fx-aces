@@ -3,11 +3,9 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
+    <UserSecretsId>262d8d01-f61b-48a2-9baa-31539b075b0a</UserSecretsId>
+    <RootNamespace>$(MSBuildProjectName.Replace(" ", "_").Replace("-", "_"))</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\Media\List-of-Tasks.png" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AdaptiveCards.Templating" Version="1.5.0" />

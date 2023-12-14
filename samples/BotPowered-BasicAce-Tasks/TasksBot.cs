@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 using System.IO;
 using AdaptiveCards.Templating;
 
-namespace BotPowered_BasicAce
+namespace BotPowered_BasicAce_Tasks
 {
     public class TasksBot : SharePointActivityHandler
     {
@@ -29,7 +29,6 @@ namespace BotPowered_BasicAce
 
         private static ConcurrentDictionary<string, CardViewResponse> cardViews = new ConcurrentDictionary<string, CardViewResponse>();
         private static ConcurrentDictionary<string, QuickViewResponse> quickViews = new ConcurrentDictionary<string, QuickViewResponse>();
-        private static bool cardsInitialized = false;
 
         private static string MainCardView_ID = "MAIN_TASKS_CARD_VIEW";
         private static string SingleTaskCardView_ID = "SINGLE_TASK_CARD_VIEW";
@@ -47,9 +46,6 @@ namespace BotPowered_BasicAce
         {
             this.configuration = configuration;
             this.baseUrl = configuration["BaseUrl"];
-
-            // Skip cards init if it has already been done
-            // if (cardsInitialized) return;
 
             // Add the CardViews
             var aceData = new AceData()
@@ -175,9 +171,6 @@ namespace BotPowered_BasicAce
             listTasksQuickViewResponse.ViewId = ListTasksQuickView_ID;
 
             quickViews.TryAdd(listTasksQuickViewResponse.ViewId, listTasksQuickViewResponse);
-
-            // Set cards as already initialized
-            cardsInitialized = true;
         }
 
         protected override Task<CardViewResponse> OnSharePointTaskGetCardViewAsync(ITurnContext<IInvokeActivity> turnContext, AceRequest aceRequest, CancellationToken cancellationToken)

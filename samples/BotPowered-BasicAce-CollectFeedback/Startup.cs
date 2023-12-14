@@ -12,7 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace BotPowered_BasicAce
+namespace BotPowered_BasicAce_CollectFeedback
 {
     public class Startup
     {
@@ -38,7 +38,7 @@ namespace BotPowered_BasicAce
             services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();
 
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
-            services.AddTransient<IBot, TasksBot>();
+            services.AddTransient<IBot, FeedbackBot>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

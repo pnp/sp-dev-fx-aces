@@ -6,7 +6,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace BotPowered_BasicAce
+namespace BotPowered_BasicAce_Tasks
 {
     public class Program
     {

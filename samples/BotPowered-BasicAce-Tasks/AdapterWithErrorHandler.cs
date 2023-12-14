@@ -8,7 +8,7 @@ using Microsoft.Bot.Builder.TraceExtensions;
 using Microsoft.Bot.Connector.Authentication;
 using Microsoft.Extensions.Logging;
 
-namespace BotPowered_BasicAce
+namespace BotPowered_BasicAce_Tasks
 {
     public class AdapterWithErrorHandler : CloudAdapter
     {
