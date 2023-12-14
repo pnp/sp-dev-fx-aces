@@ -23,19 +23,19 @@
     {
       "type": "image",
       "order": 100,
-      "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-CollectFeedback/assets/tasks-ace-01.png",
+      "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-Tasks/assets/tasks-ace-01.png",
       "alt": "Preview of the main CardView to show a recap of the active tasks"
     },
     {
       "type": "image",
       "order": 200,
-      "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-CollectFeedback/assets/tasks-ace-02.png",
+      "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-Tasks/assets/tasks-ace-02.png",
       "alt": "Preview of the CardView showing a single task"
     },
     {
       "type": "image",
       "order": 300,
-      "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-CollectFeedback/assets/tasks-ace-03.png",
+      "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-Tasks/assets/tasks-ace-03.png",
       "alt": "Preview of the main QuickView to show a detailed list of tasks"
     }
 
