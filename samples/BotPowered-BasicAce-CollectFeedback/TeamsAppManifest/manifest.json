@@ -3,7 +3,7 @@
   "manifestVersion": "1.16",
   "version": "1.0.0",
   "id": "0910daf8-c72d-411f-845a-0436941165ed",
-  "packageName": "botpowered.basicace",
+  "packageName": "botpowered.basicace.collectfeedback",
   "developer": {
     "name": "PiaSys.com",
     "websiteUrl": "https://www.piasys.com/",
@@ -12,12 +12,12 @@
     "mpnId": "1075379"
   },
   "name": {
-    "short": "BOT-Powered ACE Basic Demo",
-    "full": "This is a basic demo of a BOT-Powered ACE for Microsoft Viva Connections Dashboard to show hypothetical user's tasks"
+    "short": "Bot-Powered ACE Collect Feedback Basic Demo",
+    "full": "This is a basic demo of a Bot-Powered ACE for Microsoft Viva Connections Dashboard to collect feedback from the user"
   },
   "description": {
-    "short": "Basic demo of a BOT-Powered ACE for Microsoft Viva Connections Dashboard to show hypothetical user's tasks",
-    "full": "Basic demo of how to use the latest release of the BOT Framework SDK to build a BOT-Powered ACE for Microsoft Viva Connections Dashboard to show hypothetical user's tasks"
+    "short": "Basic demo of a Bot-Powered ACE for Microsoft Viva Connections Dashboard to collect feedback from the user",
+    "full": "Basic demo of how to use the latest release of the Bot Framework SDK to build a Bot-Powered ACE for Microsoft Viva Connections Dashboard to collect feedback from the user"
   },
   "icons": {
     "outline": "icon-outline.png",
@@ -42,10 +42,10 @@
   "dashboardCards": [
     {
       "id": "0910daf8-c72d-411f-845a-0436941165ed",
-      "displayName": "BOT-Powered ACE Tasks",
-      "description": "BOT-Powered ACE Tasks demo",
+      "displayName": "Bot-Powered ACE Collect Feedback",
+      "description": "Bot-Powered ACE Collect Feedback demo",
       "icon": {
-        "officeUIFabricIconName": "TaskSolid"
+        "officeUIFabricIconName": "Feedback"
       },
       "contentSource": {
         "sourceType": "bot",

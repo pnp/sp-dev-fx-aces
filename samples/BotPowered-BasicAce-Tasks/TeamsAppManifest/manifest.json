@@ -3,7 +3,7 @@
   "manifestVersion": "1.16",
   "version": "1.0.0",
   "id": "0910daf8-c72d-411f-845a-0436941165ed",
-  "packageName": "botpowered.basicace",
+  "packageName": "botpowered.basicace.tasks",
   "developer": {
     "name": "PiaSys.com",
     "websiteUrl": "https://www.piasys.com/",
@@ -12,7 +12,7 @@
     "mpnId": "1075379"
   },
   "name": {
-    "short": "BOT-Powered ACE Basic Demo",
+    "short": "BOT-Powered ACE Tasks Basic Demo",
     "full": "This is a basic demo of a BOT-Powered ACE for Microsoft Viva Connections Dashboard to show hypothetical user's tasks"
   },
   "description": {
