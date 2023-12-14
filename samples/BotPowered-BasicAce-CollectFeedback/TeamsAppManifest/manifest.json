@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.14/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.0",
+  "id": "0910daf8-c72d-411f-845a-0436941165ed",
+  "packageName": "botpowered.basicace.collectfeedback",
+  "developer": {
+    "name": "PiaSys.com",
+    "websiteUrl": "https://www.piasys.com/",
+    "privacyUrl": "http://piasys.com/privacy/",
+    "termsOfUseUrl": "https://www.piasys.com/terms-of-use/",
+    "mpnId": "1075379"
+  },
+  "name": {
+    "short": "Bot-Powered ACE Collect Feedback Basic Demo",
+    "full": "This is a basic demo of a Bot-Powered ACE for Microsoft Viva Connections Dashboard to collect feedback from the user"
+  },
+  "description": {
+    "short": "Basic demo of a Bot-Powered ACE for Microsoft Viva Connections Dashboard to collect feedback from the user",
+    "full": "Basic demo of how to use the latest release of the Bot Framework SDK to build a Bot-Powered ACE for Microsoft Viva Connections Dashboard to collect feedback from the user"
+  },
+  "icons": {
+    "outline": "icon-outline.png",
+    "color": "icon-color.png"
+  },
+  "accentColor": "#FFFFFF",
+  "bots": [
+    {
+      "botId": "0910daf8-c72d-411f-845a-0436941165ed",
+      "needsChannelSelector": false,
+      "isNotificationOnly": false,
+      "supportsCalling": false,
+      "supportsVideo": false,
+      "supportsFiles": false,
+      "scopes": [
+        "team",
+        "personal",
+        "groupchat"
+      ]
+    }
+  ],
+  "dashboardCards": [
+    {
+      "id": "0910daf8-c72d-411f-845a-0436941165ed",
+      "displayName": "Bot-Powered ACE Collect Feedback",
+      "description": "Bot-Powered ACE Collect Feedback demo",
+      "icon": {
+        "officeUIFabricIconName": "Feedback"
+      },
+      "contentSource": {
+        "sourceType": "bot",
+        "botConfiguration": {
+          "botId": "0910daf8-c72d-411f-845a-0436941165ed"
+        }
+      },
+      "defaultSize": "medium"
+    }
+  ],
+  "permissions": [
+    "identity"
+  ],
+  "validDomains": [
+    "piasys-ace-basic.ngrok.io"
+  ]
+}
