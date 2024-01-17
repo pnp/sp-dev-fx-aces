@@ -75,8 +75,7 @@ namespace BotPowered_BasicAce_CollectFeedback
                         {
                             Parameters = new Dictionary<string, object>()
                             {
-                                {"viewToNavigateTo", OkFeedbackCardView_ID},
-                                {"dateTimeFeedback", DateTime.Now.ToString()}
+                                {"viewToNavigateTo", OkFeedbackCardView_ID}
                             }
                         }
                     }
@@ -212,17 +211,17 @@ namespace BotPowered_BasicAce_CollectFeedback
 
                 string viewToNavigateTo = actionParameters["data"]["viewToNavigateTo"].ToString();
                 var feedbackValue = actionParameters["data"]["feedbackValue"].ToString();
-                var dateTimeFeedback = DateTime.Parse(actionParameters["data"]["dateTimeFeedback"]?.ToString() ?? DateTime.MinValue.ToString());
+                var dateTimeFeedback = DateTime.Now;
 
                 var nextCard = cardViews[viewToNavigateTo];
 
                 // Configure title and description of task
-                var originalText = ((nextCard.CardViewParameters.Header.ToList())[0] as CardTextComponent).Text;
-                originalText = originalText.Replace("<feedback>", feedbackValue).Replace("<dateTimeFeedback>", dateTimeFeedback.ToString());
-                ((nextCard.CardViewParameters.Header.ToList())[0] as CardTextComponent).Text = originalText;
+                var textPattern = "Here is your feedback '<feedback>' collected on '<dateTimeFeedback>'";
+                textPattern = textPattern.Replace("<feedback>", feedbackValue).Replace("<dateTimeFeedback>", dateTimeFeedback.ToString());
+                ((nextCard.CardViewParameters.Header.ToList())[0] as CardTextComponent).Text = textPattern;
 
                 // Set the response for the action
-                response.RenderArguments = cardViews[viewToNavigateTo];
+                response.RenderArguments = nextCard;
 
                 Trace.Write("\n\n\nFinished handling action.\n\n\n");
                 return Task.FromResult<BaseHandleActionResponse>(response);
