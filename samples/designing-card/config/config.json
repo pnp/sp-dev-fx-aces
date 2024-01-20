@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "generic-text-image-button-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/genericTextImageButton/GenericTextImageButtonAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/genericTextImageButton/GenericTextImageButtonAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    },
+    "generic-text-image-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/genericTextImage/GenericTextImageAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/genericTextImage/GenericTextImageAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    },
+    "generic-text-input-image-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/genericTextInputImage/GenericTextInputImageAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/genericTextInputImage/GenericTextInputImageAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    },
+    "generic-text-input-button-image-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/genericTextInputButtonImage/GenericTextInputButtonImageAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/genericTextInputButtonImage/GenericTextInputButtonImageAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    },
+    "generic-text-input-no-button-image-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/genericTextInputNoButtonImage/GenericTextInputNoButtonImageAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/genericTextInputNoButtonImage/GenericTextInputNoButtonImageAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "GenericTextImageButtonAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/genericTextImageButton/loc/{locale}.js",
+    "GenericTextImageAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/genericTextImage/loc/{locale}.js",
+    "GenericTextInputImageAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/genericTextInputImage/loc/{locale}.js",
+    "GenericTextInputButtonImageAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/genericTextInputButtonImage/loc/{locale}.js",
+    "GenericTextInputNoButtonImageAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/genericTextInputNoButtonImage/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,49 @@
+import type { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
+import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
+import { CardView } from './cardView/CardView';
+import { GenericTextImageButtonPropertyPane } from './GenericTextImageButtonPropertyPane';
+
+export interface IGenericTextImageButtonAdaptiveCardExtensionProps {
+  title: string;
+}
+
+export interface IGenericTextImageButtonAdaptiveCardExtensionState {
+}
+
+const CARD_VIEW_REGISTRY_ID: string = 'GenericTextImageButton_CARD_VIEW';
+
+export default class GenericTextImageButtonAdaptiveCardExtension extends BaseAdaptiveCardExtension<
+  IGenericTextImageButtonAdaptiveCardExtensionProps,
+  IGenericTextImageButtonAdaptiveCardExtensionState
+> {
+  private _deferredPropertyPane: GenericTextImageButtonPropertyPane;
+
+  public onInit(): Promise<void> {
+    this.state = { };
+
+    // registers the card view to be shown in a dashboard
+    this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
+
+    return Promise.resolve();
+  }
+
+  protected loadPropertyPaneResources(): Promise<void> {
+    return import(
+      /* webpackChunkName: 'GenericTextImageButton-property-pane'*/
+      './GenericTextImageButtonPropertyPane'
+    )
+      .then(
+        (component) => {
+          this._deferredPropertyPane = new component.GenericTextImageButtonPropertyPane();
+        }
+      );
+  }
+
+  protected renderCard(): string | undefined {
+    return CARD_VIEW_REGISTRY_ID;
+  }
+
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+    return this._deferredPropertyPane?.getPropertyPaneConfiguration();
+  }
+}
