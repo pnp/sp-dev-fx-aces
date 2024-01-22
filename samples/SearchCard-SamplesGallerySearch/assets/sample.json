@@ -1,6 +1,6 @@
 [{
   "source": "pnp",
-  "something": "else",
+  "something_2": "else",
   "shortDescription": "Viva Connection Adaptive Card Extension (ACE) that shows how to create a search card.",
   "longDescription": [
     "Viva Connection Adaptive Card Extension (ACE) that shows how to create a search card."
