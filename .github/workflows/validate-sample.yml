@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Validate
-        uses: Balastrong/validate-sample-action@main
+        uses: pnp/pnp-sample-validation@main
         with:
           gh-token: ${{ secrets.GITHUB_TOKEN }}
