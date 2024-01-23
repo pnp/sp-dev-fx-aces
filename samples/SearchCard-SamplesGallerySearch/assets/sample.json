@@ -1,7 +1,9 @@
 [{
   "name": "pnp-sp-fx-aces-searchcard-samples-gallery",
   "source": "pnp",
+  "title": "Search Samples Gallery ACE",
   "shortDescription": "Viva Connection Adaptive Card Extension (ACE) that shows how to create a search card.",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/SearchCard-SamplesGallerySearch",
   "longDescription": [
     "Viva Connection Adaptive Card Extension (ACE) that shows how to create a search card."
   ],
