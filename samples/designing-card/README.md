@@ -2,9 +2,9 @@
 
 ## Summary
 
-This sample application provides a list of design cards, accordingly to the documentation available on page [Designing Viva Connections custom cards for your dashboard](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/designing-card).
+This sample application shows how to implement all of the layout options that are available in the component base model of the SharePoint Framework (SPFx) Adaptive Card Extensions (ACEs) Card Views, accordingly to the documentation available on page [Designing Viva Connections custom cards for your dashboard](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/designing-card).
 
-
+As Microsoft will introduce new card layouts, we will introduce new samples in this application, too.
 
 ## Used SharePoint Framework Version
 
@@ -21,13 +21,13 @@ This sample application provides a list of design cards, accordingly to the docu
 
 | Solution    | Author(s)                                               |
 | ----------- | ------------------------------------------------------- |
-| generic-card | PaoloPia (Paolo Pialorsi, PiaSys.com, [@PaoloPia](https://twitter.com/PaoloPia)) |
+| design-card | PaoloPia (Paolo Pialorsi, PiaSys.com, [@PaoloPia](https://twitter.com/PaoloPia)) |
 
 ## Version history
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.0     | January 19, 2024 | Initial release |
+| 1.0     | January 23, 2024 | Initial release |
 
 ## List of Designs
 
