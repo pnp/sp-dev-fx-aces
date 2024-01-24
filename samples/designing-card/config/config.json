@@ -105,6 +105,14 @@
           "manifest": "./src/adaptiveCardExtensions/genericInputNoButton/GenericInputNoButtonAdaptiveCardExtension.manifest.json"
         }
       ]
+    },
+    "search-box-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/searchBox/SearchBoxAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/searchBox/SearchBoxAdaptiveCardExtension.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -121,6 +129,7 @@
     "GenericPrimaryTextNoButtonAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/genericPrimaryTextNoButton/loc/{locale}.js",
     "GenericPrimaryTextInputButtonAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/genericPrimaryTextInputButton/loc/{locale}.js",
     "GenericInputButtonAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/genericInputButton/loc/{locale}.js",
-    "GenericInputNoButtonAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/genericInputNoButton/loc/{locale}.js"
+    "GenericInputNoButtonAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/genericInputNoButton/loc/{locale}.js",
+    "SearchBoxAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/searchBox/loc/{locale}.js"
   }
 }

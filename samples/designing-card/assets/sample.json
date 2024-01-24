@@ -1,0 +1,43 @@
+[{
+  "name": "pnp-sp-fx-aces-ace-cardgallery",
+  "source": "pnp",
+  "title": "Adaptive Cards Sample Gallery",
+  "shortDescription": "11 Adaptive Card Extension Samples",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ace-cardgallery",
+  "longDescription": [
+    "This solution provides a set of eleven (11) Adaptive Card Extensions to demonstrate the various features that can be implemented roughly based on the samples provided by the Adaptive Card documentation."
+  ],
+  "creationDateTime": "2021-09-28",
+  "updateDateTime": "2021-09-28",
+  "products": [
+    "SharePoint",
+    "Viva"
+  ],
+  "metadata": [{
+      "key": "CLIENT-SIDE-DEV",
+      "value": "React"
+    },
+    {
+      "key": "SPFX-VERSION",
+      "value": "1.13.0"
+    }
+  ],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/ace-cardgallery/assets/acegallery.gif",
+    "alt": "Gallery of 11 samples"
+  }],
+  "authors": [{
+    "gitHubAccount": "dcashpeterson",
+    "company": "Sympraxis Consulting",
+    "pictureUrl": "https://github.com/dcashpeterson.png",
+    "name": "Derek Cash-Peterson",
+    "twitter": "spdcp"
+  }],
+  "references": [{
+    "name": "Viva Connections Extensibility guidance",
+    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+    "url": "https://aka.ms/viva/connections/extensibility"
+  }]
+}]

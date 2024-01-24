@@ -17,6 +17,6 @@
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "Generic"
+    "aceTemplateType": "Search"
   }
 }
