@@ -1,0 +1,17 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BotPowered_BasicAce_Tasks
+build_property.RootNamespace = BotPowered_BasicAce_Tasks
+build_property.ProjectDir = C:\github\sp-dev-fx-aces\samples\BotPowered-BasicAce-Tasks\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\github\sp-dev-fx-aces\samples\BotPowered-BasicAce-Tasks
+build_property._RazorSourceGeneratorDebug = 

@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "+IRopf17YL7D5cSrU0KllqecZZByxqMVX3aoBeekFiE=",
+  "Source": "BotPowered-BasicAce-Tasks",
+  "BasePath": "_content/BotPowered-BasicAce-Tasks",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BotPowered-BasicAce-Tasks\\wwwroot",
+      "Source": "BotPowered-BasicAce-Tasks",
+      "ContentRoot": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-Tasks\\wwwroot\\",
+      "BasePath": "_content/BotPowered-BasicAce-Tasks",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-Tasks\\wwwroot\\default.htm",
+      "SourceId": "BotPowered-BasicAce-Tasks",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-Tasks\\wwwroot\\",
+      "BasePath": "_content/BotPowered-BasicAce-Tasks",
+      "RelativePath": "default.htm",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\default.htm"
+    },
+    {
+      "Identity": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-Tasks\\wwwroot\\Media\\List-of-Tasks.png",
+      "SourceId": "BotPowered-BasicAce-Tasks",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-Tasks\\wwwroot\\",
+      "BasePath": "_content/BotPowered-BasicAce-Tasks",
+      "RelativePath": "Media/List-of-Tasks.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\List-of-Tasks.png"
+    }
+  ]
+}

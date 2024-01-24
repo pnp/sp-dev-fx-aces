@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-CollectFeedback\\wwwroot\\Media\\Collect-Feedback.png",
+      "PackagePath": "staticwebassets\\Media\\Collect-Feedback.png"
+    },
+    {
+      "Id": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-CollectFeedback\\wwwroot\\Media\\Ok-Feedback.png",
+      "PackagePath": "staticwebassets\\Media\\Ok-Feedback.png"
+    },
+    {
+      "Id": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-CollectFeedback\\wwwroot\\default.htm",
+      "PackagePath": "staticwebassets\\default.htm"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.BotPowered-BasicAce-CollectFeedback.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.BotPowered-BasicAce-CollectFeedback.props",
+      "PackagePath": "build\\BotPowered-BasicAce-CollectFeedback.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.BotPowered-BasicAce-CollectFeedback.props",
+      "PackagePath": "buildMultiTargeting\\BotPowered-BasicAce-CollectFeedback.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.BotPowered-BasicAce-CollectFeedback.props",
+      "PackagePath": "buildTransitive\\BotPowered-BasicAce-CollectFeedback.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

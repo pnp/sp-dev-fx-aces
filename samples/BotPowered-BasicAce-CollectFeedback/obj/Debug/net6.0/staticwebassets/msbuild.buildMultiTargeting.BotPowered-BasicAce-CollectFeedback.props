@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BotPowered-BasicAce-CollectFeedback.props" />
+</Project>

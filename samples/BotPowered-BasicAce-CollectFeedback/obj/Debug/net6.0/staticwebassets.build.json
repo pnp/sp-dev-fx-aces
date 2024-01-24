@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "Hash": "JXlh2FRKWDFSCR0bNbsMmxRME/3c2YCORH7d2Hc5YD4=",
+  "Source": "BotPowered-BasicAce-CollectFeedback",
+  "BasePath": "_content/BotPowered-BasicAce-CollectFeedback",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BotPowered-BasicAce-CollectFeedback\\wwwroot",
+      "Source": "BotPowered-BasicAce-CollectFeedback",
+      "ContentRoot": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-CollectFeedback\\wwwroot\\",
+      "BasePath": "_content/BotPowered-BasicAce-CollectFeedback",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-CollectFeedback\\wwwroot\\default.htm",
+      "SourceId": "BotPowered-BasicAce-CollectFeedback",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-CollectFeedback\\wwwroot\\",
+      "BasePath": "_content/BotPowered-BasicAce-CollectFeedback",
+      "RelativePath": "default.htm",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\default.htm"
+    },
+    {
+      "Identity": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-CollectFeedback\\wwwroot\\Media\\Collect-Feedback.png",
+      "SourceId": "BotPowered-BasicAce-CollectFeedback",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-CollectFeedback\\wwwroot\\",
+      "BasePath": "_content/BotPowered-BasicAce-CollectFeedback",
+      "RelativePath": "Media/Collect-Feedback.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\Collect-Feedback.png"
+    },
+    {
+      "Identity": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-CollectFeedback\\wwwroot\\Media\\Ok-Feedback.png",
+      "SourceId": "BotPowered-BasicAce-CollectFeedback",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\github\\sp-dev-fx-aces\\samples\\BotPowered-BasicAce-CollectFeedback\\wwwroot\\",
+      "BasePath": "_content/BotPowered-BasicAce-CollectFeedback",
+      "RelativePath": "Media/Ok-Feedback.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\Ok-Feedback.png"
+    }
+  ]
+}
