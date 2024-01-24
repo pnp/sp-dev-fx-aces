@@ -46,7 +46,7 @@ export class CardView extends BaseComponentsCardView<
         componentName: 'searchFooter',
         title: strings.Suggested,
         imageInitials: 'MB',
-        text: strings.Title,
+        text: strings.PreviewTitle,
         onSelection: {
           type: 'QuickView',
           parameters: {

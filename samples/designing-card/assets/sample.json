@@ -1,14 +1,14 @@
 [{
   "name": "pnp-sp-fx-aces-ace-cardgallery",
   "source": "pnp",
-  "title": "Adaptive Cards Sample Gallery",
-  "shortDescription": "11 Adaptive Card Extension Samples",
+  "title": "Designing Card Templates",
+  "shortDescription": "14 different card templates that can be used in Viva Connections.",
   "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ace-cardgallery",
   "longDescription": [
-    "This solution provides a set of eleven (11) Adaptive Card Extensions to demonstrate the various features that can be implemented roughly based on the samples provided by the Adaptive Card documentation."
+    "This sample application shows how to implement all of the layout options that are available in the component base model of the SharePoint Framework (SPFx) Adaptive Card Extensions (ACEs) Card Views, accordingly to the documentation available."
   ],
-  "creationDateTime": "2021-09-28",
-  "updateDateTime": "2021-09-28",
+  "creationDateTime": "2024-01-24",
+  "updateDateTime": "2024-01-24",
   "products": [
     "SharePoint",
     "Viva"
@@ -19,25 +19,124 @@
     },
     {
       "key": "SPFX-VERSION",
-      "value": "1.13.0"
+      "value": "1.18.2"
     }
   ],
-  "thumbnails": [{
-    "type": "image",
-    "order": 100,
-    "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/ace-cardgallery/assets/acegallery.gif",
-    "alt": "Gallery of 11 samples"
-  }],
-  "authors": [{
-    "gitHubAccount": "dcashpeterson",
-    "company": "Sympraxis Consulting",
-    "pictureUrl": "https://github.com/dcashpeterson.png",
-    "name": "Derek Cash-Peterson",
-    "twitter": "spdcp"
-  }],
-  "references": [{
-    "name": "Viva Connections Extensibility guidance",
-    "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
-    "url": "https://aka.ms/viva/connections/extensibility"
-  }]
+  "thumbnails": [
+    {
+      "type": "image",
+      "order": 100,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Benefits.png",
+      "alt": "Image large Card View with a title and an action button"
+    },
+    {
+      "type": "image",
+      "order": 200,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Viva-Insights.png",
+      "alt": "Image large Card View with a title"
+    },
+    {
+      "type": "image",
+      "order": 300,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Feedback-Survey.png",
+      "alt": "Image large Card View with a title, a text input, and a submission button"
+    },
+    {
+      "type": "image",
+      "order": 400,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Location-Tracker.png",
+      "alt": "Image large Card View with a title, a text input, and an action button"
+    },
+    {
+      "type": "image",
+      "order": 500,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/App-Name.png",
+      "alt": "Image large Card View with a title, and a text input"
+    },
+    {
+      "type": "image",
+      "order": 600,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Approvals.png",
+      "alt": "Basic medium Card View with title and action button"
+    },
+    {
+      "type": "image",
+      "order": 700,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Viva-Topics.png",
+      "alt": "Basic medium Card View with title"
+    },
+    {
+      "type": "image",
+      "order": 800,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Help-Desk.png",
+      "alt": "Basic large Card View with title, input text, and submission button"
+    },
+    {
+      "type": "image",
+      "order": 900,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Poll.png",
+      "alt": "Primary Text medium Card View with title, body, and action button"
+    },
+    {
+      "type": "image",
+      "order": 1000,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Shifts.png",
+      "alt": "Primary Text medium Card View with title, and body"
+    },
+    {
+      "type": "image",
+      "order": 1100,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Training.png",
+      "alt": "Primary Text large Card View with title, body, input text, and submission button"
+    },
+    {
+      "type": "image",
+      "order": 1200,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Chat-GPT.png",
+      "alt": "Input Text large Card View with title, input text, and submission button"
+    },
+    {
+      "type": "image",
+      "order": 1300,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/App-Name-2.png",
+      "alt": "Input Text large Card View with title and input text"
+    },
+    {
+      "type": "image",
+      "order": 1400,
+      "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Search-Box.png",
+      "alt": "Search Box Card View with title, search box, and search results preview"
+    }
+  ],
+  "authors": [
+    {
+      "gitHubAccount": "PaoloPia",
+      "company": "PiaSys.com",
+      "pictureUrl": "https://github.com/paolopia.png",
+      "name": "Paolo Pialorsi",
+      "twitter": "PaoloPia"
+    }
+  ],
+  "references": [
+    {
+      "name": "Getting started with SharePoint Framework",
+      "description": "Learn how to start developing SharePoint Framework solutions.",
+      "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant"
+    },
+    {
+      "name": "Viva Connections Extensibility guidance",
+      "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+      "url": "https://aka.ms/viva/connections/extensibility"
+    },
+    {
+      "name": "Designing Viva Connections custom cards for your dashboard",
+      "description": "Official guidelines about how to design the Card Views of a SharePoint Framework Adaptive Card Extension (ACE).",
+      "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/designing-card"
+    },
+    {
+      "name": "Microsoft 365 Patterns and Practices",
+      "description": "Guidance, tooling, samples and open-source controls for your Microsoft 365 development.",
+      "url": "https://aka.ms/m365pnp"
+    }
+  ]
 }]

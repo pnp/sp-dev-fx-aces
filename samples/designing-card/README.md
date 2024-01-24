@@ -2,9 +2,9 @@
 
 ## Summary
 
-This sample application provides a list of design cards, accordingly to the documentation available on page [Designing Viva Connections custom cards for your dashboard](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/designing-card).
+This sample application shows how to implement all of the layout options that are available in the component base model of the SharePoint Framework (SPFx) Adaptive Card Extensions (ACEs) Card Views, accordingly to the documentation available on page [Designing Viva Connections custom cards for your dashboard](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/designing-card).
 
-
+As Microsoft will introduce new card layouts, we will introduce new samples in this application, too.
 
 ## Used SharePoint Framework Version
 
@@ -21,13 +21,13 @@ This sample application provides a list of design cards, accordingly to the docu
 
 | Solution    | Author(s)                                               |
 | ----------- | ------------------------------------------------------- |
-| generic-card | PaoloPia (Paolo Pialorsi, PiaSys.com, [@PaoloPia](https://twitter.com/PaoloPia)) |
+| design-card | PaoloPia (Paolo Pialorsi, PiaSys.com, [@PaoloPia](https://twitter.com/PaoloPia)) |
 
 ## Version history
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.0     | January 19, 2024 | Initial release |
+| 1.0     | January 23, 2024 | Initial release |
 
 ## List of Designs
 
@@ -36,7 +36,7 @@ Here you can see the list of designs available in this project.
 | Family | Combination 	| Card bar 	| Header 	|  Body 	 |  Footer 	     | Notes                                 	| Sample Card 	| Adaptive Card Name |
 |:-----------:	|:-----------:	|:--------:	|:------------:	|:-----:	 |:-------:	     |---------------------------------------	|-------------	|-------------	|
 | Generic |     1     	|    Yes   	|     Text     	| Empty 	 | Action button | Previously known as the Image template 	| ![Generic card with image permutation 1.](https://learn.microsoft.com/en-us/sharepoint/dev/images/viva-design/img-permutation-01-card-layout.png) | [GenericTextImageButton](./src/adaptiveCardExtensions/genericTextImageButton/) |
-| Generic |     2     	|    Yes   	|     Text     	| Empty 	 | Empty         | Previously known as the Image template	| ![Generic card with image permutation 2.](https://learn.microsoft.com/en-us/sharepoint/dev/images/viva-design/img-permutation-02-card-layout.png) | [GenericTextImage](./src/adaptiveCardExtensions/GenericTextImage/) |
+| Generic |     2     	|    Yes   	|     Text     	| Empty 	 | Empty         | Previously known as the Image template	| ![Generic card with image permutation 2.](https://learn.microsoft.com/en-us/sharepoint/dev/images/viva-design/img-permutation-02-card-layout.png) | [GenericTextImage](./src/adaptiveCardExtensions/genericTextImage/) |
 | Generic |     3     	|    Yes   	|     Text     	| Empty 	 | Text Input    | New layout                           	| ![Generic card with image permutation 3.](https://learn.microsoft.com/en-us/sharepoint/dev/images/viva-design/img-permutation-03-card-layout.png) | [GenericTextInputImage](./src/adaptiveCardExtensions/genericTextInputImage/) |
 | Generic |     4     	|    Yes   	|     Text     	| Text input | Action Button | New layout                           	| ![Generic card with image permutation 4.](https://learn.microsoft.com/en-us/sharepoint/dev/images/viva-design/img-permutation-04-card-layout.png) | [GenericTextInputButtonImage](./src/adaptiveCardExtensions/genericTextInputButtonImage/) |
 | Generic |     5     	|    Yes   	|     Text     	| Text input | Empty         | New layout                             	| ![Generic card with image permutation 5.](https://learn.microsoft.com/en-us/sharepoint/dev/images/viva-design/img-permutation-05-card-layout.png) | [GenericTextInputNoButtonImage](./src/adaptiveCardExtensions/genericTextInputNoButtonImage/) |
@@ -48,7 +48,7 @@ Here you can see the list of designs available in this project.
 | Generic |     11     	|    Yes   	|     Text     	| Text       | Text Input    | New layout                             	| ![Generic card without image permutation 6.](https://learn.microsoft.com/en-us/sharepoint/dev/images/viva-design/img-examples-06-card-withoutimage.png) | [GenericPrimaryTextInputButton](./src/adaptiveCardExtensions/genericPrimaryTextInputButton/) |
 | Generic |     12     	|    Yes   	|     Text     	| Text input | Action Button | New layout                             	| ![Generic card without image permutation 7.](https://learn.microsoft.com/en-us/sharepoint/dev/images/viva-design/img-examples-07-card-withoutimage.png) | [GenericInputButton](./src/adaptiveCardExtensions/genericInputButton/) |
 | Generic |     13     	|    Yes   	|     Text     	| Text input | Empty         | New layout                             	| ![Generic card without image permutation 8.](https://learn.microsoft.com/en-us/sharepoint/dev/images/viva-design/img-examples-08-card-withoutimage.png) | [GenericInputNoButton](./src/adaptiveCardExtensions/genericInputNoButton/) |
-| Search |     14     	|    Yes   	|     Text     	| Text input | Empty         | New layout                             	| ![Search card with search box, search button, and search results preview.](https://learn.microsoft.com/en-us/sharepoint/dev/images/viva-design/img-search-template.png) | [GenericInputNoButton](./src/adaptiveCardExtensions/searchBox/) |
+| Search |     14     	|    Yes   	|     Text     	| Text input | Empty         | New layout                             	| ![Search card with search box, search button, and search results preview.](https://learn.microsoft.com/en-us/sharepoint/dev/images/viva-design/img-search-template.png) | [SearchBox](./src/adaptiveCardExtensions/searchBox/) |
 
 ## Disclaimer
 

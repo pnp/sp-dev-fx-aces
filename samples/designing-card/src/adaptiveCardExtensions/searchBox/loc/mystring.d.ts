@@ -2,7 +2,8 @@ declare interface ISearchBoxAdaptiveCardExtensionStrings {
   PropertyPaneDescription: string;
   TitleFieldLabel: string;
   Title: string;
-  SubTitle: string;
+  PreviewTitle: string;
+  PreviewSubTitle: string;
   PrimaryText: string;
   Suggested: string;
   SearchAction: string;

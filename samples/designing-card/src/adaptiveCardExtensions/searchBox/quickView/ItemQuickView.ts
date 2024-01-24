@@ -17,8 +17,8 @@ export class ItemQuickView extends BaseAdaptiveCardQuickView<
 > {
   public get data(): IItemQuickViewData {
     return {
-      subTitle: strings.SubTitle,
-      title: strings.Title
+      subTitle: strings.PreviewSubTitle,
+      title: strings.PreviewTitle
     };
   }
 
