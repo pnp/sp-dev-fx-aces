@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "16.18.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "designing-card",
+    "libraryId": "58f7c049-c626-4876-bb7a-48ae3ac299eb",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "designing-card",
+    "solutionShortDescription": "designing-card description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Search"
+  }
+}
