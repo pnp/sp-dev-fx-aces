@@ -1,0 +1,72 @@
+[
+  {
+    "name": "pnp-sp-fx-aces-basiccard-helpdesk",
+    "source": "pnp",
+    "title": "Basic Card Help Desk",
+    "shortDescription": "This solution uses a help desk scenaio to demonstrate how to use the geolocation features and image upload functionality in Adaptive Card Extensions.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-HelpDesk",
+    "longDescription": [
+      "This solution uses a help desk scenaio to demonstrate how to use the geolocation features and image upload functionality in Adaptive Card Extensions. The sample creates a list to hold the help desk tickets and stores the images in the site assets library. It also leverages BingMaps api to get the street address."
+    ],
+    "creationDateTime": "2024-01-25",
+    "updateDateTime": "2024-01-25",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo1.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo2.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo3.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "dcashpeterson",
+        "pictureUrl": "https://github.com/dcashpeterson.png",
+        "name": "Derek Cash-Peterson"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  }
+]

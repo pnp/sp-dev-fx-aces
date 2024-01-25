@@ -4,8 +4,6 @@
 
 This sample used a help desk scenario to show how to use the geolocation and image upload functionality for Adaptive Card Extensions. It lists out the tickets assigned to a user and lets them upload image, get directions to a location, and close tickets.
 
-[picture of the solution in action, if possible]
-
 ## Used SharePoint Framework Version
 
 ![version](https://img.shields.io/badge/version-1.18.0-green.svg)
@@ -32,7 +30,7 @@ This sample used a help desk scenario to show how to use the geolocation and ima
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.0     | November 16, 2023 | Initial release |
+| 1.0     | January 25, 2024 | Initial release |
 
 ## Disclaimer
 
@@ -47,8 +45,7 @@ This sample used a help desk scenario to show how to use the geolocation and ima
 - in the command-line run:
   - **npm install**
   - **gulp serve**
-
-> Include any additional steps as needed.
+- If you would like to use the geolocation features you will need to sign up for a [Bing Maps api key](https://www.bingmapsportal.com/) and enter it in the configuration of the ACE.
 
 ## Features
 
@@ -72,3 +69,4 @@ This extension illustrates the following concepts:
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/basiccard-helpdesk" />
