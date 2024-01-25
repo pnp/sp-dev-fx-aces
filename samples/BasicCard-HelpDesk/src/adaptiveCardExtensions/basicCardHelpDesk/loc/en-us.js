@@ -9,6 +9,8 @@ define([], function() {
     "AddLibraryLabel": "Configure Image Upload Library",
     "AddLibraryButton": "Add Library",
     "AddLibraryDesc": "This ACE requires a document library called HelpDeskTickets to store uploaded files. Selecting this button will create the library. Users without permissions to write to the document library will not see the image upload button.",
+    "ResetLibraryButton": "Reset Sample Data",
+    "ResetLibraryDesc": "Reset sample data will delete all items from the data list and reset to sample data",
     "LibraryAddedDesc": "Library Configured",
     "LibraryDesc": "List to hold image uploads for Help Desk Ticket ACE.",
     "CardViewText": "Create a new Help Ticket",

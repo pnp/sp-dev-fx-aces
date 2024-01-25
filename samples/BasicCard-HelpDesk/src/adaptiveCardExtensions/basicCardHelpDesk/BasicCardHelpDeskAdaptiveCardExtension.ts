@@ -40,7 +40,10 @@ export default class BasicCardHelpDeskAdaptiveCardExtension extends BaseAdaptive
       this._iconProperty = this.properties.iconProperty;
 
       //Initialize Service
-      await helpDeskService.Init(this.context.serviceScope);
+      await helpDeskService.Init(this.context.serviceScope,this.context);
+      if (helpDeskService.ready) {
+        helpDeskService.bingMapsAPIKey = this.properties.bingMapsKey;
+      }
       //Check if the list to hold the images exists
       this._listExists = await helpDeskService.CheckList(ListNames.HELPDESKLIST);
       // this.properties.listExists = this._listExists;
@@ -52,13 +55,13 @@ export default class BasicCardHelpDeskAdaptiveCardExtension extends BaseAdaptive
         this.properties.canUpload = false;
       }
       
-      const currentLocation = await helpDeskService.GetCurrentLocation();
-      if (currentLocation) {
-        this.properties.currentLat = currentLocation.coords.latitude;
-        this.properties.currentLong = currentLocation.coords.longitude;
-      }
+      // const currentLocation = await helpDeskService.GetCurrentLocation();
+      // if (currentLocation) {
+      //   this.properties.currentLat = currentLocation.coords.latitude;
+      //   this.properties.currentLong = currentLocation.coords.longitude;
+      // }
 
-      const tickets: HelpDeskTicket[] = await helpDeskService.GetHelpDeskTickets(this.properties.bingMapsKey);
+      const tickets: HelpDeskTicket[] = await helpDeskService.GetHelpDeskTickets();
 
       //Set the data into state
       this.state = {
@@ -101,5 +104,27 @@ export default class BasicCardHelpDeskAdaptiveCardExtension extends BaseAdaptive
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return this._deferredPropertyPane!.getPropertyPaneConfiguration();
+  }
+  
+  protected async onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): Promise<void> {
+    try {
+      if (propertyPath === 'bingMapsKey') {
+        helpDeskService.bingMapsAPIKey = newValue;
+      } else if (propertyPath === 'library') {
+        //let retVal = false;
+        //retVal =
+          await helpDeskService.DeleteSampleData();
+        //retVal = 
+        await helpDeskService.AddSampleData();
+        //this.renderCard();
+        // if (retVal) {
+        //   context.propertyPane.refresh();
+        // }
+        //this.setState({tickets:[]})
+      }
+    
+    }catch(err){
+      console.error(`${this.LOG_SOURCE} (onPropertyPaneFieldChanged) - ${err}`);
+    }
   }
 }

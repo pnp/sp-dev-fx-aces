@@ -8,6 +8,7 @@ import { helpDeskService } from '../../services/helpdesk.service';
 export interface IEditViewData {
   ticket: HelpDeskTicket | undefined;
   ticketDirectionUrl: string;
+  currentLocation: string;
   canUpload: boolean;
   errorMessage: string;
   strings: IBasicCardHelpDeskAdaptiveCardExtensionStrings;
@@ -22,7 +23,7 @@ export class EditView extends BaseAdaptiveCardQuickView<
 
   public get data(): IEditViewData {
     let currentLocation = "";
-    const ticket: HelpDeskTicket | undefined = find(this.state.tickets, { incidentNumber: this.state.currentIncidentNumber });
+    const ticket: HelpDeskTicket = find(this.state.tickets, { incidentNumber: this.state.currentIncidentNumber })!;
     if (this.properties.currentLat && this.properties.currentLong) {
       currentLocation = `pos.${this.properties.currentLat}_${this.properties.currentLong}`;
     }
@@ -32,6 +33,7 @@ export class EditView extends BaseAdaptiveCardQuickView<
     return {
       ticket: ticket,
       ticketDirectionUrl: directionsUrl,
+      currentLocation: currentLocation,
       canUpload: this.properties.canUpload,
       errorMessage: this.state.errorMessage,
       strings: strings,
@@ -52,8 +54,14 @@ export class EditView extends BaseAdaptiveCardQuickView<
 
         }
       }
+      else if (action.type === 'VivaAction.GetLocation') {
+        this.properties.currentLat = action.location?.latitude.toString()!;
+        this.properties.currentLong = action.location?.longitude.toString()!;
+        
+    
+      }
       else if (action.type == "VivaAction.SelectMedia") {
-        const ticket: HelpDeskTicket | undefined = find(this.state.tickets, { incidentNumber: this.state.currentIncidentNumber });
+        const ticket: HelpDeskTicket = find(this.state.tickets, { incidentNumber: this.state.currentIncidentNumber })!;
         const images: ISelectMediaAttachment[] = action.media
         if (images) {
           images.map(async (image) => {
@@ -68,14 +76,13 @@ export class EditView extends BaseAdaptiveCardQuickView<
             }
             const byteArray = new Uint8Array(byteNumbers);
             //const result = true;
-            const result: string = await helpDeskService.AddImage("HelpDeskTickets", fileName, byteArray);
-            if (result) {
-              ticket!.imageNames.push(fileName);
-              this.setState({
-                currentIncidentNumber: ticket!.incidentNumber,
-                errorMessage: ""
-              });
-            }
+            ticket?.imageNames.push(fileName);
+            ticket?.imageByteArray.push(byteArray);
+            await helpDeskService.UpdateItem(ticket!);
+            this.setState({
+              currentIncidentNumber: ticket!.incidentNumber,
+              errorMessage: ""
+            });
           })
         }
       }

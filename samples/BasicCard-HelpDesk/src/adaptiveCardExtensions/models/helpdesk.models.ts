@@ -3,6 +3,7 @@ export enum ListNames {
 }
 
 export interface IHelpDeskTicket {
+  id: number;
   incidentNumber: string;
   requestedBy: DemoUser;
   createDate: string;
@@ -24,18 +25,44 @@ export interface IDemoUser {
   id: string;
   displayName: string;
   imageUrl: string;
+  EMail: string;
 }
 
 export class DemoUser implements IDemoUser {
   constructor(
     public id: string = "",
     public displayName: string = "",
-    public imageUrl: string = ""
+    public imageUrl: string = "",
+    public EMail: string = ""
+  ) { }
+}
+export interface ICoordinates {
+  Latitude: string;
+  Longitude: string;
+}
+
+export class Coordinates implements ICoordinates {
+  constructor(
+    public Latitude: string = "",
+    public Longitude: string = "",
+  ) { }
+}
+export interface ILocationData {
+  DisplayName: string;
+  Coordinates: Coordinates;
+}
+
+export class LocationData implements ILocationData {
+  constructor(
+    public DisplayName: string = "",
+    public Coordinates: Coordinates
   ) { }
 }
 
+
 export class HelpDeskTicket implements IHelpDeskTicket {
   constructor(
+    public id: number = 0,
     public incidentNumber: string = "",
     public requestedBy: DemoUser = new DemoUser(),
     public createDate: string = "",
@@ -51,6 +78,18 @@ export class HelpDeskTicket implements IHelpDeskTicket {
     public overdueTime: string = "",
     public imageNames: string[] = [],
     public imageByteArray: Uint8Array[] = []
+  ) { }
+}
+
+export interface IIncidentImage{
+  serverRelativeUrl: string;
+  fileName: string;
+}
+
+export class IncidentImage implements IIncidentImage{
+  constructor(
+    public serverRelativeUrl: string = "",
+    public fileName: string = ""
   ) { }
 }
 

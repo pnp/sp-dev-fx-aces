@@ -13,10 +13,19 @@ export class BasicCardHelpDeskPropertyPane {
   }
   
   public async createList(context: AdaptiveCardExtensionContext): Promise<void> {
-    this.listExists = await helpDeskService.createList(ListNames.HELPDESKLIST, strings.LibraryDesc, HelpDeskLibraryFields);
+    this.listExists = await helpDeskService.CreateList(ListNames.HELPDESKLIST, strings.LibraryDesc, HelpDeskLibraryFields);
     if (this.listExists) {
       context.propertyPane.refresh();
     }
+  }
+  
+  public async deleteSampleData(context: AdaptiveCardExtensionContext): Promise<void> {
+    // let retVal = false;
+    // retVal = await helpDeskService.DeleteSampleData();
+    // retVal = await helpDeskService.AddSampleData();
+    // if (retVal) {
+    //   context.propertyPane.refresh();
+    // }
   }
   
   public getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -70,6 +79,16 @@ export class BasicCardHelpDeskPropertyPane {
         const libraryAddedDesc: IPropertyPaneField<IPropertyPaneLabelProps> = PropertyPaneLabel("", {
           text: strings.LibraryAddedDesc
         });
+        const addListButton: IPropertyPaneField<IPropertyPaneButtonProps> = PropertyPaneButton("library", {
+          text: strings.ResetLibraryButton,
+          ariaLabel: strings.ResetLibraryButton,
+          ariaDescription: strings.ResetLibraryDesc,
+          buttonType: PropertyPaneButtonType.Primary,
+          description: strings.ResetLibraryDesc,
+          onClick: () => this.deleteSampleData(this.context)
+        });
+        groupFields.push(addListButton);
+        groupFields.push(addListButtonDesc);
         groupFields.push(libraryAddedDesc);
         groupFields.push(addListButtonDesc);
       }

@@ -238,7 +238,14 @@
           "type": "Action.OpenUrl",
           "url": "${ticketDirectionUrl}",
           "title": "${$root.strings.GetDirectionsLabel}",
-          "style": "positive"
+          "style": "positive",
+          "$when": "${currentLocation != ''}"
+        },
+        {
+          "type": "VivaAction.GetLocation",
+          "title": "Register Current Address",
+          "style": "positive",
+          "$when": "${currentLocation == ''}"
         },
         {
           "type": "VivaAction.SelectMedia",

@@ -2,7 +2,7 @@
 
 ## Summary
 
-Short summary on functionality and used technologies.
+This sample used a help desk scenario to show how to use the geolocation and image upload functionality for Adaptive Card Extensions. It lists out the tickets assigned to a user and lets them upload image, get directions to a location, and close tickets.
 
 [picture of the solution in action, if possible]
 
@@ -19,20 +19,20 @@ Short summary on functionality and used technologies.
 
 ## Prerequisites
 
-> Any special pre-requisites?
+> If you would like to use the geolocation sample you need a bing maps API key. If you don't have one leave the property blank and the geolocation functionality does not display.
+> To use the image upload functionality the user doing the upload needs access to add items to the Site Assets library. If they do not have permissions to the library the upload image button will not appear.
 
 ## Solution
 
 | Solution    | Author(s)                                               |
 | ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+| BasicCard-HelpDesk | Derek Cash-Peterson ([@spdcp](https://twitter.com/spdcp)) [Sympraxis Consulting] (<https://www.sympraxisconsulting.com>) |
 
 ## Version history
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
+| 1.0     | November 16, 2023 | Initial release |
 
 ## Disclaimer
 
@@ -52,13 +52,14 @@ Short summary on functionality and used technologies.
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+This sample shows how to navigate between different quick view cards. Description of the extension that expands upon high-level summary above.
 
 This extension illustrates the following concepts:
 
-- topic 1
-- topic 2
-- topic 3
+- ACE development
+- Geolocation
+- Image Upload
+- PnPjs
 
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 

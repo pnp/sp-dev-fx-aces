@@ -13,6 +13,13 @@
   "supportedHosts": [
     "Dashboard"
   ],
+  "devicePermissions": [
+    "geolocation",
+    "media",
+    "notifications",
+    "midi",
+    "openExternal"
+  ],
   "preconfiguredEntries": [
     {
       "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard

@@ -8,6 +8,8 @@ declare interface IBasicCardHelpDeskAdaptiveCardExtensionStrings {
   AddLibraryLabel: string;
   AddLibraryButton: string;
   AddLibraryDesc: string;
+  ResetLibraryButton: string;
+  ResetLibraryDesc: string;
   LibraryAddedDesc: string;
   LibraryDesc: string;
   CardViewText: string;
