@@ -24,26 +24,7 @@
         "value": "1.18"
       }
     ],
-    "thumbnails": [
-      {
-        "type": "image",
-        "order": 100,
-        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo1.png",
-        "alt": "Preview"
-      },
-      {
-        "type": "image",
-        "order": 100,
-        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo2.png",
-        "alt": "Preview"
-      },
-      {
-        "type": "image",
-        "order": 100,
-        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo3.png",
-        "alt": "Preview"
-      }
-    ],
+    "thumbnails": [],
     "authors": [
       {
         "gitHubAccount": "dcashpeterson",
