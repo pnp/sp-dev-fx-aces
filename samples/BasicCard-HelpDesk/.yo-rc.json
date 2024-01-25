@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.18.2",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.0",
+    "libraryName": "basic-card-help-desk",
+    "libraryId": "0623688d-f41a-4d3b-a2b2-8ddd32252d09",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "basic-card-help-desk",
+    "solutionShortDescription": "basic-card-help-desk description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic"
+  }
+}

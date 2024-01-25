@@ -1,0 +1,115 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "size": "Default",
+          "weight": "Default",
+          "text": "${$root.numberOfTasks}",
+          "horizontalAlignment": "Center"
+        }
+      ],
+      "bleed": true,
+      "style": "accent"
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${$root.strings.QuickViewDescription}",
+          "wrap": true,
+          "spacing": "Medium"
+        }
+      ],
+      "spacing": "Medium"
+    },
+    {
+      "type": "Container",
+      "spacing": "Large",
+      "style": "emphasis",
+      "$data": "${$root.tickets}",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${$root.strings.OpenedLabel}: {{DATE(${createDate},COMPACT)}} ${if(overdueTime != '', '(' + overdueTime + ' ' + $root.strings.OverdueLabel + ')','')}",
+                  "wrap": true,
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "color": "${if(overdue == true, 'attention','Default')}"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${requestType} ${incidentNumber}",
+                  "wrap": true,
+                  "size": "Medium",
+                  "weight": "Bolder"
+                },
+                {
+                  "type": "ColumnSet",
+                  "columns": [
+                    {
+                      "type": "Column",
+                      "width": "32px",
+                      "items": [
+                        {
+                          "type": "Image",
+                          "url": "${requestedBy.imageUrl}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Column",
+                      "width": "stretch",
+                      "items": [
+                        {
+                          "type": "TextBlock",
+                          "text": "${requestedBy.displayName}",
+                          "wrap": true
+                        }
+                      ],
+                      "verticalContentAlignment": "Center"
+                    }
+                  ],
+                  "spacing": "Medium"
+                }
+              ],
+              "width": "stretch"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "https://raw.githubusercontent.com/pnp/AdaptiveCards-Templates/main/samples/help-desk/assets/arrow-forward.png"
+                }
+              ],
+              "horizontalAlignment": "Right",
+              "verticalContentAlignment": "Center",
+              "width": "16px"
+            }
+          ],
+          "selectAction": {
+            "type": "Action.Submit",
+            "associatedInputs": "none",
+            "data": {
+              "id": "selectTicket",
+              "incidentNumber": "${incidentNumber}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3"
+}

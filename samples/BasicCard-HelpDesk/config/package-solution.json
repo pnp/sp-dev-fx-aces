@@ -1,0 +1,41 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Help-Desk-ACE-Geolocation-Sample",
+    "id": "0623688d-f41a-4d3b-a2b2-8ddd32252d09",
+    "version": "1.0.0.1",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Sympraxis Consulting",
+      "websiteUrl": "https://sympraxisconsulting.com",
+      "privacyUrl": "https://symp.info/acegalleryprivacy",
+      "termsOfUseUrl": "https://symp.info/acegalleryterms",
+      "mpnId": "2459569"
+    },
+    "iconPath": "images/SolutionIcon.png",
+    "metadata": {
+      "shortDescription": {
+        "default": "This sample shows how to use geo-location features of Adaptive Card Extensions(ACEs) using a Help Desk Scenario."
+      },
+      "longDescription": {
+        "default": "This sample shows how to use geo-location features of Adaptive Card Extensions(ACEs) using a Help Desk Scenario."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "basic-card-help-desk Feature",
+        "description": "The feature that activates elements of the basic-card-help-desk solution.",
+        "id": "79fe7a0e-7ea8-48c0-af23-39a7f3a47666",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/basic-card-help-desk.sppkg"
+  }
+}
