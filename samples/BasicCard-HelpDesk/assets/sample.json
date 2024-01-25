@@ -4,7 +4,7 @@
     "source": "pnp",
     "title": "Basic Card Help Desk",
     "shortDescription": "This solution uses a help desk scenaio to demonstrate how to use the geolocation features and image upload functionality in Adaptive Card Extensions.",
-    "url": "",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-HelpDesk",
     "longDescription": [
       "This solution uses a help desk scenaio to demonstrate how to use the geolocation features and image upload functionality in Adaptive Card Extensions. The sample creates a list to hold the help desk tickets and stores the images in the site assets library. It also leverages BingMaps api to get the street address."
     ],
@@ -24,7 +24,26 @@
         "value": "1.18"
       }
     ],
-    "thumbnails": [],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo1.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo2.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo3.png",
+        "alt": "Preview"
+      }
+    ],
     "authors": [
       {
         "gitHubAccount": "dcashpeterson",
