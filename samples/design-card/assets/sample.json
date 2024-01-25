@@ -3,7 +3,7 @@
   "source": "pnp",
   "title": "Designing Card Templates",
   "shortDescription": "14 different card templates that can be used in Viva Connections.",
-  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ace-cardgallery",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/design-card",
   "longDescription": [
     "This sample application shows how to implement all of the layout options that are available in the component base model of the SharePoint Framework (SPFx) Adaptive Card Extensions (ACEs) Card Views, accordingly to the documentation available."
   ],
