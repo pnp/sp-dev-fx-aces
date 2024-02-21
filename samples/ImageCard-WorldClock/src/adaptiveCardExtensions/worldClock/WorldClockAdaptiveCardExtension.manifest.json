@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/adaptive-card-extension-manifest.schema.json",
+  "id": "83e3d2c4-a4c9-4eb9-934f-edb4853c914f",
+  "alias": "WorldClockAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "Dashboard"
+  ],
+  "preconfiguredEntries": [
+    {
+      "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c",
+      "group": {
+        "default": "Dashboard"
+      },
+      "title": {
+        "default": "World Clock"
+      },
+      "description": {
+        "default": "WorldClock ACE"
+      },
+      "iconImageUrl": "https://www.svgrepo.com/show/522682/time.svg",
+      "properties": {
+        "title": "World Clock"
+      },
+      "cardSize": "Medium"
+    }
+  ]
+}
