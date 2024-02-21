@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.18.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "basic-card-world-clock",
+    "libraryId": "94ece9e2-d130-4c86-b0ec-b9a1c0ca240b",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "basic-card-world-clock",
+    "solutionShortDescription": "basic-card-world-clock description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic"
+  }
+}

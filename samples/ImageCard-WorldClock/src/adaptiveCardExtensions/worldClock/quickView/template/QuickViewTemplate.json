@@ -1,0 +1,78 @@
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "verticalContentAlignment": "center",
+      "items": [
+        {
+          "type": "Table",
+          "gridStyle": "accent",
+          "verticalCellContentAlignment": "center",
+          "columns": [
+            {
+              "width": 0.3
+            },
+            {
+              "width": 1
+            },
+            {
+              "width": 0.7
+            }
+          ],
+          "rows": [
+            {
+              "$data": "${timezones}",
+              "type": "TableRow",
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "minHeight": "50px",
+                  "items": [
+                    {
+                      "type": "Image",
+                      "url": "${icon}",
+                      "altText": "down",
+                      "height": "20px",
+                      "width": "20px",
+                      "horizontalAlignment": "center"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "minHeight": "50px",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${title}",
+                      "size": "small",
+                      "weight": "bolder",
+                      "horizontalAlignment": "left",
+                      "wrap": true
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "minHeight": "50px",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${time}",
+                      "size": "small",
+                      "weight": "bolder",
+                      "horizontalAlignment": "left"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
