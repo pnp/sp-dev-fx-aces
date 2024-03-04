@@ -1,0 +1,24 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "DCC",
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic",
+    "componentName": "DCC",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.19.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "dcc",
+    "libraryId": "283c533d-5fc7-4713-a3fc-4a7bb77730b3",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionShortDescription": "DCC description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}
