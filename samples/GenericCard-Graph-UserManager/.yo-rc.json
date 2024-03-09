@@ -1,0 +1,24 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "UserManager",
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic",
+    "componentName": "UserManager",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.17.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "user-manager",
+    "libraryId": "cde3458c-4caa-4395-80bd-625b1a41e624",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionShortDescription": "UserManager description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}
