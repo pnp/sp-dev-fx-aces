@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "WorldClock ACE",
+    "id": "94ece9e2-d130-4c86-b0ec-b9a1c0ca240b",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "WorldClock ACE"
+      },
+      "longDescription": {
+        "default": "WorldClock ACE"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "image-card-world-clock Feature",
+        "description": "The feature that activates elements of the image-card-world-clock solution.",
+        "id": "f244eb1f-fab2-4e48-a0ae-85b68f152200",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/image-card-world-clock.sppkg"
+  }
+}
