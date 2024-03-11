@@ -1,6 +1,6 @@
 [
   {
-    "name": "user-manager",
+    "name": "pnp-sp-fx-aces-user-manager",
     "source": "pnp",
     "title": "User Manager ACE",
     "shortDescription": "This Adaptive Card Extension (ACE) shows the manager of the currently logged in user.",

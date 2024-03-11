@@ -1,6 +1,6 @@
 [
   {
-    "name": "pnp-sp-dev-fx-aces-scenarios-ace-data-api-builder",
+    "name": "pnp-sp-fx-aces-scenarios-ace-data-api-builder",
     "source": "pnp",
     "title": "Exposing business data in Microsoft 365 using Azure Data API builder",
     "shortDescription": "This is a sample application that shows you how to expose business data in Microsoft Viva Connections consuming a back-end API implemented with the preview version of Azure Data API builder.",
