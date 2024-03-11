@@ -106,6 +106,76 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-basiccard-helpdesk",
+    "source": "pnp",
+    "title": "Basic Card Help Desk",
+    "shortDescription": "This solution uses a help desk scenaio to demonstrate how to use the geolocation features and image upload functionality in Adaptive Card Extensions.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-HelpDesk",
+    "longDescription": [
+      "This solution uses a help desk scenaio to demonstrate how to use the geolocation features and image upload functionality in Adaptive Card Extensions. The sample creates a list to hold the help desk tickets and stores the images in the site assets library. It also leverages BingMaps api to get the street address."
+    ],
+    "creationDateTime": "2024-01-25",
+    "updateDateTime": "2024-01-25",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo1.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo2.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo3.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "dcashpeterson",
+        "pictureUrl": "https://github.com/dcashpeterson.png",
+        "name": "Derek Cash-Peterson"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-monitorsecurity",
     "source": "pnp",
     "title": "Monitor Security ACE",
@@ -143,6 +213,124 @@
         "gitHubAccount": "ArijitCloud",
         "pictureUrl": "https://github.com/ArijitCloud.png",
         "name": "Arijit Mondal"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-multi-forms",
+    "source": "pnp",
+    "title": "Multiple Forms",
+    "shortDescription": "This Adaptive Card Extension shows how to have a single ACE card to display multiple Microsoft Forms or Multiple Power Apps that opens in the Stage View on Teams.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-Multiple-Forms-Apps",
+    "longDescription": [
+      "This Adaptive Card Extension shows how to have a single ACE card to display multiple Microsoft Forms or Multiple Power Apps that opens in the Stage View on Teams."
+    ],
+    "creationDateTime": "2023-04-13",
+    "updateDateTime": "2023-04-13",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-Multiple-Forms-Apps/assets/ACEForms.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "marcus-castro-sp",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/marcus-castro-sp.png",
+        "name": "Marcus Castro"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-myonedriveinfo",
+    "source": "pnp",
+    "title": "My OneDrive Info",
+    "shortDescription": "This ACE demonstrates how to use the Graph API endpoints to access information about the current users OneDrive.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-My-OneDrive-Info",
+    "longDescription": [
+      "This ACE demonstrates how to use the Graph API endpoints to access information about the current users OneDrive."
+    ],
+    "creationDateTime": "2023-02-21",
+    "updateDateTime": "2023-02-21",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-My-OneDrive-Info/assets/ACEScreenshot1.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "HarminderSethi",
+        "pictureUrl": "https://github.com/HarminderSethi.png",
+        "name": "Harminder Singh",
+        "twitter": "Harminder_Sethi"
       }
     ],
     "references": [
@@ -222,6 +410,129 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-people-search",
+    "source": "pnp",
+    "title": "People Search Adaptive Card Extension",
+    "shortDescription": "This sample shows how to build an ACE with a card view and quick view to display users in a tenant and search users.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-PeopleSearch",
+    "longDescription": [
+      "This sample shows how to build an ACE with a card view and quick view to display users in a tenant and search users."
+    ],
+    "creationDateTime": "2023-01-08",
+    "updateDateTime": "2023-01-08",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.15.2"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-PeopleSearch/assets/PeopleSearchSample.gif",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "kunj-sangani",
+        "pictureUrl": "https://github.com/kunj-sangani.png",
+        "name": "Kunj Sangani",
+        "twitter": "sanganikunj"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-SharedGraphClient",
+    "source": "pnp",
+    "title": "Using Shared Graph Client in ACEs",
+    "shortDescription": "This solution shows how to use a shared Microsoft Graph client between ACEs.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-ShareGraphClient",
+    "longDescription": [
+      "This solution shows how to use a shared Microsoft Graph client between ACEs."
+    ],
+    "creationDateTime": "2022-09-17",
+    "updateDateTime": "2022-09-17",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.15.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-ShareGraphClient/assets/sharedgraphlg.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-ShareGraphClient/assets/quickview.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "mgwojciech",
+        "pictureUrl": "https://github.com/mgwojciech.png",
+        "name": "Marcin Wojciechowski"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-sharepoint-crud",
     "source": "pnp",
     "title": "SharePoint CRUD Example",
@@ -243,7 +554,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.13.0"
+        "value": "1.15.2"
       }
     ],
     "thumbnails": [
@@ -268,6 +579,290 @@
         "name": "Viva Connections Extensibility guidance",
         "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
         "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-statusmessage",
+    "source": "pnp",
+    "title": "Teams Status ACE Example",
+    "shortDescription": "This ACE demonstrates how to use the Presence Graph API endpoints (beta) to set and retrieve a presence status message for a user.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-StatusMessage",
+    "longDescription": [
+      "This ACE demonstrates how to use the Presence Graph API endpoints (beta) to set and retrieve a presence status message for a user."
+    ],
+    "creationDateTime": "2022-12-21",
+    "updateDateTime": "2023-01-22",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-StatusMessage/assets/card_view.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-StatusMessage/assets/quick_view.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-StatusMessage/assets/quick_view_success.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "yhabersaat",
+        "pictureUrl": "https://github.com/yhabersaat.png",
+        "name": "Yves Habersaat",
+        "twitter": "yhabersaat"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-botpowered-basicace-collect-feedback",
+    "source": "pnp",
+    "title": "Bot-Powered-ACE Collect Feedback",
+    "shortDescription": "Viva Connection Adaptive Card Extension (ACE) that shows how to collect feedback from users using a Bot-Powered-ACE implemented with .NET.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BotPowered-BasicAce-CollectFeedback",
+    "longDescription": [
+      "Viva Connection Adaptive Card Extension (ACE) that shows how to collect feedback from users using a Bot-Powered-ACE implemented with .NET."
+    ],
+    "creationDateTime": "2023-12-14",
+    "updateDateTime": "2023-12-14",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "BOT-FRAMEWORK-VERSION",
+        "value": "bot40"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-CollectFeedback/assets/feedback-ace-01.png",
+        "alt": "Preview of the main CardView to collect feedback from user"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-CollectFeedback/assets/feedback-ace-02.png",
+        "alt": "Preview of the CardView showing the feedback collected from user"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-CollectFeedback/assets/feedback-ace-03.png",
+        "alt": "Preview of the main QuickView to show additional information to the user"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "PaoloPia",
+        "company": "PiaSys.com",
+        "pictureUrl": "https://github.com/paolopia.png",
+        "name": "Paolo Pialorsi",
+        "twitter": "PaoloPia"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-botpowered-basicace-tasks",
+    "source": "pnp",
+    "title": "Bot-Powered-ACE Tasks",
+    "shortDescription": "Viva Connection Adaptive Card Extension (ACE) that shows how to show hypothetical tasks for the current user using a Bot-Powered-ACE implemented with .NET.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BotPowered-BasicAce-Tasks",
+    "longDescription": [
+      "Viva Connection Adaptive Card Extension (ACE) that shows how to show hypothetical tasks for the current user using a Bot-Powered-ACE implemented with .NET."
+    ],
+    "creationDateTime": "2023-12-14",
+    "updateDateTime": "2023-12-14",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "BOT-FRAMEWORK-VERSION",
+        "value": "bot40"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-Tasks/assets/tasks-ace-01.png",
+        "alt": "Preview of the main CardView to show a recap of the active tasks"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-Tasks/assets/tasks-ace-02.png",
+        "alt": "Preview of the CardView showing a single task"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BotPowered-BasicAce-Tasks/assets/tasks-ace-03.png",
+        "alt": "Preview of the main QuickView to show a detailed list of tasks"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "PaoloPia",
+        "company": "PiaSys.com",
+        "pictureUrl": "https://github.com/paolopia.png",
+        "name": "Paolo Pialorsi",
+        "twitter": "PaoloPia"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-user-manager",
+    "source": "pnp",
+    "title": "User Manager ACE",
+    "shortDescription": "This Adaptive Card Extension (ACE) shows the manager of the currently logged in user.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/GenericCard-Graph-UserManager",
+    "longDescription": [
+      "This Adaptive Card Extension (ACE) shows the manager of the currently logged in user. It uses the Microsoft Graph to get the manager of the user and then displays it."
+    ],
+    "creationDateTime": "2024-03-09",
+    "updateDateTime": "2024-03-09",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18.2"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/GenericCard-Graph-UserManager/assets/Card.png",
+        "alt": "Image of the card with all the manager information"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/GenericCard-Graph-UserManager/assets/CardWithoutPicture.png",
+        "alt": "Image of the card with some information and no picture"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/GenericCard-Graph-UserManager/assets/ErrorCard.png",
+        "alt": "Image of the card when an error occurs"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "GuidoZam",
+        "company": "PiaSys.com",
+        "pictureUrl": "https://github.com/guidozam.png",
+        "name": "Guido Zambarda",
+        "twitter": "iamguidozam"
+      }
+    ],
+    "references": [
+      {
+        "name": "Getting started with SharePoint Framework",
+        "description": "Learn how to start developing SharePoint Framework solutions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant"
+      },
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Designing Viva Connections custom cards for your dashboard",
+        "description": "Official guidelines about how to design the Card Views of a SharePoint Framework Adaptive Card Extension (ACE).",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/designing-card"
+      },
+      {
+        "name": "Microsoft 365 Patterns and Practices",
+        "description": "Guidance, tooling, samples and open-source controls for your Microsoft 365 development.",
+        "url": "https://aka.ms/m365pnp"
       }
     ]
   },
@@ -322,6 +917,56 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-bookingspace",
+    "source": "pnp",
+    "title": "Booking Spaces ACE",
+    "shortDescription": "This sample shows how to build an ACE with a card view and quick view to search spaces in the campus and be able to quickly check previous/upcoming reservations.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-BookingSpaces",
+    "longDescription": [
+      "This sample shows how to build an ACE with a card view and quick view to search spaces in the campus and be able to quickly check previous/upcoming reservations."
+    ],
+    "creationDateTime": "2023-05-16",
+    "updateDateTime": "2023-05-16",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-BookingSpaces/assets/BookSpaces1.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "jesegher",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/jesegher.png",
+        "name": "Jethro Seghers",
+        "twitter": "jseghers"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-hidable-ace",
     "source": "pnp",
     "title": "Hidable ACE",
@@ -343,7 +988,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.14.0"
+        "value": "1.15.2"
       }
     ],
     "thumbnails": [
@@ -428,6 +1073,175 @@
         "name": "Viva Connections Extensibility guidance",
         "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
         "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-internship",
+    "source": "pnp",
+    "title": "Internship",
+    "shortDescription": "This education sample shows how to build an ACE with a card view and quick view to display new and recent internships available to gain work experience.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-Internships",
+    "longDescription": [
+      "This education sample shows how to build an ACE with a card view and quick view to display new and recent internships available to gain work experience."
+    ],
+    "creationDateTime": "2023-04-15",
+    "updateDateTime": "2023-04-15",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-Internships/assets/demo.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "jesegher",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/jesegher.png",
+        "name": "Jethro Seghers",
+        "twitter": "jseghers"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-internship",
+    "source": "pnp",
+    "title": "Library Loans ACE",
+    "shortDescription": "This sample shows how to build an ACE with a card view and quick view to check pending library loans and their due dates.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-LibraryLoans",
+    "longDescription": [
+      "This sample shows how to build an ACE with a card view and quick view to check pending library loans and their due dates."
+    ],
+    "creationDateTime": "2023-05-03",
+    "updateDateTime": "2023-05-03",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-LibraryLoans/assets/Library.gif",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "jesegher",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/jesegher.png",
+        "name": "Jethro Seghers",
+        "twitter": "jseghers"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-most-lifed-pages",
+    "source": "pnp",
+    "title": "Most Liked Pages Adaptive Card Extension",
+    "shortDescription": "This Adaptive Card Extension shows the most liked pages of selected SharePoint sites.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-MostLikedPages",
+    "longDescription": [
+      "This Adaptive Card Extension shows the most liked pages of selected SharePoint sites."
+    ],
+    "creationDateTime": "2023-03-15",
+    "updateDateTime": "2023-03-15",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-MostLikedPages/assets/cards-preview.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "a1mery",
+        "pictureUrl": "https://github.com/a1mery.png",
+        "name": "Aimery Thomas",
+        "twitter": "aimery_thomas"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
       }
     ]
   },
@@ -544,6 +1358,56 @@
         "name": "Adaptive Card Extension Design Guidance",
         "description": "Design guidance for laying out Adaptive Card Extensions.",
         "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-promote-pages",
+    "source": "pnp",
+    "title": "Promote Pages ACE",
+    "shortDescription": "This Adaptive Card Extension shows the most recent pages on selected SharePoint sites and allows you to promote a page as a news post.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-PromotePages",
+    "longDescription": [
+      "This Adaptive Card Extension shows the most recent pages on selected SharePoint sites and allows you to promote a page as a news post."
+    ],
+    "creationDateTime": "2023-08-22",
+    "updateDateTime": "2023-08-22",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.4"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-PropotePage/assets/card-preview.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "a1mery",
+        "company": "",
+        "pictureUrl": "https://github.com/a1mery.png",
+        "name": "Aimery Thomas",
+        "twitter": "aimery_thomas"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
       }
     ]
   },
@@ -676,6 +1540,56 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-scholarship",
+    "source": "pnp",
+    "title": "Scholarship ACE",
+    "shortDescription": "This sample shows how to build an ACE with a card view and quick view to display new, recent and applied scholarships available to user.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-Scholarships",
+    "longDescription": [
+      "This sample shows how to build an ACE with a card view and quick view to display new, recent and applied scholarships available to user."
+    ],
+    "creationDateTime": "2023-05-03",
+    "updateDateTime": "2023-05-03",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-Scholarships/assets/Scholarship.gif",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "jesegher",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/jesegher.png",
+        "name": "Jethro Seghers",
+        "twitter": "jseghers"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-todays-lunch",
     "source": "pnp",
     "title": "Today's Lunch Adaptive Card Extension",
@@ -726,6 +1640,56 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-tuitions",
+    "source": "pnp",
+    "title": "Tuitions",
+    "shortDescription": "This sample shows how to build an ACE with a card view to display outstanding payment for Tuitions and payment breakage.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-Tuitions",
+    "longDescription": [
+      "This sample shows how to build an ACE with a card view to display outstanding payment for Tuitions and payment breakage."
+    ],
+    "creationDateTime": "2023-04-15",
+    "updateDateTime": "2023-04-15",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-Tuitions/assets/Tuitions.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "jesegher",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/jesegher.png",
+        "name": "Jethro Seghers",
+        "twitter": "jseghers"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-weather-ace",
     "source": "pnp",
     "title": "Weather Adaptive Card Extension",
@@ -747,7 +1711,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.14.0"
+        "value": "1.15.2"
       }
     ],
     "thumbnails": [
@@ -764,6 +1728,70 @@
         "pictureUrl": "https://github.com/aakashbhardwaj619.png",
         "name": "Aakash Bhardwaj",
         "twitter": "aakash_316"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-imagecard-worldclock",
+    "source": "pnp",
+    "title": "Image Card World Clock",
+    "shortDescription": "An Adaptive Card Extension that shows the current time for different timezones.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-WorldClock",
+    "longDescription": [
+      "This solution shows how to show the current time for different timezones using an Adaptive Card Extension. The ACE shows the local time in the card and shows the current time in different timezones (America, Europe, Asia and Australia) in the quick view."
+    ],
+    "creationDateTime": "2024-02-03",
+    "updateDateTime": "2024-01-21",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-WorldClock/assets/Screen01.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-WorldClock/assets/Screen02.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "srpmtt",
+        "pictureUrl": "https://github.com/srpmtt.png",
+        "name": "Matteo Serpi"
       }
     ],
     "references": [
@@ -824,6 +1852,422 @@
         "pictureUrl": "https://github.com/joaojmendes.png",
         "name": "João Mendes",
         "twitter": "joaojmendes"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-sales-orders",
+    "source": "pnp",
+    "title": "Adaptive Card Extension Sales Order Example",
+    "shortDescription": "This Adaptive Card Extension allows user  list and Search Data (Sales Orders) using Microsoft Graph Connector.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-Sales-Orders",
+    "longDescription": [
+      "This ACE, uses  Microsoft Graph Connector to get data of Sales Order, To run this sample you need to create a Microsoft Graph Connector with IBMDB2."
+    ],
+    "creationDateTime": "2023-11-01",
+    "updateDateTime": "2023-11-01",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-Sales-Orders/assets/SalesOrders.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "joaojmendes",
+        "pictureUrl": "https://github.com/joaojmendes.png",
+        "name": "João Mendes",
+        "twitter": "joaojmendes"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-new-item",
+    "source": "pnp",
+    "title": "New Item Adaptive Card Extension",
+    "shortDescription": "This Adaptive Card Extension shows how to create a new list item.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/InputCard-Generic-NewItem",
+    "longDescription": [
+      "This Adaptive Card Extension shows how to create a new list item."
+    ],
+    "creationDateTime": "2023-10-15",
+    "updateDateTime": "2023-10-31",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-Generic-NewItem/assets/demo.gif",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "a1mery",
+        "pictureUrl": "https://github.com/a1mery.png",
+        "name": "Aimery Thomas",
+        "twitter": "aimery_thomas"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-people-search-input-card",
+    "source": "pnp",
+    "title": "People Search Text Box Card ",
+    "shortDescription": "People Search card sample to showcase complex Viva Connections card extensibility.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/InputCard-PeopleSearch",
+    "longDescription": [
+      "People Search card sample to showcase complex Viva Connections card extensibility with SPFx 1.18."
+    ],
+    "creationDateTime": "2023-06-28",
+    "updateDateTime": "2023-06-28",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-PeopleSearch/assets/qv-person.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-PeopleSearch/assets/qv-suggested.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-PeopleSearch/assets/search-results.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "AJIXuMuK",
+        "pictureUrl": "https://avatars.githubusercontent.com/u/17036219?v=4",
+        "name": "Alex Terentiev"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-start-survey-input-card",
+    "source": "pnp",
+    "title": "Text box Survey Card",
+    "shortDescription": "Input Text Box ACE with start a survey scenario.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/InputCard-Prompt-Survey",
+    "longDescription": [
+      "Input Text Box ACE with start a survey scenario."
+    ],
+    "creationDateTime": "2023-06-28",
+    "updateDateTime": "2023-06-28",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-Prompt-Survey/assets/ace-survey.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-Prompt-Survey/assets/ace-survey-thanks.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "AJIXuMuK",
+        "pictureUrl": "https://avatars.githubusercontent.com/u/17036219?v=4",
+        "name": "Alex Terentiev"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-start-chat-input-card",
+    "source": "pnp",
+    "title": "Start a Chat card",
+    "shortDescription": "Input Text Box ACE with a start a chat with a person scenario.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/InputCard-Start-Chat",
+    "longDescription": [
+      "Input Text Box ACE with a start a chat with a person scenario."
+    ],
+    "creationDateTime": "2023-06-28",
+    "updateDateTime": "2023-06-28",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-Start-Chat/assets/ace-default.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "AJIXuMuK",
+        "pictureUrl": "https://avatars.githubusercontent.com/u/17036219?v=4",
+        "name": "Alex Terentiev"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-status-message",
+    "source": "pnp",
+    "title": "Status Message Adaptive Card Extension",
+    "shortDescription": "This sample shows how to build an ACE with a card view to let users to set their presence status message.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/InputCard-StatusMessage",
+    "longDescription": [
+      "This sample shows how to build an ACE with a card view to let users to set their presence status message."
+    ],
+    "creationDateTime": "2023-10-10",
+    "updateDateTime": "2023-10-10",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/InputCard-StatusMessage/assets/StatusMessageGif.gif",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "a1mery",
+        "pictureUrl": "https://github.com/a1mery.png",
+        "name": "Aimery Thomas",
+        "twitter": "aimery_thomas"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-ChatGPTDailyInsights",
+    "source": "pnp",
+    "title": "ChatGPT Daily Insights Adaptive Card Extension",
+    "shortDescription": "ACE to display Daily Insights based on ChatGPT OpenAI API.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-ChatGPTDailyInsights",
+    "longDescription": [
+      "ACE to display Daily Insights based on ChatGPT OpenAI API. This sample shows how to build an ACE with a PrimaryText card view and a quick view and use ChatGPT OpenAI API. Use this Card on Viva Connections to provide user with some quotes, tip, grammar tip, coding tip etc."
+    ],
+    "creationDateTime": "2023-02-18",
+    "updateDateTime": "2023-02-18",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.15.2"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ChatGPTDailyInsights/assets/3.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ChatGPTDailyInsights/assets/2.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-ChatGPTDailyInsights/assets/4.png",
+        "alt": "Configuration options"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "siddharth-vaghasia",
+        "pictureUrl": "https://github.com/siddharth-vaghasia.png",
+        "name": "Siddharth Vaghasia",
+        "twitter": "siddh_me"
+      },
+      {
+        "gitHubAccount": "kunj-sangani",
+        "pictureUrl": "https://github.com/kunj-sangani.png",
+        "name": "Kunj Sangani",
+        "twitter": "sanganikunj"
       }
     ],
     "references": [
@@ -1001,6 +2445,71 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-flight-tracker",
+    "source": "pnp",
+    "title": "Flight Tracker",
+    "shortDescription": "This Adaptive Card Extension allows user to follow in real time a flight.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-FlightTracker",
+    "longDescription": [
+      "This Adaptive Card Extension allows user to follow in real time a flight. This ACE, uses the external API( < https: //aerodatabox.p.rapidapi.com/flights/number/>) to get data of flight, please see <https://rapidapi.com/aedbx-aedbx/api/aerodatabox/> to get more information."
+    ],
+    "creationDateTime": "2022-11-08",
+    "updateDateTime": "2022-11-08",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-FlightTracker/assets/mobile01.PNG",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-FlightTracker/assets/mobile02.PNG",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "joaojmendes",
+        "pictureUrl": "https://github.com/joaojmendes.png",
+        "name": "João Mendes",
+        "twitter": "joaojmendes"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-ace-followdocument",
     "source": "pnp",
     "title": "Follow Documents",
@@ -1129,7 +2638,7 @@
       "This Adaptive Card Extension shows how to us the Microsoft Graph to pull the list of teams for a tenant and how to programmatically add a user to the team."
     ],
     "creationDateTime": "2022-02-28",
-    "updateDateTime": "2022-02-28",
+    "updateDateTime": "2023-03-06",
     "products": [
       "SharePoint",
       "Viva"
@@ -1141,7 +2650,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.13.1"
+        "value": "1.16.1"
       }
     ],
     "thumbnails": [
@@ -1678,6 +3187,64 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-search",
+    "source": "pnp",
+    "title": "Search",
+    "shortDescription": "Viva Connection Adaptive Card Extension (ACE) that allows for search.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-Search",
+    "longDescription": [
+      "Simple search client in Adaptive Card. Thanks to Joao Mendes for the template! In ACE properties You can configure initial query.Value from the input will be appended with AND keyword.Thanks to that you can have multiple ACEs with different results "
+    ],
+    "creationDateTime": "2022-12-09",
+    "updateDateTime": "2022-12-09",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-Search/assets/Demo.gif",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "mgwojciech",
+        "pictureUrl": "https://github.com/mgwojciech.png",
+        "name": "Marcin Wojciechowski"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-ace-servicehealth",
     "source": "pnp",
     "title": "Status of Tenant Service Health",
@@ -1728,16 +3295,16 @@
     ]
   },
   {
-    "name": "pnp-sp-fx-aces-ace-londonservices",
+    "name": "pnp-sp-fx-aces-StockBitcoinFeed",
     "source": "pnp",
-    "title": "Status of London Transport Services",
-    "shortDescription": "Adaptive Card displays of London Train services and status",
-    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-TfL-Status",
+    "title": "Price updates on stocks, rex and crypto",
+    "shortDescription": "Display the last price udpates of US stocks, forex and crypto with the help of finnhub APIs.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-StockBitcoinFeed",
     "longDescription": [
-      "ACE with multiple card and quick views to display the status of London Train services and allows the user to mark a train line as their favourite with that data using Microsoft Graph."
+      "Adaptive card extension to display the last price udpates of US stocks, forex and crypto with the help of finnhub APIs."
     ],
-    "creationDateTime": "2021-10-06",
-    "updateDateTime": "2021-10-06",
+    "creationDateTime": "2022-09-11",
+    "updateDateTime": "2022-09-11",
     "products": [
       "SharePoint",
       "Viva"
@@ -1749,7 +3316,63 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.13.0"
+        "value": "1.15.2"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-StockBitcoinFeed/assets/stock-bitcoin-feed.gif",
+        "alt": "Demo on the ACE experience"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-StockBitcoinFeed/assets/stock-bitcoin-configuration.jpeg",
+        "alt": "Configuration options"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "kunj-sangani",
+        "company": "Cognizant",
+        "pictureUrl": "https://avatars.githubusercontent.com/u/25693207?v=4",
+        "name": "Kunj Balkrishna Sangani",
+        "twitter": "sanganikunj"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-ace-londonservices",
+    "source": "pnp",
+    "title": "Status of London Transport Services",
+    "shortDescription": "Adaptive Card displays of London Train services and status",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-TfL-Status",
+    "longDescription": [
+      "ACE with multiple card and quick views to display the status of London Train services and allows the user to mark a train line as their favourite with that data using Microsoft Graph."
+    ],
+    "creationDateTime": "2021-10-06",
+    "updateDateTime": "2023-06-16",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.17.2"
       }
     ],
     "thumbnails": [
@@ -1774,6 +3397,16 @@
         "name": "Viva Connections Extensibility guidance",
         "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
         "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
       }
     ]
   },
@@ -1894,6 +3527,77 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-searchcard-samples-gallery",
+    "source": "pnp",
+    "title": "Search Samples Gallery ACE",
+    "shortDescription": "Viva Connection Adaptive Card Extension (ACE) that shows how to create a search card.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/SearchCard-SamplesGallerySearch",
+    "longDescription": [
+      "Viva Connection Adaptive Card Extension (ACE) that shows how to create a search card."
+    ],
+    "creationDateTime": "2023-10-31",
+    "updateDateTime": "2023-10-31",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/SearchCard-SamplesGallerySearch/assets/search-cardview.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/SearchCard-SamplesGallerySearch/assets/search-quickview.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "PaoloPia",
+        "company": "PiaSys.com",
+        "pictureUrl": "https://github.com/paolopia.png",
+        "name": "Paolo Pialorsi",
+        "twitter": "PaoloPia"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      },
+      {
+        "name": "New Search Card Template for Adaptive Card Extensions",
+        "description": "Introduction to new Search Card Template for Adaptive Card Extensions.",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/release-1.18#new-search-card-template-for-adaptive-card-extensions"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-ace-cardgallery",
     "source": "pnp",
     "title": "Adaptive Cards Sample Gallery",
@@ -1944,6 +3648,244 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-design-card",
+    "source": "pnp",
+    "title": "Designing Card Templates",
+    "shortDescription": "This sample application shows how to implement all of the layout options that are available in the component base model of the SharePoint Framework (SPFx) Adaptive Card Extensions (ACEs) Card Views, accordingly to the documentation available.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/design-card",
+    "longDescription": [
+      "This sample application shows how to implement all of the layout options that are available in the component base model of the SharePoint Framework (SPFx) Adaptive Card Extensions (ACEs) Card Views, accordingly to the documentation available."
+    ],
+    "creationDateTime": "2024-01-24",
+    "updateDateTime": "2024-01-24",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18.2"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Benefits.png",
+        "alt": "Image large Card View with a title and an action button"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Viva-Insights.png",
+        "alt": "Image large Card View with a title"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Feedback-Survey.png",
+        "alt": "Image large Card View with a title, a text input, and a submission button"
+      },
+      {
+        "type": "image",
+        "order": 400,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Location-Tracker.png",
+        "alt": "Image large Card View with a title, a text input, and an action button"
+      },
+      {
+        "type": "image",
+        "order": 500,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/App-Name.png",
+        "alt": "Image large Card View with a title, and a text input"
+      },
+      {
+        "type": "image",
+        "order": 600,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Approvals.png",
+        "alt": "Basic medium Card View with title and action button"
+      },
+      {
+        "type": "image",
+        "order": 700,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Viva-Topics.png",
+        "alt": "Basic medium Card View with title"
+      },
+      {
+        "type": "image",
+        "order": 800,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Help-Desk.png",
+        "alt": "Basic large Card View with title, input text, and submission button"
+      },
+      {
+        "type": "image",
+        "order": 900,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Poll.png",
+        "alt": "Primary Text medium Card View with title, body, and action button"
+      },
+      {
+        "type": "image",
+        "order": 1000,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Shifts.png",
+        "alt": "Primary Text medium Card View with title, and body"
+      },
+      {
+        "type": "image",
+        "order": 1100,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Training.png",
+        "alt": "Primary Text large Card View with title, body, input text, and submission button"
+      },
+      {
+        "type": "image",
+        "order": 1200,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Chat-GPT.png",
+        "alt": "Input Text large Card View with title, input text, and submission button"
+      },
+      {
+        "type": "image",
+        "order": 1300,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/App-Name-2.png",
+        "alt": "Input Text large Card View with title and input text"
+      },
+      {
+        "type": "image",
+        "order": 1400,
+        "url": "https://raw.github.com/pnp/sp-dev-fx-aces/main/samples/design-card/assets/Search-Box.png",
+        "alt": "Search Box Card View with title, search box, and search results preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "PaoloPia",
+        "company": "PiaSys.com",
+        "pictureUrl": "https://github.com/paolopia.png",
+        "name": "Paolo Pialorsi",
+        "twitter": "PaoloPia"
+      }
+    ],
+    "references": [
+      {
+        "name": "Getting started with SharePoint Framework",
+        "description": "Learn how to start developing SharePoint Framework solutions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant"
+      },
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Designing Viva Connections custom cards for your dashboard",
+        "description": "Official guidelines about how to design the Card Views of a SharePoint Framework Adaptive Card Extension (ACE).",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/designing-card"
+      },
+      {
+        "name": "Microsoft 365 Patterns and Practices",
+        "description": "Guidance, tooling, samples and open-source controls for your Microsoft 365 development.",
+        "url": "https://aka.ms/m365pnp"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-scenarios-ace-data-api-builder",
+    "source": "pnp",
+    "title": "Exposing business data in Microsoft 365 using Azure Data API builder",
+    "shortDescription": "This is a sample application that shows you how to expose business data in Microsoft Viva Connections consuming a back-end API implemented with the preview version of Azure Data API builder.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/scenarios/ace-data-api-builder/",
+    "longDescription": [
+      "This is a sample application that shows you how to expose business data in Microsoft Viva Connections consuming a back-end API implemented with the preview version of Azure Data API builder."
+    ],
+    "creationDateTime": "2023-04-04",
+    "updateDateTime": "2023-04-04",
+    "products": [
+      "SharePoint",
+      "Viva",
+      "Microsoft Teams",
+      "AzureAD",
+      "Microsoft Graph"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "TypeScript,React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.16.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/scenarios/ace-data-api-builder/assets/ace-ui-sample.png",
+        "alt": "The Adaptive Card Extension UI"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "PaoloPia",
+        "company": "PiaSys.com",
+        "pictureUrl": "https://github.com/paolopia.png",
+        "name": "Paolo Pialorsi",
+        "twitter": "PaoloPia"
+      },
+      {
+        "gitHubAccount": "yorek",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/yorek.png",
+        "name": "Davide Mauri",
+        "twitter": "mauridb"
+      }
+    ],
+    "references": [
+      {
+        "name": "Getting started with SharePoint Framework",
+        "description": "Introduction about how to develop Microsoft 365 extensions using SharePoint Framework.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant"
+      },
+      {
+        "name": "Build your first SharePoint Adaptive Card Extension",
+        "description": "Learn how to develop your first Adaptive Card Extension (ACE) using SharePoint Framework (SPFx).",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-first-sharepoint-adaptive-card-extension"
+      },
+      {
+        "name": "Building for Microsoft teams",
+        "description": "Learn how to develop for Microsoft Teams using SharePoint Framework.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview"
+      },
+      {
+        "name": "Use Microsoft Graph in your solution",
+        "description": "Learn how to consume Microsoft Graph using SharePoint Framework (SPFx).",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis"
+      },
+      {
+        "name": "Connect to Azure AD-secured APIs in SharePoint Framework solutions",
+        "description": "Learn how to consume Azure AD-secured APIs using SharePoint Framework (SPFx).",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient"
+      },
+      {
+        "name": "Data API builder for Azure Databases",
+        "description": "Learn about Data API builder for Azure Databases.",
+        "url": "https://aka.ms/dab"
+      },
+      {
+        "name": "Data API builder sample for Microsoft 365",
+        "description": "Here you can find the DAB model and settings used in this sample.",
+        "url": "https://github.com/yorek/dab-microsoft365-demo"
+      },
+      {
+        "name": "Microsoft 365 Patterns and Practices",
+        "description": "Guidance, tooling, samples and open-source controls for your Microsoft 365 development.",
+        "url": "https://aka.ms/m365pnp"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-scenario-ace-lob",
     "source": "pnp",
     "title": "LOB integration - ACE scenario",
@@ -1953,10 +3895,10 @@
       ""
     ],
     "creationDateTime": "2021-06-10",
-    "updateDateTime": "2021-06-10",
+    "updateDateTime": "2022-12-09",
     "products": [
       "SharePoint",
-      "Office"
+      "Viva"
     ],
     "metadata": [
       {
@@ -1965,7 +3907,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.14.0"
+        "value": "1.16.0"
       }
     ],
     "thumbnails": [
@@ -2000,11 +3942,11 @@
     "longDescription": [
       ""
     ],
-    "creationDateTime": "2021-06-08",
-    "updateDateTime": "2021-06-08",
+    "creationDateTime": "2021-06-10",
+    "updateDateTime": "2022-12-09",
     "products": [
       "SharePoint",
-      "Office"
+      "Viva"
     ],
     "metadata": [
       {
@@ -2013,7 +3955,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.14.0"
+        "value": "1.16.0"
       }
     ],
     "thumbnails": [
