@@ -6,7 +6,7 @@ This ACE show user events for specific day
 
 ## NOTE
 
-This sample leverages MarkDown for the cardview. Markdown is currently not supported in the cardview for browser, desktop, or mobile. The sample does provide a good sample of how to make connections to the Graph and retrieve data.
+This sample leverages MarkDown for the cardview. Markdown is currently not supported in the cardview for browser, desktop, or mobile and as such does not work on those platforms. The sample does provide a good sample of how to make connections to the Graph and retrieve data.
 
 ![my-calendar-plan](assets/my-calendar-plan-01.png)
 ![my-calendar-plan](assets/my-calendar-plan-02.png)
