@@ -1,10 +1,10 @@
 {
   "@microsoft/generator-sharepoint": {
     "whichFolder": "subdir",
-    "solutionName": "DCC",
+    "solutionName": "Dynamic Content Card",
     "componentType": "adaptiveCardExtension",
     "aceTemplateType": "Generic",
-    "componentName": "DCC",
+    "componentName": "DynamicContentCard",
     "plusBeta": false,
     "isCreatingSolution": true,
     "nodeVersion": "18.19.0",
@@ -13,11 +13,11 @@
       "@microsoft/teams-js": "2.12.0"
     },
     "version": "1.18.2",
-    "libraryName": "dcc",
-    "libraryId": "283c533d-5fc7-4713-a3fc-4a7bb77730b3",
+    "libraryName": "dynamic-content-card-dcc",
+    "libraryId": "648c2857-dbd6-48b0-9575-ee1ac713ae7e",
     "environment": "spo",
     "packageManager": "npm",
-    "solutionShortDescription": "DCC description",
+    "solutionShortDescription": "Dynamic Content Card description",
     "skipFeatureDeployment": true,
     "isDomainIsolated": false
   }

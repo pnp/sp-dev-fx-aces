@@ -3,9 +3,15 @@
   "solution": {
     "name": "dcc-client-side-solution",
     "id": "283c533d-5fc7-4713-a3fc-4a7bb77730b3",
-    "version": "1.0.0.0",
+    "version": "1.0.0.1",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "User.Read"
+      }
+    ],
     "isDomainIsolated": false,
     "developer": {
       "name": "",

@@ -11,7 +11,7 @@ export interface IListInfo {
     listUrl: string;
     odataUrl: string;
 }
-
+//Check if the list already exists
 export const testlist = async (spContext: AdaptiveCardExtensionContext ): Promise<IListInfo> => { 
        //Check if list already exists
        const listResponse = await (await spContext.spHttpClient.get(
@@ -28,7 +28,7 @@ export const testlist = async (spContext: AdaptiveCardExtensionContext ): Promis
         return Promise.resolve({listUrl: '', odataUrl: '' });
     }
 }
-
+//Create the list to store the content
 export const createList = async (spContext: AdaptiveCardExtensionContext): Promise<IListInfo> => {
     //Check if list already exists
     const listResponse = await (await spContext.spHttpClient.get(
@@ -63,81 +63,6 @@ export const createList = async (spContext: AdaptiveCardExtensionContext): Promi
                 })
             }
         )).json()
-
-        //reutrn a JSON object like : 
-        /**
-         *Could use the ID for identifying the list in the future
-        *@odata.id is also the URL to the list that could be usefull
-        {
-        "@odata.context": "https://amvcc.sharepoint.com/sites/AMVCCIT/_api/$metadata#lists/$entity",
-        "@odata.type": "#SP.List",
-        "@odata.id": "https://amvcc.sharepoint.com/sites/AMVCCIT/_api/Web/Lists(guid'686ca9b0-42fa-47c5-a72e-ec0fd7ddf305')",
-        "@odata.etag": "\"1\"",
-        "@odata.editLink": "Web/Lists(guid'686ca9b0-42fa-47c5-a72e-ec0fd7ddf305')",
-        "AllowContentTypes": true,
-        "BaseTemplate": 100,
-        "BaseType": 0,
-        "ContentTypesEnabled": true,
-        "CrawlNonDefaultViews": false,
-        "Created": "2024-01-04T12:00:14Z",
-        "CurrentChangeToken": {
-            "StringValue": "1;3;686ca9b0-42fa-47c5-a72e-ec0fd7ddf305;638399664141230000;353907542"
-        },
-        "DefaultContentApprovalWorkflowId": "00000000-0000-0000-0000-000000000000",
-        "DefaultItemOpenUseListSetting": false,
-        "Description": "List to support content for DCC",
-        "Direction": "none",
-        "DisableCommenting": false,
-        "DisableGridEditing": false,
-        "DocumentTemplateUrl": null,
-        "DraftVersionVisibility": 0,
-        "EnableAttachments": true,
-        "EnableFolderCreation": false,
-        "EnableMinorVersions": false,
-        "EnableModeration": false,
-        "EnableRequestSignOff": true,
-        "EnableVersioning": true,
-        "EntityTypeName": "DCC_x0020_Content_x0020_ListList",
-        "ExemptFromBlockDownloadOfNonViewableFiles": false,
-        "FileSavePostProcessingEnabled": false,
-        "ForceCheckout": false,
-        "HasExternalDataSource": false,
-        "Hidden": false,
-        "Id": "686ca9b0-42fa-47c5-a72e-ec0fd7ddf305",
-        "ImagePath": {
-            "DecodedUrl": "/_layouts/15/images/itgen.png?rev=47"
-        },
-        "ImageUrl": "/_layouts/15/images/itgen.png?rev=47",
-        "DefaultSensitivityLabelForLibrary": "",
-        "SensitivityLabelToEncryptOnDOwnloadForLibrary": null,
-        "IrmEnabled": false,
-        "IrmExpire": false,
-        "IrmReject": false,
-        "IsApplicationList": false,
-        "IsCatalog": false,
-        "IsPrivate": false,
-        "ItemCount": 0,
-        "LastItemDeletedDate": "2024-01-04T12:00:14Z",
-        "LastItemModifiedDate": "2024-01-04T12:00:14Z",
-        "LastItemUserModifiedDate": "2024-01-04T12:00:14Z",
-        "ListExperienceOptions": 0,
-        "ListItemEntityTypeFullName": "SP.Data.DCC_x0020_Content_x0020_ListListItem",
-        "MajorVersionLimit": 50,
-        "MajorWithMinorVersionsLimit": 0,
-        "MultipleDataList": false,
-        "NoCrawl": false,
-        "ParentWebPath": {
-            "DecodedUrl": "/sites/AMVCCIT"
-        },
-        "ParentWebUrl": "/sites/AMVCCIT",
-        "ParserDisabled": false,
-        "ServerTemplateCanCreateFolders": true,
-        "TemplateFeatureId": "00bfea71-de22-43b2-a848-c05709900100",
-        "Title": "DCC Content List"
-        }
-        **/
-
-
 
         //Create the columns
             //description
@@ -200,6 +125,21 @@ export const createList = async (spContext: AdaptiveCardExtensionContext): Promi
                         })
                     }
                 );
+            //create columns for the list that is a boolean to ask if the link should be opened outside of teams
+            await spContext.spHttpClient.post(response['@odata.id'] + '/fields',
+                    SPHttpClient.configurations.v1,
+                    {
+                        headers: {
+                            'ACCEPT': 'application/json',
+                            'CONTENT-TYPE': 'application/json;odata=nometadata'
+                        },
+                        body: JSON.stringify({
+                            Title: 'Open Outside of Teams',
+                            FieldTypeKind: 8
+                        })    
+                    }
+                );
+
         
         //Update the default view with new fields
             //get the default view
@@ -207,8 +147,6 @@ export const createList = async (spContext: AdaptiveCardExtensionContext): Promi
                 `${response['@odata.id']}/DefaultView`,
                 SPHttpClient.configurations.v1
             )).json()
-
-   
 
             //Update the view
             await spContext.spHttpClient.post(viewResponse['@odata.id']+ `/ViewFields/addViewField('Description')`,
@@ -247,16 +185,24 @@ export const createList = async (spContext: AdaptiveCardExtensionContext): Promi
                 }
             }
                 );
+            await spContext.spHttpClient.post(viewResponse['@odata.id']+ `/ViewFields/addViewField('Open Outside of Teams')`,
+                SPHttpClient.configurations.v1,
+                {
+                    headers: {
+                        'ACCEPT': 'application/json',
+                        'CONTENT-TYPE': 'application/json;odata=nometadata'
+                    }
+                }
+                );
         return Promise.resolve({listUrl: `${spContext.pageContext.web.absoluteUrl}/lists/DCC Content List`, odataUrl: response.value[0]['@odata.id']});
     }
 }
-
-
+//Fetch the list items to be then use by the adaptive card
 export const fetchListItems = async (spContext: AdaptiveCardExtensionContext, odataUrl: string, usageLocation: string): Promise<IListItem[]> => {
     if (!odataUrl) { return Promise.reject('No listId specified.'); }
   
     const response = await (await spContext.spHttpClient.get(
-      `${odataUrl}/items?$select=Title,Description,Image,Link&$filter=Country eq '${usageLocation}'`,
+      `${odataUrl}/items?$select=Title,Description,Image,Link,Open_x0020_Outside_x0020_of_x002&$filter=Country eq '${usageLocation}'`,
       SPHttpClient.configurations.v1
     )).json();
   
@@ -264,6 +210,14 @@ export const fetchListItems = async (spContext: AdaptiveCardExtensionContext, od
       return Promise.resolve(response.value.map(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (listItem: any) => {
+            //Add the query parameter to the link if the link should be opened outside of teams
+            if (listItem.Open_x0020_Outside_x0020_of_x002 === true) {
+                if (listItem.Link.Url.includes('?')) 
+                { listItem.Link.Url += '&vcNativeLink=true'; } 
+                else 
+                { listItem.Link.Url += '?vcNativeLink=true'; }
+            }
+            
           return <IListItem>{
             link: listItem.Link.Url,
             title: listItem.Title,

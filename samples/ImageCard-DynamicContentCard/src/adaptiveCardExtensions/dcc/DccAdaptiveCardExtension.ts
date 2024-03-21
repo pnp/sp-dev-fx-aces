@@ -56,7 +56,7 @@ export default class DccAdaptiveCardExtension extends BaseAdaptiveCardExtension<
     const me = await graph.me.select("usageLocation","displayName")<any>();
     this.setState({ usageLocation: me.usageLocation });
 
-    //get theme
+    //get Teams theme
     await this.context.sdks?.microsoftTeams?.teamsJs.app.getContext().then((context) => {
     this.setState({
       theme: context.app.appInfo.theme
@@ -120,9 +120,7 @@ export default class DccAdaptiveCardExtension extends BaseAdaptiveCardExtension<
           }
         }
       }
-    }
-
-
+  }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     

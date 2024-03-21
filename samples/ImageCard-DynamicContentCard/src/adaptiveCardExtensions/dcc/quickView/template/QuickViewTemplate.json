@@ -38,12 +38,6 @@
                 },
                 {
                     "type": "TextBlock",
-                    "size": "Medium",
-                    "weight": "Bolder",
-                    "text": "${quickViewSubtitle}"
-                },
-                {
-                    "type": "TextBlock",
                     "text": "${quickViewText}",
                     "wrap": true
                 }
@@ -94,7 +88,7 @@
                                     "actions": [
                                         {
                                             "type": "Action.OpenUrl",
-                                            "title": "Get Started",
+                                            "title": "${$root.quickViewButtonText}",
                                             "url": "${Link}"
                                         }
                                     ],

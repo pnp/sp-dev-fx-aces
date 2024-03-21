@@ -1,5 +1,5 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardQuickView } from '@microsoft/sp-adaptive-card-extension-base';
-//import * as strings from 'DccAdaptiveCardExtensionStrings';
+import * as strings from 'DccAdaptiveCardExtensionStrings';
 import {
   IDccAdaptiveCardExtensionProps,
   IDccAdaptiveCardExtensionState
@@ -9,8 +9,8 @@ import { IListItem } from '../sp.service';
 export interface IQuickViewData {
   listItems: IListItem[];
   quickViewTitle: string;
-  quickViewSubTitle: string;
   quickViewText: string;
+  quickViewButtonText: string;
 }
 
 export class QuickView extends BaseAdaptiveCardQuickView<
@@ -21,9 +21,9 @@ export class QuickView extends BaseAdaptiveCardQuickView<
   public get data(): IQuickViewData {
     return {
       listItems: this.state.listItems,
-      quickViewTitle:"Quick View Title",
-      quickViewSubTitle:"Quick View Subtitle", 
-      quickViewText:"Quick View Text"
+      quickViewTitle: strings.quickViewTitle,
+      quickViewText: strings.quickViewText,
+      quickViewButtonText: strings.QuickViewButton
       
     };
   }

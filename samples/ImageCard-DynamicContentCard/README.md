@@ -1,14 +1,19 @@
-# dcc
+# Dynamic Content Card (aka DCC)
 
 ## Summary
 
-Short summary on functionality and used technologies.
+Dynamic Content Card (aka DCC) is a SPFX ACE Card that displays dynamic content hosted on a Sharepoint list and filtered by the user's usageLocation property. Enabling you to display content based on the user's location and delegate the management of the content to the business users thanks to the Sharepoint list.
 
-[picture of the solution in action, if possible]
+![DCC](./assets/Image1.png)
 
 ## Used SharePoint Framework Version
 
 ![version](https://img.shields.io/badge/version-1.18.2-green.svg)
+
+## Used PNP/Graph Version
+
+![version](https://img.shields.io/badge/version-3.24.0-green.svg)
+
 
 ## Applies to
 
@@ -19,20 +24,20 @@ Short summary on functionality and used technologies.
 
 ## Prerequisites
 
-> Any special pre-requisites?
+ Graph permission to enable the solution to access the user profile. 
+ - User.read is the minimum permission required and used by the solution.
 
 ## Solution
 
 | Solution    | Author(s)                                               |
 | ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+| DCC         | Eric Scherlinger - Sr Product Manager Microsoft         |
 
 ## Version history
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
+| 1.0     | March 20, 2024   | Initial release |
 
 ## Disclaimer
 
@@ -42,27 +47,27 @@ Short summary on functionality and used technologies.
 
 ## Minimal Path to Awesome
 
-- Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
-
-> Include any additional steps as needed.
+- Open the sample in VS Code
+- Get the [Viva Connection Toolkit](https://marketplace.visualstudio.com/items?itemName=m365pnp.viva-connections-toolkit)
+- In the Viva Connection Toolkit Window
+  - Click on **"View samples"**
+  - Search for "DCC"
+  - Click on "Use" this will clone the sample to your local machine, Rename the solution and run the NPM install for you
+  - Once the NPM install is done, you can run the solution by clicking on the **"Serve"** Task in the Viva Connection Toolkit Window
+  - Please note that you might need to run the **"Grant API Permissions"** task to grant the required permission (User.Read) to the solution
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+The ACE Card is a SPFX web part that displays dynamic content hosted on a Sharepoint list and filtered by the user's usageLocation property. Enabling you to display content based on the user's location and delegate the management of the content to the business users thanks to the Sharepoint list.
 
 This extension illustrates the following concepts:
 
-- topic 1
-- topic 2
-- topic 3
+- All Data is hosted in an SPO list that can be delegated to the content owners.
+- The ACE Card uses the Graph API to fetch the user's usageLocation and filter the content based on it.
+- Cards Property Pane enable you to change its Name but also create the SPO list and columns for you and access it quickly once created
+- The card is designed to display URLs. Those URLs can be opened in Teams or on the device Native Browser. This enables you to leverage Universal Links and Deep Links to open the content in the right Application. For example view a PowerBi report directly in its Native Application or Open directly and Instagram page in the Instagram Application.
+- All Strings are stored in the loc folder enabling you to quickly adapt the text to your usecase and add extras languages.
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
 ## References
 

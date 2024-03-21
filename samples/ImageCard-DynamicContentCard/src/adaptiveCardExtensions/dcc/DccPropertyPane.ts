@@ -16,13 +16,13 @@ export class DccPropertyPane {
             {
               groupFields: [
                 PropertyPaneTextField('title', {
-                  label: strings.TitleFieldLabel
+                  label: strings.PropertyPaneTitleFieldLabel
                 }),
                 PropertyPaneLabel('createListLabel', {
-                  text: strings.createListLabel
+                  text: strings.PropertyPanecreateListLabel
                 }),
                 PropertyPaneButton('createListButton', {
-                  text: strings.createListButton,
+                  text: strings.PropertyPanecreateListButton,
                   buttonType: 1,
                   disabled: listcreated,
                   onClick: async () => {
@@ -30,10 +30,10 @@ export class DccPropertyPane {
                   }
                 }),
                 PropertyPaneLabel('listLinkLabel', {
-                  text: strings.listLinkLabel
+                  text: strings.PropertyPanelistLinkLabel
                 }),
                 PropertyPaneLink('listLink', {
-                  text: strings.listLink,
+                  text: strings.PropertyPanelistLink,
                   disabled: !listcreated,
                   href:  listLink,
                   target: '_blank'
