@@ -6,11 +6,11 @@ Baseline example of the chart card rendering options which was introduced as par
 
 Chart card can be used to render simple charts directly in the card view, so that you can include graphical details on your business situation directly in the Viva Connections dashboard.
 
-![preview image](/assets/chart-card-viva-connections.png)
+![preview image](assets/chart-card-viva-connections.png)
 
 Example usage in a larger Viva Connections dashboard.
 
-![larger dashboard view](/assets/chart-card-dashboard.png)
+![larger dashboard view](assets/chart-card-dashboard.png)
 
 ## Used SharePoint Framework Version
 
