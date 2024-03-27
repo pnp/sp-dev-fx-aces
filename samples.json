@@ -790,6 +790,72 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-chartcard-threeseries",
+    "source": "pnp",
+    "title": "Chart Card with Three Series",
+    "shortDescription": "Baseline example of the chart card rendering options which was introduced as part of the SPFx 1.19 release.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ChartCard-ThreeSeries",
+    "longDescription": [
+      "Baseline example of the chart card rendering options which was introduced as part of the SPFx 1.19 release.",
+      "Chart card can be used to render simple charts directly in the card view, so that you can include graphical details on your business situation directly in the Viva Connections dashboard."
+    ],
+    "creationDateTime": "2024-03-27",
+    "updateDateTime": "2024-03-27",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "None"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.19.beta0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ChartCard-ThreeSeries/assets/chart-card-viva-connections.png",
+        "alt": "Preview of medium and larger rendering"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ChartCard-ThreeSeries/assets/chart-card-dashboard.png",
+        "alt": "Preview in dashboard"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "yhabersaat",
+        "pictureUrl": "https://github.com/yhabersaat.png",
+        "name": "Yves Habersaat",
+        "twitter": "yhabersaat"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-user-manager",
     "source": "pnp",
     "title": "User Manager ACE",
