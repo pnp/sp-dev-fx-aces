@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "chart-card-three-series-client-side-solution",
+    "id": "606a166a-f3ed-4e47-aa9b-d3dc956a6075",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.19.0-beta.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "chart-card-three-series description"
+      },
+      "longDescription": {
+        "default": "chart-card-three-series description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "chart-card-three-series Feature",
+        "description": "The feature that activates elements of the chart-card-three-series solution.",
+        "id": "b6d0c1df-0d26-4223-ac0e-5174c1995799",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/chart-card-three-series.sppkg"
+  }
+}
