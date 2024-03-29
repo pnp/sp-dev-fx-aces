@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": true,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.18.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.19.0-beta.0",
+    "libraryName": "chart-card-page-creation",
+    "libraryId": "a2a76950-c4aa-480d-bbe9-b16c37607c4a",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "chart-card-page-creation",
+    "solutionShortDescription": "chart-card-page-creation description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "DataVisualization"
+  }
+}
