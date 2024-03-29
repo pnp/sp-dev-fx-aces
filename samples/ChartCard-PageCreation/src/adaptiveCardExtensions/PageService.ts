@@ -17,7 +17,7 @@ export class PageService implements IPageService {
 
   public async _getPages(): Promise<GraphPages> {
     const client = await this._getClient();
-    const pages: GraphPages = await client.api("sites/"+this.context.pageContext.site.id+"/pages/microsoft.graph.sitePage").select("createdDateTime, promotionKind").get();
+    const pages: GraphPages = await client.api("sites/"+this.context.pageContext.site.id+"/pages/microsoft.graph.sitePage").select("createdDateTime, promotionKind").version('beta').get();
     return pages;
   }
 

@@ -16,11 +16,11 @@
   "preconfiguredEntries": [{
     "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
     "group": { "default": "Dashboard" },
-    "title": { "default": "PageCreation" },
+    "title": { "default": "Page creation chart" },
     "description": { "default": "PageCreation description" },
-    "iconImageUrl": "https://res.cdn.office.net/files/fabric-cdn-prod_20231211.002/assets/brand-icons/product-monoline/svg/vivaconnections_32x1.svg",
+    "officeFabricIconFontName": "LineChart",
     "properties": {
-      "title": "PageCreation"
+      "title": "Page creation chart"
     },
     "cardSize": "Large"
   }]

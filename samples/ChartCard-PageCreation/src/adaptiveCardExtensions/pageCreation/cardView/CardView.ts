@@ -52,11 +52,11 @@ export class CardView extends BaseComponentsCardView<
   IDataVisualizationCardViewParameters
 > { 
   public get cardViewParameters(): IDataVisualizationCardViewParameters {
-
+    const currentYear = new Date (Date.now()).getFullYear();
     this.state.pages.forEach((total: number, created: number) => {
       pageData.push(
         {
-          x: new Date(2024,created,0),
+          x: new Date(currentYear,created,1),
           y: total
         }
       )
@@ -65,7 +65,7 @@ export class CardView extends BaseComponentsCardView<
     this.state.news.forEach((total: number, created: number) => {
       newsData.push(
         {
-          x: new Date(2024,created,0),
+          x: new Date(currentYear,created,1),
           y: total
         }
       )
@@ -82,11 +82,11 @@ export class CardView extends BaseComponentsCardView<
         dataVisualizationKind: 'line',
         series: [{
             data: pageData,
-            lastDataPointLabel: '2'
+            lastDataPointLabel: 'Pages'
         },
         {
           data: newsData,
-          lastDataPointLabel: '2'
+          lastDataPointLabel: 'News'
       }]
       }
     });

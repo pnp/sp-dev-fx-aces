@@ -45,10 +45,11 @@ export default class PageCreationAdaptiveCardExtension extends BaseAdaptiveCardE
     const currentYear = new Date (Date.now()).getFullYear();
     const service: IPageService = new PageService(this.context);
     const allPages: GraphPages = await service._getPages();
-    const pages = allPages.value.filter(p => p.promotionKind == "page" && new Date(p.createdDateTime).getFullYear() == currentYear).map(page => new Date(page.createdDateTime).getMonth());
-    const newsPost = allPages.value.filter(p => p.promotionKind == "newsPost" && new Date(p.createdDateTime).getFullYear() == currentYear).map(news => new Date(news.createdDateTime).getMonth());
+    const pages = allPages.value.filter(p => p.promotionKind === "page" && new Date(p.createdDateTime).getFullYear() === currentYear).map(page => new Date(page.createdDateTime).getMonth());
+    const newsPost = allPages.value.filter(p => p.promotionKind === "newsPost" && new Date(p.createdDateTime).getFullYear() === currentYear ).map(news => new Date(news.createdDateTime).getMonth());
 
     const pagesMap = new Map<number, number>();
+    pagesMap.clear();
     pages.forEach(p => {
       if (!pagesMap.has(p)) {
         pagesMap.set(p, 1);
@@ -58,6 +59,7 @@ export default class PageCreationAdaptiveCardExtension extends BaseAdaptiveCardE
     });
 
     const newsMap = new Map<number, number>();
+    newsMap.clear();
     newsPost.forEach(n => {
       if (!newsMap.has(n)) {
         newsMap.set(n, 1);
