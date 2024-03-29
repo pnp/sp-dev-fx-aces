@@ -62,7 +62,7 @@ Medium view:
 
 ## Features
 
-This sample demonstrate how to use the new chart card layout released with SPFx 1.19 beta. 
+This sample demonstrate how to use the new Viva Connections chart card layout released with SPFx 1.19 beta. 
 
 ## References
 
