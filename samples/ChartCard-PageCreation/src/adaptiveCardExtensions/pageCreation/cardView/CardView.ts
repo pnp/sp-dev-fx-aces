@@ -13,39 +13,65 @@ import {
 } from '../PageCreationAdaptiveCardExtension';
 
 // Sample Data
-const seriesData : IDataPoint<Date>[] = [
-  {
-    x: new Date(2024, 1, 1),
-    y: 1000
-  },
-  {
-    x: new Date(2024, 2, 1),
-    y: 2400
-  },
-  {
-    x: new Date(2024, 3, 1),
-    y: 2000
-  },
-  {
-    x: new Date(2024, 4, 1),
-    y: 2900
-  },
-  {
-    x: new Date(2024, 5, 1),
-    y: 3000
-  },
-  {
-    x: new Date(2024, 6, 1),
-    y: 3100
-  }
+// const seriesData : IDataPoint<Date>[] = [
+//   {
+//     x: new Date(2024, 1, 1),
+//     y: 1000
+//   },
+//   {
+//     x: new Date(2024, 2, 1),
+//     y: 2400
+//   },
+//   {
+//     x: new Date(2024, 3, 1),
+//     y: 2000
+//   },
+//   {
+//     x: new Date(2024, 4, 1),
+//     y: 2900
+//   },
+//   {
+//     x: new Date(2024, 5, 1),
+//     y: 3000
+//   },
+//   {
+//     x: new Date(2024, 6, 1),
+//     y: 3100
+//   }
+// ];
+
+const pageData : IDataPoint<Date>[] = [
+];
+
+const newsData : IDataPoint<Date>[] = [
 ];
 
 export class CardView extends BaseComponentsCardView<
   IPageCreationAdaptiveCardExtensionProps,
   IPageCreationAdaptiveCardExtensionState,
   IDataVisualizationCardViewParameters
-> {
+> { 
   public get cardViewParameters(): IDataVisualizationCardViewParameters {
+
+    this.state.pages.forEach((total: number, created: number) => {
+      pageData.push(
+        {
+          x: new Date(2024,created,0),
+          y: total
+        }
+      )
+    });
+
+    this.state.news.forEach((total: number, created: number) => {
+      newsData.push(
+        {
+          x: new Date(2024,created,0),
+          y: total
+        }
+      )
+    });
+
+
     return LineChartCardView({
       cardBar: {
         componentName: 'cardBar',
@@ -55,9 +81,13 @@ export class CardView extends BaseComponentsCardView<
         componentName: 'dataVisualization',
         dataVisualizationKind: 'line',
         series: [{
-            data: seriesData,
-            lastDataPointLabel: '3.1K'
-        }]
+            data: pageData,
+            lastDataPointLabel: '2'
+        },
+        {
+          data: newsData,
+          lastDataPointLabel: '2'
+      }]
       }
     });
   }

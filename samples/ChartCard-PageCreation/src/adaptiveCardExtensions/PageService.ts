@@ -6,7 +6,7 @@ export interface IPageService {
   _getPages(): Promise<GraphPages>;
 }
 
-export class PageService {
+export class PageService implements IPageService {
 
   public context: AdaptiveCardExtensionContext;
   private MSGraphClient: MSGraphClientV3;
@@ -16,14 +16,15 @@ export class PageService {
 }
 
   public async _getPages(): Promise<GraphPages> {
-    const pages: GraphPages = await this.MSGraphClient.api("sites/"+this.context.pageContext.site.id+"/pages/microsoft.graph.sitePage").select("createdDateTime, promotionKind").get();
+    const client = await this._getClient();
+    const pages: GraphPages = await client.api("sites/"+this.context.pageContext.site.id+"/pages/microsoft.graph.sitePage").select("createdDateTime, promotionKind").get();
     return pages;
   }
 
 
-   public async _getClient(context: AdaptiveCardExtensionContext): Promise<MSGraphClientV3> {
-        if (this.MSGraphClient === undefined)
-            this.MSGraphClient = await context.msGraphClientFactory.getClient("3");
-        return this.MSGraphClient;
-    } 
+  private async _getClient(): Promise<MSGraphClientV3> {
+    if (this.MSGraphClient === undefined)
+        this.MSGraphClient = await this.context.msGraphClientFactory.getClient("3");
+    return this.MSGraphClient;
+} 
 }

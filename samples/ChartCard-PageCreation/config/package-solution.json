@@ -14,6 +14,12 @@
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.19.0-beta.0"
     },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.Read.All"
+      }
+    ],
     "metadata": {
       "shortDescription": {
         "default": "chart-card-page-creation description"

@@ -11,7 +11,8 @@ export interface IPageCreationAdaptiveCardExtensionProps {
 }
 
 export interface IPageCreationAdaptiveCardExtensionState {
-
+  pages: Map<number, number>,
+  news: Map<number, number>
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'PageCreation_CARD_VIEW';
@@ -26,8 +27,8 @@ export default class PageCreationAdaptiveCardExtension extends BaseAdaptiveCardE
 
   public async onInit(): Promise<void> {
     this.state = {
-      pages: new Map<Date, number>(),
-      news: new Map<Date, number>()
+      pages: new Map<number, number>(),
+      news: new Map<number, number>()
      };
 
     // registers the card view to be shown in a dashboard
@@ -41,12 +42,13 @@ export default class PageCreationAdaptiveCardExtension extends BaseAdaptiveCardE
   }
 
   private async getAllPages(): Promise<void> {
+    const currentYear = new Date (Date.now()).getFullYear();
     const service: IPageService = new PageService(this.context);
     const allPages: GraphPages = await service._getPages();
-    const pages = allPages.value.filter(p => p.promotionKind = "page").map(page => new Date(page.createdDateTime));
-    const newsPost = allPages.value.filter(p => p.promotionKind = "newsPost").map(news => new Date(news.createdDateTime));;
+    const pages = allPages.value.filter(p => p.promotionKind == "page" && new Date(p.createdDateTime).getFullYear() == currentYear).map(page => new Date(page.createdDateTime).getMonth());
+    const newsPost = allPages.value.filter(p => p.promotionKind == "newsPost" && new Date(p.createdDateTime).getFullYear() == currentYear).map(news => new Date(news.createdDateTime).getMonth());
 
-    const pagesMap = new Map<Date, number>();
+    const pagesMap = new Map<number, number>();
     pages.forEach(p => {
       if (!pagesMap.has(p)) {
         pagesMap.set(p, 1);
@@ -55,12 +57,12 @@ export default class PageCreationAdaptiveCardExtension extends BaseAdaptiveCardE
       }
     });
 
-    const newsMap = new Map<Date, number>();
-    newsPost.forEach(p => {
-      if (!newsMap.has(p)) {
-        newsMap.set(p, 1);
+    const newsMap = new Map<number, number>();
+    newsPost.forEach(n => {
+      if (!newsMap.has(n)) {
+        newsMap.set(n, 1);
       } else {
-        newsMap.set(p, newsMap.get(p) + 1)
+        newsMap.set(n, newsMap.get(n) + 1)
       }
     });
 
