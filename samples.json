@@ -1033,6 +1033,55 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-dynamiccontentcard",
+    "source": "pnp",
+    "title": "Dynamic Content Card",
+    "shortDescription": "Dynamic Content Card (aka DCC) is a SPFx ACE Card that displays dynamic content hosted on a Sharepoint list and filtered by the user's usageLocation property.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-DynamicContentCard",
+    "longDescription": [
+      "Dynamic Content Card (aka DCC) is a SPFx ACE Card that displays dynamic content hosted on a Sharepoint list and filtered by the user's usageLocation property. Enabling you to display content based on the user's location and delegate the management of the content to the business users thanks to the Sharepoint list."
+    ],
+    "creationDateTime": "2024-03-20",
+    "updateDateTime": "2024-03-20",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.18.2"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-DynamicContentCard/assets/Image1.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "ericsche",
+        "company": "Microsoft",
+        "pictureUrl": "https://github.com/ericsche.png",
+        "name": "Eric Scherlinger"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-hidable-ace",
     "source": "pnp",
     "title": "Hidable ACE",
