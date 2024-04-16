@@ -35,7 +35,7 @@ Medium view:
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.0     | March 29, 2023 | Initial release |
+| 1.0     | March 29, 2024 | Initial release |
 
 ## Disclaimer
 
@@ -62,7 +62,7 @@ Medium view:
 
 ## Features
 
-This sample demonstrate how to use the new Viva Connections chart card layout released with SPFx 1.19 beta. 
+This sample demonstrate how to use the new Viva Connections chart card layout released with SPFx 1.19 beta.
 
 ## References
 
@@ -72,3 +72,4 @@ This sample demonstrate how to use the new Viva Connections chart card layout re
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Introducing new Viva Connections chart card layout option](https://www.youtube.com/watch?v=JOIb4KhiWAI&t=613s)
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/ChartCard-PageCreation" />
