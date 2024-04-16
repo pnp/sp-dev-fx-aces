@@ -2,7 +2,7 @@
 
 ## Summary
 
-Dynamic Content Card (aka DCC) is a SPFX ACE Card that displays dynamic content hosted on a Sharepoint list and filtered by the user's usageLocation property. Enabling you to display content based on the user's location and delegate the management of the content to the business users thanks to the Sharepoint list.
+Dynamic Content Card (aka DCC) is a SPFx ACE Card that displays dynamic content hosted on a Sharepoint list and filtered by the user's usageLocation property. Enabling you to display content based on the user's location and delegate the management of the content to the business users thanks to the Sharepoint list.
 
 ![DCC](./assets/Image1.png)
 
@@ -14,7 +14,6 @@ Dynamic Content Card (aka DCC) is a SPFX ACE Card that displays dynamic content 
 
 ![version](https://img.shields.io/badge/version-3.24.0-green.svg)
 
-
 ## Applies to
 
 - [SharePoint Framework](https://aka.ms/spfx)
@@ -25,7 +24,8 @@ Dynamic Content Card (aka DCC) is a SPFX ACE Card that displays dynamic content 
 ## Prerequisites
 
  Graph permission to enable the solution to access the user profile. 
- - User.read is the minimum permission required and used by the solution.
+
+- User.read is the minimum permission required and used by the solution.
 
 ## Solution
 
@@ -58,7 +58,7 @@ Dynamic Content Card (aka DCC) is a SPFX ACE Card that displays dynamic content 
 
 ## Features
 
-The ACE Card is a SPFX web part that displays dynamic content hosted on a Sharepoint list and filtered by the user's usageLocation property. Enabling you to display content based on the user's location and delegate the management of the content to the business users thanks to the Sharepoint list.
+The ACE Card is a SPFx web part that displays dynamic content hosted on a Sharepoint list and filtered by the user's usageLocation property. Enabling you to display content based on the user's location and delegate the management of the content to the business users thanks to the Sharepoint list.
 
 This extension illustrates the following concepts:
 
@@ -67,7 +67,6 @@ This extension illustrates the following concepts:
 - Cards Property Pane enable you to change its Name but also create the SPO list and columns for you and access it quickly once created
 - The card is designed to display URLs. Those URLs can be opened in Teams or on the device Native Browser. This enables you to leverage Universal Links and Deep Links to open the content in the right Application. For example view a PowerBi report directly in its Native Application or Open directly and Instagram page in the Instagram Application.
 - All Strings are stored in the loc folder enabling you to quickly adapt the text to your usecase and add extras languages.
-
 
 ## References
 
