@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "chart-card-page-creation-client-side-solution",
+    "id": "a2a76950-c4aa-480d-bbe9-b16c37607c4a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.19.0-beta.0"
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.Read.All"
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "chart-card-page-creation description"
+      },
+      "longDescription": {
+        "default": "chart-card-page-creation description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "chart-card-page-creation Feature",
+        "description": "The feature that activates elements of the chart-card-page-creation solution.",
+        "id": "f8e4346f-8469-40f5-94fc-0549c2e8a61c",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/chart-card-page-creation.sppkg"
+  }
+}
