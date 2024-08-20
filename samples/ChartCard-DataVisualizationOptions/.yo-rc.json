@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "18.20.4",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0-dev.96",
+    "libraryName": "data-visualization-cards",
+    "libraryId": "d7bd1e53-cc57-4436-bbf3-15643b34a10a",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "Data Visualization Cards",
+    "solutionShortDescription": "Data Visualization Cards description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "DataVisualization"
+  }
+}

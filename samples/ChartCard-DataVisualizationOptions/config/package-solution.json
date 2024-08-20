@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "data-visualization-cards-client-side-solution",
+    "id": "d7bd1e53-cc57-4436-bbf3-15643b34a10a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0-dev.96"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Data Visualization Cards description"
+      },
+      "longDescription": {
+        "default": "Data Visualization Cards description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "data-visualization-cards Feature",
+        "description": "The feature that activates elements of the data-visualization-cards solution.",
+        "id": "66226c09-380e-4587-8b11-317e318a9836",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/data-visualization-cards.sppkg"
+  }
+}

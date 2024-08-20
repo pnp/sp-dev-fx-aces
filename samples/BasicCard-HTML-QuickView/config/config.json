@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "html-quick-view-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/htmlQuickView/HtmlQuickViewAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/htmlQuickView/HtmlQuickViewAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HtmlQuickViewAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/htmlQuickView/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "line-chart-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/lineChart/LineChartAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/lineChart/LineChartAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    },
+    "bar-chart-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/barChart/BarChartAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/barChart/BarChartAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    },
+    "pie-chart-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/pieChart/PieChartAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/pieChart/PieChartAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    },
+    "donut-chart-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/donutChart/DonutChartAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/donutChart/DonutChartAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "LineChartAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/lineChart/loc/{locale}.js",
+    "BarChartAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/barChart/loc/{locale}.js",
+    "PieChartAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/pieChart/loc/{locale}.js",
+    "DonutChartAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/donutChart/loc/{locale}.js"
+  }
+}
