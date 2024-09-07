@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "chart-card-files-by-content-type-client-side-solution",
+    "id": "1ac895fb-8ac0-44ce-9b5a-61b9dba15ff4",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.ReadWrite.All"
+      }
+    ],
+    "developer": {
+      "name": "Aimery Thomas",
+      "websiteUrl": "https://athsharepoint.com/",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "chart-card-files-by-content-type description"
+      },
+      "longDescription": {
+        "default": "chart-card-files-by-content-type description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "chart-card-files-by-content-type Feature",
+        "description": "The feature that activates elements of the chart-card-files-by-content-type solution.",
+        "id": "6384c6ed-85b3-4abf-8604-d0aa88d4e25f",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/chart-card-files-by-content-type.sppkg"
+  }
+}
