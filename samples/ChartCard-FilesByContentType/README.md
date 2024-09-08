@@ -2,7 +2,7 @@
 
 ## Summary
 
-This Adaptive Card Extension display a pie chart showing documents of a selected document library by content type.
+This Adaptive Card Extension displays a pie chart showing documents of a selected document library by content type.
 
 Large view:
 
