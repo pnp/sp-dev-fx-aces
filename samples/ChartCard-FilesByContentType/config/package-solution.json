@@ -10,7 +10,7 @@
     "webApiPermissionRequests": [
       {
         "resource": "Microsoft Graph",
-        "scope": "Sites.ReadWrite.All"
+        "scope": "Sites.Read.All"
       }
     ],
     "developer": {
