@@ -55,7 +55,7 @@ This ACE allows you to display a list of FAQs. The FAQs are stored in the proper
 - in the command-line run:
   - **npm install**
   - **gulp serve**
-- Add the "Fequently Asked Quesiotns" ACE to the dashboard page
+- Add the "Fequently Asked Questions" ACE to the dashboard page
 - Edit the properties of the ACE as needed
 
 ## References
