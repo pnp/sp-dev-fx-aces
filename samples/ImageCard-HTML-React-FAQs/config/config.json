@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "frequently-asked-questions-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/frequentlyAskedQuestions/FrequentlyAskedQuestionsAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/frequentlyAskedQuestions/FrequentlyAskedQuestionsAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FrequentlyAskedQuestionsAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/frequentlyAskedQuestions/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/adaptive-card-extension-manifest.schema.json",
+  "id": "170411e1-e234-47b6-8ba4-7f8df74bdaa5",
+  "alias": "FrequentlyAskedQuestionsAdaptiveCardExte",
+  "componentType": "AdaptiveCardExtension",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportedHosts": ["Dashboard"],
+  "preconfiguredEntries": [{
+    "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
+    "group": { "default": "Dashboard" },
+    "title": { "default": "Frequently Asked Questions" },
+    "description": { "default": "Displays a list of frequently asked questions." },
+    "officeFabricIconFontName": "FeedbackRequestSolid",
+    "properties": {
+      "title": "FAQs",
+      "faqs" : [
+        {
+          "question": "What is SharePoint?",
+          "answer": "**SharePoint** is a web-based collaboration platform developed by Microsoft that facilitates <ul><li>document management,</li><li>team collaboration and</li><li> business process automation</li><ul>"
+        },
+        {
+          "question": "What is SharePoint used for?",
+          "answer": "SharePoint is used for document management, team collaboration, and business process automation."
+        },
+        {
+          "question": "What is the difference between SharePoint Online and On-Premises?",
+          "answer": "SharePoint Online is cloud-based with Microsoft handling updates; On-Premises is locally hosted with internal maintenance."
+        }
+      ]
+    },
+    "cardSize": "Large"
+  }]
+}

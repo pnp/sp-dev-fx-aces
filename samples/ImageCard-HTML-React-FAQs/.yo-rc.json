@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": true,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.20.4",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0-beta.0",
+    "libraryName": "image-card-faqs",
+    "libraryId": "ca1dda22-8cd0-441a-ad39-0bebdc995dd5",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "image-card-faqs",
+    "solutionShortDescription": "image-card-faqs description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic"
+  }
+}
