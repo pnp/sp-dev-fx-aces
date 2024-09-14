@@ -921,6 +921,70 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-chartcard-filesbycontenttype",
+    "source": "pnp",
+    "title": "Chart Card Files By Content Type",
+    "shortDescription": "This Adaptive Card Extension displays a pie chart showing documents of a selected document library by content type.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ChartCard-FilesByContentType",
+    "longDescription": [
+      "This Adaptive Card Extension displays a pie chart showing documents of a selected document library by content type. The sample uses the Microsoft Graph API to get the document library items and their content types."
+    ],
+    "creationDateTime": "2024-09-13",
+    "updateDateTime": "2024-09-13",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.20.0-beta.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ChartCard-FilesByContentType/assets/Large.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ChartCard-FilesByContentType/assets/Medium.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "a1mery",
+        "pictureUrl": "https://github.com/a1mery.png",
+        "name": "Aimery Thomas"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-page-creation",
     "source": "pnp",
     "title": "Bot-Powered-ACE Tasks",
@@ -1268,6 +1332,64 @@
         "name": "Viva Connections Extensibility guidance",
         "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
         "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  },
+  {
+    "name": "pnp-sp-fx-aces-imagecard-html-react-faqs",
+    "source": "pnp",
+    "title": "Frequently Asked Questions",
+    "shortDescription": "Displays a list of frequently asked questions.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-HTML-React-FAQs",
+    "longDescription": [
+      "This sample demonstrates how to create an Adaptive Card Extension that displays a list of frequently asked questions. The sample uses React to render the FAQs in the QuickView."
+    ],
+    "creationDateTime": "2024-09-13",
+    "updateDateTime": "2024-09-13",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.20.0-rc1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-HTML-React-FAQs/assets/demo.gif",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "anoopt",
+        "pictureUrl": "https://github.com/anoopt.png",
+        "name": "Anoop Tatti"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
       }
     ]
   },
