@@ -30,7 +30,7 @@ export class CardView extends BaseComponentsCardView<
       body: {
         componentName: 'dataVisualization',
         dataVisualizationKind: 'pie',
-        isDonut: true,
+        isDonut: false,
         series: [{
             data: this.state.filesNumberByCtP
         }]
