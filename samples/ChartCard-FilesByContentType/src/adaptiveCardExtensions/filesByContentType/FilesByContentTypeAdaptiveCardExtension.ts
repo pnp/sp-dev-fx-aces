@@ -1,19 +1,19 @@
 import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
-import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
+import { BaseAdaptiveCardExtension, IPieDataPoint } from '@microsoft/sp-adaptive-card-extension-base';
 import { CardView } from './cardView/CardView';
 import { FilesByContentTypePropertyPane } from './FilesByContentTypePropertyPane';
 import { QuickView } from './quickView/QuickView';
 import { FileService, IFileService } from '../FileService';
-import { GraphFiles, PieFileData } from '../types';
+import { GraphFiles } from '../types';
 
 export interface IFilesByContentTypeAdaptiveCardExtensionProps {
   title: string;
   siteAddress: string;
   listTitle: string;
-  filesNumberByCtP: PieFileData[]
 }
 
 export interface IFilesByContentTypeAdaptiveCardExtensionState {
+  filesNumberByCtP: IPieDataPoint[];
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'FilesByContentType_CARD_VIEW';
@@ -27,7 +27,9 @@ export default class FilesByContentTypeAdaptiveCardExtension extends BaseAdaptiv
   private _deferredPropertyPane: FilesByContentTypePropertyPane;
 
   public async onInit(): Promise<void> {
-    this.state = {};
+    this.state = {
+      filesNumberByCtP: []
+    };
     // registers the card view to be shown in a dashboard
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     // registers the quick view to open via QuickView action
@@ -37,16 +39,20 @@ export default class FilesByContentTypeAdaptiveCardExtension extends BaseAdaptiv
   }
 
   private async retrieveFiles(): Promise<void> {
-    let filesData: PieFileData[] = [];
+
     const service: IFileService = new FileService(this.context);
     const allFiles: GraphFiles = await service._getFiles(this.properties.siteAddress, this.properties.listTitle);
     const ctNames: string[] = allFiles.value.map((file) => file.contentType.name);
+
+    let filesData: IPieDataPoint[] = [];
     let uniqueNames = [...new Set(ctNames)];
     uniqueNames.forEach(ctName => {
       let currentCtCount = allFiles.value.filter(file => file.contentType.name === ctName);
-      filesData.push({ name: ctName, total: currentCtCount.length });
+      filesData.push({ x: ctName, y: currentCtCount.length });
     })
-    this.properties.filesNumberByCtP = filesData;
+    this.setState({
+      filesNumberByCtP: filesData
+    })
   }
 
 
