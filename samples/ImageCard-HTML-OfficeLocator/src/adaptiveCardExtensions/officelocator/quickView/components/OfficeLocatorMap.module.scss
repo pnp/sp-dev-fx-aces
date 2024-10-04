@@ -1,0 +1,30 @@
+.officeLocatorMapContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    background-color: #fbfbfb;
+}
+
+.locationsBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.locationsTags {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px 0;
+    .tag {
+        background-color: #ffffff;
+        color: #242424;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 500;
+        border: 1px solid #efefef;
+    }
+}
