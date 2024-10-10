@@ -11,7 +11,7 @@ import { Tag } from 'primereact/tag';
 import { Office } from '../../../types/main.types';
 import { Toast } from 'primereact/toast';
 import { Message } from 'primereact/message';
-import { shortenCityName } from '../helpers/stringHelper';
+import StringHelper from '../helpers/stringHelper';
 
 export interface IOfficeLocatorMap {
     subscriptionKey: string;
@@ -138,7 +138,7 @@ export const OfficeLocatorMap: React.FunctionComponent<IOfficeLocatorMap> = ({ s
                                     className={styles.tag}
                                     onClick={() => updateMapPosition(office.title)}
                                     icon="pi pi-map-marker"
-                                    value={shortenCityName(office.title)}
+                                    value={StringHelper.shortenCityName(office.title)}
                                 ></Tag>
                             ))}
                         </div>
