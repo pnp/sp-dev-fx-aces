@@ -10,6 +10,8 @@ import { useEffect, useRef } from 'react';
 import { Tag } from 'primereact/tag';
 import { Office } from '../../../types/main.types';
 import { Toast } from 'primereact/toast';
+import { Message } from 'primereact/message';
+import { shortenCityName } from '../helpers/stringHelper';
 
 export interface IOfficeLocatorMap {
     subscriptionKey: string;
@@ -21,7 +23,7 @@ export const OfficeLocatorMap: React.FunctionComponent<IOfficeLocatorMap> = ({ s
     const mapInstance = useRef<atlas.Map | null>(null);
     const toast = useRef<Toast>(null);
 
-    const showSuccess = (message:string) => {
+    const showSuccess = (message: string) => {
         if (toast?.current) {
             toast.current.show({ severity: 'success', summary: 'Success', detail: message, life: 3000 });
         }
@@ -43,7 +45,7 @@ export const OfficeLocatorMap: React.FunctionComponent<IOfficeLocatorMap> = ({ s
             });
         }
     };
-   
+
 
     // const menuItems = [
     //     {
@@ -117,18 +119,32 @@ export const OfficeLocatorMap: React.FunctionComponent<IOfficeLocatorMap> = ({ s
         };
     }, [subscriptionKey, offices]);
 
+
+
     return (
         <PrimeReactProvider>
             <div className={styles.officeLocatorMapContainer}>
                 <Toast ref={toast} />
-                <div className={styles.locationsTags}>
-                    <Tag rounded className={styles.tag} onClick={() => updateMapPosition('London')} icon="pi pi-map-marker" value="LON"></Tag>
-                    <Tag rounded className={styles.tag} onClick={() => updateMapPosition('Manchester')} icon="pi pi-map-marker" value="MAN"></Tag>
-                    <Tag rounded className={styles.tag} onClick={() => updateMapPosition('Reading')} icon="pi pi-map-marker" value="RDG"></Tag>
-                    <Tag rounded className={styles.tag} onClick={() => updateMapPosition('Milton Keynes')} icon="pi pi-map-marker" value="MK"></Tag>
 
-                </div>
-                <div ref={mapRef} style={{ height: '600px', width: '90%', margin: '25px 0' }} />
+                {(!subscriptionKey || offices === undefined || offices.length === 0) ? (
+                    <Message severity="warn" text="Please provide a valid Azure maps subscription key and ensure there are office locations available." />
+                ) : (
+                    <>
+                        <div className={styles.locationsTags}>
+                            {offices.map(office => (
+                                <Tag
+                                    key={office.title}
+                                    rounded
+                                    className={styles.tag}
+                                    onClick={() => updateMapPosition(office.title)}
+                                    icon="pi pi-map-marker"
+                                    value={shortenCityName(office.title)}
+                                ></Tag>
+                            ))}
+                        </div>
+                        <div ref={mapRef} style={{ height: '600px', width: '90%', margin: '25px 0' }} />
+                    </>
+                )}
             </div>
         </PrimeReactProvider>
     );

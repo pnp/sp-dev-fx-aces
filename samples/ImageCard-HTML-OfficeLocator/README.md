@@ -52,6 +52,27 @@ This ACE allows you to display office locations in a map using Azure Maps. The o
 
 ---
 
+## Prerequisites
+
+To use Azure Maps, you need to obtain an Azure Maps subscription key. Follow these high-level steps to get your subscription key:
+
+1. **Sign in to the Azure Portal**
+   - Go to [Azure Portal](https://portal.azure.com) and sign in with your Azure account.
+
+2. **Create an Azure Maps Account**
+   - In the Azure Portal, click on "Create a resource" and search for "Azure Maps".
+   - Click on "Azure Maps" and then click "Create".
+   - Fill in the required details such as Subscription, Resource Group, and Account Name.
+   - Click "Review + create" and then "Create".
+
+3. **Retrieve the Subscription Key**
+   - Once the Azure Maps account is created, navigate to the resource.
+   - In the Azure Maps account overview, you will find the "Keys" section.
+   - Click on "Keys" to view your primary and secondary subscription keys.
+   - Copy the primary subscription key for use in your application.
+
+
+
 ## Minimal Path to Awesome
 
 - Clone this repository

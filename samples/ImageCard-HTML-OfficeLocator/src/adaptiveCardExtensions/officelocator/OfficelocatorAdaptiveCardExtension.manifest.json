@@ -23,8 +23,9 @@
         "iconImageUrl": "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product-monoline/svg/vivaconnections_32x1.svg",
         "properties": {
             "title": "Office Locator",
-            "description": "Find and locate office spaces with interactive maps and informative popups."
-
+            "description": "Find and locate office spaces with interactive maps and informative popups.",
+            "offices": [],
+            "mapApiKey": ""
         },
         "cardSize": "Large"
     }]
