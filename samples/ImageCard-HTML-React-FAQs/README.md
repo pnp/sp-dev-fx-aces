@@ -21,7 +21,7 @@ This ACE allows you to display a list of FAQs. The FAQs are stored in the proper
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.20.0--rc.1-yellow.svg)
+![version](https://img.shields.io/badge/version-1.20.0-yellow.svg)
 
 ## Applies to
 
@@ -41,6 +41,7 @@ This ACE allows you to display a list of FAQs. The FAQs are stored in the proper
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | September 13, 2024 | Initial release |
+| 1.1     | October 04, 2024 | Updated to SPFx 1.20 |
 
 ## Disclaimer
 
