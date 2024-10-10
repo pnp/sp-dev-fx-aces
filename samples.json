@@ -1336,6 +1336,76 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-imagecard-html-officelocator",
+    "source": "pnp",
+    "title": "Office Locator - Adaptive Card Extension",
+    "shortDescription": "This Adaptive Card Extension (ACE) sample shows how to use HTML and React in an ACEs which was introduced in SPFx 1.20.0. This ACE allows you to display office locations in a map using Azure Maps. The office locations can be configured in the ACE property pane.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-HTML-OfficeLocator",
+    "longDescription": [
+      "This Adaptive Card extension (ACE) sample shows how to use HTML and React in an ACEs which was introduced in SPFx 1.20.0. This ACE allows you to display office locations in a map using Azure Maps. The office locations can be configured in the ACE property pane."
+    ],
+    "creationDateTime": "2024-10-10",
+    "updateDateTime": "2024-10-10",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.20.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-HTML-OfficeLocator/assets/demo.mp4",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-HTML-OfficeLocator/assets/demo-1.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-HTML-OfficeLocator/assets/demo-2.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "ejazhussain",
+        "pictureUrl": "https://github.com/ejazhussain.png",
+        "name": "Ejaz Hussain"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-imagecard-html-react-faqs",
     "source": "pnp",
     "title": "Frequently Asked Questions - Adaptive Card Extension",
