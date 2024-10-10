@@ -1,0 +1,38 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "O365C - ACE Office Locator",
+        "id": "1f0f7228-0373-4c08-a3ee-75e571d96c2b",
+        "version": "1.0.0.0",
+        "includeClientSideAssets": true,
+        "skipFeatureDeployment": true,
+        "isDomainIsolated": false,
+        "developer": {
+            "name": "",
+            "websiteUrl": "",
+            "privacyUrl": "",
+            "termsOfUseUrl": "",
+            "mpnId": "Undefined-1.20.0"
+        },
+        "metadata": {
+            "shortDescription": {
+                "default": "officelocator description"
+            },
+            "longDescription": {
+                "default": "O365C - ACE Office Locator description"
+            },
+            "screenshotPaths": [],
+            "videoUrl": "",
+            "categories": []
+        },
+        "features": [{
+            "title": "O365C - ACE Office Locator Feature",
+            "description": "The feature that activates elements of the O365C - ACE Office Locator solution.",
+            "id": "7a27f2aa-5550-469a-98b6-f9df4e6fedea",
+            "version": "1.0.0.0"
+        }]
+    },
+    "paths": {
+        "zippedPackage": "solution/o365c-ace-officelocator.sppkg"
+    }
+}
