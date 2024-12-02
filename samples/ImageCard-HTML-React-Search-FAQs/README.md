@@ -67,10 +67,11 @@ Version | Date        | Comments
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-repo/faq-search-ace.git
-   cd faq-search-ace
+   git clone https://github.com/pnp/sp-dev-fx-aces.git
 
-2. **Install dependencies:**
+2. Ensure that you are at the solution folder
+   
+4. **Install dependencies:**
 
    ```bash
    npm install 
@@ -85,7 +86,7 @@ Follow these steps to deploy the FAQ Search Adaptive Card Extension:
 
 1. **Pre-requisites:**
    - Ensure you have the correct [SPFx development environment](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment) set up.
-   - Install Node.js LTS (v16.x).
+   - Install Node.js (v18.19.x) or above.
 
 2. **Build the solution:**
    - Clone the repository to your local machine.
