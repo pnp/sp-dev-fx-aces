@@ -3,7 +3,7 @@
   "solution": {
     "name": "input-card-status-message-client-side-solution",
     "id": "5bd0d1dc-2938-4def-ba1b-4f75ec95116d",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

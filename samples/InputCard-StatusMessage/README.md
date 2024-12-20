@@ -19,7 +19,7 @@ Demo:
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.18.0-green.svg)
+![version](https://img.shields.io/badge/version-1.20.0-green.svg)
 ![Node.js LTS 18.x](https://img.shields.io/badge/Node.js-LTS%2018.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 
@@ -45,6 +45,7 @@ Demo:
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | October 07, 2023 | Initial release |
+| 1.1     | December 20, 2024 | Upgrade to SPFx 1.20 |
 
 ## Disclaimer
 
