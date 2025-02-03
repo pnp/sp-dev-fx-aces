@@ -1,0 +1,1 @@
+{"version":3,"file":"QuickView.d.ts","sourceRoot":"","sources":["../../../../src/adaptiveCardExtensions/reactQuickView/quickView/QuickView.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,MAAM,4CAA4C,CAAC;AAE9E,OAAO,EACL,yCAAyC,EACzC,yCAAyC,EAC1C,MAAM,wCAAwC,CAAC;AAKhD,qBAAa,SAAU,SAAQ,gBAAgB,CAC7C,yCAAyC,EACzC,yCAAyC,CAC1C;IACQ,MAAM,IAAI,IAAI;CAYtB"}

@@ -1,0 +1,2 @@
+"use strict";(self["webpackJsonp_9de5431e-069e-4a2b-bd66-6dc732349d9f_0.0.1"]=self["webpackJsonp_9de5431e-069e-4a2b-bd66-6dc732349d9f_0.0.1"]||[]).push([[633],{557:(e,t,n)=>{n.r(t),n.d(t,{ReactQuickViewPropertyPane:()=>r});var a=n(723),i=n(159),r=function(){function e(){}return e.prototype.getPropertyPaneConfiguration=function(){return{pages:[{header:{description:i.PropertyPaneDescription},groups:[{groupFields:[(0,a.PropertyPaneTextField)("title",{label:i.TitleFieldLabel}),(0,a.PropertyPaneTextField)("listName",{label:i.ListNameFieldLabel})]}]}]}},e}()}
+}]);
