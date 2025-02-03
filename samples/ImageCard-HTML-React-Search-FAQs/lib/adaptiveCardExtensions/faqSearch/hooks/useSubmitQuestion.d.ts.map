@@ -1,0 +1,1 @@
+{"version":3,"file":"useSubmitQuestion.d.ts","sourceRoot":"","sources":["../../../../src/adaptiveCardExtensions/faqSearch/hooks/useSubmitQuestion.ts"],"names":[],"mappings":"AAIA,MAAM,WAAW,oBAAoB;IACnC,QAAQ,EAAE,MAAM,CAAC;IACjB,QAAQ,EAAE,MAAM,CAAC;CAClB;AAED,eAAO,MAAM,iBAAiB,YAAa,GAAG,WAAW,MAAM,YAAY,MAAM;6CAM9C,oBAAoB;;;;;CAoCtD,CAAC"}

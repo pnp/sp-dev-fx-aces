@@ -1,0 +1,104 @@
+{
+  "id": "2ad9aae0-3d78-49ca-b810-6258aa348ceb",
+  "alias": "FaqSearchAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "Dashboard"
+  ],
+  "preconfiguredEntries": [
+    {
+      "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c",
+      "group": {
+        "default": "Dashboard"
+      },
+      "title": {
+        "default": "FAQs Search Card"
+      },
+      "officeFabricIconFontName": "SearchIssue",
+      "description": {
+        "default": "FaqSearch description"
+      },
+      "iconImageUrl": "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product-monoline/svg/vivaconnections_32x1.svg",
+      "properties": {
+        "title": "FAQs"
+      },
+      "cardSize": "Large"
+    }
+  ],
+  "loaderConfig": {
+    "internalModuleBaseUrls": [
+      "<!-- PATH TO CDN -->"
+    ],
+    "entryModuleId": "faq-search-adaptive-card-extension",
+    "scriptResources": {
+      "faq-search-adaptive-card-extension": {
+        "type": "path",
+        "path": "faq-search-adaptive-card-extension_523c62827ca19f623dd8.js"
+      },
+      "@microsoft/sp-adaptive-card-extension-base": {
+        "type": "component",
+        "id": "eeec822e-c28a-46b4-affc-7058e4c1aa80",
+        "version": "1.20.0"
+      },
+      "FaqSearchAdaptiveCardExtensionStrings": {
+        "type": "path",
+        "path": "FaqSearchAdaptiveCardExtensionStrings_en-us_d8c46cd646e0ac8a4e5850ad753e99c4.js"
+      },
+      "react": {
+        "type": "component",
+        "id": "0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d",
+        "version": "17.0.1"
+      },
+      "react-dom": {
+        "type": "component",
+        "id": "aa0a46ec-1505-43cd-a44a-93f3a5aa460a",
+        "version": "17.0.1"
+      },
+      "PropertyControlStrings": {
+        "type": "localizedPath",
+        "paths": {
+          "ar-SA": "PropertyControlStrings_ar-sa_4099cfd31bffb6b008893b8af81d4e79.js",
+          "bg-BG": "PropertyControlStrings_bg-bg_11556f72b00f89b934c2c406e7bae6d1.js",
+          "ca-ES": "PropertyControlStrings_ca-es_d4975ed84011233967d3647520146ee1.js",
+          "cs-CZ": "PropertyControlStrings_cs-cz_3e2d907eae89d34c1092e1740c692be8.js",
+          "da-DK": "PropertyControlStrings_da-dk_46d1a7bee65562a9a2430545724db036.js",
+          "de-DE": "PropertyControlStrings_de-de_ed437f42ec73133fa76836ee076c2bf0.js",
+          "el-GR": "PropertyControlStrings_el-gr_6e80822d9c9d9117c8c946fe5588c7ac.js",
+          "en-GB": "PropertyControlStrings_en-gb_4b33164c3d9f733b560ad7c45791f86b.js",
+          "en-US": "PropertyControlStrings_en-us_78c14b607ac07180888cba239e27ebb4.js",
+          "es-ES": "PropertyControlStrings_es-es_e5d71c4dda9cfa46e7548fd8536f2bd2.js",
+          "et-EE": "PropertyControlStrings_et-ee_ae75c37124ea4cd6f43c071ce2ff4803.js",
+          "fi-FI": "PropertyControlStrings_fi-fi_2f609be9168d85d5ade578285e68b415.js",
+          "fr-FR": "PropertyControlStrings_fr-fr_2aa2c695bbb11c83d4b5f440347c3287.js",
+          "it-IT": "PropertyControlStrings_it-it_b97c28bb8072172357e20b34340b8576.js",
+          "ja-JP": "PropertyControlStrings_ja-jp_e869f247c2fc5cd51ce25736fc2c5dc3.js",
+          "lt-LT": "PropertyControlStrings_lt-lt_90ef57140fd91197c3838fdd5f6e220e.js",
+          "lv-LV": "PropertyControlStrings_lv-lv_e137dbda9edf9f9d395e7b8a3c0f643d.js",
+          "nb-NO": "PropertyControlStrings_nb-no_4033e36383a00d3122e2ff6edfdf7ff7.js",
+          "nl-NL": "PropertyControlStrings_nl-nl_cc0b35b835ffd5040ac56e491cb39490.js",
+          "no": "PropertyControlStrings_no_97bb5be416e3748b00013cb73f9632c4.js",
+          "pl-PL": "PropertyControlStrings_pl-pl_c8814266ff0b2f83f6a18f7ae649efb5.js",
+          "pt-PT": "PropertyControlStrings_pt-pt_4249f19533cfcc102f330e16656db65f.js",
+          "ro-RO": "PropertyControlStrings_ro-ro_f3fd704074cb08d6a73b0b4133629c2e.js",
+          "ru-RU": "PropertyControlStrings_ru-ru_cf0f1700fb5153adafc00e9eb3362a03.js",
+          "sk-SK": "PropertyControlStrings_sk-sk_c03e8bef72db1887f5518baf9be67123.js",
+          "sr-Latn-RS": "PropertyControlStrings_sr-latn-rs_3ceac5b781858574753bb6d249c5f9ac.js",
+          "sv-SE": "PropertyControlStrings_sv-se_7105ccf832f983e12acc3856e6172633.js",
+          "tr-TR": "PropertyControlStrings_tr-tr_9793c9199b9714c93eef13e6d74ab995.js",
+          "vi-VN": "PropertyControlStrings_vi-vn_9ddefbdef65a6ecb6772f8d552b12580.js",
+          "zh-CN": "PropertyControlStrings_zh-cn_7558cf62f3f732ae3c2df11af61fa7c2.js",
+          "zh-TW": "PropertyControlStrings_zh-tw_d537875a4aafc6202323e27f8714311e.js"
+        },
+        "defaultPath": "PropertyControlStrings_en-us_78c14b607ac07180888cba239e27ebb4.js"
+      },
+      "@microsoft/sp-loader": {
+        "type": "component",
+        "id": "1c6c9123-7aac-41f3-a376-3caea41ed83f",
+        "version": "1.19.0"
+      }
+    }
+  }
+}
