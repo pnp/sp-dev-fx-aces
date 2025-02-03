@@ -16,7 +16,6 @@ Demo:
 
 ![Demo](./assets/StatusMessageGif.gif)
 
-
 ## Used SharePoint Framework Version
 
 ![version](https://img.shields.io/badge/version-1.20.0-green.svg)
@@ -72,7 +71,7 @@ Demo:
 
 ## Features
 
-This sample demonstrates how to use new SPFx v1.18 ACE feature to add text input in the card and use it to set presence status message.
+This sample demonstrates how to use new SPFx v1.20 ACE feature to add text input in the card and use it to set presence status message.
 
 ## References
 
