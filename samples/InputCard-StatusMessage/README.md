@@ -16,10 +16,9 @@ Demo:
 
 ![Demo](./assets/StatusMessageGif.gif)
 
-
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.18.0-green.svg)
+![version](https://img.shields.io/badge/version-1.20.0-green.svg)
 ![Node.js LTS 18.x](https://img.shields.io/badge/Node.js-LTS%2018.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 
@@ -45,6 +44,7 @@ Demo:
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | October 07, 2023 | Initial release |
+| 1.1     | December 20, 2024 | Upgrade to SPFx 1.20 |
 
 ## Disclaimer
 
@@ -71,7 +71,7 @@ Demo:
 
 ## Features
 
-This sample demonstrates how to use new SPFx v1.18 ACE feature to add text input in the card and use it to set presence status message.
+This sample demonstrates how to use new SPFx v1.20 ACE feature to add text input in the card and use it to set presence status message.
 
 ## References
 
