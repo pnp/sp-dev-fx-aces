@@ -2771,7 +2771,7 @@
       "This sample shows how to build an ACE with a card view to let users to set their presence status message."
     ],
     "creationDateTime": "2023-10-10",
-    "updateDateTime": "2023-10-10",
+    "updateDateTime": "2024-12-20",
     "products": [
       "SharePoint",
       "Viva"
@@ -2783,7 +2783,7 @@
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.18.0"
+        "value": "1.20.0"
       }
     ],
     "thumbnails": [
