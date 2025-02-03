@@ -27,7 +27,6 @@ For a detailed step-by-step guide, visit the author's [Step-by-Step Guide to Bui
 | ------------------------- | --------------- |
 | BasicCard-React-QuickView | Ahmad Jad Alhak  [GitHub](https://github.com/ahmad-jad-alhak), [Blog - Hashnode](https://ahmadjadalhak.hashnode.dev)|
 
-
 ## Version history
 
 | Version | Date             | Comments        |
@@ -68,16 +67,19 @@ For a detailed step-by-step guide, visit the author's [Step-by-Step Guide to Bui
 
 4. **Run the Project in Workbench:**:
   To run the web part locally in the SharePoint Workbench, use:
+
    ```bash
    gulp serve
    ```
 
 5. **Bundle and Deploy:**:
   If you’re ready to deploy the solution to a SharePoint site, follow these steps:
+
    ```bash
    gulp bundle --ship
    gulp package-solution --ship
    ```
+
 Then upload the generated `.sppkg` file to your SharePoint App Catalog and install the solution on your site.
 
 ## How It Works
@@ -99,7 +101,6 @@ This project focuses on creating an **Adaptive Card Extension (ACE)** where the 
 
 - **Modify List Name**: The list name used in the Quick View can be customized to fetch data from any SharePoint list of your choosing. Simply update the `listName` prop passed to the `QuickViewComponent`.
 
-
 ## Technologies Used
 
 - **SPFx 1.20**: Latest version of SharePoint Framework, which introduces support for React in Quick View.
@@ -107,13 +108,11 @@ This project focuses on creating an **Adaptive Card Extension (ACE)** where the 
 - **PnPjs**: Simplified API wrapper for interacting with SharePoint data.
 - **TypeScript**: Strongly typed programming language used throughout the project.
 
-This project is licensed under the MIT Licens
-
+This project is licensed under the MIT License
 
 ## Disclaimer
 
 **THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
 
 ## References
 
@@ -122,4 +121,5 @@ This project is licensed under the MIT Licens
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
-````
+
+<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/BasicCard-HTML-React-QuickView" />

@@ -1,0 +1,67 @@
+{
+  "id": "9de5431e-069e-4a2b-bd66-6dc732349d9f",
+  "alias": "ReactQuickViewAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "Dashboard"
+  ],
+  "preconfiguredEntries": [
+    {
+      "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c",
+      "group": {
+        "default": "Dashboard"
+      },
+      "title": {
+        "default": "ReactQuickView"
+      },
+      "description": {
+        "default": "ReactQuickView description"
+      },
+      "iconImageUrl": "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product-monoline/svg/vivaconnections_32x1.svg",
+      "properties": {
+        "title": "React Quick View",
+        "listName": ""
+      },
+      "cardSize": "Large"
+    }
+  ],
+  "loaderConfig": {
+    "internalModuleBaseUrls": [
+      "<!-- PATH TO CDN -->"
+    ],
+    "entryModuleId": "react-quick-view-adaptive-card-extension",
+    "scriptResources": {
+      "react-quick-view-adaptive-card-extension": {
+        "type": "path",
+        "path": "react-quick-view-adaptive-card-extension_c589fad14b3e5deafa26.js"
+      },
+      "@microsoft/sp-adaptive-card-extension-base": {
+        "type": "component",
+        "id": "eeec822e-c28a-46b4-affc-7058e4c1aa80",
+        "version": "1.20.0"
+      },
+      "ReactQuickViewAdaptiveCardExtensionStrings": {
+        "type": "path",
+        "path": "ReactQuickViewAdaptiveCardExtensionStrings_en-us_f1972961295009f3ec8defbf46f6ac39.js"
+      },
+      "react": {
+        "type": "component",
+        "id": "0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d",
+        "version": "17.0.1"
+      },
+      "react-dom": {
+        "type": "component",
+        "id": "aa0a46ec-1505-43cd-a44a-93f3a5aa460a",
+        "version": "17.0.1"
+      },
+      "@microsoft/sp-loader": {
+        "type": "component",
+        "id": "1c6c9123-7aac-41f3-a376-3caea41ed83f",
+        "version": "1.20.0"
+      }
+    }
+  }
+}
