@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "faqs-search-client-side-solution",
+    "id": "ed4f5b75-10af-4491-9faf-5dc26f9410dd",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "faqs-search description"
+      },
+      "longDescription": {
+        "default": "faqs-search description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "faqs-search Feature",
+        "description": "The feature that activates elements of the faqs-search solution.",
+        "id": "cfaea834-59df-4681-ba3c-461ec8b18e3a",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/faqs-search.sppkg"
+  }
+}
