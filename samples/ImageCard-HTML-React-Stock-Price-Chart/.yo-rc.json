@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.20.5",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "imagecard-html-react-stock-price",
+    "libraryId": "7f66d471-29a4-4389-bfbe-fa11db7e8b9c",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "imagecard-html-react-stock-price",
+    "solutionShortDescription": "imagecard-html-react-stock-price description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic"
+  }
+}

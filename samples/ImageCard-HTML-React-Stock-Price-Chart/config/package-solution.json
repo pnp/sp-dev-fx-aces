@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "imagecard-html-react-stock-price-client-side-solution",
+    "id": "7f66d471-29a4-4389-bfbe-fa11db7e8b9c",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "imagecard-html-react-stock-price description"
+      },
+      "longDescription": {
+        "default": "imagecard-html-react-stock-price description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "imagecard-html-react-stock-price Feature",
+        "description": "The feature that activates elements of the imagecard-html-react-stock-price solution.",
+        "id": "bb52ed41-1cd6-427d-9a5d-888cf697f0bf",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/imagecard-html-react-stock-price.sppkg"
+  }
+}
