@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "stockprice-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/stockprice/StockpriceAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/stockprice/StockpriceAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "StockpriceAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/stockprice/loc/{locale}.js"
+  }
+}
