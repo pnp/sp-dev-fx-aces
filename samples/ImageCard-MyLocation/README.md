@@ -1,4 +1,4 @@
-# ace-my-location
+# ImageCard-MyLocation
 
 ## Summary
 
@@ -31,7 +31,7 @@ This Adaptive Card Extension (ACE) creates a dynamic link based on the user offi
 
 | Solution    | Author(s)                                               |
 | ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+| ImageCard-MyLocation | Lukas Bänsch, Communardo, [LinkedIn](https://de.linkedin.com/in/lukas-b%C3%A4nsch-322610104) |
 
 ## Version history
 
