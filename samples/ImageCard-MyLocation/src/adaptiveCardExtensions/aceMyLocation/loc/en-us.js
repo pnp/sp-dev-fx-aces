@@ -1,11 +1,10 @@
 define([], function() {
   return {
-    "PropertyPaneDescription": "Write 1-3 sentences describing the functionality of this component.",
+    "PropertyPaneDescription": "This ACE acts as a dynamic quicklink for the current user based on their location or group membership",
     "TitleFieldLabel": "Card title",
     "Title": "Adaptive Card Extension",
-    "SubTitle": "Quick view",
+    "SubTitle": "",
     "PrimaryText": "SPFx Adaptive Card Extension",
-    "Description": "Create your SPFx Adaptive Card Extension solution!",
-    "QuickViewButton": "Quick view"
+    "Description": "",
   }
 });

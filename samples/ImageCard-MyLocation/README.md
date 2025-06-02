@@ -37,8 +37,7 @@ This Adaptive Card Extension (ACE) creates a dynamic link based on the user offi
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
+| 1.0     | June 2, 2025 | Initial release |
 
 ## Disclaimer
 

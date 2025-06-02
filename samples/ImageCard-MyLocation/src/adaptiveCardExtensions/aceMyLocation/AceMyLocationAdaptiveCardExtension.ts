@@ -12,13 +12,14 @@ import { User } from '@microsoft/microsoft-graph-types';
 
 export interface IAceMyLocationAdaptiveCardExtensionProps {
   title: string;
+  siteUrl: string;
   listGUID: string;
-  imageUrl?: string;
+  defaultImageUrl?: string;
   description?: string;
   defaultUrl?:string;
   defaultLocationName?:string;
   mode: "officeLocation" | "groupMembership";
-  fabricIconName?: string;        
+  fabricIconName?: string; 
 }
 
 export interface IAceMyLocationAdaptiveCardExtensionState {
@@ -33,6 +34,10 @@ interface ILocationListItem {
   imageURL?: string;
 }
 
+interface IGraphGroup {
+  id: string;
+}
+
 export const CARD_VIEW_REGISTRY_ID: string = 'AceMyLocation_CARD_VIEW';
 export const QUICK_VIEW_REGISTRY_ID: string = 'AceMyLocation_QUICK_VIEW';
 
@@ -41,14 +46,16 @@ export default class AceMyLocationAdaptiveCardExtension extends BaseAdaptiveCard
   IAceMyLocationAdaptiveCardExtensionState
 > {
   private _deferredPropertyPane: AceMyLocationPropertyPane;
-  private sp: SPFI;
+  private spSite: SPFI;
 
   public async onInit(): Promise<void> {
   this.state = {
-    imageUrl: this.properties.imageUrl
+    imageUrl: this.properties.defaultImageUrl
   };
 
-  this.sp = spfi().using(SPFx(this.context));
+  const rawSiteUrl = this.properties.siteUrl?.trim();
+  const siteUrl = rawSiteUrl || this.context.pageContext.web.absoluteUrl;
+  this.spSite = spfi(siteUrl).using(SPFx(this.context));
 
   let item: ILocationListItem | null = null;
 
@@ -57,11 +64,11 @@ export default class AceMyLocationAdaptiveCardExtension extends BaseAdaptiveCard
   } else {
     item = await this._getListItemByOfficeLocation();
   }
-
+  
   if (item) {
     this.setState({
       officeUrl: item.URL,
-      imageUrl: item.imageURL || this.properties.imageUrl,
+      imageUrl: item.imageURL || this.properties.defaultImageUrl,
       locationName: item.Title
     });
   }
@@ -91,8 +98,9 @@ export default class AceMyLocationAdaptiveCardExtension extends BaseAdaptiveCard
   try {
     const graphClient = await this.context.msGraphClientFactory.getClient("3");
     const response = await graphClient.api('/me/memberOf').get();
+    const groups: IGraphGroup[] = response.value;
 
-    const userGroupIds: string[] = response.value.map((group: any) => group.id);
+    const userGroupIds: string[] = groups.map(group => group.id);
 
     if (userGroupIds.length === 0) return null;
 
@@ -102,7 +110,7 @@ export default class AceMyLocationAdaptiveCardExtension extends BaseAdaptiveCard
     // Build OData filter for group IDs
     const filterString = userGroupIds.map(id => `GroupId eq '${id}'`).join(" or ");
 
-    const items = await this.sp.web.lists.getById(listGUID).items
+    const items = await this.spSite.web.lists.getById(listGUID).items
       .filter(filterString)
       .select("Title", "URL", "imageURL", "GroupId")
       .top(1)();
@@ -122,7 +130,7 @@ export default class AceMyLocationAdaptiveCardExtension extends BaseAdaptiveCard
     if (!listGUID) return null;
 
     try {
-      const items = await this.sp.web.lists.getById(listGUID).items
+      const items = await this.spSite.web.lists.getById(listGUID).items
         .filter(`Title eq '${officeLocation}'`)
         .select("Title", "URL", "imageURL")
         .top(1)();
