@@ -5,9 +5,9 @@
     "nodeVersion": "18.18.0",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.12.0"
+      "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.18.0",
+    "version": "1.21.1",
     "libraryName": "input-card-generic-new-item",
     "libraryId": "9396c1d0-c85a-4657-8ace-2e7271aaba93",
     "environment": "spo",
