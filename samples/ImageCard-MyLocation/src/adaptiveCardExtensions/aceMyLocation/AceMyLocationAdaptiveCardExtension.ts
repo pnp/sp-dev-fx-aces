@@ -96,6 +96,37 @@ export default class AceMyLocationAdaptiveCardExtension extends BaseAdaptiveCard
 
   private async _getListItemByGroupMembership(): Promise<ILocationListItem | null> {
   try {
+    // 1. Get user's AAD groups
+    const graphClient = await this.context.msGraphClientFactory.getClient("3");
+    const response = await graphClient.api('/me/memberOf').get();
+    const aadGroups: IGraphGroup[] = response.value;
+    if (aadGroups.length === 0) return null;
+
+    // 2. Extract the AAD group IDs
+    const userGroupIds = aadGroups.map(g => g.id.toLowerCase());
+
+    // 3. Retrieve all list items (or use paging if large)
+    const listGUID = this.properties.listGUID;
+    if (!listGUID) return null;
+
+    // Fetch all items with the GroupId field
+    const items = await this.spSite.web.lists.getById(listGUID).items
+      .select("Title", "URL", "imageURL", "GroupId")
+      .top(2000)(); //take 2000 items from list
+
+    // 4. Find the first item whose GroupId matches one of the user's groups
+    const matchedItem = items.find(item => item.GroupId && userGroupIds.includes(item.GroupId.toLowerCase()));
+
+    return matchedItem || null;
+
+  } catch (error) {
+    console.error("Error in _getListItemByGroupMembership:", error);
+    return null;
+  }
+}
+
+  /*private async _getListItemByGroupMembership(): Promise<ILocationListItem | null> {
+  try {
     const graphClient = await this.context.msGraphClientFactory.getClient("3");
     const response = await graphClient.api('/me/memberOf').get();
     const groups: IGraphGroup[] = response.value;
@@ -120,7 +151,7 @@ export default class AceMyLocationAdaptiveCardExtension extends BaseAdaptiveCard
     console.error("Error in _getListItemByGroupMembership (with filter):", error);
     return null;
   }
-}
+}*/
   
   private async _getListItemByOfficeLocation(): Promise<ILocationListItem | null> {
     const officeLocation = await this._getOfficeLocation();

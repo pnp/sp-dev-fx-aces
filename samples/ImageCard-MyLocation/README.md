@@ -25,7 +25,7 @@ This Adaptive Card Extension (ACE) creates a dynamic link based on the user offi
   - **Title** (Location name / Title)  
   - **URL** (link to office or resource)  
   - **imageURL** (optional image for display)
-  - **GroupID** (optional if using the Group Membership mode)
+  - **GroupId** (optional if using the Group Membership mode)
 
 ## Solution
 
