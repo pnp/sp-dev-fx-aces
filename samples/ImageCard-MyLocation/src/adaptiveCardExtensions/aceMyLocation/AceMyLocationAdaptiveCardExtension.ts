@@ -124,34 +124,6 @@ export default class AceMyLocationAdaptiveCardExtension extends BaseAdaptiveCard
     return null;
   }
 }
-
-  /*private async _getListItemByGroupMembership(): Promise<ILocationListItem | null> {
-  try {
-    const graphClient = await this.context.msGraphClientFactory.getClient("3");
-    const response = await graphClient.api('/me/memberOf').get();
-    const groups: IGraphGroup[] = response.value;
-
-    const userGroupIds: string[] = groups.map(group => group.id);
-
-    if (userGroupIds.length === 0) return null;
-
-    const listGUID = this.properties.listGUID;
-    if (!listGUID) return null;
-
-    // Build OData filter for group IDs
-    const filterString = userGroupIds.map(id => `GroupId eq '${id}'`).join(" or ");
-
-    const items = await this.spSite.web.lists.getById(listGUID).items
-      .filter(filterString)
-      .select("Title", "URL", "imageURL", "GroupId")
-      .top(1)();
-
-    return items.length > 0 ? items[0] : null;
-  } catch (error) {
-    console.error("Error in _getListItemByGroupMembership (with filter):", error);
-    return null;
-  }
-}*/
   
   private async _getListItemByOfficeLocation(): Promise<ILocationListItem | null> {
     const officeLocation = await this._getOfficeLocation();
