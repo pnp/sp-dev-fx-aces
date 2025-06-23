@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.15.0",
+    "sdksVersions": {},
+    "version": "1.21.0-rc.0",
+    "libraryName": "ace-my-location",
+    "libraryId": "5f99ec50-e40c-4c21-b04a-fa82280a70bc",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "ace-my-location",
+    "solutionShortDescription": "ace-my-location description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic"
+  }
+}

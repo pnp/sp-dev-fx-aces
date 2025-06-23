@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/adaptive-card-extension-manifest.schema.json",
+  "id": "a7cc5f92-621d-45ec-b200-5bd69ba943ea",
+  "alias": "AceMyLocationAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+
+
+  "version": "*",
+  "manifestVersion": 2,
+
+
+  "requiresCustomScript": false,
+  "supportedHosts": ["Dashboard"],
+  "preconfiguredEntries": [{
+    "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", 
+    "group": { "default": "Dashboard" },
+    "title": { "default": "ACEMyLocation" },
+    "description": { "default": "ACEMyLocation description" },
+    "officeFabricIconFontName":"Home",
+    "properties": {
+      "title": "ACEMyLocation"
+    },
+    "cardSize": "Medium"
+  }]
+}
