@@ -1,0 +1,53 @@
+[{
+    "name": "pnp-sp-fx-aces-imagecard-mylocation",
+    "source": "pnp",
+    "title": "My Location - Adaptive Card Extension",
+    "shortDescription": "This Adaptive Card Extension (ACE) creates a dynamic link based on the user officeLocation or group membership and shows a dynamic image + text.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-MyLocation",
+    "longDescription": [
+      "This Adaptive Card Extension (ACE) creates a dynamic link based on the user officeLocation or group membership and shows a dynamic image + text."
+    ],
+    "creationDateTime": "2025-06-02",
+    "updateDateTime": "2025-06-02",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [{
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.21.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-MyLocation/assets/MyLocation.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [{
+      "gitHubAccount": "7l0uk",
+      "pictureUrl": "https://github.com/7l0uk.png",
+      "name": "Lukas Bänsch"
+    }],
+    "references": [{
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      }, {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  }]
