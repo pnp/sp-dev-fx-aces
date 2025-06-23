@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "Service Health",
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic",
+    "componentName": "M365 Service Health",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.14.0",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "service-health",
+    "libraryId": "3afbf950-134f-4452-bfa5-d3bf0a852f1f",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionShortDescription": "Service Health description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}

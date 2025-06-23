@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/adaptive-card-extension-manifest.schema.json",
+  "id": "7408cb3f-5364-4d84-9342-9ede315cbed2",
+  "alias": "M365ServiceHealthAdaptiveCardExtension",
+  "componentType": "AdaptiveCardExtension",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportedHosts": ["Dashboard" ],
+  "preconfiguredEntries": [{
+    "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
+    "group": { "default": "Dashboard" },
+    "title": { "default": "M365 Service Health" },
+    "description": { "default": "M365 Service Health" },
+    "iconImageUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOCAxOCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iOC42NiIgeTE9IjE3LjEyIiB4Mj0iOC42NiIgeTI9IjEuMDMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxOTg4ZDkiLz48c3RvcCBvZmZzZXQ9Ii4yMiIgc3RvcC1jb2xvcj0iIzIxOGRkYyIvPjxzdG9wIG9mZnNldD0iLjU2IiBzdG9wLWNvbG9yPSIjMzc5Y2U1Ii8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzU0YWVmMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik04LjY2IDE3LjEyYzguMTgtNS44NiA4LjQ2LTkuMjggOC40OS0xMC4zNS4wNS0xLjUtLjE1LTUuNDEtNC4xNS01LjcyQTQuMjYgNC4yNiAwIDAwOC42NiAzLjlhNC4yOCA0LjI4IDAgMDAtNC4zOS0yLjg1Qy4zMiAxLjM2LjExIDUuMjcuMTYgNi43N2MwIDEuMDcuMzIgNC40OSA4LjUgMTAuMzUiIGZpbGw9InVybCgjYSkiLz48cGF0aCBkPSJNMTcuMTUgNi43N0MxNy4yIDUuMjcgMTcgMS4zNiAxMyAxLjA1QTQuMjYgNC4yNiAwIDAwOC42NiAzLjlhNC4yOCA0LjI4IDAgMDAtNC4zOS0yLjg1Qy4zMiAxLjM2LjExIDUuMjcuMTYgNi43N2MwIDEuMDcuMjQgNC40NCA4LjQzIDEwLjMiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMTcuMTUgNi4xOGgtNGEuMTcuMTcgMCAwMC0uMTMuMDdsLTEuMjEgMi4wOWEuMTYuMTYgMCAwMS0uMjcgMEw5LjgxIDUuMDVhLjMxLjMxIDAgMDAtLjU2IDBMNy41OSAxMGEuMTYuMTYgMCAwMS0uMjkgMEw1Ljg4IDYuNzFhLjMxLjMxIDAgMDAtLjU1IDBMMy4zOSAxMC4yYS4xNi4xNiAwIDAxLS4xMy4wOEgxLjQyYTEzIDEzIDAgMDAuOSAxLjIySDRhLjEzLjEzIDAgMDAuMTMtLjA4bDEuMjEtMi4yM2EuMTYuMTYgMCAwMS4yOCAwbDEuNjYgMy44NmEuMzEuMzEgMCAwMC41OCAwbDEuNzUtNS4yYS4xNS4xNSAwIDAxLjI4IDBsMS40NiAyLjc3YS4zLjMgMCAwMC41MyAwbDEuODYtMy4xM2EuMTYuMTYgMCAwMS4xMy0uMDhoMy4yMyIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==",
+     
+    "properties": {
+      "title": "Service Health",
+       "scope": "Admins"
+    },
+    "cardSize": "Medium"
+   
+  }]
+}
