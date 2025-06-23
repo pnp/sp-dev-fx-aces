@@ -3,7 +3,7 @@
   "solution": {
     "name": "input-card-generic-new-item-client-side-solution",
     "id": "9396c1d0-c85a-4657-8ace-2e7271aaba93",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
