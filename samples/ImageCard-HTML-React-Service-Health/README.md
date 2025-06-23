@@ -11,9 +11,9 @@ SPFx ACE Service Health is a SharePoint Framework (SPFx) extension designed to m
 - **Detailed Status Labels:** Friendly labels for each service state (e.g., Operational, Investigating, Degradation, Interruption).
 
 ![Service Health Dashboard](./src/assets/serviceHealth01.png "Service Health Dashboard")
-![Service Health Dashboard](./src/assets/serviceHealth02.png "Service Health Dashboard Mobile")
-![Service Health Dashboard](./src/assets/serviceHealth03.png "Service Health Dashboard Mobile")
-![Service Health Dashboard](./src/assets/serviceHealth04.png "Service Health Dashboard Mobile")
+![Service Health Dashboard](./src/assets/serviceHealth02.PNG "Service Health Dashboard Mobile")
+![Service Health Dashboard](./src/assets/serviceHealth03.PNG "Service Health Dashboard Mobile")
+![Service Health Dashboard](./src/assets/serviceHealth04.PNG "Service Health Dashboard Mobile")
 
 ## Technologies Used
 
