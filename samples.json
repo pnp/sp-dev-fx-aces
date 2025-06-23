@@ -1576,6 +1576,76 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-imagecard-html-react-service-health",
+    "source": "pnp",
+    "title": "Service health - Adaptive Card Extension",
+    "shortDescription": "SPFx ACE Service Health is a SharePoint Framework (SPFx) extension designed to monitor and display the health status of various services within your Microsoft 365 environment.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-HTML-React-Service-Health",
+    "longDescription": [
+      "SPFx ACE Service Health is a SharePoint Framework (SPFx) extension designed to monitor and display the health status of various services within your Microsoft 365 environment."
+    ],
+    "creationDateTime": "2025-05-31",
+    "updateDateTime": "2025-05-31",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.21.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-HTML-React-Service-Health/src/assets/serviceHealth01.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-HTML-React-Service-Health/src/assets/serviceHealth02.PNG",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-HTML-React-Service-Health/src/assets/serviceHealth03.PNG",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "joaojmendes",
+        "pictureUrl": "https://github.com/joaojmendes.png",
+        "name": "João José Mendes"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-imagecard-html-react-stock-price-chart",
     "source": "pnp",
     "title": "Stock Price Chart - Adaptive Card Extension",
