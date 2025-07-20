@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "plan-tracker-client-side-solution",
+    "id": "8ba748c1-18b3-470d-9e21-66d9cbdbb9a0",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.21.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "plan-tracker description"
+      },
+      "longDescription": {
+        "default": "plan-tracker description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "plan-tracker Feature",
+        "description": "The feature that activates elements of the plan-tracker solution.",
+        "id": "3fe73b26-ba0e-4d3d-a91c-0f351c287fde",
+        "version": "1.0.0.0"
+      }
+    ],
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Group.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "User.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Organization.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Planner.Read"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/plan-tracker.sppkg"
+  }
+}
