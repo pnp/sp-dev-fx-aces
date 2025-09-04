@@ -1094,6 +1094,83 @@
     ]
   },
   {
+    "name": "pnp-sp-fx-aces-plan-tracker",
+    "source": "pnp",
+    "title": "Plan Tracker",
+    "shortDescription": "SharePoint Framework (SPFx) Adaptive Card Extension (ACE) that provides a visually engaging and interactive dashboard for Microsoft Planner with bucket views, task management, and team insights.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ChartCard-Plan-Tracker",
+    "longDescription": [
+      "Plan Tracker is a SharePoint Framework (SPFx) Adaptive Card Extension (ACE) that provides a visually engaging and interactive dashboard for Microsoft Planner. It allows users to view buckets, tasks, project members, and personal assignments in an organized and customizable interface. Tasks can be sorted by priority or due date, and include visual status indicators, inline navigation, and plan-level insights."
+    ],
+    "creationDateTime": "2025-07-10",
+    "updateDateTime": "2025-07-10",
+    "products": [
+      "SharePoint",
+      "Viva",
+      "Microsoft Planner"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "React"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.21.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ChartCard-Plan-Tracker/assets/plan-tracker-screenshot-01.png",
+        "alt": "Plan Tracker main dashboard showing Planner buckets and tasks"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ChartCard-Plan-Tracker/assets/plan-tracker-screenshot-02.png",
+        "alt": "Plan Tracker showing task details and status indicators"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ChartCard-Plan-Tracker/assets/plan-tracker-screenshot-03.png",
+        "alt": "Plan Tracker My Tasks view for current user"
+      },
+      {
+        "type": "image",
+        "order": 400,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ChartCard-Plan-Tracker/assets/plan-tracker-screenshot-04.png",
+        "alt": "Plan Tracker Project Members view"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "ahmad-jad-alhak",
+        "pictureUrl": "https://github.com/ahmad-jad-alhak.png",
+        "name": "Ahmad Jad Alhak"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      },
+      {
+        "name": "Adaptive Card Documentation",
+        "description": "Detailed documentation on Adaptive Cards including the Adaptive Card designer.",
+        "url": "https://adaptivecards.io/"
+      },
+      {
+        "name": "Adaptive Card Extension Design Guidance",
+        "description": "Design guidance for laying out Adaptive Card Extensions.",
+        "url": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/design/design-intro"
+      }
+    ]
+  },
+  {
     "name": "pnp-sp-fx-aces-chartcard-threeseries",
     "source": "pnp",
     "title": "Chart Card with Three Series",
