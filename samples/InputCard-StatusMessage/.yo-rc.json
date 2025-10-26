@@ -7,7 +7,7 @@
       "@microsoft/microsoft-graph-client": "3.0.2",
       "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.20.0",
+  "version": "1.21.1",
     "libraryName": "input-card-status-message",
     "libraryId": "5bd0d1dc-2938-4def-ba1b-4f75ec95116d",
     "environment": "spo",
