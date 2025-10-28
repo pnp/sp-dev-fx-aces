@@ -14,7 +14,7 @@ Medium view:
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.19.0--beta.0-yellow.svg)
+![version](https://img.shields.io/badge/version-1.21.1-yellow.svg)
 
 ## Applies to
 
@@ -36,6 +36,7 @@ Medium view:
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | March 29, 2024 | Initial release |
+| 1.1     | October 23, 2025 | Upgrade to SPFx 1.21.1 |
 
 ## Disclaimer
 
