@@ -12,7 +12,7 @@ Event Page that loads in Outlook online
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Permissions
 
@@ -38,13 +38,14 @@ Microsoft Graph
 
 Solution|Author(s)
 --------|---------
-ace-graph-upcomingevents | [Zach Roberts](https://github.com/zachroberts8668) ([@ZachSPODev](https://twitter.com/ZachSPODev))
+ace-graph-upcomingevents | [Zach Roberts](https://github.com/zachroberts8668) ([@ZachSPODev](https://twitter.com/ZachSPODev)) | [Aimery Thomas](https://github.com/a1mery)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0|October 1, 2021|Initial release
+1.1|May 29, 2026|Upgrade to SPFx 1.23
 
 ## Disclaimer
 

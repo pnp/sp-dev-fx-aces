@@ -3,10 +3,32 @@
   "solution": {
     "name": "ace-graph-upcomingevents-client-side-solution",
     "id": "abee4ad0-2dc6-4923-b2bf-0e515b8ea8ef",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
+    "metadata": {
+      "shortDescription": {
+        "default": "ace-graph-upcomingevents description"
+      },
+      "longDescription": {
+        "default": "ace-graph-upcomingevents description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-graph-upcomingevents AceGraphUpcomingeventsAdaptiveCardExtens Feature",
+        "description": "The feature that activates AceGraphUpcomingeventsAdaptiveCardExtens from the ace-graph-upcomingevents solution.",
+        "id": "963cafe6-6d04-42df-92e9-924e34d29a9f",
+        "version": "1.0.0.0",
+        "componentIds": [
+          "963cafe6-6d04-42df-92e9-924e34d29a9f"
+        ]
+      }
+    ],
     "developer": {
       "name": "",
       "websiteUrl": "",
@@ -14,7 +36,8 @@
       "termsOfUseUrl": "",
       "mpnId": ""
     },
-    "webApiPermissionRequests": [{
+    "webApiPermissionRequests": [
+      {
         "resource": "Microsoft Graph",
         "scope": "Directory.Read.All"
       },

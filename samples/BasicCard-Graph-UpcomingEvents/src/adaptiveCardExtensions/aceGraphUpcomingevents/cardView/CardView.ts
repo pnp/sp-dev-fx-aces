@@ -1,11 +1,8 @@
 import {
   BaseBasicCardView,
   IBasicCardParameters,
-  IExternalLinkCardAction,
-  IQuickViewCardAction,
   ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'AceGraphUpcomingeventsAdaptiveCardExtensionStrings';
 import { IAceGraphUpcomingeventsAdaptiveCardExtensionProps, IAceGraphUpcomingeventsAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../AceGraphUpcomingeventsAdaptiveCardExtension';
 
 export class CardView extends BaseBasicCardView<IAceGraphUpcomingeventsAdaptiveCardExtensionProps, IAceGraphUpcomingeventsAdaptiveCardExtensionState> {
@@ -24,7 +21,7 @@ export class CardView extends BaseBasicCardView<IAceGraphUpcomingeventsAdaptiveC
         }
       ];
     } else {
-      return null;
+      return undefined;
     }
   }
 

@@ -4,6 +4,7 @@ import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
 import { AceGraphUpcomingeventsPropertyPane } from './AceGraphUpcomingeventsPropertyPane';
 import { graph } from '@pnp/graph';
+import { ISPFXContext } from '@pnp/common';
 import { PnPService } from '../service/Service';
 import { IEvent } from '../models/IEvent';
 
@@ -34,7 +35,7 @@ export default class AceGraphUpcomingeventsAdaptiveCardExtension extends BaseAda
   public async onInit(): Promise<void> {
 
     graph.setup({
-      spfxContext: this.context
+      spfxContext: this.context as unknown as ISPFXContext
     });
 
     await this.PnPService._init(this.properties.days).then(response => {
@@ -57,7 +58,8 @@ export default class AceGraphUpcomingeventsAdaptiveCardExtension extends BaseAda
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 
