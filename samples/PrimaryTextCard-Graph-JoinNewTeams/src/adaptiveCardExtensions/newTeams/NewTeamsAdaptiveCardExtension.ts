@@ -12,6 +12,7 @@ import { LoadingView } from './resultViews/LoadingView';
 import { SuccessView } from './resultViews/SuccessView';
 import { ErrorView } from './resultViews/ErrorView';
 import { format } from 'date-fns';
+import TeamsLogoUrl from './assets/TeamsLogo.svg';
 
 export interface INewTeamsAdaptiveCardExtensionProps {
   title: string;
@@ -40,8 +41,8 @@ export default class NewTeamsAdaptiveCardExtension extends BaseAdaptiveCardExten
 
   public async onInit(): Promise<void> {
     this.state = {
-      teams: null,
-      retrievedTeams: null,
+      teams: [] as Team[],
+      retrievedTeams: { "@odata.count": 0, value: [], userId: "" },
       selectedTeam: "",
       cardViewToRender: CARD_VIEW_REGISTRY_ID
     };
@@ -62,10 +63,10 @@ export default class NewTeamsAdaptiveCardExtension extends BaseAdaptiveCardExten
   private async loadTeams(): Promise<void> {
 
     setTimeout(async () => {
-      let retrievedTeams: RetrievedTeams = await getRecentlyCreatedTeams(this.context.pageContext.user.loginName);
+      const retrievedTeams: RetrievedTeams = await getRecentlyCreatedTeams(this.context.pageContext.user.loginName);
       const teams: Team[] =
-        _(retrievedTeams.value)
-        .map(i => ({
+        _.chain(retrievedTeams.value)
+        .map((i: Team) => ({
           displayName: i.displayName,
           createdDateTime: format(new Date(i.createdDateTime), 'yyyy-MM-dd'),
           description: i.description,
@@ -88,8 +89,8 @@ export default class NewTeamsAdaptiveCardExtension extends BaseAdaptiveCardExten
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
-    return this.properties.iconProperty || require('./assets/TeamsLogo.svg');
+  public get iconProperty(): string {
+    return this.properties.iconProperty || TeamsLogoUrl;
   }
 
   protected loadPropertyPaneResources(): Promise<void> {

@@ -2,8 +2,9 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": true,
     "isCreatingSolution": true,
+    "useGulp": false,
     "environment": "spo",
-    "version": "1.16.1",
+    "version": "1.23.0",
     "nodeVersion": "14.18.2",
     "libraryName": "new-teams",
     "libraryId": "3d234977-0365-4ec7-ab4a-8cc91fcca7f1",
@@ -14,7 +15,7 @@
     "aceTemplateType": "PrimaryText",
     "sdkVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.4.1"
+      "@microsoft/teams-js": "2.24.0"
     }
   }
 }

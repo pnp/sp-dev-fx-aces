@@ -1,5 +1,6 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView } from '@microsoft/sp-adaptive-card-extension-base';
 import { INewTeamsAdaptiveCardExtensionProps, INewTeamsAdaptiveCardExtensionState } from '../NewTeamsAdaptiveCardExtension';
+import LoadingViewTemplate from './templates/LoadingViewTemplate.json';
 export interface ILoadingViewData {
     title: string;
 }
@@ -12,6 +13,6 @@ INewTeamsAdaptiveCardExtensionState, ILoadingViewData> {
         };
     }
     public get template(): ISPFxAdaptiveCard {
-        return require('./templates/LoadingViewTemplate.json');
+        return LoadingViewTemplate;
     }
 }

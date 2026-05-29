@@ -1,8 +1,7 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments, ISubmitActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'NewTeamsAdaptiveCardExtensionStrings';
 import { INewTeamsAdaptiveCardExtensionProps, INewTeamsAdaptiveCardExtensionState, JOIN_VIEW_REGISTRY_ID } from '../NewTeamsAdaptiveCardExtension';
-import * as _ from "lodash";
 import { Team } from '../../types';
+import TeamsListViewTemplate from './template/TeamsListViewTemplate.json';
 
 export interface ITeamsListViewData {
   teams: Team[];
@@ -15,9 +14,9 @@ INewTeamsAdaptiveCardExtensionState,
 > {
   public get data(): ITeamsListViewData {
 
-    let { teams } = this.state;
+    const { teams } = this.state;
 
-    if(teams.length == 0){
+    if(teams.length === 0){
       this.quickViewNavigator.close();
     }
 
@@ -27,7 +26,7 @@ INewTeamsAdaptiveCardExtensionState,
   }
 
   public get template(): ISPFxAdaptiveCard {
-    return require('./template/TeamsListViewTemplate.json');
+    return TeamsListViewTemplate;
   }
 
   public get title(): string {

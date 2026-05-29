@@ -20,7 +20,7 @@ This sample shows how to build an ACE that displays recently created Teams.
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.16.1-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 
 ## Applies to
@@ -53,6 +53,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|February 28, 2021|Initial release
 1.1|March 06, 2023|Upgrade to SPFx v1.16.1
+1.2|May 28, 2026|Upgrade to SPFx v1.23.0
 
 ## Disclaimer
 
