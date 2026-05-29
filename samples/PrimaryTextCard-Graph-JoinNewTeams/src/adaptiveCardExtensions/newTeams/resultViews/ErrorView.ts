@@ -1,5 +1,6 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView } from '@microsoft/sp-adaptive-card-extension-base';
 import { INewTeamsAdaptiveCardExtensionProps, INewTeamsAdaptiveCardExtensionState } from '../NewTeamsAdaptiveCardExtension';
+import ErrorViewTemplate from './templates/ErrorViewTemplate.json';
 export interface IErrorViewData {
     title: string;
 }
@@ -12,6 +13,6 @@ INewTeamsAdaptiveCardExtensionState, IErrorViewData> {
         };
     }
     public get template(): ISPFxAdaptiveCard {
-        return require('./templates/ErrorViewTemplate.json');
+        return ErrorViewTemplate;
     }
 }

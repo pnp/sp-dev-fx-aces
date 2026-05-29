@@ -10,7 +10,7 @@ import { INewTeamsAdaptiveCardExtensionProps, INewTeamsAdaptiveCardExtensionStat
 
 export class CardView extends BasePrimaryTextCardView<INewTeamsAdaptiveCardExtensionProps, INewTeamsAdaptiveCardExtensionState> {
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
-    if(this.state.retrievedTeams != null){
+    if(this.state.retrievedTeams !== null){
       if(this.state.retrievedTeams['@odata.count'] > 0){
         return [
           {
@@ -44,13 +44,13 @@ export class CardView extends BasePrimaryTextCardView<INewTeamsAdaptiveCardExten
       };
     }
 
-    let { retrievedTeams } = this.state;
+    const { retrievedTeams } = this.state;
 
     const numberOfTeams: number = retrievedTeams['@odata.count'];
 
     return {
-      primaryText: numberOfTeams > 1 ? `${numberOfTeams} new Teams` : numberOfTeams == 0 ? "No new team." : "1 new team",
-      description: numberOfTeams > 1 ? `${numberOfTeams} new Teams were created recently !` : numberOfTeams == 0 ? "No team was created recently !" : "1 new team was created recently !",
+      primaryText: numberOfTeams > 1 ? `${numberOfTeams} new Teams` : numberOfTeams === 0 ? "No new team." : "1 new team",
+      description: numberOfTeams > 1 ? `${numberOfTeams} new Teams were created recently !` : numberOfTeams === 0 ? "No team was created recently !" : "1 new team was created recently !",
       title: "New Teams",
     };
   }
