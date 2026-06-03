@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "PrimaryTextCard-EmailSummary-client-side-solution",
+    "id": "20899fee-4b68-4756-b028-ab3441707145",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.22.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "PrimaryTextCard-EmailSummary description"
+      },
+      "longDescription": {
+        "default": "PrimaryTextCard-EmailSummary description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "PrimaryTextCard-EmailSummary Feature",
+        "description": "The feature that activates elements of the PrimaryTextCard-EmailSummary solution.",
+        "id": "097a98e4-61e9-4968-aa87-8d0ce59a4f60",
+        "version": "1.0.0.0"
+      }
+    ],
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Mail.Read"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "AiEnterpriseInteraction.Read"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/PrimaryTextCard-EmailSummary.sppkg"
+  }
+}

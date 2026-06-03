@@ -1,0 +1,95 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.4",
+  "body": [
+    {
+      "type": "TextBlock",
+      "weight": "Bolder",
+      "text": "${title}",
+      "wrap": true
+    },
+    {
+      "type": "TextBlock",
+      "text": "${subTitle}",
+      "isSubtle": true,
+      "spacing": "Small",
+      "wrap": true
+    },
+    {
+      "type": "Container",
+      "$when": "${showLoading}",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${loadingText}",
+          "wrap": true
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "$when": "${showError}",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${errorText}",
+          "wrap": true,
+          "color": "Attention"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "$when": "${showReady}",
+      "items": [
+        {
+          "type": "TextBlock",
+          "weight": "Bolder",
+          "text": "${emailSubject}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "${emailFrom}",
+          "isSubtle": true,
+          "spacing": "Small",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "${emailReceived}",
+          "isSubtle": true,
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "${emailPreview}",
+          "spacing": "Medium",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "weight": "Bolder",
+          "text": "${summaryTitle}",
+          "spacing": "Large",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "${summaryText}",
+          "wrap": true
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "id": "openInOutlook",
+      "$when": "${showOpenInOutlookAction}",
+      "title": "${openInOutlookLabel}",
+      "url": "${openInOutlookUrl}"
+    }
+  ]
+}

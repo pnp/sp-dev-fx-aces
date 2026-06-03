@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "primary-text-card-email-summary-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/primaryTextCardEmailSummary/PrimaryTextCardEmailSummaryAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/primaryTextCardEmailSummary/PrimaryTextCardEmailSummaryAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PrimaryTextCardEmailSummaryAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/primaryTextCardEmailSummary/loc/{locale}.js"
+  }
+}

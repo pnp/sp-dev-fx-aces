@@ -1,0 +1,27 @@
+{"timestamp":"2026-06-02T21:04:01.899Z","kind":"session-started","cliVersion":"0.1.0-pre.3"}
+{"timestamp":"2026-06-02T21:04:02.407Z","kind":"template-rendered","templateName":"ace-generic-primarytext-card","templateVersion":"1.0.0","spfxVersion":"1.22.2","context":{"solution_name":"PrimaryTextCard-EmailSummary","libraryName":"PrimaryTextCard-EmailSummary","spfxVersion":"1.22.2","spfxVersionForBadgeUrl":"1.22.2","componentId":"c4074204-6445-496f-b7b3-eb4ae8d6a6aa","featureId":"097a98e4-61e9-4968-aa87-8d0ce59a4f60","solutionId":"20899fee-4b68-4756-b028-ab3441707145","componentAlias":"PrimaryTextCard-EmailSummary","componentName":"PrimaryTextCard-EmailSummary","componentDescription":"PrimaryTextCard-EmailSummary description"},"cliVersion":"0.1.0-pre.3"}
+{"timestamp":"2026-06-02T21:04:02.410Z","kind":"file-write","relativePath":".eslintrc.js","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.410Z","kind":"file-write","relativePath":".gitignore","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.410Z","kind":"file-write","relativePath":".npmignore","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.410Z","kind":"file-write","relativePath":".vscode/launch.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.410Z","kind":"file-write","relativePath":".vscode/settings.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.410Z","kind":"file-write","relativePath":"README.md","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"config/config.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"config/deploy-azure-storage.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"config/package-solution.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"config/rig.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"config/sass.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"config/serve.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"config/typescript.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"config/write-manifests.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"package.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardEmailSummary/assets/MicrosoftLogo.png","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardEmailSummary/cardView/CardView.ts","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardEmailSummary/loc/en-us.js","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardEmailSummary/loc/mystring.d.ts","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardEmailSummary/quickView/QuickView.ts","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardEmailSummary/quickView/template/QuickViewTemplate.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardEmailSummary/PrimaryTextCardEmailSummaryAdaptiveCardExtension.manifest.json","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardEmailSummary/PrimaryTextCardEmailSummaryAdaptiveCardExtension.ts","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardEmailSummary/PrimaryTextCardEmailSummaryPropertyPane.ts","outcome":"new"}
+{"timestamp":"2026-06-02T21:04:02.411Z","kind":"file-write","relativePath":"tsconfig.json","outcome":"new"}
