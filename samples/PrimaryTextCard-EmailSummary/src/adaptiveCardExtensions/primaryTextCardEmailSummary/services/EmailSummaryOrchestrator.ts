@@ -10,7 +10,7 @@ export class EmailSummaryOrchestrator implements IEmailSummaryOrchestrator {
     private readonly copilotSummaryService: ICopilotSummaryService
   ) {}
 
-  public getLatestEmail(): Promise<ILatestEmail | null> {
+  public getLatestEmail(): Promise<ILatestEmail | undefined> {
     return this.emailRepository.getLatestEmail();
   }
 

@@ -31,8 +31,8 @@ interface IGraphMessage {
 export class GraphEmailRepository implements IEmailRepository {
   public constructor(private readonly msGraphClientFactory: MSGraphClientFactory) {}
 
-  public async getLatestEmail(): Promise<ILatestEmail | null> {
-    return withRetry<ILatestEmail | null>(async () => {
+  public async getLatestEmail(): Promise<ILatestEmail | undefined> {
+    return withRetry<ILatestEmail | undefined>(async () => {
       const graphClient: MSGraphClientV3 = await this.msGraphClientFactory.getClient('3');
 
       let payload: IGraphMessagesResponse;
@@ -51,7 +51,7 @@ export class GraphEmailRepository implements IEmailRepository {
       const latest: IGraphMessage | undefined = payload.value?.[0];
 
       if (!latest || !latest.id || !latest.receivedDateTime) {
-        return null;
+        return undefined;
       }
 
       const bodyPreview: string = latest.bodyPreview ?? '';

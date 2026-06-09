@@ -15,10 +15,10 @@ export interface IPrimaryTextCardEmailSummaryAdaptiveCardExtensionProps {
 export interface IPrimaryTextCardEmailSummaryAdaptiveCardExtensionState {
   loading: boolean;
   summaryLoading: boolean;
-  latestEmail: ILatestEmail | null;
-  summary: string | null;
-  error: string | null;
-  summaryError: string | null;
+  latestEmail: ILatestEmail | undefined;
+  summary: string | undefined;
+  error: string | undefined;
+  summaryError: string | undefined;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'PRIMARY_TEXT_CARD_EMAIL_SUMMARY_CARD_VIEW';
@@ -35,10 +35,10 @@ export default class PrimaryTextCardEmailSummaryAdaptiveCardExtension extends Ba
     this.state = {
       loading: true,
       summaryLoading: false,
-      latestEmail: null,
-      summary: null,
-      error: null,
-      summaryError: null
+      latestEmail: undefined,
+      summary: undefined,
+      error: undefined,
+      summaryError: undefined
     };
 
     // registers the card view to be shown in a dashboard
@@ -62,18 +62,18 @@ export default class PrimaryTextCardEmailSummaryAdaptiveCardExtension extends Ba
       return;
     }
 
-    let latestEmail: ILatestEmail | null;
+    let latestEmail: ILatestEmail | undefined;
     try {
       latestEmail = await this._emailSummaryOrchestrator.getLatestEmail();
     } catch (error: unknown) {
       const message: string = error instanceof Error ? error.message : 'Unable to load the latest email.';
       this.setState({
         loading: false,
-        latestEmail: null,
-        summary: null,
+        latestEmail: undefined,
+        summary: undefined,
         error: message,
         summaryLoading: false,
-        summaryError: null
+        summaryError: undefined
       });
       return;
     }
@@ -81,11 +81,11 @@ export default class PrimaryTextCardEmailSummaryAdaptiveCardExtension extends Ba
     if (!latestEmail) {
       this.setState({
         loading: false,
-        latestEmail: null,
-        summary: null,
+        latestEmail: undefined,
+        summary: undefined,
         error: 'No email was found for the current user.',
         summaryLoading: false,
-        summaryError: null
+        summaryError: undefined
       });
       return;
     }
@@ -93,10 +93,10 @@ export default class PrimaryTextCardEmailSummaryAdaptiveCardExtension extends Ba
     this.setState({
       loading: false,
       latestEmail,
-      error: null,
+      error: undefined,
       summaryLoading: true,
-      summary: null,
-      summaryError: null
+      summary: undefined,
+      summaryError: undefined
     });
 
     try {
@@ -104,13 +104,13 @@ export default class PrimaryTextCardEmailSummaryAdaptiveCardExtension extends Ba
       this.setState({
         summaryLoading: false,
         summary: response.summaryText,
-        summaryError: null
+        summaryError: undefined
       });
     } catch (error: unknown) {
       const message: string = error instanceof Error ? error.message : 'Unable to generate the Copilot summary.';
       this.setState({
         summaryLoading: false,
-        summary: null,
+        summary: undefined,
         summaryError: message
       });
     }

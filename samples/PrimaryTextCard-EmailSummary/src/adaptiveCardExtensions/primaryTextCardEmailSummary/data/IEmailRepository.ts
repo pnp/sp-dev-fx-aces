@@ -1,5 +1,5 @@
 import { ILatestEmail } from '../models/ILatestEmail';
 
 export interface IEmailRepository {
-  getLatestEmail(): Promise<ILatestEmail | null>;
+  getLatestEmail(): Promise<ILatestEmail | undefined>;
 }
