@@ -1,5 +1,7 @@
-import { IEmailSummaryViewModel } from '../models/IEmailSummaryViewModel';
+import { ILatestEmail } from '../models/ILatestEmail';
+import { ISummaryResponse } from '../models/ISummaryResponse';
 
 export interface IEmailSummaryOrchestrator {
-  loadLatestEmailSummary(copilotApiPath: string): Promise<IEmailSummaryViewModel>;
+  getLatestEmail(): Promise<ILatestEmail | null>;
+  summarizeEmail(latestEmail: ILatestEmail): Promise<ISummaryResponse>;
 }

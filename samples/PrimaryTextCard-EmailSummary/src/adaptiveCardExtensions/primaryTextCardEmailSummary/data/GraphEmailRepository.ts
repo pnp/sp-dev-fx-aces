@@ -3,7 +3,8 @@ import { ILatestEmail } from '../models/ILatestEmail';
 import { withRetry } from '../utils/retry';
 import { IEmailRepository } from './IEmailRepository';
 
-const LATEST_EMAIL_QUERY: string = '/me/messages?$select=id,subject,from,receivedDateTime,bodyPreview,webLink&$orderby=receivedDateTime desc&$top=1';
+const LATEST_EMAIL_QUERY: string = '/me/mailFolders/Inbox/messages?$select=id,subject,from,receivedDateTime,bodyPreview,body,webLink&$filter=isDraft eq false&$orderby=receivedDateTime desc&$top=1';
+const MAX_BODY_TEXT_LENGTH: number = 4000;
 
 interface IGraphMessagesResponse {
   value?: IGraphMessage[];
@@ -20,6 +21,10 @@ interface IGraphMessage {
   };
   receivedDateTime?: string;
   bodyPreview?: string;
+  body?: {
+    contentType?: string;
+    content?: string;
+  };
   webLink?: string;
 }
 
@@ -35,6 +40,9 @@ export class GraphEmailRepository implements IEmailRepository {
         payload = (await graphClient
           .api(LATEST_EMAIL_QUERY)
           .version('v1.0')
+          .header('Prefer', 'outlook.body-content-type="text"')
+          .header('Prefer', 'IdType="ImmutableId"')
+          .header('Prefer', 'outlook.timezone="UTC"')
           .get()) as IGraphMessagesResponse;
       } catch (error: unknown) {
         throw this.createGraphRequestError(error, 'Graph email request failed');
@@ -46,13 +54,26 @@ export class GraphEmailRepository implements IEmailRepository {
         return null;
       }
 
+      const bodyPreview: string = latest.bodyPreview ?? '';
+      const rawBodyContent: string | undefined =
+        latest.body?.contentType === 'text' && typeof latest.body.content === 'string'
+          ? latest.body.content
+          : undefined;
+      const trimmedBodyContent: string = rawBodyContent !== undefined ? rawBodyContent.trim() : '';
+      const sourceBodyText: string = trimmedBodyContent.length > 0 ? trimmedBodyContent : bodyPreview;
+      const bodyText: string =
+        sourceBodyText.length > MAX_BODY_TEXT_LENGTH
+          ? `${sourceBodyText.substring(0, MAX_BODY_TEXT_LENGTH)}…`
+          : sourceBodyText;
+
       return {
         id: latest.id,
         subject: latest.subject ?? '(No subject)',
         fromName: latest.from?.emailAddress?.name ?? '',
         fromAddress: latest.from?.emailAddress?.address ?? '',
         receivedDateTime: latest.receivedDateTime,
-        bodyPreview: latest.bodyPreview ?? '',
+        bodyPreview,
+        bodyText,
         webLink: latest.webLink ?? ''
       };
     });

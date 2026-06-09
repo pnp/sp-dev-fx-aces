@@ -1,5 +1,6 @@
 import { IEmailRepository } from '../data/IEmailRepository';
-import { IEmailSummaryViewModel } from '../models/IEmailSummaryViewModel';
+import { ILatestEmail } from '../models/ILatestEmail';
+import { ISummaryResponse } from '../models/ISummaryResponse';
 import { ICopilotSummaryService } from './ICopilotSummaryService';
 import { IEmailSummaryOrchestrator } from './IEmailSummaryOrchestrator';
 
@@ -9,23 +10,11 @@ export class EmailSummaryOrchestrator implements IEmailSummaryOrchestrator {
     private readonly copilotSummaryService: ICopilotSummaryService
   ) {}
 
-  public async loadLatestEmailSummary(copilotApiPath: string): Promise<IEmailSummaryViewModel> {
-    const latestEmail = await this.emailRepository.getLatestEmail();
+  public getLatestEmail(): Promise<ILatestEmail | null> {
+    return this.emailRepository.getLatestEmail();
+  }
 
-    if (!latestEmail) {
-      return {
-        latestEmail: null,
-        summary: null,
-        error: 'No email was found for the current user.'
-      };
-    }
-
-    const summaryResponse = await this.copilotSummaryService.summarizeEmail(latestEmail, copilotApiPath);
-
-    return {
-      latestEmail,
-      summary: summaryResponse.summaryText,
-      error: null
-    };
+  public summarizeEmail(latestEmail: ILatestEmail): Promise<ISummaryResponse> {
+    return this.copilotSummaryService.summarizeEmail(latestEmail);
   }
 }

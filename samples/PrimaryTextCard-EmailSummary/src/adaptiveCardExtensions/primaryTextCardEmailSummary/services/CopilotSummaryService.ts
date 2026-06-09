@@ -29,7 +29,7 @@ interface IConversationChatRequest {
 export class CopilotSummaryService implements ICopilotSummaryService {
   public constructor(private readonly msGraphClientFactory: MSGraphClientFactory) {}
 
-  public async summarizeEmail(latestEmail: ILatestEmail, copilotApiPath: string): Promise<ISummaryResponse> {
+  public async summarizeEmail(latestEmail: ILatestEmail): Promise<ISummaryResponse> {
     const requestBody: IConversationChatRequest = {
       message: {
         text: this.buildPrompt(latestEmail)
@@ -46,16 +46,14 @@ export class CopilotSummaryService implements ICopilotSummaryService {
 
     return withRetry<ISummaryResponse>(async () => {
       const graphClient: MSGraphClientV3 = await this.msGraphClientFactory.getClient('3');
-      const normalizedApiPath: string = copilotApiPath.startsWith('https://')
-        ? copilotApiPath
-        : `https://graph.microsoft.com/${copilotApiPath.replace(/^\/+/, '')}`;
       const conversationsUrl: string = 'https://graph.microsoft.com/beta/copilot/conversations';
 
       let createConversationPayload: unknown;
       try {
         createConversationPayload = await graphClient.api(conversationsUrl).post({});
       } catch (error: unknown) {
-        throw this.createGraphRequestError(error, 'Copilot conversation creation failed');
+        console.error('Copilot conversation creation failed', error);
+        throw error;
       }
 
       const conversationId: string = this.extractConversationId(createConversationPayload);
@@ -64,7 +62,8 @@ export class CopilotSummaryService implements ICopilotSummaryService {
       try {
         chatPayload = await graphClient.api(`${conversationsUrl}/${conversationId}/chat`).post(requestBody);
       } catch (error: unknown) {
-        throw this.createGraphRequestError(error, 'Copilot conversation chat failed');
+        console.error('Copilot conversation chat failed', error);
+        throw error;
       }
 
       const summaryText: string = this.extractSummary(chatPayload);
@@ -76,140 +75,16 @@ export class CopilotSummaryService implements ICopilotSummaryService {
     });
   }
 
-  private createGraphRequestError(error: unknown, messagePrefix: string): Error & { status?: number } {
-    const status: number | undefined = this.extractStatusCode(error);
-    const graphMessage: string | undefined = this.extractGraphErrorMessage(error);
-    let errorMessage: string = messagePrefix;
-
-    if (status !== undefined && graphMessage) {
-      errorMessage = `${messagePrefix} with status ${status}: ${graphMessage}`;
-    } else if (status !== undefined) {
-      errorMessage = `${messagePrefix} with status ${status}`;
-    } else if (graphMessage) {
-      errorMessage = `${messagePrefix}: ${graphMessage}`;
-    }
-
-    const requestError: Error & { status?: number } = new Error(errorMessage);
-
-    requestError.status = status;
-    return requestError;
-  }
-
-  private extractStatusCode(error: unknown): number | undefined {
-    if (!this.isRecord(error)) {
-      return undefined;
-    }
-
-    const statusCandidate: unknown = error.status;
-    if (typeof statusCandidate === 'number') {
-      return statusCandidate;
-    }
-
-    const statusCodeCandidate: unknown = error.statusCode;
-    if (typeof statusCodeCandidate === 'number') {
-      return statusCodeCandidate;
-    }
-
-    const responseStatusCandidate: unknown = error.responseStatusCode;
-    if (typeof responseStatusCandidate === 'number') {
-      return responseStatusCandidate;
-    }
-
-    const responseCandidate: unknown = error.response;
-    if (this.isRecord(responseCandidate)) {
-      const nestedStatusCandidate: unknown = responseCandidate.status;
-      if (typeof nestedStatusCandidate === 'number') {
-        return nestedStatusCandidate;
-      }
-    }
-
-    const graphErrorCandidate: unknown = error.error;
-    if (this.isRecord(graphErrorCandidate)) {
-      const nestedStatusCode: unknown = graphErrorCandidate.statusCode;
-      if (typeof nestedStatusCode === 'number') {
-        return nestedStatusCode;
-      }
-    }
-
-    return undefined;
-  }
-
-  private extractGraphErrorMessage(error: unknown): string | undefined {
-    const normalizeMessage: (value: unknown) => string | undefined = (value: unknown): string | undefined => {
-      if (typeof value !== 'string') {
-        return undefined;
-      }
-
-      const normalizedValue: string = value.trim();
-      return normalizedValue.length > 0 ? normalizedValue : undefined;
-    };
-
-    const extractMessageFromRecord: (value: unknown) => string | undefined = (value: unknown): string | undefined => {
-      if (!this.isRecord(value)) {
-        return undefined;
-      }
-
-      const directMessage: string | undefined = normalizeMessage(value.message);
-      if (directMessage) {
-        return directMessage;
-      }
-
-      const nestedErrorCandidate: unknown = value.error;
-      if (this.isRecord(nestedErrorCandidate)) {
-        const nestedMessage: string | undefined = normalizeMessage(nestedErrorCandidate.message);
-        if (nestedMessage) {
-          return nestedMessage;
-        }
-      }
-
-      return undefined;
-    };
-
-    if (this.isRecord(error)) {
-      const bodyCandidate: unknown = error.body;
-      if (typeof bodyCandidate === 'string') {
-        try {
-          const parsedBody: unknown = JSON.parse(bodyCandidate);
-          const parsedBodyMessage: string | undefined = extractMessageFromRecord(parsedBody);
-          if (parsedBodyMessage) {
-            return parsedBodyMessage;
-          }
-        } catch {
-          // Body is not valid JSON; fall through to other extraction strategies.
-        }
-      } else if (this.isRecord(bodyCandidate)) {
-        const bodyMessage: string | undefined = extractMessageFromRecord(bodyCandidate);
-        if (bodyMessage) {
-          return bodyMessage;
-        }
-      }
-
-      const envelopeMessage: string | undefined = extractMessageFromRecord(error);
-      if (envelopeMessage) {
-        return envelopeMessage;
-      }
-
-      const responseCandidate: unknown = error.response;
-      if (this.isRecord(responseCandidate)) {
-        const responseDataCandidate: unknown = responseCandidate.data;
-        const responseDataMessage: string | undefined = extractMessageFromRecord(responseDataCandidate);
-        if (responseDataMessage) {
-          return responseDataMessage;
-        }
-      }
-    }
-
-    return undefined;
-  }
-
   private buildPrompt(latestEmail: ILatestEmail): string {
+    const trimmedBodyText: string = latestEmail.bodyText.trim();
+    const bodyForPrompt: string = trimmedBodyText.length > 0 ? trimmedBodyText : latestEmail.bodyPreview;
     return [
       'Summarize the latest email using concise business language.',
       'Return exactly four lines in plain text: three bullet points and one Action item line.',
       `Subject: ${latestEmail.subject}`,
       `From: ${latestEmail.fromName} <${latestEmail.fromAddress}>`,
       `Received: ${latestEmail.receivedDateTime}`,
-      `Body preview: ${latestEmail.bodyPreview}`
+      `Body: ${bodyForPrompt}`
     ].join('\n');
   }
 

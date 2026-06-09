@@ -10,19 +10,19 @@ import { EmailSummaryOrchestrator } from './services/EmailSummaryOrchestrator';
 
 export interface IPrimaryTextCardEmailSummaryAdaptiveCardExtensionProps {
   title: string;
-  copilotApiPath?: string;
 }
 
 export interface IPrimaryTextCardEmailSummaryAdaptiveCardExtensionState {
   loading: boolean;
+  summaryLoading: boolean;
   latestEmail: ILatestEmail | null;
   summary: string | null;
   error: string | null;
+  summaryError: string | null;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'PRIMARY_TEXT_CARD_EMAIL_SUMMARY_CARD_VIEW';
 export const QUICK_VIEW_REGISTRY_ID: string = 'PRIMARY_TEXT_CARD_EMAIL_SUMMARY_QUICK_VIEW';
-const DEFAULT_COPILOT_API_PATH: string = 'https://graph.microsoft.com/beta/copilot/conversations';
 
 export default class PrimaryTextCardEmailSummaryAdaptiveCardExtension extends BaseAdaptiveCardExtension<
   IPrimaryTextCardEmailSummaryAdaptiveCardExtensionProps,
@@ -34,9 +34,11 @@ export default class PrimaryTextCardEmailSummaryAdaptiveCardExtension extends Ba
   public async onInit(): Promise<void> {
     this.state = {
       loading: true,
+      summaryLoading: false,
       latestEmail: null,
       summary: null,
-      error: null
+      error: null,
+      summaryError: null
     };
 
     // registers the card view to be shown in a dashboard
@@ -60,23 +62,56 @@ export default class PrimaryTextCardEmailSummaryAdaptiveCardExtension extends Ba
       return;
     }
 
-    const copilotApiPath: string = this.properties.copilotApiPath ?? DEFAULT_COPILOT_API_PATH;
-
+    let latestEmail: ILatestEmail | null;
     try {
-      const result = await this._emailSummaryOrchestrator.loadLatestEmailSummary(copilotApiPath);
-      this.setState({
-        loading: false,
-        latestEmail: result.latestEmail,
-        summary: result.summary,
-        error: result.error
-      });
+      latestEmail = await this._emailSummaryOrchestrator.getLatestEmail();
     } catch (error: unknown) {
-      const message: string = error instanceof Error ? error.message : 'Unable to load email summary.';
+      const message: string = error instanceof Error ? error.message : 'Unable to load the latest email.';
       this.setState({
         loading: false,
         latestEmail: null,
         summary: null,
-        error: message
+        error: message,
+        summaryLoading: false,
+        summaryError: null
+      });
+      return;
+    }
+
+    if (!latestEmail) {
+      this.setState({
+        loading: false,
+        latestEmail: null,
+        summary: null,
+        error: 'No email was found for the current user.',
+        summaryLoading: false,
+        summaryError: null
+      });
+      return;
+    }
+
+    this.setState({
+      loading: false,
+      latestEmail,
+      error: null,
+      summaryLoading: true,
+      summary: null,
+      summaryError: null
+    });
+
+    try {
+      const response = await this._emailSummaryOrchestrator.summarizeEmail(latestEmail);
+      this.setState({
+        summaryLoading: false,
+        summary: response.summaryText,
+        summaryError: null
+      });
+    } catch (error: unknown) {
+      const message: string = error instanceof Error ? error.message : 'Unable to generate the Copilot summary.';
+      this.setState({
+        summaryLoading: false,
+        summary: null,
+        summaryError: message
       });
     }
   }

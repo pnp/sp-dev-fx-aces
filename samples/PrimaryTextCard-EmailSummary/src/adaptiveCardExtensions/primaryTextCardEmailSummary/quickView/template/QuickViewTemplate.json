@@ -19,11 +19,55 @@
     {
       "type": "Container",
       "$when": "${showLoading}",
+      "style": "emphasis",
+      "bleed": true,
       "items": [
         {
-          "type": "TextBlock",
-          "text": "${loadingText}",
-          "wrap": true
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "verticalContentAlignment": "Center",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\u29D7",
+                  "size": "ExtraLarge",
+                  "weight": "Bolder",
+                  "color": "Accent"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${loadingTitle}",
+                  "weight": "Bolder",
+                  "size": "Medium",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${loadingHelper}",
+                  "isSubtle": true,
+                  "wrap": true,
+                  "spacing": "Small"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${loadingText}",
+                  "isSubtle": true,
+                  "wrap": true,
+                  "spacing": "Small",
+                  "size": "Small"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -46,37 +90,54 @@
         {
           "type": "TextBlock",
           "weight": "Bolder",
+          "size": "Medium",
           "text": "${emailSubject}",
           "wrap": true
         },
         {
-          "type": "TextBlock",
-          "text": "${emailFrom}",
-          "isSubtle": true,
+          "type": "FactSet",
           "spacing": "Small",
-          "wrap": true
-        },
-        {
-          "type": "TextBlock",
-          "text": "${emailReceived}",
-          "isSubtle": true,
-          "wrap": true
-        },
-        {
-          "type": "TextBlock",
-          "text": "${emailPreview}",
-          "spacing": "Medium",
-          "wrap": true
-        },
+          "facts": [
+            {
+              "title": "${fromLabel}",
+              "value": "${fromValue}"
+            },
+            {
+              "title": "${receivedLabel}",
+              "value": "${receivedValue}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "$when": "${showReady}",
+      "separator": true,
+      "items": [
         {
           "type": "TextBlock",
           "weight": "Bolder",
           "text": "${summaryTitle}",
-          "spacing": "Large",
           "wrap": true
         },
         {
           "type": "TextBlock",
+          "$when": "${showSummaryLoading}",
+          "text": "${summaryLoadingText}",
+          "isSubtle": true,
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "$when": "${showSummaryError}",
+          "text": "${summaryErrorText}",
+          "color": "Attention",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "$when": "${showSummaryText}",
           "text": "${summaryText}",
           "wrap": true
         }

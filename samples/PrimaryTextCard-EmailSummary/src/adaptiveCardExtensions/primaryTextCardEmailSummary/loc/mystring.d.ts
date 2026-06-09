@@ -13,8 +13,12 @@ declare interface IPrimaryTextCardEmailSummaryAdaptiveCardExtensionStrings {
   CardLatestEmailPrefix: string;
   CardFromLabel: string;
   CardSummaryAvailableText: string;
+  QuickViewLoadingHelper: string;
   QuickViewLoadingText: string;
+  QuickViewLoadingTitle: string;
   QuickViewErrorText: string;
+  QuickViewSummaryLoadingText: string;
+  QuickViewSummaryErrorText: string;
   SummarySectionTitle: string;
   OpenInOutlookLabel: string;
   EmailFromLabel: string;

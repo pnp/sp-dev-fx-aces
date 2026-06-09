@@ -22,8 +22,7 @@
       "iconImageUrl": "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product-monoline/svg/vivaconnections_32x1.svg",
       "cardSize": "Large",
       "properties": {
-        "title": "PrimaryTextCardEmailSummary",
-        "copilotApiPath": "/beta/copilot/conversations"
+        "title": "PrimaryTextCardEmailSummary"
       }
     }
   ]

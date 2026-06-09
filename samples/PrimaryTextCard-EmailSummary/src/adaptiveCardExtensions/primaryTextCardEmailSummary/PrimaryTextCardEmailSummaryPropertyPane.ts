@@ -12,11 +12,6 @@ export class PrimaryTextCardEmailSummaryPropertyPane {
               groupFields: [
                 PropertyPaneTextField('title', {
                   label: strings.TitleFieldLabel
-                }),
-                PropertyPaneTextField('copilotApiPath', {
-                  label: 'Copilot API path',
-                  description: 'Use the full Graph conversations URL, for example: https://graph.microsoft.com/beta/copilot/conversations',
-                  placeholder: 'https://graph.microsoft.com/beta/copilot/conversations'
                 })
               ]
             }

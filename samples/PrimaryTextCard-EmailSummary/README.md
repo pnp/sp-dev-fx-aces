@@ -1,14 +1,27 @@
-# PrimaryTextCard-EmailSummary
+# Email Summary
 
 ## Summary
 
-PrimaryTextCard-EmailSummary description
+This Adaptive Card Extension displays the user's latest received email on the Viva Connections dashboard and shows the Copilot-generated summary of that email in the quick view.
 
-[picture of the solution in action, if possible]
+Card view:
 
-## Used SharePoint Framework Version
+![CardView](./assets/LatestEmailCardView.png)
 
-[![version](https://img.shields.io/badge/version-1.22.2-green.svg)](https://img.shields.io/badge/version-1.22.2-green.svg)
+Quick view (with Copilot summary):
+
+![QuickView](./assets/LatestEmailQuickView.png)
+
+## Compatibility
+
+Every SPFx version is optimally compatible with specific versions of Node.js. In order to be able to build this sample, you need to ensure that the version of Node on your workstation matches one of the versions listed in this section. This sample will not work on a different version of Node.
+Refer to <https://aka.ms/spfx-matrix> for more information on SPFx compatibility.
+
+This sample is optimally compatible with the following environment configuration:
+
+![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
+![Compatible with SharePoint Online](https://img.shields.io/badge/SharePoint%20Online-Compatible-green.svg)
 
 ## Applies to
 
@@ -19,20 +32,21 @@ PrimaryTextCard-EmailSummary description
 
 ## Prerequisites
 
-> Any special pre-requisites?
+> The following Microsoft Graph API permissions must be approved in the SharePoint admin center after the package is deployed:
+>
+> - `Mail.Read`
 
 ## Solution
 
 | Solution    | Author(s)                                               |
 | ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+| PrimaryTextCard-EmailSummary | [Aimery Thomas](https://github.com/a1mery), [@aimery_thomas](https://twitter.com/aimery_thomas) |
 
 ## Version history
 
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
+| Version | Date          | Comments        |
+| ------- | ------------- | --------------- |
+| 1.0     | June 9, 2026  | Initial release |
 
 ## Disclaimer
 
@@ -44,28 +58,33 @@ PrimaryTextCard-EmailSummary description
 
 - Clone this repository
 - Ensure that you are at the solution folder
-- in the command-line run:
-  - `npm install -g @rushstack/heft`
-  - `npm install`
-  - `heft start`
+- In the command-line run:
+  - **npm install -g @rushstack/heft**
+  - **npm install**
+  - **heft start** (to test locally)
+  - **heft test --clean --production && heft package-solution --production** (to build the production package)
+- Deploy the package (`PrimaryTextCard-EmailSummary.sppkg`) to the tenant app catalogue.
+- The solution needs the following Microsoft Graph API permissions. Approve the API access requests in the SharePoint admin center.
 
-> Include any additional steps as needed.
+  | Permissions                  |
+  |------------------------------|
+  | Mail.Read                    |
+
+- Add the ACE **PrimaryTextCardEmailSummary** to the Viva Connections Dashboard.
 
 Other build commands can be listed using `heft --help`.
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+This sample demonstrates how to surface the user's most recent email on the Viva Connections dashboard together with a Copilot-generated summary, giving users an at-a-glance view of what just landed in their inbox without leaving SharePoint.
 
-This extension illustrates the following concepts:
+This Adaptive Card Extension illustrates the following concepts:
 
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions in advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+- Use of the **Microsoft Graph Mail API** (`/me/messages`) to retrieve the user's latest received email
+- Building an ACE with the new **Heft-based** SPFx 1.23 toolchain (no more gulp)
+- Use of the Microsoft 365 Copilot Chat API to generate a summary of the email content
+- Rendering a **PrimaryText** card view with an action that opens a detailed **quick view**
+- Opening the original email directly in Outlook from the quick view
 
 ## References
 
