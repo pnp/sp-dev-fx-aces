@@ -1,0 +1,27 @@
+{"timestamp":"2026-06-11T20:22:14.447Z","kind":"session-started","cliVersion":"0.1.0-pre.3"}
+{"timestamp":"2026-06-11T20:22:14.992Z","kind":"template-rendered","templateName":"ace-generic-primarytext-card","templateVersion":"1.0.0","spfxVersion":"1.22.2","context":{"solution_name":"PrimaryTextCard-SkillsOverview","libraryName":"PrimaryTextCard-SkillsOverview","spfxVersion":"1.22.2","spfxVersionForBadgeUrl":"1.22.2","componentId":"256375df-12df-40aa-9902-8b3ba4d91e84","featureId":"6e73e155-ef79-4776-b86f-4b2d14d7cdcb","solutionId":"65ff6b32-61eb-44a3-9399-aa7de710f561","componentAlias":"PrimaryTextCard-SkillsOverview","componentName":"PrimaryTextCard-SkillsOverview","componentDescription":"PrimaryTextCard-SkillsOverview description"},"cliVersion":"0.1.0-pre.3"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":".gitignore","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":".eslintrc.js","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":".npmignore","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":".vscode/launch.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":".vscode/settings.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":"README.md","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":"config/config.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":"config/deploy-azure-storage.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":"config/package-solution.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":"config/rig.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":"config/sass.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":"config/serve.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":"config/typescript.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.995Z","kind":"file-write","relativePath":"config/write-manifests.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.996Z","kind":"file-write","relativePath":"package.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.996Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardSkillsOverview/assets/MicrosoftLogo.png","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.996Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardSkillsOverview/cardView/CardView.ts","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.996Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardSkillsOverview/loc/en-us.js","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.996Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardSkillsOverview/loc/mystring.d.ts","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.996Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardSkillsOverview/quickView/QuickView.ts","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.996Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardSkillsOverview/quickView/template/QuickViewTemplate.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.996Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardSkillsOverview/PrimaryTextCardSkillsOverviewAdaptiveCardExtension.manifest.json","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.996Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardSkillsOverview/PrimaryTextCardSkillsOverviewAdaptiveCardExtension.ts","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.996Z","kind":"file-write","relativePath":"src/adaptiveCardExtensions/primaryTextCardSkillsOverview/PrimaryTextCardSkillsOverviewPropertyPane.ts","outcome":"new"}
+{"timestamp":"2026-06-11T20:22:14.996Z","kind":"file-write","relativePath":"tsconfig.json","outcome":"new"}
