@@ -16,6 +16,7 @@ define([], function () {
     SeeLatestSkillButton: 'See latest skill',
     QuickViewNoSkillTitle: 'No skill available',
     QuickViewNoSkillDescription: 'Add a markdown file to Agent Assets/Skills to see it here.',
-    QuickViewListTitle: 'Latest skills'
+    QuickViewListTitle: 'Latest skills',
+    QuickViewOpenFolderButton: 'Open folder'
   };
 });

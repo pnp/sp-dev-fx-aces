@@ -2,6 +2,7 @@ import type { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
+import { SkillDetailQuickView } from './quickView/SkillDetailQuickView';
 import { PrimaryTextCardSkillsOverviewPropertyPane } from './PrimaryTextCardSkillsOverviewPropertyPane';
 import { SkillsService } from './services/SkillsService';
 import { ISkill } from './models/ISkill';
@@ -15,10 +16,12 @@ export interface IPrimaryTextCardSkillsOverviewAdaptiveCardExtensionState {
   errorMessage?: string;
   skillsCount: number;
   latestSkills: ISkill[];
+  selectedSkillIndex?: number;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'PRIMARY_TEXT_CARD_SKILLS_OVERVIEW_CARD_VIEW';
 export const QUICK_VIEW_REGISTRY_ID: string = 'PRIMARY_TEXT_CARD_SKILLS_OVERVIEW_QUICK_VIEW';
+export const SKILL_DETAIL_QUICK_VIEW_REGISTRY_ID: string = 'PRIMARY_TEXT_CARD_SKILLS_OVERVIEW_SKILL_DETAIL_QUICK_VIEW';
 export const LATEST_SKILLS_COUNT: number = 5;
 
 export default class PrimaryTextCardSkillsOverviewAdaptiveCardExtension extends BaseAdaptiveCardExtension<
@@ -32,11 +35,13 @@ export default class PrimaryTextCardSkillsOverviewAdaptiveCardExtension extends 
     this.state = {
       loading: true,
       skillsCount: 0,
-      latestSkills: []
+      latestSkills: [],
+      selectedSkillIndex: undefined
     };
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
+    this.quickViewNavigator.register(SKILL_DETAIL_QUICK_VIEW_REGISTRY_ID, () => new SkillDetailQuickView());
 
     this._skillsService = new SkillsService(this.context);
 

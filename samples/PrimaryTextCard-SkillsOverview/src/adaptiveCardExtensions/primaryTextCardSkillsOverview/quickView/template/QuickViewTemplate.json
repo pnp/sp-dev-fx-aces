@@ -21,20 +21,52 @@
       "$data": "${skills}",
       "separator": true,
       "spacing": "Medium",
+      "selectAction": {
+        "type": "Action.Submit",
+        "data": {
+          "id": "openSkill",
+          "index": "${index}"
+        }
+      },
       "items": [
         {
-          "type": "TextBlock",
-          "weight": "Bolder",
-          "size": "Default",
-          "text": "${title}",
-          "wrap": true
-        },
-        {
-          "type": "TextBlock",
-          "text": "${description}",
-          "wrap": true,
-          "spacing": "Small",
-          "isSubtle": true
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "size": "Default",
+                  "text": "${title}",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${description}",
+                  "wrap": true,
+                  "spacing": "Small",
+                  "isSubtle": true
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "auto",
+              "verticalContentAlignment": "Center",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${chevron}",
+                  "size": "Large",
+                  "color": "Accent",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            }
+          ]
         }
       ]
     }
