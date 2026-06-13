@@ -6,9 +6,16 @@ import {
 } from '../PrimaryTextCardSkillsOverviewAdaptiveCardExtension';
 import { ISkill } from '../models/ISkill';
 
-export interface IQuickViewData {
+export interface IQuickViewSkillItem {
   title: string;
   description: string;
+}
+
+export interface IQuickViewData {
+  heading: string;
+  hasSkills: boolean;
+  emptyMessage: string;
+  skills: IQuickViewSkillItem[];
 }
 
 export class QuickView extends BaseAdaptiveCardQuickView<
@@ -17,16 +24,23 @@ export class QuickView extends BaseAdaptiveCardQuickView<
   IQuickViewData
 > {
   public get data(): IQuickViewData {
-    const skill: ISkill | undefined = this.state.latestSkill;
-    if (!skill) {
+    const latestSkills: ISkill[] = this.state.latestSkills;
+    if (latestSkills.length === 0) {
       return {
-        title: strings.QuickViewNoSkillTitle,
-        description: strings.QuickViewNoSkillDescription
+        heading: strings.QuickViewListTitle,
+        hasSkills: false,
+        emptyMessage: strings.QuickViewNoSkillDescription,
+        skills: []
       };
     }
     return {
-      title: skill.title,
-      description: skill.description
+      heading: strings.QuickViewListTitle,
+      hasSkills: true,
+      emptyMessage: '',
+      skills: latestSkills.map((s: ISkill): IQuickViewSkillItem => ({
+        title: s.title,
+        description: s.description
+      }))
     };
   }
 

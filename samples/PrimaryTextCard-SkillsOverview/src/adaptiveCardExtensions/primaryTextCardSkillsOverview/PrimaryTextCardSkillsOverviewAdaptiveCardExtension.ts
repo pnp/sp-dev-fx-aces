@@ -14,11 +14,12 @@ export interface IPrimaryTextCardSkillsOverviewAdaptiveCardExtensionState {
   loading: boolean;
   errorMessage?: string;
   skillsCount: number;
-  latestSkill?: ISkill;
+  latestSkills: ISkill[];
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'PRIMARY_TEXT_CARD_SKILLS_OVERVIEW_CARD_VIEW';
 export const QUICK_VIEW_REGISTRY_ID: string = 'PRIMARY_TEXT_CARD_SKILLS_OVERVIEW_QUICK_VIEW';
+export const LATEST_SKILLS_COUNT: number = 5;
 
 export default class PrimaryTextCardSkillsOverviewAdaptiveCardExtension extends BaseAdaptiveCardExtension<
   IPrimaryTextCardSkillsOverviewAdaptiveCardExtensionProps,
@@ -30,7 +31,8 @@ export default class PrimaryTextCardSkillsOverviewAdaptiveCardExtension extends 
   public onInit(): Promise<void> {
     this.state = {
       loading: true,
-      skillsCount: 0
+      skillsCount: 0,
+      latestSkills: []
     };
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
@@ -49,14 +51,14 @@ export default class PrimaryTextCardSkillsOverviewAdaptiveCardExtension extends 
     try {
       const [count, latest] = await Promise.all([
         this._skillsService.getSkillsCount(),
-        this._skillsService.getLatestSkill()
+        this._skillsService.getLatestSkills(LATEST_SKILLS_COUNT)
       ]);
 
       this.setState({
         loading: false,
         errorMessage: undefined,
         skillsCount: count,
-        latestSkill: latest
+        latestSkills: latest
       });
     } catch (error) {
       const message: string = error instanceof Error ? error.message : 'Unknown error';
@@ -65,7 +67,7 @@ export default class PrimaryTextCardSkillsOverviewAdaptiveCardExtension extends 
         loading: false,
         errorMessage: message,
         skillsCount: 0,
-        latestSkill: undefined
+        latestSkills: []
       });
     }
   }

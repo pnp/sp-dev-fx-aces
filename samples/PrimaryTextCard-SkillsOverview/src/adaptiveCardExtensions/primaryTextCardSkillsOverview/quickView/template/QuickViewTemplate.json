@@ -7,14 +7,36 @@
       "type": "TextBlock",
       "weight": "Bolder",
       "size": "Medium",
-      "text": "${title}",
+      "text": "${heading}",
       "wrap": true
     },
     {
       "type": "TextBlock",
-      "text": "${description}",
-      "wrap": true,
-      "spacing": "Small"
+      "$when": "${!hasSkills}",
+      "text": "${emptyMessage}",
+      "wrap": true
+    },
+    {
+      "type": "Container",
+      "$data": "${skills}",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "weight": "Bolder",
+          "size": "Default",
+          "text": "${title}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "${description}",
+          "wrap": true,
+          "spacing": "Small",
+          "isSubtle": true
+        }
+      ]
     }
   ]
 }

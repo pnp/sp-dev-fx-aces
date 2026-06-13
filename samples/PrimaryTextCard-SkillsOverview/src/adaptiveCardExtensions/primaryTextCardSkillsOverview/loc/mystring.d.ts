@@ -15,6 +15,7 @@ declare interface IPrimaryTextCardSkillsOverviewAdaptiveCardExtensionStrings {
   SeeLatestSkillButton: string;
   QuickViewNoSkillTitle: string;
   QuickViewNoSkillDescription: string;
+  QuickViewListTitle: string;
 }
 
 declare module 'PrimaryTextCardSkillsOverviewAdaptiveCardExtensionStrings' {

@@ -15,7 +15,7 @@ export class CardView extends BasePrimaryTextCardView<
   IPrimaryTextCardSkillsOverviewAdaptiveCardExtensionState
 > {
   public get cardButtons(): [ICardButton] | undefined {
-    if (this.state.loading || this.state.errorMessage || !this.state.latestSkill) {
+    if (this.state.loading || this.state.errorMessage || this.state.latestSkills.length === 0) {
       return undefined;
     }
     return [

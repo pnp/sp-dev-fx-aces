@@ -98,6 +98,96 @@ export class SkillsService {
     };
   }
 
+  public async getLatestSkills(top: number): Promise<ISkill[]> {
+    if (top <= 0) {
+      return [];
+    }
+
+    const subfolders: IFolderItem[] | undefined = await this.getSkillSubfolders();
+    if (subfolders === undefined || subfolders.length === 0) {
+      return [];
+    }
+
+    const perFolder: IFileItem[][] = await Promise.all(
+      subfolders.map(
+        (folder: IFolderItem): Promise<IFileItem[]> =>
+          this.safeListMarkdownInFolder(folder.ServerRelativeUrl)
+      )
+    );
+
+    const candidates: IFileItem[] = [];
+    for (const folderFiles of perFolder) {
+      for (const file of folderFiles) {
+        candidates.push(file);
+      }
+    }
+
+    candidates.sort(
+      (a: IFileItem, b: IFileItem): number =>
+        new Date(b.TimeCreated).getTime() - new Date(a.TimeCreated).getTime()
+    );
+
+    const selected: IFileItem[] = candidates.slice(0, top);
+
+    const skills: (ISkill | undefined)[] = await Promise.all(
+      selected.map((file: IFileItem): Promise<ISkill | undefined> => this.safeReadSkill(file))
+    );
+
+    const result: ISkill[] = [];
+    for (const skill of skills) {
+      if (skill !== undefined) {
+        result.push(skill);
+      }
+    }
+    return result;
+  }
+
+  private async safeListMarkdownInFolder(folderServerRelativeUrl: string): Promise<IFileItem[]> {
+    try {
+      const files: IFileItem[] = await this._sp.web
+        .getFolderByServerRelativePath(folderServerRelativeUrl)
+        .files
+        .select('Name', 'ServerRelativeUrl', 'TimeCreated')
+        .orderBy('TimeCreated', false)
+        .top(SkillsService.MAX_FILES_PER_FOLDER)();
+
+      if (!Array.isArray(files)) {
+        return [];
+      }
+
+      const markdownFiles: IFileItem[] = [];
+      for (const file of files) {
+        if (file.Name.toLowerCase().endsWith('.md')) {
+          markdownFiles.push(file);
+        }
+      }
+      return markdownFiles;
+    } catch {
+      // Skip this subfolder on any error so a single bad folder does not break the aggregate.
+      return [];
+    }
+  }
+
+  private async safeReadSkill(file: IFileItem): Promise<ISkill | undefined> {
+    try {
+      const markdown: string = await this._sp.web
+        .getFileByServerRelativePath(file.ServerRelativeUrl)
+        .getText();
+      const parsed: IParsedSkill = this.parseSkillMarkdown(markdown, file.Name);
+
+      return {
+        title: parsed.title,
+        description: parsed.description,
+        created: new Date(file.TimeCreated),
+        serverRelativeUrl: file.ServerRelativeUrl,
+        fileName: file.Name
+      };
+    } catch {
+      // Skip this file on any error so a single bad file does not break the aggregate.
+      return undefined;
+    }
+  }
+
   private async getSkillSubfolders(): Promise<IFolderItem[] | undefined> {
     const folderUrl: string = this.buildFolderUrl();
 
@@ -194,8 +284,90 @@ export class SkillsService {
     return false;
   }
 
+  private parseFrontmatter(normalized: string, fileName: string): IParsedSkill | undefined {
+    // Frontmatter must start at the very first line with `---` and end with a
+    // matching `---` on its own line. Returns undefined when absent or malformed.
+    if (!normalized.startsWith('---\n')) {
+      return undefined;
+    }
+    const endIndex: number = normalized.indexOf('\n---', 4);
+    if (endIndex < 0) {
+      return undefined;
+    }
+    const block: string = normalized.substring(4, endIndex);
+    const blockLines: string[] = block.split('\n');
+
+    let name: string = '';
+    let description: string = '';
+    let current: 'name' | 'description' | undefined;
+    const descriptionParts: string[] = [];
+
+    for (const rawLine of blockLines) {
+      const keyMatch: RegExpExecArray | null = /^([A-Za-z0-9_-]+)\s*:\s*(.*)$/.exec(rawLine);
+      if (keyMatch !== null) {
+        const key: string = keyMatch[1].toLowerCase();
+        const value: string = this.stripYamlQuotes(keyMatch[2].trim());
+        if (key === 'name') {
+          name = value;
+          current = 'name';
+        } else if (key === 'description') {
+          if (value.length > 0) {
+            descriptionParts.push(value);
+          }
+          current = 'description';
+        } else {
+          current = undefined;
+        }
+        continue;
+      }
+      // Continuation line (folded/multi-line YAML scalar) for the active key.
+      if (current === 'description') {
+        const trimmed: string = rawLine.trim();
+        if (trimmed.length > 0) {
+          descriptionParts.push(trimmed);
+        }
+      }
+    }
+
+    description = descriptionParts.join(' ').trim();
+
+    if (name.length === 0 && description.length === 0) {
+      return undefined;
+    }
+
+    const title: string = name.length > 0 ? name : fileName.replace(/\.md$/i, '');
+    return { title, description };
+  }
+
+  private stripYamlQuotes(value: string): string {
+    if (value.length >= 2) {
+      const first: string = value.charAt(0);
+      const last: string = value.charAt(value.length - 1);
+      if ((first === '"' && last === '"') || (first === '\'' && last === '\'')) {
+        return value.substring(1, value.length - 1);
+      }
+    }
+    return value;
+  }
+
   private parseSkillMarkdown(md: string, fileName: string): IParsedSkill {
     const normalized: string = md.replace(/^\uFEFF/, '').replace(/\r/g, '');
+
+    // If the file begins with YAML frontmatter (--- ... ---), prefer its
+    // `name` and `description` fields over heading-based parsing. This matches
+    // the agent skill file format (see skill-sample.md).
+    const frontmatter: IParsedSkill | undefined = this.parseFrontmatter(normalized, fileName);
+    if (frontmatter !== undefined) {
+      let frontDescription: string = frontmatter.description;
+      if (frontDescription.length > SkillsService.MAX_DESCRIPTION_LENGTH) {
+        frontDescription = `${frontDescription.substring(0, SkillsService.MAX_DESCRIPTION_LENGTH)}…`;
+      }
+      if (frontDescription.length === 0) {
+        frontDescription = SkillsService.DEFAULT_DESCRIPTION;
+      }
+      return { title: frontmatter.title, description: frontDescription };
+    }
+
     const lines: string[] = normalized.split('\n');
 
     let title: string = fileName.replace(/\.md$/i, '');
