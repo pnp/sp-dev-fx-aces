@@ -13,7 +13,7 @@ define([], function () {
     CountPrimaryTextSingular: '1 skill',
     CountPrimaryTextPlural: '{0} skills',
     CountDescription: 'Published on this site',
-    SeeLatestSkillButton: 'See latest skill',
+    SeeLatestSkillButton: 'See latest skills',
     QuickViewNoSkillTitle: 'No skill available',
     QuickViewNoSkillDescription: 'Add a markdown file to Agent Assets/Skills to see it here.',
     QuickViewListTitle: 'Latest skills',

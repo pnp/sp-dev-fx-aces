@@ -54,50 +54,6 @@ export class SkillsService {
     return total;
   }
 
-  public async getLatestSkill(): Promise<ISkill | undefined> {
-    const subfolders: IFolderItem[] | undefined = await this.getSkillSubfolders();
-    if (subfolders === undefined || subfolders.length === 0) {
-      return undefined;
-    }
-
-    const candidates: (IFileItem | undefined)[] = await Promise.all(
-      subfolders.map(
-        (folder: IFolderItem): Promise<IFileItem | undefined> =>
-          this.safeGetNewestMarkdownInFolder(folder.ServerRelativeUrl)
-      )
-    );
-
-    let latest: IFileItem | undefined;
-    let latestTime: number = Number.NEGATIVE_INFINITY;
-    for (const candidate of candidates) {
-      if (candidate === undefined) {
-        continue;
-      }
-      const candidateTime: number = new Date(candidate.TimeCreated).getTime();
-      if (candidateTime > latestTime) {
-        latest = candidate;
-        latestTime = candidateTime;
-      }
-    }
-
-    if (latest === undefined) {
-      return undefined;
-    }
-
-    const markdown: string = await this._sp.web
-      .getFileByServerRelativePath(latest.ServerRelativeUrl)
-      .getText();
-    const parsed: IParsedSkill = this.parseSkillMarkdown(markdown, latest.Name);
-
-    return {
-      title: parsed.title,
-      description: parsed.description,
-      created: new Date(latest.TimeCreated),
-      serverRelativeUrl: latest.ServerRelativeUrl,
-      fileName: latest.Name
-    };
-  }
-
   public async getLatestSkills(top: number): Promise<ISkill[]> {
     if (top <= 0) {
       return [];
@@ -232,31 +188,6 @@ export class SkillsService {
     } catch {
       // Skip this subfolder on any error so a single bad folder does not break the aggregate.
       return 0;
-    }
-  }
-
-  private async safeGetNewestMarkdownInFolder(folderServerRelativeUrl: string): Promise<IFileItem | undefined> {
-    try {
-      const files: IFileItem[] = await this._sp.web
-        .getFolderByServerRelativePath(folderServerRelativeUrl)
-        .files
-        .select('Name', 'ServerRelativeUrl', 'TimeCreated')
-        .orderBy('TimeCreated', false)
-        .top(SkillsService.MAX_FILES_PER_FOLDER)();
-
-      if (!Array.isArray(files)) {
-        return undefined;
-      }
-
-      for (const file of files) {
-        if (file.Name.toLowerCase().endsWith('.md')) {
-          return file;
-        }
-      }
-      return undefined;
-    } catch {
-      // Skip this subfolder on any error so a single bad folder does not break the aggregate.
-      return undefined;
     }
   }
 
