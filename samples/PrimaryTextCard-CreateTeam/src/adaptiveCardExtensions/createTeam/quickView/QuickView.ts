@@ -1,4 +1,4 @@
-import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
+import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments, ISubmitActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'CreateTeamAdaptiveCardExtensionStrings';
 import { ICreateTeamAdaptiveCardExtensionProps, ICreateTeamAdaptiveCardExtensionState,
   ERROR_VIEW_REGISTRY_ID,
@@ -28,20 +28,21 @@ export class QuickView extends BaseAdaptiveCardView<
     return require('./template/QuickViewTemplate.json');
   }
 
-  public onAction(action: IActionArguments | any): void {
+  public onAction(action: IActionArguments): void {
     try {
-      if (action.id == "Submit") {
+      if (action.id === "Submit") {
         this.quickViewNavigator.push(LOADING_VIEW_REGISTRY_ID);
         Logger.write(`Submit button clicked`, LogLevel.Info); 
-        let TeamProperties : ITeamProperties = {
-          description:action.data.description,
-          displayName:action.data.displayName,
-          type:action.data.type,
-          templateType:action.data.templateType
+        const data = (action as ISubmitActionArguments).data as { description: string; displayName: string; type: string; templateType: string };
+        const TeamProperties : ITeamProperties = {
+          description: data.description,
+          displayName: data.displayName,
+          type: data.type,
+          templateType: data.templateType
         }
         setTimeout(async() => {
           await this.state.service.CreateTeam(TeamProperties).then((res)=>{
-            if(res == false){
+            if(res === false){
               this.quickViewNavigator.push(ERROR_VIEW_REGISTRY_ID);
             }
             else{

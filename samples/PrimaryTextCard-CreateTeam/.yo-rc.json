@@ -1,14 +1,19 @@
 {
   "@microsoft/generator-sharepoint": {
-    "plusBeta": true,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.13.0-beta.15",
+    "version": "1.23.0",
     "libraryName": "create-team",
     "libraryId": "34b1113c-5874-465b-9353-f85418763d7b",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "templateType": "Basic"
+    "templateType": "Basic",
+    "useGulp": false,
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.24.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    }
   }
 }

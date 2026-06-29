@@ -9,7 +9,7 @@ This solution provides a team provision feature based on default templates using
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -28,13 +28,14 @@ This solution provides a team provision feature based on default templates using
 
 Solution|Author(s)
 --------|---------
-Create Team| [Dipen Shah](https://github.com/Dips365) [@Dips365](https://twitter.com/Dips_365) [Rapid Circle](https://en.rapidcircle.com/)
+Create Team| [Dipen Shah](https://github.com/Dips365) [@Dips365](https://twitter.com/Dips_365) [Rapid Circle](https://en.rapidcircle.com/) [Aimery Thomas](https://github.com/a1mery)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0|october 10, 2021|Initial release
+2.0|June 29, 2026|Upgraded to SPFx 1.23
 
 ## Disclaimer
 
@@ -52,7 +53,11 @@ To test the solution yourself, you can follow these steps:
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm start** (runs `heft start --clean`)
+
+To produce a production build and package, run:
+
+  - **npm run build** (runs `heft test --clean --production && heft package-solution --production`)
 
 ## Features
 
