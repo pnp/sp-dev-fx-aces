@@ -3,7 +3,7 @@
   "solution": {
     "name": "create-team-client-side-solution",
     "id": "34b1113c-5874-465b-9353-f85418763d7b",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "developer": {
@@ -13,19 +13,41 @@
       "termsOfUseUrl": "",
       "mpnId": ""
     },
-    "webApiPermissionRequests": [  
-      {  
-        "resource": "Microsoft Graph",  
-        "scope": "User.ReadWrite.All"  
+    "metadata": {
+      "shortDescription": {
+        "default": "create-team description"
       },
-      {  
-        "resource": "Microsoft Graph",  
-        "scope": "Group.Read.All"  
+      "longDescription": {
+        "default": "create-team description"
       },
-      {  
-        "resource": "Microsoft Graph",  
-        "scope": "Directory.Read.All"  
-      }  
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "create-team CreateTeamAdaptiveCardExtension Feature",
+        "description": "The feature that activates CreateTeamAdaptiveCardExtension from the create-team solution.",
+        "id": "ae45b069-83dc-45c0-b70a-2310a6a8bdaf",
+        "version": "1.0.0.0",
+        "componentIds": [
+          "ae45b069-83dc-45c0-b70a-2310a6a8bdaf"
+        ]
+      }
+    ],
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "User.ReadWrite.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Group.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Directory.Read.All"
+      }
     ]
   },
   "paths": {

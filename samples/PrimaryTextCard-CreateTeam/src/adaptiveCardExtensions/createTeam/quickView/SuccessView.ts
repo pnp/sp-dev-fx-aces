@@ -20,7 +20,7 @@ ICreateTeamAdaptiveCardExtensionState, ISuccessViewData> {
         return require('./template/SuccessViewTemplate.json');
     }
     public onAction(action: IActionArguments): void {
-        if (action.id == "close") {
+        if (action.id === "close") {
             this.quickViewNavigator.close();
         }
     }
