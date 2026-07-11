@@ -10,11 +10,11 @@ The Azure Function proxy for the `PrimaryTextCard-WorkIQ-TodaySummary` ACE. See 
 
 ```bash
 cd api/WorkIQTodaySummaryFunction
-cp local.settings.sample.json local.settings.json   # then fill in the WorkIQ__* values
+cp local.settings.example.json local.settings.json   # then fill in the WorkIQ__* values
 dotnet build
 func start
 ```
 
 ## Configuration
 
-All settings live under the `WorkIQ` section (`WorkIQ__ClientId`, `WorkIQ__ClientSecret`, etc. as app settings / `local.settings.json` keys) — see `Options/WorkIQOptions.cs` for the full list and `local.settings.sample.json` for the shape.
+All settings live under the `WorkIQ` section (`WorkIQ__ClientId`, `WorkIQ__ClientSecret`, etc. as app settings / `local.settings.json` keys) — see `Options/WorkIQOptions.cs` for the full list and `local.settings.example.json` for the shape.

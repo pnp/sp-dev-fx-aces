@@ -48,7 +48,7 @@ The specific way the Function validates the caller's token and picks an OBO auth
    - **Expose an API** → set the Application ID URI to `api://<client-id>` → add a scope named `access_as_user`, available to admins and users.
    - **API permissions** → **Add a permission** → **APIs my organization uses** → search "Work IQ" → **Delegated permissions** → `WorkIQAgent.Ask` → **Grant admin consent**.
    - **Certificates & secrets** → create a client secret (or, better for production, a certificate) for the Function's OBO calls.
-3. **Deploy the Azure Function** (`api/WorkIQTodaySummaryFunction`) and set its app settings from step 2 — see `local.settings.sample.json` for the full list (`WorkIQ__ClientId`, `WorkIQ__ClientSecret`, `WorkIQ__ProxyAudience`).
+3. **Deploy the Azure Function** (`api/WorkIQTodaySummaryFunction`) and set its app settings from step 2 — see `local.settings.example.json` for the full list (`WorkIQ__ClientId`, `WorkIQ__ClientSecret`, `WorkIQ__ProxyAudience`).
 4. **Deploy the SPFx package** to your tenant app catalog.
 5. **Approve the API access request — this step is easy to miss and causes a silent auth failure if you skip it.** In the SharePoint admin center, go to **Advanced → API access**, find the pending request for `WorkIQ-TodaySummary-Proxy` / `access_as_user`, and approve it. Until you do, `AadHttpClientFactory.getClient()` in the ACE will fail before the card ever reaches the Function.
 6. **Add the card to a Viva Connections dashboard** and configure it: set *Proxy function URL* to your deployed Function's base URL, and *Proxy function Application ID URI* to `api://<client-id>` from step 2.
@@ -92,7 +92,7 @@ This sample has two projects: the SPFx ACE at the repo root, and the C# Azure Fu
 
 ```bash
 cd api/WorkIQTodaySummaryFunction
-cp local.settings.sample.json local.settings.json   # fill in the WorkIQ__* values from the Prerequisites
+cp local.settings.example.json local.settings.json   # fill in the WorkIQ__* values from the Prerequisites
 dotnet build
 func start
 ```

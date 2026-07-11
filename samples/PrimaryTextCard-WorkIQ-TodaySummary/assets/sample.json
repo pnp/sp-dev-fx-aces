@@ -30,7 +30,12 @@
       "value": "C# Azure Functions (isolated worker)"
     }
   ],
-  "thumbnails": [],
+  "thumbnails": [{
+    "type": "image",
+    "order": 100,
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-WorkIQ-TodaySummary/assets/demo.gif",
+    "alt": "Preview"
+  }],
   "authors": [{
     "gitHubAccount": "AhmadiRamin",
     "pictureUrl": "https://github.com/AhmadiRamin.png",
