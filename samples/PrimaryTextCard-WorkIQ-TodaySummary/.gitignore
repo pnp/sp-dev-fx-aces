@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Build generated files
+dist
+lib
+solution
+sharepoint
+release
+temp
+*.sppkg
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# OSX
+.DS_Store
+
+# Visual Studio files
+.ntvs_analysis.dat
+.vs
+bin
+obj
+
+# Resx Generated Code
+*.resx.ts
+
+# Styles Generated Code
+*.scss.ts
+
+lib-dts
+lib-commonjs
+lib-esm
+jest-output
+.heft
+
+# Azure Functions proxy (api/)
+api/**/bin
+api/**/obj
+api/**/local.settings.json

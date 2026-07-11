@@ -1,0 +1,161 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "${title}",
+      "weight": "Bolder",
+      "size": "Medium",
+      "wrap": true
+    },
+    {
+      "type": "Container",
+      "$when": "${status == 'loading'}",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${loadingText}",
+          "wrap": true,
+          "isSubtle": true
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "$when": "${status == 'not-enabled'}",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${notEnabledTitle}",
+          "weight": "Bolder",
+          "color": "Attention",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "${notEnabledMessage}",
+          "wrap": true
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "$when": "${status == 'error'}",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${errorTitle}",
+          "weight": "Bolder",
+          "color": "Attention",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "${errorMessage}",
+          "wrap": true
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "$when": "${status == 'ready'}",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${headline}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "${generatedAtLabel}",
+          "wrap": true,
+          "isSubtle": true,
+          "size": "Small",
+          "spacing": "Small"
+        },
+        {
+          "type": "TextBlock",
+          "text": "${emptyItemsText}",
+          "$when": "${hasItems == false}",
+          "wrap": true,
+          "spacing": "Medium"
+        },
+        {
+          "type": "Container",
+          "$when": "${hasItems == true}",
+          "spacing": "Medium",
+          "separator": true,
+          "items": [
+            {
+              "type": "ColumnSet",
+              "$data": "${items}",
+              "spacing": "Medium",
+              "columns": [
+                {
+                  "type": "Column",
+                  "width": "auto",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${icon}",
+                      "size": "Medium"
+                    }
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${title}",
+                      "weight": "Bolder",
+                      "wrap": true
+                    },
+                    {
+                      "type": "TextBlock",
+                      "text": "${subtitle}",
+                      "$when": "${subtitle != ''}",
+                      "wrap": true,
+                      "isSubtle": true,
+                      "size": "Small"
+                    },
+                    {
+                      "type": "ActionSet",
+                      "$when": "${hasUrl == true}",
+                      "actions": [
+                        {
+                          "type": "Action.OpenUrl",
+                          "title": "Open",
+                          "url": "${webUrl}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "text": "${disclaimer}",
+          "wrap": true,
+          "isSubtle": true,
+          "size": "Small",
+          "spacing": "Medium"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "id": "refresh",
+      "title": "${retryButtonText}",
+      "$when": "${status != 'loading'}"
+    }
+  ]
+}
