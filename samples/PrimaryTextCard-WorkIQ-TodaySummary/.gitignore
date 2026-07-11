@@ -43,3 +43,13 @@ jest-output
 api/**/bin
 api/**/obj
 api/**/local.settings.json
+
+# Visual Studio publish profiles and connected-service metadata — these bake in
+# subscription/resource-group IDs from whoever last published, so they don't belong
+# in source control for a sample.
+api/**/*.pubxml
+api/**/*.pubxml.user
+api/**/*.csproj.user
+api/**/Properties/PublishProfiles/
+api/**/Properties/ServiceDependencies/
+api/**/Properties/serviceDependencies*.json
