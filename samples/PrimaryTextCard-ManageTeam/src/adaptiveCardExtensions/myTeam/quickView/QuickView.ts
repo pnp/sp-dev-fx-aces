@@ -87,14 +87,14 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   public onAction(action: IActionArguments): void {
-    if (action.id == "close") {
+    if (action.id === "close") {
       this.quickViewNavigator.close();
     }
-    if (action.id == "Block") {
+    if (action.id === "Block") {
       setTimeout(async () => {
         await this.state.service.BlockSignIn(this.state.currentConfig.members[this.state.currentIndex].userPrincipalName)
           .then((res) => {
-            if(res==false){
+            if(res === false){
               // Push Error card to quick view navigator
               this.quickViewNavigator.push(ERROR_VIEW_REGISTRY_ID);
             }
@@ -106,7 +106,7 @@ export class QuickView extends BaseAdaptiveCardView<
           });
       }, 0);
     }
-    if(action.id == 'Error'){
+    if(action.id === 'Error'){
       this.quickViewNavigator.push(ERROR_VIEW_REGISTRY_ID);
     }
   }

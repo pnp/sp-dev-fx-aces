@@ -20,8 +20,8 @@ The following are scenarios covered by this sample.
 
 ## Compatibility
 
-![SPFx 1.13](https://img.shields.io/badge/SPFx-1.13.0-green.svg)
-![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg)
+![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams")
 ![Workbench Local | Hosted](https://img.shields.io/badge/Workbench-Local%20%7C%20Hosted-green.svg)
@@ -41,15 +41,16 @@ After deploying the solution to the app catalog, a SharePoint administrator need
 
 ## Solution
 
-| Solution   | Author(s)                                                                                                                     |
-|------------|-------------------------------------------------------------------------------------------------------------------------------|
-| ManageTeam | [Dipen Shah](https://github.com/Dips365) [@Dips365](https://twitter.com/Dips_365) [Rapid Circle](https://en.rapidcircle.com/) |
+| Solution   | Author(s)                                                                                                                                                             |
+|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ManageTeam | [Dipen Shah](https://github.com/Dips365) [@Dips365](https://twitter.com/Dips_365) [Rapid Circle](https://en.rapidcircle.com/) [Aimery Thomas](https://github.com/a1mery) |
 
 ## Version history
 
-| Version | Date               | Comments       |
-|---------|--------------------|----------------|
-| 1.0     | September 20, 2021 | Initial Commit |
+| Version | Date               | Comments                    |
+|---------|--------------------|-----------------------------|
+| 1.1     | July 12, 2026      | Upgraded to SPFx 1.23.0     |
+| 1.0     | September 20, 2021 | Initial Commit              |
 
 ## Disclaimer
 
@@ -60,9 +61,10 @@ After deploying the solution to the app catalog, a SharePoint administrator need
 ## Minimal path to awesome
 
 * Clone this repository
+* Ensure that you are at the solution folder
 * in the command line run:
   * `npm install`
-  * `gulp serve`
+  * `npm run start`
 
 ## Features
 
@@ -71,5 +73,13 @@ This Adaptive Card Extension illustrates the following concepts on top of the Sh
 * Introduction on ACEs
 * Microsoft Graph API integration
 * Handle queries on Quick View
+
+## References
+
+- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
+- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
+- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
+- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
 <img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-ManageTeam" />

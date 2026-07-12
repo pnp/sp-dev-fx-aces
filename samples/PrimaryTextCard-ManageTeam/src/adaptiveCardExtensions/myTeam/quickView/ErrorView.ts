@@ -59,7 +59,7 @@ export class ErrorView extends BaseAdaptiveCardView<
         };
     }
     public onAction(action: IActionArguments): void {
-        if (action.id == "close") {
+        if (action.id === "close") {
             this.quickViewNavigator.pop();
         }
     }

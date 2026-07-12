@@ -8,7 +8,6 @@ import { Service } from "../../services/service";
 import { Logger, LogLevel } from '@pnp/logging/logger';
 import { ConsoleListener } from '@pnp/logging/listeners';
 import { graph } from '@pnp/graph';
-import { MSGraphClient } from "@microsoft/sp-http";
 export interface IMyTeamAdaptiveCardExtensionProps {
   title: string;
   description: string;
@@ -34,7 +33,6 @@ export default class MyTeamAdaptiveCardExtension extends BaseAdaptiveCardExtensi
   private LOG_SOURCE: string = "🔶MyTeamAdaptiveCardExtension";
   private _deferredPropertyPane: MyTeamPropertyPane | undefined;
   private service: Service = new Service();
-  private _client = MSGraphClient;
 
 
   /** onInit functiont get records and store it in config file. */
@@ -42,8 +40,9 @@ export default class MyTeamAdaptiveCardExtension extends BaseAdaptiveCardExtensi
     Logger.subscribe(new ConsoleListener());
     Logger.activeLogLevel = LogLevel.Info;
     try {
-      graph.setup({ spfxContext: this.context });
-      const client = await this.context.msGraphClientFactory.getClient();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      graph.setup({ spfxContext: this.context as any });
+      const client = await this.context.msGraphClientFactory.getClient('3');
       await this.service.Init(client);
       this.state = {
         currentIndex:0,
@@ -66,7 +65,8 @@ export default class MyTeamAdaptiveCardExtension extends BaseAdaptiveCardExtensi
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return this.properties.iconProperty || require('./assets/microsoft-teams.svg');
   }
 
