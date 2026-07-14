@@ -17,12 +17,12 @@
     {
       "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
       "group": { "default": "Dashboard" },
-      "title": { "default": "PrimaryTextCardSkillsOverview" },
-      "description": { "default": "PrimaryTextCard-SkillsOverview description" },
-      "iconImageUrl": "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product-monoline/svg/vivaconnections_32x1.svg",
+      "title": { "default": "SharePoint Skills Overview" },
+      "description": { "default": "SharePoint Skills Overview description" },
+      "officeFabricIconFontName": "MarkDownLanguage",
       "cardSize": "Large",
       "properties": {
-        "title": "PrimaryTextCardSkillsOverview"
+        "title": "SharePoint Skills Overview"
       }
     }
   ]
