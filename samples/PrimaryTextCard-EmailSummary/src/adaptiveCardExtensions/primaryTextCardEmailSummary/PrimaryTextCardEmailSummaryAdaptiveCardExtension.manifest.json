@@ -17,12 +17,12 @@
     {
       "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
       "group": { "default": "Dashboard" },
-      "title": { "default": "PrimaryTextCardEmailSummary" },
-      "description": { "default": "PrimaryTextCard-EmailSummary description" },
-      "iconImageUrl": "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product-monoline/svg/vivaconnections_32x1.svg",
+      "title": { "default": "Email Summary" },
+      "description": { "default": "Email Summary description" },
+      "officeFabricIconFontName": "Mail",
       "cardSize": "Large",
       "properties": {
-        "title": "PrimaryTextCardEmailSummary"
+        "title": "Email Summary"
       }
     }
   ]
