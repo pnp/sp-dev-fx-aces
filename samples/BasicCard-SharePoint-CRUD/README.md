@@ -64,7 +64,7 @@ Version|Date|Comments
 | @rushstack/heft | 1.2.17 |
 | @microsoft/spfx-web-build-rig | 1.23.0 |
 | @microsoft/spfx-heft-plugins | 1.23.0 |
-| @pnp/sp / @pnp/graph | ^3.9.0 |
+| @pnp/sp / @pnp/graph | ^4.20.0 |
 
 ## Features
 
