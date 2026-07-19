@@ -53,18 +53,6 @@ Version|Date|Comments
 
 > Note: as of SPFx 1.22 the toolchain moved from Gulp to Heft. See the [Heft-based toolchain docs](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/toolchain/sharepoint-framework-toolchain-rushstack-heft) for details.
 
-### Toolchain versions
-
-| Component | Version |
-| --- | --- |
-| SPFx | 1.23.0 |
-| Node.js | >=22.14.0 <23.0.0 |
-| TypeScript | ~5.8 |
-| ESLint | 9.37.0 |
-| @rushstack/heft | 1.2.17 |
-| @microsoft/spfx-web-build-rig | 1.23.0 |
-| @microsoft/spfx-heft-plugins | 1.23.0 |
-| @pnp/sp / @pnp/graph | ^4.20.0 |
 
 ## Features
 
