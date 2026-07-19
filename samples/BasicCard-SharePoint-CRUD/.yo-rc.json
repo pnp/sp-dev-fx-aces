@@ -3,12 +3,18 @@
     "plusBeta": false,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.15.2",
+    "version": "1.23.0",
     "libraryName": "basic-card-share-point-crud",
     "libraryId": "9422bf80-e0b3-4251-9d29-97ccc7de3617",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "Basic"
+    "aceTemplateType": "Basic",
+    "useGulp": false,
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.24.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    }
   }
 }

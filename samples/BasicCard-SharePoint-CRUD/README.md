@@ -8,7 +8,7 @@ This Adaptive Card Extension shows how to work with form elements and form data 
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.15.2-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -29,6 +29,7 @@ BasicCard-SharePoint-CRUD | Derek Cash-Peterson ([@spdcp](https://twitter.com/sp
 
 Version|Date|Comments
 -------|----|--------
+1.2|July 19, 2026|Upgrade to SPFx 1.23.0 (Heft-based toolchain)
 1.1|November 14, 2022|Upgrade to 1.15.2
 1.0|January 13, 2021|Initial release
 
@@ -44,13 +45,26 @@ Version|Date|Comments
 - Ensure that you are at the solution folder
   - in the command line run:
     - `npm install`
-    - `gulp build --ship`
-    - `gulp bundle --ship`
-    - `gulp package-solution --ship`
-  - Browse to your SharePoint app catalog and load the SPFX package.
+    - `npm run build` (runs `heft test --clean --production && heft package-solution --production`)
+  - Browse to your SharePoint app catalog and load the SPFx package (`sharepoint/solution/*.sppkg`).
   - in the command line run:
-    - `gulp serve --nobrowser`
+    - `npm start` (runs `heft start --clean`)
   - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
+
+> Note: as of SPFx 1.22 the toolchain moved from Gulp to Heft. See the [Heft-based toolchain docs](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/toolchain/sharepoint-framework-toolchain-rushstack-heft) for details.
+
+### Toolchain versions
+
+| Component | Version |
+| --- | --- |
+| SPFx | 1.23.0 |
+| Node.js | >=22.14.0 <23.0.0 |
+| TypeScript | ~5.8 |
+| ESLint | 9.37.0 |
+| @rushstack/heft | 1.2.17 |
+| @microsoft/spfx-web-build-rig | 1.23.0 |
+| @microsoft/spfx-heft-plugins | 1.23.0 |
+| @pnp/sp / @pnp/graph | ^3.9.0 |
 
 ## Features
 
