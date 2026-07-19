@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-ace-service-health-client-side-solution",
     "id": "67eea95d-bdf8-4d4d-86a8-8f9b6713e62f",
-    "version": "1.1.0.0",
+    "version": "1.2.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "developer": {
@@ -13,14 +13,26 @@
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.13.0-beta.20"
     },
-    "webApiPermissionRequests": [
+    "metadata": {
+      "shortDescription": { "default": "spfx-ace-service-health description" },
+      "longDescription": { "default": "spfx-ace-service-health description" },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
       {
-        "resource": "Microsoft Graph",
-        "scope": "ServiceHealth.Read.All"
+        "title": "spfx-ace-service-health ServiceHealthOverviewAdaptiveCardExtensi Feature",
+        "description": "The feature that activates ServiceHealthOverviewAdaptiveCardExtensi from the spfx-ace-service-health solution.",
+        "id": "051f74f2-95ee-48ce-9e6b-14d7c9945de9",
+        "version": "1.2.0.0",
+        "componentIds": ["051f74f2-95ee-48ce-9e6b-14d7c9945de9"]
       }
+    ],
+    "webApiPermissionRequests": [
+      { "resource": "Microsoft Graph", "scope": "ServiceHealth.Read.All" }
     ]
   },
-  "paths": {
-    "zippedPackage": "solution/spfx-ace-service-health.sppkg"
-  }
+  "paths": { "zippedPackage": "solution/spfx-ace-service-health.sppkg" }
 }
+
