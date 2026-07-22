@@ -39,7 +39,7 @@ export default class SharePointCrudExampleAdaptiveCardExtension extends BaseAdap
 
   public async onInit(): Promise<void> {
     try {
-      if (this.properties.homeSite == undefined || this.properties.homeSite.length < 1) {
+      if (this.properties.homeSite === undefined || this.properties.homeSite.length < 1) {
         this.properties.homeSite = this.context.pageContext.site.absoluteUrl;
       }
       //Initialize Service
@@ -72,7 +72,7 @@ export default class SharePointCrudExampleAdaptiveCardExtension extends BaseAdap
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 
