@@ -3,6 +3,7 @@ import * as strings from 'ServiceHealthOverviewAdaptiveCardExtensionStrings';
 import { IServiceHealthOverviewAdaptiveCardExtensionProps, IServiceHealthOverviewAdaptiveCardExtensionState, ISSUES_DETAILS_VIEW_REGISTRY_ID } from '../ServiceHealthOverviewAdaptiveCardExtension';
 import * as _ from "lodash";
 import { Service } from '../../types';
+import IssuesViewTemplate from './template/IssuesViewTemplate.json';
 
 export interface IIssueViewData {
   services: Service[];
@@ -23,7 +24,7 @@ export class IssuesView extends BaseAdaptiveCardView<
   }
 
   public get template(): ISPFxAdaptiveCard {
-    return require('./template/IssuesViewTemplate.json');
+    return IssuesViewTemplate as ISPFxAdaptiveCard;
   }
 
   public get title(): string {

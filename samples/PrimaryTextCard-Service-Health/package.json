@@ -1,29 +1,36 @@
 {
   "name": "spfx-ace-service-health",
-  "version": "0.0.1",
+  "version": "1.2.0",
   "private": true,
-  "main": "lib/index.js",
+  "engines": { "node": ">=22.14.0 < 23.0.0" },
   "scripts": {
-    "build": "gulp bundle",
-    "clean": "gulp clean",
-    "test": "gulp test",
-    "serve": "gulp bundle --custom-serve --max_old_space_size=4096 && fast-serve"
+    "build": "heft test --clean --production && heft package-solution --production",
+    "clean": "heft clean",
+    "eject-webpack": "heft eject-webpack",
+    "start": "heft start --clean"
   },
   "dependencies": {
-    "@microsoft/sp-adaptive-card-extension-base": "1.13.0",
-    "@microsoft/sp-core-library": "1.13.0",
-    "@microsoft/sp-property-pane": "1.13.0",
-    "lodash": "^4.17.21"
+    "@microsoft/sp-adaptive-card-extension-base": "1.23.0",
+    "@microsoft/sp-core-library": "1.23.0",
+    "@microsoft/sp-http": "1.23.0",
+    "@microsoft/sp-property-pane": "1.23.0",
+    "lodash": "^4.17.21",
+    "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@microsoft/rush-stack-compiler-3.7": "0.2.3",
-    "@microsoft/sp-build-web": "1.13.0",
-    "@microsoft/sp-module-interfaces": "1.13.0",
-    "@microsoft/sp-tslint-rules": "1.13.0",
+    "@microsoft/eslint-config-spfx": "1.23.0",
+    "@microsoft/eslint-plugin-spfx": "1.23.0",
+    "@microsoft/sp-module-interfaces": "1.23.0",
+    "@microsoft/spfx-heft-plugins": "1.23.0",
+    "@microsoft/spfx-web-build-rig": "1.23.0",
+    "@rushstack/heft": "1.2.17",
+    "@types/jest": "30.0.0",
     "@types/lodash": "^4.14.172",
-    "@types/webpack-env": "1.13.1",
-    "ajv": "~5.2.2",
-    "gulp": "~4.0.2",
-    "spfx-fast-serve-helpers": "~1.13.0"
-  }
+    "@types/webpack-env": "~1.15.2",
+    "css-loader": "~7.1.2",
+    "eslint": "9.37.0",
+    "typescript": "~5.8.0"
+  },
+  "overrides": { "@rushstack/heft": "1.2.17" }
 }
+

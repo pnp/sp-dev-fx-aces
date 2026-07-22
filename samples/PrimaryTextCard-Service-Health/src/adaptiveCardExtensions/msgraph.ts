@@ -1,15 +1,14 @@
 import { AdaptiveCardExtensionContext } from '@microsoft/sp-adaptive-card-extension-base';
-import { GraphError } from '@microsoft/microsoft-graph-client';
-import { MSGraphClient } from '@microsoft/sp-http';
+import { MSGraphClientV3 } from '@microsoft/sp-http';
 
 export class MSGraph {
-    private static _graphClient: MSGraphClient;
+    private static _graphClient: MSGraphClientV3;
     public static async Init(context: AdaptiveCardExtensionContext) {
-        this._graphClient = await context.msGraphClientFactory.getClient();
+        this._graphClient = await context.msGraphClientFactory.getClient('3');
     }
 
     public static async Get(apiUrl: string, version: string = "v1.0", selectProperties?: string[], expandProperties?: string[], filter?: string, count?: boolean): Promise<any> {
-        var p = new Promise<string>(async (resolve, reject) => {
+        const p = new Promise<string>((resolve, reject) => {
             let query = this._graphClient.api(apiUrl).version(version);
             if (selectProperties && selectProperties.length > 0) {
                 query = query.select(selectProperties);
@@ -24,67 +23,67 @@ export class MSGraph {
                 query = query.count(true);
             }
             
-            let callback = (error: GraphError, response: any, rawResponse?: any) => {
+            let callback = (error: any, response: any, rawResponse?: any) => {
                 if (error) {
                     reject(error);
                 } else {
                     resolve(response);
                 }
             };
-            await query.get(callback);
+            void query.get(callback);
         });
         return p;
     }
 
     public static async Patch(apiUrl: string, version: string = "v1.0", content: any): Promise<any> {
-        var p = new Promise<string>(async (resolve, reject) => {
+        const p = new Promise<string>((resolve, reject) => {
             if (typeof (content) === "object") {
                 content = JSON.stringify(content);
             }
 
             let query = this._graphClient.api(apiUrl).version(version);
-            let callback = (error: GraphError, _response: any, rawResponse?: any) => {
+            let callback = (error: any, _response: any, rawResponse?: any) => {
                 if (error) {
                     reject(error);
                 } else {
                     resolve(_response);
                 }
             };
-            await query.update(content, callback);
+            void query.update(content, callback);
         });
         return p;
     }
 
     public static async Post(apiUrl: string, version: string = "v1.0", content: any): Promise<any> {
-        var p = new Promise<string>(async (resolve, reject) => {
+        const p = new Promise<string>((resolve, reject) => {
             if (typeof (content) === "object") {
                 content = JSON.stringify(content);
             }
 
             let query = this._graphClient.api(apiUrl).version(version);
-            let callback = (error: GraphError, response: any, rawResponse?: any) => {
+            let callback = (error: any, response: any, rawResponse?: any) => {
                 if (error) {
                     reject(error);
                 } else {
                     resolve(response);
                 }
             };
-            await query.post(content, callback);
+            void query.post(content, callback);
         });
         return p;
     }
 
     public static async Delete(apiUrl: string, version: string = "v1.0"): Promise<any> {
-        var p = new Promise<string>(async (resolve, reject) => {
+        const p = new Promise<string>((resolve, reject) => {
             let query = this._graphClient.api(apiUrl).version(version);
-            let callback = (error: GraphError, response: any, rawResponse?: any) => {
+            let callback = (error: any, response: any, rawResponse?: any) => {
                 if (error) {
                     reject(error);
                 } else {
                     resolve(response);
                 }
             };
-            await query.delete(callback);
+            void query.delete(callback);
         });
         return p;
     }

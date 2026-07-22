@@ -27,8 +27,8 @@ This sample shows how to build an ACE with a card view and multiple quick views 
 
 ## Used SharePoint Framework Version
 
-![SPFx 1.13.0](https://img.shields.io/badge/SPFx-1.13.0-green.svg)
-![Node.js LTS v14 | LTS v12 | LTS v10](https://img.shields.io/badge/Node.js-LTS%20v14%20%7C%20LTS%20v12%20%7C%20LTS%20v10-green.svg)
+![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
 
@@ -53,7 +53,7 @@ Microsoft Graph
 
 Solution|Author(s)
 --------|---------
-Service-health | [Anoop Tatti](https://github.com/anoopt) ([https://linktr.ee/anoopt](https://linktr.ee/anoopt))
+Service-health | [Anoop Tatti](https://github.com/anoopt) ([https://linktr.ee/anoopt](https://linktr.ee/anoopt)), [Aimery Thomas](https://github.com/a1mery)
 
 ## Version history
 
@@ -61,6 +61,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|September 12, 2021|Initial release
 1.1|November 1, 2021|Updated to SPFx 1.13.0, Minor UI updates
+1.2|July 19, 2026|Upgraded to SPFx 1.23.0 (migrated from Gulp to Heft toolchain)
 
 ## Disclaimer
 
@@ -75,14 +76,11 @@ Version|Date|Comments
 - in the command-line run:
   - **npm install**
 - After that create the sppkg file using
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **npm run build**
 - Deploy the package to the app catalogue site in your tenant
 - The solution needs `ServiceHealth.Read.All` permission of Microsoft Graph API. So, approve the API access request in the SharePoint admin center
-- in the command-line run:
-  - **gulp serve -l --nobrowser**
-- or if using spfx-fast-serve, in the command-line run:
-  - **npm run serve**
+- To run the solution locally, in the command-line run:
+  - **npm run start**
 - Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE to the page
 
