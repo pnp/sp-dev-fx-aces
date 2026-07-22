@@ -9,7 +9,7 @@ This sample tackles a scenario in which you want to reuse part of your Adaptive 
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.15-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -22,13 +22,14 @@ This sample tackles a scenario in which you want to reuse part of your Adaptive 
 
 | Solution    | Author(s)                                               |
 | ----------- | ------------------------------------------------------- |
-| basiccard-cardcomposition |  [Marcin Wojciechowski](https://github.com/mgwojciech) [@mgwojciech](https://twitter.com/mgwojciech) |
+| basiccard-cardcomposition |  [Marcin Wojciechowski](https://github.com/mgwojciech) [@mgwojciech](https://twitter.com/mgwojciech), [Aimery Thomas](https://github.com/a1mery) |
 
 ## Version history
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | June 7, 2022 | Initial release |
+| 1.1     | July 22, 2026    | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -42,10 +43,10 @@ This sample tackles a scenario in which you want to reuse part of your Adaptive 
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 - There are unit tests in the solution, run:
-  - **npx jest**
+  - **npx heft test**
 
 ## Features
 
