@@ -3,7 +3,7 @@
   "solution": {
     "name": "manage-team-client-side-solution",
     "id": "cfe72a90-6319-4ad2-b810-0aabc6532da2",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "developer": {
@@ -21,6 +21,28 @@
       {
         "resource": "Microsoft Graph",
         "scope": "User.ReadWrite.All"
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "manage-team description"
+      },
+      "longDescription": {
+        "default": "manage-team description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "manage-team MyTeamAdaptiveCardExtension Feature",
+        "description": "The feature that activates MyTeamAdaptiveCardExtension from the manage-team solution.",
+        "id": "ca563b74-fb94-4943-b847-fa9d58027cea",
+        "version": "1.0.0.0",
+        "componentIds": [
+          "ca563b74-fb94-4943-b847-fa9d58027cea"
+        ]
       }
     ]
   },

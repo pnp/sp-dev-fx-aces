@@ -1,9 +1,15 @@
 {
   "@microsoft/generator-sharepoint": {
-    "plusBeta": true,
+    "plusBeta": false,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.13.0-beta.17",
+    "version": "1.23.0",
+    "nodeVersion": "22.14.0",
+    "useGulp": false,
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.24.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    },
     "libraryName": "manage-team",
     "libraryId": "cfe72a90-6319-4ad2-b810-0aabc6532da2",
     "packageManager": "npm",

@@ -6,7 +6,6 @@ import {
   ICardButton,
   IActionArguments
 } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'MyTeamAdaptiveCardExtensionStrings';
 import { IMyTeamAdaptiveCardExtensionProps, IMyTeamAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../MyTeamAdaptiveCardExtension';
 
 export class CardView extends BaseBasicCardView<IMyTeamAdaptiveCardExtensionProps, IMyTeamAdaptiveCardExtensionState> {
@@ -25,7 +24,7 @@ export class CardView extends BaseBasicCardView<IMyTeamAdaptiveCardExtensionProp
       });
     }
 
-    if (this.state.currentIndex < this.state.currentConfig.members.length - 1) {
+    if (this.state.currentIndex < (this.state.currentConfig?.members?.length ?? 0) - 1) {
       buttons.push({
         title: 'Next',
         action: {
@@ -53,9 +52,13 @@ export class CardView extends BaseBasicCardView<IMyTeamAdaptiveCardExtensionProp
   }
 
   public get data(): IBasicCardParameters {
-    const { mail,displayName } = this.state.currentConfig.members[this.state.currentIndex];
+    const members = this.state.currentConfig?.members ?? [];
+    const current = members[this.state.currentIndex];
+    if (!current) {
+      return { primaryText: 'No team members found.' };
+    }
     return {
-      primaryText: `Display Name: ${displayName} | mail: ${mail}`, 
+      primaryText: `Display Name: ${current.displayName} | mail: ${current.mail}`,
     };
   }
 
