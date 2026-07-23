@@ -1,4 +1,4 @@
-import { BaseHTMLQuickView } from '@microsoft/sp-adaptive-card-extension-base';
+import { BaseWebQuickView } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'HtmlQuickViewAdaptiveCardExtensionStrings';
 import {
   IHtmlQuickViewAdaptiveCardExtensionProps,
@@ -12,16 +12,18 @@ export interface IQuickViewData {
   title: string;
 }
 
-export class QuickView extends BaseHTMLQuickView<
+export class QuickView extends BaseWebQuickView<
   IHtmlQuickViewAdaptiveCardExtensionProps,
   IHtmlQuickViewAdaptiveCardExtensionState
 > {
 
   render(): void {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const welcomeImage: string = require('./assets/welcome-light.png');
     this.domElement.innerHTML = `
       <section class="${styles.helloWorld}">
         <div class="${styles.welcome}">
-          <img alt="" src="${require('./assets/welcome-light.png')}" class="${styles.welcomeImage}" />
+          <img alt="" src="${welcomeImage}" class="${styles.welcomeImage}" />
           <h2>Well done, ${escape(this.context.pageContext.user.displayName)}!</h2>
         </div>
         <div>

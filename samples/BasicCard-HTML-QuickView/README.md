@@ -12,9 +12,7 @@ By deafault ACE template solution does not include support for the SCSS definiti
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.20.beta.0-yellow.svg)
-
-Notice that this version is NOT available publicly and solution will be updated to use public 1.20 preview version as that's available. Code is currently provided as a reference point to adopt, but you cannot use that externally.
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -38,6 +36,7 @@ Notice that this version is NOT available publicly and solution will be updated 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | August 20, 2024 | Initial release with preview packages |
+| 1.1     | July 23, 2026    | Upgraded to SPFx 1.23 (Heft-based build) |
 
 ## Disclaimer
 
@@ -51,7 +50,7 @@ Notice that this version is NOT available publicly and solution will be updated 
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 ## Features
 

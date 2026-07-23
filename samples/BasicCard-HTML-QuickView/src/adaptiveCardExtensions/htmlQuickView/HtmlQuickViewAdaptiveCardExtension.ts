@@ -18,7 +18,7 @@ export default class HtmlQuickViewAdaptiveCardExtension extends BaseAdaptiveCard
   IHtmlQuickViewAdaptiveCardExtensionProps,
   IHtmlQuickViewAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: HtmlQuickViewPropertyPane;
+  private _deferredPropertyPane!: HtmlQuickViewPropertyPane;
 
   public onInit(): Promise<void> {
     this.state = { };
