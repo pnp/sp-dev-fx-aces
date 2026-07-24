@@ -1,0 +1,18 @@
+/* themed tokens */
+/*
+  Your use of the content in the files referenced here is subject to the terms of the license at http://aka.ms/fabric-assets-license
+*/
+.container {
+  padding: 20px;
+}
+
+.links a {
+  text-decoration: none;
+  color: "[theme:link, default:#03787c]";
+  color: var(--link);
+}
+.links a:hover {
+  text-decoration: underline;
+  color: "[theme:linkHovered, default: #014446]";
+  color: var(--linkHovered);
+}

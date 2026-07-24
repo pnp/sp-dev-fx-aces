@@ -2,7 +2,7 @@
 
 ## **Summary**
 
-This project demonstrates how to leverage the new features introduced in **SPFx 1.20**, which allow developers to utilize **React** components within the **Quick View** of an Adaptive Card Extension (ACE). The main purpose of this web part is to showcase how to create dynamic, interactive, and reusable components in Quick View using React, enhancing the capabilities of SPFx Adaptive Card Extensions.
+This project demonstrates how to leverage the new features introduced in **SPFx 1.23**, which allow developers to utilize **React** components within the **Quick View** of an Adaptive Card Extension (ACE). The main purpose of this web part is to showcase how to create dynamic, interactive, and reusable components in Quick View using React, enhancing the capabilities of SPFx Adaptive Card Extensions.
 
 For a detailed step-by-step guide, visit the author's [Step-by-Step Guide to Building a React QuickView with Adaptive Card Extensions in SPFx 1.20](https://ahmadjadalhak.hashnode.dev/step-by-step-guide-to-building-a-react-quickview-with-adaptive-card-extensions-in-spfx-120), which covers the entire solution in depth.
 
@@ -14,7 +14,7 @@ For a detailed step-by-step guide, visit the author's [Step-by-Step Guide to Bui
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.20-yellow.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -32,11 +32,12 @@ For a detailed step-by-step guide, visit the author's [Step-by-Step Guide to Bui
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | October 05, 2024 | Initial release |
+| 1.1     | July 24, 2026    | Upgraded to SPFx 1.23 |
 
 ## **Key Features**
 
 - **React in Quick View**: Demonstrates the integration of **React** in the Quick View, making it easier to build complex and interactive UI elements.
-- **SPFx 1.20 Adaptive Card Extension**: Leverages the new capabilities of **SPFx 1.20**, offering a flexible, modern approach to building Adaptive Card Extensions.
+- **SPFx 1.23 Adaptive Card Extension**: Leverages the new capabilities of **SPFx 1.23**, offering a flexible, modern approach to building Adaptive Card Extensions.
 - **PnPjs for SharePoint Data Fetching**: Uses **PnPjs** to fetch and display data from a SharePoint list dynamically in the Quick View.
 - **Dynamic Data**: Fetches and displays SharePoint list items in a user-friendly Quick View UI.
 
@@ -44,9 +45,9 @@ For a detailed step-by-step guide, visit the author's [Step-by-Step Guide to Bui
 
 1. **Pre-requisites**:
 
-   - [Node.js](https://nodejs.org/) (LTS version recommended).
+   - [Node.js](https://nodejs.org/) v22 (>=22.14.0 <23.0.0), as required by SPFx 1.23.
    - [Yeoman](http://yeoman.io/) generator for SPFx: `npm install -g @microsoft/generator-sharepoint`.
-   - SPFx 1.20 – Ensure that you are using SPFx 1.20 by checking your package.json or upgrading your current project to SPFx 1.20 (see steps below). Learn more about SPFx 1.20 features and updates in the [SPFx 1.20 release notes](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/release-1.20).
+   - SPFx 1.23 – Ensure that you are using SPFx 1.23 by checking your package.json or upgrading your current project to SPFx 1.23 (see steps below). Learn more about SPFx 1.23 features and updates in the [SPFx 1.23 release notes](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/release-1.23).
      - A SharePoint tenant with the ability to deploy SPFx solutions.
        > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
@@ -62,29 +63,28 @@ For a detailed step-by-step guide, visit the author's [Step-by-Step Guide to Bui
    Once dependencies are installed, build the solution using:
 
    ```bash
-   gulp build
+   npm run build
    ```
 
 4. **Run the Project in Workbench:**:
   To run the web part locally in the SharePoint Workbench, use:
 
    ```bash
-   gulp serve
+   npm start
    ```
 
 5. **Bundle and Deploy:**:
-  If you’re ready to deploy the solution to a SharePoint site, follow these steps:
+  If you’re ready to deploy the solution to a SharePoint site, run the following command. With the new Heft build rig in SPFx 1.23, `npm run build` produces the production `.sppkg` package (found in the `sharepoint/solution` folder):
 
    ```bash
-   gulp bundle --ship
-   gulp package-solution --ship
+   npm run build
    ```
 
 Then upload the generated `.sppkg` file to your SharePoint App Catalog and install the solution on your site.
 
 ## How It Works
 
-This project focuses on creating an **Adaptive Card Extension (ACE)** where the **Quick View** is built using **React components**, which is a new capability introduced in **SPFx 1.20**.
+This project focuses on creating an **Adaptive Card Extension (ACE)** where the **Quick View** is built using **React components**, which is a new capability introduced in **SPFx 1.23**.
 
 ## Key Components
 
@@ -103,7 +103,7 @@ This project focuses on creating an **Adaptive Card Extension (ACE)** where the 
 
 ## Technologies Used
 
-- **SPFx 1.20**: Latest version of SharePoint Framework, which introduces support for React in Quick View.
+- **SPFx 1.23**: Latest version of SharePoint Framework, which introduces support for React in Quick View.
 - **React**: JavaScript library used to build dynamic, interactive user interfaces.
 - **PnPjs**: Simplified API wrapper for interacting with SharePoint data.
 - **TypeScript**: Strongly typed programming language used throughout the project.

@@ -1,0 +1,34 @@
+{
+  "cacheVersion": "9.37.0_v22.14.0",
+  "fileVersions": [
+    [
+      "adaptiveCardExtensions/reactQuickView/cardView/CardView.ts",
+      "t7vAWHWbYK6wkxuoo26KgmNeFhg=_sufNRAkuMBuhWFDaKS9fEFRO4nM="
+    ],
+    [
+      "adaptiveCardExtensions/reactQuickView/models/IListItem.ts",
+      "h2fBkehot4zmI2RQKZOQDRUbQCA=_sufNRAkuMBuhWFDaKS9fEFRO4nM="
+    ],
+    [
+      "adaptiveCardExtensions/reactQuickView/services/SharePointListService.ts",
+      "djKQLeW5rY7HjcGjy1RYuCxmKms=_sufNRAkuMBuhWFDaKS9fEFRO4nM="
+    ],
+    [
+      "adaptiveCardExtensions/reactQuickView/quickView/components/QuickViewComponent.tsx",
+      "qfMqA0JTv8lPKjg1cSPHp9j8/mM=_bmghPggb3e8In8OIVI3tizqsBQQ="
+    ],
+    [
+      "adaptiveCardExtensions/reactQuickView/quickView/QuickView.ts",
+      "FRvbnoK2IZemajS7mGlfPhDCtYY=_sufNRAkuMBuhWFDaKS9fEFRO4nM="
+    ],
+    [
+      "adaptiveCardExtensions/reactQuickView/ReactQuickViewPropertyPane.ts",
+      "ENyqRArmqrPlK0cd2+DN7RlByW4=_sufNRAkuMBuhWFDaKS9fEFRO4nM="
+    ],
+    [
+      "adaptiveCardExtensions/reactQuickView/ReactQuickViewAdaptiveCardExtension.ts",
+      "ZORfPcgtjR9J03LVJOf86umUPJA=_sufNRAkuMBuhWFDaKS9fEFRO4nM="
+    ]
+  ],
+  "filesHash": "-T3NDJUj95LrYPezuUKryg"
+}

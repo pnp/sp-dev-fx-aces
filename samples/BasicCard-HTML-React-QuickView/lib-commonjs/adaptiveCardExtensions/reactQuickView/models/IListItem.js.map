@@ -1,0 +1,1 @@
+{"version":3,"file":"IListItem.js","sourceRoot":"","sources":["../../../../src/adaptiveCardExtensions/reactQuickView/models/IListItem.ts"],"names":[],"mappings":"","sourcesContent":["export interface IListItem {\r\n  Id: number;\r\n  Title: string;\r\n}\r\n"]}

@@ -24,4 +24,12 @@ export class QuickView extends BaseWebQuickView<
       console.error("domElement is undefined");
     }
   }
+
+  public dispose(): void {
+    if (this.domElement) {
+      ReactDOM.unmountComponentAtNode(this.domElement);
+    }
+
+    super.dispose();
+  }
 }
