@@ -17,7 +17,7 @@ Property pane
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.16.1-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -47,9 +47,10 @@ You need following set of permissions. Find out more about consuming the [Micros
 
 ## Version history
 
-| Version | Date              | Comments        |
-| ------- | ----------------- | --------------- |
-| 1.0     | February 21, 2023 | Initial Release |
+| Version | Date              | Comments                                        |
+| ------- | ----------------- | ----------------------------------------------- |
+| 1.1     | July 25, 2026     | Upgraded to SPFx 1.23.0 (Heft-based toolchain)  |
+| 1.0     | February 21, 2023 | Initial Release                                 |
 
 ## Disclaimer
 
@@ -64,8 +65,7 @@ You need following set of permissions. Find out more about consuming the [Micros
 - in the command-line run:
   - **npm install**
 - Create the solution package (.sppkg file) using:
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **npm run build** (runs `heft test --clean --production && heft package-solution --production`)
 - Deploy the package (basic-card-my-one-drive-info.sppkg) to the tenant app catalogue.
 - The solution needs following Microsoft Graph API permissions. Approve the API access requests in the SharePoint admin center.
 
@@ -74,9 +74,11 @@ You need following set of permissions. Find out more about consuming the [Micros
   | Files.Read  |
 
 - in the command-line run:
-  - **gulp serve -l --nobrowser**
+  - **npm start** (runs `heft start --clean`)
 - Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE named **myOneDriveInfo** to the page.
+
+> Note: as of SPFx 1.22 the toolchain moved from Gulp to Heft. See the [Heft-based toolchain docs](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/toolchain/sharepoint-framework-toolchain-rushstack-heft) for details.
 
 ## Features
 

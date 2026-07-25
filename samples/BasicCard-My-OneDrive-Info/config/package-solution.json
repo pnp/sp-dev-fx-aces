@@ -3,7 +3,7 @@
   "solution": {
     "name": "basic-card-my-one-drive-info",
     "id": "a07f3777-40b2-413e-b024-23234e5142e3",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -36,7 +36,7 @@
         "title": "basic-card-my-one-drive-info Feature",
         "description": "The feature that activates elements of the basic-card-my-one-drive-info solution.",
         "id": "40974a81-f99e-469c-97b7-f9a9732ec63d",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },
