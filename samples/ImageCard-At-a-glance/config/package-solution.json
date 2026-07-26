@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-ace-at-a-glance-client-side-solution",
     "id": "fc71e54b-4e82-431f-9533-d6d85c6a203e",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -13,7 +13,29 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": ""
-    }
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-ace-at-a-glance description"
+      },
+      "longDescription": {
+        "default": "spfx-ace-at-a-glance description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-ace-at-a-glance NewsGlanceAdaptiveCardExtension Feature",
+        "description": "The feature that activates NewsGlanceAdaptiveCardExtension from the spfx-ace-at-a-glance solution.",
+        "id": "17115282-e666-4d3c-8c68-0696903b9d71",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "17115282-e666-4d3c-8c68-0696903b9d71"
+        ]
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/spfx-ace-at-a-glance.sppkg"

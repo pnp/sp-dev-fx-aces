@@ -53,10 +53,10 @@ export default class NewsGlanceAdaptiveCardExtension extends BaseAdaptiveCardExt
       cardViewToRender: CARD_VIEW_REGISTRY_ID
     };
 
-    this.loadDetails();
+    void this.loadDetails();
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 
@@ -85,7 +85,7 @@ export default class NewsGlanceAdaptiveCardExtension extends BaseAdaptiveCardExt
     } */
 
     if (oldValue !== newValue) {
-      this.loadDetails();
+      void this.loadDetails();
     }
 
   }
