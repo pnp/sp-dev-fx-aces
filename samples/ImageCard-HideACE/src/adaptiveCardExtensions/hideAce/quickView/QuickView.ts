@@ -42,10 +42,8 @@ export class QuickView extends BaseAdaptiveCardView<
           localStorage.setItem("registrationDate", lastRegistrationDate.toISOString());
           //Close the quick view
           this.quickViewNavigator.close();
-          //hide the registration form
-          this.setState({ showRegister: false });
-          //Set the ACE visibility to false
-          this.setVisibility(false);
+          //hide the registration form and set the ACE visibility to false via the card view
+          this.setState({ showRegister: false, hideCard: true });
         }
         //close the quick view
         else if (id === 'cancel') {
