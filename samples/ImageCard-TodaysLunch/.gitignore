@@ -9,6 +9,9 @@ node_modules
 # Build generated files
 dist
 lib
+lib-dts
+lib-commonjs
+lib-esm
 release
 solution
 temp
@@ -22,6 +25,7 @@ coverage
 
 # Visual Studio files
 .ntvs_analysis.dat
+.heft
 .vs
 bin
 obj
@@ -31,3 +35,6 @@ obj
 
 # Styles Generated Code
 *.scss.ts
+
+# Test output
+jest-output

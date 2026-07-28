@@ -5,7 +5,7 @@ import { QuickView } from './quickView/QuickView';
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
 
 import { TodaysLunchPropertyPane } from './TodaysLunchPropertyPane';
-import { ILunches, Lunch, Weekday } from './models/ILunch';
+import { ILunches } from './models/ILunch';
 import { todaysLunchService } from './services/TodaysLunchService';
 
 export interface ITodaysLunchAdaptiveCardExtensionProps {
@@ -28,17 +28,17 @@ export default class TodaysLunchAdaptiveCardExtension extends BaseAdaptiveCardEx
 > {
   private _deferredPropertyPane: TodaysLunchPropertyPane | undefined;
 
-  public onInit(): Promise<void> {   
-    Logger.subscribe(new ConsoleListener());
+  public onInit(): Promise<void> {
+    Logger.subscribe(ConsoleListener());
     Logger.activeLogLevel = LogLevel.Info;
 
     this.state = {
-      todaysLunch: new Lunch(0, 'Loading', 'Loading dishes...', '', '', Weekday.Sunday, true, '', 0)[0],
+      todaysLunch: undefined,
       idx: 0,
     };
 
     todaysLunchService.init(this.context);
-    todaysLunchService.getTodaysLunch().then(iLunchs => {
+    void todaysLunchService.getTodaysLunch().then(iLunchs => {
       Logger.write(`(TodaysLunch => getTodaysLunch) - ${iLunchs}`, LogLevel.Info);
       this.setState({
         todaysLunch: iLunchs
@@ -55,7 +55,7 @@ export default class TodaysLunchAdaptiveCardExtension extends BaseAdaptiveCardEx
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
     return this.properties.iconProperty || require('./assets/todays_lunch.svg');
   }
 
