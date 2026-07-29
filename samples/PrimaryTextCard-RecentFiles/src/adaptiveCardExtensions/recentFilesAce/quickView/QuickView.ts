@@ -6,7 +6,6 @@ import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
 export interface IQuickViewData {
 	subTitle: string;
 	title: string;
-	recents: MicrosoftGraph.DriveItem[];
 	currentFile: MicrosoftGraph.DriveItem;
 	isFirstElement: boolean;
 	isLastElement: boolean;
@@ -21,22 +20,14 @@ export class QuickView extends BaseAdaptiveCardView<
 > {
   public get data(): IQuickViewData {
     const currentFile = this.getCurrentFile();
+    const recents = this.state.recents;
+    const hasRecents = recents && recents.length > 0;
     return {
 			subTitle: strings.SubTitle,
 			title: strings.Title,
-			recents:
-				this.state.recents && this.state.recents.length > 0
-					? this.state.recents
-					: [],
 			currentFile: currentFile,
-			isFirstElement:
-				this.state.recents && this.state.recents.length > 0
-					? this.state.recents.indexOf(currentFile) == 0
-					: true,
-			isLastElement:
-				this.state.recents && this.state.recents.length > 0
-					? this.state.recents.indexOf(currentFile) == this.state.recents.length - 1
-					: true,
+			isFirstElement: hasRecents ? recents.indexOf(currentFile) === 0 : true,
+			isLastElement: hasRecents ? recents.indexOf(currentFile) === recents.length - 1 : true,
 			previousIcon: require("../assets/previous.png"),
 			nextIcon: require("../assets/next.png"),
 		};
