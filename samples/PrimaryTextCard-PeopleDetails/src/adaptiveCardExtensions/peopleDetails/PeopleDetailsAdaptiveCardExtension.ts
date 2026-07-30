@@ -8,10 +8,7 @@ import { UpdateView } from './quickView/UpdateView';
 import { MessageView } from './quickView/MessageView';
 import { MediumCardView } from './cardView/MediumCardView';
 
-import { sp } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi, SPFx } from "@pnp/sp";
 import { DialogueView } from './quickView/DialogueView';
 import { ShowAllView } from './quickView/ShowAllView';
 import { PeopleDetailsPropertyPane } from './PeopleDetailsPropertyPane';
@@ -62,9 +59,7 @@ export default class PeopleDetailsAdaptiveCardExtension extends BaseAdaptiveCard
   private _deferredPropertyPane: PeopleDetailsPropertyPane | undefined;
 
   public onInit = async () => {
-    sp.setup({
-      spfxContext: this.context
-    });
+    PnPServices.sp = spfi().using(SPFx(this.context));
     let refreshData: any = await PnPServices.refreshData();
     this.state = {
       currentIndex: 0,
@@ -95,7 +90,7 @@ export default class PeopleDetailsAdaptiveCardExtension extends BaseAdaptiveCard
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 

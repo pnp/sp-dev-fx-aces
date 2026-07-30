@@ -3,11 +3,6 @@ import * as strings from 'PeopleDetailsAdaptiveCardExtensionStrings';
 import { IPeopleDetailsAdaptiveCardExtensionProps, IPeopleDetailsAdaptiveCardExtensionState } from '../PeopleDetailsAdaptiveCardExtension';
 import { PnPServices } from '../../../Services/PnPServices';
 
-import { sp } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-
 export interface IMessageViewData {
   messageBar: any;
 }

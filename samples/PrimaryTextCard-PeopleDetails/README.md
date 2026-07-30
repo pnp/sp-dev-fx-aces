@@ -8,7 +8,7 @@ This Adaptive Card Extension shows general CRUD operations for people details us
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13.1-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -36,6 +36,7 @@ PrimaryTextCard-PeopleDetails | Soumyadeep Mukherjee ([@soumyadeep2207](https://
 Version|Date|Comments
 -------|----|--------
 1.0|January 01, 2022|Initial release
+1.1|July 30, 2026|Upgraded to SPFx 1.23.0 and migrated PnPjs v2 to v4
 
 ## Disclaimer
 
@@ -50,11 +51,9 @@ Version|Date|Comments
 - in the command-line run:
   - Serve the solution
     - **`npm install`**
-    - **`gulp serve`**
-  - Bundle the solution
-    - **`gulp build --ship`**
-    - **`gulp bundle --ship`**
-    - **`gulp package-solution --ship`**
+    - **`npm run start`**
+  - Bundle and package the solution
+    - **`npm run build`**
 
 ## Features
 
