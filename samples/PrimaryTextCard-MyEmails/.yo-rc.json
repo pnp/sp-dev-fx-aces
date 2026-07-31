@@ -1,15 +1,21 @@
 {
   "@microsoft/generator-sharepoint": {
-    "plusBeta": true,
+    "plusBeta": false,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.14.0-beta.4",
+    "version": "1.23.0",
     "libraryName": "ace-graph-myemails",
     "libraryId": "6f515498-8dc9-4ee6-a354-e5712f655da4",
     "packageManager": "npm",
     "solutionShortDescription": "ace-graph-myemails description",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "PrimaryText"
+    "aceTemplateType": "PrimaryText",
+    "useGulp": false,
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.24.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    }
   }
 }

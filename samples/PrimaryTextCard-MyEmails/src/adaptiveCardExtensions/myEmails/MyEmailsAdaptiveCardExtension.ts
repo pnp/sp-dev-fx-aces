@@ -3,7 +3,7 @@ import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
 import { MyEmailsPropertyPane } from './MyEmailsPropertyPane';
-import { MSGraphClient } from '@microsoft/sp-http';
+import { MSGraphClientV3 } from '@microsoft/sp-http';
 
 export interface IMyEmailsAdaptiveCardExtensionProps {
   title: string;
@@ -43,8 +43,8 @@ export default class MyEmailsAdaptiveCardExtension extends BaseAdaptiveCardExten
 
   private getOutlookData() {
 
-    this.context.msGraphClientFactory.getClient().then((client: MSGraphClient): void => {
-      client.api("/me/mailfolders/Inbox/messages").get((error, messages: any) => {
+    void this.context.msGraphClientFactory.getClient('3').then((client: MSGraphClientV3): void => {
+      void client.api("/me/mailfolders/Inbox/messages").get((error, messages: any) => {
         console.log(messages);
         this.setState({ currentEmail: messages.value[this.state.currentIndex], emails: messages.value });
       });
@@ -55,7 +55,8 @@ export default class MyEmailsAdaptiveCardExtension extends BaseAdaptiveCardExten
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 
