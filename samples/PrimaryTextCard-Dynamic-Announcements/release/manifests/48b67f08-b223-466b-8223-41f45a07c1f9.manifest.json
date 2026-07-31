@@ -37,21 +37,21 @@
     "scriptResources": {
       "dynamic-ace-adaptive-card-extension": {
         "type": "path",
-        "path": "dynamic-ace-adaptive-card-extension_a39ecbd2fa75dbdaa396.js"
+        "path": "dynamic-ace-adaptive-card-extension_a1cefa44fef5044b3a68.js"
       },
       "@microsoft/sp-property-pane": {
         "type": "component",
         "id": "f9e737b7-f0df-4597-ba8c-3060f82380db",
-        "version": "1.14.0"
-      },
-      "DynamicAceAdaptiveCardExtensionStrings": {
-        "type": "path",
-        "path": "DynamicAceAdaptiveCardExtensionStrings_en-us_0cf3237791456587e2a626e8dafccbee.js"
+        "version": "1.23.0"
       },
       "@microsoft/sp-adaptive-card-extension-base": {
         "type": "component",
         "id": "eeec822e-c28a-46b4-affc-7058e4c1aa80",
-        "version": "1.14.0"
+        "version": "1.23.0"
+      },
+      "DynamicAceAdaptiveCardExtensionStrings": {
+        "type": "path",
+        "path": "DynamicAceAdaptiveCardExtensionStrings_en-us_0cf3237791456587e2a626e8dafccbee.js"
       }
     }
   }

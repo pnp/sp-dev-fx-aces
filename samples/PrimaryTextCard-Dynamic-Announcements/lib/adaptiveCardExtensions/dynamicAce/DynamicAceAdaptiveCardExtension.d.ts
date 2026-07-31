@@ -20,7 +20,7 @@ export default class DynamicAceAdaptiveCardExtension extends BaseAdaptiveCardExt
     private listItems;
     onInit(): Promise<void>;
     get title(): string;
-    protected get iconProperty(): string;
+    get iconProperty(): string;
     private btnListSchemaCreation;
     protected loadPropertyPaneResources(): Promise<void>;
     protected renderCard(): string | undefined;
