@@ -12,8 +12,8 @@ This ACE, use Microsoft Graph API and needs the user approve the required permis
 
 ## Compatibility
 
-![SPFx 1.14](https://img.shields.io/badge/SPFx-1.13.1-green.svg)
-![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg)
+![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22.14%2B-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams")
 ![Workbench Local | Hosted](https://img.shields.io/badge/Workbench-Local%20%7C%20Hosted-green.svg)
@@ -43,9 +43,10 @@ This ACE need Microsoft Graph Permissions:
 
 ## Version history
 
-| Version | Date              | Comments        |
-| ------- | ----------------- | --------------- |
-| 1.0     | April 12, 2022 | Initial release |
+| Version | Date              | Comments                                                        |
+| ------- | ----------------- | --------------------------------------------------------------- |
+| 1.0     | April 12, 2022    | Initial release                                                 |
+| 1.1     | July 31, 2026     | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -60,16 +61,8 @@ This ACE need Microsoft Graph Permissions:
 
   - in the command line run:
     - `npm install`
-      - `gulp build --ship`
-      - `gulp bundle --ship`
-      - `gulp package-solution --ship`
-    - Browse to your SharePoint app catalog and load the SPFx package.
+    - `npm run build`
+    - Browse to your SharePoint app catalog and load the generated SPFx package (`sharepoint/solution/spfx-ace-my-recent-files.sppkg`).
     - Browse to your SharePoint Admin Center and under advanced you will need to open Api Access and allow the requests for Microsoft Graph.
-- If you have the APIs permissions already allowed you can follow the below steps.
-
-  - in the command line run:
-    *`npm install`
-    - `gulp serve --nobrowser`
-    - browse to your hosted workbench [https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx](https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx) and add the adaptive card extension.
 
 <img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-my-recent-files" />

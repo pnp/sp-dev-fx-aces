@@ -2,18 +2,19 @@ import { formatDistanceToNow } from 'date-fns';
 
 import { DriveItem } from '@microsoft/microsoft-graph-types';
 import { BaseComponentContext } from '@microsoft/sp-component-base';
+import { MSGraphClientV3 } from '@microsoft/sp-http';
 
 import { IFiles } from '../models/IFiles';
 import utilities from '../utils/utils';
 
 export class Services {
-  private _context: BaseComponentContext = undefined;
-  private _msGraphClient = undefined;
+  private _context: BaseComponentContext;
+  private _msGraphClient!: MSGraphClientV3;
   constructor(context: BaseComponentContext) {
     this._context = context;
   }
   public init = async () => {
-    this._msGraphClient = await this._context.msGraphClientFactory.getClient();
+    this._msGraphClient = await this._context.msGraphClientFactory.getClient('3');
   }
 
   public getSiteInfo = async (siteId: string): Promise<any> => {
@@ -47,7 +48,7 @@ export class Services {
 
   public getRecentFiles = async (): Promise<DriveItem[]> => {
     try {
-      if (!this._msGraphClient) return;
+      if (!this._msGraphClient) return [];
       const siteResults = await this._msGraphClient.api(`/me/drive/recent`).top(15).get();
       return siteResults.value;
     } catch (error) {
@@ -60,23 +61,23 @@ export class Services {
       const files: DriveItem[] = await this.getRecentFiles();
       const listOfFiles: IFiles[] = [];
       for (const file of files) {
-        const fileIcon = await utilities.GetFileImageUrl(file.name);
-        const isOnDrive = await utilities.isOndrive(file.webUrl);
+        const fileIcon = await utilities.GetFileImageUrl(file.name ?? '');
+        const isOnDrive = await utilities.isOndrive(file.webUrl ?? '');
         let fileLocation = "";
         if (isOnDrive) {
           fileLocation = `OnDrive > ${ this._context.pageContext.user.displayName }`;
         } else {
-          const siteInfo = await this.getSiteInfo(file.remoteItem.sharepointIds.siteId);
-          const driveInfo = await this.getDriveInfo(file.remoteItem.parentReference.driveId);
+          const siteInfo = await this.getSiteInfo(file.remoteItem?.sharepointIds?.siteId ?? '');
+          const driveInfo = await this.getDriveInfo(file.remoteItem?.parentReference?.driveId ?? '');
           fileLocation = `${siteInfo?.displayName} > ${driveInfo?.name}`;
         }
 
         listOfFiles.push({
           ...file,
           fileLocation: fileLocation,
-          name: utilities.getShortName(file.name),
+          name: utilities.getShortName(file.name ?? ''),
           fileIcon,
-          lastModifiedDateString: formatDistanceToNow(new Date(file.lastModifiedDateTime), { addSuffix: true }),
+          lastModifiedDateString: formatDistanceToNow(new Date(file.lastModifiedDateTime ?? Date.now()), { addSuffix: true }),
         });
       }
       return listOfFiles;
