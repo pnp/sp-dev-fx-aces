@@ -2,7 +2,7 @@ import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
 
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
-import { sp } from "@pnp/sp";
+import { spfi, SPFx } from "@pnp/sp";
 
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
@@ -31,18 +31,18 @@ export default class ExpensereportAdaptiveCardExtension extends BaseAdaptiveCard
   private LOG_SOURCE: string = "🔶 ExpensereportAdaptiveCardExtension";
   private _deferredPropertyPane: ExpensereportPropertyPane | undefined;
 
-  public onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     try {
       //Initialize PnPLogger
-      Logger.subscribe(new ConsoleListener());
+      Logger.subscribe(ConsoleListener());
       Logger.activeLogLevel = LogLevel.Info;
 
       //Initialize PnPJs
-      sp.setup({ spfxContext: this.context });
+      spfi().using(SPFx(this.context));
 
       cg.Init();
 
-      const expenseReports: ExpenseReport[] = cg.GetExpenseReports();
+      const expenseReports: ExpenseReport[] = await cg.GetExpenseReports();
 
       this.state = {
         expenseReports: expenseReports,
@@ -61,7 +61,7 @@ export default class ExpensereportAdaptiveCardExtension extends BaseAdaptiveCard
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 

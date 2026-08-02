@@ -2,10 +2,11 @@ import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@micr
 
 import { Logger, LogLevel } from "@pnp/logging";
 
+import { FormSample } from '../../../models/cg.models';
 import { IFormsampleAdaptiveCardExtensionProps, IFormsampleAdaptiveCardExtensionState } from '../FormsampleAdaptiveCardExtension';
 
 export interface IQuickViewData {
-  formSample;
+  formSample: FormSample;
 }
 
 export class QuickView extends BaseAdaptiveCardView<

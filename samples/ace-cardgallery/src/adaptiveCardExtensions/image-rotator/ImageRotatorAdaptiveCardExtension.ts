@@ -1,8 +1,8 @@
 import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
-import { BaseAdaptiveCardExtension, IImage } from '@microsoft/sp-adaptive-card-extension-base';
+import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
 
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
-import { sp } from "@pnp/sp";
+import { spfi, SPFx } from "@pnp/sp";
 
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
@@ -33,19 +33,19 @@ export default class ImageRotatorAdaptiveCardExtension extends BaseAdaptiveCardE
   private _deferredPropertyPane: ImageRotatorPropertyPane | undefined;
 
 
-  public onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     try {
 
       //Initialize PnPLogger
-      Logger.subscribe(new ConsoleListener());
+      Logger.subscribe(ConsoleListener());
       Logger.activeLogLevel = LogLevel.Info;
 
       //Initialize PnPJs
-      sp.setup({ spfxContext: this.context });
+      spfi().using(SPFx(this.context));
 
       cg.Init();
 
-      const images: Image[] = cg.GetImages();
+      const images: Image[] = await cg.GetImages();
       const firstImageId = Math.floor((Math.random() * images.length - 1) + 1);
 
       this.state = {

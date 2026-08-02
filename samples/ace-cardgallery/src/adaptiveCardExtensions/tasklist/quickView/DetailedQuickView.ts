@@ -1,4 +1,4 @@
-import { BaseAdaptiveCardView, IActionArguments, ISPFxAdaptiveCard, IAction, ActionStyle, IAdaptiveCard, IShowCardAction } from '@microsoft/sp-adaptive-card-extension-base';
+import { BaseAdaptiveCardView, IActionArguments, ISPFxAdaptiveCard } from '@microsoft/sp-adaptive-card-extension-base';
 
 import { Logger, LogLevel } from "@pnp/logging";
 

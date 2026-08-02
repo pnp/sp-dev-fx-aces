@@ -10,12 +10,13 @@ This solution provides a set of eleven (11) Adaptive Card Extensions to demonstr
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
 - [SharePoint Framework](https://aka.ms/spfx)
 - [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- Node.js v22 (v22.14.0 or higher, < v23)
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
@@ -29,6 +30,7 @@ ace-cardgallery| Derek Cash-Peterson ([@spdcp](https://twitter.com/spdcp)) Sympr
 
 Version|Date|Comments
 -------|----|--------
+1.1|August 1, 2026|Upgraded to SPFx 1.23 (Heft build, Node 22, TypeScript 5.8, ESLint 9) and migrated PnPjs v2 to v4
 1.0|September 28, 2021|Initial release
 
 ## Disclaimer
@@ -47,7 +49,7 @@ To test the solution yourself, you can follow these steps:
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 ## Features
 
