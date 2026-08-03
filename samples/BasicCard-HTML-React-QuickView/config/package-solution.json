@@ -3,7 +3,7 @@
   "solution": {
     "name": "react-quick-view-client-side-solution",
     "id": "7e6e9c6f-a4e2-4644-bbc6-3e4df8569351",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "react-quick-view Feature",
         "description": "The feature that activates elements of the react-quick-view solution.",
         "id": "23d21263-55b0-49b8-8e7e-fbcae2ddac80",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },

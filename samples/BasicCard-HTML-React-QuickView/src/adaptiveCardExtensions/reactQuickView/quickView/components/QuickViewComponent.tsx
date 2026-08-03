@@ -1,66 +1,71 @@
 import * as React from 'react';
 import styles from '../QuickView.module.scss';
-import { ISPFXContext, SPFI, spfi } from '@pnp/sp';  
-import { SPFx } from '@pnp/sp';        
-import "@pnp/sp/webs";
-import "@pnp/sp/items";
-import "@pnp/sp/lists";
+import { ISPFXContext } from '@pnp/sp';
+import { SharePointListService } from '../../services/SharePointListService';
+import { IListItem } from '../../models/IListItem';
 
 interface IQuickViewComponentProps {
-  context: ISPFXContext;  
-  listName: string;      
+  context: ISPFXContext;
+  listName: string;
 }
 
-const QuickViewComponent: React.FC<IQuickViewComponentProps> = (props) => {
-  const [listItems, setListItems] = React.useState<any[]>([]);
+const QuickViewComponent: React.FC<IQuickViewComponentProps> = ({ context, listName = '' }) => {
+  const [listItems, setListItems] = React.useState<IListItem[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string | null>(null);
 
-  // Initialize PnPjs using the SPFx context
-  const sp: SPFI = spfi().using(SPFx(props.context));
-
-  // Fetch the list items on component mount
   React.useEffect(() => {
-    const fetchListItems = async () => {
-      // Check if listName is empty and set an error message
-      if (!props.listName.trim()) {
+    const fetchListItems = async (): Promise<void> => {
+      // Guard against an undefined SharePoint context (prevents the destructure/undefined error on load)
+      if (!context) {
+        setError('SharePoint context is not available.');
+        setLoading(false);
+        return;
+      }
+
+      // Guard against an undefined or empty list name
+      if (!listName || !listName.trim()) {
         setError('The list name should be configured in the property pane.');
         setLoading(false);
         return;
       }
 
       try {
-        setError(null); // Reset error state before fetching
-        setLoading(true); // Set loading to true while fetching
-        // Fetch list items using PnPjs
-        const items = await sp.web.lists.getByTitle(props.listName).items();
-        setListItems(items);  // Update state with fetched items
-      } catch (error) {
-        console.error('Error fetching list items:', error);
+        setError(null);
+        setLoading(true);
+        const service = new SharePointListService(context);
+        const items = await service.getListItems(listName);
+        setListItems(items);
+      } catch (err) {
+        console.error('Error fetching list items:', err);
         setError('An error occurred while fetching the list items. Please try again later.');
       } finally {
         setLoading(false);
       }
     };
 
-    fetchListItems();
-  }, [props.listName]);
+    fetchListItems().catch((err): void => {
+      console.error('Unexpected error fetching list items:', err);
+      setError('An unexpected error occurred while loading the list items.');
+      setLoading(false);
+    });
+  }, [context, listName]);
 
   return (
     <div className={styles.container}>
       <h2>React-Based QuickView: Displaying List Items</h2>
-      <p>List Name: {props.listName}</p>
+      <p>List Name: {listName}</p>
 
       {loading ? (
         <p>Loading items...</p>
       ) : error ? (
-        <p>{error}</p> // Display error message if an error occurred or list name is missing
+        <p>{error}</p>
       ) : (
         <ul>
           {listItems.length > 0 ? (
             listItems.map((item) => (
               <li key={item.Id}>
-                <p>{item.Title}</p> {/* Assuming the list has a Title field */}
+                <p>{item.Title}</p>
               </li>
             ))
           ) : (
