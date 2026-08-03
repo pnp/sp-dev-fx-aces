@@ -45,7 +45,7 @@ export default class HybridWorkCheckinAdaptiveCardExtension extends BaseAdaptive
     //get choice options
     return listService.getWorkLocationOptions().then((d) => {
       if (d.value && d.value.length > 0) {
-        const choices = d.value[0].Choices.map((c, index) => ({ choice: c, value: index.toString() }));
+        const choices = d.value[0].Choices.map((c: string, index: number) => ({ choice: c, value: index.toString() }));
         this.setState({
           prefilledData: {
             workOptionItems: choices,
@@ -60,7 +60,8 @@ export default class HybridWorkCheckinAdaptiveCardExtension extends BaseAdaptive
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 

@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-hybrid-work-checkin-client-side-solution",
     "id": "24e08fa5-0a79-497e-8a42-17b94a5bc077",
-    "version": "1.0.0.0",
+    "version": "1.2.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "developer": {
@@ -11,8 +11,30 @@
       "websiteUrl": "",
       "privacyUrl": "",
       "termsOfUseUrl": "",
-      "mpnId": "Undefined-1.13.0"
-    }
+      "mpnId": "Undefined-1.21.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-hybrid-work-checkin description"
+      },
+      "longDescription": {
+        "default": "spfx-hybrid-work-checkin description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-hybrid-work-checkin HybridWorkCheckinAdaptiveCardExtension Feature",
+        "description": "The feature that activates HybridWorkCheckinAdaptiveCardExtension from the spfx-hybrid-work-checkin solution.",
+        "id": "7a3b1e9d-67d7-4d9e-b592-e2a1f349dd39",
+        "version": "1.2.0.0",
+        "componentIds": [
+          "7a3b1e9d-67d7-4d9e-b592-e2a1f349dd39"
+        ]
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/spfx-hybrid-work-checkin.sppkg"
