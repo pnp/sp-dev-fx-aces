@@ -1,5 +1,5 @@
 import { AdaptiveCardExtensionContext } from '@microsoft/sp-adaptive-card-extension-base';
-import { MSGraphClient, AadHttpClient } from "@microsoft/sp-http";
+import { MSGraphClientV3, AadHttpClient } from "@microsoft/sp-http";
 
 export class GraphDataService {
     private _context: AdaptiveCardExtensionContext;
@@ -10,8 +10,8 @@ export class GraphDataService {
 
     public getSecurityDataCounts(): Promise<any> {
         const graphQueryUrl = `/security/alerts/$count`;
-        return this._context.msGraphClientFactory.getClient()
-            .then((graphClient: MSGraphClient) => {
+        return this._context.msGraphClientFactory.getClient('3')
+            .then((graphClient: MSGraphClientV3) => {
                 return graphClient
                     .api(graphQueryUrl)
                     .get()
@@ -22,8 +22,8 @@ export class GraphDataService {
 
     public getRiskyUserData(query: string): Promise<any> {
         const graphQueryUrl = `/identityProtection/riskyUsers?$count=true${query}`;
-        return this._context.msGraphClientFactory.getClient()
-            .then((graphClient: MSGraphClient) => {
+        return this._context.msGraphClientFactory.getClient('3')
+            .then((graphClient: MSGraphClientV3) => {
                 return graphClient
                     .api(graphQueryUrl)
                     .get()
@@ -34,8 +34,8 @@ export class GraphDataService {
 
     public getIdentityRiskData(query: string): Promise<any> {
         const graphQueryUrl = `/identityProtection/riskDetections?$count=true${query}`;
-        return this._context.msGraphClientFactory.getClient()
-            .then((graphClient: MSGraphClient) => {
+        return this._context.msGraphClientFactory.getClient('3')
+            .then((graphClient: MSGraphClientV3) => {
                 return graphClient
                     .api(graphQueryUrl)
                     .get()

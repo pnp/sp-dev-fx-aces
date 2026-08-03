@@ -61,7 +61,7 @@ export default class SecurityMonitorAdaptiveCardExtension extends BaseAdaptiveCa
         }
         return uData && uData.value ? uData.value.length : 0;
       }).then((uCount) => {
-        graphService.getIdentityRiskData(rquery).then(rData => {
+        return graphService.getIdentityRiskData(rquery).then(rData => {
           if (rData && rData.value) {
             const catTemp = this.state.categories;
             this.setState({
@@ -77,7 +77,7 @@ export default class SecurityMonitorAdaptiveCardExtension extends BaseAdaptiveCa
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 

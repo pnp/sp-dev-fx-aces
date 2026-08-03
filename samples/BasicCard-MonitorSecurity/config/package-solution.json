@@ -3,7 +3,7 @@
   "solution": {
     "name": "basic-card-monitor-security-client-side-solution",
     "id": "779a7cc9-5ad7-464b-9032-8ce45a2d427f",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "webApiPermissionRequests": [
@@ -22,6 +22,17 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.13.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "basic-card-monitor-security description"
+      },
+      "longDescription": {
+        "default": "basic-card-monitor-security description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
     }
   },
   "paths": {

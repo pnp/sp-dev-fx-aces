@@ -10,8 +10,8 @@ This solution provides a security monitoring feature using identity protection g
 
 ## Compatibility
 
-![SPFx 1.13.1](https://img.shields.io/badge/SPFx-1.13.1-green.svg)
-![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg)
+![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![Node.js v22.14.0+](https://img.shields.io/badge/Node.js-v22.14.0%2B-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
 
@@ -45,6 +45,7 @@ Monitor Security | [Arijit Mondal](https://www.linkedin.com/in/arijit-cloud/)
 Version|Date|Comments
 -------|----|--------
 1.0|February 05, 2022|Initial release
+1.1|July 25, 2026|Upgraded to SPFx 1.23.0
 
 ## Disclaimer
 
@@ -59,7 +60,7 @@ Version|Date|Comments
 - Ensure that you are at the solution folder
 - in the command line run:
   - `npm install`
-  - `gulp serve`
+  - `npm run start`
 
 ## Features
 
