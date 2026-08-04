@@ -11,7 +11,7 @@ It's possible to define more dishes in one day, they will appear in the adaptive
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -50,6 +50,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|October 28, 2021|Initial release
 1.0.1|December 13, 2021|New feature that allows to display in the adaptive card slider more dishes in the same day
+1.0.2|July 28, 2026|Upgraded to SPFx 1.23 (PnPjs v4, Heft build)
 
 ## Disclaimer
 
@@ -63,8 +64,10 @@ Version|Date|Comments
 - Create the SP List described in *Pre-requisites* section
 - in the command line run:
   - `npm install`
-  - `gulp serve --nobrowser`
+  - `npm run start`
 - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
+
+> This solution uses the Heft-based SPFx 1.23 toolchain. Use `npm run start` (`heft start --clean`) for the local hosted workbench, and `npm run build` (`heft test --production && heft package-solution --production`) to produce the `.sppkg` package.
 
 ## Features
 
