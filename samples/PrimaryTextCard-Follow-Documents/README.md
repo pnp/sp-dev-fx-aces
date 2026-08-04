@@ -29,13 +29,9 @@ Usage of following Technologies:
 
 ![demo](./assets/FollowDocumentACE1.gif)
 
-#### SharePoint Workbench preview
-
-![demo](./assets/FollowDocumentACE.gif)
-
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Permissions
 
@@ -58,7 +54,7 @@ Microsoft Graph
 ### Grant the service principal permission to the Microsoft Graph API
 
 Once installed, the solution will request the required permissions via the **Microsoft 365 admin portal > SharePoint > Advanced > API access**.
-If you prefer to approve the permissions in advance, for example when testing the solution in the Workbench page without installing it, you can do so using the [CLI for Microsoft 365](https://pnp.github.io/cli-microsoft365/):
+If you prefer to approve the permissions in advance, you can do so using the [CLI for Microsoft 365](https://pnp.github.io/cli-microsoft365/):
 
 ```bash
 o365 spo login https://contoso-admin.sharepoint.com
@@ -79,6 +75,7 @@ PrimaryTextCard-Follow-Documents | André Lage ([@aaclage](https://twitter.com/a
 Version|Date|Comments
 -------|----|--------
 1.0| November 20, 2021|Initial release
+1.1| August 4, 2026|Upgraded to SPFx 1.23
 
 ## Disclaimer
 
@@ -93,13 +90,9 @@ Version|Date|Comments
 - In the command-line run:
   - **npm install**
 - After that create the sppkg file using
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **npm run build**
 - Deploy the package to the app catalogue site in your tenant
 - The solution needs Microsoft Graph API permissions. Please follow **Prerequisites** chapter
-- in the command-line run:
-  - **gulp serve -l --nobrowser**
-- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE to the page
 - Edit the properties of ACE based on the user needs.
 

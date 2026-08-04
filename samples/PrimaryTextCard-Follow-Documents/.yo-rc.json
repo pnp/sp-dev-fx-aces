@@ -3,12 +3,18 @@
     "plusBeta": false,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.13.0",
+    "version": "1.23.0",
     "libraryName": "follow-document-ac-es",
     "libraryId": "a3521497-0508-4759-a4ab-0fcbfbd768f0",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "PrimaryText"
+    "aceTemplateType": "PrimaryText",
+    "useGulp": false,
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.24.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    }
   }
 }
