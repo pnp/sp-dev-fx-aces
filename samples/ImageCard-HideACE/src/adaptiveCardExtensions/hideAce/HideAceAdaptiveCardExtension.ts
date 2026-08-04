@@ -13,6 +13,7 @@ export interface IHideAceAdaptiveCardExtensionProps {
 
 export interface IHideAceAdaptiveCardExtensionState {
   showRegister: boolean;
+  hideCard: boolean;
 }
 
 const CARD_VIEW_REGISTRY_ID = 'HideAce_CARD_VIEW';
@@ -46,12 +47,9 @@ export default class HideAceAdaptiveCardExtension extends BaseAdaptiveCardExtens
       Logger.write(`${this.LOG_SOURCE} (onAction) - ${err}`, LogLevel.Error);
     }
 
-
-
-
-
     this.state = {
-      showRegister: false
+      showRegister: false,
+      hideCard: false
     };
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());

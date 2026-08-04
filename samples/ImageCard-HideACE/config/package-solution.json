@@ -3,7 +3,7 @@
   "solution": {
     "name": "Adaptive Card Extension - Hidable ACE",
     "id": "9644d2d6-0be7-4512-9d1f-c3ae2f93c962",
-    "version": "1.0.0.0",
+    "version": "1.2.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -29,7 +29,7 @@
       "title": "hide-ace Feature",
       "description": "The feature that activates elements of the hide-ace solution.",
       "id": "0a1165de-bb79-4bb3-ac7d-9045bff28fe0",
-      "version": "1.0.0.0"
+      "version": "1.2.0.0"
     }]
   },
   "paths": {

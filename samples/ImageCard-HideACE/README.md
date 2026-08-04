@@ -8,7 +8,7 @@ This solution shows how to hide an ACE based on user interactions. It shows a fo
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.15.2-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -27,6 +27,7 @@ hide-ace| Derek Cash-Peterson ([@spdcp](https://twitter.com/spdcp)) Sympraxis Co
 
 Version|Date|Comments
 -------|----|--------
+1.2|July 27, 2026|Upgrade to SPFx 1.23
 1.1|November 14, 2022|Upgrade to SPFx 1.15.2
 1.0|March 24, 2021|Initial release
 
@@ -43,7 +44,7 @@ Version|Date|Comments
 - Ensure that you are at the solution folder
 - in the command line run:
   - `npm install`
-  - `gulp serve`
+  - `npm run start`
 
 ## References
 
