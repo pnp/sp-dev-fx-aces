@@ -23,7 +23,7 @@ The idea is based off of the *At a glance* section of a news in the BBC news app
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13.0-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -47,6 +47,7 @@ at-a-glance | [Anoop Tatti](https://linktr.ee/anoopt)
 Version|Date|Comments
 -------|----|--------
 1.0|September 09, 2021|Initial release
+1.1|July 26, 2026|Upgraded to SPFx 1.23
 
 ## Disclaimer
 
@@ -60,7 +61,7 @@ Version|Date|Comments
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 - Edit the propeties of the ACE to include the ID of the news article.
 
 ## Features
