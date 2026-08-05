@@ -3,12 +3,18 @@
     "plusBeta": false,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.14.0",
+    "version": "1.23.0",
     "libraryName": "basic-card-unread-emails",
     "libraryId": "3b7583e0-46e7-472e-a128-deed4be07243",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "Basic"
+    "aceTemplateType": "Basic",
+    "useGulp": false,
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.24.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    }
   }
 }

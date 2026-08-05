@@ -2,7 +2,7 @@ import { AdaptiveCardExtensionContext, BaseAdaptiveCardExtension } from '@micros
 import { CardView } from './cardView/CardView';
 import { UnreadEmailsPropertyPane } from './UnreadEmailsPropertyPane';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
-import { MSGraphClient } from '@microsoft/sp-http';
+import { MSGraphClientV3 } from '@microsoft/sp-http';
 import * as strings from 'UnreadEmailsAdaptiveCardExtensionStrings';
 
 export interface IUnreadEmailsAdaptiveCardExtensionProps {
@@ -36,8 +36,8 @@ export default class UnreadEmailsAdaptiveCardExtension extends BaseAdaptiveCardE
   public onInit(): Promise<void> {
     this.state = { };
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
-    this.context.msGraphClientFactory.getClient().then((client: MSGraphClient): void => {
-      client.api("/me/mailfolders/Inbox").select("unreadItemCount").get((error: GraphError, inbox: MicrosoftGraph.MailFolder) => {
+    void this.context.msGraphClientFactory.getClient('3').then((client: MSGraphClientV3): void => {
+      void client.api("/me/mailfolders/Inbox").select("unreadItemCount").get((error: any, inbox: MicrosoftGraph.MailFolder) => {
         if (error) this.setState({ error: error });
         else this.setState({ results: inbox });
       });
@@ -49,7 +49,8 @@ export default class UnreadEmailsAdaptiveCardExtension extends BaseAdaptiveCardE
     return strings.Loading.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 

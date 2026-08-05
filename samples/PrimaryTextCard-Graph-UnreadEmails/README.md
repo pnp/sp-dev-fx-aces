@@ -8,7 +8,7 @@ This Adaptive Card Extension uses the Microsoft Graph to get unread emails in yo
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13.1-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Permissions
 
@@ -37,6 +37,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|December 06, 2021|Initial release
 1.0.1|May 04, 2022|Updated to SPFX 1.14
+1.0.2|August 05, 2026|Upgraded to SPFx 1.23
 
 ## Disclaimer
 
@@ -50,17 +51,14 @@ Version|Date|Comments
 - Ensure that you are at the solution folder
   - in the command line run:
     - `npm install`
-    - `gulp build --ship`
-    - `gulp bundle --ship`
-    - `gulp package-solution --ship`
+    - `npm run build`
   - Browse to your SharePoint app catalog and load the SPFX package.
   - Browse to your SharePoint Admin Center and under advanced you will need to open Api Access and allow the requests for Microsoft Graph.
 
 - If you have the APIs permissions already allowed you can follow the below steps.
   - in the command line run:
     - `npm install`
-    - `gulp serve --nobrowser`
-  - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
+    - `npm run start`
 
 ## Features
 
