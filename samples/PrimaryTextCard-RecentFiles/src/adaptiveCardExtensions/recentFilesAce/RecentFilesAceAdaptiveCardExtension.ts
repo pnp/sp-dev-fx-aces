@@ -45,20 +45,29 @@ export default class RecentFilesAceAdaptiveCardExtension extends BaseAdaptiveCar
     return Promise.resolve();
   }
 
-  private async loadRecents() {
-    var graphClient = await this.context.msGraphClientFactory.getClient();
-    // Get the recent files
-    var recentFilesResponse = await graphClient.api("/me/drive/recent")
-      .select("name,lastModifiedDateTime,webUrl")
+  private async loadRecents(): Promise<void> {
+    const graphClient = await this.context.msGraphClientFactory.getClient('3');
+    // Files recently accessed from other drives (SharePoint / shared) expose
+    // their metadata under the remoteItem facet, so request it and fall back to
+    // it when the top-level properties are not populated.
+    const recentFilesResponse = await graphClient.api("/me/drive/recent")
+      .select("name,lastModifiedDateTime,webUrl,remoteItem")
       .get();
-      
+
+    const recents: MicrosoftGraph.DriveItem[] = ((recentFilesResponse.value ?? []) as MicrosoftGraph.DriveItem[])
+      .map((item) => ({
+        name: item.name ?? item.remoteItem?.name,
+        webUrl: item.webUrl ?? item.remoteItem?.webUrl,
+        lastModifiedDateTime: item.lastModifiedDateTime ?? item.remoteItem?.lastModifiedDateTime
+      }));
+
     this.setState({
-      recents: <MicrosoftGraph.DriveItem[]>recentFilesResponse.value,
+      recents: recents,
       isLoading: false
     });
 
     // Get the OneDrive root folder
-    var drive: MicrosoftGraph.DriveItem = await graphClient.api("/me/drive")
+    const drive: MicrosoftGraph.DriveItem = await graphClient.api("/me/drive")
       .select("webUrl")
       .get();
 

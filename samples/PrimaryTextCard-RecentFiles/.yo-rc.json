@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "version": "1.14.0",
+    "version": "1.23.0",
     "libraryName": "primary-text-recent-files",
     "libraryId": "73a5f29d-d99f-493e-abe3-3ccfc1851f8e",
     "environment": "spo",
@@ -12,6 +12,12 @@
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "PrimaryText"
+    "aceTemplateType": "PrimaryText",
+    "useGulp": false,
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.24.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    }
   }
 }
