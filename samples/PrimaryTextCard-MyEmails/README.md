@@ -23,7 +23,7 @@ Screenshots for quick reference
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.14-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -52,6 +52,7 @@ PrimaryTextCard-MyEmails | [Siddharth Vaghasia](https://twitter.com/siddh_me)
 Version|Date|Comments
 -------|----|--------
 1.0|January 03, 2022|Initial release
+1.1|July 31, 2026|Upgraded to SPFx 1.23.0
 
 ## Disclaimer
 
@@ -66,8 +67,7 @@ Version|Date|Comments
 - in the command-line run:
   - **npm install**
 - After that, create the sppkg file using
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **npm run build**
 - Deploy the package to the app catalogue site in your tenant
 
 - The solution needs following Microsoft Graph API permission. So, approve the API access request in the SharePoint admin centre
@@ -78,10 +78,8 @@ Version|Date|Comments
   | Mail.ReadBasic      |
 
 - in the command-line run:
-  - **gulp serve -l --nobrowser**
-- or if using spfx-fast-serve, in the command-line run:
-  - **npm run serve**
-- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
+  - **npm start**
+- Open a modern SharePoint page (or the Viva Connections dashboard) in edit mode on your tenant
 - Add the ACE [***MyEmails***] to the page
 
 ## Concept Explored
