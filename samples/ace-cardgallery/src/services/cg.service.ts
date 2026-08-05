@@ -6,25 +6,25 @@ export interface ICardGalleryService {
   Ready: boolean;
   HandleExecuteDeepLink: (meetingUrl: string) => void;
   Init(): void;
-  ExecuteDeepLink(meetingUrl: string);
-  GetLocations(): Location[];
-  GetImages(): Image[];
-  GetArticles(): Article[];
-  GetTweets(): Tweet[];
-  GetTasks(): TaskList;
-  GetStocks(): Stock;
-  GetExpenseReports(): ExpenseReport[];
-  GetFormSample(): FormSample;
-  GetVideos(): Video[];
-  GetFlightItineraries(): Reservation[];
-  GetAgendas(): Agenda[];
+  ExecuteDeepLink(meetingUrl: string): void;
+  GetLocations(): Promise<Location[]>;
+  GetImages(): Promise<Image[]>;
+  GetArticles(): Promise<Article[]>;
+  GetTweets(): Promise<Tweet[]>;
+  GetTasks(): Promise<TaskList>;
+  GetStocks(): Promise<Stock>;
+  GetExpenseReports(): Promise<ExpenseReport[]>;
+  GetFormSample(): Promise<FormSample>;
+  GetVideos(): Promise<Video[]>;
+  GetFlightItineraries(): Promise<Reservation[]>;
+  GetAgendas(): Promise<Agenda[]>;
 }
 
 export class CardGalleryService implements ICardGalleryService {
   private LOG_SOURCE: string = "🔶 CardGalleryService";
   private _ready: boolean = false;
-  private _siteUrl: string;
-  private _executeDeepLink: (meetingUrl: string) => void;
+  private _siteUrl!: string;
+  private _executeDeepLink!: (meetingUrl: string) => void;
 
   constructor() {
   }
@@ -39,114 +39,114 @@ export class CardGalleryService implements ICardGalleryService {
   public Init() {
     try {
       this._ready = true;
-    } catch (err) {
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (init) - ${err.message}`, LogLevel.Error);
     }
   }
 
-  public GetLocations(): Location[] {
+  public async GetLocations(): Promise<Location[]> {
     let retVal: Location[] = [];
     try {
       //Sample pulls data from mock
       //To extend pull data from a list of your locations
-      retVal = require("../mocks/locationsConfig.json");
-    } catch (err) {
+      retVal = (await import(/* webpackChunkName: "mock-locations" */ "../mocks/locationsConfig.json")).default as unknown as Location[];
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (GetLocations) - ${err.message}`, LogLevel.Error);
     }
     return retVal;
   }
 
-  public GetImages(): Image[] {
+  public async GetImages(): Promise<Image[]> {
     let retVal: Image[] = [];
     try {
-      retVal = require("../mocks/imageRotatorConfig.json");
-    } catch (err) {
+      retVal = (await import(/* webpackChunkName: "mock-imagerotator" */ "../mocks/imageRotatorConfig.json")).default as unknown as Image[];
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (GetImages) - ${err.message}`, LogLevel.Error);
     }
     return retVal;
   }
-  public GetArticles(): Article[] {
+  public async GetArticles(): Promise<Article[]> {
     let retVal: Article[] = [];
     try {
-      retVal = require("../mocks/companyNewsConfig.json");
-    } catch (err) {
+      retVal = (await import(/* webpackChunkName: "mock-companynews" */ "../mocks/companyNewsConfig.json")).default as unknown as Article[];
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (GetArticles) - ${err.message}`, LogLevel.Error);
     }
     return retVal;
   }
-  public GetTweets(): Tweet[] {
+  public async GetTweets(): Promise<Tweet[]> {
     let retVal: Tweet[] = [];
     try {
-      retVal = require("../mocks/twitterCardConfig.json");
-    } catch (err) {
+      retVal = (await import(/* webpackChunkName: "mock-twitter" */ "../mocks/twitterCardConfig.json")).default as unknown as Tweet[];
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (GetTweets) - ${err.message}`, LogLevel.Error);
     }
     return retVal;
   }
-  public GetTasks(): TaskList {
+  public async GetTasks(): Promise<TaskList> {
     let retVal: TaskList = new TaskList();
     try {
-      retVal = require("../mocks/taskListConfig.json");
-    } catch (err) {
+      retVal = (await import(/* webpackChunkName: "mock-tasklist" */ "../mocks/taskListConfig.json")).default as unknown as TaskList;
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (GetTasks) - ${err.message}`, LogLevel.Error);
     }
     return retVal;
   }
-  public GetStocks(): Stock {
+  public async GetStocks(): Promise<Stock> {
     let retVal: Stock = new Stock();
     try {
-      retVal = require("../mocks/stockTickerConfig.json");
+      retVal = (await import(/* webpackChunkName: "mock-stock" */ "../mocks/stockTickerConfig.json")).default as unknown as Stock;
       retVal.latestUpdate = (new Date().toUTCString());
-    } catch (err) {
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (GetStocks) - ${err.message}`, LogLevel.Error);
     }
     return retVal;
   }
-  public GetExpenseReports(): ExpenseReport[] {
+  public async GetExpenseReports(): Promise<ExpenseReport[]> {
     let retVal: ExpenseReport[] = [];
     try {
-      retVal = require("../mocks/expenseReportConfig.json");
-    } catch (err) {
+      retVal = (await import(/* webpackChunkName: "mock-expensereport" */ "../mocks/expenseReportConfig.json")).default as unknown as ExpenseReport[];
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (GetExpenseReports) - ${err.message}`, LogLevel.Error);
     }
     return retVal;
   }
 
-  public GetFormSample(): FormSample {
-    let retVal: FormSample = null;
+  public async GetFormSample(): Promise<FormSample> {
+    let retVal: FormSample = null as unknown as FormSample;
     try {
-      retVal = require("../mocks/formSampleConfig.json");
-    } catch (err) {
+      retVal = (await import(/* webpackChunkName: "mock-formsample" */ "../mocks/formSampleConfig.json")).default as unknown as FormSample;
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (GetFormSample) - ${err.message}`, LogLevel.Error);
     }
     return retVal;
   }
 
-  public GetVideos(): IVideo[] {
+  public async GetVideos(): Promise<IVideo[]> {
     let retVal: Video[] = [];
     try {
-      retVal = require("../mocks/videoCardConfig.json");
-    } catch (err) {
+      retVal = (await import(/* webpackChunkName: "mock-video" */ "../mocks/videoCardConfig.json")).default as unknown as Video[];
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (GetVideos) - ${err.message}`, LogLevel.Error);
     }
     return retVal;
   }
 
-  public GetFlightItineraries(): Reservation[] {
+  public async GetFlightItineraries(): Promise<Reservation[]> {
     let retVal: Reservation[] = [];
     try {
-      retVal = require("../mocks/filghtItineraryConfig.json");
-    } catch (err) {
+      retVal = (await import(/* webpackChunkName: "mock-flight" */ "../mocks/filghtItineraryConfig.json")).default as unknown as Reservation[];
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (GetFlightItineraries) - ${err.message}`, LogLevel.Error);
     }
     return retVal;
   }
 
-  public GetAgendas(): Agenda[] {
+  public async GetAgendas(): Promise<Agenda[]> {
     let retVal: Agenda[] = [];
     try {
-      retVal = require("../mocks/agendaConfig.json");
-    } catch (err) {
+      retVal = (await import(/* webpackChunkName: "mock-agenda" */ "../mocks/agendaConfig.json")).default as unknown as Agenda[];
+    } catch (err: any) {
       Logger.write(`${this.LOG_SOURCE} (GetAgendas) - ${err.message}`, LogLevel.Error);
     }
     return retVal;

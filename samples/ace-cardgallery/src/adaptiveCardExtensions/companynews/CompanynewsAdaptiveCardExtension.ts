@@ -2,7 +2,7 @@ import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
 
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
-import { sp } from "@pnp/sp";
+import { spfi, SPFx } from "@pnp/sp";
 
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
@@ -32,18 +32,18 @@ export default class CompanynewsAdaptiveCardExtension extends BaseAdaptiveCardEx
 
   private _deferredPropertyPane: CompanynewsPropertyPane | undefined;
 
-  public onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     try {
       //Initialize PnPLogger
-      Logger.subscribe(new ConsoleListener());
+      Logger.subscribe(ConsoleListener());
       Logger.activeLogLevel = LogLevel.Info;
 
       //Initialize PnPJs
-      sp.setup({ spfxContext: this.context });
+      spfi().using(SPFx(this.context));
 
       cg.Init();
 
-      const articles: Article[] = cg.GetArticles();
+      const articles: Article[] = await cg.GetArticles();
 
       this.state = {
         currentArticleId: 0,

@@ -1,4 +1,4 @@
-import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments, IContainer } from '@microsoft/sp-adaptive-card-extension-base';
+import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
 
 import { Logger, LogLevel } from "@pnp/logging";
 
@@ -31,7 +31,7 @@ export class QuickView extends BaseAdaptiveCardView<
   public get template(): ISPFxAdaptiveCard {
     let template: ISPFxAdaptiveCard = require('./template/QuickViewTemplate.json');
     try {
-      let container: IContainer = template.body[1];
+      let container: any = template.body[1];
       container.$data = "${tasks}";
       template.body[1] = container;
     } catch (err) {

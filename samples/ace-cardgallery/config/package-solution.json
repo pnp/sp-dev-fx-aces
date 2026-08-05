@@ -3,7 +3,7 @@
   "solution": {
     "name": "Viva ACE Sample - Card Gallery",
     "id": "e16ea22b-17c8-4fb7-9c4c-24e076464a09",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -13,7 +13,119 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": "M365PNP"
-    }
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ace-cardgallery description"
+      },
+      "longDescription": {
+        "default": "ace-cardgallery description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-cardgallery AgendaAdaptiveCardExtension Feature",
+        "description": "The feature that activates AgendaAdaptiveCardExtension from the ace-cardgallery solution.",
+        "id": "76f4cd37-aeeb-4578-8878-6ef4e1c171fe",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "76f4cd37-aeeb-4578-8878-6ef4e1c171fe"
+        ]
+      },
+      {
+        "title": "ace-cardgallery CompanynewsAdaptiveCardExtension Feature",
+        "description": "The feature that activates CompanynewsAdaptiveCardExtension from the ace-cardgallery solution.",
+        "id": "7adcfe73-f26b-497a-8047-7ead230e5003",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "7adcfe73-f26b-497a-8047-7ead230e5003"
+        ]
+      },
+      {
+        "title": "ace-cardgallery ExpensereportAdaptiveCardExtension Feature",
+        "description": "The feature that activates ExpensereportAdaptiveCardExtension from the ace-cardgallery solution.",
+        "id": "5613b1f2-3767-45ad-aebb-8ec166d7a4e5",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "5613b1f2-3767-45ad-aebb-8ec166d7a4e5"
+        ]
+      },
+      {
+        "title": "ace-cardgallery FlightItineraryAdaptiveCardExtension Feature",
+        "description": "The feature that activates FlightItineraryAdaptiveCardExtension from the ace-cardgallery solution.",
+        "id": "5624c17d-aa35-4c03-a801-ab686b9c1a0b",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "5624c17d-aa35-4c03-a801-ab686b9c1a0b"
+        ]
+      },
+      {
+        "title": "ace-cardgallery FormsampleAdaptiveCardExtension Feature",
+        "description": "The feature that activates FormsampleAdaptiveCardExtension from the ace-cardgallery solution.",
+        "id": "8aaeffcc-9f92-4192-b9b6-a33920713378",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "8aaeffcc-9f92-4192-b9b6-a33920713378"
+        ]
+      },
+      {
+        "title": "ace-cardgallery ImageRotatorAdaptiveCardExtension Feature",
+        "description": "The feature that activates ImageRotatorAdaptiveCardExtension from the ace-cardgallery solution.",
+        "id": "78beb5f9-62a1-4c9f-998a-445937b6b8ad",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "78beb5f9-62a1-4c9f-998a-445937b6b8ad"
+        ]
+      },
+      {
+        "title": "ace-cardgallery StocktickterAdaptiveCardExtension Feature",
+        "description": "The feature that activates StocktickterAdaptiveCardExtension from the ace-cardgallery solution.",
+        "id": "75549c00-4de3-4cd7-b043-e8d13e697d1c",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "75549c00-4de3-4cd7-b043-e8d13e697d1c"
+        ]
+      },
+      {
+        "title": "ace-cardgallery TasklistAdaptiveCardExtension Feature",
+        "description": "The feature that activates TasklistAdaptiveCardExtension from the ace-cardgallery solution.",
+        "id": "62ee1cd1-0b87-400e-9232-4f7e97220aad",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "62ee1cd1-0b87-400e-9232-4f7e97220aad"
+        ]
+      },
+      {
+        "title": "ace-cardgallery TwittercardAdaptiveCardExtension Feature",
+        "description": "The feature that activates TwittercardAdaptiveCardExtension from the ace-cardgallery solution.",
+        "id": "d655a3de-9918-40f0-9270-771253b7ccd8",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "d655a3de-9918-40f0-9270-771253b7ccd8"
+        ]
+      },
+      {
+        "title": "ace-cardgallery VideocardAdaptiveCardExtension Feature",
+        "description": "The feature that activates VideocardAdaptiveCardExtension from the ace-cardgallery solution.",
+        "id": "956276fc-b78e-4956-aa61-87f94ffe414e",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "956276fc-b78e-4956-aa61-87f94ffe414e"
+        ]
+      },
+      {
+        "title": "ace-cardgallery WeatherAdaptiveCardExtension Feature",
+        "description": "The feature that activates WeatherAdaptiveCardExtension from the ace-cardgallery solution.",
+        "id": "083b4de2-8f43-477c-b609-7788ea6de2ea",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "083b4de2-8f43-477c-b609-7788ea6de2ea"
+        ]
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/ace-cardgallery-spfx.sppkg"

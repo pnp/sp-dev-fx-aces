@@ -2,7 +2,7 @@ import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
 
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
-import { sp } from "@pnp/sp";
+import { spfi, SPFx } from "@pnp/sp";
 
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
@@ -34,15 +34,15 @@ export default class WeatherAdaptiveCardExtension extends BaseAdaptiveCardExtens
   public async onInit(): Promise<void> {
     try {
       //Initialize PnPLogger
-      Logger.subscribe(new ConsoleListener());
+      Logger.subscribe(ConsoleListener());
       Logger.activeLogLevel = LogLevel.Info;
 
       //Initialize PnPJs
-      sp.setup({ spfxContext: this.context });
+      spfi().using(SPFx(this.context));
 
       await cg.Init();
 
-      const locations: Location[] = cg.GetLocations();
+      const locations: Location[] = await cg.GetLocations();
 
       this.state = {
         currentLocationId: 0,
@@ -61,7 +61,7 @@ export default class WeatherAdaptiveCardExtension extends BaseAdaptiveCardExtens
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 
