@@ -1,0 +1,33 @@
+define([], function () {
+  return {
+    PropertyPaneDescription: 'PrimaryTextCard-EmailSummary description',
+    TitleFieldLabel: 'Card title',
+    Title: 'Email Summary',
+    SubTitle: 'Latest email and Copilot summary',
+    PrimaryText: 'Email summary card',
+    Description: 'Review your latest email and AI summary.',
+    QuickViewButton: 'View summary',
+    CardLoadingPrimaryText: 'Loading your latest email...',
+    CardLoadingDescription: 'Preparing the Copilot summary now.',
+    CardErrorPrimaryText: 'Unable to load your latest email.',
+    CardErrorDescription: 'Open quick view for more details.',
+    CardLatestEmailPrefix: '',
+    CardFromLabel: 'From:',
+    CardSummaryAvailableText: 'AI summary available in quick view.',
+    QuickViewLoadingTitle: 'Working on it...',
+    QuickViewLoadingHelper: 'Copilot is reading your latest email and preparing the summary. This usually takes a few seconds.',
+    QuickViewLoadingText: 'Loading latest email and AI summary...',
+    QuickViewErrorText: 'We hit an issue loading your email summary.',
+    QuickViewSummaryLoadingText: 'Copilot is still generating the summary...',
+    QuickViewSummaryErrorText: 'We could not generate a Copilot summary for this email.',
+    SummarySectionTitle: 'Copilot summary',
+    OpenInOutlookLabel: 'Open in Outlook',
+    EmailFromLabel: 'From:',
+    EmailReceivedLabel: 'Received:',
+    DefaultNoSubject: '(no subject)',
+    DefaultUnknownSender: 'Unknown sender',
+    DefaultUnknownReceived: 'Unknown received time',
+    DefaultNoPreview: 'No preview text is available for this message.',
+    DefaultNoSummary: 'No AI summary is available yet.'
+  };
+});
