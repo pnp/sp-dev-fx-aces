@@ -1,0 +1,63 @@
+[
+  {
+    "name": "pnp-sp-fx-aces-primarytextcard-skillsoverview",
+    "source": "pnp",
+    "title": "Skills Overview",
+    "shortDescription": "This Adaptive Card Extension gives an overview of the SharePoint skills in the current SharePoint site.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-SkillsOverview",
+    "longDescription": [
+      "This Adaptive Card Extension gives an overview of the SharePoint skills in the current SharePoint site. The card displays the total number of skills found in the site. From the card, users can open a quick view that lists the latest skills, and drill into a detail view to read the description of a selected skill."
+    ],
+    "creationDateTime": "2026-08-05",
+    "updateDateTime": "2026-08-05",
+    "products": [
+      "SharePoint",
+      "Office",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "None"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.23.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-SkillsOverview/assets/SkillsOverview-cardview.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-SkillsOverview/assets/SkillsOverview-quickView-1.png",
+        "alt": "Preview"
+      },
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-SkillsOverview/assets/SkillsOverview-quickView-2.png",
+        "alt": "Preview"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "a1mery",
+        "pictureUrl": "https://github.com/a1mery.png",
+        "name": "Aimery Thomas"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  }
+]

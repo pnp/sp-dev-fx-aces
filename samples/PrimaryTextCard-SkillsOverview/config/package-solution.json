@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "PrimaryTextCard-SkillsOverview-client-side-solution",
+    "id": "65ff6b32-61eb-44a3-9399-aa7de710f561",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.22.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "PrimaryTextCard-SkillsOverview description"
+      },
+      "longDescription": {
+        "default": "PrimaryTextCard-SkillsOverview description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "PrimaryTextCard-SkillsOverview Feature",
+        "description": "The feature that activates elements of the PrimaryTextCard-SkillsOverview solution.",
+        "id": "6e73e155-ef79-4776-b86f-4b2d14d7cdcb",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/PrimaryTextCard-SkillsOverview.sppkg"
+  }
+}
