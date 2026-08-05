@@ -1,0 +1,98 @@
+name: Build sample PR
+
+# Runs on plain `pull_request` (NOT pull_request_target) — this workflow runs
+# `npm install`/build scripts from the PR's own code, which is untrusted for
+# fork PRs. `pull_request` gives a read-only, fork-scoped GITHUB_TOKEN with no
+# write access to this repo, unlike pull_request_target. Do not change this
+# trigger without re-checking that security implication.
+on:
+  pull_request:
+    paths:
+      - 'samples/**'
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number to build (manual run)'
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      samples: ${{ steps.detect.outputs.samples }}
+      pr_number: ${{ steps.detect.outputs.pr_number }}
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Detect changed sample folders
+        id: detect
+        run: |
+          set -euo pipefail
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          if [ -z "$PR_NUMBER" ]; then
+            PR_NUMBER="${{ github.event.inputs.pr_number }}"
+          fi
+          # Use the PR's actual file list via the API rather than a local git diff —
+          # avoids two-dot-vs-three-dot merge-base ambiguity and works identically
+          # whether triggered automatically or via workflow_dispatch for any PR number.
+          folders=$(gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json files --jq '.files[].path' \
+            | grep -oE '^samples/[^/]+' | sort -u || true)
+          json=$(printf '%s\n' "$folders" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "samples=$json" >> "$GITHUB_OUTPUT"
+          echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "PR #$PR_NUMBER changed sample folders: $json"
+
+  build:
+    needs: detect
+    if: needs.detect.outputs.samples != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sample: ${{ fromJson(needs.detect.outputs.samples) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/pull/${{ needs.detect.outputs.pr_number }}/head
+
+      - name: Determine Node.js version
+        id: node-version
+        run: |
+          set -euo pipefail
+          SAMPLE="${{ matrix.sample }}"
+          VERSION=""
+          if [ -f "$SAMPLE/package.json" ]; then
+            VERSION=$(jq -r '.engines.node // empty' "$SAMPLE/package.json" \
+              | grep -oE '[0-9]+(\.[0-9]+){0,2}' | head -1 || true)
+          fi
+          if [ -z "$VERSION" ] && [ -f "$SAMPLE/.yo-rc.json" ]; then
+            VERSION=$(jq -r '."@microsoft/generator-sharepoint".nodeVersion // empty' "$SAMPLE/.yo-rc.json" || true)
+          fi
+          if [ -z "$VERSION" ]; then
+            VERSION="18"
+            echo "No Node version declared in $SAMPLE — defaulting to $VERSION"
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Using Node.js $VERSION for $SAMPLE"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ steps.node-version.outputs.version }}
+
+      - name: Install dependencies
+        run: npm install --prefix "${{ matrix.sample }}"
+
+      - name: Build
+        run: |
+          set -euo pipefail
+          SAMPLE="${{ matrix.sample }}"
+          if [ -f "$SAMPLE/gulpfile.js" ]; then
+            echo "Gulp toolchain detected"
+            (cd "$SAMPLE" && npx gulp bundle --ship && npx gulp package-solution --ship)
+          else
+            echo "Heft/npm-script toolchain detected"
+            npm run build --prefix "$SAMPLE"
+          fi
