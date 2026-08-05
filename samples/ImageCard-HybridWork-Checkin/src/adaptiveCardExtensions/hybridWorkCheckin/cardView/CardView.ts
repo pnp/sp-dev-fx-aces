@@ -30,6 +30,7 @@ export class CardView extends BaseImageCardView<IHybridWorkCheckinAdaptiveCardEx
   public get data(): IImageCardParameters {
     return {
       primaryText: strings.PrimaryText,
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       imageUrl: require('../assets/MicrosoftLogo.png')
     };
   }

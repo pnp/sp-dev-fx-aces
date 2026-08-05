@@ -11,8 +11,8 @@ This solution provides a employee check-in feature in hybrid work scenario using
 
 ## Compatibility
 
-![SPFx 1.13](https://img.shields.io/badge/SPFx-1.13.0-green.svg)
-![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg)
+![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![Node.js v22.x](https://img.shields.io/badge/Node.js-v22.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
 
@@ -50,6 +50,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|November 29, 2021|Initial release
 1.1|February 14, 2022|Added localization support for form, choice option from sp list
+1.2|August 3, 2026|Upgraded to SPFx 1.23.0 (Heft-based build)
 
 ## Disclaimer
 
@@ -64,7 +65,8 @@ Version|Date|Comments
 * Ensure that you are at the solution folder
 * in the command line run:
   * `npm install`
-  * `gulp serve`
+  * `npm run start`
+  * To produce the production package, run `npm run build`
 
 ## Features
 
