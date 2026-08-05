@@ -3,7 +3,7 @@
   "solution": {
     "name": "follow-document-ace",
     "id": "a3521497-0508-4759-a4ab-0fcbfbd768f0",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,6 +30,28 @@
       {
         "resource": "Microsoft Graph",
         "scope": "Files.ReadWrite"
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "follow-document-ac-es description"
+      },
+      "longDescription": {
+        "default": "follow-document-ac-es description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "follow-document-ac-es FollowDocumentAcEsAdaptiveCardExtension Feature",
+        "description": "The feature that activates FollowDocumentAcEsAdaptiveCardExtension from the follow-document-ac-es solution.",
+        "id": "1ced09a5-a101-48f6-b06f-4b683b307eee",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "1ced09a5-a101-48f6-b06f-4b683b307eee"
+        ]
       }
     ]
   },

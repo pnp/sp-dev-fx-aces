@@ -1,15 +1,15 @@
-import { AadHttpClient, MSGraphClientFactory, MSGraphClient } from "@microsoft/sp-http";
+import { AadHttpClient, MSGraphClientFactory, MSGraphClientV3 } from "@microsoft/sp-http";
 import { AdaptiveCardExtensionContext } from '@microsoft/sp-adaptive-card-extension-base';
 
 export default class Graph {
-  private client: MSGraphClient;
+  private client: MSGraphClientV3;
 
   public async initialize(serviceScope): Promise<boolean> {
     const graphFactory: MSGraphClientFactory = serviceScope.consume(
       MSGraphClientFactory.serviceKey
     );
 
-    return graphFactory.getClient().then((client) => {
+    return graphFactory.getClient('3').then((client) => {
       this.client = client;
       return true;
     });

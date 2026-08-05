@@ -31,3 +31,10 @@ obj
 
 # Styles Generated Code
 *.scss.ts
+
+# SPFx Heft build output
+lib-dts
+lib-commonjs
+lib-esm
+jest-output
+.heft
