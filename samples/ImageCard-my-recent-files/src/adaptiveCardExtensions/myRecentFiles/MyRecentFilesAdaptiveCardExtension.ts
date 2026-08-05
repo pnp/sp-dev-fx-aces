@@ -26,7 +26,7 @@ export default  class MyRecentFilesAdaptiveCardExtension extends BaseAdaptiveCar
   IMyRecentFilesAdaptiveCardExtensionState
 > {
   private _deferredPropertyPane: MyRecentFilesPropertyPane | undefined;
-  private _services: Services;
+  private _services!: Services;
   public  async onInit(): Promise<void> {
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
