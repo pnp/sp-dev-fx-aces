@@ -901,16 +901,16 @@
     ]
   },
   {
-    "name": "pnp-sp-fx-aces-basiccard-helpdesk",
+    "name": "pnp-sp-fx-aces-chartcard-datavisualizationoptions",
     "source": "pnp",
-    "title": "Basic Card Help Desk",
-    "shortDescription": "This solution uses a help desk scenaio to demonstrate how to use the geolocation features and image upload functionality in Adaptive Card Extensions.",
-    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/BasicCard-HelpDesk",
+    "title": "Data Visualization options for ACE cards",
+    "shortDescription": "This is a baseline solution demonstrating the different data visualization options for the Viva Connections Cards.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ChartCard-DataVisualizationOptions",
     "longDescription": [
-      "This solution uses a help desk scenaio to demonstrate how to use the geolocation features and image upload functionality in Adaptive Card Extensions. The sample creates a list to hold the help desk tickets and stores the images in the site assets library. It also leverages BingMaps api to get the street address."
+      "This is a baseline solution demonstrating the different data visualization options for the Viva Connections Cards. Line chart support was released as part of the SharePoint Framework 1.19 release and additional bar chart, pie chart and donut charts were introduced with the SharePoint Framework 1.20 release. Data visualization cards can be used to surface relevant business metrics directly in the Viva Connections dashboard, which can be easily accessed using desktop, tablet or mobile experiences."
     ],
-    "creationDateTime": "2024-01-25",
-    "updateDateTime": "2024-01-25",
+    "creationDateTime": "2024-08-20",
+    "updateDateTime": "2024-08-20",
     "products": [
       "SharePoint",
       "Viva"
@@ -918,38 +918,38 @@
     "metadata": [
       {
         "key": "CLIENT-SIDE-DEV",
-        "value": "React"
+        "value": "None"
       },
       {
         "key": "SPFX-VERSION",
-        "value": "1.18"
+        "value": "1.20"
       }
     ],
     "thumbnails": [
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo1.png",
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ChartCard-DataVisualizationOptions/assets/chart-cards-options.png",
         "alt": "Preview"
       },
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo2.png",
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ChartCard-DataVisualizationOptions/assets/full-screen-preview.png",
         "alt": "Preview"
       },
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/BasicCard-HelpDesk/assets/demo3.png",
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ChartCard-DataVisualizationOptions/assets/mobile-preview.png",
         "alt": "Preview"
       }
     ],
     "authors": [
       {
-        "gitHubAccount": "dcashpeterson",
-        "pictureUrl": "https://github.com/dcashpeterson.png",
-        "name": "Derek Cash-Peterson"
+        "gitHubAccount": "VesaJuvonen",
+        "pictureUrl": "https://github.com/VesaJuvonen.png",
+        "name": "Vesa Juvonen"
       }
     ],
     "references": [
