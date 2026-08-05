@@ -1,0 +1,15 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.23.2",
+    "libraryName": "workiq-today-summary",
+    "libraryId": "cf102951-08c8-43e3-ad43-a7f9529c2012",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "templateType": "PrimaryText",
+    "useGulp": false,
+    "nodeVersion": "22.14.0"
+  }
+}

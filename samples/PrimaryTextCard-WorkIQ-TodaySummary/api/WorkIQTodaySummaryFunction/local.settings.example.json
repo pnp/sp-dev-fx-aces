@@ -1,0 +1,17 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "WorkIQ__ClientId": "<proxy-app-registration-application-client-id>",
+    "WorkIQ__ClientSecret": "<proxy-app-registration-client-secret-or-use-a-Key-Vault-reference>",
+    "WorkIQ__ProxyAudience": "api://<proxy-app-registration-client-id>",
+    "WorkIQ__GatewayBaseUrl": "https://workiq.svc.cloud.microsoft/rest",
+    "WorkIQ__Scope": "api://workiq.svc.cloud.microsoft/WorkIQAgent.Ask",
+    "WorkIQ__CacheTtlMinutes": "15",
+    "WorkIQ__MinCacheTtlMinutes": "5"
+  },
+  "Host": {
+    "CORS": "*"
+  }
+}

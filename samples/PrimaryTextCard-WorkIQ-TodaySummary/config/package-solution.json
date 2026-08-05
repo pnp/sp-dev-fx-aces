@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "workiq-today-summary-client-side-solution",
+    "id": "cf102951-08c8-43e3-ad43-a7f9529c2012",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Ramin Ahmadi",
+      "websiteUrl": "https://codingwithramin.com",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": ""
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Viva Connections card that surfaces a Work IQ 'what's relevant today' summary."
+      },
+      "longDescription": {
+        "default": "PrimaryTextCard-WorkIQ-TodaySummary shows a short, Work IQ-generated summary of what's relevant to the signed-in user today (files, meetings, messages) on the Viva Connections dashboard, with a Quick View listing the underlying items."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "workiq-today-summary WorkIQTodaySummaryAdaptiveCardExtension Feature",
+        "description": "The feature that activates WorkIQTodaySummaryAdaptiveCardExtension from the workiq-today-summary solution.",
+        "id": "31088833-3eba-4a2e-b916-e198c9367f91",
+        "version": "1.0.0.0",
+        "componentIds": [
+          "31088833-3eba-4a2e-b916-e198c9367f91"
+        ]
+      }
+    ],
+    "webApiPermissionRequests": [
+      {
+        "resource": "WorkIQ-TodaySummary-Proxy",
+        "scope": "access_as_user"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/workiq-today-summary.sppkg"
+  }
+}
