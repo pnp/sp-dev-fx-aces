@@ -2,10 +2,6 @@ import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@micr
 import * as strings from 'PeopleDetailsAdaptiveCardExtensionStrings';
 import { DIALOGUE_VIEW_REGISTRY_ID, IPeopleDetailsAdaptiveCardExtensionProps, IPeopleDetailsAdaptiveCardExtensionState, MESSAGE_VIEW_REGISTRY_ID, UPDATE_VIEW_REGISTRY_ID } from '../PeopleDetailsAdaptiveCardExtension';
 
-import { sp } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
 import { PnPServices } from '../../../Services/PnPServices';
 
 export interface IShowAllViewData {

@@ -3,12 +3,18 @@
     "plusBeta": false,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.13.1",
+    "version": "1.23.0",
     "libraryName": "primary-text-card-people-details",
     "libraryId": "8e412dec-872e-4adf-a51d-ff1ee6ff76f7",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "PrimaryText"
+    "aceTemplateType": "PrimaryText",
+    "useGulp": false,
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.24.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    }
   }
 }

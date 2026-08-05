@@ -28,6 +28,10 @@ obj
 
 # Resx Generated Code
 *.resx.ts
+lib-dts
+lib-commonjs
+lib-esm
+jest-output
 
 # Styles Generated Code
 *.scss.ts

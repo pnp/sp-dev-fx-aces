@@ -3,11 +3,6 @@ import * as strings from 'PeopleDetailsAdaptiveCardExtensionStrings';
 import { IPeopleDetailsAdaptiveCardExtensionProps, IPeopleDetailsAdaptiveCardExtensionState, MESSAGE_VIEW_REGISTRY_ID } from '../PeopleDetailsAdaptiveCardExtension';
 import { PnPServices } from '../../../Services/PnPServices';
 
-import { sp } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-
 export interface ICreateViewData {
   messageBar: any;
   country: any[];
@@ -41,7 +36,7 @@ export class CreateView extends BaseAdaptiveCardView<
           newItem = await PnPServices.createItem(action.data);
           if (newItem != null) {
             let refreshData: any = await PnPServices.refreshData();
-            let newCurrentIndex = refreshData["peopleData"].filter(item => item["itemId"] === newItem["data"]["ID"]);
+            let newCurrentIndex = refreshData["peopleData"].filter(item => item["itemId"] === newItem["ID"]);
             this.quickViewNavigator.push(MESSAGE_VIEW_REGISTRY_ID, true);
             this.setState({
               peopleData: refreshData["peopleData"],
