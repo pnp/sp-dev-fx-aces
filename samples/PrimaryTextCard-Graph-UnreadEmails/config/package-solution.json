@@ -3,7 +3,7 @@
   "solution": {
     "name": "ace-unread-emails-spfx",
     "id": "3b7583e0-46e7-472e-a128-deed4be07243",
-    "version": "1.0.1.0",
+    "version": "1.0.2.0",
     "title": "Basic Unread Email ACE",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,

@@ -24,11 +24,12 @@ export class CardView extends BasePrimaryTextCardView<IUnreadEmailsAdaptiveCardE
   }
 
   public get data(): IPrimaryTextCardParameters {
-    if (this.state.error) return {...strings.Error, description: this.state.error.message ?? this.state.error };
+    if (this.state.error) return { ...strings.Error, description: this.state.error.message };
     if (!this.state.results) return strings.Loading;
-    else if (this.state.results?.unreadItemCount === 0) return strings.NoUnread;
-    else if (this.state.results?.unreadItemCount > 100) return {...strings.LargeUnread, primaryText: strings.LargeUnread.primaryText.replace('{0}', this.state.results?.unreadItemCount) };
-    return {...strings.Unread, primaryText: strings.Unread.primaryText.replace('{0}', this.state.results?.unreadItemCount) };
+    const unreadCount: number = this.state.results.unreadItemCount ?? 0;
+    if (unreadCount === 0) return strings.NoUnread;
+    if (unreadCount > 100) return { ...strings.LargeUnread, primaryText: strings.LargeUnread.primaryText.replace('{0}', unreadCount.toString()) };
+    return { ...strings.Unread, primaryText: strings.Unread.primaryText.replace('{0}', unreadCount.toString()) };
   }
 
   public get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | undefined {
