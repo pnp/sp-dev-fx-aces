@@ -1,5 +1,5 @@
 [{
-  "name": "pnp-sp-fx-aces-PrimaryTextCard-WorkIQ-TodaySummary",
+  "name": "pnp-sp-fx-aces-primarytextcard-workiq-todaysummary",
   "source": "pnp",
   "title": "Today with Work IQ (PrimaryTextCard-WorkIQ-TodaySummary)",
   "shortDescription": "Viva Connections card showing a Work IQ-generated 'what's relevant today' summary, via a C# Azure Function OBO proxy.",
@@ -33,7 +33,7 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/AhmadiRamin/sp-dev-fx-aces/feature/work-iq-viva-connections-card/samples/PrimaryTextCard-WorkIQ-TodaySummary/assets/demo.gif",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-WorkIQ-TodaySummary/assets/demo.gif",
     "alt": "Preview"
   }],
   "authors": [{
