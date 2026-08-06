@@ -31,3 +31,8 @@ obj
 
 # Styles Generated Code
 *.scss.ts
+.heft
+lib-dts
+lib-commonjs
+lib-esm
+jest-output

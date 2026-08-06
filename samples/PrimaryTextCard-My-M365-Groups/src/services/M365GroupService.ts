@@ -1,9 +1,9 @@
-import { MSGraphClient } from '@microsoft/sp-http';
+import { MSGraphClientV3 } from '@microsoft/sp-http';
 import { AdaptiveCardExtensionContext } from '@microsoft/sp-adaptive-card-extension-base';
 import { IGroup, IGroupCollection, IConnectedService } from "../models/IGroup";
 
 export class M365GroupService {
-    public context: AdaptiveCardExtensionContext;
+    public context!: AdaptiveCardExtensionContext;
 
     public setup(context: AdaptiveCardExtensionContext): void {
         this.context = context;
@@ -12,8 +12,8 @@ export class M365GroupService {
     private async getPaginatedResults(nextLink: string): Promise<Array<IGroup>> {
         return new Promise<any>(async (resolve, reject) => {
           this.context.msGraphClientFactory
-            .getClient()
-            .then((client: MSGraphClient) => {
+            .getClient('3')
+            .then((client: MSGraphClientV3) => {
               client
                 .api(nextLink)
                 .get((error: any, results: any, rawResponse: any) => {
@@ -47,8 +47,8 @@ export class M365GroupService {
         return new Promise<number>((resolve, reject) => {
             try {
                 this.context.msGraphClientFactory
-                    .getClient()
-                    .then((client: MSGraphClient) => {
+                    .getClient('3')
+                    .then((client: MSGraphClientV3) => {
                         client
                             .api(`/me/memberOf/$/microsoft.graph.group?$filter=groupTypes/any(a:a eq 'unified')&$count=true&$select=id`)
                             .headers({ 'ConsistencyLevel': 'eventual' })
@@ -69,8 +69,8 @@ export class M365GroupService {
             var m365Groups: Array<IGroup> = new Array<IGroup>();
     
             this.context.msGraphClientFactory
-              .getClient()
-              .then((client: MSGraphClient) => {
+              .getClient('3')
+              .then((client: MSGraphClientV3) => {
                 client
                   .api("/me/memberOf/$/microsoft.graph.group?$filter=groupTypes/any(a:a eq 'unified')&$count=true&$orderby=displayName&$select=id,displayName,description,visibility,groupTypes")
                   .headers({ 'ConsistencyLevel': 'eventual' })
@@ -79,9 +79,9 @@ export class M365GroupService {
     
                     var Uri = groups['@odata.nextLink'];
                     while (Uri) {
-                      let pageGroups = await this.getPaginatedResults(groups['@odata.nextLink']);
+                      let pageGroups = await this.getPaginatedResults(groups['@odata.nextLink']!);
                       m365Groups = m365Groups.concat(pageGroups);
-                      Uri = pageGroups['@odata.nextLink'];
+                      Uri = (pageGroups as any)['@odata.nextLink'];
                     }
     
                     resolve(m365Groups);
@@ -97,8 +97,8 @@ export class M365GroupService {
         return new Promise<number>((resolve, reject) => {
           try {
             this.context.msGraphClientFactory
-              .getClient()
-              .then((client: MSGraphClient) => {
+              .getClient('3')
+              .then((client: MSGraphClientV3) => {
                 client
                   .api(`/me/ownedObjects/$/microsoft.graph.group?$filter=groupTypes/any(a:a eq 'unified')&$count=true&$select=id`)
                   .headers({ 'ConsistencyLevel': 'eventual' })
@@ -119,8 +119,8 @@ export class M365GroupService {
             var m365Groups: Array<IGroup> = new Array<IGroup>();
     
             this.context.msGraphClientFactory
-              .getClient()
-              .then((client: MSGraphClient) => {
+              .getClient('3')
+              .then((client: MSGraphClientV3) => {
                 client
                   .api("/me/ownedObjects/$/microsoft.graph.group?$filter=groupTypes/any(a:a eq 'unified')&$orderby=displayName&$count=true&$select=id,displayName,description,visibility,groupTypes")
                   .headers({ 'ConsistencyLevel': 'eventual' })
@@ -131,7 +131,7 @@ export class M365GroupService {
                     while (Uri) {
                       let pageGroups = await this.getPaginatedResults(groups['@odata.nextLink']);
                       m365Groups = m365Groups.concat(pageGroups);
-                      Uri = pageGroups['@odata.nextLink'];
+                      Uri = (pageGroups as any)['@odata.nextLink'];
                     }
     
                     resolve(m365Groups);
@@ -147,8 +147,8 @@ export class M365GroupService {
         return new Promise<any>((resolve, reject) => {
             try {
                 this.context.msGraphClientFactory
-                    .getClient()
-                    .then((client: MSGraphClient) => {
+                    .getClient('3')
+                    .then((client: MSGraphClientV3) => {
                         client
                             .api(`/groups/${groupId}/sites/root/weburl`)
                             .get((error: any, group: any, rawResponse: any) => {
@@ -165,8 +165,8 @@ export class M365GroupService {
         return new Promise<IConnectedService[]>((resolve, reject) => {
           try {
             this.context.msGraphClientFactory
-              .getClient()
-              .then((client: MSGraphClient) => {
+              .getClient('3')
+              .then((client: MSGraphClientV3) => {
                 client
                   .api(`/groups/${groupId}/endpoints`)
                   .version('beta')

@@ -2,13 +2,19 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
+    "useGulp": false,
     "environment": "spo",
-    "version": "1.14.0",
+    "version": "1.23.0",
+    "nodeVersion": "22.14.0",
     "libraryName": "primaytextcard-my-m365-groups",
     "libraryId": "e85df1bc-b8d5-486d-bb26-8003414104de",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "PrimaryText"
+    "aceTemplateType": "PrimaryText",
+    "sdkVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    }
   }
 }

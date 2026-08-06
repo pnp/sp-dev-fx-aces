@@ -18,4 +18,5 @@ export interface IConnectedService {
 
 export interface IGroupCollection {
     value: IGroup[];
+    "@odata.nextLink"?: string;
 }
