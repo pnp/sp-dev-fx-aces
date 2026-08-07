@@ -61,7 +61,7 @@ Version|Date|Comments
 * Clone this repository
 * in the command line run:
   * `npm install`
-  * `gulp serve`
+  * `npm run start`
 
 Before running the solution you will need to access the SharePoint Admin Center > Advanced > API Access and approve the Graph API requests.
 
