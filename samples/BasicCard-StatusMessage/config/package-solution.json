@@ -3,7 +3,7 @@
   "solution": {
     "name": "basic-card-status-message-client-side-solution",
     "id": "de3a69f9-cb31-4599-ba96-8cd366334210",
-    "version": "1.1.0.0",
+    "version": "1.2.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -40,7 +40,7 @@
         "title": "basic-card-status-message Feature",
         "description": "The feature that activates elements of the basic-card-status-message solution.",
         "id": "d2e2b0e1-06cb-4aa9-a801-2102944f141c",
-        "version": "1.0.0.0"
+        "version": "1.2.0.0"
       }
     ]
   },
