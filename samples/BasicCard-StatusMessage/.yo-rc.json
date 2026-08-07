@@ -2,12 +2,12 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "nodeVersion": "16.18.0",
-    "sdksVersions": {
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.4.1"
+      "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.16.0-rc.0",
+    "version": "1.23.0",
     "libraryName": "basic-card-status-message",
     "libraryId": "de3a69f9-cb31-4599-ba96-8cd366334210",
     "environment": "spo",
@@ -17,6 +17,7 @@
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "Basic"
+    "aceTemplateType": "Basic",
+    "useGulp": false
   }
 }

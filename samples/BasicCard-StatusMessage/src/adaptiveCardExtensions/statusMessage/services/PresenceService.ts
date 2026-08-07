@@ -1,7 +1,7 @@
 import { Log, ServiceKey, ServiceScope } from "@microsoft/sp-core-library";
 import { IStatusMessage } from "../models/IStatusMessage";
 import { IPresenceService } from "./IPresenceService";
-import { MSGraphClientFactory, MSGraphClientV3 } from '@microsoft/sp-http';
+import { AadTokenProviderFactory, MSGraphClientFactory, MSGraphClientV3 } from '@microsoft/sp-http';
 import { IPresenceStatus } from "../models/IPresenceStatus";
 
 const PresenceService_ServiceKey = "BasicCard-StatusMessage:PresenceService";
@@ -13,10 +13,12 @@ export class StatusMessageService implements IPresenceService {
 
     private _serviceScope: ServiceScope;
     private _msGraphClientFactory: MSGraphClientFactory;
+    private _aadTokenProviderFactory: AadTokenProviderFactory;
 
     public constructor(serviceScope: ServiceScope) {
         serviceScope.whenFinished(async () => {
             this._msGraphClientFactory = serviceScope.consume(MSGraphClientFactory.serviceKey);
+            this._aadTokenProviderFactory = serviceScope.consume(AadTokenProviderFactory.serviceKey);
         });
     }
 
@@ -133,24 +135,27 @@ export class StatusMessageService implements IPresenceService {
 
     public async getCurrentSessionId(): Promise<string> {
 
-        const endpoint = "/applications";
-
         try {
-            const msGraphClient: MSGraphClientV3 = await this._msGraphClientFactory.getClient("3");
-            const response = await msGraphClient
-                .api(endpoint)
-                .version("v1.0")
-                .filter("startswith(displayName, 'SharePoint Online Client Extensibility Web Application Principal')")
-                .top(1)
-                .select("appId")
-                .get();
+            const tokenProvider = await this._aadTokenProviderFactory.getTokenProvider();
+            const graphToken = await tokenProvider.getToken("https://graph.microsoft.com");
 
-            return response.value[0].appId;
+            // setPresence requires sessionId to equal the calling app's id, held in the token's 'appid' claim.
+            return this._decodeJwtPayload(graphToken).appid;
 
         } catch (error) {
             Log.error("[getCurrentSessionId()]", error, this._serviceScope);
             throw error;
         }
+    }
+
+    private _decodeJwtPayload(token: string): { appid: string } {
+        const base64 = token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+        return JSON.parse(decodeURIComponent(
+            atob(base64)
+                .split("")
+                .map((c) => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2))
+                .join("")
+        ));
     }
 
     public async clearPresence(userId: string, sessionId: string): Promise<void> {
