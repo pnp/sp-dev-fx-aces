@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView } from '@microsoft/sp-adaptive-card-extension-base';
 import { ILibraryAdaptiveCardExtensionProps, ILibraryAdaptiveCardExtensionState } from '../LibraryAdaptiveCardExtension';
 import libraryImg from '../assets/LibraryImg.png';
 import { IQuickViewLibraryData } from '../../../models/IQuickViewLibraryData';
+import sampleLibraryData from '../../../models/sample-library-data.json';
+import quickViewTemplate from './template/QuickViewTemplate.json';
 
 export interface IQuickViewData {
   libraryImage: string;
@@ -29,7 +30,7 @@ export class QuickView extends BaseAdaptiveCardView<
 
   public get data(): IQuickViewData {
 
-    const libraryJsonData: any = require('../../../models/sample-library-data.json');
+    const libraryJsonData: any = sampleLibraryData;
     const library: IQuickViewLibraryData[] = this.sortItemsAccordingToDueDate(libraryJsonData.libraryLoansData);
     return {
       libraryImage: libraryImg,
@@ -38,6 +39,6 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   public get template(): ISPFxAdaptiveCard {
-    return require('./template/QuickViewTemplate.json');
+    return quickViewTemplate as unknown as ISPFxAdaptiveCard;
   }
 }

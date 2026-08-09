@@ -7,6 +7,7 @@ import {
 } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'LibraryAdaptiveCardExtensionStrings';
 import { ILibraryAdaptiveCardExtensionProps, ILibraryAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../LibraryAdaptiveCardExtension';
+import libraryImage from '../assets/library.png';
 
 export class CardView extends BaseImageCardView<ILibraryAdaptiveCardExtensionProps, ILibraryAdaptiveCardExtensionState> {
   /**
@@ -30,7 +31,7 @@ export class CardView extends BaseImageCardView<ILibraryAdaptiveCardExtensionPro
   public get data(): IImageCardParameters {
     return {
       primaryText: strings.PrimaryText,
-      imageUrl: require('../assets/library.png'),
+      imageUrl: libraryImage,
       title: this.properties.title
     };
   }
