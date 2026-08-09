@@ -2,10 +2,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -21,12 +23,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -96,7 +98,7 @@ var WordOfTheDayAdaptiveCardExtension = /** @class */ (function (_super) {
                             return [2 /*return*/];
                         }
                         if (!((this.properties.useSampleData == undefined || this.properties.useSampleData == false) && (this.properties.apiKey && this.properties.apiKey.length > 0))) return [3 /*break*/, 4];
-                        return [4 /*yield*/, this.context.httpClient.get("" + WORDNIK_API_URL + WORD_OF_THE_DAY + "?" + API_KEY + "=" + this.properties.apiKey, HttpClient.configurations.v1)];
+                        return [4 /*yield*/, this.context.httpClient.get("".concat(WORDNIK_API_URL).concat(WORD_OF_THE_DAY, "?").concat(API_KEY, "=").concat(this.properties.apiKey), HttpClient.configurations.v1)];
                     case 1:
                         response = _a.sent();
                         wordOfTheDay = undefined;
@@ -157,7 +159,7 @@ var WordOfTheDayAdaptiveCardExtension = /** @class */ (function (_super) {
             return;
         }
         if (propertyPath == "useSampleData" || propertyPath == "apiKey") {
-            this.loadWordOfTheDay();
+            void this.loadWordOfTheDay();
         }
     };
     WordOfTheDayAdaptiveCardExtension.prototype.renderCard = function () {
