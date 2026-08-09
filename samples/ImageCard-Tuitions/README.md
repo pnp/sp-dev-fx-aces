@@ -8,7 +8,7 @@ This sample shows how to build an ACE with a card view to display outstanding pa
 
 ### Used SharePoint Framework Version
 
-*Version 1.16.0*
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ### Applies to
 
@@ -22,6 +22,7 @@ Get your own free development tenant by subscribing to [Microsoft 365 developer 
 | **Version** | **Date** | **Comments** |
 |--|--|--|
 | 1.0  | April 14, 2023 | Initial release |
+| 1.1  | August 9, 2026 | Upgraded to SPFx 1.23 (Heft build toolchain) |
 
 ### Disclaimer
 
@@ -34,8 +35,7 @@ Get your own free development tenant by subscribing to [Microsoft 365 developer 
 - Replace the dummy data from JSON file with actual data.
 - In the command-line, run:
 - npm install
-- npm i -D gulp-eslint-new
-- gulp serve
+- npm run start
 
 ### References
 
