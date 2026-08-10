@@ -8,7 +8,7 @@
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13.1-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -32,6 +32,7 @@ PrimaryTextCard-FootballStats | Soumyadeep Mukherjee ([@soumyadeep2207](https://
 Version|Date|Comments
 -------|----|--------
 1.0|January 25, 2022|Initial release
+1.1|August 10, 2026|Upgraded to SPFx 1.23
 
 ## Disclaimer
 
@@ -44,13 +45,8 @@ Version|Date|Comments
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
-  - Serve the solution
-    - **`npm install`**
-    - **`gulp serve`**
-  - Bundle the solution
-    - **`gulp build --ship`**
-    - **`gulp bundle --ship`**
-    - **`gulp package-solution --ship`**
+  - **`npm install`**
+  - **`npm run start`**
 
 ## Features
 
