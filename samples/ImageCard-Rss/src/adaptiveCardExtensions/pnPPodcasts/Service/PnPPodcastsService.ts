@@ -15,14 +15,14 @@ export default class PnPPodcastsService {
         return null;
       }
 
-      let xmlStr = await response.text();
-      let parser = new DOMParser();
-      let xml = parser.parseFromString(String(xmlStr), "application/xml");
-      let podcastJson: any = xml2json(xml);
+      const xmlStr = await response.text();
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(String(xmlStr), "application/xml");
+      const podcastJson: any = xml2json(xml);
 
-      let items: ItemEntity[] = [];
+      const items: ItemEntity[] = [];
       podcastJson.rss.channel.item.forEach(item => {
-        let _itemEntity: ItemEntity = {
+        const _itemEntity: ItemEntity = {
           title: item.title,
           link: item.link,
           description: item.description.replace(/(<([^>]+)>)/gi, ""),
@@ -33,10 +33,10 @@ export default class PnPPodcastsService {
         } as ItemEntity;
         items.push(_itemEntity);
       });
-      let image: Image = {
+      const image: Image = {
         url: podcastJson.rss.channel.image.url,
       };
-      let channel: Channel = {
+      const channel: Channel = {
         title: podcastJson.rss.channel.title,
         link: podcastJson.rss.channel.link,
         image: image,
@@ -52,24 +52,24 @@ export default class PnPPodcastsService {
     }
     //Method from following answer in stackoverflow.
     //https://stackoverflow.com/questions/1773550/convert-xml-to-json-and-back-using-javascript
-    function xml2json(xml) {
+    function xml2json(xml: any): any {
       try {
-        var obj = {};
+        let obj = {};
         if (xml.children.length > 0) {
-          for (var i = 0; i < xml.children.length; i++) {
-            var item = xml.children.item(i);
+          for (let i = 0; i < xml.children.length; i++) {
+            const item = xml.children.item(i);
             if (item.nodeName === "itunes:image") {
-              item.textContent = item.attributes["href"].value;
+              item.textContent = item.attributes.href.value;
             } else if (item.nodeName === "enclosure") {
-              item.textContent = item.attributes["url"].value;
+              item.textContent = item.attributes.url.value;
             }
-            var nodeName = item.nodeName;
+            const nodeName = item.nodeName;
 
-            if (typeof (obj[nodeName]) == "undefined") {
+            if (typeof (obj[nodeName]) === "undefined") {
               obj[nodeName] = xml2json(item);
             } else {
-              if (typeof (obj[nodeName].push) == "undefined") {
-                var old = obj[nodeName];
+              if (typeof (obj[nodeName].push) === "undefined") {
+                const old = obj[nodeName];
 
                 obj[nodeName] = [];
                 obj[nodeName].push(old);

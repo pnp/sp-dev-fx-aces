@@ -3,7 +3,7 @@
   "solution": {
     "name": "pn-p-podcasts-client-side-solution",
     "id": "59b2918b-dbc9-40d7-ab42-fccc47d53191",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -13,7 +13,29 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.13.1"
-    }
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "pn-p-podcasts description"
+      },
+      "longDescription": {
+        "default": "pn-p-podcasts description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "pn-p-podcasts PnPPodcastsAdaptiveCardExtension Feature",
+        "description": "The feature that activates PnPPodcastsAdaptiveCardExtension from the pn-p-podcasts solution.",
+        "id": "eb1a918b-a1da-4640-b787-e39142bad3eb",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "eb1a918b-a1da-4640-b787-e39142bad3eb"
+        ]
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/ImageCard-rss.sppkg"

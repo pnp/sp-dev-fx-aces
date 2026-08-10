@@ -8,7 +8,7 @@ This ACEs accesses the RSS feed from PnP Weekly and display episodes, audio and 
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -28,6 +28,7 @@ ImageCard-rss | André Lage ([@aaclage](https://twitter.com/aaclage)) Datalynx A
 Version|Date|Comments
 -------|----|--------
 1.0|January 27, 2022|Initial release
+1.1|August 10, 2026|Upgraded to SPFx 1.23.0
 
 ## Disclaimer
 
@@ -42,11 +43,10 @@ Version|Date|Comments
 - In the command-line run:
   - **npm install**
 - After that create the sppkg file using
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **npm run build**
 - Deploy the package to the app catalogue site in your tenant
 - in the command-line run:
-  - **gulp serve -l --nobrowser**
+  - **npm run start**
 - Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE to the page
 - Edit the properties of ACE based on the user needs.
