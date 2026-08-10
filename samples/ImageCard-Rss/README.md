@@ -45,9 +45,6 @@ Version|Date|Comments
 - After that create the sppkg file using
   - **npm run build**
 - Deploy the package to the app catalogue site in your tenant
-- in the command-line run:
-  - **npm run start**
-- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE to the page
 - Edit the properties of ACE based on the user needs.
 
