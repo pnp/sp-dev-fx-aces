@@ -2,7 +2,13 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "version": "1.14.0",
+    "version": "1.23.0",
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "useGulp": false,
     "libraryName": "primary-text-card-news-feed",
     "libraryId": "64e804ea-d24c-4729-9315-6a71663add16",
     "environment": "spo",

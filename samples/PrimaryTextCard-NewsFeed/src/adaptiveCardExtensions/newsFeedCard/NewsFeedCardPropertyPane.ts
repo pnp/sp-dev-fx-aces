@@ -1,4 +1,4 @@
-import { IPropertyPaneConfiguration, PropertyPaneSlider, PropertyPaneTextField } from '@microsoft/sp-property-pane';
+import { IPropertyPaneConfiguration, PropertyPaneTextField } from '@microsoft/sp-property-pane';
 import * as strings from 'NewsFeedCardAdaptiveCardExtensionStrings';
 
 export class NewsFeedCardPropertyPane {
