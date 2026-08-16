@@ -24,7 +24,7 @@ export class SearchResultsQuickView extends BaseAdaptiveCardView<
         };
     }
 
-    public mapToCardData(searchItem: ISearchResult) {
+    public mapToCardData(searchItem: ISearchResult): ISearchResultsQuickViewData['searchItems'][number] {
         return {
             fileIcon: utils.GetFileImageUrl(searchItem.fields.url),
             title: searchItem.fields.title,

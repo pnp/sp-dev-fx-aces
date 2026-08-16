@@ -9,7 +9,7 @@ In ACE properties You can configure initial query. Value from the input will be 
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.16-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -28,9 +28,10 @@ In ACE properties You can configure initial query. Value from the input will be 
 
 ## Version history
 
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.0     | December 9, 2022 | Initial release |
+| Version | Date             | Comments                 |
+| ------- | ---------------- | ------------------------ |
+| 1.0     | December 9, 2022 | Initial release          |
+| 1.1     | August 16, 2026  | Upgraded to SPFx 1.23     |
 
 ## Disclaimer
 
@@ -44,7 +45,7 @@ In ACE properties You can configure initial query. Value from the input will be 
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 ## References
 
