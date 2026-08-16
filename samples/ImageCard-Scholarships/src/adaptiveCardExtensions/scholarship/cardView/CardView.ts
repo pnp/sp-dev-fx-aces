@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-var-requires */
 import {
   BaseImageCardView,
   IImageCardParameters,
@@ -33,7 +31,7 @@ export class CardView extends BaseImageCardView<IScholarshipAdaptiveCardExtensio
     const tabsData: any = require('../../scholarship/models/scholarship-sample-data.json');
     return {
       primaryText: `${tabsData.newTabScholarshipData.length} new\n ${tabsData.appliedTabScholarshipData.length} applied`,
-      imageUrl: require('../assets/cardimage.png'),
+      imageUrl: require('../assets/cardImage.png'),
       title: this.properties.title
     };
   }

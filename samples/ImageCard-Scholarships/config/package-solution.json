@@ -3,7 +3,7 @@
   "solution": {
     "name": "scholarships-client-side-solution",
     "id": "dc791b6e-7eb6-4639-91a4-f5695a48842c",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "scholarships Feature",
         "description": "The feature that activates elements of the scholarships solution.",
         "id": "9ebdf112-1acc-4db1-8a29-a68e724d4b7b",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },
