@@ -13,22 +13,11 @@ release
 solution
 temp
 *.sppkg
+lib-dts
+lib-commonjs
+lib-esm
+jest-output
 .heft
 
 # Coverage directory used by tools like istanbul
 coverage
-
-# OSX
-.DS_Store
-
-# Visual Studio files
-.ntvs_analysis.dat
-.vs
-bin
-obj
-
-# Resx Generated Code
-*.resx.ts
-
-# Styles Generated Code
-*.scss.ts
