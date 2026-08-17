@@ -24,7 +24,7 @@ List Data Sample Screenshot
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.14.0beta-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -62,6 +62,7 @@ PrimaryTextCard-Dynamic-Announcements | [Siddharth Vaghasia](https://siddharthva
 Version|Date|Comments
 -------|----|--------
 1.0|March 14, 2022|Initial release
+1.1|July 31, 2026|Upgraded to SPFx 1.23.0 (build migrated from gulp to Heft); data layer migrated to PnPjs v4 (@pnp/sp 4.20.0)
 
 ## Disclaimer
 
@@ -75,7 +76,7 @@ Version|Date|Comments
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 ## Concept Explored
 
