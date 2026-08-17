@@ -43,7 +43,7 @@ Clear the search:
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.14-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -88,6 +88,7 @@ My M365 Groups | [Nanddeep Nachan](https://github.com/nanddeepn), [@NanddeepNach
 
 Version|Date|Comments
 -------|----|--------
+3.0|August 06, 2026|Upgraded to SPFx 1.23
 2.0|June 12, 2022|Added search functionality ([Nanddeep Nachan](https://github.com/nanddeepn), [Smita Nachan](https://github.com/SmitaNachan))
 1.0|January 07, 2022|Initial release
 
@@ -103,9 +104,8 @@ Version|Date|Comments
 - Ensure that you are at the solution folder.
 - in the command-line run:
   - **npm install**
-- Create the solution pacjage (.sppkg file) using:
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+- Create the solution package (.sppkg file) using:
+  - **npm run build**
 - Deploy the package (primaytextcard-my-m365-groups.sppkg) to the tenant app catalogue.
 - The solution needs following Microsoft Graph API permissions. Approve the API access requests in the SharePoint admin center.
 
@@ -116,8 +116,7 @@ Version|Date|Comments
   | User.Read.All  |
 
 - in the command-line run:
-  - **gulp serve -l --nobrowser**
-- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
+  - **npm run start**
 - Add the ACE named **My M365 Groups** to the page.
 
 ## Features
