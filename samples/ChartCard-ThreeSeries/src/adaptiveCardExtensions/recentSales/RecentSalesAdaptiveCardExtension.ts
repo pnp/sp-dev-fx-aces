@@ -19,7 +19,7 @@ export default class RecentSalesAdaptiveCardExtension extends BaseAdaptiveCardEx
   IRecentSalesAdaptiveCardExtensionProps,
   IRecentSalesAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: RecentSalesPropertyPane;
+  private _deferredPropertyPane!: RecentSalesPropertyPane;
 
   public onInit(): Promise<void> {
     this.state = { };

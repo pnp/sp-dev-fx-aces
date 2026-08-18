@@ -1,13 +1,13 @@
 {
   "@microsoft/generator-sharepoint": {
-    "plusBeta": true,
+    "plusBeta": false,
     "isCreatingSolution": true,
     "nodeVersion": "18.19.1",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.12.0"
+      "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.19.0-beta.0",
+    "version": "1.23.0",
     "libraryName": "chart-card-three-series",
     "libraryId": "606a166a-f3ed-4e47-aa9b-d3dc956a6075",
     "environment": "spo",
@@ -18,5 +18,6 @@
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
     "aceTemplateType": "DataVisualization"
-  }
+  },
+  "useGulp": false
 }

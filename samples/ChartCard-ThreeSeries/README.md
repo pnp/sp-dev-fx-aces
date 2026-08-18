@@ -14,7 +14,7 @@ Example usage in a larger Viva Connections dashboard.
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.19.0--beta.0-yellow.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -38,6 +38,7 @@ none
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | March 27, 2024 | Initial release |
+| 1.1     | August 17, 2026 | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -51,7 +52,7 @@ none
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 ## Features
 
