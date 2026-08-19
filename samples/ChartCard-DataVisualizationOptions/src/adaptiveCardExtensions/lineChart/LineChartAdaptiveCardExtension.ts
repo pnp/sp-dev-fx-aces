@@ -19,7 +19,7 @@ export default class LineChartAdaptiveCardExtension extends BaseAdaptiveCardExte
   ILineChartAdaptiveCardExtensionProps,
   ILineChartAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: LineChartPropertyPane;
+  private _deferredPropertyPane: LineChartPropertyPane | undefined;
 
   public onInit(): Promise<void> {
     this.state = { };
@@ -49,6 +49,6 @@ export default class LineChartAdaptiveCardExtension extends BaseAdaptiveCardExte
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-    return this._deferredPropertyPane?.getPropertyPaneConfiguration();
+    return this._deferredPropertyPane?.getPropertyPaneConfiguration() ?? super.getPropertyPaneConfiguration();
   }
 }

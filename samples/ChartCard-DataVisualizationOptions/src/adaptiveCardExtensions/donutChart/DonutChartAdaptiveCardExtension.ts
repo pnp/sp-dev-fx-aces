@@ -19,7 +19,7 @@ export default class DonutChartAdaptiveCardExtension extends BaseAdaptiveCardExt
   IDonutChartAdaptiveCardExtensionProps,
   IDonutChartAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: DonutChartPropertyPane;
+  private _deferredPropertyPane: DonutChartPropertyPane | undefined;
 
   public onInit(): Promise<void> {
     this.state = { };
@@ -49,6 +49,6 @@ export default class DonutChartAdaptiveCardExtension extends BaseAdaptiveCardExt
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-    return this._deferredPropertyPane?.getPropertyPaneConfiguration();
+    return this._deferredPropertyPane?.getPropertyPaneConfiguration() ?? super.getPropertyPaneConfiguration();
   }
 }

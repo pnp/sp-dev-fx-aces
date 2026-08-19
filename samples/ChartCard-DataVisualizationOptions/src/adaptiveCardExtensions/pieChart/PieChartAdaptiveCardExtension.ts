@@ -19,7 +19,7 @@ export default class PieChartAdaptiveCardExtension extends BaseAdaptiveCardExten
   IPieChartAdaptiveCardExtensionProps,
   IPieChartAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: PieChartPropertyPane;
+  private _deferredPropertyPane: PieChartPropertyPane | undefined;
 
   public onInit(): Promise<void> {
     this.state = { };
@@ -49,6 +49,6 @@ export default class PieChartAdaptiveCardExtension extends BaseAdaptiveCardExten
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-    return this._deferredPropertyPane?.getPropertyPaneConfiguration();
+    return this._deferredPropertyPane?.getPropertyPaneConfiguration() ?? super.getPropertyPaneConfiguration();
   }
 }
