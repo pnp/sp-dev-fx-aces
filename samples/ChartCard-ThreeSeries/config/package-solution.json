@@ -3,7 +3,7 @@
   "solution": {
     "name": "chart-card-three-series-client-side-solution",
     "id": "606a166a-f3ed-4e47-aa9b-d3dc956a6075",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "chart-card-three-series Feature",
         "description": "The feature that activates elements of the chart-card-three-series solution.",
         "id": "b6d0c1df-0d26-4223-ac0e-5174c1995799",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },
