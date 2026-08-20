@@ -3,7 +3,7 @@
   "solution": {
     "name": "primary-text-word-of-the-day-client-side-solution",
     "id": "0f98ff57-052e-4b5c-88bb-952906d58139",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -13,7 +13,29 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.13.0"
-    }
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "primary-text-word-of-the-day description"
+      },
+      "longDescription": {
+        "default": "primary-text-word-of-the-day description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "primary-text-word-of-the-day WordOfTheDayAdaptiveCardExtension Feature",
+        "description": "The feature that activates WordOfTheDayAdaptiveCardExtension from the primary-text-word-of-the-day solution.",
+        "id": "bdbd9f08-6122-41b5-a368-9ef7bc31fadf",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "bdbd9f08-6122-41b5-a368-9ef7bc31fadf"
+        ]
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/primary-text-word-of-the-day.sppkg"

@@ -2,7 +2,7 @@ import { WordOfTheDay } from "./WordOfTheDay";
 
 export default abstract class WordOfTheDaySampleData {
     public static WordOfTheDaySample = (): WordOfTheDay => {
-        const tempWord = {
+        const tempWord: WordOfTheDay = {
           "_id":"624e2cab7499590939414867",
           "word":"juratory",
           "contentProvider":{
