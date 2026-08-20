@@ -3,7 +3,7 @@
   "solution": {
     "name": "internimg-client-side-solution",
     "id": "9d4f3e1e-76cd-4917-be72-9b977e8ad055",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "internimg Feature",
         "description": "The feature that activates elements of the internimg solution.",
         "id": "035a41fb-afb2-47d6-987c-b8132788786b",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },

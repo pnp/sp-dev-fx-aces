@@ -8,7 +8,7 @@ This sample shows how to build an ACE with a card view and quick view to display
 
 ### Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.6.0-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ### Applies to
 
@@ -28,6 +28,7 @@ aces-internship| Jethro Seghers ([@jseghers](https://twitter.com/jseghers)) Micr
 Version|Date|Comments
 -------|----|--------
 1.0|April 14, 2023|Initial release
+1.1|August 16, 2026|Upgraded to SPFx 1.23
 
 ## Disclaimer
 
@@ -38,15 +39,11 @@ Version|Date|Comments
 - Clone this repository
 - Ensure that you are at the solution folder
 - Replace the dummy data from JSON file with actual data. This data can be found under src\adaptiveCardExtensions\intern\models\quick-view-sample-data.json
-- Make sure to install ESLint by running the following command npm i -D gulp-eslint-new
 - In the command line run:
   - `npm install`
-    - `gulp build --ship`
-    - `gulp bundle --ship`
-    - `gulp package-solution --ship`
-  - Browse to your SharePoint app catalog and load the SPFx package.
-  - To test in the workbench use
-    - gulp serve --nobrowser
+  - `npm run build`
+  - Browse to your SharePoint app catalog and load the generated `.sppkg` from the `sharepoint/solution` folder.
+  - Add the ACE to a Dashboard page and test it out.
 
 ### References
 
