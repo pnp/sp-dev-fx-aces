@@ -3,14 +3,16 @@ import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
 import { NewsFeedCardPropertyPane } from './NewsFeedCardPropertyPane';
-import { ISearchQuery, ISearchResult, PermissionKind, spfi, SPFx } from '@pnp/sp/presets/all';
+import { spfi, SPFx } from '@pnp/sp';
+import '@pnp/sp/search';
+import { ISearchQuery, ISearchResult } from '@pnp/sp/search';
 
 export interface INewsFeedCardAdaptiveCardExtensionProps {
   title: string;
 }
 
 export interface INewsFeedCardAdaptiveCardExtensionState {
-  news: ISearchResult[]|null,
+  news: ISearchResult[]|undefined,
   totalNews: number;
 }
 
@@ -24,7 +26,7 @@ export default class NewsFeedCardAdaptiveCardExtension extends BaseAdaptiveCardE
   private _deferredPropertyPane: NewsFeedCardPropertyPane | undefined;
 
   public onInit(): Promise<void> {
-    this.state = { news: null, totalNews: 0 };
+    this.state = { news: undefined, totalNews: 0 };
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
@@ -33,13 +35,11 @@ export default class NewsFeedCardAdaptiveCardExtension extends BaseAdaptiveCardE
 
     const d = new Date(new Date().setDate(new Date().getDate() - 30).valueOf());
 
-    sp.search(<ISearchQuery>{
+    return sp.search(<ISearchQuery>{
       Querytext: `IsDocument:True AND FileExtension:aspx AND PromotedState:2 AND LastModifiedTime>=${d.toISOString()}`
     }).then((results) => {
       this.setState({ news: results.PrimarySearchResults, totalNews: results.TotalRows });
     });
-
-    return Promise.resolve();
   }
 
   protected loadPropertyPaneResources(): Promise<void> {

@@ -5,7 +5,7 @@
     "title": "Viva News Feed Card",
     "iconPath": "assets/News.png",
     "id": "64e804ea-d24c-4729-9315-6a71663add16",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -34,7 +34,7 @@
         "title": "Viva Connections News Feed Carde",
         "description": "Displays the last 30 days of News Feed Articles in a Viva Connections Card",
         "id": "8c5f99da-2dfc-4513-a715-ceea618fd72d",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },

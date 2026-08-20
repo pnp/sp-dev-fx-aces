@@ -8,9 +8,9 @@ Shows a count of SP news articles in the last 30 days and a quick view of those 
 
 ## Compatibility
 
-![SPFx 1.14](https://img.shields.io/badge/SPFx-1.14.0-green.svg)
-![PnPJS 3.2.0](https://img.shields.io/badge/PnPjs-3.2.0-green.svg)
-![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg)
+![SPFx 1.23](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![PnPJS 4.20.0](https://img.shields.io/badge/PnPjs-4.20.0-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams")
 ![Workbench Local | Hosted](https://img.shields.io/badge/Workbench-Local%20%7C%20Hosted-green.svg)
@@ -33,6 +33,7 @@ PrimaryTextCard-NewsFeed | Nick Brown ([@teckienickb](https://twitter.com/teckie
 Version|Date|Comments
 -------|----|--------
 1.0|April 26, 2022|Initial release
+1.1|August 11, 2026|Upgraded to SPFx 1.23.0
 
 ## Disclaimer
 
@@ -44,11 +45,12 @@ Version|Date|Comments
 
 - Clone this repository
 - Ensure that you are at the solution folder
-- in the command-line run:
+- In the command-line run:
   - **npm install**
-  - **gulp serve**
-  - **Add to workbench**
-- You may need to ./assets to ./sharepoint/assets for the icon to compile correctly.
+  - **heft test --clean --production**
+  - **heft package-solution --production**
+- Deploy the package (`primary-text-card-news-feed.sppkg`) to the tenant app catalogue.
+- Add the ACE **News Feed Card** to a Viva Connections dashboard.
 
 ## Features
 

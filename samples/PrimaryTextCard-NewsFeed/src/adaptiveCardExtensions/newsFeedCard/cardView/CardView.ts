@@ -10,7 +10,7 @@ import { INewsFeedCardAdaptiveCardExtensionProps, INewsFeedCardAdaptiveCardExten
 
 export class CardView extends BasePrimaryTextCardView<INewsFeedCardAdaptiveCardExtensionProps, INewsFeedCardAdaptiveCardExtensionState> {
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
-    if (this.state && this.state.news !== null && this.state.news.length > 0)
+    if (this.state && this.state.news !== undefined && this.state.news.length > 0)
       return [
         {
           title: strings.QuickViewButton,
@@ -28,7 +28,7 @@ export class CardView extends BasePrimaryTextCardView<INewsFeedCardAdaptiveCardE
   public get data(): IPrimaryTextCardParameters {
     return {
       primaryText: strings.PrimaryText,
-      description: (this.state && this.state.news !== null) ? this.state.news?.length === 0 ? strings.NoNews : strings.News.replace('{0}', this.state.totalNews.toString()) : strings.Loading,
+      description: (this.state && this.state.news !== undefined) ? this.state.news?.length === 0 ? strings.NoNews : strings.News.replace('{0}', this.state.totalNews.toString()) : strings.Loading,
       title: this.properties.title
     };
   }

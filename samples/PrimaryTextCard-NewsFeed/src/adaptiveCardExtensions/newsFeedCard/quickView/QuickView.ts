@@ -1,10 +1,9 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView } from '@microsoft/sp-adaptive-card-extension-base';
-import { ISearchResult } from '@pnp/sp/presets/all';
-import * as strings from 'NewsFeedCardAdaptiveCardExtensionStrings';
+import { ISearchResult } from '@pnp/sp/search';
 import { INewsFeedCardAdaptiveCardExtensionProps, INewsFeedCardAdaptiveCardExtensionState } from '../NewsFeedCardAdaptiveCardExtension';
 
 export interface IQuickViewData {
-  news: ISearchResult[]|null;
+  news: ISearchResult[]|undefined;
 }
 
 export class QuickView extends BaseAdaptiveCardView<
@@ -19,6 +18,7 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   public get template(): ISPFxAdaptiveCard {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return require('./template/QuickViewTemplate.json');
   }
 }
