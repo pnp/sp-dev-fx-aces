@@ -1,5 +1,4 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'PnPPodcastsAdaptiveCardExtensionStrings';
 import { IPnPPodcastsAdaptiveCardExtensionProps, IPnPPodcastsAdaptiveCardExtensionState } from '../PnPPodcastsAdaptiveCardExtension';
 import { ItemEntity } from './../models/PnPPodcasts';
 
@@ -64,16 +63,16 @@ export class QuickView extends BaseAdaptiveCardView<
             totalItems = this.state.Items.length;
           }
           idx++;
-          if (idx > (totalItems == undefined ? 1 : totalItems)) {
-            idx = (totalItems == undefined ? 1 : totalItems);
+          if (idx > (totalItems === undefined ? 1 : totalItems)) {
+            idx = (totalItems === undefined ? 1 : totalItems);
           }
           this.setState({
-            ID: (idx == 0 ? 1 : idx),
+            ID: (idx === 0 ? 1 : idx),
             SearchText: action.data.SearchText === undefined || action.data.SearchText === "{{SearchText.value}}" ? "" : action.data.SearchText,
           });
         }
         if (id === 'Search') {
-          let searchText = action.data.SearchText === undefined ? "" : action.data.SearchText;
+          const searchText = action.data.SearchText === undefined ? "" : action.data.SearchText;
           this.setState({
             SearchText: searchText,
             ID: 1,

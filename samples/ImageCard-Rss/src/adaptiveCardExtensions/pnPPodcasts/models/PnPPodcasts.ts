@@ -5,7 +5,7 @@ export interface Channel {
     title: string;
     link: string;
     image: Image;
-    item?: (ItemEntity)[] | null;
+    item?: (ItemEntity)[] | undefined;
 }
 export interface Image {
     url: string;

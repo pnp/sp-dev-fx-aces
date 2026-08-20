@@ -38,7 +38,7 @@ export class CardView extends BaseImageCardView<IPnPPodcastsAdaptiveCardExtensio
     return {
       type: 'ExternalLink',
       parameters: {
-        target: this.properties.URL === undefined || this.properties.URL.length == 0 ? 'https://pnpweekly.podbean.com' : this.properties.URL,
+        target: this.properties.URL === undefined || this.properties.URL.length === 0 ? 'https://pnpweekly.podbean.com' : this.properties.URL,
       }
     };
   }
