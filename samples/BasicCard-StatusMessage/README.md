@@ -18,8 +18,8 @@ This ACE demonstrates how to use the Presence Graph API endpoints (beta) to get/
 
 ## Compatibility
 
-![SPFx 1.16](https://img.shields.io/badge/SPFx-1.16.0-green.svg)
-![Node.js LTS 16.x](https://img.shields.io/badge/Node.js-LTS%2016.x-green.svg)
+![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![Node.js v22.x](https://img.shields.io/badge/Node.js-v22.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 
 ## Applies to
@@ -46,6 +46,7 @@ BasicCard-StatusMessage | [Yves Habersaat](https://github.com/yhabersaat) ([@yha
 
 Version|Date|Comments
 -------|----|--------
+1.2|August 7, 2026|Upgraded to SPFx 1.23.0
 1.1|January 22, 2023|Added new Presence API capabilities (get/set availability and activity)
 1.0|December 21, 2022|Initial release
 
@@ -60,7 +61,7 @@ Version|Date|Comments
 * Clone this repository
 * in the command line run:
   * `npm install`
-  * `gulp serve`
+  * `npm run start`
 
 Before running the solution you will need to access the SharePoint Admin Center > Advanced > API Access and approve the Graph API requests.
 
