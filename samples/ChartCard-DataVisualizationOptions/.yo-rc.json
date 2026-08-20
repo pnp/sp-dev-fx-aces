@@ -7,7 +7,8 @@
       "@microsoft/microsoft-graph-client": "3.0.2",
       "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.20.0-dev.96",
+    "version": "1.23.0",
+    "useGulp": false,
     "libraryName": "data-visualization-cards",
     "libraryId": "d7bd1e53-cc57-4436-bbf3-15643b34a10a",
     "environment": "spo",

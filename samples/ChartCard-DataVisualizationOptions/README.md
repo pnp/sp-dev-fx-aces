@@ -12,7 +12,7 @@ This is a baseline solution demonstrating the different data visualization optio
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.20.beta.0-yellow.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -36,6 +36,7 @@ None
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | August 20, 2024 | Initial release with preview packages |
+| 1.1     | August 18, 2026  | Upgraded to SPFx 1.23 |
 
 ## Disclaimer
 
@@ -49,7 +50,7 @@ None
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 ## Features
 

@@ -19,7 +19,7 @@ export default class BarChartAdaptiveCardExtension extends BaseAdaptiveCardExten
   IBarChartAdaptiveCardExtensionProps,
   IBarChartAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: BarChartPropertyPane;
+  private _deferredPropertyPane: BarChartPropertyPane | undefined;
 
   public onInit(): Promise<void> {
     this.state = { };
@@ -49,6 +49,6 @@ export default class BarChartAdaptiveCardExtension extends BaseAdaptiveCardExten
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-    return this._deferredPropertyPane?.getPropertyPaneConfiguration();
+    return this._deferredPropertyPane?.getPropertyPaneConfiguration() ?? super.getPropertyPaneConfiguration();
   }
 }

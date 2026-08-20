@@ -1,5 +1,6 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardQuickView } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'LineChartAdaptiveCardExtensionStrings';
+import template from './template/QuickViewTemplate.json';
 import {
   ILineChartAdaptiveCardExtensionProps,
   ILineChartAdaptiveCardExtensionState
@@ -23,6 +24,6 @@ export class QuickView extends BaseAdaptiveCardQuickView<
   }
 
   public get template(): ISPFxAdaptiveCard {
-    return require('./template/QuickViewTemplate.json');
+    return template as ISPFxAdaptiveCard;
   }
 }
