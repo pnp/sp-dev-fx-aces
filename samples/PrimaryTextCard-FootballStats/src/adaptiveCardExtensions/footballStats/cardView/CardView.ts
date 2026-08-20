@@ -6,7 +6,7 @@ import {
   ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'FootballStatsAdaptiveCardExtensionStrings';
-import { IFootballStatsAdaptiveCardExtensionProps, IFootballStatsAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID, STANDINGS_VIEW_REGISTRY_ID } from '../FootballStatsAdaptiveCardExtension';
+import { IFootballStatsAdaptiveCardExtensionProps, IFootballStatsAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../FootballStatsAdaptiveCardExtension';
 
 export class CardView extends BasePrimaryTextCardView<IFootballStatsAdaptiveCardExtensionProps, IFootballStatsAdaptiveCardExtensionState> {
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {

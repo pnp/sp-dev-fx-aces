@@ -1,5 +1,4 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'FootballStatsAdaptiveCardExtensionStrings';
 import { IFootballStatsAdaptiveCardExtensionProps, IFootballStatsAdaptiveCardExtensionState } from '../FootballStatsAdaptiveCardExtension';
 
 export interface IStandingsViewData {
@@ -22,10 +21,10 @@ export class StandingsView extends BaseAdaptiveCardView<
     return require('./template/StandingsViewTemplate.json');
   }
 
-  public onAction = async (action: IActionArguments) => {
+  public onAction = async (action: IActionArguments): Promise<void> => {
     try {
       if (action.type === 'Submit') {
-        const { id, newIndex } = action.data;
+        const { id } = action.data;
         let idx = this.state.standingsData[this.state.standingCurrentIndex].position - 1;
         let newViewId: number = this.state.standingCurrentIndex;
         if (id === 'Previous') {

@@ -28,7 +28,7 @@ export default class FootballStatsAdaptiveCardExtension extends BaseAdaptiveCard
 > {
   private _deferredPropertyPane: FootballStatsPropertyPane | undefined;
 
-  public onInit = async () => {
+  public onInit = async (): Promise<void> => {
     this.state = {
       description: this.properties.description,
       context: this.context,
@@ -45,7 +45,7 @@ export default class FootballStatsAdaptiveCardExtension extends BaseAdaptiveCard
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 

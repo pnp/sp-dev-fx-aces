@@ -1,5 +1,4 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'FootballStatsAdaptiveCardExtensionStrings';
 import { IFootballStatsAdaptiveCardExtensionProps, IFootballStatsAdaptiveCardExtensionState, STANDINGS_VIEW_REGISTRY_ID} from '../FootballStatsAdaptiveCardExtension';
 import { ApiService } from '../services/ApiService';
 
@@ -13,7 +12,7 @@ export class QuickView extends BaseAdaptiveCardView<
   IQuickViewData
 > {
   public get data(): IQuickViewData {
-    let leagues = require("../services/Leagues.json");
+    const leagues = require("../services/Leagues.json");
     return {
       leagues: leagues
     };
@@ -23,13 +22,13 @@ export class QuickView extends BaseAdaptiveCardView<
     return require('./template/QuickViewTemplate.json');
   }
 
-  public onAction = async (action: IActionArguments) => {
+  public onAction = async (action: IActionArguments): Promise<void> => {
     try {
       if (action.type === 'Submit') {
-        const { id, newIndex } = action.data;
+        const { id } = action.data;
         if (id === 'Standings') {
-          let response = await ApiService.getStandingsByLeague(this.state.context, action.data.league);
-          if(response.length == 0)
+          const response = await ApiService.getStandingsByLeague(this.state.context, action.data.league);
+          if(response.length === 0)
           {
             //this.quickViewNavigator.push(ERROR_VIEW_REGISTRY_ID);
             this.setState({

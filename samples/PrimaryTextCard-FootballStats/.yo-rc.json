@@ -3,12 +3,18 @@
     "plusBeta": false,
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.13.1",
+    "version": "1.23.0",
     "libraryName": "primary-text-card-football-stats",
     "libraryId": "80fa71eb-eb60-407c-8d80-01092d09436d",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "PrimaryText"
+    "aceTemplateType": "PrimaryText",
+    "useGulp": false,
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    }
   }
 }

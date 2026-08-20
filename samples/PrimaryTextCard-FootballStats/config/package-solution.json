@@ -3,7 +3,7 @@
   "solution": {
     "name": "primary-text-card-football-stats-client-side-solution",
     "id": "80fa71eb-eb60-407c-8d80-01092d09436d",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -13,7 +13,29 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.13.1"
-    }
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "primary-text-card-football-stats description"
+      },
+      "longDescription": {
+        "default": "primary-text-card-football-stats description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "primary-text-card-football-stats FootballStatsAdaptiveCardExtension Feature",
+        "description": "The feature that activates FootballStatsAdaptiveCardExtension from the primary-text-card-football-stats solution.",
+        "id": "ef435d66-8fa3-4b97-9900-2ede90ba1275",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "ef435d66-8fa3-4b97-9900-2ede90ba1275"
+        ]
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/primary-text-card-football-stats.sppkg"
