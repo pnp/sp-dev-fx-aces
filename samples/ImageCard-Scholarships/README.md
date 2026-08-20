@@ -8,12 +8,13 @@ This sample shows how to build an ACE with a card view and quick view to display
 
 ### Used SharePoint Framework Version
 
-*Version 1.16.0*
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ### Applies to
 
 - [SharePoint Framework](https://aka.ms/spfx)
 - [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- Node.js v22 (v22.14.0 or higher, < v23)
 
 Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram).
 
@@ -21,6 +22,7 @@ Get your own free development tenant by subscribing to [Microsoft 365 developer 
 
 | **Version** | **Date** | **Comments** |
 |--|--|--|
+| 1.1  | August 16, 2026 | Upgraded to SPFx 1.23.0 |
 | 1.0  | May 03, 2023 | Initial release |
 
 ### Disclaimer
@@ -34,8 +36,8 @@ Get your own free development tenant by subscribing to [Microsoft 365 developer 
 - Replace the dummy data from JSON file with actual data.
 - In the command-line, run:
 - npm install
-- npm i -D gulp-eslint-new
-- gulp serve
+- npm run build (runs `heft test --clean --production && heft package-solution --production`)
+- npm start (runs `heft start --clean`)
 
 ### References
 
