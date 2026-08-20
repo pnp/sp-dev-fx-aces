@@ -9,11 +9,13 @@ node_modules
 # Build generated files
 dist
 lib
+lib-dts
+lib-commonjs
+lib-esm
 release
 solution
 temp
 *.sppkg
-.heft
 
 # Coverage directory used by tools like istanbul
 coverage
@@ -23,6 +25,7 @@ coverage
 
 # Visual Studio files
 .ntvs_analysis.dat
+.heft
 .vs
 bin
 obj
@@ -32,3 +35,6 @@ obj
 
 # Styles Generated Code
 *.scss.ts
+
+# Test output
+jest-output

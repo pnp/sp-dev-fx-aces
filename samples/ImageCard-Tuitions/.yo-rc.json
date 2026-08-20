@@ -2,12 +2,13 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "nodeVersion": "16.14.2",
+    "useGulp": false,
+    "nodeVersion": "22.14.0",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.4.1"
+      "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.16.0",
+    "version": "1.23.0",
     "libraryName": "tuitions-image-card",
     "libraryId": "7e6e55db-1aac-4478-86cf-cc9d802921c8",
     "environment": "spo",
