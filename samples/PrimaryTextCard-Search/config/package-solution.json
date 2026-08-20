@@ -3,7 +3,7 @@
   "solution": {
     "name": "primary-text-card-search-client-side-solution",
     "id": "10b94520-077f-4f27-8257-40ffb04739e5",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
