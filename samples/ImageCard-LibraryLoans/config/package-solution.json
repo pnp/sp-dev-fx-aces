@@ -3,7 +3,7 @@
   "solution": {
     "name": "library-client-side-solution",
     "id": "0a45dccf-d90a-42c5-b478-9b9bb831ee6a",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "library Feature",
         "description": "The feature that activates elements of the library solution.",
         "id": "dab480d3-2222-4199-8de4-bea8bc1f95b1",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },
