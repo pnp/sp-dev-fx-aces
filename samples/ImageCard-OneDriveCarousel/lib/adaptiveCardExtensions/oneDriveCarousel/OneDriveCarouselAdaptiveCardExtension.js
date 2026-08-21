@@ -106,16 +106,17 @@ var OneDriveCarouselAdaptiveCardExtension = /** @class */ (function (_super) {
                     case 1:
                         _a.graphClient = _b.sent();
                         // Get the first drive as root and load the children for the dropdown control
+                        // Use singular /me/drive to guarantee the current user's own OneDrive
                         this.graphClient
-                            .api("/".concat(gu.path_me, "/").concat(gu.path_drives))
+                            .api("/".concat(gu.path_me, "/").concat(gu.path_drive))
                             .select("".concat(gu.prop_id, ",").concat(gu.prop_name))
-                            .get(function (error, drives) {
+                            .get(function (error, drive) {
                             if (error) {
                                 _this.setError(error);
                                 return;
                             }
                             _this.setState({
-                                rootDriveId: (drives && drives.value && drives.value.length > 0) ? drives.value[0].id : undefined
+                                rootDriveId: drive ? drive.id : undefined
                             });
                             if (_this.state.rootDriveId) {
                                 _this.loadDrives().catch(function (e) { return _this.setError(e); });

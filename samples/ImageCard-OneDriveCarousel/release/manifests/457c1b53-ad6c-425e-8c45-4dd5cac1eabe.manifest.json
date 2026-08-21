@@ -38,7 +38,7 @@
     "scriptResources": {
       "one-drive-carousel-adaptive-card-extension": {
         "type": "path",
-        "path": "one-drive-carousel-adaptive-card-extension_f5bac55b6b6addb3c5ac.js"
+        "path": "one-drive-carousel-adaptive-card-extension_0d86a93eb5c449c79a68.js"
       },
       "@microsoft/sp-adaptive-card-extension-base": {
         "type": "component",

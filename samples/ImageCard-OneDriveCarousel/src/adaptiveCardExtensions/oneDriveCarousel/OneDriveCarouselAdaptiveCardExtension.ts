@@ -58,17 +58,18 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
       this.graphClient = await this.context.msGraphClientFactory.getClient('3');      
       // Get the first drive as root and load the children for the dropdown control
       
+      // Use singular /me/drive to guarantee the current user's own OneDrive
       this.graphClient
-      .api(`/${gu.path_me}/${gu.path_drives}`)
+      .api(`/${gu.path_me}/${gu.path_drive}`)
       .select(`${gu.prop_id},${gu.prop_name}`)
-      .get((error, drives) => {
+      .get((error, drive) => {
         if (error) {
           this.setError(error);
           return;
         }
 
         this.setState({
-          rootDriveId: (drives && drives.value && drives.value.length > 0) ? drives.value[0].id : undefined
+          rootDriveId: drive ? drive.id : undefined
         });
         
         if(this.state.rootDriveId) {
