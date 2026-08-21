@@ -27,7 +27,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
     private graphClient;
     onInit(): Promise<void>;
     get title(): string;
-    protected get iconProperty(): string;
+    get iconProperty(): string;
     protected loadPropertyPaneResources(): Promise<void>;
     protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void;
     protected renderCard(): string | undefined;

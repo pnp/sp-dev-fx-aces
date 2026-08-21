@@ -3,12 +3,18 @@
     "plusBeta": false,
     "isCreatingSolution": false,
     "environment": "spo",
-    "version": "1.13.0",
+    "version": "1.23.0",
     "libraryName": "image-card-one-drive-carousel",
     "libraryId": "cb4a77b7-4d92-4e4c-a402-9a2c33a451f1",
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "Basic"
+    "aceTemplateType": "Basic",
+    "useGulp": false,
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    }
   }
 }

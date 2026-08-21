@@ -1,16 +1,4 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+import { __extends } from "tslib";
 import { BaseImageCardView } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'OneDriveCarouselAdaptiveCardExtensionStrings';
 import { QUICK_VIEW_REGISTRY_ID } from '../OneDriveCarouselAdaptiveCardExtension';
@@ -27,8 +15,8 @@ var CardView = /** @class */ (function (_super) {
         get: function () {
             var buttons = [];
             if (!this.state.error && !this.state.isLoading && this.state.folderHasImages &&
-                (this.properties.hideButtons == undefined || this.properties.hideButtons == false) &&
-                this.state.targetFolder != undefined) {
+                (this.properties.hideButtons === undefined || this.properties.hideButtons === false) &&
+                this.state.targetFolder !== undefined) {
                 buttons = [
                     {
                         title: strings.QuickViewButton,
@@ -74,13 +62,13 @@ var CardView = /** @class */ (function (_super) {
             return require('../assets/Error.png');
         }
         // If not loading
-        if (this.state.isLoading == false) {
+        if (this.state.isLoading === false) {
             // If there is an image set the image webUrl
             if (this.state.targetFolder && this.state.targetFolder.children && this.state.targetFolder.children.length > 0) {
                 return this.state.targetFolder.children[this.state.itemIndex].webUrl;
             }
             // If there are no images in the target folder set a default image
-            if (this.state.folderHasImages == false) {
+            if (this.state.folderHasImages === false) {
                 return require("../assets/MicrosoftLogo.png");
             }
         }

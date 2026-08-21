@@ -4,7 +4,7 @@ import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
 import { OneDriveCarouselPropertyPane } from './OneDriveCarouselPropertyPane';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
-import { MSGraphClient } from '@microsoft/sp-http';
+import { MSGraphClientV3 } from '@microsoft/sp-http';
 import gu from './GraphUtility';
 
 export interface IOneDriveCarouselAdaptiveCardExtensionProps {
@@ -37,7 +37,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
 > {
   private _deferredPropertyPane: OneDriveCarouselPropertyPane | undefined;
   private updateImageTimer;
-  private graphClient: MSGraphClient;
+  private graphClient: MSGraphClientV3;
 
   public onInit(): Promise<void> {
     this.state = {
@@ -55,7 +55,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
 
     setTimeout(async () => {
-      this.graphClient = await this.context.msGraphClientFactory.getClient();      
+      this.graphClient = await this.context.msGraphClientFactory.getClient('3');      
       // Get the first drive as root and load the children for the dropdown control
       
       this.graphClient
@@ -72,7 +72,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
         });
         
         if(this.state.rootDriveId) {
-          this.loadDrives();
+          this.loadDrives().catch((e) => this.setError(e as object));
 
           if (this.properties.selectedDriveId) {
             this.loadTargetDriveItems();
@@ -87,7 +87,8 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
             isLoading: false
           });
         }
-      });
+      })
+      .catch((e) => this.setError(e as object));
     }, 500);
 
     return Promise.resolve();
@@ -97,7 +98,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 
@@ -114,14 +115,14 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
   }
 
   protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {
-    if (oldValue == newValue) {
+    if (oldValue === newValue) {
       return;
     }
 
-    if (propertyPath == "selectedDriveId") {
+    if (propertyPath === "selectedDriveId") {
       this.loadTargetDriveItems();
     }
-    else if (propertyPath == "timerSeconds") {
+    else if (propertyPath === "timerSeconds") {
       clearInterval(this.updateImageTimer);
       this.updateImageTimer = setInterval(this.updateImageIndex, (this.properties.timerSeconds * 1000));
     }
@@ -150,7 +151,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
           });
   }
 
-  private loadTargetDriveItems = () => {
+  private loadTargetDriveItems = (): void => {
     this.setState({
       isLoading: true
     });
@@ -172,16 +173,17 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
           folderHasImages: targetFolder.children && targetFolder.children.length > 0,
           isLoading: false
         });
-      });
+      })
+      .catch((e) => this.setError(e as object));
   }
 
-  private updateImageIndex = () => {
+  private updateImageIndex = (): void => {
     if(this.state.targetFolder && 
       this.state.targetFolder.children && 
       this.state.targetFolder.children.length > 0) {
-        var i = this.state.itemIndex;
+        let i = this.state.itemIndex;
 
-        if(this.properties.randomizeImage == true) {
+        if(this.properties.randomizeImage === true) {
           i = this.randomIndex(0, this.state.targetFolder.children.length - 1);
         }
         else {
@@ -197,18 +199,18 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
     }
   }
 
-  private randomIndex(min, max) { 
-    let result = Math.floor(Math.random() * (max - min + 1) + min);
+  private randomIndex(min: number, max: number): number { 
+    const result = Math.floor(Math.random() * (max - min + 1) + min);
 
     // Avoid displaying the same image again
-    if(result == this.state.itemIndex) {
+    if(result === this.state.itemIndex) {
       return this.randomIndex(min, max);
     }
 
     return result;
   }
 
-  private setError = (error: object) => {
+  private setError = (error: object): void => {
     this.setState({
       error: error,
       isLoading: false

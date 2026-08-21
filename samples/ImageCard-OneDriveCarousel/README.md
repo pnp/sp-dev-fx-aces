@@ -32,7 +32,7 @@ Just want to see the Adaptive Card template?
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -56,6 +56,7 @@ image-card-one-drive-carousel | [GuidoZam](https://github.com/GuidoZam)
 Version|Date|Comments
 -------|----|--------
 1.0|April 11, 2022|Initial release
+1.1|August 21, 2026|Upgraded to SPFx 1.23
 
 ## Disclaimer
 
@@ -69,7 +70,7 @@ Version|Date|Comments
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 ## Features
 
