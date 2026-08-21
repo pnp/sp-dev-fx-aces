@@ -3,7 +3,7 @@
   "solution": {
     "name": "image-card-one-drive-carousel-client-side-solution",
     "id": "cb4a77b7-4d92-4e4c-a402-9a2c33a451f1",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -13,7 +13,29 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.13.0"
-    }
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "image-card-one-drive-carousel description"
+      },
+      "longDescription": {
+        "default": "image-card-one-drive-carousel description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "image-card-one-drive-carousel OneDriveCarouselAdaptiveCardExtension Feature",
+        "description": "The feature that activates OneDriveCarouselAdaptiveCardExtension from the image-card-one-drive-carousel solution.",
+        "id": "457c1b53-ad6c-425e-8c45-4dd5cac1eabe",
+        "version": "1.1.0.0",
+        "componentIds": [
+          "457c1b53-ad6c-425e-8c45-4dd5cac1eabe"
+        ]
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/image-card-one-drive-carousel.sppkg"

@@ -19,7 +19,7 @@ export class QuickView extends BaseAdaptiveCardView<
   IQuickViewData
 > {
   public get data(): IQuickViewData {
-    var currentItem = (this.state.targetFolder && this.state.targetFolder.children) ? this.state.targetFolder.children[this.state.itemIndex] : undefined;
+    const currentItem = (this.state.targetFolder && this.state.targetFolder.children) ? this.state.targetFolder.children[this.state.itemIndex] : undefined;
 
     return {
       detailsLabel: strings.DetailsLabel,
@@ -27,8 +27,8 @@ export class QuickView extends BaseAdaptiveCardView<
       sizeLabel: strings.SizeLabel,
       modifiedLabel: strings.ModifiedLabel,
       currentItem: currentItem,
-      hasImage: (currentItem && currentItem.image != undefined && currentItem.image.width != undefined && currentItem.image.height != undefined),
-      hasDateTime: (currentItem && currentItem.lastModifiedDateTime != undefined)
+      hasImage: (currentItem && currentItem.image !== undefined && currentItem.image.width !== undefined && currentItem.image.height !== undefined),
+      hasDateTime: (currentItem && currentItem.lastModifiedDateTime !== undefined)
     };
   }
 

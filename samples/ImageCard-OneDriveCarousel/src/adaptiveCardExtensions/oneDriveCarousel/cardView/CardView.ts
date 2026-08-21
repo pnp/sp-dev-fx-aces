@@ -14,11 +14,11 @@ export class CardView extends BaseImageCardView<IOneDriveCarouselAdaptiveCardExt
    * It will support up to two buttons for 'Large' card size.
    */
   public get cardButtons():[ICardButton] | [ICardButton, ICardButton] | undefined {
-    var buttons = [];
+    let buttons = [];
     
     if(!this.state.error && !this.state.isLoading && this.state.folderHasImages && 
-      (this.properties.hideButtons == undefined || this.properties.hideButtons == false) &&
-       this.state.targetFolder != undefined) {
+      (this.properties.hideButtons === undefined || this.properties.hideButtons === false) &&
+       this.state.targetFolder !== undefined) {
       buttons = [
         {
           title: strings.QuickViewButton,
@@ -65,14 +65,14 @@ export class CardView extends BaseImageCardView<IOneDriveCarouselAdaptiveCardExt
     }
     
     // If not loading
-    if(this.state.isLoading == false) {
+    if(this.state.isLoading === false) {
       // If there is an image set the image webUrl
       if (this.state.targetFolder && this.state.targetFolder.children && this.state.targetFolder.children.length > 0) {
         return this.state.targetFolder.children[this.state.itemIndex].webUrl;
       }
       
       // If there are no images in the target folder set a default image
-      if(this.state.folderHasImages == false) {
+      if(this.state.folderHasImages === false) {
         return require("../assets/MicrosoftLogo.png");
       }
     }
