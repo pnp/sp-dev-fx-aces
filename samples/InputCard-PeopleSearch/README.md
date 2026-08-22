@@ -2,7 +2,7 @@
 
 ## Summary
 
-People Search Adaptive Card Extension sample to showcase the art of possible with new ACE templates in the SPFx 1.23.
+People Search Adaptive Card Extension sample to showcase the art of possible with new ACE templates in the SPFx 1.18.
 
 Search results:
 ![Search results](./assets/search-results.png)
