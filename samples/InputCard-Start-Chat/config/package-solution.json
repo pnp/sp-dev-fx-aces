@@ -3,7 +3,7 @@
   "solution": {
     "name": "ace-start-chat-client-side-solution",
     "id": "14de5417-0770-49aa-9bab-54e2ea50dd9f",
-    "version": "1.0.0.0",
+    "version": "1.2.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "ace-start-chat Feature",
         "description": "The feature that activates elements of the ace-start-chat solution.",
         "id": "bdbd6c2c-5f52-4b1b-8f1e-c547a6332183",
-        "version": "1.0.0.0"
+        "version": "1.2.0.0"
       }
     ]
   },

@@ -17,7 +17,7 @@ export default class TechnicalSupportChatAdaptiveCardExtension extends BaseAdapt
   ITechnicalSupportChatAdaptiveCardExtensionProps,
   ITechnicalSupportChatAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: TechnicalSupportChatPropertyPane;
+  private _deferredPropertyPane!: TechnicalSupportChatPropertyPane;
 
   public onInit(): Promise<void> {
     this.state = { };
