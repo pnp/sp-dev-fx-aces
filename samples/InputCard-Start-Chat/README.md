@@ -1,6 +1,6 @@
 # Viva Connections Dashboard ACE - Start a Chat
 
-Start a chat Adaptive Card Extension (ACE) sample to showcase the art of possible with new ACE templates in the SPFx 1.23.
+Start a chat Adaptive Card Extension (ACE) sample to showcase the art of possible with new ACE templates in the SPFx 1.18.
 
 ## Summary
 
