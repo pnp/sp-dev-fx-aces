@@ -67,7 +67,7 @@ export default class MyShiftsAdaptiveCardExtension extends BaseAdaptiveCardExten
 
   private async intialize()
   {
-    this.graphClient = await  this.context.msGraphClientFactory.getClient();
+    this.graphClient = await this.context.msGraphClientFactory.getClient('3');
     this.getTeamsIds();
   }
 
@@ -170,7 +170,7 @@ export default class MyShiftsAdaptiveCardExtension extends BaseAdaptiveCardExten
     return this.properties.title;
   }
 
-  protected get iconProperty(): string {
+  public get iconProperty(): string {
     return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 

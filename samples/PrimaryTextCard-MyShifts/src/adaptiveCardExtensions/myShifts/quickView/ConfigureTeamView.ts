@@ -44,7 +44,7 @@ export class ConfigureTeamView extends BaseAdaptiveCardView<
 
 private async storeTeamsID(teamid){
     const settings = { shiftsTeamsIDs: teamid};
-    var graphClient = await this.context.msGraphClientFactory.getClient();
+    var graphClient = await this.context.msGraphClientFactory.getClient('3');
     
     graphClient.api('/me/drive/special/approot:/shiftsviasettings.json:/content')
     .header('content-type', 'text/plain')

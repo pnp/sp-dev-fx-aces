@@ -5,7 +5,7 @@ import {
   IQuickViewCardAction,
   ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as strings from 'MyShiftsAdaptiveCardExtensionStrings';
 import { IMyShiftsAdaptiveCardExtensionProps, IMyShiftsAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID,CONFIGURETEAMVIEW_REGISTRY_ID } from '../MyShiftsAdaptiveCardExtension';
 
