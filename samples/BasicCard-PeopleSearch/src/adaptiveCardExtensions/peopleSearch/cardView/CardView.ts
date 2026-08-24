@@ -3,7 +3,6 @@ import {
   IBasicCardParameters,
   ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'PeopleSearchAdaptiveCardExtensionStrings';
 import { IPeopleSearchAdaptiveCardExtensionProps, IPeopleSearchAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../PeopleSearchAdaptiveCardExtension';
 
 export class CardView extends BaseBasicCardView<IPeopleSearchAdaptiveCardExtensionProps, IPeopleSearchAdaptiveCardExtensionState> {
@@ -25,6 +24,7 @@ export class CardView extends BaseBasicCardView<IPeopleSearchAdaptiveCardExtensi
     return {
       primaryText: this.properties.cardText,
       title: this.properties.title,
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       iconProperty: !!this.properties.iconProperty ? this.properties.iconProperty : require('../assets/People.svg')
     };
   }
