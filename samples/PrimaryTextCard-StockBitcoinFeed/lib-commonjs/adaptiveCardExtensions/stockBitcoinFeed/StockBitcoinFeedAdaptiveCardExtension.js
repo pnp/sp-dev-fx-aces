@@ -1,9 +1,11 @@
-import { __extends } from "tslib";
-import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
-import { CardView } from './cardView/CardView';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var sp_adaptive_card_extension_base_1 = require("@microsoft/sp-adaptive-card-extension-base");
+var CardView_1 = require("./cardView/CardView");
 var CARD_VIEW_REGISTRY_ID = 'StockBitcoinFeed_CARD_VIEW';
 var StockBitcoinFeedAdaptiveCardExtension = /** @class */ (function (_super) {
-    __extends(StockBitcoinFeedAdaptiveCardExtension, _super);
+    tslib_1.__extends(StockBitcoinFeedAdaptiveCardExtension, _super);
     function StockBitcoinFeedAdaptiveCardExtension() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -31,15 +33,14 @@ var StockBitcoinFeedAdaptiveCardExtension = /** @class */ (function (_super) {
             });
         }
         this.state = { lastPrice: 0.0 };
-        this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, function () { return new CardView(); });
+        this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, function () { return new CardView_1.CardView(); });
         return Promise.resolve();
     };
     StockBitcoinFeedAdaptiveCardExtension.prototype.loadPropertyPaneResources = function () {
         var _this = this;
-        return import(
+        return Promise.resolve().then(function () { return tslib_1.__importStar(require(
         /* webpackChunkName: 'StockBitcoinFeed-property-pane'*/
-        './StockBitcoinFeedPropertyPane')
-            .then(function (component) {
+        './StockBitcoinFeedPropertyPane')); }).then(function (component) {
             _this._deferredPropertyPane = new component.StockBitcoinFeedPropertyPane();
         });
     };
@@ -51,6 +52,6 @@ var StockBitcoinFeedAdaptiveCardExtension = /** @class */ (function (_super) {
         return (_a = this._deferredPropertyPane) === null || _a === void 0 ? void 0 : _a.getPropertyPaneConfiguration();
     };
     return StockBitcoinFeedAdaptiveCardExtension;
-}(BaseAdaptiveCardExtension));
-export default StockBitcoinFeedAdaptiveCardExtension;
+}(sp_adaptive_card_extension_base_1.BaseAdaptiveCardExtension));
+exports.default = StockBitcoinFeedAdaptiveCardExtension;
 //# sourceMappingURL=StockBitcoinFeedAdaptiveCardExtension.js.map

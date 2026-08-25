@@ -14,7 +14,7 @@ Adaptive card extension to display the last price updates of US stocks, forex an
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.15.2-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -38,6 +38,7 @@ Adaptive card extension to display the last price updates of US stocks, forex an
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | September 11, 2022 | Initial release |
+| 1.1     | August 25, 2026 | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -51,7 +52,7 @@ Adaptive card extension to display the last price updates of US stocks, forex an
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 > Include any additional steps as needed.
 

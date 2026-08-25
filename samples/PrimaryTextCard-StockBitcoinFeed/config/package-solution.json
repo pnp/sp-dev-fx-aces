@@ -3,7 +3,7 @@
   "solution": {
     "name": "primary-text-card-stock-bitcoin-feed-client-side-solution",
     "id": "a8b223e4-4ea8-4857-863b-25a355716b33",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "primary-text-card-stock-bitcoin-feed Feature",
         "description": "The feature that activates elements of the primary-text-card-stock-bitcoin-feed solution.",
         "id": "52c37da8-756a-4c99-a45d-4152c62dec4d",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },
