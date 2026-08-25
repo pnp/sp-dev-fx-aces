@@ -38,7 +38,7 @@ Note - It is advisable to have call API from server side
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.15.2-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -63,6 +63,7 @@ ChatGPT-DailyInsights | [Kunj Sangani](https://github.com/kunj-sangani)
 Version|Date|Comments
 -------|----|--------
 1.0|Feb 18, 2023|Initial release
+1.1|August 25, 2026|Upgraded to SPFx 1.23.0
 
 ## Disclaimer
 
@@ -79,14 +80,8 @@ Version|Date|Comments
 - in the command-line run:
   - **npm install**
 - After that, create the sppkg file using
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **npm run build**
 - Deploy the package to the app catalogue site in your tenant
-- in the command-line run:
-  - **gulp serve -l --nobrowser**
-- or if using spfx-fast-serve, in the command-line run:
-  - **npm run serve**
-- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE [***Daily Insights***] to the page
 - Configure the ACE with required properties.
 
