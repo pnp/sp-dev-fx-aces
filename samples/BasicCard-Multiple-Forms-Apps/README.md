@@ -16,7 +16,7 @@ The main advantage of opening on Stage View is that the user does not looses the
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.16.1-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -49,6 +49,7 @@ The main advantage of opening on Stage View is that the user does not looses the
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | April 13, 2023 | Initial release |
+| 1.1     | August 26, 2026 | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -60,15 +61,9 @@ The main advantage of opening on Stage View is that the user does not looses the
 
 - Clone this repository
 - Ensure that you are at the solution folder
-  - in the command line run:
-    - `npm install`
-    - `gulp build --ship`
-    - `gulp bundle --ship`
-    - `gulp package-solution --ship`
-  - Browse to your SharePoint app catalog and load the SPFX package.
-  - in the command line run:
-    - `gulp serve --nobrowser`
-  - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
+- in the command-line run:
+  - **npm install**
+  - **npm run start**
 - Configure your card by adding the SharePoint Site URL, List ID and other optional configuration details:
 
 ![SharePoint List Fields ](assets/CardConfig.png)

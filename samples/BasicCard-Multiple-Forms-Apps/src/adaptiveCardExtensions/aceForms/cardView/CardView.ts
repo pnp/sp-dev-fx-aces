@@ -43,7 +43,7 @@ export class CardView extends BaseBasicCardView<IAceFormsAdaptiveCardExtensionPr
     };
   }
 
-  private getCardDescription(){
+  private getCardDescription(): string {
     let description = (this.state.listTitle) ? `View items in the ${this.state.listTitle} list` : `Missing list ID or Site URL`;
     description = (this.properties.description) ? this.properties.description : description;
 

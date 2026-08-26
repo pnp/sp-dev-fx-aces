@@ -22,6 +22,7 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   public get template(): ISPFxAdaptiveCard {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return require('./template/QuickViewTemplate.json');
   }
 
@@ -44,6 +45,7 @@ export class QuickViewWithButton extends BaseAdaptiveCardView<
   }
 
   public get template(): ISPFxAdaptiveCard {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return require('./template/QuickViewTemplateWithButton.json');
   }
 
