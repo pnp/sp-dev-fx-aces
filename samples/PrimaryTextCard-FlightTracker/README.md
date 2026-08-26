@@ -17,8 +17,8 @@ This ACE, uses the external API (<https://aerodatabox.p.rapidapi.com/flights/num
 
 ## Compatibility
 
-![SPFx 1.15](https://img.shields.io/badge/SPFx-1.16.0-green.svg)
-![Node.js LTS 14.x](https://img.shields.io/badge/Node.js-LTS%2014.x-green.svg)
+![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![Node.js v22.14](https://img.shields.io/badge/Node.js-v22.14-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams")
 ![Workbench Local | Hosted](https://img.shields.io/badge/Workbench-Local%20%7C%20Hosted-green.svg)
@@ -43,9 +43,10 @@ It has a limit number of request per month in free plan.
 
 ## Version history
 
-| Version | Date              | Comments        |
-| ------- | ----------------- | --------------- |
-| 1.0     | November 8, 2022 | Initial release |
+| Version | Date              | Comments                 |
+| ------- | ----------------- | ------------------------ |
+| 1.0     | November 8, 2022 | Initial release          |
+| 1.1     | August 26, 2026   | Upgraded to SPFx 1.23.0  |
 
 ## Disclaimer
 
@@ -60,15 +61,13 @@ It has a limit number of request per month in free plan.
 
   - in the command line run:
     - `npm install`
-      - `gulp build --ship`
-      - `gulp bundle --ship`
-      - `gulp package-solution --ship`
+      - `npm run build`
     - Browse to your SharePoint app catalog and load the SPFx package.
     - Browse to your SharePoint Admin Center and under advanced you will need to open Api Access and allow the requests for Microsoft Graph.
 - If you have the APIs permissions already allowed you can follow the below steps.
 
   - in the command line run:
     *`npm install`
-    - `gulp serve --nobrowser`
+    - `npm run start`
     - browse to your hosted workbench [https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx](https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx) and add the adaptive card extension.
 <img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-FlightTracker" />

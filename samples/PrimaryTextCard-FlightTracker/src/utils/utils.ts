@@ -11,6 +11,7 @@ import { IFlightInformation } from '../models';
 import { IAirline } from '../models/IAirlines';
 import { IFlightDetailsData } from '../models/IFlightDetailsData';
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const airlinesList = require("../data/airlines.json");
 
 export const statusColors = new Map<string, string>([
