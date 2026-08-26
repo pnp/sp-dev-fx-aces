@@ -58,16 +58,9 @@ It has a limit number of request per month in free plan.
 
 - Clone this repository
 - Ensure that you are at the solution folder
+- in the command-line run:
+  - **npm install**
+  - **npm run start**
 
-  - in the command line run:
-    - `npm install`
-      - `npm run build`
-    - Browse to your SharePoint app catalog and load the SPFx package.
-    - Browse to your SharePoint Admin Center and under advanced you will need to open Api Access and allow the requests for Microsoft Graph.
-- If you have the APIs permissions already allowed you can follow the below steps.
 
-  - in the command line run:
-    *`npm install`
-    - `npm run start`
-    - browse to your hosted workbench [https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx](https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx) and add the adaptive card extension.
 <img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-FlightTracker" />
