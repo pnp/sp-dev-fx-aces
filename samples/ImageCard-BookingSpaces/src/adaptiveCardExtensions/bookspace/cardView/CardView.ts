@@ -30,6 +30,7 @@ export class CardView extends BaseImageCardView<IBookspaceAdaptiveCardExtensionP
   public get data(): IImageCardParameters {
     return {
       primaryText: strings.PrimaryText,
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       imageUrl: require('../assets/Imagedesktop.png'),
       title: this.properties.title
     };
