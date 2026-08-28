@@ -25,8 +25,8 @@ The sample also allows user to mark a train line as their favourite and that dat
 
 ## Used SharePoint Framework Version
 
-![SPFx 1.17.0](https://img.shields.io/badge/SPFx-1.17.0-green.svg)
-![Node.js LTS v16](https://img.shields.io/badge/Node.js-LTS%20v16-green.svg)
+![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Workbench Hosted](https://img.shields.io/badge/Workbench-Hosted-green.svg)
 
@@ -66,6 +66,7 @@ Version|Date|Comments
 1.0|September 09, 2021|Initial release
 1.1|November 1, 2021|Updated to SPFx 1.13.0, Minor UI updates
 1.2|June 16, 2023|Updated to SPFx 1.17.2
+1.3|August 28, 2026|Updated to SPFx 1.23.0
 
 ## Disclaimer
 
@@ -80,16 +81,12 @@ Version|Date|Comments
 - in the command-line run:
   - **npm install**
 - After that create the sppkg file using
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **npm run build**
 - Deploy the package to the app catalogue site in your tenant
 - The solution needs `User.ReadWrite` permission of Microsoft Graph API. So, approve the API access request in the SharePoint admin center
 - in the command-line run:
-  - **gulp serve -l --nobrowser**
-- or if using spfx-fast-serve, in the command-line run:
-  - **npm run serve**
-- Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
-- Add the ACE to the page
+  - **npm run start**
+- Add the ACE to the dashboard
 - Edit the properties of ACE to include the name of an open extension (e.g. `com.tenantname.favline`)
 
 ## References

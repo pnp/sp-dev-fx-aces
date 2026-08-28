@@ -114,6 +114,7 @@ export function getLineColour(lineId: string): string {
 //* This works in Viva connections mobile app in debug mode
 //* but not when published
 function getIconSvg(lineId: string): string {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return require(`./assets/${lineId}.svg`);
 }
 
