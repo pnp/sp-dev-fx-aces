@@ -4,12 +4,12 @@ import { MSGraphClientV3 } from '@microsoft/sp-http';
 
 export class MSGraph {
     private static _graphClient: MSGraphClientV3;
-    public static async Init(context: AdaptiveCardExtensionContext) {
+    public static async Init(context: AdaptiveCardExtensionContext): Promise<void> {
         this._graphClient = await context.msGraphClientFactory.getClient('3')
     }
 
-    public static async Get(apiUrl: string, version: string = "v1.0", selectProperties?: string[], expandProperties?: string[], filter?: string): Promise<any> {
-        var p = new Promise<string>(async (resolve, reject) => {
+    public static async Get<T = unknown>(apiUrl: string, version: string = "v1.0", selectProperties?: string[], expandProperties?: string[], filter?: string): Promise<T> {
+        const p = new Promise<T>(async (resolve, reject) => {
             let query = this._graphClient.api(apiUrl).version(version);
             if (selectProperties && selectProperties.length > 0) {
                 query = query.select(selectProperties);
@@ -21,7 +21,7 @@ export class MSGraph {
                 query = query.expand(expandProperties);
             }
 
-            let callback = (error: GraphError, response: any, rawResponse?: any) => {
+            const callback = (error: GraphError, response: T, rawResponse?: unknown): void => {
                 if (error) {
                     reject(error);
                 } else {
@@ -33,14 +33,14 @@ export class MSGraph {
         return p;
     }
 
-    public static async Patch(apiUrl: string, version: string = "v1.0", content: any): Promise<any> {
-        var p = new Promise<string>(async (resolve, reject) => {
+    public static async Patch<T = unknown>(apiUrl: string, version: string = "v1.0", content: unknown): Promise<T> {
+        const p = new Promise<T>(async (resolve, reject) => {
             if (typeof (content) === "object") {
                 content = JSON.stringify(content);
             }
 
-            let query = this._graphClient.api(apiUrl).version(version);
-            let callback = (error: GraphError, _response: any, rawResponse?: any) => {
+            const query = this._graphClient.api(apiUrl).version(version);
+            const callback = (error: GraphError, _response: T, rawResponse?: unknown): void => {
                 if (error) {
                     reject(error);
                 } else {
@@ -52,14 +52,14 @@ export class MSGraph {
         return p;
     }
 
-    public static async Post(apiUrl: string, version: string = "v1.0", content: any): Promise<any> {
-        var p = new Promise<string>(async (resolve, reject) => {
+    public static async Post<T = unknown>(apiUrl: string, version: string = "v1.0", content: unknown): Promise<T> {
+        const p = new Promise<T>(async (resolve, reject) => {
             if (typeof (content) === "object") {
                 content = JSON.stringify(content);
             }
 
-            let query = this._graphClient.api(apiUrl).version(version);
-            let callback = (error: GraphError, response: any, rawResponse?: any) => {
+            const query = this._graphClient.api(apiUrl).version(version);
+            const callback = (error: GraphError, response: T, rawResponse?: unknown): void => {
                 if (error) {
                     reject(error);
                 } else {
@@ -71,10 +71,10 @@ export class MSGraph {
         return p;
     }
 
-    public static async Delete(apiUrl: string, version: string = "v1.0"): Promise<any> {
-        var p = new Promise<string>(async (resolve, reject) => {
-            let query = this._graphClient.api(apiUrl).version(version);
-            let callback = (error: GraphError, response: any, rawResponse?: any) => {
+    public static async Delete<T = unknown>(apiUrl: string, version: string = "v1.0"): Promise<T> {
+        const p = new Promise<T>(async (resolve, reject) => {
+            const query = this._graphClient.api(apiUrl).version(version);
+            const callback = (error: GraphError, response: T, rawResponse?: unknown): void => {
                 if (error) {
                     reject(error);
                 } else {

@@ -113,6 +113,7 @@ export function getLineColour(lineId: string): string {
 
 //* This works in Viva connections mobile app in debug mode
 //* but not when published
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getIconSvg(lineId: string): string {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     return require(`./assets/${lineId}.svg`);
@@ -162,11 +163,11 @@ export async function getFavouriteLine(favLineExtensionName: string): Promise<st
     let extensionExists: boolean = false;
 
     try {
-        let extensionsResponse: ExtensionResponse = await MSGraph.Get('/me/extensions', "v1.0");
+        const extensionsResponse: ExtensionResponse = await MSGraph.Get<ExtensionResponse>('/me/extensions', "v1.0");
         console.debug("Extension response from Graph %o", extensionsResponse);
 
         if (extensionsResponse.value.length > 0) {
-            let requiredExtension: LinesOpenExtension[] = extensionsResponse.value.filter(e => e.id === favLineExtensionName);
+            const requiredExtension: LinesOpenExtension[] = extensionsResponse.value.filter(e => e.id === favLineExtensionName);
             if (requiredExtension && requiredExtension.length > 0) {
                 console.debug("Required extension %o", requiredExtension[0].line);
                 extensionExists = true;
@@ -180,7 +181,7 @@ export async function getFavouriteLine(favLineExtensionName: string): Promise<st
 
         if (!extensionExists) {
             const createExtensionUrl: string = `/me/extensions`;
-            const extensionData: any = {
+            const extensionData: Record<string, string> = {
                 "@odata.type": "microsoft.graph.openTypeExtension",
                 "extensionName": favLineExtensionName,
                 "line": ""
