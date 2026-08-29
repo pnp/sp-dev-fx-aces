@@ -1,5 +1,5 @@
 import { AdaptiveCardExtensionContext } from '@microsoft/sp-adaptive-card-extension-base';
-import { IPropertyPaneButtonProps, IPropertyPaneConfiguration, IPropertyPaneField, IPropertyPaneLabelProps, PropertyPaneButton, PropertyPaneButtonType, PropertyPaneLabel, PropertyPaneTextField } from '@microsoft/sp-property-pane';
+import { IPropertyPaneButtonProps, IPropertyPaneConfiguration, IPropertyPaneField, IPropertyPaneGroup, IPropertyPaneLabelProps, PropertyPaneButton, PropertyPaneButtonType, PropertyPaneLabel, PropertyPaneTextField } from '@microsoft/sp-property-pane';
 import * as strings from 'BasicCardHelpDeskAdaptiveCardExtensionStrings';
 import { helpDeskService } from '../services/helpdesk.service';
 import { HelpDeskLibraryFields, ListNames } from '../models/helpdesk.models';
@@ -61,8 +61,8 @@ export class BasicCardHelpDeskPropertyPane {
       const addListButtonDesc: IPropertyPaneField<IPropertyPaneLabelProps> = PropertyPaneLabel("", {
         text: strings.AddLibraryDesc
       });
-      const group: any = ppConfig.pages[0].groups[0];
-      const groupFields: IPropertyPaneField<any>[] = group.groupFields;
+      const group: IPropertyPaneGroup = ppConfig.pages[0].groups![0] as IPropertyPaneGroup;
+      const groupFields = group.groupFields;
       groupFields.push(addListButtonLabel);
       if (!this.listExists) {
         const addListButton: IPropertyPaneField<IPropertyPaneButtonProps> = PropertyPaneButton("library", {

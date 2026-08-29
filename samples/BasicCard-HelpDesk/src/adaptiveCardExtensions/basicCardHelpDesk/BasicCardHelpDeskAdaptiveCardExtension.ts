@@ -106,7 +106,7 @@ export default class BasicCardHelpDeskAdaptiveCardExtension extends BaseAdaptive
     return this._deferredPropertyPane!.getPropertyPaneConfiguration();
   }
   
-  protected async onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): Promise<void> {
+  protected async onPropertyPaneFieldChanged(propertyPath: string, oldValue: string, newValue: string): Promise<void> {
     try {
       if (propertyPath === 'bingMapsKey') {
         helpDeskService.bingMapsAPIKey = newValue;
