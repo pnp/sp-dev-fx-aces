@@ -5,9 +5,10 @@
     "nodeVersion": "18.18.0",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.12.0"
+      "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.18.1",
+    "version": "1.23.0",
+    "useGulp": false,
     "libraryName": "spfx-ace-sales-orders",
     "libraryId": "29e1538f-b3ef-4e1e-b351-69748d4e639e",
     "environment": "spo",
