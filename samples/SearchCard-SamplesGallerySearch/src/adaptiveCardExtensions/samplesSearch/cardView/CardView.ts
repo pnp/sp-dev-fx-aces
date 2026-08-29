@@ -64,7 +64,7 @@ export class CardView extends BaseComponentsCardView<
             }
           }
         },
-        onChange: async (value: string) => {
+        onChange: async (value?: string) => {
           this.setState({queryString: value});
           await this.properties.getSuggestedSample();
         }

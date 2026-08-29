@@ -15,7 +15,7 @@ While here you can see the Search Results QuickView in action:
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.18.0-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -35,6 +35,7 @@ While here you can see the Search Results QuickView in action:
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | October 31, 2023   | Initial release |
+| 1.1     | August 29, 2026    | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -48,7 +49,7 @@ While here you can see the Search Results QuickView in action:
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 > Include any additional steps as needed.
 
