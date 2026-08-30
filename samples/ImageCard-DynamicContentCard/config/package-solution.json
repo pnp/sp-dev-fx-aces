@@ -3,7 +3,7 @@
   "solution": {
     "name": "dcc-client-side-solution",
     "id": "283c533d-5fc7-4713-a3fc-4a7bb77730b3",
-    "version": "1.0.0.1",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "webApiPermissionRequests": [
@@ -36,7 +36,7 @@
         "title": "dcc Feature",
         "description": "The feature that activates elements of the dcc solution.",
         "id": "b5b0ff72-6a9d-4131-9583-1be4107ae93a",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },
