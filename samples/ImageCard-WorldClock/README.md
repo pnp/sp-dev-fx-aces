@@ -10,8 +10,8 @@ A simple Adaptive Card Extension that shows the current time for different timez
 
 ## Compatibility
 
-![SPFx 1.18.2](https://img.shields.io/badge/SPFx-1.18.2-green.svg)
-![Node.js LTS 18.x](https://img.shields.io/badge/Node.js-LTS%2018.x-green.svg)
+![SPFx 1.23.0](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![Node.js LTS 22.x](https://img.shields.io/badge/Node.js-LTS%2022.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 ![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams")
 ![Workbench Local | Hosted](https://img.shields.io/badge/Workbench-Local%20%7C%20Hosted-green.svg)
@@ -31,6 +31,7 @@ A simple Adaptive Card Extension that shows the current time for different timez
 | Version | Date              | Comments        |
 | ------- | ----------------- | --------------- |
 | 1.0     | February 03, 2024 | Initial release |
+| 1.1     | September 01, 2026 | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -45,9 +46,7 @@ A simple Adaptive Card Extension that shows the current time for different timez
 
   - in the command line run:
     - `npm install`
-    - `gulp build --ship`
-    - `gulp bundle --ship`
-    - `gulp package-solution --ship`
+    - `npm run build`
 
 - Browse to your SharePoint app catalog and load the SPFx package.
 
