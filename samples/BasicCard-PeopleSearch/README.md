@@ -21,7 +21,7 @@ This sample shows how to build an ACE with a card view and quick view to display
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.15.2-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -64,6 +64,7 @@ You need following set of permissions in order to get Users. Find out more about
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | January 08, 2022 | Initial release |
+| 1.1     | August 24, 2026  | Upgraded to SPFx 1.23 |
 
 ## Disclaimer
 
@@ -78,8 +79,7 @@ You need following set of permissions in order to get Users. Find out more about
 - in the command-line run:
   - **npm install**
 - Create the solution package (.sppkg file) using:
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **npm run build**
 - Deploy the package (basic-card-people-search.sppkg) to the tenant app catalogue.
 - The solution needs following Microsoft Graph API permissions. Approve the API access requests in the SharePoint admin center.
 
@@ -90,7 +90,7 @@ You need following set of permissions in order to get Users. Find out more about
   | User.Read.All  |
 
 - in the command-line run:
-  - **gulp serve -l --nobrowser**
+  - **npm run start**
 - Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE named **PeopleSearch** to the page.
 

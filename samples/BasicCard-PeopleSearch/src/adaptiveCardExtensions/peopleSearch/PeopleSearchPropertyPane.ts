@@ -13,7 +13,7 @@ export class PeopleSearchPropertyPane {
                 PropertyPaneTextField('title', {
                   label: strings.TitleFieldLabel
                 }),
-                PropertyPaneTextField('icon',{
+                PropertyPaneTextField('iconProperty',{
                   label: strings.IconFieldLabel
                 }),
                 PropertyPaneTextField('cardText',{

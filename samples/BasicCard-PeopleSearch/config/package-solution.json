@@ -3,7 +3,7 @@
   "solution": {
     "name": "basic-card-people-search-client-side-solution",
     "id": "916d6720-264f-4e8c-a8d4-01a12215f9a7",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
