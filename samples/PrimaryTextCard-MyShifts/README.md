@@ -19,7 +19,7 @@ User preference(settings) would be stored in his OneDrive as json file on applic
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.14.0beta4-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -50,6 +50,7 @@ PrimaryTextCard-MyEmails | [Siddharth Vaghasia](https://twitter.com/siddh_me)
 Version|Date|Comments
 -------|----|--------
 1.0|Feb 07, 2022|Initial release
+1.1|Aug 24, 2026|Upgraded to SPFx 1.23
 
 ## Disclaimer
 
@@ -64,8 +65,7 @@ Version|Date|Comments
 - in the command-line run:
   - **npm install**
 - After that, create the sppkg file using
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **npm run build**
 - Deploy the package to the app catalogue site in your tenant
 
 - The solution needs following Microsoft Graph API permission. So, approve the API access request in the SharePoint admin centre
@@ -78,9 +78,7 @@ Version|Date|Comments
 | Schedule.Read.All   |
 
 - in the command-line run:
-  - **gulp serve -l --nobrowser**
-- or if using spfx-fast-serve, in the command-line run:
-  - **npm run serve**
+  - **npm run start**
 - Open the workbench page (<https://tenantname.sharepoint.com/sites/sitename/_layouts/15/workbench.aspx>)
 - Add the ACE [***My Shifts***] to the page
 - Ensure Shifts is installed and configured and you are an owner of the group
