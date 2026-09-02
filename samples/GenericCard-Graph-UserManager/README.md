@@ -10,7 +10,7 @@ This Adaptive Card Extension (ACE) shows the manager of the currently logged in 
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.18.2-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -27,9 +27,10 @@ This Adaptive Card Extension (ACE) shows the manager of the currently logged in 
 
 ## Version history
 
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.0     | March 09, 2024   | Initial commit  |
+| Version | Date             | Comments               |
+| ------- | ---------------- | ---------------------- |
+| 1.0     | March 09, 2024   | Initial commit         |
+| 1.1     | August 30, 2026  | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -43,7 +44,7 @@ This Adaptive Card Extension (ACE) shows the manager of the currently logged in 
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 ## Features
 

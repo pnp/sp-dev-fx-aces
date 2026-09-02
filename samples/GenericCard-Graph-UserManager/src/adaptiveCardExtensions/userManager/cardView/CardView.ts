@@ -50,6 +50,7 @@ export class CardView extends BaseComponentsCardView<
 				componentName: "cardBar",
 				title: strings.CardTitle,
 				icon: {
+					// eslint-disable-next-line @typescript-eslint/no-require-imports
 					url: require("../assets/RecruitmentManagement.png"),
 				},
 			},
@@ -60,7 +61,9 @@ export class CardView extends BaseComponentsCardView<
 			image: {
 				url:
 					error === false
+						// eslint-disable-next-line @typescript-eslint/no-require-imports
 						? managerPicture ?? require("../assets/missing-picture.png")
+						// eslint-disable-next-line @typescript-eslint/no-require-imports
 						: require("../assets/error.png"),
 				altText: manager?.displayName,
 			},

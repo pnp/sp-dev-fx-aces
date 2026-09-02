@@ -3,7 +3,7 @@
   "solution": {
     "name": "user-manager-client-side-solution",
     "id": "cde3458c-4caa-4395-80bd-625b1a41e624",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "user-manager Feature",
         "description": "The feature that activates elements of the user-manager solution.",
         "id": "7962e482-e693-4ba3-8c58-0f643eb3643f",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },
