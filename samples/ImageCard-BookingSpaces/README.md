@@ -10,7 +10,7 @@ This sample shows how to build an ACE with a card view and quick view to search 
 
 ### Used SharePoint Framework Version
 
-*Version 1.16.0*
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ### Applies to
 
@@ -24,6 +24,7 @@ Get your own free development tenant by subscribing to [Microsoft 365 developer 
 | **Version** | **Date** | **Comments** |
 |--|--|--|
 | 1.0  | May 16, 2023 | Initial release |
+| 1.1  | August 27, 2026 | Upgraded to SPFx 1.23.0 |
 
 ### Disclaimer
 
@@ -36,8 +37,7 @@ Get your own free development tenant by subscribing to [Microsoft 365 developer 
 - Replace the dummy data from JSON file with actual data.
 - In the command-line, run:
 - npm install
-- npm i -D gulp-eslint-new
-- gulp serve
+- npm run start
 
 ### References
 

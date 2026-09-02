@@ -51,13 +51,18 @@ export class QuickView extends BaseAdaptiveCardView<
       "choices": [{ "choice": "Hub dining", "value": "1" }, { "choice": "Allen Library", "value": "2" }, { "choice": "Knane hall", "value": "3" }]
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     var bookspaceJsonData: any = require('../../bookspace/models/bookspace-sample-json-data.json');
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     var arrowIcon: any = require('../assets/Shape.png');
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     var editIcon: any = require('../assets/EditIcon.png');
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     var cancelIcon: any = require('../assets/CancelIcon.png');
     var reservedSpacesArray: IBookSpaceDetails[] = bookspaceJsonData.reservedSpacesData as IBookSpaceDetails[];
     var availableSpacesArray: IBookSpaceDetails[] = bookspaceJsonData.availableSpacesData as IBookSpaceDetails[];
     var modifiedReservedSpacesArray: IBookSpaceDetails[] = reservedSpacesArray.map((item, index) => {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       item.arrowIconButtonImage = require('../assets/Shape.png');
       return item;
     });
@@ -97,6 +102,7 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   public get template(): ISPFxAdaptiveCard {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return require('./template/QuickViewTemplate.json');
   }
 }
