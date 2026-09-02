@@ -6,7 +6,7 @@ This sample used a help desk scenario to show how to use the geolocation and ima
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.18.0-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -31,6 +31,7 @@ This sample used a help desk scenario to show how to use the geolocation and ima
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | January 25, 2024 | Initial release |
+| 1.1     | August 29, 2026  | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -44,7 +45,7 @@ This sample used a help desk scenario to show how to use the geolocation and ima
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 - If you would like to use the geolocation features you will need to sign up for a [Bing Maps api key](https://www.bingmapsportal.com/) and enter it in the configuration of the ACE.
 
 ## Features

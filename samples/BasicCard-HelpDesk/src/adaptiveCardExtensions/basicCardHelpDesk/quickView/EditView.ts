@@ -41,6 +41,7 @@ export class EditView extends BaseAdaptiveCardQuickView<
   }
 
   public get template(): ISPFxAdaptiveCard {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return require('./template/EditViewTemplate.json');
   }
 
@@ -60,7 +61,7 @@ export class EditView extends BaseAdaptiveCardQuickView<
         
     
       }
-      else if (action.type == "VivaAction.SelectMedia") {
+      else if (action.type === "VivaAction.SelectMedia") {
         const ticket: HelpDeskTicket = find(this.state.tickets, { incidentNumber: this.state.currentIncidentNumber })!;
         const images: ISelectMediaAttachment[] = action.media
         if (images) {

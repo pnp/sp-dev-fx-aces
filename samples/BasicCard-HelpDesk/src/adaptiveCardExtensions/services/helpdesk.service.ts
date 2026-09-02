@@ -13,7 +13,7 @@ import { GraphFI, graphfi, SPFx as graphSPFx } from "@pnp/graph";
 import "@pnp/graph/users";
 import "@pnp/graph/photos";
 
-import { IList, IListAddResult, ILists } from "@pnp/sp/lists";
+import { IList, IListInfo, ILists } from "@pnp/sp/lists";
 import {
   DateTimeFieldFormatType,
   CalendarType,
@@ -31,10 +31,14 @@ import {
   LocationData
 } from "../models/helpdesk.models";
 import { PermissionKind } from "@pnp/sp/security";
-import { IFileAddResult } from "@pnp/sp/files";
-import { IItemAddResult } from "@pnp/sp/items";
+import { IFileInfo } from "@pnp/sp/files";
+import "@pnp/sp/items";
 import { AdaptiveCardExtensionContext } from "@microsoft/sp-adaptive-card-extension-base";
 
+
+interface IBingMapsLocationResponse {
+  resourceSets: Array<{ resources: Array<{ address: { addressLine: string } }> }>;
+}
 
 export interface IHelpDeskServiceService {
   readonly ready: boolean;
@@ -49,7 +53,7 @@ export interface IHelpDeskServiceService {
   DeleteSampleData(): Promise<boolean>;
   AddSampleData(): Promise<boolean>;
   GetLocationData(latitude: string, longitude: string, apiKey: string): Promise<string>;
-  GetCurrentLocation(): Promise<any>;
+  GetCurrentLocation(): Promise<GeolocationPosition>;
   CheckList(listName: string): Promise<boolean>;
   CanUserUpload(listName: string): Promise<boolean>;
   AddImage(listName: string, fileName: string, fileContents: Uint8Array): Promise<string>;
@@ -66,9 +70,9 @@ export class HelpDeskService implements IHelpDeskServiceService {
       "HelpDeskService:IHelpDeskServiceService",
       HelpDeskService
     );
-  private _sp: SPFI;
-  private _graph: GraphFI;
-  private _pageContext: PageContext;
+  private _sp!: SPFI;
+  private _graph!: GraphFI;
+  private _pageContext!: PageContext;
   private _ready = false;
   private _webUrl = "";
   private _bingMapsAPIKey = "";
@@ -126,7 +130,7 @@ export class HelpDeskService implements IHelpDeskServiceService {
   }
 
   public async GetHelpDeskTickets(): Promise<HelpDeskTicket[]> {
-    let retVal: HelpDeskTicket[] = [];
+    const retVal: HelpDeskTicket[] = [];
     try {
       //Get the data from the SharePoint list
       const items = await this._sp.web.lists.getByTitle(ListNames.HELPDESKLIST).items.select('Id', 'IncidentNumber', 'IncidentCreator/FirstName', 'IncidentCreator/LastName', 'IncidentCreator/ID', 'IncidentCreator/EMail', 'IncidentDate', 'IncidentDescription', 'IncidentCategory', 'IncidentUrgency', 'IncidentImage1', 'IncidentImage2', 'IncidentImage3', 'IncidentState', 'IncidentLocation', 'Created').expand('IncidentCreator')();
@@ -190,7 +194,7 @@ export class HelpDeskService implements IHelpDeskServiceService {
     let retVal: HelpDeskTicket[] = [];
     try {
 
-      retVal = tickets.filter(ticket => ticket.incidentNumber != currentTicket.incidentNumber);
+      retVal = tickets.filter(ticket => ticket.incidentNumber !== currentTicket.incidentNumber);
 
     } catch (err) {
       console.error(
@@ -207,7 +211,7 @@ export class HelpDeskService implements IHelpDeskServiceService {
   ): Promise<boolean> {
     let retVal = false;
     try {
-      const list: IListAddResult = await this._sp.web.lists.add(
+      const list: IListInfo = await this._sp.web.lists.add(
         listName,
         `${listName} ${listDescription} List`,
         100,
@@ -217,15 +221,15 @@ export class HelpDeskService implements IHelpDeskServiceService {
       for (let i = 0; i < fieldList.length; i++) {
         if (fieldList[i].props.FieldTypeKind === 2) {
           await this._sp.web.lists
-            .getById(list.data.Id)
+            .getById(list.Id)
             .fields.addText(fieldList[i].name);
         } else if (fieldList[i].props.FieldTypeKind === 3) {
           await this._sp.web.lists
-            .getById(list.data.Id)
+            .getById(list.Id)
             .fields.addMultilineText(fieldList[i].name, { NumberOfLines: 6, RichText: false, RestrictedMode: false, AppendOnly: false, AllowHyperlink: true });
         } else if (fieldList[i].props.FieldTypeKind === 4) {
           await this._sp.web.lists
-            .getById(list.data.Id)
+            .getById(list.Id)
             .fields.addDateTime(fieldList[i].name, {
               DisplayFormat: DateTimeFieldFormatType.DateOnly,
               DateTimeCalendarType: CalendarType.Gregorian,
@@ -233,41 +237,41 @@ export class HelpDeskService implements IHelpDeskServiceService {
             });
         } else if (fieldList[i].props.FieldTypeKind === 6) {
           await this._sp.web.lists
-            .getById(list.data.Id)
+            .getById(list.Id)
             .fields.addChoice(fieldList[i].name, {
               Choices: fieldList[i].props.choices!,
             });
         } else if (fieldList[i].props.FieldTypeKind === 11) {
           await this._sp.web.lists
-            .getById(list.data.Id)
+            .getById(list.Id)
             .fields.addUrl(fieldList[i].name, {
               DisplayFormat: UrlFieldFormatType.Hyperlink,
             });
         } else if (fieldList[i].props.FieldTypeKind === 12) {
           await this._sp.web.lists
-            .getById(list.data.Id)
+            .getById(list.Id)
             .fields.addNumber(fieldList[i].name);
         } else if (fieldList[i].props.FieldTypeKind === 20) {
           await this._sp.web.lists
-            .getById(list.data.Id)
+            .getById(list.Id)
             .fields.addUser(fieldList[i].name, {SelectionMode: FieldUserSelectionMode.PeopleOnly });
         } else if (fieldList[i].props.FieldTypeKind === 98) {
           await this._sp.web.lists
-            .getById(list.data.Id)
+            .getById(list.Id)
             .fields.addImageField(fieldList[i].name);
         }
         else if (fieldList[i].props.FieldTypeKind === 99) {
           await this._sp.web.lists
-            .getById(list.data.Id)
+            .getById(list.Id)
             .fields.addLocation(fieldList[i].name);
         }
         
         await this._sp.web.lists
-            .getById(list.data.Id)
+            .getById(list.Id)
             .fields.getByInternalNameOrTitle(fieldList[i].name).update({Title:fieldList[i].displayName});
       }
-      const debugList:IList = await this._sp.web.lists.getById(list.data.Id);
-      const view: IView = await this._sp.web.lists.getById(list.data.Id).defaultView;
+      const debugList:IList = await this._sp.web.lists.getById(list.Id);
+      const view: IView = await this._sp.web.lists.getById(list.Id).defaultView;
       for (let i = 0; i < fieldList.length; i++) {
         console.log(debugList.fields());
         await view.fields.add(fieldList[i].name);
@@ -313,6 +317,7 @@ export class HelpDeskService implements IHelpDeskServiceService {
     let retVal: HelpDeskTicket[] = [];
     try {
       //Get the Mock Data from the JSON file
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       const tickets: HelpDeskTicket[] = require("../data/helpdesk.data.json");
         
       //We are manipulating the data here to set the due dates so there is always relevant data in the sample.
@@ -372,7 +377,7 @@ export class HelpDeskService implements IHelpDeskServiceService {
     let retVal = "";
     try {
       const url = `https://dev.virtualearth.net/REST/v1/Locations/${latitude},${longitude}?includeEntityTypes=Address,Neighborhood,PopulatedPlace&key=${apiKey}`;
-      const results: any = await fetch(url).then(res => res.json());
+      const results: IBingMapsLocationResponse = await fetch(url).then(res => res.json());
 
       retVal = results.resourceSets[0].resources[0].address.addressLine;
     } catch (err) {
@@ -383,8 +388,8 @@ export class HelpDeskService implements IHelpDeskServiceService {
     return retVal;
   }
 
-  public GetCurrentLocation(): Promise<any> {
-    return new Promise((resolve, reject) => {
+  public GetCurrentLocation(): Promise<GeolocationPosition> {
+    return new Promise<GeolocationPosition>((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(resolve, reject);
     });
   }
@@ -435,12 +440,12 @@ export class HelpDeskService implements IHelpDeskServiceService {
   }
 
   public async AddImage(listName: string, fileName: string, fileContents: Uint8Array): Promise<string> {
-    let retVal: IFileAddResult;
+    let retVal: IFileInfo;
     try {
       const fileNamePath = encodeURI(fileName);
       const assets = await this._sp.web.lists.ensureSiteAssetsLibrary();
 
-      let result: IFileAddResult;
+      let result: IFileInfo;
       // you can adjust this number to control what size files are uploaded in chunks
       if (fileContents.length <= 10485760) {
         // small upload
@@ -449,9 +454,7 @@ export class HelpDeskService implements IHelpDeskServiceService {
         // large upload
         //Convert the byteArray to a blob
         const blob = new Blob([fileContents.buffer]);
-        result = await assets.rootFolder.files.addChunked(fileNamePath, blob, data => {
-          console.log(`image progress ${data.totalBlocks}`);
-        }, true);
+        result = await assets.rootFolder.files.addChunked(fileNamePath, blob, { Overwrite: true });
       }
       if (result) {
         retVal = result;
@@ -462,7 +465,7 @@ export class HelpDeskService implements IHelpDeskServiceService {
       );
     }
 
-    return JSON.stringify({ "serverRelativeUrl": retVal!.data.ServerRelativeUrl, });
+    return JSON.stringify({ "serverRelativeUrl": retVal!.ServerRelativeUrl, });
   }
   
   public async SaveItem(ticket: HelpDeskTicket): Promise<boolean> {
@@ -471,7 +474,7 @@ export class HelpDeskService implements IHelpDeskServiceService {
       
       const list = await this._sp.web.lists.getByTitle(ListNames.HELPDESKLIST);
       const currentUser = await this._sp.web.currentUser();
-      const addResult: IItemAddResult = await list.items.add({
+      const addResult = await list.items.add({
         Title: ticket.incidentNumber + "_" + ticket.createDate,
         IncidentNumber: ticket.incidentNumber,
         IncidentCreatorId: currentUser.Id,
