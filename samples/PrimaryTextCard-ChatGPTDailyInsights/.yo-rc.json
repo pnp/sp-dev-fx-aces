@@ -2,7 +2,13 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "version": "1.15.2",
+    "version": "1.23.0",
+    "useGulp": false,
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/teams-js": "2.24.0",
+      "@microsoft/microsoft-graph-client": "3.0.2"
+    },
     "libraryName": "ace-chatgpt-thingsofday",
     "libraryId": "0b0c66a6-7313-4f0f-a3a0-0a4bab24aeff",
     "environment": "spo",
