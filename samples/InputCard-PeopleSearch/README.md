@@ -15,7 +15,7 @@ Person details for Suggested user:
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.18.0--beta.1-yellow.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -37,6 +37,7 @@ Person details for Suggested user:
 | ------- | ---------------- | --------------- |
 | 1.0     | June 28, 2023 | Initial release |
 | 1.1     | September 12, 2023 | Bump to SPFx 1.18.0 |
+| 1.2     | August 21, 2026 | Upgrade to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -50,7 +51,7 @@ Person details for Suggested user:
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 > Include any additional steps as needed.
 
