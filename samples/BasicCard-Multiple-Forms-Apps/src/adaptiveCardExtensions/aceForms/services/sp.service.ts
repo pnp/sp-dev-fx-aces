@@ -1,6 +1,6 @@
 import { AdaptiveCardExtensionContext } from '@microsoft/sp-adaptive-card-extension-base';
 import { SPHttpClient } from '@microsoft/sp-http';
-import { IListItem } from '../models/models';
+import { IListItem, ISPRawListItem } from '../models/models';
 
 export const fetchListTitle = async (spContext: AdaptiveCardExtensionContext, listId: string, siteURL: string): Promise<string> => {
   if (!siteURL) { return Promise.reject('No Site URL specified.'); }
@@ -27,7 +27,7 @@ export const fetchListItems = async (spContext: AdaptiveCardExtensionContext, li
 
   if (response.value?.length > 0) {
     return Promise.resolve(response.value.map(
-      (listItem: any, index: number) => {
+      (listItem: ISPRawListItem, index: number) => {
 
         const item = <IListItem>{
             id: listItem.ID,
@@ -48,7 +48,7 @@ export const fetchListItems = async (spContext: AdaptiveCardExtensionContext, li
   }
 }
 
-const generateStageViewLink = (url:string) => {
+const generateStageViewLink = (url: string): string => {
   let deepLinkURL = url;
 
   if(url.indexOf("forms.office.com") > 0){

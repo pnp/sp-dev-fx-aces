@@ -5,9 +5,9 @@
     "nodeVersion": "16.18.1",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.4.1"
+      "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.16.1",
+    "version": "1.23.0",
     "libraryName": "spfx-ace-forms",
     "libraryId": "16685ce5-3dce-4203-a5ea-110ef96a23c5",
     "environment": "spo",
@@ -17,6 +17,7 @@
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "Basic"
+    "aceTemplateType": "Basic",
+    "useGulp": false
   }
 }

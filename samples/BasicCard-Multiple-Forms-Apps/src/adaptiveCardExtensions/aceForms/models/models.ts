@@ -1,5 +1,13 @@
 
 
+export interface ISPRawListItem {
+  ID: number;
+  Title: string;
+  Description: string;
+  Image: string;
+  Link: string;
+}
+
 export interface IListItem {
   id: number;
   title: string;

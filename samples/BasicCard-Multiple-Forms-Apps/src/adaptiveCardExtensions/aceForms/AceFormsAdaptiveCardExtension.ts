@@ -56,6 +56,7 @@ export default class AceFormsAdaptiveCardExtension extends BaseAdaptiveCardExten
 
   protected loadPropertyPaneResources(): Promise<void> {
     return import(
+      /* webpackChunkName: 'AceForms-property-pane' */
       './AceFormsPropertyPane'
     )
       .then(
@@ -73,7 +74,7 @@ export default class AceFormsAdaptiveCardExtension extends BaseAdaptiveCardExten
     return this._deferredPropertyPane?.getPropertyPaneConfiguration();
   }
 
-  protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {
+  protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: string, newValue: string): void {
     if (propertyPath === 'listId' && newValue !== oldValue) {
       if (newValue) {
         (async () => {
