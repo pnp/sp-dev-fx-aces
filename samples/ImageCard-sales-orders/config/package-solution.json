@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-ace-sales-orders-client-side-solution",
     "id": "29e1538f-b3ef-4e1e-b351-69748d4e639e",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "spfx-ace-sales-orders Feature",
         "description": "The feature that activates elements of the spfx-ace-sales-orders solution.",
         "id": "127cb2e8-7622-4c73-94f1-cab6ef1e106a",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },
