@@ -3,7 +3,7 @@
   "solution": {
     "name": "primarytext-flight-tracker-client-side-solution",
     "id": "32b82d77-7cde-47d9-99d9-4b38edfa2e9d",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "primarytext-flight-tracker Feature",
         "description": "The feature that activates elements of the primarytext-flight-tracker solution.",
         "id": "acc2ae3e-aea6-4128-ba9f-53613b7ac058",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },

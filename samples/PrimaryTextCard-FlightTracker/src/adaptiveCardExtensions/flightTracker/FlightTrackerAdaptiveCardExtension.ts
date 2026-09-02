@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   BaseAdaptiveCardExtension,
-  ICacheSettings,
 } from '@microsoft/sp-adaptive-card-extension-base';
 import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 
@@ -49,7 +48,7 @@ export default class FlightTrackerAdaptiveCardExtension extends BaseAdaptiveCard
     return Promise.resolve();
   }
 
-  protected getCacheSettings(): Partial<ICacheSettings> {
+  protected getCacheSettings() {
     return {
       isEnabled: false,
       expiryTimeInSeconds: 5000,
