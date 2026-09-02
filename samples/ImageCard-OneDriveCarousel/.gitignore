@@ -13,6 +13,10 @@ release
 solution
 temp
 *.sppkg
+lib-dts
+lib-commonjs
+lib-esm
+jest-output
 
 # Coverage directory used by tools like istanbul
 coverage
@@ -22,6 +26,7 @@ coverage
 
 # Visual Studio files
 .ntvs_analysis.dat
+.heft
 .vs
 bin
 obj
@@ -31,3 +36,4 @@ obj
 
 # Styles Generated Code
 *.scss.ts
+*.scss.d.ts
