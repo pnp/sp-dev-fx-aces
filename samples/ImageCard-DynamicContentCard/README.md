@@ -8,11 +8,11 @@ Dynamic Content Card (aka DCC) is a SPFx ACE Card that displays dynamic content 
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.18.2-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Used PNP/Graph Version
 
-![version](https://img.shields.io/badge/version-3.24.0-green.svg)
+![version](https://img.shields.io/badge/version-4.21.0-green.svg)
 
 ## Applies to
 
@@ -38,6 +38,7 @@ Dynamic Content Card (aka DCC) is a SPFx ACE Card that displays dynamic content 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | March 20, 2024   | Initial release |
+| 1.1     | August 30, 2026  | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
