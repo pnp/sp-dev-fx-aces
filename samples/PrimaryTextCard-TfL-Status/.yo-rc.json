@@ -2,8 +2,9 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": true,
     "isCreatingSolution": true,
+    "useGulp": false,
     "environment": "spo",
-    "version": "1.17.2",
+    "version": "1.23.0",
     "libraryName": "spfx-ace-tfl-status",
     "libraryId": "93db7268-7178-4e16-a5c4-e4657a509222",
     "packageManager": "npm",
@@ -12,7 +13,7 @@
     "templateType": "PrimaryText",
     "nodeVersion": "14.21.3",
     "sdkVersions": {
-      "@microsoft/teams-js": "2.9.1",
+      "@microsoft/teams-js": "2.24.0",
       "@microsoft/microsoft-graph-client": "3.0.2"
     }
   }

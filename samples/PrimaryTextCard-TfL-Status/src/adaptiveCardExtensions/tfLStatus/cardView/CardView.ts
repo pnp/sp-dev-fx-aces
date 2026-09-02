@@ -5,7 +5,6 @@ import {
   IQuickViewCardAction,
   ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'TfLStatusAdaptiveCardExtensionStrings';
 import { ITfLStatusAdaptiveCardExtensionProps, ITfLStatusAdaptiveCardExtensionState, LINES_VIEW_REGISTRY_ID } from '../TfLStatusAdaptiveCardExtension';
 
 export class CardView extends BasePrimaryTextCardView<ITfLStatusAdaptiveCardExtensionProps, ITfLStatusAdaptiveCardExtensionState> {

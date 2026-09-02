@@ -4,7 +4,7 @@ import { CardView } from './cardView/CardView';
 import { LinesView } from './linesView/LinesView';
 import { TfLStatusPropertyPane } from './TfLStatusPropertyPane';
 import { Line, TfLLine } from '../types';
-import { getAllLinesDetails, getFavouriteLine, getLineColour, getLineDetails, mapLine, setFavouriteLine } from './tfl';
+import { getAllLinesDetails, getFavouriteLine, mapLine } from './tfl';
 import { ErrorCardView } from './cardView/ErrorCardView';
 import { SetupCardView } from './cardView/SetupCardView';
 import { isEmpty } from '@microsoft/sp-lodash-subset';

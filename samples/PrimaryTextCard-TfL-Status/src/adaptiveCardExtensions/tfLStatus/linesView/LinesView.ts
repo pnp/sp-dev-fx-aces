@@ -1,8 +1,7 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView, IActionArguments, ISubmitActionArguments } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'TfLStatusAdaptiveCardExtensionStrings';
 import { Line } from '../../types';
 import { setFavouriteLine, star, starFilled } from '../tfl';
-import { CARD_VIEW_REGISTRY_ID, ITfLStatusAdaptiveCardExtensionProps, ITfLStatusAdaptiveCardExtensionState } from '../TfLStatusAdaptiveCardExtension';
+import { ITfLStatusAdaptiveCardExtensionProps, ITfLStatusAdaptiveCardExtensionState } from '../TfLStatusAdaptiveCardExtension';
 import { sortBy } from '@microsoft/sp-lodash-subset';
 
 
@@ -27,19 +26,21 @@ export class LinesView extends BaseAdaptiveCardView<
   }
 
   public get template(): ISPFxAdaptiveCard {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     return require('./template/LinesViewTemplate.json');
   }
 
   public async onAction(action: IActionArguments): Promise<void> {
 
-    let favouritedLineId: string = (<ISubmitActionArguments>action).data.lineId;
-    let favouriteUpdated: boolean = await setFavouriteLine(favouritedLineId, this.properties.favLineExtensionName);
+    const favouritedLineId: string = (<ISubmitActionArguments>action).data.lineId;
+    const favouriteUpdated: boolean = await setFavouriteLine(favouritedLineId, this.properties.favLineExtensionName);
 
     if (favouriteUpdated) {
-      let { line, lines } = this.state;
+      const { line } = this.state;
+      let { lines } = this.state;
 
-      let currentFavouriteLine: Line = line;
-      let newFavouriteLine: Line = lines.find(l => l.id === favouritedLineId);
+      const currentFavouriteLine: Line = line;
+      const newFavouriteLine: Line = lines.find(l => l.id === favouritedLineId);
 
       currentFavouriteLine.isFavourite = !currentFavouriteLine.isFavourite;
       currentFavouriteLine.favouriteIconSvg = star;

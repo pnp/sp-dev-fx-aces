@@ -1,5 +1,4 @@
 import { IPropertyPaneConfiguration, PropertyPaneTextField } from '@microsoft/sp-property-pane';
-import * as strings from 'TfLStatusAdaptiveCardExtensionStrings';
 
 export class TfLStatusPropertyPane {
   public getPropertyPaneConfiguration(): IPropertyPaneConfiguration {

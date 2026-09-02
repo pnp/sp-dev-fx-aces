@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-ace-tfl-status-client-side-solution",
     "id": "93db7268-7178-4e16-a5c4-e4657a509222",
-    "version": "1.2.0.0",
+    "version": "1.3.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "developer": {
@@ -18,7 +18,7 @@
         "title": "spfx-ace-tfl-status TfLStatusAdaptiveCardExtension Feature",
         "description": "The feature that activates TfLStatusAdaptiveCardExtension from the spfx-ace-tfl-status solution.",
         "id": "418d92cb-fcbe-42b3-96c2-5c7043b51bb3",
-        "version": "1.2.0.0",
+        "version": "1.3.0.0",
         "componentIds": [
           "418d92cb-fcbe-42b3-96c2-5c7043b51bb3"
         ]
