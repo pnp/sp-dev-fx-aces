@@ -45,8 +45,8 @@ export default class AceMyLocationAdaptiveCardExtension extends BaseAdaptiveCard
   IAceMyLocationAdaptiveCardExtensionProps,
   IAceMyLocationAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: AceMyLocationPropertyPane;
-  private spSite: SPFI;
+  private _deferredPropertyPane!: AceMyLocationPropertyPane;
+  private spSite!: SPFI;
 
   public async onInit(): Promise<void> {
   this.state = {
@@ -115,7 +115,7 @@ export default class AceMyLocationAdaptiveCardExtension extends BaseAdaptiveCard
       .top(2000)(); //take 2000 items from list
 
     // 4. Find the first item whose GroupId matches one of the user's groups
-    const matchedItem = items.find(item => item.GroupId && userGroupIds.includes(item.GroupId.toLowerCase()));
+    const matchedItem = items.find(item => item.GroupId && userGroupIds.indexOf(item.GroupId.toLowerCase()) >= 0);
 
     return matchedItem || null;
 

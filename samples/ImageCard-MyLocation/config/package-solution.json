@@ -3,7 +3,7 @@
   "solution": {
     "name": "ace-my-location-client-side-solution",
     "id": "5f99ec50-e40c-4c21-b04a-fa82280a70bc",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

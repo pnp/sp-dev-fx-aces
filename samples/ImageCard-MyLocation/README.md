@@ -8,7 +8,7 @@ This Adaptive Card Extension (ACE) creates a dynamic link based on the user offi
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.21.0--rc.0-yellow.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 
 ## Applies to
 
@@ -38,6 +38,7 @@ This Adaptive Card Extension (ACE) creates a dynamic link based on the user offi
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | June 2, 2025 | Initial release |
+| 1.1     | September 6, 2026 | Upgraded to SPFx 1.23 |
 
 ## Disclaimer
 
@@ -51,7 +52,7 @@ This Adaptive Card Extension (ACE) creates a dynamic link based on the user offi
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 > Include any additional steps as needed.
 
