@@ -24,7 +24,7 @@ export default class FilesByContentTypeAdaptiveCardExtension extends BaseAdaptiv
   IFilesByContentTypeAdaptiveCardExtensionProps,
   IFilesByContentTypeAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: FilesByContentTypePropertyPane;
+  private _deferredPropertyPane!: FilesByContentTypePropertyPane;
 
   public async onInit(): Promise<void> {
     this.state = {
@@ -45,7 +45,7 @@ export default class FilesByContentTypeAdaptiveCardExtension extends BaseAdaptiv
     const ctNames: string[] = allFiles.value.map((file) => file.contentType.name);
 
     let filesData: IPieDataPoint[] = [];
-    let uniqueNames = [...new Set(ctNames)];
+    const uniqueNames = Array.from(new Set(ctNames));
     uniqueNames.forEach(ctName => {
       let currentCtCount = allFiles.value.filter(file => file.contentType.name === ctName);
       filesData.push({ x: ctName, y: currentCtCount.length });

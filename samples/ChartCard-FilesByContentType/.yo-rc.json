@@ -7,7 +7,8 @@
       "@microsoft/microsoft-graph-client": "3.0.2",
       "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.21.1",
+    "version": "1.23.0",
+    "useGulp": false,
     "libraryName": "chart-card-files-by-content-type",
     "libraryId": "1ac895fb-8ac0-44ce-9b5a-61b9dba15ff4",
     "environment": "spo",

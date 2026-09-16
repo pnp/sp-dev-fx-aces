@@ -9,7 +9,7 @@ export interface IFileService {
 
 export class FileService implements IFileService {
   public context: AdaptiveCardExtensionContext;
-  private MSGraphClient: MSGraphClientV3;
+  private MSGraphClient!: MSGraphClientV3;
 
   constructor(context: AdaptiveCardExtensionContext) {
     this.context = context;
