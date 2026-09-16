@@ -8,7 +8,7 @@ As Microsoft will introduce new card layouts, we will introduce new samples in t
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.18.2-green.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -28,6 +28,7 @@ As Microsoft will introduce new card layouts, we will introduce new samples in t
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | January 23, 2024 | Initial release |
+| 1.1     | September 5, 2026 | Upgraded to SPFx 1.23 |
 
 ## List of Designs
 
@@ -62,7 +63,7 @@ Here you can see the list of designs available in this project.
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 
 ## References
 

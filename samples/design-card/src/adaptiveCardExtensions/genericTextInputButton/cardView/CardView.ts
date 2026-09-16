@@ -45,7 +45,7 @@ export class CardView extends BaseComponentsCardView<
             }
           }
         },
-        onChange: (newValue: string) => {
+        onChange: (newValue?: string) => {
           // NOOP
         }
       }

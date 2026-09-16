@@ -36,7 +36,7 @@ export class CardView extends BaseComponentsCardView<
           url: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG4SURBVFhHxZeBVcIwFEXB4wAygTqCE6gT6AbKBt3A4wbdADdQJ1A2YAPYQEbw3fR/bGsoLW3DPeebADl5P/+lSZ1mWbaeFLzmef5m/WScKS4UV4oFySie+SEVJPBZdAPJEyGB76Ib2rlio0iWCHsAC34UW+2BGV+a6IuCRICkRtkjU/5IEIFLxb1EvCJJEsEC+LD2ztoAQoprdUezpp7ArbUVxkzELfB9ADOJba0fxUQHsSYkAJr0Sw0WVPZBE0Mk4hbA0tpHaw+CkKKXNeUEfNUP1ramTyI7C0CD2Qfsh4P7oAkTbWVNuQKwsra1DTG6VKSegN8L0cexK20SqVvAAL+ej2FjglFMtGJNvQL4n5Rzax0/iikdZRuE2MoVYVPWK+AJ+JnQC4QVWLpQII7wHJsQV3/vY8gABh9F04qLj3+Uj2JWz3G80sCb8GVHugg7ZQuOLj/CisZS76OcgD/7rS4i6CPsBAs0yWmvY03I0fuuWGoSt+IfQwo7boGLRsuPsKJXqffhCUT9H1PY4bWciRE5zWu5ibFCbkJeTpMIOyTA5E/Fxx2jCzv+33GyFdfxBCCpcMFk8gsOoCfdGrZmAAAAAABJRU5ErkJggg==',
           altText: ''
         },
-        onChange: (newValue: string) => {
+        onChange: (newValue?: string) => {
           // NOOP
         }
       },
