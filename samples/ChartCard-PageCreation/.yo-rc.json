@@ -7,7 +7,8 @@
       "@microsoft/microsoft-graph-client": "3.0.2",
       "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.21.1",
+    "version": "1.23.0",
+    "useGulp": false,
     "libraryName": "chart-card-page-creation",
     "libraryId": "a2a76950-c4aa-480d-bbe9-b16c37607c4a",
     "environment": "spo",

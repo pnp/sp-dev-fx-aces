@@ -3,7 +3,7 @@
   "solution": {
     "name": "chart-card-page-creation-client-side-solution",
     "id": "a2a76950-c4aa-480d-bbe9-b16c37607c4a",
-    "version": "1.1.0.0",
+    "version": "1.2.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -36,7 +36,7 @@
         "title": "chart-card-page-creation Feature",
         "description": "The feature that activates elements of the chart-card-page-creation solution.",
         "id": "f8e4346f-8469-40f5-94fc-0549c2e8a61c",
-        "version": "1.0.0.0"
+        "version": "1.2.0.0"
       }
     ]
   },

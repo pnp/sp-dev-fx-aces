@@ -14,7 +14,7 @@ Medium view:
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.21.1-yellow.svg)
+![version](https://img.shields.io/badge/version-1.23-yellow.svg)
 
 ## Applies to
 
@@ -37,6 +37,7 @@ Medium view:
 | ------- | ---------------- | --------------- |
 | 1.0     | March 29, 2024 | Initial release |
 | 1.1     | October 23, 2025 | Upgrade to SPFx 1.21.1 |
+| 1.2     | September 08, 2026 | Upgrade to SPFx 1.23 |
 
 ## Disclaimer
 
@@ -50,8 +51,7 @@ Medium view:
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **npm run build**
 - Deploy the package (chart-card-page-creation.sppkg) to the tenant app catalogue.
 - The solution needs following Microsoft Graph API permissions. Approve the API access requests in the SharePoint admin center.
 

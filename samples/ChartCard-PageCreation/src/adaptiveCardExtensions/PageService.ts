@@ -9,7 +9,7 @@ export interface IPageService {
 export class PageService implements IPageService {
 
   public context: AdaptiveCardExtensionContext;
-  private MSGraphClient: MSGraphClientV3;
+  private MSGraphClient!: MSGraphClientV3;
 
   constructor(context: AdaptiveCardExtensionContext) {
     this.context = context;

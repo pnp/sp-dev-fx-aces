@@ -23,7 +23,7 @@ export default class PageCreationAdaptiveCardExtension extends BaseAdaptiveCardE
   IPageCreationAdaptiveCardExtensionProps,
   IPageCreationAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: PageCreationPropertyPane;
+  private _deferredPropertyPane!: PageCreationPropertyPane;
 
   public async onInit(): Promise<void> {
     this.state = {
@@ -54,7 +54,7 @@ export default class PageCreationAdaptiveCardExtension extends BaseAdaptiveCardE
       if (!pagesMap.has(p)) {
         pagesMap.set(p, 1);
       } else {
-        pagesMap.set(p, pagesMap.get(p) + 1)
+        pagesMap.set(p, pagesMap.get(p)! + 1)
       }
     });
 
@@ -64,7 +64,7 @@ export default class PageCreationAdaptiveCardExtension extends BaseAdaptiveCardE
       if (!newsMap.has(n)) {
         newsMap.set(n, 1);
       } else {
-        newsMap.set(n, newsMap.get(n) + 1)
+        newsMap.set(n, newsMap.get(n)! + 1)
       }
     });
 
