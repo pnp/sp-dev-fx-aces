@@ -21,7 +21,7 @@ export default class SetStatusMessageAdaptiveCardExtension extends BaseAdaptiveC
   ISetStatusMessageAdaptiveCardExtensionProps,
   ISetStatusMessageAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: SetStatusMessagePropertyPane;
+  private _deferredPropertyPane!: SetStatusMessagePropertyPane;
 
   public async onInit(): Promise<void> {
     this.state = {

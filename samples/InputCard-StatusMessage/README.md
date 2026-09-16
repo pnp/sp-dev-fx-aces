@@ -18,7 +18,7 @@ Demo:
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.21.1-green.svg)
+![version](https://img.shields.io/badge/version-1.23-green.svg)
 ![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 
@@ -46,6 +46,7 @@ Demo:
 | 1.0     | October 07, 2023 | Initial release |
 | 1.1     | December 20, 2024 | Upgrade to SPFx 1.20 |
 | 1.2     | October 26, 2025 | Upgrade to SPFx 1.21.1 |
+| 1.3     | September 08, 2026 | Upgrade to SPFx 1.23 |
 
 ## Disclaimer
 
@@ -59,8 +60,7 @@ Demo:
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **npm run build**
 - Deploy the package (input-card-status-message.sppkg) to the tenant app catalogue.
 - The solution needs following Microsoft Graph API permissions. Approve the API access requests in the SharePoint admin center.
 

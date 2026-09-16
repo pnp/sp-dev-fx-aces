@@ -9,7 +9,7 @@ export interface IGraphService {
 
 export class GraphService implements IGraphService {
     public Context: AdaptiveCardExtensionContext;
-    private MSGraphClient: MSGraphClientV3;
+    private MSGraphClient!: MSGraphClientV3;
 
     constructor(Context: AdaptiveCardExtensionContext) {
         this.Context = Context;
