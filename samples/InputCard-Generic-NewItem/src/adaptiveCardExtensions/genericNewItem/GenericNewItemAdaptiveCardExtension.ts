@@ -29,7 +29,7 @@ export default class GenericNewItemAdaptiveCardExtension extends BaseAdaptiveCar
   IGenericNewItemAdaptiveCardExtensionProps,
   IGenericNewItemAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: GenericNewItemPropertyPane;
+  private _deferredPropertyPane!: GenericNewItemPropertyPane;
 
   public async onInit(): Promise<void> {
     this.state = { };

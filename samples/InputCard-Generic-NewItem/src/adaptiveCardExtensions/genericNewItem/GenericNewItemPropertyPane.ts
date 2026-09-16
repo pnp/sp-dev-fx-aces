@@ -5,7 +5,7 @@ import { IGenericNewItemAdaptiveCardExtensionProps } from './GenericNewItemAdapt
 
 export class GenericNewItemPropertyPane {
   public getPropertyPaneConfiguration(properties: IGenericNewItemAdaptiveCardExtensionProps, context: any,
-    onPropertyPaneFieldChanged: () => void): IPropertyPaneConfiguration {
+    onPropertyPaneFieldChanged: (propertyPath: string, oldValue: any, newValue: any) => void): IPropertyPaneConfiguration {
 
       let submitButton: any = [];
       let submitAction: any = [];

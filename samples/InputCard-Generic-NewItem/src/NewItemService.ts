@@ -3,8 +3,8 @@ import { AdaptiveCardExtensionContext } from '@microsoft/sp-adaptive-card-extens
 
 export class NewItemService {
 
-    private MSGraphClient: MSGraphClientV3;
-    public context: AdaptiveCardExtensionContext;
+    private MSGraphClient!: MSGraphClientV3;
+    public context!: AdaptiveCardExtensionContext;
 
 
     
