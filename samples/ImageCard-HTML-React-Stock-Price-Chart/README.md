@@ -17,7 +17,7 @@ The stock symbol, company name and currency are stored in the properties of ACE 
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.20.0-yellow.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
 
 ## Applies to
 
@@ -37,6 +37,7 @@ The stock symbol, company name and currency are stored in the properties of ACE 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
 | 1.0     | Febuary 17, 2025 | Initial release |
+| 1.1     | September 6, 2026 | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -45,12 +46,12 @@ The stock symbol, company name and currency are stored in the properties of ACE 
 ---
 
 ## Minimal Path to Awesome
-
+- Add the following script as Trusted script source: https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 - Add the "Stock price chart" ACE to the dashboard page
 - Edit the properties of the ACE as needed
 

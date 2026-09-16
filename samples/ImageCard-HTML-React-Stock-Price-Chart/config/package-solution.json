@@ -3,7 +3,7 @@
   "solution": {
     "name": "imagecard-html-react-stock-price-client-side-solution",
     "id": "7f66d471-29a4-4389-bfbe-fa11db7e8b9c",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "imagecard-html-react-stock-price Feature",
         "description": "The feature that activates elements of the imagecard-html-react-stock-price solution.",
         "id": "bb52ed41-1cd6-427d-9a5d-888cf697f0bf",
-        "version": "1.0.0.0"
+        "version": "1.1.0.0"
       }
     ]
   },
