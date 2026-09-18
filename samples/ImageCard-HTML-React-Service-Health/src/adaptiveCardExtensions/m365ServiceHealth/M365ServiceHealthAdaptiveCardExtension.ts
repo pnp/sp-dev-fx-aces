@@ -54,10 +54,10 @@ export default class M365ServiceHealthAdaptiveCardExtension extends BaseAdaptive
   IM365ServiceHealthAdaptiveCardExtensionProps,
   IM365ServiceHealthAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: M365ServiceHealthPropertyPane;
+  private _deferredPropertyPane!: M365ServiceHealthPropertyPane;
   private _graphClient?: MSGraphClientV3;
   private intervalId: ReturnType<typeof setInterval> | undefined;
-  private scope: EScope;
+  private scope!: EScope;
 
   public async onInit(): Promise<void> {
     this.state = {

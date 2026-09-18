@@ -21,6 +21,7 @@ export class CardView extends BaseComponentsCardView<
   IM365ServiceHealthAdaptiveCardExtensionState,
   ComponentsCardViewParameters
 > {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   private image = require("../../../assets/monitor-azure-service-health.png");
    
   public get cardViewParameters(): ComponentsCardViewParameters {

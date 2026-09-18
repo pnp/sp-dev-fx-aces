@@ -22,7 +22,7 @@ export const RenderQuickView: React.FC<IRenderQuickViewProps> = ({
   const [showDetails, setShowDetails] = React.useState(false);
   const [selectedItem, setSelectedItem] = React.useState<IHealthServices>();
 
-  const onSelected = React.useCallback((selected: IHealthServices): void => {
+  const onSelected = React.useCallback((selected: IHealthServices | undefined): void => {
     setSelectedItem(selected);
     setShowDetails(true);
   }, []);
