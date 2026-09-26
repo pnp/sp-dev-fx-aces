@@ -45,7 +45,7 @@ Microsoft Graph
 | ------- | ---------------- | --------------- |
 | 1.0     | March 15, 2023 | Initial release |
 | 1.1     | July 21, 2023 | SharePoint Pages API update |
-| 1.2     | June 6, 2024 | Upgrade to SPFx 1.23 |
+| 1.2     | September 26, 2026 | Upgrade to SPFx 1.23 |
 
 ## Disclaimer
 
