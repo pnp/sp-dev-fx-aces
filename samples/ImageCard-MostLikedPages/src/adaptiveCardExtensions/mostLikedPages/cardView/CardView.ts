@@ -8,6 +8,7 @@ import {
 import * as strings from 'MostLikedPagesAdaptiveCardExtensionStrings';
 import { Page } from '../../types';
 import { IMostLikedPagesAdaptiveCardExtensionProps, IMostLikedPagesAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../MostLikedPagesAdaptiveCardExtension';
+import MicrosoftLogo from './../assets/MicrosoftLogo.png';
 
 export class CardView extends BaseImageCardView<IMostLikedPagesAdaptiveCardExtensionProps, IMostLikedPagesAdaptiveCardExtensionState> {
   /**
@@ -41,7 +42,7 @@ export class CardView extends BaseImageCardView<IMostLikedPagesAdaptiveCardExten
     } else {
       return {
         primaryText: "No liked page found. Try to change the source in the property pane.",
-        imageUrl: require('./../assets/MicrosoftLogo.png'),
+        imageUrl: MicrosoftLogo,
         title: this.properties.title
       };
     }

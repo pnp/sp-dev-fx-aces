@@ -12,8 +12,8 @@ This Adaptive Card Extension shows the most liked pages of selected SharePoint s
 
 ## Compatibility
 
-![SPFx](https://img.shields.io/badge/SPFx-1.16.1-green.svg)
-![Node.js](https://img.shields.io/badge/Node.js-LTS%2016.x-green.svg)
+![SPFx](https://img.shields.io/badge/SPFx-1.23.0-green.svg)
+![Node.js](https://img.shields.io/badge/Node.js-LTS%2022.x-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-yellow.svg)
 
 ## Permissions
@@ -45,6 +45,7 @@ Microsoft Graph
 | ------- | ---------------- | --------------- |
 | 1.0     | March 15, 2023 | Initial release |
 | 1.1     | July 21, 2023 | SharePoint Pages API update |
+| 1.2     | June 6, 2024 | Upgrade to SPFx 1.23 |
 
 ## Disclaimer
 
@@ -58,8 +59,9 @@ Microsoft Graph
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp bundle --ship**
-  - **gulp package-solution --ship**
+  - **heft build --clean**
+  - **heft bundle --production**
+  - **heft package-solution --production**
 - Deploy the package (image-card-most-liked-pages.sppkg) to the tenant app catalogue.
 - The solution needs following Microsoft Graph API permissions. Approve the API access requests in the SharePoint admin center.
 
