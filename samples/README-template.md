@@ -94,4 +94,4 @@ This Adaptive Card Extension illustrates the following concepts on top of the Sh
 > Note that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions in advance! You rock ❤.
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
-<img src="https:/pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/TODO" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/{sample-path}" />

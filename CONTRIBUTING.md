@@ -58,9 +58,11 @@ When you submit a new sample, please follow these guidelines:
 * You will need to have a `README.md` file for your contribution, which is based on [the provided template](../main/samples/README-template.md) under the `samples` folder. Please copy this template to your project and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
 * You will need to have a screenshot picture of your sample in action in the `README.md` file ("pics or it didn't happen"). The preview image must be located in the `assets` folder in the root of your sample folder.
     * All screen shots must be located in the `assets` folder. Do not point to your own repository or any other external source
-* The README template contains a specific tracking image at the end of the file with an `img` element pointing to `https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/readme-template`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
-* Update the image `src` attribute according with the repository name and folder information. For example, if your sample is named `PrimaryTextCard-ToDo` in the `samples` folder, you should update the `src` attribute to `https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-ToDo`
-  * Update the image `src` attribute according with the repository name and folder information.
+* Your sample-root `README.md` must end with the following transparent tracking image, which is used to track how many visits each sample receives in GitHub:
+    ```html
+    <img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/{sample-path}" />
+    ```
+* Replace `{sample-path}` with the repository-relative path to your sample folder. For example, a sample named `PrimaryTextCard-ToDo` in the `samples` folder must use `https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-ToDo`.
 * If you find an existing sample which is similar to yours, please extend the existing one rather than submitting a new similar sample
   * When you update existing samples, please update also `README.md` file accordingly with information on provided changes and with your author details
 * Make sure to document each function in the `README.md`
@@ -185,4 +187,4 @@ You can find Microsoft CLA from the following address - https://cla.microsoft.co
 Thank you for your contribution.
 
 > Sharing is caring.
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/CONTRIBUTING.md" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/CONTRIBUTING.md" />
