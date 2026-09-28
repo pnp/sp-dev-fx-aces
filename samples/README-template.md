@@ -94,4 +94,7 @@ This Adaptive Card Extension illustrates the following concepts on top of the Sh
 > Note that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions in advance! You rock ❤.
 > DELETE THIS PARAGRAPH BEFORE SUBMITTING
 
+> Replace `{sample-path}` with the repository-relative path to your sample folder, such as `samples/PrimaryTextCard-My-Sample`. Keep the tracking image as the final line of the sample-root `README.md`.
+> DELETE THIS PARAGRAPH BEFORE SUBMITTING
+
 <img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/{sample-path}" />

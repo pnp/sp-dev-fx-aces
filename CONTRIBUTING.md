@@ -18,6 +18,12 @@ If you have questions about how to use SharePoint Framework or any of the provid
 * [SharePoint Developer Space](http://aka.ms/SPPnP-Community) at http://techcommunity.microsoft.com
 * [SharePoint Stack Exchange](http://sharepoint.stackexchange.com/) with 'spfx' tag
 
+## Community calls and demos
+
+Join our [weekly community calls](https://aka.ms/community/calls) for Copilot, Microsoft 365, and Power Platform updates. Everyone is welcome.
+
+If you would like to share your learnings and get input from the community, [sign up for a demo](https://aka.ms/community/request/demo).
+
 ## Typos, Issues, Bugs and contributions
 
 Whenever you are submitting any changes to the SharePoint repositories, please follow these recommendations.
@@ -32,12 +38,12 @@ Whenever you are submitting any changes to the SharePoint repositories, please f
 
 When you submit a new sample, please follow these guidelines:
 
-* Each sample must be placed in a folder under the `samples` folder
+* Each sample must be placed in its own folder under the `samples` folder
 * The naming convention should include 'ACETemplateType-Sample-Name' (e.g. PrimaryTextCard-My-Sample)
 * Your sample folder must include the following content:
     - Your solution's source code
-    - An `assets` folder, containing screenshots
-    - A `README.md` file
+    - An `assets` folder containing screenshots and an `assets/sample.json` file based on the [sample metadata template](samples/sample-metadatatemplate.json). The metadata must validate against the [metadata schema](templates/metadata-schema.json).
+    - A sample-root `README.md` file based on the provided template
 * You must only submit samples for which you have the rights to share. Make sure that you asked for permission from your employer and/or clients before committing the code to an open-source repository, because once you submit a pull request, the information is public and _cannot be removed_.
 
 ### Sample Folder
@@ -51,11 +57,11 @@ When you submit a new sample, please follow these guidelines:
 ### Source Code
 
 * For security reasons, we do not accept pull requests containing `.sppkg` files. We only accept source code files for applications.
-* Make sure to place the root of your solution's source code in sample folder
+* Make sure to place the root of your solution's source code in the sample folder
 
 ### README.md
 
-* You will need to have a `README.md` file for your contribution, which is based on [the provided template](../main/samples/README-template.md) under the `samples` folder. Please copy this template to your project and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
+* You will need to have a sample-root `README.md` file for your contribution, which is based on [the provided template](samples/README-template.md). Please copy this template to your sample folder and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
 * You will need to have a screenshot picture of your sample in action in the `README.md` file ("pics or it didn't happen"). The preview image must be located in the `assets` folder in the root of your sample folder.
     * All screen shots must be located in the `assets` folder. Do not point to your own repository or any other external source
 * Your sample-root `README.md` must end with the following transparent tracking image, which is used to track how many visits each sample receives in GitHub:
@@ -94,13 +100,13 @@ When you submit a new sample, please follow these guidelines:
 
 Here's a high-level process for submitting new samples or updates to existing ones.
 
-1. Sign the Contributor License Agreement (see below)
-2. Fork this repository [pnp/sp-dev-fx-aces](https://github.com/pnp/sp-dev-fx-aces) to your GitHub account
-3. Create a new branch from the `main` branch for your fork for the contribution
-4. Include your changes to your branch
-5. Commit your changes using descriptive commit message * These are used to track changes on the repositories for monthly communications
-6. Create a pull request in your own fork and target the `main` branch
-7. Fill up the provided PR template with the requested details
+1. Fork this repository [pnp/sp-dev-fx-aces](https://github.com/pnp/sp-dev-fx-aces) to your GitHub account
+2. Create a new branch from the `main` branch in your fork
+3. Add and commit your changes using a descriptive commit message
+4. Push your contribution branch to your fork
+5. Open a pull request from your contribution branch to the `main` branch in `pnp/sp-dev-fx-aces`
+6. Complete the provided pull request template with the requested details
+7. Sign the Contributor License Agreement when prompted (see below)
 
 Before you submit your pull request consider the following guidelines:
 
@@ -164,6 +170,7 @@ If the sample you wish to contribute is stored in your own GitHub repository, yo
     ```shell
     git remote add origin https://github.com/yourgitaccount/sp-dev-fx-aces.git
     git pull origin main
+    git checkout -b PrimaryTextCard-MySample
     ```
 
 * Pull your other project from GitHub into the `samples` folder of your local copy of `sp-dev-fx-aces`
@@ -175,7 +182,7 @@ If the sample you wish to contribute is stored in your own GitHub repository, yo
 * Push the changes up to your forked repository
 
     ```shell
-    git push origin main
+    git push origin PrimaryTextCard-MySample
     ```
 
 ## Signing the CLA

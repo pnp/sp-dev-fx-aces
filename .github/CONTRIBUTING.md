@@ -18,13 +18,19 @@ If you have questions about how to use SharePoint Framework or any of the provid
 * [SharePoint Developer Space](http://aka.ms/SPPnP-Community) at <http://techcommunity.microsoft.com>
 * [SharePoint Stack Exchange](http://sharepoint.stackexchange.com/) with 'spfx' tag
 
+## Community calls and demos
+
+Join our [weekly community calls](https://aka.ms/community/calls) for Copilot, Microsoft 365, and Power Platform updates. Everyone is welcome.
+
+If you would like to share your learnings and get input from the community, [sign up for a demo](https://aka.ms/community/request/demo).
+
 ## Typos, Issues, Bugs and contributions
 
 Whenever you are submitting any changes to the SharePoint repositories, please follow these recommendations.
 
 * Always fork the repository to your own account before making your modifications
 * Do not combine multiple changes to one pull request. For example, submit any samples and documentation updates using separate PRs
-* If your pull request shows merge conflicts, make sure to update your local master to be a mirror of what's in the main repo before making your modifications
+* If your pull request shows merge conflicts, make sure to update your local main to be a mirror of what's in the main repo before making your modifications
 * If you are submitting multiple samples, please create a specific PR for each of them
 * If you are submitting typo or documentation fix, you can combine modifications to single PR where suitable
 
@@ -32,30 +38,30 @@ Whenever you are submitting any changes to the SharePoint repositories, please f
 
 When you submit a new sample, please follow these guidelines:
 
-* Each sample must be placed in a folder under the `samples` folder
+* Each sample must be placed in its own folder under the `samples` folder
+* The naming convention should include 'ACETemplateType-Sample-Name' (e.g. PrimaryTextCard-My-Sample)
 * Your sample folder must include the following content:
   * Your solution's source code
-  * An `assets` folder, containing screenshots
-  * A `README.md` file
+  * An `assets` folder containing screenshots and an `assets/sample.json` file based on the [sample metadata template](../samples/sample-metadatatemplate.json). The metadata must validate against the [metadata schema](../templates/metadata-schema.json).
+  * A sample-root `README.md` file based on the provided template
 * You must only submit samples for which you have the rights to share. Make sure that you asked for permission from your employer and/or clients before committing the code to an open-source repository, because once you submit a pull request, the information is public and _cannot be removed_.
 
 ### Sample Folder
 
 * When submitting a new sample solution, please name the sample solution folder accordingly
-* Folder should start by identifying JS library used - like `react-`, `angular-`, `knockout-`
-* If you are not using any specific JS library, please use `js-` as the prefix for your sample
-* Do not use words such as `sample`, `webpart` or `wp` in the folder or sample name - these are samples for Adaptive Card Extension repository
-* If your solution is demonstrating multiple technologies, please use functional terms as the name for the solution folder
+* Folder should start by identifying ACE template used - like `BasicCard-`, `ImageCard-`, `PrimaryTextCard-`
+* Do not use words such as `sample`, `ace` or `wp` in the folder or sample name - these are samples for Adaptive Card Extensions
+* If your solution is demonstrating multiple technologies, please use functional terms as the name for the solution folder - like `graph`
 * Do not use period/dot in the folder name of the provided sample
 
 ### Source Code
 
 * For security reasons, we do not accept pull requests containing `.sppkg` files. We only accept source code files for applications.
-* Make sure to place the root of your solution's source code in sample folder
+* Make sure to place the root of your solution's source code in the sample folder
 
 ### README.md
 
-* You will need to have a `README.md` file for your contribution, which is based on [the provided template](../samples/README-template.md) under the `samples` folder. Please copy this template to your project and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
+* You will need to have a sample-root `README.md` file for your contribution, which is based on [the provided template](../samples/README-template.md). Please copy this template to your sample folder and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
 * You will need to have a screenshot picture of your sample in action in the `README.md` file ("pics or it didn't happen"). The preview image must be located in the `assets` folder in the root of your sample folder.
   * All screen shots must be located in the `assets` folder. Do not point to your own repository or any other external source
 * Your sample-root `README.md` must end with the following transparent tracking image, which is used to track how many visits each sample receives in GitHub:
@@ -100,13 +106,13 @@ When you submit a new sample, please follow these guidelines:
 
 Here's a high-level process for submitting new samples or updates to existing ones.
 
-1. Sign the Contributor License Agreement (see below)
-2. Fork this repository [pnp/sp-dev-fx-aces](https://github.com/pnp/sp-dev-fx-aces) to your GitHub account
-3. Create a new branch from the `master` branch for your fork for the contribution
-4. Include your changes to your branch
-5. Commit your changes using descriptive commit message * These are used to track changes on the repositories for monthly communications
-6. Create a pull request in your own fork and target the `master` branch
-7. Fill up the provided PR template with the requested details
+1. Fork this repository [pnp/sp-dev-fx-aces](https://github.com/pnp/sp-dev-fx-aces) to your GitHub account
+2. Create a new branch from the `main` branch in your fork
+3. Add and commit your changes using a descriptive commit message
+4. Push your contribution branch to your fork
+5. Open a pull request from your contribution branch to the `main` branch in `pnp/sp-dev-fx-aces`
+6. Complete the provided pull request template with the requested details
+7. Sign the Contributor License Agreement when prompted (see below)
 
 Before you submit your pull request consider the following guidelines:
 
@@ -127,7 +133,7 @@ Before you submit your pull request consider the following guidelines:
 * Make your changes in a new git branch:
 
   ```shell
-  git checkout -b react-taxonomypicker master
+  git checkout -b PrimaryTextCard-MySample main
   ```
 
 * Ensure your fork is updated and not behind the upstream **sp-dev-fx-aces** repo. Refer to these resources for more information on syncing your repo:
@@ -137,25 +143,25 @@ Before you submit your pull request consider the following guidelines:
 
     ```shell
     # assuming you are in the folder of your locally cloned fork....
-    git checkout master
+    git checkout main
 
     # assuming you have a remote named `upstream` pointing official **sp-dev-fx-aces** repo
     git fetch upstream
 
-    # update your local master to be a mirror of what's in the main repo
-    git pull --rebase upstream master
+    # update your local main to be a mirror of what's in the main repo
+    git pull --rebase upstream main
 
-    # switch to your branch where you are working, say "react-taxonomypicker"
-    git checkout react-taxonomypicker
+    # switch to your branch where you are working, say "PrimaryTextCard-MySample"
+    git checkout PrimaryTextCard-MySample
 
-    # update your branch to update it's fork point to the current tip of master & put your changes on top of it
-    git rebase master
+    # update your branch to update its fork point to the current tip of main and put your changes on top of it
+    git rebase main
     ```
 
 * Push your branch to GitHub:
 
   ```shell
-  git push origin react-taxonomypicker
+  git push origin PrimaryTextCard-MySample
   ```
 
 ## Merging your Existing GitHub Projects with this Repository
@@ -175,19 +181,20 @@ If the sample you wish to contribute is stored in your own GitHub repository, yo
 
     ```shell
     git remote add origin https://github.com/yourgitaccount/sp-dev-fx-aces.git
-    git pull origin master
+    git pull origin main
+    git checkout -b PrimaryTextCard-MySample
     ```
 
 * Pull your other project from GitHub into the `samples` folder of your local copy of `sp-dev-fx-aces`
 
     ```shell
-    git subtree add --prefix=samples/projectname https://github.com/yourgitaccount/projectname.git master
+    git subtree add --prefix=samples/projectname https://github.com/yourgitaccount/projectname.git main
     ```
 
 * Push the changes up to your forked repository
 
     ```shell
-    git push origin master
+    git push origin PrimaryTextCard-MySample
     ```
 
 ## Signing the CLA
