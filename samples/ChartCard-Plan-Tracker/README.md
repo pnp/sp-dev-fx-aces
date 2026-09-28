@@ -131,3 +131,5 @@ Plan Tracker supports a customizable mapping between Planner task status and the
 | Completed     | COM        | `#4CAF50` |
 
 > These mappings are editable through the **Property Pane** using a collection data control. "Name" is locked, but users can change `shortName` and `color`.
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/ChartCard-Plan-Tracker" />

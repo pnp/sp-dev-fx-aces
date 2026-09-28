@@ -63,4 +63,4 @@ It has a limit number of request per month in free plan.
   - **npm run start**
 
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-FlightTracker" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-FlightTracker" />

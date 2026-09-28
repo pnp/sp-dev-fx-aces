@@ -69,3 +69,5 @@ This extension illustrates the following concepts:
 - [Getting started with SharePoint Framework](https://aka.ms/spfx)
 - [Overview of Viva Connections Extensibility](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/viva/overview-viva-connections)
 - [Microsoft 365 & Power Platform Community](https://aka.ms/community/home) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/ChartCard-DataVisualizationOptions" />

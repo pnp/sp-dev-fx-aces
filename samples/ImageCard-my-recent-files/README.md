@@ -65,4 +65,4 @@ This ACE need Microsoft Graph Permissions:
     - Browse to your SharePoint app catalog and load the generated SPFx package (`sharepoint/solution/spfx-ace-my-recent-files.sppkg`).
     - Browse to your SharePoint Admin Center and under advanced you will need to open Api Access and allow the requests for Microsoft Graph.
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-my-recent-files" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-my-recent-files" />

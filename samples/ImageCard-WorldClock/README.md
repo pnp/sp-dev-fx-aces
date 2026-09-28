@@ -50,4 +50,4 @@ A simple Adaptive Card Extension that shows the current time for different timez
 
 - Browse to your SharePoint app catalog and load the SPFx package.
 
-    <img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-WorldClock" />
+    <img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-WorldClock" />

@@ -64,4 +64,4 @@ This ACE use <https://github.com/pnp/graph-connectors-samples/tree/main/samples/
     - `npm install`
     - `npm run start`
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-Sales-Orders" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-Sales-Orders" />

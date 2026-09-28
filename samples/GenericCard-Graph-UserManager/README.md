@@ -63,3 +63,5 @@ If there is a problem getting the manager's information the card will display an
 
 - [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/GenericCard-Graph-UserManager" />

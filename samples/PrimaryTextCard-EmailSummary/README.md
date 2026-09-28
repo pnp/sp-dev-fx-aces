@@ -94,3 +94,5 @@ This Adaptive Card Extension illustrates the following concepts:
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Heft Documentation](https://heft.rushstack.io/)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-EmailSummary" />
