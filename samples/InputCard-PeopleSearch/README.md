@@ -67,4 +67,4 @@ This tutorial demonstrates how to create a People Search Adaptive Card Extension
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 & Power Platform Community](https://aka.ms/community/home) - Guidance, tooling, samples and open-source controls for your Microsoft 365 & Power Platform extensibility
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/InputCard-PeopleSearch" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/InputCard-PeopleSearch" />

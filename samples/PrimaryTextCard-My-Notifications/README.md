@@ -71,4 +71,4 @@ Version|Date|Comments
         * `gulp serve --nobrowser`
     - browse to your hosted workbench <https://YOURTENANT.sharepoint.com/sites/_layouts/15/workbench.aspx> and add the adaptive card extension.
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-My-Notifications" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-My-Notifications" />

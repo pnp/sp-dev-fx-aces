@@ -100,4 +100,4 @@ This extension illustrates the following technical concepts:
 - [Blog on First Adaptive card](https://siddharthvaghasia.com/2021/12/29/create-your-first-adaptive-card-extension-with-spfx/)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-ChatGPTDailyInsights" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-ChatGPTDailyInsights" />

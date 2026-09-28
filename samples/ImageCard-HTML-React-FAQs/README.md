@@ -67,3 +67,5 @@ This ACE allows you to display a list of FAQs. The FAQs are stored in the proper
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [SPFx CSS in JS](https://spblog.net/post/2020/04/22/styling-sharepoint-framework-components-with-css-in-js-approach)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-HTML-React-FAQs" />

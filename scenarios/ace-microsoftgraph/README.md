@@ -73,3 +73,5 @@ This extension illustrates the following concepts:
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Platform Community](https://aka.ms/m365/community) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/scenarios/ace-microsoftgraph" />

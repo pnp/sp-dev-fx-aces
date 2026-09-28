@@ -72,4 +72,4 @@ This extension illustrates the following concepts:
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 - [Finnhub API documentation](https://finnhub.io/docs/api/websocket-trades)
 
-<img src="https://pnptelemetry.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-StockBitcoinFeed" />
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-StockBitcoinFeed" />

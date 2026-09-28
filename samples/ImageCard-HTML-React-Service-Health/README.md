@@ -89,3 +89,5 @@ SPFx ACE Service Health is a SharePoint Framework (SPFx) extension designed to m
 - [SharePoint Framework Documentation](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/)
 - [@fluentui/react-components](https://react.fluentui.dev/)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/ImageCard-HTML-React-Service-Health" />

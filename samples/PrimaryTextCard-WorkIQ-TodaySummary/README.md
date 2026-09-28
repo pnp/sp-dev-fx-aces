@@ -137,3 +137,5 @@ This extension illustrates:
 - [Adaptive Card Documentation](https://adaptivecards.io/) and the [Adaptive Card designer](https://adaptivecards.io/designer/)
 - [Microsoft identity platform: On-Behalf-Of flow](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) — Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/samples/PrimaryTextCard-WorkIQ-TodaySummary" />

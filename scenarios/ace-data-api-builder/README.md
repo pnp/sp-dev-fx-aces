@@ -66,3 +66,5 @@ To learn more about this sample, please watch the following video:
 - [Data API builder for Azure Databases](https://aka.ms/dab)
 - [Data API builder sample for Microsoft 365](https://github.com/yorek/dab-microsoft365-demo)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-aces/scenarios/ace-data-api-builder" />
