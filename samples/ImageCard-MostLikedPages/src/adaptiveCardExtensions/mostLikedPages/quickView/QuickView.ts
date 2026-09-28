@@ -1,6 +1,7 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView } from '@microsoft/sp-adaptive-card-extension-base';
 import { Page } from '../../types';
 import { IMostLikedPagesAdaptiveCardExtensionProps, IMostLikedPagesAdaptiveCardExtensionState } from '../MostLikedPagesAdaptiveCardExtension';
+import QuickViewTemplate from './template/QuickViewTemplate.json';
 
 export interface IQuickViewData {
   title: string;
@@ -20,7 +21,7 @@ export class QuickView extends BaseAdaptiveCardView<
   }
 
   public get template(): ISPFxAdaptiveCard {
-    return require('./template/QuickViewTemplate.json');
+    return QuickViewTemplate;
   }
 
 

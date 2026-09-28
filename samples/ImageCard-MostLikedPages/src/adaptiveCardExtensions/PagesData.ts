@@ -23,6 +23,6 @@ export async function getAllPages(sourceSites: IPropertyFieldSite[]): Promise<Pa
         return orderedPages.slice(0, 10);
     } catch (error) {
         console.error(error);
-        return null;
+        return [];
     }
 }
