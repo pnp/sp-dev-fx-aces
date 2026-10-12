@@ -3,7 +3,7 @@
   "solution": {
     "name": "image-card-faqs-client-side-solution",
     "id": "ca1dda22-8cd0-441a-ad39-0bebdc995dd5",
-    "version": "1.0.0.0",
+    "version": "1.2.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "image-card-faqs Feature",
         "description": "The feature that activates elements of the image-card-faqs solution.",
         "id": "51d10fc8-ba95-4035-86ae-d1218a439384",
-        "version": "1.0.0.0"
+        "version": "1.2.0.0"
       }
     ]
   },

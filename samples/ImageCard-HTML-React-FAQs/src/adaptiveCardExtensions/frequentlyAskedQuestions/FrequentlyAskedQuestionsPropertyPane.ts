@@ -8,7 +8,7 @@ export class FrequentlyAskedQuestionsPropertyPane {
   public getPropertyPaneConfiguration(
     properties: IFrequentlyAskedQuestionsAdaptiveCardExtensionProps,
     context: AdaptiveCardExtensionContext,
-    onPropertyPaneFieldChanged: () => void
+    onPropertyPaneFieldChanged: (propertyPath: string, oldValue: unknown, newValue: unknown) => void
   ): IPropertyPaneConfiguration {
     return {
       pages: [

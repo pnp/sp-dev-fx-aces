@@ -2,7 +2,7 @@ import { stylesheet } from "typestyle";
 import { IReadonlyTheme } from "@microsoft/sp-component-base";
 
 // Styles for accordion
-export const createAccordionStyles = (theme: IReadonlyTheme) => stylesheet({
+export const createAccordionStyles = (theme: IReadonlyTheme | undefined) => stylesheet({
     accordion: {
         $nest: {
             '.chevron-down': {

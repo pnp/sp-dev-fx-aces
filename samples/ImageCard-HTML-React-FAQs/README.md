@@ -21,7 +21,9 @@ This ACE allows you to display a list of FAQs. The FAQs are stored in the proper
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.20.0-yellow.svg)
+![version](https://img.shields.io/badge/version-1.23.0-green.svg)
+
+![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
 
 ## Applies to
 
@@ -42,6 +44,7 @@ This ACE allows you to display a list of FAQs. The FAQs are stored in the proper
 | ------- | ---------------- | --------------- |
 | 1.0     | September 13, 2024 | Initial release |
 | 1.1     | October 04, 2024 | Updated to SPFx 1.20 |
+| 1.2     | October 12, 2026 | Upgraded to SPFx 1.23.0 |
 
 ## Disclaimer
 
@@ -55,7 +58,7 @@ This ACE allows you to display a list of FAQs. The FAQs are stored in the proper
 - Ensure that you are at the solution folder
 - in the command-line run:
   - **npm install**
-  - **gulp serve**
+  - **npm run start**
 - Add the "Fequently Asked Questions" ACE to the dashboard page
 - Edit the properties of the ACE as needed
 

@@ -1,13 +1,14 @@
 {
   "@microsoft/generator-sharepoint": {
-    "plusBeta": true,
+    "plusBeta": false,
     "isCreatingSolution": true,
-    "nodeVersion": "18.20.4",
+    "nodeVersion": "22.14.0",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
       "@microsoft/teams-js": "2.24.0"
     },
-    "version": "1.20.0-beta.0",
+    "version": "1.23.0",
+    "useGulp": false,
     "libraryName": "image-card-faqs",
     "libraryId": "ca1dda22-8cd0-441a-ad39-0bebdc995dd5",
     "environment": "spo",
