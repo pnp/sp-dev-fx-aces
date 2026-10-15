@@ -5,7 +5,7 @@ import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
 import { FAQ } from '../../../../types';
 import { createAccordionStyles, chevronDown } from '../../styles';
 import { Remarkable } from 'remarkable';
-import * as DOMPurify from 'dompurify';
+import DOMPurify from 'dompurify';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 import { useThemedStyles } from '../../hooks/useThemedStyles';
 
