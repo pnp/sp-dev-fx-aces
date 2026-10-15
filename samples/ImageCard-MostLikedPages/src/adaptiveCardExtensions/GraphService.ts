@@ -5,24 +5,48 @@ import { GraphPages } from './types';
 
 export interface IGraphService {
   GetPages(site: IPropertyFieldSite): Promise<GraphPages>;
+  GetSites(): Promise<IPropertyFieldSite[]>;
 }
 
 class GraphService implements IGraphService {
-  public context: AdaptiveCardExtensionContext = null;
+  public context!: AdaptiveCardExtensionContext;
   private graphClient: MSGraphClientV3;
 
   public async GetPages(site: IPropertyFieldSite): Promise<GraphPages> {
     const pages: GraphPages = await this.GET("sites/" + site.id + "/pages/microsoft.graph.sitePage", "", "reactions,title,webUrl,thumbnailWebUrl", 50);
     pages.value = pages.value.filter(p => p.reactions.likeCount > 0)
-    pages.value.map(p => p.webTitle = site.title)
-    pages.value.map(p => p.webUrl = site.url + "/" + p.webUrl)
+    pages.value.forEach(p => { p.webTitle = site.title; });
+    pages.value.forEach(p => { p.webUrl = site.url + "/" + p.webUrl; });
     return pages;
+  }
+
+  public async GetSites(): Promise<IPropertyFieldSite[]> {
+    try {
+      const client: MSGraphClientV3 = await this.getClient();
+      const response: { value: { id: string; displayName?: string; name?: string; webUrl: string }[] } =
+        await client
+          .api("sites")
+          .version("v1.0")
+          .query({ search: "*" })
+          .select("id,displayName,name,webUrl")
+          .top(50)
+          .get();
+
+      return (response.value ?? []).map((s) => ({
+        id: s.id,
+        url: s.webUrl,
+        title: s.displayName ?? s.name ?? s.webUrl
+      }));
+    } catch (error) {
+      console.error("Error retrieving sites", error);
+      return [];
+    }
   }
 
   private GET(api: string, filter?: string, select?: string, top?: number, responseType?: any): Promise<any> {
     return new Promise<any>((resolve, reject) => {
       return this.getClient().then((client: MSGraphClientV3): void => {
-        client.api(api).version("beta").select(select).filter(filter).responseType(responseType)
+        void client.api(api).version("beta").select(select ?? "").filter(filter ?? "").responseType(responseType)
           .get((error: any, response: any) => {
             if (error) {
               reject(error);

@@ -23,3 +23,5 @@ export type Site = {
     webId: string;
 }
 
+export const SITE_TOGGLE_PREFIX = "siteToggle_";
+
