@@ -34,7 +34,7 @@ export const isUserAdmin = async (
       (role) =>
         role.displayName &&
         role["@odata.type"] === "#microsoft.graph.directoryRole" &&
-        adminRoles.includes(role.displayName.trim().toLowerCase())
+        adminRoles.indexOf(role.displayName.trim().toLowerCase()) !== -1
     );
   } catch (error) {
     console.error("Error checking user roles:", error);

@@ -17,7 +17,7 @@ SPFx ACE Service Health is a SharePoint Framework (SPFx) extension designed to m
 
 ## Technologies Used
 
-- **SharePoint Framework (SPFx) v1.21.1**
+- **SharePoint Framework (SPFx) v1.23**
 - **React**
 - **TypeScript**
 - **@fluentui/react-components** for UI consistency
@@ -57,7 +57,7 @@ SPFx ACE Service Health is a SharePoint Framework (SPFx) extension designed to m
 4. **Run the solution locally:**
 
    ```bash
-   gulp serve
+   npm run start
    ```
 
 ## Usage
@@ -71,6 +71,7 @@ SPFx ACE Service Health is a SharePoint Framework (SPFx) extension designed to m
 | Version | Date         | Comments         |
 | ------- | ------------| ---------------- |
 | 1.0     | May 31, 2025| Initial release  |
+| 1.1     | September 08, 2026 | Upgrade to SPFx 1.23 |
 
 ## Author
 

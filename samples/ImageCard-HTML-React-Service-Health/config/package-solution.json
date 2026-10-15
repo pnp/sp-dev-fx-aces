@@ -3,7 +3,7 @@
   "solution": {
     "name": "service-health-client-side-solution",
     "id": "3afbf950-134f-4452-bfa5-d3bf0a852f1f",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
