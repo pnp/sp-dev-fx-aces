@@ -1,0 +1,52 @@
+[
+  {
+    "name": "pnp-sp-fx-aces-primarytextcard-newsfeed",
+    "source": "pnp",
+    "title": "News Adaptive Card Extension",
+    "shortDescription": "Shows a count of SharePoint news articles in the last 30 days and a quick view of those articles.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/PrimaryTextCard-NewsFeed",
+    "longDescription": [
+      "Shows a count of SharePoint news articles in the last 30 days and a quick view of those articles."
+    ],
+    "creationDateTime": "2022-04-26",
+    "updateDateTime": "2026-08-11",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "TypeScript"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.23.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/PrimaryTextCard-NewsFeed/assets/Screenshot-2022-04-27-095421.png",
+        "alt": "News Feed Card showing the last 30 days' article count beside a quick view listing SharePoint news."
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "techienickb",
+        "pictureUrl": "https://github.com/techienickb.png",
+        "name": "Nick Brown",
+        "company": "Jisc",
+        "twitter": "teckienickb"
+      }
+    ],
+    "references": [
+      {
+        "name": "Viva Connections Extensibility guidance",
+        "description": "Adaptive Card Extensions are client-side components that run in the context of a SharePoint page.",
+        "url": "https://aka.ms/viva/connections/extensibility"
+      }
+    ]
+  }
+]

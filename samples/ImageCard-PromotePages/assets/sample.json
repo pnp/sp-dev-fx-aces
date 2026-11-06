@@ -28,7 +28,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-PropotePage/assets/card-preview.png",
+        "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-PromotePages/assets/card-preview.png",
         "alt": "Preview"
       }
     ],
