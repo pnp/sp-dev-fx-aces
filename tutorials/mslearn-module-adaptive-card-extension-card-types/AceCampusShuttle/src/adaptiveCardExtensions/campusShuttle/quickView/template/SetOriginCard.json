@@ -1,0 +1,28 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "weight": "Bolder",
+      "size": "large",
+      "text": "${title}"
+    },
+    {
+      "type": "TextBlock",
+      "text": "${description}",
+      "wrap": true
+    }
+  ],
+  "actions": [
+    {
+      "id": "originLocation",
+      "type": "VivaAction.GetLocation",
+      "title": "Select location on the map",
+      "parameters": {
+        "chooseLocationOnMap": true
+      }
+    }
+  ]
+}

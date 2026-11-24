@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "ace-image-viewer-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/aceImageViewer/AceImageViewerAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/aceImageViewer/AceImageViewerAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AceImageViewerAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/aceImageViewer/loc/{locale}.js"
+  }
+}

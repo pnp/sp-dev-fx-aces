@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "campus-shuttle-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/campusShuttle/CampusShuttleAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/campusShuttle/CampusShuttleAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CampusShuttleAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/campusShuttle/loc/{locale}.js"
+  }
+}

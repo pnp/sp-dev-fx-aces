@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-share-point-rest-client-side-solution",
+    "id": "f75ecc3f-b34b-45fc-bc8e-92b0e9a5338d",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.24.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "AceSharePointRest description"
+      },
+      "longDescription": {
+        "default": "AceSharePointRest description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-share-point-rest Feature",
+        "description": "The feature that activates elements of the ace-share-point-rest solution.",
+        "id": "ecb240aa-befb-4d8d-8408-4833b302ff40",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-share-point-rest.sppkg"
+  }
+}

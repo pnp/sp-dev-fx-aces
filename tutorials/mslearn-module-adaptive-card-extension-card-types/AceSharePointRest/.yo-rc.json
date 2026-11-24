@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "useGulp": false,
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "26.13.1",
+    "sdksVersions": {},
+    "version": "1.24.1",
+    "libraryName": "ace-share-point-rest",
+    "libraryId": "f75ecc3f-b34b-45fc-bc8e-92b0e9a5338d",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "AceSharePointRest",
+    "solutionShortDescription": "AceSharePointRest description",
+    "skipFeatureDeployment": true,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic"
+  }
+}

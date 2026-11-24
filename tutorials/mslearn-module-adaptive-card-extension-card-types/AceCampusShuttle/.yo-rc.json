@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "useGulp": false,
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "26.13.1",
+    "sdksVersions": {},
+    "version": "1.24.1",
+    "libraryName": "ace-campus-shuttle",
+    "libraryId": "287f5159-f967-4f6d-9505-00850aef0792",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "AceCampusShuttle",
+    "solutionShortDescription": "AceCampusShuttle description",
+    "skipFeatureDeployment": true,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic"
+  }
+}
