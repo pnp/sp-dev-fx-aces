@@ -4,7 +4,7 @@
 
 SharePoint Framework (SPFx) Adaptive Card Extensions (ACEs) for Microsoft Viva Connections that use the basic card and image card templates, QuickViews, and the Viva Connections geolocation actions. This tutorial contains the completed code for the exercises in the Microsoft Learn module [Create Adaptive Card Extensions (ACE) for Microsoft Viva Connections](https://learn.microsoft.com/training/modules/sharepoint-spfx-adaptive-card-extension-card-types/).
 
-Each exercise in the module builds its own project. Each project folder contains the completed solution for its exercise. When an exercise builds on an earlier one, the `checkpoints` folder in the project contains the code as it was at the end of that earlier exercise.
+Each project folder contains the completed solution of the exercise that builds it.
 
 | Folder | Microsoft Learn exercise | What it shows |
 |---|---|---|
@@ -74,7 +74,7 @@ For the **AceCampusShuttle** project:
 * Clone this repository, or [download this tutorial as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/sp-dev-fx-aces/tree/main/tutorials/mslearn-module-adaptive-card-extension-card-types) and unzip it.
 * From your command line, change to the folder of the project you want to run, under `tutorials/mslearn-module-adaptive-card-extension-card-types`.
 * Ensure that you're using a supported Node.js version. If you use nvm, run `nvm use`.
-* In `config/serve.json`, replace the page URL (`initialPage`, or `pageUrl` for extensions) with a page in a site you can test on. Set the `SPFX_SERVE_TENANT_DOMAIN` environment variable to your SharePoint Online domain, for example `contoso.sharepoint.com`.
+* Set the `SPFX_SERVE_TENANT_DOMAIN` environment variable to your SharePoint Online domain, for example `contoso.sharepoint.com`. If `config/serve.json` contains `<site-name>` or a site path, change it to a site you can test on.
 * In the command line, run:
   * `npm install`
   * `npm run start`
@@ -100,11 +100,11 @@ You can try looking at [issues related to this tutorial](https://github.com/pnp/
 
 You can also try looking at [discussions related to this tutorial](https://github.com/pnp/sp-dev-fx-aces/discussions?discussions_q=mslearn-module-adaptive-card-extension-card-types) and see what the community is saying.
 
-If you encounter any issues using this tutorial, [create a new issue](https://github.com/pnp/sp-dev-fx-aces/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Abug-suspected%2Csample%3A%20mslearn-module-adaptive-card-extension-card-types&template=bug-report.yml&sample=mslearn-module-adaptive-card-extension-card-types&authors=@andrewconnell%20@andrewconnell-msft3&title=mslearn-module-adaptive-card-extension-card-types%20-%20).
+If you encounter any issues using this tutorial, [create a new issue](https://github.com/pnp/sp-dev-fx-aces/issues/new?labels=type%3Abug&template=bug.md&title=mslearn-module-adaptive-card-extension-card-types%3A%20).
 
-For questions regarding this tutorial, [create a new question](https://github.com/pnp/sp-dev-fx-aces/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Aquestion%2Csample%3A%20mslearn-module-adaptive-card-extension-card-types&template=question.yml&sample=mslearn-module-adaptive-card-extension-card-types&authors=@andrewconnell%20@andrewconnell-msft3&title=mslearn-module-adaptive-card-extension-card-types%20-%20).
+For questions regarding this tutorial, [create a new question](https://github.com/pnp/sp-dev-fx-aces/issues/new?labels=type%3Aquestion&template=question.md&title=mslearn-module-adaptive-card-extension-card-types%3A%20).
 
-Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-aces/issues/new?assignees=&labels=Needs%3A+Triage+%3Amag%3A%2Ctype%3Aenhancement%2Csample%3A%20mslearn-module-adaptive-card-extension-card-types&template=suggestion.yml&sample=mslearn-module-adaptive-card-extension-card-types&authors=@andrewconnell%20@andrewconnell-msft3&title=mslearn-module-adaptive-card-extension-card-types%20-%20).
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/sp-dev-fx-aces/issues/new?labels=type%3Aenhancement&template=enhancement.md&title=mslearn-module-adaptive-card-extension-card-types%3A%20).
 
 ## Disclaimer
 
