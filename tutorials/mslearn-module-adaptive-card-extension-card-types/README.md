@@ -48,13 +48,12 @@ This tutorial is optimally compatible with the following environment configurati
 ## Contributors
 
 * [Andrew Connell](https://github.com/andrewconnell)
-* [Andrew Connell](https://github.com/andrewconnell-msft3)
 
 ## Version history
 
 |Version|Date|Comments|
 |-------|----|--------|
-|1.0|November 24, 2026|Initial release|
+|1.0|November 25, 2026|Initial release|
 
 ## Prerequisites
 

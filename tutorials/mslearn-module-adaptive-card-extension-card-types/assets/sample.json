@@ -1,0 +1,68 @@
+[
+  {
+    "name": "pnp-sp-fx-aces-mslearn-module-adaptive-card-extension-card-types",
+    "source": "pnp",
+    "title": "Create Adaptive Card Extensions (ACE) for Microsoft Viva Connections",
+    "shortDescription": "SharePoint Framework (SPFx) Adaptive Card Extensions (ACEs) for Microsoft Viva Connections that use the basic card and image card templates, QuickViews, and the Viva Connections geolocation actions.",
+    "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/tutorials/mslearn-module-adaptive-card-extension-card-types",
+    "longDescription": [
+      "SharePoint Framework (SPFx) Adaptive Card Extensions (ACEs) for Microsoft Viva Connections that use the basic card and image card templates, QuickViews, and the Viva Connections geolocation actions.",
+      "This tutorial contains the completed code for the exercises in the Microsoft Learn module Create Adaptive Card Extensions (ACE) for Microsoft Viva Connections."
+    ],
+    "creationDateTime": "2026-11-25",
+    "updateDateTime": "2026-11-25",
+    "products": [
+      "SharePoint",
+      "Viva"
+    ],
+    "metadata": [
+      {
+        "key": "CLIENT-SIDE-DEV",
+        "value": "None"
+      },
+      {
+        "key": "SPFX-VERSION",
+        "value": "1.24.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/main/tutorials/mslearn-module-adaptive-card-extension-card-types/assets/preview-acesharepointrest.png",
+        "alt": "SharePoint REST card QuickView cycling through list items on the Dashboard page"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/main/tutorials/mslearn-module-adaptive-card-extension-card-types/assets/preview-aceimageviewer.png",
+        "alt": "AceImageViewer QuickView showing a NASA image with its details"
+      },
+      {
+        "type": "image",
+        "order": 102,
+        "url": "https://github.com/pnp/sp-dev-fx-aces/raw/main/tutorials/mslearn-module-adaptive-card-extension-card-types/assets/preview-acecampusshuttle.png",
+        "alt": "Campus Shuttle card with the Complete Trip confirmation QuickView"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "andrewconnell",
+        "pictureUrl": "https://github.com/andrewconnell.png",
+        "name": "Andrew Connell"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft Learn: Create Adaptive Card Extensions (ACE) for Microsoft Viva Connections",
+        "description": "The Microsoft Learn training module whose exercises build the code in this tutorial.",
+        "url": "https://learn.microsoft.com/training/modules/sharepoint-spfx-adaptive-card-extension-card-types/"
+      },
+      {
+        "name": "Overview of the SharePoint Framework",
+        "description": "The SharePoint Framework (SPFx) is a page and web part model that provides full support for client-side SharePoint development, easy integration with SharePoint data, and extending Microsoft Teams, Microsoft Viva, Outlook, and Microsoft 365.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview"
+      }
+    ]
+  }
+]
