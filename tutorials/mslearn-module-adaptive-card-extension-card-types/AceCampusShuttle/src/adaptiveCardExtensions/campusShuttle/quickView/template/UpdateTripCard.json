@@ -1,0 +1,25 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "weight": "Bolder",
+      "text": "${title}"
+    }
+  ],
+  "actions": [
+    {
+      "id": "cancel",
+      "type": "Action.Submit",
+      "title": "Cancel Current Trip"
+    },
+    {
+      "id": "pickup",
+      "type": "Action.Submit",
+      "title": "Pickup Passenger",
+      "style": "positive"
+    }
+  ]
+}

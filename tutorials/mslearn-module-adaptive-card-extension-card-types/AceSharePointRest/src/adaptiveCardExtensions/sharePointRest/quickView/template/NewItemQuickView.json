@@ -1,0 +1,34 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [{
+    "type": "Container",
+    "separator": true,
+    "items": [
+      {
+        "type": "Input.Text",
+        "id": "title",
+        "label": "Title",
+        "placeholder": "Title",
+        "isMultiline": false
+      },
+      {
+        "type": "Input.Text",
+        "id": "description",
+        "label": "Description",
+        "placeholder": "Description",
+        "isMultiline": true
+      },
+      {
+        "type": "ActionSet",
+        "actions": [{
+          "type": "Action.Submit",
+          "id": "save",
+          "title": "Save",
+          "style": "positive"
+        }]
+      }
+    ]
+  }]
+}

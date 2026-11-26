@@ -1,0 +1,49 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "weight": "Bolder",
+      "text": "${title}"
+    },
+    {
+      "type": "TextBlock",
+      "text": "${description}"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Select a known location..."
+    },
+    {
+      "id": "knownDestinationSelection",
+      "type": "Input.ChoiceSet",
+      "choices": [
+        {
+          "$data": "${campus_locations}",
+          "title": "${title}",
+          "value": "${latitude},${longitude}"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "... or select a specific location on the map:"
+    }
+  ],
+  "actions": [
+    {
+      "id": "destinationLocation",
+      "type": "VivaAction.GetLocation",
+      "title": "Select trip destination from map",
+      "parameters": { "chooseLocationOnMap": true }
+    },
+    {
+      "id": "save",
+      "type": "Action.Submit",
+      "title": "Save destination location",
+      "style": "positive"
+    }
+  ]
+}

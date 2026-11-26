@@ -1,0 +1,24 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "${title}",
+      "size": "Large"
+    },
+    {
+      "type": "TextBlock",
+      "text": "${description}"
+    }
+  ],
+  "actions": [
+    {
+      "id": "confirm",
+      "type": "Action.Submit",
+      "title": "${title}",
+      "style": "positive"
+    }
+  ]
+}

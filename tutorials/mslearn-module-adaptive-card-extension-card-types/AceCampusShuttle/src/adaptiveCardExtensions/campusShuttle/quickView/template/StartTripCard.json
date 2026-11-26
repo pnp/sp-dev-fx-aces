@@ -1,0 +1,58 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Start a trip",
+      "size": "Large",
+      "weight": "Bolder"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Select trip status:",
+      "size": "medium",
+      "weight": "Bolder"
+    },
+    {
+      "id": "tripType",
+      "type": "Input.ChoiceSet",
+      "value": "${trip.Status}",
+      "choices": [
+        {
+          "title": "en route to pickup",
+          "value": "en route"
+        },
+        {
+          "title": "starting trip",
+          "value": "hired"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "Set trip details:",
+      "size": "medium",
+      "weight": "Bolder"
+    }
+  ],
+  "actions": [
+    {
+      "id": "originLocation",
+      "type": "Action.Submit",
+      "title": "(1) Select trip origin from map"
+    },
+    {
+      "id": "destinationLocation",
+      "type": "Action.Submit",
+      "title": "(2) Select / set trip destination"
+    },
+    {
+      "id": "save",
+      "type": "Action.Submit",
+      "title": "Save trip",
+      "style": "positive"
+    }
+  ]
+}

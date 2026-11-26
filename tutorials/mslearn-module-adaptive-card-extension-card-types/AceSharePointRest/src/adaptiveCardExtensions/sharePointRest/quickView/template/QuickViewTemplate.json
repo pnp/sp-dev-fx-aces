@@ -1,0 +1,83 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "30px",
+          "items": [
+            {
+              "type": "Image",
+              "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5\" /></svg>",
+              "size": "Small",
+              "width": "30px",
+              "selectAction": {
+                "type": "Action.Submit",
+                "id": "-1",
+                "title": "Previous"
+              },
+              "isVisible": "${previousEnabled}",
+              "horizontalAlignment": "Left"
+            }
+          ],
+          "verticalContentAlignment": "Center"
+        },
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Container",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "(${id}) ${title}",
+                  "horizontalAlignment": "Center",
+                  "size": "Medium",
+                  "weight": "Bolder",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${description}",
+                  "horizontalAlignment": "Center",
+                  "size": "Default",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "30px",
+          "items": [
+            {
+              "type": "Image",
+              "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5\" /></svg>",
+              "size": "Small",
+              "width": "30px",
+              "selectAction": {
+                "type": "Action.Submit",
+                "id": "1",
+                "title": "Next"
+              },
+              "isVisible": "${nextEnabled}",
+              "horizontalAlignment": "Right"
+            }
+          ],
+          "verticalContentAlignment": "Center"
+        }
+      ],
+      "spacing": "None",
+      "horizontalAlignment": "Center",
+      "height": "stretch",
+      "style": "emphasis",
+      "bleed": true
+    }
+  ]
+}
